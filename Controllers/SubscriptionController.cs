@@ -4,16 +4,21 @@ using System.Diagnostics;
 
 namespace DeathWishCoffee.Controllers
 {
-    public class HomeController : Controller
+    public class SubscriptionController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<SubscriptionController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public SubscriptionController(ILogger<SubscriptionController> logger)
         {
             _logger = logger;
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
         {
             return View();
         }

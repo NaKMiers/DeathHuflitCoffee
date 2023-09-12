@@ -4,11 +4,11 @@ using System.Diagnostics;
 
 namespace DeathWishCoffee.Controllers
 {
-    public class HomeController : Controller
+    public class ProductsController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<ProductsController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public ProductsController(ILogger<ProductsController> logger)
         {
             _logger = logger;
         }
@@ -17,6 +17,7 @@ namespace DeathWishCoffee.Controllers
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

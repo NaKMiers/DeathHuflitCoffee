@@ -16,6 +16,30 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = d:\HUFLIT\2nd - Web\DeathWishCoffee
 build_property._RazorSourceGeneratorDebug = 
 
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/About/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Account/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Collections/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdGlvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Collections/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdGlvbnNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -24,12 +48,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Products/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Quizes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpemVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Quizes/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpemVzXFByaXZhY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Storelocator/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVsb2NhdG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Storelocator/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVsb2NhdG9yXFByaXZhY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Subscription/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaXB0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/Subscription/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaXB0aW9uXFByaXZhY3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [d:/HUFLIT/2nd - Web/DeathWishCoffee/Views/_ViewImports.cshtml]
