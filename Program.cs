@@ -20,8 +20,20 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
+app.UseEndpoints(endpoints =>
+{
+    app.MapControllerRoute(
+        name: "subscription",
+        pattern: "subscription",
+        defaults: new { controller = "Subscription", action = "Index" }
+    );
+
+    app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+});
+
+
 
 app.Run();
+
