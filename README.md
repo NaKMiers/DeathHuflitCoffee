@@ -73,7 +73,7 @@
 
 # Trình tự làm việc
 
-1. Trước khi code
+## 1. Trước khi code
 
 -  Kiểm tra code của mình đã update lại chưa
 -  Tạo branch mới bằng git branch: git branch Khoa_Header
@@ -81,7 +81,9 @@
 -  Tạo và chuyển cùng lúc: git checkout -b Khoa_Header
 -  **\_\_\_\_**TUYỆT ĐỐI KHÔNG ĐƯỢC CODE TRÊN NHÁNH MAIN**\_\_\_\_**
 
-2. Trong khi code
+#
+
+## 2. Trong khi code
 
 -  Tạo component mới trong thư mục components
 -  Tên component phải viết hoa chữ cái đầu, có đuôi .cshtml: Header.cshtml
@@ -97,7 +99,9 @@
 -  Tên file js viết thường
 -  Link file js vào View/Share/\_Layout.cshtml để kích hoạt js
 
-3. Sau khi code một component cụ thể
+#
+
+## 3. Sau khi code một component cụ thể
 
 -  Kiểm tra lại branch hiện tại: git branch
 -  Xác nhận thay đổi: git add .
@@ -106,7 +110,7 @@
 -  Lên Github của chính mình để tạo Pull Request và mô tả chi tiết thay đôi
 -  Những thành viên còn lại vào kiểm tra và xác nhận gọp nhánh mới vào nhánh main
 
-4. Sau khi gọp code vào main
+## 4. Sau khi gọp code vào main
 
 -  Những thành viên còn lại update lại của của mình trên máy:
 -  Chuyển sang nhánh main: git checkout main
