@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\HUFLIT\\2nd - Web\\DeathWishCoffee\\DeathWishCoffee.csproj": {}
+    "C:\\Users\\Admin\\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\\Desktop\\Programing\\DeathWishCoffee\\DeathWishCoffee.csproj": {}
   },
   "projects": {
-    "D:\\HUFLIT\\2nd - Web\\DeathWishCoffee\\DeathWishCoffee.csproj": {
+    "C:\\Users\\Admin\\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\\Desktop\\Programing\\DeathWishCoffee\\DeathWishCoffee.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HUFLIT\\2nd - Web\\DeathWishCoffee\\DeathWishCoffee.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\\Desktop\\Programing\\DeathWishCoffee\\DeathWishCoffee.csproj",
         "projectName": "DeathWishCoffee",
-        "projectPath": "D:\\HUFLIT\\2nd - Web\\DeathWishCoffee\\DeathWishCoffee.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\HUFLIT\\2nd - Web\\DeathWishCoffee\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\\Desktop\\Programing\\DeathWishCoffee\\DeathWishCoffee.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\\Desktop\\Programing\\DeathWishCoffee\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -24135,6 +24135,11 @@
       "FilePath": "d:\\HUFLIT\\2nd - Web\\DeathWishCoffee\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\HUFLIT\\2nd - Web\\DeathWishCoffee\\components\\Review.cshtml",
+      "TargetPath": "components\\Review.cshtml",
+      "FileKind": "mvc"
     }
   ]
 }
