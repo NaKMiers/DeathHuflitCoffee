@@ -36,17 +36,24 @@ app.UseEndpoints(endpoints =>
         defaults: new { controller = "Collections", action = "Index" }
     );
 
+    // [/collections/all-products]
+    endpoints.MapControllerRoute(
+        name: "all-products",
+        pattern: "collections/all-products",
+        defaults: new { controller = "Collections", action = "AllProducts" }
+    );
+
     // [/storelocator]
     app.MapControllerRoute(
         name: "storelocator",
         pattern: "storelocator",
-        defaults: new { controller = "Storelocator", action = "Index" }
+        defaults: new { controller = "StoreLocator", action = "Index" }
     );
 
     // [/the-scoop]
     app.MapControllerRoute(
-        name: "thescoop",
-        pattern: "thescoop",
+        name: "the-scoop",
+        pattern: "the-scoop",
         defaults: new { controller = "Thescoop", action = "Index" }
     );
 
@@ -67,8 +74,15 @@ app.UseEndpoints(endpoints =>
     // [/products]
     app.MapControllerRoute(
         name: "products",
-        pattern: "products",
+        pattern: "products/{id}",
         defaults: new { controller = "Products", action = "Index" }
+    );
+
+    // [/blogs]
+    app.MapControllerRoute(
+        name: "blogs",
+        pattern: "blogs/{id}",
+        defaults: new { controller = "Blogs", action = "Index" }
     );
 
     // [/quizes]

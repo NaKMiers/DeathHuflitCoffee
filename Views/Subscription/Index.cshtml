@@ -1,8 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Subscription Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Subscription</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@Html.Partial("../../components/Shopify.cshtml")
+@Html.Partial("../../components/Subscription.cshtml")
+@Html.Partial("../../components/Features.cshtml")
+@Html.Partial("../../components/TakeQuiz.cshtml")

@@ -4,11 +4,11 @@ using System.Diagnostics;
 
 namespace DeathWishCoffee.Controllers
 {
-    public class StorelocatorController : Controller
+    public class StoreLocator : Controller
     {
-        private readonly ILogger<StorelocatorController> _logger;
+        private readonly ILogger<StoreLocator> _logger;
 
-        public StorelocatorController(ILogger<StorelocatorController> logger)
+        public StoreLocator(ILogger<StoreLocator> logger)
         {
             _logger = logger;
         }
@@ -18,10 +18,6 @@ namespace DeathWishCoffee.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

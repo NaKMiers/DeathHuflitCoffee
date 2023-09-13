@@ -1,8 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "About Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">About</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@Html.Partial("../../components/TextTemplate.cshtml")
+@Html.Partial("../../components/Banner.cshtml")
+@Html.Partial("../../components/IconTemplate.cshtml")
+
+@Html.Partial("../../components/TimeLine.cshtml")
+@Html.Partial("../../components/SplitSection.cshtml")

@@ -20,7 +20,7 @@ namespace DeathWishCoffee.Controllers
 
         public IActionResult AllProducts()
         {
-            return View();
+            return View("AllProducts");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

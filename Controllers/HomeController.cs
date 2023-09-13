@@ -15,6 +15,7 @@ namespace DeathWishCoffee.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 

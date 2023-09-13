@@ -1,8 +1,14 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Store Locator Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Store Locator</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@Html.Partial("../../components/SubHeader.cshtml")
+@Html.Partial("../../components/OrderForm.cshtml")
+@Html.Partial("../../components/SocialCarousel.cshtml")
+@Html.Partial("../../components/PostCarousel.cshtml")
+@Html.Partial("../../components/TiktokModal.cshtml")

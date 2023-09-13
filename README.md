@@ -60,14 +60,14 @@
 -  4 Account 😗
 -  4 PostCarousel 😗
 -  5 Product 😅
--  5 Detail 😅
+-  5 ProductDetail 😅
 
 ### Tiến - 23
 
 -  5 Review 😅
 -  3 Bolt 😃
 -  4 Blog 😗
--  3 Register 😃
+-  3 StartQuiz 😃
 -  5 Quiz 😅
 -  3 CollectionItem 😃
 
