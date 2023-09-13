@@ -110,6 +110,8 @@
 -  Lên Github của chính mình để tạo Pull Request và mô tả chi tiết thay đôi
 -  Những thành viên còn lại vào kiểm tra và xác nhận gọp nhánh mới vào nhánh main
 
+#
+
 ## 4. Sau khi gọp code vào main
 
 -  Những thành viên còn lại update lại của của mình trên máy:
