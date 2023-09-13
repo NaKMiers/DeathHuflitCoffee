@@ -28,3 +28,34 @@ D:\HUFLIT\2nd - Web\DeathWishCoffee\obj\Debug\net7.0\refint\DeathWishCoffee.dll
 D:\HUFLIT\2nd - Web\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.pdb
 D:\HUFLIT\2nd - Web\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.genruntimeconfig.cache
 D:\HUFLIT\2nd - Web\DeathWishCoffee\obj\Debug\net7.0\ref\DeathWishCoffee.dll
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\bin\Debug\net7.0\appsettings.json
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\bin\Debug\net7.0\DeathWishCoffee.staticwebassets.runtime.json
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\bin\Debug\net7.0\DeathWishCoffee.exe
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\bin\Debug\net7.0\DeathWishCoffee.deps.json
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\bin\Debug\net7.0\DeathWishCoffee.runtimeconfig.json
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\bin\Debug\net7.0\DeathWishCoffee.dll
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\bin\Debug\net7.0\DeathWishCoffee.pdb
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.csproj.AssemblyReference.cache
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.AssemblyInfoInputs.cache
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.AssemblyInfo.cs
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.RazorAssemblyInfo.cache
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.RazorAssemblyInfo.cs
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\staticwebassets\msbuild.DeathWishCoffee.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\staticwebassets\msbuild.build.DeathWishCoffee.props
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.DeathWishCoffee.props
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.DeathWishCoffee.props
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\scopedcss\bundle\DeathWishCoffee.styles.css
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\scopedcss\projectbundle\DeathWishCoffee.bundle.scp.css
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.dll
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\refint\DeathWishCoffee.dll
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.pdb
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\DeathWishCoffee.genruntimeconfig.cache
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Programing\DeathWishCoffee\obj\Debug\net7.0\ref\DeathWishCoffee.dll
