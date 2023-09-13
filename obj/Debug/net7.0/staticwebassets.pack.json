@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\components\\header.css"
     },
     {
+      "Id": "D:\\HUFLIT\\2nd - Web\\DeathWishCoffee\\wwwroot\\css\\components\\review.css",
+      "PackagePath": "staticwebassets\\css\\components\\review.css"
+    },
+    {
       "Id": "D:\\HUFLIT\\2nd - Web\\DeathWishCoffee\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -55,6 +59,10 @@
     {
       "Id": "D:\\HUFLIT\\2nd - Web\\DeathWishCoffee\\wwwroot\\js\\components\\header.js",
       "PackagePath": "staticwebassets\\js\\components\\header.js"
+    },
+    {
+      "Id": "D:\\HUFLIT\\2nd - Web\\DeathWishCoffee\\wwwroot\\js\\components\\review.js",
+      "PackagePath": "staticwebassets\\js\\components\\review.js"
     },
     {
       "Id": "D:\\HUFLIT\\2nd - Web\\DeathWishCoffee\\wwwroot\\js\\site.js",
