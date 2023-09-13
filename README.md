@@ -79,7 +79,7 @@
 -  Tạo branch mới bằng git branch: git branch Khoa_Header
 -  Chuyển sang nhánh mới: git checkout Khoa_Header
 -  Tạo và chuyển cùng lúc: git checkout -b Khoa_Header
-   **\_\_\_\_**TUYỆT ĐỐI KHÔNG ĐƯỢC CODE TRÊN NHÁNH MAIN**\_\_\_\_**
+-  **\_\_\_\_**TUYỆT ĐỐI KHÔNG ĐƯỢC CODE TRÊN NHÁNH MAIN**\_\_\_\_**
 
 2. Trong khi code
 
@@ -91,7 +91,8 @@
 -  Tạo .css của cpn đó trong thư wwwroot/css/components: www/root/css/components/header.css
 -  Tên file css viết thường
 -  Link file css vào View/Share/\_Layout.cshtml để kích hoạt css
-   \_**\_ĐẶT TÊN CLASS CSS PHẢI TUÂN THEO QUY TẮC BEM\_\_\_** để không bị ghi đè css
+-  \_**\_ĐẶT TÊN CLASS CSS PHẢI TUÂN THEO QUY TẮC BEM\_\_\_** để không bị ghi đè css
+
 -  Tạo .js của cpn đó trong thư wwwroot/js/components: www/root/css/components/header.js
 -  Tên file js viết thường
 -  Link file js vào View/Share/\_Layout.cshtml để kích hoạt js
