@@ -19,6 +19,12 @@ namespace DeathWishCoffee.Controllers
             return View();
         }
 
+        public IActionResult PageNotFound(int id)
+        {
+            Console.WriteLine(id);
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -4,17 +4,18 @@ using System.Diagnostics;
 
 namespace DeathWishCoffee.Controllers
 {
-    public class ThescoopController : Controller
+    public class TheVoidController : Controller
     {
-        private readonly ILogger<ThescoopController> _logger;
+        private readonly ILogger<TheVoidController> _logger;
 
-        public ThescoopController(ILogger<ThescoopController> logger)
+        public TheVoidController(ILogger<TheVoidController> logger)
         {
             _logger = logger;
         }
 
         public IActionResult Index()
         {
+
             return View();
         }
 

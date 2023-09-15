@@ -24,73 +24,87 @@ app.UseEndpoints(endpoints =>
 {
     // [/subscription]
     app.MapControllerRoute(
-        name: "subscription",
+        name: "Subscription",
         pattern: "subscription",
         defaults: new { controller = "Subscription", action = "Index" }
     );
 
     // [/collections]
     app.MapControllerRoute(
-        name: "collections",
+        name: "Collections",
         pattern: "collections",
         defaults: new { controller = "Collections", action = "Index" }
     );
 
-    // [/collections/all-products]
-    endpoints.MapControllerRoute(
-        name: "all-products",
-        pattern: "collections/all-products",
-        defaults: new { controller = "Collections", action = "AllProducts" }
+    // [/collections/coffee]
+    app.MapControllerRoute(
+        name: "Coffee",
+        pattern: "collections/coffee",
+        defaults: new { controller = "Collections", action = "Coffee" }
+    );
+
+    // [/collections/merch]
+    app.MapControllerRoute(
+        name: "Merch",
+        pattern: "collections/merch",
+        defaults: new { controller = "Collections", action = "Merch" }
     );
 
     // [/storelocator]
     app.MapControllerRoute(
-        name: "storelocator",
+        name: "StoreLocator",
         pattern: "storelocator",
         defaults: new { controller = "StoreLocator", action = "Index" }
     );
 
-    // [/the-scoop]
+    // [/the-void]
     app.MapControllerRoute(
-        name: "the-scoop",
-        pattern: "the-scoop",
-        defaults: new { controller = "Thescoop", action = "Index" }
-    );
-
-    // [/about]
-    app.MapControllerRoute(
-        name: "about",
-        pattern: "about",
-        defaults: new { controller = "About", action = "Index" }
+        name: "TheVoid",
+        pattern: "the-void",
+        defaults: new { controller = "TheVoid", action = "Index" }
     );
 
     // [/account]
     app.MapControllerRoute(
-        name: "account",
+        name: "Account",
         pattern: "account",
         defaults: new { controller = "Account", action = "Index" }
     );
 
-    // [/products]
+    // [/account/login]
     app.MapControllerRoute(
-        name: "products",
+        name: "Login",
+        pattern: "account/login",
+        defaults: new { controller = "Account", action = "Login" }
+    );
+
+    // [/account/register]
+    app.MapControllerRoute(
+        name: "Register",
+        pattern: "account/register",
+        defaults: new { controller = "Account", action = "Register" }
+    );
+
+    // [/products/{id}]
+    app.MapControllerRoute(
+        name: "Product",
         pattern: "products/{id}",
-        defaults: new { controller = "Products", action = "Index" }
+        defaults: new { controller = "Product", action = "Index" }
     );
 
-    // [/blogs]
+    // [/blogs/{id}]
     app.MapControllerRoute(
-        name: "blogs",
+        name: "Blog",
         pattern: "blogs/{id}",
-        defaults: new { controller = "Blogs", action = "Index" }
+        defaults: new { controller = "Blog", action = "Index" }
     );
 
-    // [/quizes]
-    app.MapControllerRoute(
-        name: "quizes",
-        pattern: "quizes",
-        defaults: new { controller = "Quizes", action = "Index" }
-    );
+    // [/]
+    // app.MapControllerRoute(
+    //     name: "PageNotFound",
+    //     pattern: "/{*}",
+    //     defaults: new { controller = "Home", action = "PageNotFound" }
+    // );
 
     // [/]
     app.MapControllerRoute(

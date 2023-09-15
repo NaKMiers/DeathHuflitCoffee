@@ -4,16 +4,16 @@ using System.Diagnostics;
 
 namespace DeathWishCoffee.Controllers
 {
-    public class ProductsController : Controller
+    public class BlogController : Controller
     {
-        private readonly ILogger<ProductsController> _logger;
+        private readonly ILogger<BlogController> _logger;
 
-        public ProductsController(ILogger<ProductsController> logger)
+        public BlogController(ILogger<BlogController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index(string id)
+        public IActionResult Index(int id)
         {
             Console.WriteLine(id);
             return View();
