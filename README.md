@@ -20,56 +20,59 @@
 4. -  not too hard 😗
 5. -  quite hard 😅
 6. -  🙂
+7. -  .....
 
 ### Khoa - 23
 
--  5 Header 😅
+-  6 Header 🙂
 -  3 Footer 😃
 -  2 SignUp 😁
 -  4 RitualRewards 😗
 -  2 Hero 😁
--  5 Carousel 😅
--  1 IconTitle 🤣
+-  1 ContentBanner 🤣
 -  1 Title 🤣
-
-### Lân - 25
-
--  3 Catalogue 😃
--  5 SwipeCarousel 😅
--  3 Shopify 😃
--  2 Subscription 😁
--  4 Features 😗
--  2 TakeQuiz 😁
--  6 Products 🙂
+-  4 Carousel1 😗
 
 ### Quân - 25
 
--  2 SubHeader 😁
--  4 OrderForm 😗
--  5 SocialCarousel 😅
--  4 Subscription 😗
--  4 TiktokModal 😗
--  1 TextTemplate 🤣
--  2 Banner 😁
--  3 IconTemplate 😃
+-  2 ContentBanner 😁
+-  2 Cards 😁
+-  4 Slideshow 😗
+-  3 JoinFollowing 😃
+-  1 BigTitle 🤣
+-  2 CardContent 😁
+-  2 Incentives 😁
+-  4 Features 😗
+
+### Lân - 25
+
+-  7 Products 🤬🤬🤬🤬
+-  1 DirectionHeading 🤣
+-  2 ContentBanner3 😁
+-  4 TiktokCards 😗
+-  4 BlogCarousel 😗
+-  2 ContentBanner4 😁
+-  2 Icons 😁
+-  1 BigTitle2 🤣
 
 ### Kha - 25
 
--  4 TimeLine 😗
--  3 SplitSection 😃
+-  3 SlitContent 😃
+-  4 Timeline 😗
+-  3 Login 😃
+-  3 Register 😃
 -  4 Account 😗
--  4 PostCarousel 😗
--  5 Product 😅
 -  5 ProductDetail 😅
 
 ### Tiến - 23
 
--  5 Review 😅
--  3 Bolt 😃
--  4 Blog 😗
--  3 StartQuiz 😃
--  5 Quiz 😅
--  3 CollectionItem 😃
+-  3 SplitContent2 😃
+-  4 RelatedProducts 😗
+-  5 Reviews 😅
+-  3 SearchResult 😃
+-  1 BlogBanner 🤣
+-  3 BlogContent 😃
+-  2 ContentBanner5 😁
 
 # Trình tự làm việc
 
