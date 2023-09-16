@@ -21,21 +21,19 @@ body {
   margin-bottom: 60px;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 @font-face {
   font-family: 'Fenomen-Sans-Light';
   src: url('~/fonts/Fenomen-Sans-Light.otf') format('opentype');
 }
 @font-face {
-  font-family: 'Fenomen-Sans-SemiBold';
-  src: url('~/fonts/Fenomen-Sans-SemiBold.otf') format('opentype');
-}
-@font-face {
   font-family: 'Fenomen-Sans-Book';
   src: url('~/fonts/Fenomen-Sans-Book.woff') format('opentype');
-}
-@font-face {
-  font-family: 'Fenomen-Sans-SemiBold';
-  src: url('~/fonts/Fenomen-Sans-SemiBold.woff') format('opentype');
 }
 @font-face {
   font-family: 'Fa-Light-300';
