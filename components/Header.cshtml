@@ -1,5 +1,5 @@
 <header class="header">
-   <div class="header-container">
+   <div class="header__container">
       <nav class="navbar">
          <div class="nav-item">
             <a href="#" class="nav-item-link sub-menu-coffee-trigger">Coffee</a>
@@ -11,10 +11,16 @@
             <a href="#" class="nav-item-link sub-menu-merch-trigger">Merch</a>
          </div>
 
-         <div class="icon bar-icon">
+         <div class="nav__icon bar-icon">
             <svg class="menu-icon-svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                <path
                   d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+            </svg>
+         </div>
+         <div class="nav__icon close-icon">
+            <svg class="menu-icon-svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+               <path
+                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
             </svg>
          </div>
       </nav>
@@ -33,7 +39,7 @@
          <div class="nav-item">
             <a href="#" class="nav-item-link">About</a>
          </div>
-         <div class="icons-wrap">
+         <div class="nav__icons-wrap">
             <div class="icon user-icon">
                <svg class="menu-icon-svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                   <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7
@@ -62,6 +68,132 @@
    </div>
    </div>
 </header>
+
+<div class="navside">
+   <div class="navside__body">
+      <div class="navside__container">
+         <div class="navside__item list-menu navside__submenu-coffee__trigger">
+            <span class="navside___item__link" href="/">Coffee</span>
+            <div class="navside__icon ">
+               <svg class="navside__icon__svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                  <path
+                     d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+               </svg>
+            </div>
+         </div>
+         <div class="navside__item list-menu navside__submenu-merch__trigger">
+            <span class="navside___item__link " href="/">Merch</span>
+            <div class="navside__icon">
+               <svg class="navside__icon__svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                  <path
+                     d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+               </svg>
+            </div>
+         </div>
+         <div class="navside__item">
+            <a class="navside___item__link" href="/">Subscribe & Save</a>
+         </div>
+         <div class="navside__item">
+            <a class="navside___item__link" href="/">Find In Store</a>
+         </div>
+         <div class="navside__item">
+            <a class="navside___item__link" href="/">The Void</a>
+         </div>
+         <div class="navside__item">
+            <a class="navside___item__link" href="/">About</a>
+         </div>
+         <div class="navside__item">
+            <a class="navside___item__link" href="/">Help & FAQ</a>
+         </div>
+         <div class="navside__item">
+            <a class="navside___item__link" href="/">Account</a>
+         </div>
+      </div>
+
+      <div class="navside__submenu coffee">
+         <div class="navside__submenu__title navside__submenu-coffee__close-btn">
+            <div class="navside__submenu__icon">
+               <svg class="navside__submenu__icon__svg" xmlns="http://www.w3.org/2000/svg" height="1em"
+                  viewBox="0 0 320 512">
+                  <path
+                     d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+               </svg>
+            </div>
+            <span>Coffee</span>
+         </div>
+
+
+         <div class="navside__submenu__products-wrapper">
+            <div class="navside__submenu__products-item">
+               <a class="navside__submenu__link title" href="/">Brew Format</a>
+               <a class="navside__submenu__link item" href="/">Ground</a>
+               <a class="navside__submenu__link item" href="/">Whole Bean</a>
+               <a class="navside__submenu__link item" href="/">Single-Server Pods</a>
+               <a class="navside__submenu__link item" href="/">Instant</a>
+            </div>
+
+            <div class="navside__submenu__products-item">
+               <a class="navside__submenu__link title" href="/">Everyday Roasts</a>
+               <a class="navside__submenu__link item" href="/">Dark Roast</a>
+               <a class="navside__submenu__link item" href="/">Espressor Roast</a>
+               <a class="navside__submenu__link item" href="/">Medium Roast</a>
+               <a class="navside__submenu__link item" href="/">Valhalla Java Odinforce Blend</a>
+            </div>
+
+            <div class="navside__submenu__products-item">
+               <a class="navside__submenu__link title" href="/">Flavored</a>
+               <a class="navside__submenu__link item" href="/">Blue And Buried</a>
+               <a class="navside__submenu__link item" href="/">Chocolate Hazelnut</a>
+               <a class="navside__submenu__link item" href="/">Pumpkin Chai</a>
+               <a class="navside__submenu__link item" href="/">Vanilla</a>
+            </div>
+
+            <div class="navside__submenu__products-item">
+               <a class="navside__submenu__link title" href="/">Bundles</a>
+               <a class="navside__submenu__link item" href="/">Flavored Variety Packs</a>
+               <a class="navside__submenu__link item" href="/">Roast Variety Packs</a>
+               <a class="navside__submenu__link item" href="/">Coffee & Mug Bundles</a>
+            </div>
+         </div>
+      </div>
+
+      <div class="navside__submenu merch">
+         <div class="navside__submenu__title navside__submenu-merch__close-btn">
+            <div class="navside__submenu__icon">
+               <svg class="navside__submenu__icon__svg" xmlns="http://www.w3.org/2000/svg" height="1em"
+                  viewBox="0 0 320 512">
+                  <path
+                     d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+               </svg>
+            </div>
+            <span>Merch</span>
+         </div>
+
+
+         <div class="navside__submenu__products-wrapper">
+            <div class="navside__submenu__products-item">
+               <a class="navside__submenu__link title" href="/">All Merch</a>
+               <a class="navside__submenu__link item" href="/">Apparel</a>
+               <a class="navside__submenu__link item" href="/">Accessories</a>
+               <a class="navside__submenu__link item" href="/">Mugs</a>
+               <a class="navside__submenu__link item" href="/">On-The-Go Drinkware</a>
+               <a class="navside__submenu__link item" href="/">Storage & Brewing</a>
+               <a class="navside__submenu__link item" href="/">Sale</a>
+            </div>
+
+            <div class="navside__submenu__products-item">
+               <a class="navside__submenu__link title" href="/">Gifting</a>
+               <a class="navside__submenu__link item" href="/">Gift Cards</a>
+               <a class="navside__submenu__link item" href="/">Coffee & Mug Bundles</a>
+               <a class="navside__submenu__link item" href="/">Flavored Variety Packs</a>
+               <a class="navside__submenu__link item" href="/">Roast Variety Packs</a>
+            </div>
+         </div>
+      </div>
+
+   </div>
+</div>
+
 
 <div class="sub-menu coffee">
    <div class="sub-menu-container">

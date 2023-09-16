@@ -99,3 +99,115 @@ subMenuMerchTrigger.onmouseover = () => {
 subMenuMerch.onmouseleave = () => {
    hideSubMenuMerch()
 }
+
+// navside
+const navBarIcon = document.querySelector('.nav__icon.bar-icon')
+const navCloseIcon = document.querySelector('.nav__icon.close-icon')
+const navside = document.querySelector('.navside')
+const navsideBody = document.querySelector('.navside__body')
+let openingNavside = false
+
+const showNavside = () => {
+   navBarIcon.style.display = 'none'
+   navCloseIcon.style.display = 'block'
+
+   navside.style.display = 'block'
+   navsideBody.style.display = 'block'
+
+   setTimeout(() => {
+      navside.style.opacity = 1
+
+      navsideBody.style.opacity = 1
+      navsideBody.style.left = 0
+   }, 0)
+}
+
+const hideNavside = () => {
+   navBarIcon.style.display = 'block'
+   navCloseIcon.style.display = 'none'
+
+   navside.style.opacity = 0
+   navsideBody.style.opacity = 0
+   navsideBody.style.left = '-101%'
+
+   setTimeout(() => {
+      navsideBody.style.display = 'none'
+      navside.style.display = 'none'
+   }, 510) // transition 0.5s
+}
+
+navBarIcon.onclick = () => {
+   if (!openingNavside) {
+      showNavside()
+
+      openingNavside = true
+      setTimeout(() => {
+         openingNavside = false
+      }, 510)
+   }
+}
+
+navCloseIcon.onclick = () => {
+   if (!openingNavside) {
+      hideNavside()
+
+      openingNavside = true
+      setTimeout(() => {
+         openingNavside = false
+      }, 510)
+   }
+}
+
+// navside submenu coffee
+const navsideSubmenuCoffeeTrigger = document.querySelector('.navside__submenu-coffee__trigger')
+const navsideSubmenuCoffeeCloseBtn = document.querySelector('.navside__submenu-coffee__close-btn')
+const navsideSubmenuCoffee = document.querySelector('.navside__submenu.coffee')
+
+const showNavsideSubmenuCoffee = () => {
+   navsideSubmenuCoffee.style.display = 'flex'
+   setTimeout(() => {
+      navsideSubmenuCoffee.style.right = 0
+   }, 0)
+}
+
+const hideNavsideSubmenuCoffee = () => {
+   navsideSubmenuCoffee.style.right = '-101%'
+   setTimeout(() => {
+      navsideSubmenuCoffee.style.display = 'none'
+   }, 310) // transition: 0.3s
+}
+
+navsideSubmenuCoffeeTrigger.onclick = () => {
+   showNavsideSubmenuCoffee()
+}
+
+navsideSubmenuCoffeeCloseBtn.onclick = () => {
+   hideNavsideSubmenuCoffee()
+}
+
+// navside submenu merch
+const navsideSubmenuMerchTrigger = document.querySelector('.navside__submenu-merch__trigger')
+const navsideSubmenuMerchCloseBtn = document.querySelector('.navside__submenu-merch__close-btn')
+const navsideSubmenuMerch = document.querySelector('.navside__submenu.merch')
+
+const showNavsideSubmenuMerch = () => {
+   navsideSubmenuMerch.style.display = 'flex'
+   setTimeout(() => {
+      navsideSubmenuMerch.style.right = 0
+   }, 0)
+}
+
+const hideNavsideSubmenuMerch = () => {
+   navsideSubmenuMerch.style.right = '-101%'
+   setTimeout(() => {
+      navsideSubmenuMerch.style.display = 'none'
+   }, 310) // transition: 0.3s
+}
+
+navsideSubmenuMerchTrigger.onclick = () => {
+   showNavsideSubmenuMerch()
+}
+
+navsideSubmenuMerchCloseBtn.onclick = () => {
+   hideNavsideSubmenuMerch()
+}
