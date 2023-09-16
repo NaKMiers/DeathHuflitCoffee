@@ -1,0 +1,28 @@
+.title {
+   width: 100%;
+   padding: 0 50px;
+   /* background: #ccc; */
+}
+
+.title h2 {
+   width: 100%;
+   max-width: 780px;
+   margin: 0 auto;
+
+   font-size: 34px;
+   font-weight: 700;
+   line-height: 34px;
+   text-align: center;
+   text-transform: uppercase;
+   color: #fff;
+
+   /* background: beige; */
+}
+
+@media (max-width: 990px) {
+   .title h2 {
+      max-width: 500px;
+      font-size: 28px;
+      line-height: 28px;
+   }
+}
