@@ -1,0 +1,373 @@
+.ritual-rewards {
+   position: fixed;
+   bottom: 10px;
+   left: 10px;
+   z-index: 1;
+
+   display: flex;
+   align-items: center;
+   height: 60px;
+   width: 186px;
+   padding: 15px 20px;
+   border-radius: 30px;
+   cursor: pointer;
+   user-select: none;
+   overflow: hidden;
+
+   background: #e12727;
+   
+   transition: 0.2s ease-in-out;
+}
+
+.ritual-rewards.active {
+   border-radius: 30px;
+   height: 60px;
+   width: 60px;
+}
+
+.ritual-rewards.active .ritual-rewards__logo, .ritual-rewards.active .ritual-rewards__text {
+   display: none;
+}
+
+.ritual-rewards.active .ritual-rewards__icon {
+   display: block;
+}
+
+.ritual-rewards__logo {
+   width: 30px;
+   height: 30px;
+}
+
+.ritual-rewards__logo img {
+   display: block;
+   width: 100%;
+   height: 100%;
+
+   object-fit: cover;
+   object-position: center;
+}
+
+.ritual-rewards__text {
+   margin-left: 12px;
+
+   font-size: 16px;
+   line-height: 30px;
+   white-space: nowrap;
+   color: #fff;
+}
+
+.ritual-rewards__icon {
+   display: none;
+   width: 26px;
+   height: 26px;
+   overflow: hidden;
+}
+
+.ritual-rewards__icon__svg {
+   fill: #fff;
+   width: 100%;
+   height: 100%;
+
+   object-fit: contain;
+   object-position: center;
+}
+
+/* panel */
+.ritual-rewards__panel {
+   position: fixed;
+   left: 10px;
+   bottom: 90px;
+   z-index: 1;
+   overflow: hidden;
+
+   width: 360px;
+   height: 600px;
+   border-radius: 8px;
+
+   /* background: url("../../images/ritual-rewards__background.png") no-repeat center / cover; */
+   background: #111;
+
+   display: none;
+   opacity: 0;
+   transition: 0.5s ease-in-out;
+
+   /* show */
+   /* display: block;
+   opacity: 1; */
+}
+
+.ritual-rewards__close-panel-btn {
+   position: absolute;
+   top: 14px;
+   right: 8px;
+   cursor: pointer;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 32px;
+   height: 32px;
+   border-radius: 4px;
+
+   transition: 0.2s ease-in-out;
+}
+
+.ritual-rewards__close-panel-btn:hover {
+   background: #ffffff14;
+}
+
+.ritual-rewards__close-panel-btn__svg {
+   fill: #fff;
+   height: 16px;
+   width: 16px;
+}
+
+.ritual-rewards__panel__banner {
+   height: 200px;
+   padding: 24px 24px 0px 24px;
+
+   background: url("../../images/ritual-rewards__banner.png") no-repeat center / cover ;
+}
+
+.ritual-rewards__panel__banner__content {
+   color: #fff;
+   /* background: #000; */
+}
+
+.ritual-rewards__panel__banner__content__logo {
+   width: 36px;
+   height: 36px;
+   margin-bottom: 12px;
+}
+
+.ritual-rewards__panel__banner__content__logo img {
+   display: block;
+   width: 100%;
+   height: 100%;
+
+   object-fit: cover;
+   object-position: center;
+}
+
+.ritual-rewards__panel__banner__content__heading-secondary {
+   font-size: 15px;
+   line-height: 19px;
+   margin-bottom: 8;
+}
+
+.ritual-rewards__panel__banner__content__heading-primary {
+   font-size: 26px;
+   font-weight: 700;
+   text-transform: uppercase;
+   line-height: 39px;
+}
+
+.ritual-rewards__panel__container {
+   display: flex;
+   flex-direction: column;
+   padding: 0 20px;
+
+   height: 400px;
+   margin-top: -40px;
+
+   overflow-y: scroll;
+}
+
+.ritual-rewards__panel__container::-webkit-scrollbar {
+   display: none;
+}
+
+.ritual-rewards__panel__card {
+   padding: 16px 12px;
+   margin-bottom: 12px;
+   border-radius: 6px;
+   background: #242426;
+
+   color: #fff;
+}
+
+.ritual-rewards__panel__card__point {
+   padding: 8px 0 8px 12px;
+   margin-bottom: 8px;
+
+   font-size:  14px;
+   font-weight: 500;
+   line-height: 21px;
+}
+
+.ritual-rewards__panel__card__text {
+   padding: 0 0 0 12px;
+   margin-bottom: 8px;
+
+   font-size: 14px;
+   font-weight: 500;
+   line-height: 21px;
+   color: #afafb3;
+}
+
+.ritual-rewards__panel__card__list-item {
+   position: relative;
+   display: flex;
+   align-items: center;
+   padding: 8px 12px;
+   margin-bottom: 16px;
+
+   transition: 0.2s ease-in-out;
+   cursor: pointer;
+}
+
+.ritual-rewards__panel__card__list-item.list:hover {
+   background: #2c2c2e;
+}
+
+.ritual-rewards__panel__card__list-item.list:hover .ritual-rewards__panel__card__list-item__icon__svg {
+   fill: #fff;
+}
+
+.ritual-rewards__panel__card__list-item.list::after {
+   content: '';
+   position: absolute;
+   left: -12px;
+   top: -8px;
+
+   width: calc(100% + 2*12px);
+   height: 1px;
+   background: #1c1c1c;
+}
+
+.ritual-rewards__panel__card__list-item__image {
+   width: 40px;
+   height: 40px;
+   padding: 4px;
+   margin-right: 12px;
+}
+
+.ritual-rewards__panel__card__list-item__image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center;
+}
+
+.ritual-rewards__panel__card__list-item__title {
+   display: flex;
+   flex-direction: column;
+}
+
+.ritual-rewards__panel__card__list-item__title span:nth-of-type(1) {
+   font-size: 14px;
+}
+
+.ritual-rewards__panel__card__list-item__title span:nth-of-type(2) {
+   font-size: 14px;
+   color: #afafb3;
+}
+
+.ritual-rewards__panel__card__list-item__icon {
+   margin-left: auto;
+}
+
+.ritual-rewards__panel__card__list-item__icon__svg {
+   fill: #afafb3;
+   height: 12px;
+   transition: 0.2s ease-in-out;
+}
+
+.ritual-rewards__panel__card__description {
+   padding: 0 8px;
+   margin-bottom: 20px;
+
+   font-size: 14px;
+   line-height: 21px;
+}
+
+.ritual-rewards__panel__card__text-box-wrapper {
+   position: relative;
+   padding: 0 8px;
+   margin-bottom: 16px;
+
+   /* background: beige; */
+}
+
+.ritual-rewards__panel__card__text-box__output {
+   width: 100%;
+   padding: 12px 44px 12px 20px;
+   border: 1px solid #afafb3;
+   border-radius: 4px;
+   line-height: 20px;
+   
+   overflow-x: scroll;
+   color: #afafb3;
+   white-space: nowrap;
+   background: none;
+   outline: none;
+}
+
+.ritual-rewards__panel__card__text-box__output::-webkit-scrollbar {
+   display: none;
+}
+
+.ritual-rewards__panel__card__text-box__copy-icon {
+   position: absolute;
+   top: 50%;
+   right: 10px;
+   transform: translateY(-50%);
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 40px;
+   height: 40px;
+   border-radius: 4px;
+   transition: 0.2s ease-in-out;
+   cursor: pointer;
+}
+
+.ritual-rewards__panel__card__text-box__copy-icon:hover {
+   background: #afafb330;
+}
+
+.ritual-rewards__panel__card__text-box__copy-icon:hover .ritual-rewards__panel__card__text-box__copy-icon__svg {
+   fill: #fff;
+}
+
+.ritual-rewards__panel__card__text-box__copy-icon__svg {
+   fill: #afafb3;
+   height: 20px;
+   transition: 0.2s ease-in-out;
+}
+
+.ritual-rewards__panel__card__sharing-options-wrapper {
+   display: flex;
+   justify-content: space-between;
+   padding: 0 12px;
+   margin-bottom: 8px;
+}
+
+.ritual-rewards__panel__card__sharing-options-item {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   width: 74px;
+   height: 74px;
+   padding: 8px;
+}
+
+.ritual-rewards__panel__card__sharing-options-item__icon {
+   width: 30px;
+   height: 30px;
+   margin: 0 14px 8px;
+   text-align: center;
+}
+
+.ritual-rewards__panel__card__sharing-options-item__icon svg {
+   height: 90%;
+   fill: #fff;
+}
+
+.ritual-rewards__panel__card__sharing-options-item__text {
+   font-size: 13px;
+   font-weight: 500;
+   line-height: 20px;
+}
