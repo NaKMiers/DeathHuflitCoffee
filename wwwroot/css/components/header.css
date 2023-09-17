@@ -1,7 +1,7 @@
 .header {
    position: fixed;
    width: 100%;
-   z-index: 1;
+   z-index: 3;
    background: #000;
 }
 
@@ -154,6 +154,8 @@
    left: 0;
    right: 0;
    bottom: 0;
+   z-index: 3;
+
 
    background: rgba(255, 255, 255, 0.7);
    display: none;
@@ -173,7 +175,7 @@
    max-width: 400px;
    height: 100%;
 
-   padding: 32px 16px;
+   padding: 32px 16px 32px 16px;
    background: #000;
    
    /* display: none; */
@@ -352,6 +354,8 @@
    position: fixed;
    top: 104px;
    left: 0;
+   z-index: 2;
+
    width: 100%;
    padding: 60px 0;
    
@@ -454,7 +458,7 @@
    left: 0;
    right: 0;
    bottom: 0;
-   z-index: 1;
+   z-index: 3;
 
    display: none;
    opacity: 0;
