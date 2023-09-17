@@ -23,6 +23,34 @@
       </svg>
    </div>
 
+   <div class="ritual-rewards__panel__header">
+      <div class="ritual-rewards__panel__header__logo">
+         <img src="~/images/lightning-logo.png" alt="logo">
+      </div>
+
+      <div class="ritual-rewards__panel__header__back-icon">
+         <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+            <path
+               d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+         </svg>
+      </div>
+
+      <div class="ritual-rewards__panel__header__text">
+         <span>
+            0 Points
+         </span>
+         <span>1st Degree</span>
+      </div>
+
+      <div class="ritual-rewards__close-panel-btn sub">
+         <svg class="ritual-rewards__close-panel-btn__svg" xmlns="http://www.w3.org/2000/svg" height="1em"
+            viewBox="0 0 384 512">
+            <path
+               d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+         </svg>
+      </div>
+   </div>
+
    <div class="ritual-rewards__panel__banner">
       <div class="ritual-rewards__panel__banner__content">
          <div class="ritual-rewards__panel__banner__content__logo">
@@ -32,6 +60,8 @@
          <h3 class="ritual-rewards__panel__banner__content__heading-secondary">Welcome to</h3>
          <h2 class="ritual-rewards__panel__banner__content__heading-primary">Ritual Rewards</h2>
       </div>
+
+      <div class="ritual-rewards__panel__banner__overlay"></div>
    </div>
 
    <div class="ritual-rewards__panel__container">
@@ -49,7 +79,7 @@
             </div>
          </div>
 
-         <div class="ritual-rewards__panel__card__list-item list">
+         <div class="ritual-rewards__panel__card__list-item list way-to-earn-trigger">
             <div class="ritual-rewards__panel__card__list-item__image">
                <img src="~/images/earn-more-points.svg" alt="">
             </div>
@@ -65,7 +95,7 @@
             </div>
          </div>
 
-         <div class="ritual-rewards__panel__card__list-item list">
+         <div class="ritual-rewards__panel__card__list-item list way-to-redeem-trigger">
             <div class="ritual-rewards__panel__card__list-item__image">
                <img src="~/images/spend-your-points.svg" alt="">
             </div>
@@ -196,6 +226,184 @@
                      d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
                </svg>
             </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="ritual-rewards__sub-panel way-to-earn">
+      <div class="ritual-rewards__sub-panel__heading">
+         Ways to earn
+      </div>
+
+      <div class="ritual-rewards__sub-panel__list-item">
+         <div class="ritual-rewards__sub-panel__list-item__image">
+            <img src="~/images/order-online.svg" alt="image">
+         </div>
+
+         <div class="ritual-rewards__sub-panel__list-item__content">
+            <span class="ritual-rewards__sub-panel__list-item__title">
+               Place an order
+            </span>
+
+            <span class="ritual-rewards__sub-panel__list-item__subtitle">
+               1 Point for every$1 spent
+            </span>
+         </div>
+      </div>
+
+      <div class="ritual-rewards__sub-panel__list-item">
+         <div class="ritual-rewards__sub-panel__list-item__image">
+            <img src="~/images/custom.svg" alt="image">
+         </div>
+
+         <div class="ritual-rewards__sub-panel__list-item__content">
+            <span class="ritual-rewards__sub-panel__list-item__title">
+               Added Gift Card
+            </span>
+
+            <span class="ritual-rewards__sub-panel__list-item__subtitle">
+               1 Point
+            </span>
+         </div>
+      </div>
+
+      <div class="ritual-rewards__sub-panel__list-item">
+         <div class="ritual-rewards__sub-panel__list-item__image">
+            <img src="~/images/custom.svg" alt="image">
+         </div>
+
+         <div class="ritual-rewards__sub-panel__list-item__content">
+            <span class="ritual-rewards__sub-panel__list-item__title">
+               Leave Product Review
+            </span>
+
+            <span class="ritual-rewards__sub-panel__list-item__subtitle">
+               50 Points
+            </span>
+         </div>
+      </div>
+
+      <div class="ritual-rewards__sub-panel__list-item">
+         <div class="ritual-rewards__sub-panel__list-item__image">
+            <img src="~/images/facebook-like.svg" alt="image">
+         </div>
+
+         <div class="ritual-rewards__sub-panel__list-item__content">
+            <span class="ritual-rewards__sub-panel__list-item__title">
+               Like on Facebook
+            </span>
+
+            <span class="ritual-rewards__sub-panel__list-item__subtitle">
+               50 Points
+            </span>
+         </div>
+
+         <button class="ritual-rewards__sub-panel__list-item__btn">Like</button>
+      </div>
+
+      <div class="ritual-rewards__sub-panel__list-item">
+         <div class="ritual-rewards__sub-panel__list-item__image">
+            <img src="~/images/twitter-follow.svg" alt="image">
+         </div>
+
+         <div class="ritual-rewards__sub-panel__list-item__content">
+            <span class="ritual-rewards__sub-panel__list-item__title">
+               Follow on Twitter
+            </span>
+
+            <span class="ritual-rewards__sub-panel__list-item__subtitle">
+               50 Points
+            </span>
+         </div>
+
+         <button class="ritual-rewards__sub-panel__list-item__btn">Like</button>
+      </div>
+
+      <div class="ritual-rewards__sub-panel__list-item">
+         <div class="ritual-rewards__sub-panel__list-item__image">
+            <img src="~/images/instagram-follow.svg" alt="image">
+         </div>
+
+         <div class="ritual-rewards__sub-panel__list-item__content">
+            <span class="ritual-rewards__sub-panel__list-item__title">
+               Follow on Instagram
+            </span>
+
+            <span class="ritual-rewards__sub-panel__list-item__subtitle">
+               50 Points
+            </span>
+         </div>
+
+         <button class="ritual-rewards__sub-panel__list-item__btn">Like</button>
+      </div>
+   </div>
+
+   <div class="ritual-rewards__sub-panel way-to-redeem">
+      <div class="ritual-rewards__sub-panel__heading">
+         Ways to redeem
+      </div>
+
+      <div class="ritual-rewards__sub-panel__list-item">
+         <div class="ritual-rewards__sub-panel__list-item__image">
+            <img src="~/images/fixed-amount.svg" alt="image">
+         </div>
+
+         <div class="ritual-rewards__sub-panel__list-item__content">
+            <span class="ritual-rewards__sub-panel__list-item__title">
+               Free Coffee
+            </span>
+
+            <span class="ritual-rewards__sub-panel__list-item__subtitle">
+               400 Points
+            </span>
+         </div>
+      </div>
+
+      <div class="ritual-rewards__sub-panel__list-item">
+         <div class="ritual-rewards__sub-panel__list-item__image">
+            <img src="~/images/fixed-amount.svg" alt="image">
+         </div>
+
+         <div class="ritual-rewards__sub-panel__list-item__content">
+            <span class="ritual-rewards__sub-panel__list-item__title">
+               Free Hat
+            </span>
+
+            <span class="ritual-rewards__sub-panel__list-item__subtitle">
+               1500 Points
+            </span>
+         </div>
+      </div>
+
+      <div class="ritual-rewards__sub-panel__list-item">
+         <div class="ritual-rewards__sub-panel__list-item__image">
+            <img src="~/images/fixed-amount.svg" alt="image">
+         </div>
+
+         <div class="ritual-rewards__sub-panel__list-item__content">
+            <span class="ritual-rewards__sub-panel__list-item__title">
+               Free Tee
+            </span>
+
+            <span class="ritual-rewards__sub-panel__list-item__subtitle">
+               1800 Points
+            </span>
+         </div>
+      </div>
+
+      <div class="ritual-rewards__sub-panel__list-item">
+         <div class="ritual-rewards__sub-panel__list-item__image">
+            <img src="~/images/fixed-amount.svg" alt="image">
+         </div>
+
+         <div class="ritual-rewards__sub-panel__list-item__content">
+            <span class="ritual-rewards__sub-panel__list-item__title">
+               Free Mug
+            </span>
+
+            <span class="ritual-rewards__sub-panel__list-item__subtitle">
+               2500 Points
+            </span>
          </div>
       </div>
    </div>
