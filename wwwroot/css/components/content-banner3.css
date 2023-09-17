@@ -1,0 +1,26 @@
+
+section
+{
+    position: relative;
+    text-align: center;
+    top: 100px;
+    max-width: 100%;
+}
+.banner__content
+{
+
+    position: absolute;
+    right: 68%;
+    top:70%;
+    box-sizing: border-box;
+}
+.banner__text
+{
+    position: relative;
+    left: 29%;
+}
+.banner__heading
+{
+    font-weight: bold;
+    font-family:Georgia;
+}
