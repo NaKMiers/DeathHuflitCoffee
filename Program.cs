@@ -64,6 +64,13 @@ app.UseEndpoints(endpoints =>
         defaults: new { controller = "TheVoid", action = "Index" }
     );
 
+    // [/about]
+    app.MapControllerRoute(
+        name: "About",
+        pattern: "about",
+        defaults: new { controller = "About", action = "Index" }
+    );
+
     // [/account]
     app.MapControllerRoute(
         name: "Account",
