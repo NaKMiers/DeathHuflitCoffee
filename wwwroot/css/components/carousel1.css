@@ -3,7 +3,7 @@
    z-index: 1;
    padding: 36px 75px;
 
-   background: aquamarine;
+   /* background: aquamarine; */
 }
 
 .carousel1__slide-btn {
@@ -42,11 +42,9 @@
 .carousel1__container {
    display: flex;
    width: 100%;
-   gap: 21px;
-   padding: 0 16px;
-   background: blue;
+   /* background: blue; */
    overflow-x: scroll;
-
+   scroll-snap-type: x mandatory;
    transition: 0.2s ease-in-out;
 }
 
@@ -56,9 +54,12 @@
 
 .carousel1__item {
    flex-shrink: 0;
-   width: 26%;
+   width: 28%;
+   padding: 6px 10px;
    color: #fff;
-   margin: 5px 0;
+
+   scroll-snap-align: start;
+
 }
 
 .carousel1__item__image {
@@ -86,13 +87,14 @@
 .carousel1__item__information {
    padding: 17px 0;
 
-   background: blueviolet;
+   /* background: blueviolet; */
 }
 
 .carousel1__item__information__title {
    display: block;
-   font-size: 16px;
-   font-weight: 700;
+   font-size: 14px;
+   font-weight: 800;
+   letter-spacing: 0.05em;
    line-height: 21px;
    text-transform: uppercase;
 
@@ -116,6 +118,7 @@
 
 .carousel1__item__information__rating {
    display: flex;
+   flex-wrap: wrap;
    align-items: center;
 
    background: #000;

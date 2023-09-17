@@ -23,14 +23,22 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
-}
-
 a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+}
+
+.container {
+  min-width: 100%;
+  padding: 104px 0 0 0;
+}
+
+/* tablet */
+@media (max-width: 990px) {
+  .container {
+    padding-top: 99px; 
+  }
 }
 
 @font-face {
