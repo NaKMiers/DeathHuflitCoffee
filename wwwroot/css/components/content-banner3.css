@@ -1,23 +1,17 @@
-
-section
+.banner__media
 {
-    position: relative;
-    text-align: center;
-    top: 100px;
-    max-width: 100%;
+    overflow: hidden;
+    width: 100%;
+     height: 100%;
+     object-fit: cover;
+     object-position: center;
+      
 }
 .banner__content
 {
-
     position: absolute;
-    right: 68%;
-    top:70%;
-    box-sizing: border-box;
-}
-.banner__text
-{
-    position: relative;
-    left: 29%;
+    right: 60%;
+    top:42%;
 }
 .banner__heading
 {
