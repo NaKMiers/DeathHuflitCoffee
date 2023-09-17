@@ -19,7 +19,7 @@ section
     position: relative;
     left: 29%;
 }
-h2
+.banner__heading
 {
     font-weight: bold;
     font-family:Georgia;
