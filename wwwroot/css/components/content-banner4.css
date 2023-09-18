@@ -17,6 +17,27 @@
     top:0;
     margin: 0 auto;
 }
+@media only screen and (max-width: 600px) 
+    {
+        .content-banner4__heading
+        {
+        font-size: 30px;
+        }
+    }
+@media only screen and (min-width: 600px) 
+    {
+        .content-banner4__heading
+        {
+        font-size: 50px;
+        }
+    }
+    @media only screen and (min-width: 1024px) 
+    {
+        .content-banner4__heading
+        {
+        font-size: 78px;
+        }
+    }
 .content-banner4__heading
 {
     width: 55%;
