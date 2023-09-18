@@ -1,0 +1,30 @@
+#content-banner4_template.content-banner4_content.content-banner4_content
+{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+     height: 100%;
+     object-fit: cover;
+     object-position: center;
+     text-align: center;
+      
+}
+.content-banner4_box
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    margin: 0 auto;
+}
+.content-banner4__heading
+{
+    width: 55%;
+    position:absolute;
+    font-weight: bold;
+    font-weight: 900;
+    font-family: Revans-Bold;
+    top:53%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
