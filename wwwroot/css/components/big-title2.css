@@ -6,6 +6,7 @@
    flex-direction: column;
    align-items: center;
    padding: 100px 0;
+   background-color: #000;
 }
 
 .BigTitle2__title {
@@ -36,4 +37,8 @@
    .BigTitle2__suptitle {
       max-width: 500px;
    }
+}
+#BigTitle2_Box.BigTitle2 {
+   background-color: #201e1d;
+   padding: 100px 0px 25px;
 }
