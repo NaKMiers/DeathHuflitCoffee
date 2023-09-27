@@ -1,5 +1,235 @@
-.lkasdlkasjd {
-   color: green;
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+.DirectionHeding__form-all {
+   background-color: #fff;
+}
+.form_inner_liner {
+   display: flex;
+   justify-content: center;
+   flex-flow: row nowrap;
+   text-align: left;
+   box-sizing: border-box;
+   max-width: 1200px;
+   margin: auto;
+   width: 90%;
+   background-color: #fff;
+}
+.form_wrapper {
+   width: 50%;
+   padding: 100px 0 0;
+   flex-direction: column;
+   margin: 0;
+   text-align: left;
+}
+.form_input_heading {
+   box-sizing: border-box;
+   margin: 0px;
+   padding-bottom: 15px;
+   max-width: 500px;
+   font-family: "FenomenSans-Regular", sans-serif;
+   font-size: 15px;
+   font-weight: 600;
+   text-transform: uppercase;
+   color: #1c1d1d;
+}
+label {
+   width: 100%;
+}
+.row {
+   --bs-gutter-x: none;
+   --bs-gutter-y: 0;
+}
+div.cell {
+   position: relative;
+   margin: 0px;
+   padding: 0px;
+   height: 55px;
+}
+.row3 div.cell {
+   position: relative;
+   height: 105px;
+}
+.contactinfo .row1 .cell {
+   width: 50%;
+   margin: 0 auto;
+}
+div.row.row1 {
+   gap: 11px;
+   flex-wrap: nowrap;
+}
+.contactinfo .row1 {
+   width: 98%;
+   margin: 0;
+}
+.panel_4_crf_name,
+.panel_4_crf_zip,
+.panel_4_crf_email,
+.panel_4_crf_storearea,
+.panel_4_crf_commentarea {
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: #f6f6f6;
+   width: 100%;
+   height: 45px;
+   border-radius: 0;
+   border: 0;
+   appearance: none;
+   margin-bottom: 10px;
+   outline: 0;
+   width: 100%;
+   box-shadow: inset 0 0 0 1px #f6f6f6;
+}
+.panel_4_crf_name,
+.panel_4_crf_zip,
+.panel_4_crf_email {
+   padding: 0px 15px;
+   margin: 0px 0px 10px;
+}
+.panel_4_crf_storearea,
+.panel_4_crf_commentarea {
+   padding: 10px;
+   height: 95px;
+}
+.form_product_selection {
+   width: 50%;
+   padding: 100px 0 0;
+}
+.form_product_list_container {
+   margin: 0 auto 0 10%;
+   width: 90%;
+}
+.form_product_list {
+   overflow-y: auto;
+   background-color: transparent;
+   max-width: 500px;
+   box-shadow: inset 0 0px 0px 1px #1c1d1d;
+   padding: 17px 20px;
+   box-sizing: border-box;
+   max-height: 309px;
+   overflow-y: scroll;
+}
+::-webkit-scrollbar {
+   width: 5px;
+}
+::-webkit-scrollbar-thumb {
+   background-color: #363737;
+}
+.panel_4_crf_category_name,
+.panel_5_rtr_category_name {
+   padding: 16px 0 10px;
+   text-align: left;
+   font-family: "FenomenSans-Regular", sans-serif;
+   font-size: 16px;
+   color: #1c1d1d;
+   font-weight: 600;
+}
+.panel_4_crf_product_name {
+   position: relative;
+   padding: 0 0 8px 25px;
+   text-align: left;
+   line-height: 20px;
+   font-family: "FenomenSans-Light", sans-serif;
+   font-size: 16px;
+   color: #1c1d1d;
+}
+.panel_4_crf_product_name::before {
+   font-size: 15px;
+   display: inline-block;
+   vertical-align: top;
+   width: 24px;
+   position: absolute;
+   left: 1px;
+}
+.panel_4_crf_product_name:after {
+   border-radius: 2px;
+   border: 1px solid #4d4d4d;
+   position: absolute;
+   height: 13px;
+   color: white;
+   width: 13px;
+   line-height: 13px;
+   left: 0;
+   top: 3px;
+   background: transparent;
+   content: "";
+}
 
-   background: #000;
+.panel_4_crf_product_name.active::before {
+   content: "✔";
+   border-radius: 2px;
+   border: 1px solid #4d4d4d;
+   position: absolute;
+   height: 13px;
+   color: white;
+   width: 13px;
+   line-height: 15.5px;
+   left: 0;
+   background: #4d4d4d;
+   font-size: 14px;
+   text-align: center;
+   top: 3px;
+}
+
+.panel_4_crf_product_name.active::after {
+   display: block;
+}
+@media (max-width: 991px) {
+   div.row.row1 {
+      gap: 9px;
+   }
+}
+@media (max-width: 769px) {
+   .form_inner_liner {
+      max-width: none;
+      width: 100%;
+      margin: auto;
+      padding-bottom: 0;
+      flex-flow: column;
+   }
+   .form_liner {
+      width: 90%;
+      margin: auto;
+   }
+   div.row.row1 {
+      flex-wrap: wrap;
+   }
+   .contactinfo .row1 {
+      width: 100%;
+      margin: 0;
+   }
+   .contactinfo .row1 .cell {
+      width: 100%;
+      margin: 0 auto;
+   }
+   .form_wrapper {
+      width: 100%;
+      padding: 27px 0 20px;
+      background-color: #fff;
+      flex-direction: column;
+   }
+   .form_product_selection {
+      width: 100%;
+      float: none;
+      padding: 0 0 10px;
+      box-shadow: none;
+   }
+   .form_product_list_container {
+      margin: auto;
+      width: 90%;
+   }
+   .form_product_list {
+      max-width: unset;
+      max-height: unset;
+      height: auto;
+      overflow: hidden;
+      box-shadow: none;
+      padding: 0;
+   }
+   ::-webkit-scrollbar-thumb {
+      background-color: none;
+   }
 }
