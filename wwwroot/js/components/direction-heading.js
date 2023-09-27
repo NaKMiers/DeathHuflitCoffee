@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll(".panel_4_crf_product_name");
+const buttons = document.querySelectorAll(".DirectionHeding__panel-4-crf-product-name");
 
 buttons.forEach(button => {
    button.addEventListener("click", function () {
