@@ -394,3 +394,8 @@ textarea {
       height: 270px;
    }
 }
+@media (min-width: 991px) {
+   #DirectionHeding__panel4BackButton {
+      left: 100px;
+   }
+}
