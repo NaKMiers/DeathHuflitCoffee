@@ -1,213 +1,213 @@
 // cart-modal
-const cartTrigger = document.querySelector('.cart-trigger')
-const cardModal = document.querySelector('.cart-modal')
-const cartModalContainer = document.querySelector('.cart-modal__container')
-const closeCartModalBtn = document.querySelector('.cart-modal__close-btn')
+const cartTrigger = document.querySelector(".cart-trigger");
+const cardModal = document.querySelector(".cart-modal");
+const cartModalContainer = document.querySelector(".cart-modal__container");
+const closeCartModalBtn = document.querySelector(".cart-modal__close-btn");
 
 const showCart = () => {
-   cartTrigger.classList.add('show')
-   cardModal.style.display = 'block'
+   cartTrigger.classList.add("show");
+   cardModal.style.display = "block";
    setTimeout(() => {
-      cardModal.style.opacity = 1
-      cartModalContainer.style.transform = 'translateX(0)'
-      cartModalContainer.style.opacity = 1
-   }, 0)
-}
+      cardModal.style.opacity = 1;
+      cartModalContainer.style.transform = "translateX(0)";
+      cartModalContainer.style.opacity = 1;
+   }, 0);
+};
 
 const hideCart = () => {
-   cardModal.style.opacity = 0
-   cartModalContainer.style.transform = 'translateX(101%)'
-   cartModalContainer.style.opacity = 0
-   cartTrigger.classList.remove('show')
+   cardModal.style.opacity = 0;
+   cartModalContainer.style.transform = "translateX(101%)";
+   cartModalContainer.style.opacity = 0;
+   cartTrigger.classList.remove("show");
    setTimeout(() => {
-      cardModal.style.display = 'none'
-   }, 510) // transition: 0.5s
-}
+      cardModal.style.display = "none";
+   }, 510); // transition: 0.5s
+};
 
 cartTrigger.onclick = () => {
-   !cartTrigger.className.includes('show') ? showCart() : hideCart()
-}
+   !cartTrigger.className.includes("show") ? showCart() : hideCart();
+};
 
 closeCartModalBtn.onclick = () => {
-   hideCart()
-}
+   hideCart();
+};
 
 cardModal.onclick = e => {
    if (cartModalContainer && !cartModalContainer.contains(e.target)) {
-      hideCart()
+      hideCart();
    }
-}
+};
 
 // sub-menu coffee
-const subMenuCoffeeTrigger = document.querySelector('.sub-menu-coffee-trigger')
-const subMenuCoffee = document.querySelector('.sub-menu.coffee')
+const subMenuCoffeeTrigger = document.querySelector(".sub-menu-coffee-trigger");
+const subMenuCoffee = document.querySelector(".sub-menu.coffee");
 
 const showSubMenuCoffee = () => {
-   subMenuCoffee.style.display = 'block'
+   subMenuCoffee.style.display = "block";
    setTimeout(() => {
-      subMenuCoffee.style.opacity = 1
-      subMenuCoffee.style.transform = 'translateY(0)'
-   }, 0)
-}
+      subMenuCoffee.style.opacity = 1;
+      subMenuCoffee.style.transform = "translateY(0)";
+   }, 0);
+};
 
 const hideSubMenuCoffee = () => {
-   subMenuCoffee.style.opacity = 0
-   subMenuCoffee.style.transform = 'translateY(-101%)'
+   subMenuCoffee.style.opacity = 0;
+   subMenuCoffee.style.transform = "translateY(-101%)";
    setTimeout(() => {
-      subMenuCoffee.style.display = 'none'
-   }, 510) // transition: 0.5s
-}
+      subMenuCoffee.style.display = "none";
+   }, 510); // transition: 0.5s
+};
 
 subMenuCoffeeTrigger.onmouseover = () => {
-   showSubMenuCoffee()
+   showSubMenuCoffee();
 
    // hideSubMenuMerch
-   hideSubMenuMerch()
-}
+   hideSubMenuMerch();
+};
 
 subMenuCoffee.onmouseleave = () => {
-   hideSubMenuCoffee()
-}
+   hideSubMenuCoffee();
+};
 
 // sub-menu merch
-const subMenuMerchTrigger = document.querySelector('.sub-menu-merch-trigger')
-const subMenuMerch = document.querySelector('.sub-menu.merch')
+const subMenuMerchTrigger = document.querySelector(".sub-menu-merch-trigger");
+const subMenuMerch = document.querySelector(".sub-menu.merch");
 
 const showSubMenuMerch = () => {
-   subMenuMerch.style.display = 'block'
+   subMenuMerch.style.display = "block";
    setTimeout(() => {
-      subMenuMerch.style.opacity = 1
-      subMenuMerch.style.transform = 'translateY(0)'
-   }, 0)
-}
+      subMenuMerch.style.opacity = 1;
+      subMenuMerch.style.transform = "translateY(0)";
+   }, 0);
+};
 
 const hideSubMenuMerch = () => {
-   subMenuMerch.style.opacity = 0
-   subMenuMerch.style.transform = 'translateY(-101%)'
+   subMenuMerch.style.opacity = 0;
+   subMenuMerch.style.transform = "translateY(-101%)";
    setTimeout(() => {
-      subMenuMerch.style.display = 'none'
-   }, 510) // transition: 0.5s
-}
+      subMenuMerch.style.display = "none";
+   }, 510); // transition: 0.5s
+};
 
 subMenuMerchTrigger.onmouseover = () => {
-   showSubMenuMerch()
+   showSubMenuMerch();
 
    // hideSubMenuCoffee
-   hideSubMenuCoffee()
-}
+   hideSubMenuCoffee();
+};
 
 subMenuMerch.onmouseleave = () => {
-   hideSubMenuMerch()
-}
+   hideSubMenuMerch();
+};
 
 // navside
-const navBarIcon = document.querySelector('.nav__icon.bar-icon')
-const navCloseIcon = document.querySelector('.nav__icon.close-icon')
-const navside = document.querySelector('.navside')
-const navsideBody = document.querySelector('.navside__body')
-let openingNavside = false
+const navBarIcon = document.querySelector(".nav__icon.bar-icon");
+const navCloseIcon = document.querySelector(".nav__icon.close-icon");
+const navside = document.querySelector(".navside");
+const navsideBody = document.querySelector(".navside__body");
+let openingNavside = false;
 
 const showNavside = () => {
-   navBarIcon.style.display = 'none'
-   navCloseIcon.style.display = 'block'
+   navBarIcon.style.display = "none";
+   navCloseIcon.style.display = "block";
 
-   navside.style.display = 'block'
-   navsideBody.style.display = 'block'
+   navside.style.display = "block";
+   navsideBody.style.display = "block";
 
    setTimeout(() => {
-      navside.style.opacity = 1
+      navside.style.opacity = 1;
 
-      navsideBody.style.opacity = 1
-      navsideBody.style.left = 0
-   }, 0)
-}
+      navsideBody.style.opacity = 1;
+      navsideBody.style.left = 0;
+   }, 0);
+};
 
 const hideNavside = () => {
-   navBarIcon.style.display = 'block'
-   navCloseIcon.style.display = 'none'
+   navBarIcon.style.display = "block";
+   navCloseIcon.style.display = "none";
 
-   navside.style.opacity = 0
-   navsideBody.style.opacity = 0
-   navsideBody.style.left = '-101%'
+   navside.style.opacity = 0;
+   navsideBody.style.opacity = 0;
+   navsideBody.style.left = "-101%";
 
    setTimeout(() => {
-      navsideBody.style.display = 'none'
-      navside.style.display = 'none'
-   }, 510) // transition 0.5s
-}
+      navsideBody.style.display = "none";
+      navside.style.display = "none";
+   }, 510); // transition 0.5s
+};
 
 navBarIcon.onclick = () => {
    if (!openingNavside) {
-      showNavside()
+      showNavside();
 
-      openingNavside = true
+      openingNavside = true;
       setTimeout(() => {
-         openingNavside = false
-      }, 510)
+         openingNavside = false;
+      }, 510);
    }
-}
+};
 
 navCloseIcon.onclick = () => {
    if (!openingNavside) {
-      hideNavside()
+      hideNavside();
 
-      openingNavside = true
+      openingNavside = true;
       setTimeout(() => {
-         openingNavside = false
-      }, 510)
+         openingNavside = false;
+      }, 510);
    }
-}
+};
 
 // navside submenu coffee
-const navsideSubmenuCoffeeTrigger = document.querySelector('.navside__submenu-coffee__trigger')
-const navsideSubmenuCoffeeCloseBtn = document.querySelector('.navside__submenu-coffee__close-btn')
-const navsideSubmenuCoffee = document.querySelector('.navside__submenu.coffee')
+const navsideSubmenuCoffeeTrigger = document.querySelector(".navside__submenu-coffee__trigger");
+const navsideSubmenuCoffeeCloseBtn = document.querySelector(".navside__submenu-coffee__close-btn");
+const navsideSubmenuCoffee = document.querySelector(".navside__submenu.coffee");
 
 const showNavsideSubmenuCoffee = () => {
-   navsideSubmenuCoffee.style.display = 'flex'
+   navsideSubmenuCoffee.style.display = "flex";
    setTimeout(() => {
-      navsideSubmenuCoffee.style.right = 0
-   }, 0)
-}
+      navsideSubmenuCoffee.style.right = 0;
+   }, 0);
+};
 
 const hideNavsideSubmenuCoffee = () => {
-   navsideSubmenuCoffee.style.right = '-101%'
+   navsideSubmenuCoffee.style.right = "-101%";
    setTimeout(() => {
-      navsideSubmenuCoffee.style.display = 'none'
-   }, 310) // transition: 0.3s
-}
+      navsideSubmenuCoffee.style.display = "none";
+   }, 310); // transition: 0.3s
+};
 
 navsideSubmenuCoffeeTrigger.onclick = () => {
-   showNavsideSubmenuCoffee()
-}
+   showNavsideSubmenuCoffee();
+};
 
 navsideSubmenuCoffeeCloseBtn.onclick = () => {
-   hideNavsideSubmenuCoffee()
-}
+   hideNavsideSubmenuCoffee();
+};
 
 // navside submenu merch
-const navsideSubmenuMerchTrigger = document.querySelector('.navside__submenu-merch__trigger')
-const navsideSubmenuMerchCloseBtn = document.querySelector('.navside__submenu-merch__close-btn')
-const navsideSubmenuMerch = document.querySelector('.navside__submenu.merch')
+const navsideSubmenuMerchTrigger = document.querySelector(".navside__submenu-merch__trigger");
+const navsideSubmenuMerchCloseBtn = document.querySelector(".navside__submenu-merch__close-btn");
+const navsideSubmenuMerch = document.querySelector(".navside__submenu.merch");
 
 const showNavsideSubmenuMerch = () => {
-   navsideSubmenuMerch.style.display = 'flex'
+   navsideSubmenuMerch.style.display = "flex";
    setTimeout(() => {
-      navsideSubmenuMerch.style.right = 0
-   }, 0)
-}
+      navsideSubmenuMerch.style.right = 0;
+   }, 0);
+};
 
 const hideNavsideSubmenuMerch = () => {
-   navsideSubmenuMerch.style.right = '-101%'
+   navsideSubmenuMerch.style.right = "-101%";
    setTimeout(() => {
-      navsideSubmenuMerch.style.display = 'none'
-   }, 310) // transition: 0.3s
-}
+      navsideSubmenuMerch.style.display = "none";
+   }, 310); // transition: 0.3s
+};
 
 navsideSubmenuMerchTrigger.onclick = () => {
-   showNavsideSubmenuMerch()
-}
+   showNavsideSubmenuMerch();
+};
 
 navsideSubmenuMerchCloseBtn.onclick = () => {
-   hideNavsideSubmenuMerch()
-}
+   hideNavsideSubmenuMerch();
+};
