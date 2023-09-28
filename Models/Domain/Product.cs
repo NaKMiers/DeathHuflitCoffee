@@ -31,7 +31,7 @@ namespace DeathWishCoffee.Models.Domain
         public DateTime CreatedAt { get; set; }
         public DateTime LastModifiedAt { get; set; }
 
-        public ICollection<Review> Reviews { get; set; }
+        public ICollection<Review>? Reviews { get; set; }
     }
 
     public class Size
