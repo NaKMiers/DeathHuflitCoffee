@@ -25,15 +25,15 @@
    text-align: left;
 }
 .DirectionHeding__form-input-heading {
+   -webkit-font-smoothing: antialiased;
    box-sizing: border-box;
    margin: 0px;
    padding-bottom: 15px;
    max-width: 500px;
-   font-family: "FenomenSans-Regular", sans-serif;
    font-size: 14px;
-   font-weight: 550;
+   font-weight: 600;
    text-transform: uppercase;
-   color: #1c1d1d;
+   color: #000;
 }
 label {
    width: 100%;
@@ -130,10 +130,10 @@ textarea {
 .DirectionHeding__panel-4-crf-category_name {
    padding: 16px 0 10px;
    text-align: left;
-   font-family: "FenomenSans-Regular", sans-serif;
+   /* font-family: "FenomenSans-Regular", sans-serif; */
    font-size: 16px;
-   color: #1c1d1d;
-   font-weight: 600;
+   color: #000;
+   font-weight: 500;
 }
 .DirectionHeding__panel-4-crf-product-name {
    position: relative;
@@ -141,7 +141,8 @@ textarea {
    text-align: left;
    line-height: 20px;
    font-family: "FenomenSans-Light", sans-serif;
-   font-size: 16px;
+   font-size: 15px;
+   font-weight: normal;
    color: #1c1d1d;
 }
 .DirectionHeding__panel-4-crf-product-name::before {
@@ -167,6 +168,21 @@ textarea {
 }
 
 .DirectionHeding__panel-4-crf-product-name.active::before {
+   content: "✔";
+   border-radius: 2px;
+   border: 1px solid #4d4d4d;
+   position: absolute;
+   height: 13px;
+   color: white;
+   width: 13px;
+   line-height: 15.5px;
+   left: 0;
+   background: #4d4d4d;
+   font-size: 14px;
+   text-align: center;
+   top: 3px;
+}
+.DirectionHeding__panel-4-crf-product-name:hover::before {
    content: "✔";
    border-radius: 2px;
    border: 1px solid #4d4d4d;
@@ -262,7 +278,6 @@ textarea {
    border-radius: 0;
    line-height: 50px;
    height: 50px;
-   font-family: "FenomenSans-Bold";
    font-size: 13px;
    font-weight: 900;
    text-transform: uppercase;
@@ -331,7 +346,7 @@ textarea {
 #DirectionHeding__panel4BackButton {
    margin: 0px 0px 10px;
    font-size: 14px;
-   font-weight: 600;
+   font-weight: 700;
    height: 50px;
    line-height: 50px;
    position: relative;
@@ -343,6 +358,7 @@ textarea {
 .DirectionHeding__form-message-heading {
    font-size: 34px;
    font-family: Revans-Bold, sans-serif;
+   font-weight: 800;
    margin: 0;
    height: 43.2px;
    text-align: center;
@@ -351,7 +367,7 @@ textarea {
 .DirectionHeding__form-message-text {
    margin: 10px 0px 20px;
    font-size: 14px;
-   font-weight: 600;
+   font-weight: 900;
    font-family: Revans-Bold, sans-serif;
    height: 19.2px;
    text-align: center;
