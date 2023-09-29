@@ -182,21 +182,6 @@ textarea {
    text-align: center;
    top: 3px;
 }
-.DirectionHeding__panel-4-crf-product-name:hover::before {
-   content: "✔";
-   border-radius: 2px;
-   border: 1px solid #4d4d4d;
-   position: absolute;
-   height: 13px;
-   color: white;
-   width: 13px;
-   line-height: 15.5px;
-   left: 0;
-   background: #4d4d4d;
-   font-size: 14px;
-   text-align: center;
-   top: 3px;
-}
 .DirectionHeding__panel-4-crf-product-name.active::after {
    display: block;
 }
@@ -413,5 +398,14 @@ textarea {
 @media (min-width: 991px) {
    #DirectionHeding__panel4BackButton {
       left: 100px;
+   }
+}
+@media (min-width: 565px) {
+   .DirectionHeding__header {
+      height: 250px;
+   }
+   p.DirectionHeding__form-message-text {
+      position: relative;
+      top: 35px;
    }
 }
