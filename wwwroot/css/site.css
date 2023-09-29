@@ -65,7 +65,3 @@ a {
    font-family: 'Fenomen-Sans-Book';
    src: url('~/fonts/Fenomen-Sans-Book.woff2') format('opentype');
 }
-@font-face {
-   font-family: 'Revans-Bold';
-   src: url('~/fonts/Revans-Bold.woff2') format('opentype');
-}
