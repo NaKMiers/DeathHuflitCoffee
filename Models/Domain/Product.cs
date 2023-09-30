@@ -1,72 +1,106 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace DeathWishCoffee.Models.Domain
 {
     public class Product
     {
         public Guid Id { get; set; }
-        public string? Title { get; set; }
-        public string? SubTitle { get; set; }
-        public string? Description { get; set; }
-        public string? SubscribeAndSave { get; set; }
-        public string? Note { get; set; }
-        public List<Size>? Sizes { get; set; }
-        public List<InsideType>? InsideTypes { get; set; }
-        public string[]? FlavorProfiles { get; set; }
-        public List<Attribute>? Attributes { get; set; }
-        public List<Detail>? Details { get; set; }
-        public string? PrimaryColor { get; set; }
-        public string[]? Images { get; set; }
+        public string Title { get; set; }
+        public string SubTitle { get; set; }
+        public string Description { get; set; }
+        public string SubscribeAndSave { get; set; }
+        public string Note { get; set; }
+        public List<Sizes> Sizes { get; set; }
+        public List<InsideTypes> InsideTypes { get; set; }
+        public List<FlavorProfiles> FlavorProfiles { get; set; }
+        public List<Attributes> Attributes { get; set; }
+        public List<Details> Details { get; set; }
+        public string PrimaryColor { get; set; }
+        public List<Images> Images { get; set; }
         public double Rating { get; set; }
-        public string[]? Types { get; set; }
-        public string[]? Formats { get; set; }
-        public string[]? Roasts { get; set; }
-        public string[]? Flavors { get; set; }
+        public List<Types> Types { get; set; }
+        public List<Formats> Formats { get; set; }
+        public List<Roasts> Roasts { get; set; }
+        public List<Flavors> Flavors { get; set; }
+        public int NumberOfReview { get; set; }
         public int AmountSold { get; set; }
-        public List<Symbol>? Symbols { get; set; }
+        public List<Symbols> Symbols { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime LastModifiedAt { get; set; }
 
-        public ICollection<Review>? Reviews { get; set; }
+        // foreign key
+        public ICollection<Review> Reviews { get; set; }
     }
 
-    public class Size
+    public class FlavorProfiles
     {
-        public string? Label { get; set; }
+        public int Id { get; set; }
+        public string Text { get; set; }
+    }
+
+    public class Images
+    {
+        public int Id { get; set; }
+        public string Src { get; set; }
+    }
+
+    public class Types
+    {
+        public int Id { get; set; }
+        public string Text { get; set; }
+    }
+
+    public class Formats
+    {
+        public int Id { get; set; }
+        public string Text { get; set; }
+    }
+
+    public class Roasts
+    {
+        public int Id { get; set; }
+        public string Text { get; set; }
+    }
+    public class Flavors
+    {
+        public int Id { get; set; }
+        public string Text { get; set; }
+    }
+
+    public class Sizes
+    {
+        public int Id { get; set; }
+        public string Label { get; set; }
         public double Price { get; set; }
-        public string? Text { get; set; }
+        public string Text { get; set; }
     }
 
-    public class InsideType
+    public class InsideTypes
     {
-        public string? Icon { get; set; }
-        public string? Label { get; set; }
+        public int Id { get; set; }
+        public string Icon { get; set; }
+        public string Label { get; set; }
     }
 
-    public class Attribute
+    public class Attributes
     {
-        public string? Label { get; set; }
-        public string? MinLabel { get; set; }
-        public string? MaxLabel { get; set; }
+        public int Id { get; set; }
+        public string Label { get; set; }
+        public string MinLabel { get; set; }
+        public string MaxLabel { get; set; }
         public int Value { get; set; }
     }
-    public class Detail
+    public class Details
     {
-        public string? Label { get; set; }
-        public string? Text { get; set; }
+        public int Id { get; set; }
+        public string Label { get; set; }
+        public string Text { get; set; }
     }
 
-    public class Symbol
+    public class Symbols
     {
-        public string? Icon { get; set; }
-        public string? Title { get; set; }
+        public int Id { get; set; }
+        public string Icon { get; set; }
+        public string Title { get; set; }
     }
-
-
 }
 
 

@@ -1,7 +1,13 @@
+using DeathWishCoffee.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<DeathWishCoffeeDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DeathWishCoffeeDbConnectionString")));
 
 var app = builder.Build();
 
@@ -105,6 +111,53 @@ app.UseEndpoints(endpoints =>
         pattern: "blogs/{id}",
         defaults: new { controller = "Blog", action = "Index" }
     );
+
+    // [/admin]
+    app.MapControllerRoute(
+        name: "Admin",
+        pattern: "admin",
+        defaults: new { controller = "Admin", action = "Index" }
+    );
+
+    // [/admin/login]
+    app.MapControllerRoute(
+        name: "Login",
+        pattern: "admin/login",
+        defaults: new { controller = "Admin", action = "Login" }
+    );
+
+    // [/admin/register]
+    app.MapControllerRoute(
+        name: "Register",
+        pattern: "admin/register",
+        defaults: new { controller = "Admin", action = "Register" }
+    );
+
+    // [/admin/users]
+    app.MapControllerRoute(
+        name: "AllUser",
+        pattern: "admin/users",
+        defaults: new { controller = "Admin", action = "AllUsers" }
+    );
+    // [/admin/users/delete/{id}]
+    app.MapControllerRoute(
+        name: "DeleteUser",
+        pattern: "admin/users/delete/{id}",
+        defaults: new { controller = "Admin", action = "DeleteUser" }
+    );
+
+    // [/admin/users/edit/{id}]
+    app.MapControllerRoute(
+        name: "EditUser",
+        pattern: "admin/users/edit/{id}",
+        defaults: new { controller = "Admin", action = "EditUser" }
+    );
+
+    app.MapControllerRoute(
+    name: "EditUser",
+    pattern: "admin/users/edited",
+    defaults: new { controller = "Admin", action = "EditedUser" }
+);
 
     // [/]
     // app.MapControllerRoute(

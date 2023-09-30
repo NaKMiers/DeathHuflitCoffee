@@ -1,0 +1,29 @@
+﻿@model DeathWishCoffee.Models.ViewModels.RegisterRequest
+@{
+    ViewData["Title"] = "Admin Page";
+}
+
+
+<div class="d-flex flex-column justify-content-start text-left bg-light mt-5">
+    @* Account *@
+    <a class="btn m-2 btn-primary" href="/admin/login">Login</a>
+    <a class="btn m-2 btn-secondary" href="/admin/register">Register</a>
+    <a class="btn m-2 btn-success" href="/admin/users">See All Users</a>
+    <a class="btn m-2 btn-danger" href="/admin/users/edit/1">Edit User</a>
+
+    @* Products *@
+    <a class="btn m-2 btn-warning" href="/admin/products">See All Products</a>
+    <a class="btn m-2 btn-info" href="/admin/products/add">Add New Product</a>
+    <a class="btn m-2 btn-danger" href="/admin/products/edit/1">Edit Product</a>
+
+    @* Review *@
+    <a class="btn m-2 btn-dark" href="/admin/reviews">See All Reviews</a>
+    <a class="btn m-2 btn-info" href="/admin/reviews/add">Add New Reviews</a>
+    <a class="btn m-2 btn-secondary" href="/admin/reviews/edit/1">Edit Reviews</a>
+
+
+    @* Order History *@
+    <a class="btn m-2 btn-primary" href="/admin/orders">See All Order History</a>
+    <a class="btn m-2 btn-success" href="/admin/orders/add">Add New Order History</a>
+    <a class="btn m-2 btn-danger" href="/admin/orders/edit/1">Edit Order History</a>
+</div>
