@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DeathWishCoffee.Migrations
 {
     [DbContext(typeof(DeathWishCoffeeDbContext))]
-    [Migration("20230930071447_Initial Migration")]
-    partial class InitialMigration
+    [Migration("20231001092318_Second_Migration")]
+    partial class Second_Migration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,13 +25,11 @@ namespace DeathWishCoffee.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Attributes", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Attribute", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Label")
                         .IsRequired()
@@ -45,7 +43,7 @@ namespace DeathWishCoffee.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Value")
@@ -58,19 +56,17 @@ namespace DeathWishCoffee.Migrations
                     b.ToTable("Attributes");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Details", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Detail", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Label")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Text")
@@ -84,37 +80,13 @@ namespace DeathWishCoffee.Migrations
                     b.ToTable("Details");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.FlavorProfiles", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Flavor", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<Guid?>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Text")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("FlavorProfiles");
-                });
-
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Flavors", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Text")
@@ -128,15 +100,37 @@ namespace DeathWishCoffee.Migrations
                     b.ToTable("Flavors");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Formats", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.FlavorProfile", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Label")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("FlavorProfiles");
+                });
+
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Format", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Text")
@@ -150,15 +144,13 @@ namespace DeathWishCoffee.Migrations
                     b.ToTable("Formats");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Images", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Image", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Src")
@@ -172,13 +164,11 @@ namespace DeathWishCoffee.Migrations
                     b.ToTable("Images");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.InsideTypes", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.InsideType", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Icon")
                         .IsRequired()
@@ -188,7 +178,7 @@ namespace DeathWishCoffee.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -210,6 +200,9 @@ namespace DeathWishCoffee.Migrations
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -249,9 +242,6 @@ namespace DeathWishCoffee.Migrations
                     b.Property<int>("NumberOfReview")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("OrderHistoryId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("PrimaryColor")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -259,11 +249,11 @@ namespace DeathWishCoffee.Migrations
                     b.Property<double>("Rating")
                         .HasColumnType("float");
 
-                    b.Property<string>("SubTitle")
+                    b.Property<string>("SubscribeAndSave")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SubscribeAndSave")
+                    b.Property<string>("Subtitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -273,20 +263,16 @@ namespace DeathWishCoffee.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderHistoryId");
-
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Roasts", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Roast", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Text")
@@ -300,13 +286,11 @@ namespace DeathWishCoffee.Migrations
                     b.ToTable("Roasts");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Sizes", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Size", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Label")
                         .IsRequired()
@@ -315,7 +299,7 @@ namespace DeathWishCoffee.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Text")
@@ -329,19 +313,17 @@ namespace DeathWishCoffee.Migrations
                     b.ToTable("Sizes");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Symbols", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Symbol", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Icon")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Title")
@@ -355,15 +337,13 @@ namespace DeathWishCoffee.Migrations
                     b.ToTable("Symbols");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Types", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Type", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Text")
@@ -465,88 +445,103 @@ namespace DeathWishCoffee.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Attributes", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Attribute", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
                         .WithMany("Attributes")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Details", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Detail", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
                         .WithMany("Details")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.FlavorProfiles", b =>
-                {
-                    b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
-                        .WithMany("FlavorProfiles")
-                        .HasForeignKey("ProductId");
-                });
-
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Flavors", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Flavor", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
                         .WithMany("Flavors")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Formats", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.FlavorProfile", b =>
+                {
+                    b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
+                        .WithMany("FlavorProfiles")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Format", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
                         .WithMany("Formats")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Images", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Image", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
                         .WithMany("Images")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.InsideTypes", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.InsideType", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
                         .WithMany("InsideTypes")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Product", b =>
-                {
-                    b.HasOne("DeathWishCoffee.Models.Domain.OrderHistory", null)
-                        .WithMany("Products")
-                        .HasForeignKey("OrderHistoryId");
-                });
-
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Roasts", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Roast", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
                         .WithMany("Roasts")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Sizes", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Size", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
                         .WithMany("Sizes")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Symbols", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Symbol", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
                         .WithMany("Symbols")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Types", b =>
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Type", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
                         .WithMany("Types")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("DeathWishCoffee.Review", b =>
@@ -556,11 +551,6 @@ namespace DeathWishCoffee.Migrations
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.OrderHistory", b =>
-                {
-                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("DeathWishCoffee.Models.Domain.Product", b =>

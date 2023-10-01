@@ -1,6 +1,60 @@
-﻿@{
+﻿@model List<DeathWishCoffee.Models.Domain.Product>
+@{
     ViewData["Title"] = "All Products Page";
 }
 
+<div class="bg-light pt-5">
+    <a href="/admin" class="btn btn-secondary mb-3">
+        Back
+    </a>
 
-<h1>All Products Page</h1>
+    <div class="d-flex gap-3">
+        <h2 class="d-inline m-0">Product List:</h2>
+        <a href="/admin/products/add" class="btn btn-success">Add Product</a>
+    </div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Delete</th>
+                <th>Edit</th>
+
+                <th>ID</th>
+                <th>Title</th>
+                <th>Subtitle</th>
+                <th>Description</th>
+                <th>Subscribe And Save</th>
+                <th>Note</th>
+                <th>PrimaryColor</th>
+                <th>Rating</th>
+                <th>NumberOfReview</th>
+                <th>AmountSold</th>
+                <th>CreatedAt</th>
+                <th>LastModifiedAt</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>
+                        <form method="post" action="/admin/products/delete/@product.Id">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="/admin/products/edit/@product.Id" class="btn btn-info">Edit</a>
+                    </td>
+                    <td>@product.Id</td>
+                    <td>@product.Title</td>
+                    <td>@product.Subtitle</td>
+                    <td>@product.Description</td>
+                    <td>@product.SubscribeAndSave</td>
+                    <td>@product.Note</td>
+                    <td>@product.PrimaryColor</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

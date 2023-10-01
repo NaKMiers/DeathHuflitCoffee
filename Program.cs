@@ -139,6 +139,7 @@ app.UseEndpoints(endpoints =>
         pattern: "admin/users",
         defaults: new { controller = "Admin", action = "AllUsers" }
     );
+
     // [/admin/users/delete/{id}]
     app.MapControllerRoute(
         name: "DeleteUser",
@@ -153,11 +154,34 @@ app.UseEndpoints(endpoints =>
         defaults: new { controller = "Admin", action = "EditUser" }
     );
 
+    // [/admin/products]
     app.MapControllerRoute(
-    name: "EditUser",
-    pattern: "admin/users/edited",
-    defaults: new { controller = "Admin", action = "EditedUser" }
-);
+        name: "AllProducts",
+        pattern: "admin/products",
+        defaults: new { controller = "Admin", action = "AllProducts" }
+    );
+
+    // [/admin/products/add]
+    app.MapControllerRoute(
+        name: "AddNewProduct",
+        pattern: "admin/products/add",
+        defaults: new { controller = "Admin", action = "AddNewProduct" }
+    );
+
+    // [/admin/products/delete/{id}]
+    app.MapControllerRoute(
+        name: "DeleteProduct",
+        pattern: "admin/products/delete/{id}",
+        defaults: new { controller = "Admin", action = "DeleteProduct" }
+    );
+
+    // [/admin/products/edit/{id}]
+    app.MapControllerRoute(
+        name: "EditProduct",
+        pattern: "admin/products/edit/{id}",
+        defaults: new { controller = "Admin", action = "EditProduct" }
+    );
+
 
     // [/]
     // app.MapControllerRoute(

@@ -1,6 +1,143 @@
-﻿@{
+﻿@model DeathWishCoffee.Models.ViewModels.AddNewProductRequest;
+@{
     ViewData["Title"] = "Add New Product Page";
 }
 
 
-<h1>Add New Product Page</h1>
+<div class="bg-light pt-5">
+    <a href="/admin" class="btn btn-secondary mb-3">
+        Back
+    </a>
+
+    <h1 class="text-center">Add New Product</h1>
+
+    <form action="" method="post" class="admin-add-new-product-form bg-light pt-5 pb-5 ps-5 pe-5"
+        enctype="multipart/form-data">
+        <div class="mb-3 form-group">
+            <label for="title" class="form-label">*Title:</label>
+            <input name="title" type="text" class="form-control" id="title" placeholder="Title..." asp-for="Title"
+                required>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="subtitle" class="form-label">Subtitle:</label>
+            <input name="subtitle" type="text" class="form-control" id="subtitle" placeholder="Subtitle..."
+                asp-for="Subtitle">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="description" class="form-label">Description:</label>
+            <input name="description" type="text" class="form-control" id="description" placeholder="Description..."
+                asp-for="Description">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="subscribeAndSave" class="form-label">Subscribe And Save:</label>
+            <input name="subscribeAndSave" type="text" class="form-control" id="subscribeAndSave"
+                placeholder="Subscribe And Save..." asp-for="SubscribeAndSave">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="note" class="form-label">Note:</label>
+            <input name="note" type="text" class="form-control" id="note" placeholder="Note..." asp-for="Note">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="primaryColor" class="form-label">Primary Color:</label>
+            <input name="primaryColor" type="color" class="form-control" id="primaryColor"
+                placeholder="Primary Color..." asp-for="PrimaryColor">
+        </div>
+
+        @* Image *@
+        <div class="mb-3 form-group">
+            <label for="images" class="form-label">Images:</label>
+            <input name="imageList" type="file" class="form-control" id="images" multiple>
+        </div>
+
+
+        @* Sizes *@
+        <div id="admin-size-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Sizes:</h6>
+                <button type="button" id="admin-add-size-btn" class="btn btn-warning btn-sm">Add Size</button>
+            </div>
+        </div>
+
+        @* Flavor Profiles *@
+        <div id="admin-flavor-profile-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Flavor Profiles:</h6>
+                <button type="button" id="admin-add-flavor-profile-btn" class="btn btn-warning btn-sm">Add Flavor
+                    Profile</button>
+            </div>
+        </div>
+
+        @* Detail *@
+        <div id="admin-detail-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Detail:</h6>
+                <button type="button" id="admin-add-detail-btn" class="btn btn-warning btn-sm">Add Detail</button>
+            </div>
+        </div>
+
+        @* Types *@
+        <div id="admin-type-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Types:</h6>
+                <button type="button" id="admin-add-type-btn" class="btn btn-warning btn-sm">Add Type</button>
+            </div>
+        </div>
+
+        @* Attributes *@
+        <div id="admin-attribute-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Attributes:</h6>
+                <button type="button" id="admin-add-attribute-btn" class="btn btn-warning btn-sm">Add
+                    Attribute</button>
+            </div>
+        </div>
+
+        @* Inside Types *@
+        <div id="admin-inside-type-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Inside Types:</h6>
+                <button type="button" id="admin-add-inside-type-btn" class="btn btn-warning btn-sm">Add
+                    Inside Type</button>
+            </div>
+        </div>
+
+        @* Symbols *@
+        <div id="admin-symbol-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Symbols:</h6>
+                <button type="button" id="admin-add-symbol-btn" class="btn btn-warning btn-sm">Add
+                    Symbol</button>
+            </div>
+        </div>
+
+        @* Formats *@
+        <div id="admin-format-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Formats:</h6>
+                <button type="button" id="admin-add-format-btn" class="btn btn-warning btn-sm">Add
+                    Format</button>
+            </div>
+        </div>
+
+        @* Roasts *@
+        <div id="admin-roast-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Roasts:</h6>
+                <button type="button" id="admin-add-roast-btn" class="btn btn-warning btn-sm">Add
+                    Roast</button>
+            </div>
+        </div>
+
+        @* Flavors *@
+        <div id="admin-flavor-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Flavors:</h6>
+                <button type="button" id="admin-add-flavor-btn" class="btn btn-warning btn-sm">Add
+                    Flavor</button>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        <input type='reset' class="btn btn-secondary mt-3 ms-2" />
+    </form>
+</div>
