@@ -8,7 +8,7 @@
    padding-bottom: 15px;
    background: black;
 }
-.BlogCarousel__featured-blog .title-wrapper-with-link {
+.BlogCarousel__featured-blog .BlogCarousel__title-wrapper-with-link {
    display: flex;
    flex-direction: column;
    align-items: flex-start;
@@ -18,13 +18,13 @@
    color: #fff;
    font-size: 16px;
 }
-#SectionHeading-template--14566367264823__f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
+#BlogCarousel__SectionHeading-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
    font-size: 34px;
    font-style: normal;
    font-weight: 800;
    text-transform: uppercase;
 }
-.BlogCarousel__featured-blog .title-wrapper-with-link .link {
+.BlogCarousel__featured-blog .BlogCarousel__title-wrapper-with-link .BlogCarousel__link {
    font-size: 14px;
    line-height: 1.3rem;
    color: #fff;
@@ -35,33 +35,24 @@
    position: relative;
    bottom: 7px;
 }
-.BlogCarousel__featured-blog .title-wrapper-with-link .link:hover {
+.BlogCarousel__featured-blog .BlogCarousel__title-wrapper-with-link .BlogCarousel__link:hover {
    color: #e12727;
    text-transform: uppercase;
    text-decoration: underline;
 }
-.slider-component-full-width {
+.BlogCarousel__slider-component-full-width {
    width: 150%;
    height: 390px;
    padding: 0px 75px;
    display: flex;
    position: relative;
 }
-.blocks {
+.BlogCarousel__blocks {
    display: flex;
    transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
    z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
 }
-
-.block {
-   width: 18%; /* Điều chỉnh kích thước của mỗi khối div tùy ý */
-   height: 100px; /* Điều chỉnh chiều cao của mỗi khối div tùy ý */
-   background-color: lightblue; /* Màu nền tùy chọn */
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-.arrow {
+.BlogCarousel__arrow {
    z-index: 2;
    display: flex;
    justify-content: center;
@@ -70,7 +61,7 @@
    position: relative;
    width: 74px;
 }
-#arrowLeft {
+#BlogCarousel__arrowLeft {
    background: #000;
    position: absolute;
    top: 0;
@@ -81,7 +72,7 @@
    padding-left: 30px;
    border: none;
 }
-#arrowRight {
+#BlogCarousel__arrowRight {
    background: #000;
    position: absolute;
    top: 0;
@@ -95,7 +86,7 @@
    transform: rotate(180deg);
 }
 @media only screen and (min-width: 990px) {
-   .BlogCarousel__featured-blog .title-wrapper-with-link {
+   .BlogCarousel__featured-blog .BlogCarousel__title-wrapper-with-link {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -105,55 +96,57 @@
       color: #fff;
       font-size: 16px;
    }
-   .BlogCarousel__featured-blog .title-wrapper-with-link {
+   .BlogCarousel__featured-blog .BlogCarousel__title-wrapper-with-link {
       flex-direction: row;
       align-items: flex-end;
       justify-content: flex-start;
    }
-   .BlogCarousel__featured-blog .title-wrapper-with-link .link {
+   .BlogCarousel__featured-blog .BlogCarousel__title-wrapper-with-link .BlogCarousel__link {
       color: black;
    }
-   .BlogCarousel__featured-blog .title-wrapper-with-link .link:hover {
+   .BlogCarousel__featured-blog .BlogCarousel__title-wrapper-with-link .BlogCarousel__link:hover {
       padding-bottom: 7px;
       margin-left: 14px;
       color: #e12727;
       text-transform: uppercase;
    }
 }
-#Slider-template--14566367264823__f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
+#BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
    display: flex;
    height: 100%;
    gap: 1.6rem;
    width: 200%;
+   padding-left: 1rem;
 }
-.article-card-wrapper.card-wrapper.underline-links-hover {
+.BlogCarousel__article-card-wrapper.BlogCarousel__card-wrapper.BlogCarousel__underline-links-hover {
    padding: 16px;
    border: 1px solid #3d3b3a;
    cursor: pointer;
 }
-.article-card-wrapper.card-wrapper.underline-links-hover:hover img {
+.BlogCarousel__article-card-wrapper.BlogCarousel__card-wrapper.BlogCarousel__underline-links-hover:hover
+   .BlogCarousel__motion-reduce {
    transform: scale(1.1);
-   transition: transform 0.3s ease-in-out;
+   transition: transform 0.5s ease-in-out;
    overflow: hidden;
 }
-.blog__posts .card-wrapper {
+.BlogCarousel__blog-posts .BlogCarousel__card-wrapper {
    width: 100%;
    height: 100%;
 }
-.card:not(.BlogCarousel__ratio) {
+.BlogCarousel__card:not(.BlogCarousel__ratio) {
    display: flex;
    flex-direction: column;
    height: 100%;
 }
-.card__inner.color-background-2.gradient.BlogCarousel__ratio {
+.BlogCarousel__card-inner.BlogCarousel__color-background-2.BlogCarousel__gradient.BlogCarousel__ratio {
    height: 150px;
    position: relative;
    overflow: initial;
 }
-.card__content {
+.BlogCarousel__card-content {
    height: 100%;
 }
-.card__heading a {
+.BlogCarousel__card-heading a {
    color: #fff;
    text-decoration: none;
    font-size: 16px;
@@ -163,57 +156,166 @@
 .BlogCarousel__h2 {
    line-height: 12px;
 }
-.card__heading a:hover {
+.BlogCarousel__card-heading a:hover {
    color: #e12727;
    text-decoration: underline;
 }
-.article-card .card__information {
+.BlogCarousel__article-card .BlogCarousel__card-information {
    display: flex;
    flex-direction: column;
-   padding: 12px 0 0;
+   padding: 15px 0 0;
 }
-.article-card__image-wrapper.card__media {
+.BlogCarousel__article-card-image-wrapper.BlogCarousel__card-media {
    width: 100%;
    height: 100%;
 }
-.article-card__image.media.media--hover-effect {
+.BlogCarousel__article-card-image.BlogCarousel__media.BlogCarousel__media-hover-effect {
    width: 100%;
 }
-img {
+.BlogCarousel__motion-reduce {
    position: absolute;
    width: 100%; /* Hình ảnh sẽ tự động thay đổi kích thước sao cho phù hợp với chiều rộng của thẻ div */
    height: 100%;
 }
-.blog__post.grid__item.article.slider__slide.scroll-trigger.animate--slide-in {
+.BlogCarousel__blog-post.BlogCarousel__grid-item.BlogCarousel__article.BlogCarousel__slider-slide.BlogCarousel__scroll-trigger.BlogCarousel__animate-slide-in {
    color: #fff;
    list-style: none;
    width: calc(150% / 6);
 }
-.card.article-card.card--standard.card--media {
+.BlogCarousel__card.BlogCarousel__article-card.BlogCarousel__card-standard.BlogCarousel__card-media {
    background-color: #000;
    overflow: hidden;
 }
+
+@media only screen and (max-width: 1300px) {
+   .BlogCarousel__slider-component-full-width {
+      height: 415px;
+   }
+}
 @media only screen and (max-width: 1200px) {
-   .slider-component-full-width {
+   .BlogCarousel__slider-component-full-width {
       height: 500px;
    }
 }
 @media only screen and (max-width: 991px) {
-   .slider-component-full-width {
+   .BlogCarousel__slider-component-full-width {
       width: 500%;
    }
-   #arrowRight {
-      left: 866px;
+   #BlogCarousel__arrowRight {
+      left: 18%;
    }
-   .card__inner.color-background-2.gradient.BlogCarousel__ratio {
+   .BlogCarousel__card-inner.BlogCarousel__color-background-2.BlogCarousel__gradient.BlogCarousel__ratio {
       height: 80%;
    }
-   .card__inner.color-background-2.gradient.BlogCarousel__ratio.BlogCarousel__head-picture {
+   .BlogCarousel__card-inner.BlogCarousel__color-background-2.BlogCarousel__gradient.BlogCarousel__ratio.BlogCarousel__head-picture {
       height: 400%;
    }
-   .article-card-wrapper.card-wrapper.underline-links-hover:hover img {
+   .BlogCarousel__article-card-wrapper.BlogCarousel__card-wrapper.BlogCarousel__underline-links-hover:hover
+      .BlogCarousel__motion-reduce {
       transform: none;
       transition: none;
       overflow: hidden;
    }
+}
+#BlogCarousel__arrowLeft-next1 {
+   background: #000;
+   position: absolute;
+   top: 0;
+   left: 0;
+   text-align: center;
+   margin: auto;
+   height: 100%;
+   padding-left: 30px;
+   border: none;
+}
+#BlogCarousel__arrowRight-next1 {
+   background: #000;
+   position: absolute;
+   top: 0;
+   width: 100px;
+   left: 63%;
+   padding-left: 40px;
+   text-align: center;
+   margin: auto;
+   height: 100%;
+   border: none;
+   transform: rotate(180deg);
+}
+@media only screen and (max-width: 991px) {
+   #BlogCarousel__arrowRight-next1 {
+      left: 17.9%;
+   }
+}
+.BlogCarousel__blocks-next1 {
+   display: flex;
+   transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
+   z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
+}
+#BlogCarousel__arrowLeft-next2 {
+   background: #000;
+   position: absolute;
+   top: 0;
+   left: 0;
+   text-align: center;
+   margin: auto;
+   height: 100%;
+   padding-left: 30px;
+   border: none;
+}
+#BlogCarousel__arrowRight-next2 {
+   background: #000;
+   position: absolute;
+   top: 0;
+   width: 100px;
+   left: 63%;
+   padding-left: 40px;
+   text-align: center;
+   margin: auto;
+   height: 100%;
+   border: none;
+   transform: rotate(180deg);
+}
+@media only screen and (max-width: 991px) {
+   #BlogCarousel__arrowRight-next2 {
+      left: 17.9%;
+   }
+}
+.BlogCarousel__blocks-next2 {
+   display: flex;
+   transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
+   z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
+}
+#BlogCarousel__arrowLeft-next3 {
+   background: #000;
+   position: absolute;
+   top: 0;
+   left: 0;
+   text-align: center;
+   margin: auto;
+   height: 100%;
+   padding-left: 30px;
+   border: none;
+}
+#BlogCarousel__arrowRight-next3 {
+   background: #000;
+   position: absolute;
+   top: 0;
+   width: 100px;
+   left: 63%;
+   padding-left: 40px;
+   text-align: center;
+   margin: auto;
+   height: 100%;
+   border: none;
+   transform: rotate(180deg);
+}
+@media only screen and (max-width: 991px) {
+   #BlogCarousel__arrowRight-next3 {
+      left: 17.9%;
+   }
+}
+.BlogCarousel__blocks-next3 {
+   display: flex;
+   transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
+   z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
 }
