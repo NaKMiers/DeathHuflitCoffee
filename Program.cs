@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DeathWishCoffeeDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("DeathWishCoffeeDbConnectionString")));
+options.UseSqlServer(builder.Configuration.GetConnectionString("azureDB")));
 
 var app = builder.Build();
 
