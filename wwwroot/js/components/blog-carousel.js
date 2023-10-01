@@ -179,7 +179,7 @@ arrowLeftNext3.addEventListener("click", () => {
    if (window.innerWidth <= 990) {
       if (currentPositionNext3 < 0) {
          currentPositionNext3 += 16.7;
-         updateBlockPositionNext2();
+         updateBlockPositionNext3();
       }
    } else {
       if (currentPositionNext3 < 0) {
