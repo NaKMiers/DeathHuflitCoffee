@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'DeathHuflitCoffee'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AC09C41AEC2E4037BECCDE592D87A957 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_66694F19159E4FC09B8F79B0FF16CFB6 }}
           package: .
