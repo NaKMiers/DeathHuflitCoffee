@@ -1,6 +1,378 @@
-﻿@{
+﻿@model DeathWishCoffee.Models.ViewModels.AddNewProductRequest;
+@{
     ViewData["Title"] = "Edit Product Page";
+    var product = ViewBag.Product;
 }
 
 
-<h1>Edit Product Page</h1>
+<div class="bg-light pt-5">
+    <a href="/admin" class="btn btn-secondary mb-3">
+        Back
+    </a>
+
+    <h1 class="text-center">Edit Product</h1>
+
+    <form action="" method="post" class="admin-add-new-product-form bg-light pt-5 pb-5 ps-5 pe-5"
+        enctype="multipart/form-data">
+        <div class="mb-3 form-group">
+            <label for="title" class="form-label">*Title:</label>
+            <input value="@product.Title" name="title" type="text" class="form-control" id="title"
+                placeholder="Title..." asp-for="Title" required>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="subtitle" class="form-label">Subtitle:</label>
+            <input value="@product.Subtitle" name="subtitle" type="text" class="form-control" id="subtitle"
+                placeholder="Subtitle..." asp-for="Subtitle">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="description" class="form-label">Description:</label>
+            <input value="@product.Description" name="description" type="text" class="form-control" id="description"
+                placeholder="Description..." asp-for="Description">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="subscribeAndSave" class="form-label">Subscribe And Save:</label>
+            <input value="@product.SubscribeAndSave" name="subscribeAndSave" type="text" class="form-control"
+                id="subscribeAndSave" placeholder="Subscribe And Save..." asp-for="SubscribeAndSave">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="note" class="form-label">Note:</label>
+            <input value="@product.Note" name="note" type="text" class="form-control" id="note" placeholder="Note..."
+                asp-for="Note">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="primaryColor" class="form-label">Primary Color:</label>
+            <input value="@product.PrimaryColor" name="primaryColor" type="color" class="form-control" id="primaryColor"
+                placeholder="Primary Color..." asp-for="PrimaryColor">
+        </div>
+
+        @* Image *@
+        <div class="mb-3 form-group">
+            <label for="images" class="form-label">Images:</label>
+            <input name="imageList" type="file" class="form-control" id="images" multiple>
+
+            @if(product.Images != null && product.Images.Count > 0) {
+                <div class="d-flex gap-4" style="width: 100%;">
+                    @for(int i = 0; i < product.Images.Count; i++) {
+                        var item = product.Images[i];
+                        <img  src="~/uploads/@item.Src" alt="thumb" style="width: 100%; height: 200px; object-fit: cover;"/>
+                    }
+                </div>
+            }
+        </div>
+
+
+        @* Sizes *@
+        <div id="admin-size-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Sizes:</h6>
+                <button type="button" id="admin-add-size-btn" class="btn btn-warning btn-sm">Add Size</button>
+            </div>
+
+            @if (product.Sizes != null && product.Sizes.Count > 0)
+            {
+                @for (int i = 0; i < product.Sizes.Count; i++)
+                {
+                    var item = product.Sizes[i];
+                    <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+                        <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Sizes[@i].Label">Size Label:</label>
+                            <input value="@item.Label" type="text" id="Sizes[@i].Label"
+                                name="Sizes[@i].Label" class="form-control" />
+                        </div>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Sizes[@i].Price">Size Price:</label>
+                            <input value="@item.Price" type="number" id="Sizes[@i].Price"
+                                name="Sizes[@i].Price" class="form-control" />
+                        </div>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Sizes[@i].Text">Text:</label>
+                            <input value="@item.Text" type="text" class="form-control" id="Sizes[@i].Text"
+                                name="Sizes[@i].Text"></input>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+
+        @* Flavor Profiles *@
+        <div id="admin-flavor-profile-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Flavor Profiles:</h6>
+                <button type="button" id="admin-add-flavor-profile-btn" class="btn btn-warning btn-sm">Add Flavor
+                    Profile</button>
+            </div>
+
+            @if (product.FlavorProfiles != null && product.FlavorProfiles.Count > 0)
+            {
+                @for (int i = 0; i < product.FlavorProfiles.Count; i++)
+                {
+                    var item = product.FlavorProfiles[i];
+                    <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+                        <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+                        <div class="form-group mb-3 w-100">
+                            <label for="FlavorProfiles[@i].Label">FlavorProfile Label:</label>
+                            <input value="@item.Label" type="text" id="FlavorProfiles[@i].Label"
+                                name="FlavorProfiles[@i].Label" class="form-control" />
+                        </div>
+                        <div class="form-group mb-3 w-100">
+                            <label for="FlavorProfiles[@i].Text">Text:</label>
+                            <textarea class="form-control" id="FlavorProfiles[@i].Text"
+                                name="FlavorProfiles[@i].Text">@item.Text</textarea>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        @* Detail *@
+        <div id="admin-detail-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Detail:</h6>
+                <button type="button" id="admin-add-detail-btn" class="btn btn-warning btn-sm">Add Detail</button>
+            </div>
+
+            @if (product.Details != null && product.Details.Count > 0)
+            {
+                @for (int i =0 ; i < product.Details.Count ; i++)
+                {
+                    var item = product.Details[i];
+                    <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+                        <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Details[@i].Label">Detail Label:</label>
+                            <input value="@item.Label" type="text" id="Details[@i].Label"
+                                name="Details[@i].Label" class="form-control" />
+                        </div>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Details[@i].Text">Detail Text:</label>
+                            <input value="@item.Text" type="text" class="form-control" id="Details[@i].Text"
+                                name="Details[@i].Text"></input>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        @* Types *@
+        <div id="admin-type-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Types:</h6>
+                <button type="button" id="admin-add-type-btn" class="btn btn-warning btn-sm">Add Type</button>
+            </div>
+
+            @if (product.Types != null && product.Types.Count > 0)
+            {
+                @for (int i = 0; i < product.Types.Count; i++)
+                {
+                    var item  = product.Types[i];
+                    <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+                        <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Types[@i].Text">Text:</label>
+                            <input value="@item.Text" type="text" class="form-control" id="Types[@i].Text"
+                                name="Types[@i].Text"></input>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        @* Attributes *@
+        <div id="admin-attribute-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Attributes:</h6>
+                <button type="button" id="admin-add-attribute-btn" class="btn btn-warning btn-sm">Add
+                    Attribute</button>
+            </div>
+
+            @if (product.Attributes != null && product.Attributes.Count > 0)
+            {
+                @for (int i = 0; i < product.Attributes.Count; i++)
+                {
+                    var item = product.Attributes[i];
+                    <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+                        <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Attributes[@i].Label">Attribute Label:</label>
+                            <input value="@item.Label" type="text" class="form-control" id="Attributes[@i].Label"
+                                name="Attributes[@i].Label" />
+                        </div>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Attributes[@i].MinLabel">Attribute Min Label:</label>
+                            <input value="@item.MinLabel" type="text" class="form-control"
+                                id="Attributes[@i].MinLabel" name="Attributes[@i].MinLabel" />
+                        </div>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Attributes[@i].MaxLabel">Attribute Max Label:</label>
+                            <input value="@item.MaxLabel" type="text" class="form-control"
+                                id="Attributes[@i].MaxLabel" name="Attributes[@i].MaxLabel" />
+                        </div>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Attributes[@i].Value">Attribute Value:</label>
+                            <input value="@item.Value" type="number" class="form-control" id="Attributes[@i].Value"
+                                name="Attributes[@i].Value" min="0" max="100" />
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        @* Inside Types *@
+        <div id="admin-inside-type-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Inside Types:</h6>
+                <button type="button" id="admin-add-inside-type-btn" class="btn btn-warning btn-sm">Add
+                    Inside Type</button>
+            </div>
+
+            @if (product.InsideTypes != null && product.InsideTypes.Count > 0)
+            {
+                @for (int i = 0; i < product.InsideTypes.Count; i++)
+                {
+                    var item = product.InsideTypes[i];
+                    <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+                        <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+                        <div class="form-group mb-3 w-100">
+                            <label for="InsideTypes[@i].Label">Inside Type Label:</label>
+                            <input value="@item.Label" type="text" class="form-control" id="InsideTypes[@i].Label"
+                                name="InsideTypes[@i].Label" />
+                        </div>
+                        <div class="form-group mb-3 w-100">
+                            <label for="InsideTypes[@i].Icon">Inside Type Icon:</label>
+                            <select class="form-select" id="InsideTypes[@i].Icon"
+                                name="InsideTypes[@i].Icon">
+                                @{
+                                    bool option1 = @item.Icon == "1";
+                                    bool option2 = @item.Icon == "2";
+                                    bool option3 = @item.Icon == "3";
+                                }
+                                <option value="1" selected="@option1">Icon 1</option>
+                                <option value="2" selected="@option2">Icon 2</option>
+                                <option value="3" selected="@option3">Icon 3</option>
+                            </select>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        @* Symbols *@
+        <div id="admin-symbol-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Symbols:</h6>
+                <button type="button" id="admin-add-symbol-btn" class="btn btn-warning btn-sm">Add
+                    Symbol</button>
+            </div>
+
+            @if (product.Symbols != null && product.Symbols.Count > 0)
+            {
+                @for (int i = 0; i < product.Symbols.Count; i++)
+                {
+                    var item = product.Symbols[i];
+                    <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+                        <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Symbols[@i].Title">Symbol Title:</label>
+                            <input value="@item.Title" type="text" class="form-control" id="Symbols[@i].Title"
+                                name="Symbols[@i].Title" />
+                        </div>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Symbols[@i].Value">Symbol Icon:</label>
+                            <select class="form-select" id="Symbols[@i].Icon" name="Symbols[@i].Icon">
+                                @{
+                                    bool option1 = @item.Icon == "1";
+                                    bool option2 = @item.Icon == "2";
+                                    bool option3 = @item.Icon == "3";
+                                }
+                                <option value="1" selected="@option1">Icon 1</option>
+                                <option value="2" selected="@option2">Icon 2</option>
+                                <option value="3" selected="@option3">Icon 3</option>
+                            </select>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        @* Formats *@
+        <div id="admin-format-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Formats:</h6>
+                <button type="button" id="admin-add-format-btn" class="btn btn-warning btn-sm">Add
+                    Format</button>
+            </div>
+
+            @if (product.Formats != null && product.Formats.Count > 0)
+            {
+                @for (int i = 0; i < product.Formats.Count; i++)
+                {
+                    var item = product.Formats[i];
+                    <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+                        <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Formats[@i].Text">Text:</label>
+                            <input value="@item.Text" type="text" class="form-control" id="Formats[@i].Text"
+                                name="Formats[@i].Text"></input>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        @* Roasts *@
+        <div id="admin-roast-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Roasts:</h6>
+                <button type="button" id="admin-add-roast-btn" class="btn btn-warning btn-sm">Add
+                    Roast</button>
+            </div>
+
+            @if (product.Roasts != null && product.Roasts.Count > 0)
+            {
+                @for (int i = 0; i < product.Roasts.Count; i++)
+                {
+                    var item = product.Roasts[i];
+
+                    <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+                        <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Roasts[@i].Text">Text:</label>
+                            <input value="@item.Text" type="text" class="form-control" id="Roasts[@i].Text"
+                                name="Roasts[@i].Text"></input>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        @* Flavors *@
+        <div id="admin-flavor-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Flavors:</h6>
+                <button type="button" id="admin-add-flavor-btn" class="btn btn-warning btn-sm">Add
+                    Flavor</button>
+            </div>
+
+            @if (product.Flavors != null && product.Flavors.Count > 0)
+            {
+                @for (int i = 0; i < product.Flavors.Count; i++)
+                {
+                    var item = product.Flavors[i];
+                    <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+                        <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+                        <div class="form-group mb-3 w-100">
+                            <label for="Flavors[@i].Text">Text:</label>
+                            <input value="@item.Text" type="text" class="form-control" id="Flavors[@i].Text"
+                                name="Flavors[@i].Text"></input>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        <input type='reset' class="btn btn-secondary mt-3 ms-2" />
+    </form>
+</div>

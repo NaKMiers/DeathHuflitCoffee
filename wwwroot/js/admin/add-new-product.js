@@ -6,7 +6,8 @@ function handleSizes() {
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
       var newHtml = `
-         <div class="form-item d-flex w-100 gap-3 ps-4">
+         <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+               <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
                <div class="form-group mb-3 w-100">
                   <label for="Sizes[${itemCounter}].Label">Size Label:</label>
                   <input type="text" id="Sizes[${itemCounter}].Label" name="Sizes[${itemCounter}].Label" class="form-control" />
@@ -26,6 +27,10 @@ function handleSizes() {
 
       // Thêm Size mới vào container và cập nhật hiển thị
       itemContainer.append(newHtml)
+
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
    })
 }
 
@@ -37,15 +42,16 @@ function handleFlavorProfiles() {
    itemButton.click(function () {
       // Tạo các trường input cho FlavorProfile mới
       var newHtml = `
-         <div class="flavorProfile-item d-flex w-100 gap-3 ps-4">
-               <div class="form-group mb-3 w-100">
-                  <label for="FlavorProfiles[${itemCounter}].Label">FlavorProfile Label:</label>
-                  <input type="text" id="FlavorProfiles[${itemCounter}].Label" name="FlavorProfiles[${itemCounter}].Label" class="form-control" />
-               </div>
-               <div class="form-group mb-3 w-100">
-                  <label for="FlavorProfiles[${itemCounter}].Text">Text:</label>
-                  <textarea class="form-control" id="FlavorProfiles[${itemCounter}].Text" name="FlavorProfiles[${itemCounter}].Text"></textarea>
-               </div>
+         <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+            <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+            <div class="form-group mb-3 w-100">
+               <label for="FlavorProfiles[${itemCounter}].Label">FlavorProfile Label:</label>
+               <input type="text" id="FlavorProfiles[${itemCounter}].Label" name="FlavorProfiles[${itemCounter}].Label" class="form-control" />
+            </div>
+            <div class="form-group mb-3 w-100">
+               <label for="FlavorProfiles[${itemCounter}].Text">Text:</label>
+               <textarea class="form-control" id="FlavorProfiles[${itemCounter}].Text" name="FlavorProfiles[${itemCounter}].Text"></textarea>
+            </div>
          </div>
       `
 
@@ -53,6 +59,10 @@ function handleFlavorProfiles() {
 
       // Thêm FlavorProfile mới vào container và cập nhật hiển thị
       itemContainer.append(newHtml)
+
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
    })
 }
 
@@ -64,15 +74,16 @@ function handleDetails() {
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
       var newHtml = `
-         <div class="form-item d-flex w-100 gap-3 ps-4">
-               <div class="form-group mb-3 w-100">
-                  <label for="Details[${itemCounter}].Label">Size Label:</label>
-                  <input type="text" id="Details[${itemCounter}].Label" name="Details[${itemCounter}].Label" class="form-control" />
-               </div>
-               <div class="form-group mb-3 w-100">
-                  <label for="Details[${itemCounter}].Text">Text:</label>
-                  <input type="text" class="form-control" id="Details[${itemCounter}].Text" name="Details[${itemCounter}].Text"></input>
-               </div>
+         <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+            <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+            <div class="form-group mb-3 w-100">
+               <label for="Details[${itemCounter}].Label">Detail Label:</label>
+               <input type="text" id="Details[${itemCounter}].Label" name="Details[${itemCounter}].Label" class="form-control" />
+            </div>
+            <div class="form-group mb-3 w-100">
+               <label for="Details[${itemCounter}].Text">Detail Text:</label>
+               <input type="text" class="form-control" id="Details[${itemCounter}].Text" name="Details[${itemCounter}].Text"></input>
+            </div>
          </div>
       `
 
@@ -80,9 +91,10 @@ function handleDetails() {
 
       // Thêm Size mới vào container và cập nhật hiển thị
       itemContainer.append(newHtml)
-      $('#detailLabel' + itemCounter).text($('#Details[' + itemCounter + '].Label').val())
-      $('#detailPrice' + itemCounter).text($('#Details[' + itemCounter + '].Price').val())
-      $('#detailText' + itemCounter).text($('#Details[' + itemCounter + '].Text').val())
+
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
    })
 }
 
@@ -94,11 +106,12 @@ function handleTypes() {
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
       var newHtml = `
-         <div class="form-item d-flex w-100 gap-3 ps-4">
-               <div class="form-group mb-3 w-100">
-                  <label for="Types[${itemCounter}].Text">Text:</label>
-                  <input type="text" class="form-control" id="Types[${itemCounter}].Text" name="Types[${itemCounter}].Text"></input>
-               </div>
+         <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+            <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+            <div class="form-group mb-3 w-100">
+               <label for="Types[${itemCounter}].Text">Text:</label>
+               <input type="text" class="form-control" id="Types[${itemCounter}].Text" name="Types[${itemCounter}].Text"></input>
+            </div>
          </div>
       `
 
@@ -106,6 +119,10 @@ function handleTypes() {
 
       // Thêm Size mới vào container và cập nhật hiển thị
       itemContainer.append(newHtml)
+
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
    })
 }
 
@@ -117,23 +134,24 @@ function handleAttributes() {
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
       var newHtml = `
-         <div class="form-item d-flex w-100 gap-3 ps-4">
-               <div class="form-group mb-3 w-100">
-                  <label for="Attributes[${itemCounter}].Label">Attribute Label:</label>
-                  <input type="text" class="form-control" id="Attributes[${itemCounter}].Label" name="Attributes[${itemCounter}].Label"/>
-               </div>
-               <div class="form-group mb-3 w-100">
-                  <label for="Attributes[${itemCounter}].MinLabel">Attribute Min Label:</label>
-                  <input type="text" class="form-control" id="Attributes[${itemCounter}].MinLabel" name="Attributes[${itemCounter}].MinLabel"/>
-               </div>
-               <div class="form-group mb-3 w-100">
-                  <label for="Attributes[${itemCounter}].MaxLabel">Attribute Max Label:</label>
-                  <input type="text" class="form-control" id="Attributes[${itemCounter}].MaxLabel" name="Attributes[${itemCounter}].MaxLabel"/>
-               </div>
-               <div class="form-group mb-3 w-100">
-                  <label for="Attributes[${itemCounter}].Value">Attribute Value:</label>
-                  <input type="number" class="form-control" id="Attributes[${itemCounter}].Value" name="Attributes[${itemCounter}].Value" min="0" max="100"/>
-               </div>
+         <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+            <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+            <div class="form-group mb-3 w-100">
+               <label for="Attributes[${itemCounter}].Label">Attribute Label:</label>
+               <input type="text" class="form-control" id="Attributes[${itemCounter}].Label" name="Attributes[${itemCounter}].Label"/>
+            </div>
+            <div class="form-group mb-3 w-100">
+               <label for="Attributes[${itemCounter}].MinLabel">Attribute Min Label:</label>
+               <input type="text" class="form-control" id="Attributes[${itemCounter}].MinLabel" name="Attributes[${itemCounter}].MinLabel"/>
+            </div>
+            <div class="form-group mb-3 w-100">
+               <label for="Attributes[${itemCounter}].MaxLabel">Attribute Max Label:</label>
+               <input type="text" class="form-control" id="Attributes[${itemCounter}].MaxLabel" name="Attributes[${itemCounter}].MaxLabel"/>
+            </div>
+            <div class="form-group mb-3 w-100">
+               <label for="Attributes[${itemCounter}].Value">Attribute Value:</label>
+               <input type="number" class="form-control" id="Attributes[${itemCounter}].Value" name="Attributes[${itemCounter}].Value" min="0" max="100"/>
+            </div>
          </div>
       `
 
@@ -141,10 +159,10 @@ function handleAttributes() {
 
       // Thêm Size mới vào container và cập nhật hiển thị
       itemContainer.append(newHtml)
-      $('#attributeLabel' + itemCounter).text($('#Attributes[' + itemCounter + '].Label').val())
-      $('#attributeMinLabel' + itemCounter).text($('#Attributes[' + itemCounter + '].MinLabel').val())
-      $('#attributeMaxLabel' + itemCounter).text($('#Attributes[' + itemCounter + '].MaxLabel').val())
-      $('#attributeValue' + itemCounter).text($('#Attributes[' + itemCounter + '].Value').val())
+
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
    })
 }
 
@@ -156,19 +174,20 @@ function handleInsideTypes() {
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
       var newHtml = `
-         <div class="form-item d-flex w-100 gap-3 ps-4">
-               <div class="form-group mb-3 w-100">
-                  <label for="InsideTypes[${itemCounter}].Label">Inside Type Label:</label>
-                  <input type="text" class="form-control" id="InsideTypes[${itemCounter}].Label" name="InsideTypes[${itemCounter}].Label"/>
-               </div>
-               <div class="form-group mb-3 w-100">
-                    <label for="InsideTypes[${itemCounter}].Value">Inside Type Icon:</label>
-                    <select class="form-select" id="InsideTypes[${itemCounter}].Icon" name="InsideTypes[${itemCounter}].Icon">
-                        <option value="1">Icon 1</option>
-                        <option value="2">Icon 2</option>
-                        <option value="3">Icon 3</option>
-                    </select>
-                </div>
+         <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+            <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+            <div class="form-group mb-3 w-100">
+               <label for="InsideTypes[${itemCounter}].Label">Inside Type Label:</label>
+               <input type="text" class="form-control" id="InsideTypes[${itemCounter}].Label" name="InsideTypes[${itemCounter}].Label"/>
+            </div>
+            <div class="form-group mb-3 w-100">
+               <label for="InsideTypes[${itemCounter}].Icon">Inside Type Icon:</label>
+               <select class="form-select" id="InsideTypes[${itemCounter}].Icon" name="InsideTypes[${itemCounter}].Icon">
+                  <option value="1">Icon 1</option>
+                  <option value="2">Icon 2</option>
+                  <option value="3">Icon 3</option>
+               </select>
+            </div>
          </div>
       `
 
@@ -176,6 +195,10 @@ function handleInsideTypes() {
 
       // Thêm Size mới vào container và cập nhật hiển thị
       itemContainer.append(newHtml)
+
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
    })
 }
 
@@ -187,7 +210,8 @@ function handleSymbols() {
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
       var newHtml = `
-         <div class="form-item d-flex w-100 gap-3 ps-4">
+         <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+            <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
             <div class="form-group mb-3 w-100">
                <label for="Symbols[${itemCounter}].Title">Symbol Title:</label>
                <input type="text" class="form-control" id="Symbols[${itemCounter}].Title" name="Symbols[${itemCounter}].Title"/>
@@ -207,8 +231,10 @@ function handleSymbols() {
 
       // Thêm Size mới vào container và cập nhật hiển thị
       itemContainer.append(newHtml)
-      $('#symbolTitle' + itemCounter).text($('#Symbols[' + itemCounter + '].Title').val())
-      $('#symbolIcon' + itemCounter).text($('#Symbols[' + itemCounter + '].Icon').val())
+
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
    })
 }
 
@@ -220,11 +246,12 @@ function handleFormats() {
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
       var newHtml = `
-         <div class="form-item d-flex w-100 gap-3 ps-4">
-               <div class="form-group mb-3 w-100">
-                  <label for="Formats[${itemCounter}].Text">Text:</label>
-                  <input type="text" class="form-control" id="Formats[${itemCounter}].Text" name="Formats[${itemCounter}].Text"></input>
-               </div>
+         <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+            <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+            <div class="form-group mb-3 w-100">
+               <label for="Formats[${itemCounter}].Text">Text:</label>
+               <input type="text" class="form-control" id="Formats[${itemCounter}].Text" name="Formats[${itemCounter}].Text"></input>
+            </div>
          </div>
       `
 
@@ -232,6 +259,10 @@ function handleFormats() {
 
       // Thêm Size mới vào container và cập nhật hiển thị
       itemContainer.append(newHtml)
+
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
    })
 }
 
@@ -243,11 +274,12 @@ function handleRoasts() {
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
       var newHtml = `
-         <div class="form-item d-flex w-100 gap-3 ps-4">
-               <div class="form-group mb-3 w-100">
-                  <label for="Roasts[${itemCounter}].Text">Text:</label>
-                  <input type="text" class="form-control" id="Roasts[${itemCounter}].Text" name="Roasts[${itemCounter}].Text"></input>
-               </div>
+         <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+            <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+            <div class="form-group mb-3 w-100">
+               <label for="Roasts[${itemCounter}].Text">Text:</label>
+               <input type="text" class="form-control" id="Roasts[${itemCounter}].Text" name="Roasts[${itemCounter}].Text"></input>
+            </div>
          </div>
       `
 
@@ -255,6 +287,10 @@ function handleRoasts() {
 
       // Thêm Size mới vào container và cập nhật hiển thị
       itemContainer.append(newHtml)
+
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
    })
 }
 
@@ -266,11 +302,12 @@ function handleFlavors() {
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
       var newHtml = `
-         <div class="form-item d-flex w-100 gap-3 ps-4">
-               <div class="form-group mb-3 w-100">
-                  <label for="Flavors[${itemCounter}].Text">Text:</label>
-                  <input type="text" class="form-control" id="Flavors[${itemCounter}].Text" name="Flavors[${itemCounter}].Text"></input>
-               </div>
+         <div class="form-item d-flex align-items-center w-100 gap-3 ps-4">
+            <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
+            <div class="form-group mb-3 w-100">
+               <label for="Flavors[${itemCounter}].Text">Text:</label>
+               <input type="text" class="form-control" id="Flavors[${itemCounter}].Text" name="Flavors[${itemCounter}].Text"></input>
+            </div>
          </div>
       `
 
@@ -278,6 +315,10 @@ function handleFlavors() {
 
       // Thêm Size mới vào container và cập nhật hiển thị
       itemContainer.append(newHtml)
+
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
    })
 }
 
@@ -292,4 +333,8 @@ $(document).ready(function () {
    handleFormats()
    handleRoasts()
    handleFlavors()
+
+   $('.remove-item').click(function () {
+      $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+   })
 })

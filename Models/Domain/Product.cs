@@ -56,6 +56,7 @@ namespace DeathWishCoffee.Models.Domain
     {
         public Guid Id { get; set; }
         public Guid ProductId { get; set; }
+        public Guid Deta { get; set; }
         public string? Text { get; set; }
     }
 
