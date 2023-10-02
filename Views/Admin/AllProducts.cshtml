@@ -17,8 +17,9 @@
     <table class="table">
         <thead>
             <tr>
-                @* <th>Delete</th> *@
+                <th>Delete</th>
                 <th>Edit</th>
+                <th>Review</th>
 
                 <th>ID</th>
                 <th>Title</th>
@@ -52,13 +53,16 @@
             @foreach (var product in Model)
             {
                 <tr>
-                    @* <td>
-                <form method="post" action="/admin/products/delete/@product.Id">
-                <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-                </td> *@
+                    <td>
+                        <form method="post" action="/admin/products/delete/@product.Id">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                     <td>
                         <a href="/admin/products/edit/@product.Id" class="btn btn-info">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/admin/reviews/add/@product.Id" class="btn btn-warning">Review</a>
                     </td>
                     <td>@product.Id</td>
                     <td>@product.Title</td>

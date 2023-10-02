@@ -1,6 +1,51 @@
-﻿@{
+﻿@model List<DeathWishCoffee.Models.Domain.Review>
+@{
     ViewData["Title"] = "All Reviews Page";
 }
 
+<div class="bg-light mt-5 overflow-scroll">
+    <a href="/admin" class="btn btn-secondary mb-3">
+        Back
+    </a>
 
-<h1>All Reviews Page</h1>
+    <h2>Reviews List:</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Delete</th>
+                <th>Edit</th>
+                <th>ID</th>
+                <th>ProductId</th>
+                <th>Rating</th>
+                <th>Username</th>
+                <th>Title</th>
+                <th>Text</th>
+                <th>CreatedAt</th>
+                <th>LastModifiedAt</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in Model)
+            {
+                <tr>
+                    <td>
+                        <form method="post" action="/admin/reviews/delete/@review.Id">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="/admin/reviews/edit/@review.Id" class="btn btn-info">Edit</a>
+                    </td>
+                    <th>@review.Id</th>
+                    <th>@review.ProductId</th>
+                    <th>@review.Rating</th>
+                    <th>@review.Username</th>
+                    <th>@review.Title</th>
+                    <th>@review.Text</th>
+                    <th>@review.CreatedAt</th>
+                    <th>@review.LastModifiedAt</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

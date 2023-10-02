@@ -180,6 +180,34 @@ app.MapControllerRoute(
     defaults: new { controller = "Admin", action = "EditProduct" }
 );
 
+// [/admin/reviews]
+app.MapControllerRoute(
+    name: "AllReviews",
+    pattern: "admin/reviews",
+    defaults: new { controller = "Admin", action = "AllReviews" }
+);
+
+// [/admin/reviews/add/{productId}]
+app.MapControllerRoute(
+    name: "AddReviews",
+    pattern: "admin/reviews/add/{productId}",
+    defaults: new { controller = "Admin", action = "AddNewReview" }
+);
+
+// [/admin/reviews/edit/{id}]
+app.MapControllerRoute(
+    name: "EditReview",
+    pattern: "admin/reviews/edit/{id}",
+    defaults: new { controller = "Admin", action = "EditReview" }
+);
+
+// [/admin/reviews/delete/{id}]
+app.MapControllerRoute(
+    name: "DeleteReview",
+    pattern: "admin/reviews/delete/{id}",
+    defaults: new { controller = "Admin", action = "DeleteReview" }
+);
+
 
 // [/]
 // app.MapControllerRoute(

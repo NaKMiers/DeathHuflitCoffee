@@ -641,10 +641,10 @@ namespace DeathWishCoffee.Controllers
                 form.PrimaryColor = "";
             }
             productToEdit.PrimaryColor = form.PrimaryColor;
-            
+
             Console.WriteLine("Sizes:");
             if (form.Sizes != null && form.Sizes.Count > 0)
-            {   
+            {
                 _deathWishCoffeeDbContext.Sizes.RemoveRange(productToEdit.Sizes);
                 foreach (var item in form.Sizes)
                 {
@@ -909,12 +909,111 @@ namespace DeathWishCoffee.Controllers
                 }
             }
 
-            
-            
+
+
             _deathWishCoffeeDbContext.SaveChanges();
 
             return RedirectToAction("AllProducts", "Admin");
         }
+
+        // [/admin/reviews]
+        [HttpGet]
+        public IActionResult AllReviews()
+        {
+            var reviews = _deathWishCoffeeDbContext.Reviews.ToList();
+
+            return View(reviews);
+        }
+
+        // [/admin/reviews/add/{productId}]
+        [HttpGet]
+        public IActionResult AddNewReview()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddNewReview(AddNewReviewRequest form, Guid productId)
+        {
+            Console.WriteLine("AddNewReview");
+
+            Console.WriteLine("Title: " + form.Title);
+            Console.WriteLine("Text: " + form.Text);
+
+            var reviewToProduct = _deathWishCoffeeDbContext.Products.FirstOrDefault(p => p.Id == productId);
+
+            if (reviewToProduct == null)
+            {
+                return BadRequest("Invalid Product ID!");
+            }
+
+            if (string.IsNullOrEmpty(form.Title))
+            {
+                form.Title = "";
+            }
+            if (string.IsNullOrEmpty(form.Text))
+            {
+                form.Text = "";
+            }
+            var newReview = new Review
+            {
+                ProductId = productId,
+                Title = form.Title,
+                Text = form.Text,
+                CreatedAt = DateTime.Now,
+            };
+
+            _deathWishCoffeeDbContext.Reviews.Add(newReview);
+            _deathWishCoffeeDbContext.SaveChanges();
+
+            return View();
+        }
+
+        // [/admin/reviews/delete/{id}]
+        public IActionResult DeleteReview(Guid id)
+        {
+            Console.WriteLine("DeleteReivew");
+
+            // get review to delete from reviewId
+            var reviewToDelete = _deathWishCoffeeDbContext.Reviews.FirstOrDefault(r => r.Id == id);
+
+            // if review is EXIST => DELETE
+            if (reviewToDelete != null)
+            {
+                _deathWishCoffeeDbContext.Reviews.Remove(reviewToDelete);
+                _deathWishCoffeeDbContext.SaveChanges();
+            }
+
+            // redirect to all reviews
+            return RedirectToAction("AllReviews", "Admin");
+        }
+
+        // [/admin/reviews/edit/{id}]
+        [HttpGet]
+        public IActionResult EditReview(Guid id)
+        {
+
+            var review = _deathWishCoffeeDbContext.Reviews.FirstOrDefault(r => r.Id == id);
+
+            // if review does NOT EXISTS return bad request 
+            if (review == null)
+            {
+                return BadRequest("Review does not exist");
+            }
+
+
+            ViewBag.Review = review;
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult EditReview(AddNewReviewRequest form, Guid id)
+        {
+            Console.WriteLine("EditReview");
+
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

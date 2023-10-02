@@ -1,4 +1,4 @@
-namespace DeathWishCoffee
+namespace DeathWishCoffee.Models.Domain
 {
     public class Review
     {
