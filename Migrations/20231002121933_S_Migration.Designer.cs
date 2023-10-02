@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DeathWishCoffee.Migrations
 {
     [DbContext(typeof(DeathWishCoffeeDbContext))]
-    [Migration("20231002083217_Next_Migartion")]
-    partial class Next_Migartion
+    [Migration("20231002121933_S_Migration")]
+    partial class S_Migration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -122,9 +122,6 @@ namespace DeathWishCoffee.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("Deta")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
@@ -197,8 +194,8 @@ namespace DeathWishCoffee.Migrations
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("TotalAmount")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("TotalAmount")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -247,6 +244,40 @@ namespace DeathWishCoffee.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Review", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Rating")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("DeathWishCoffee.Models.Domain.Roast", b =>
@@ -375,40 +406,6 @@ namespace DeathWishCoffee.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Review", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("LastModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("Rating")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Text")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("Reviews");
-                });
-
             modelBuilder.Entity("DeathWishCoffee.Models.Domain.Attribute", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
@@ -472,6 +469,15 @@ namespace DeathWishCoffee.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Review", b =>
+                {
+                    b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
+                        .WithMany("Reviews")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("DeathWishCoffee.Models.Domain.Roast", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
@@ -503,15 +509,6 @@ namespace DeathWishCoffee.Migrations
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
                         .WithMany("Types")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("DeathWishCoffee.Review", b =>
-                {
-                    b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
-                        .WithMany("Reviews")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
