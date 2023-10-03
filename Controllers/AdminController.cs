@@ -5,6 +5,7 @@ using DeathWishCoffee.Models.ViewModels;
 using DeathWishCoffee.Data;
 using DeathWishCoffee.Models.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 
 namespace DeathWishCoffee.Controllers
 {
@@ -1061,6 +1062,84 @@ namespace DeathWishCoffee.Controllers
             return RedirectToAction("AllReviews", "Admin");
         }
 
+        // [/admin/orders]
+        [HttpGet]
+        public IActionResult AllOrders()
+        {
+            return View();
+        }
+
+        // [/admin/orders/{userId}]
+        public IActionResult AllOrdersByUser(Guid userId)
+        {
+            return View();
+        }
+
+        // [/admin/orders/add/{userId}]
+        [HttpGet]
+        public IActionResult AddNewOrder(Guid userId)
+        {
+            // get All Products from DB to select
+            var allProducts = _deathWishCoffeeDbContext.Products
+                        .Include(p => p.Sizes)
+                        .Include(p => p.InsideTypes)
+                        .Include(p => p.Attributes)
+                        .Include(p => p.Images)
+                        .Include(p => p.Types)
+                        .ToList();
+
+            ViewBag.Products = allProducts;
+            ViewBag.UserId = userId;
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddNewOrder(AddNewOrderRequest form, Guid userId)
+        {
+            return View();
+        }
+
+        // [/admin/orders/edit/{id}]
+        [HttpGet]
+        public IActionResult EditOrder(Guid id)
+        {
+            // get order from database
+            var order = _deathWishCoffeeDbContext.Orders
+                            .Include(o => o.Products)
+                            .FirstOrDefault(o => o.Id == id);
+
+            // assign order to ViewBag to show in view
+            ViewBag.Order = order;
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult EditOrder(AddNewOrderRequest form, Guid id)
+        {
+            Console.WriteLine("EditOrder");
+
+            return View();
+        }
+
+        // [/admin/orders/delete/{id}]
+        public IActionResult DeleteOrder(Guid id)
+        {
+            Console.WriteLine("DeleteOrder");
+            // get order to delete from database
+            var orderToDelete = _deathWishCoffeeDbContext.Orders.FirstOrDefault(o => o.Id == id);
+
+            // if order does NOT EXISTS => BadRequest
+            if (orderToDelete == null)
+                return BadRequest("Order does not exists.");
+
+            // delete order
+            _deathWishCoffeeDbContext.Orders.Remove(orderToDelete);
+            _deathWishCoffeeDbContext.SaveChanges();
+
+            // redirect to All Orders
+            return RedirectToAction("AllOrders", "Admin");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
