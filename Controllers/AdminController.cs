@@ -146,13 +146,10 @@ namespace DeathWishCoffee.Controllers
 
             // CREATE new user (Models.User) from RegisterRequest (ViewModels)
             if (string.IsNullOrEmpty(registerRequest.MiddleName))
-            {
                 registerRequest.MiddleName = "";
-            }
+
             if (string.IsNullOrEmpty(registerRequest.Country))
-            {
                 registerRequest.Country = "";
-            }
 
             // GET user in databse
             var userInDb = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id == id);
@@ -161,7 +158,7 @@ namespace DeathWishCoffee.Controllers
             if (userInDb != null)
             {
                 // update
-                userInDb.Fullname = registerRequest.FirstName + registerRequest.MiddleName + registerRequest.LastName;
+                userInDb.Fullname = registerRequest.FirstName + " " + registerRequest.MiddleName + " " + registerRequest.LastName;
                 userInDb.FirstName = registerRequest.FirstName;
                 userInDb.MiddleName = registerRequest.MiddleName;
                 userInDb.LastName = registerRequest.LastName;
@@ -171,6 +168,7 @@ namespace DeathWishCoffee.Controllers
                 userInDb.Phone = registerRequest.Phone;
                 userInDb.Country = registerRequest.Country;
                 userInDb.Address = registerRequest.Address;
+                userInDb.LastModifiedAt = DateTime.Now;
 
                 // save update
                 _deathWishCoffeeDbContext.SaveChanges();
@@ -605,6 +603,8 @@ namespace DeathWishCoffee.Controllers
                 return BadRequest("Product does not exist");
             }
 
+            productToEdit.LastModifiedAt = DateTime.Now;
+
             Console.WriteLine("Title:" + form.Title);
             if (string.IsNullOrEmpty(form.Title))
             {
@@ -992,7 +992,8 @@ namespace DeathWishCoffee.Controllers
             _deathWishCoffeeDbContext.Reviews.Add(newReview);
             _deathWishCoffeeDbContext.SaveChanges();
 
-            return View();
+            // return View();
+            return RedirectToAction("AllProducts", "Admin");
         }
 
         // [/admin/reviews/delete/{id}]
@@ -1027,8 +1028,8 @@ namespace DeathWishCoffee.Controllers
                 return BadRequest("Review does not exist");
             }
 
-
             ViewBag.Review = review;
+
             return View();
         }
 
@@ -1037,7 +1038,27 @@ namespace DeathWishCoffee.Controllers
         {
             Console.WriteLine("EditReview");
 
-            return View();
+            // prevent null & empty string
+            if (string.IsNullOrEmpty(form.Title))
+                form.Title = "";
+
+            if (string.IsNullOrEmpty(form.Text))
+                form.Text = "";
+
+            // get review in database
+            var reviewInDb = _deathWishCoffeeDbContext.Reviews.FirstOrDefault(r => r.Id == id);
+
+            // if review does not EXIST => Bad Request
+            if (reviewInDb == null)
+                return BadRequest("Review does not exist");
+
+            reviewInDb.Title = form.Title;
+            reviewInDb.Text = form.Text;
+            reviewInDb.LastModifiedAt = DateTime.Now;
+
+            _deathWishCoffeeDbContext.SaveChanges();
+
+            return RedirectToAction("AllReviews", "Admin");
         }
 
 

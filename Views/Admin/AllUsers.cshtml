@@ -3,7 +3,7 @@
     ViewData["Title"] = "All Users Page";
 }
 
-<div class="bg-light mt-5">
+<div class="bg-light pt-5 overflow-scroll">
     <a href="/admin" class="btn btn-secondary mb-3">
         Back
     </a>
@@ -25,6 +25,8 @@
                 <th>Phone</th>
                 <th>Country</th>
                 <th>Address</th>
+                <th>Created At</th>
+                <th>Last Modified At</th>
             </tr>
         </thead>
         <tbody>
@@ -50,6 +52,8 @@
                     <td>@user.Phone</td>
                     <td>@user.Country</td>
                     <td>@user.Address</td>
+                    <td>@user.CreatedAt</td>
+                    <td>@user.LastModifiedAt</td>
                 </tr>
             }
         </tbody>

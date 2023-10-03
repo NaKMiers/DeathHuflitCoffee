@@ -182,6 +182,18 @@
                             }
                         }
                     </td>
+
+                    <td>___Rating___</td>
+                    <td>
+                        @if (product.Reviews != null)
+                        {
+                            <span>@product.Reviews.Count</span>
+                        }
+                    </td>
+                    <td>___Amount_Sold___</td>
+
+                    <td>@product.CreatedAt</td>
+                    <td>@product.LastModifiedAt</td>
                 </tr>
             }
         </tbody>
