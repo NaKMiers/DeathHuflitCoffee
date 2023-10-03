@@ -1,0 +1,77 @@
+﻿@model DeathWishCoffee.Models.ViewModels.AddNewOrderRequest
+@{
+    ViewData["Title"] = "Add New Order Page";
+    var products = ViewBag.Products;
+}
+
+<div class="bg-light pt-5">
+    <a href="/admin" class="btn btn-secondary mb-3">
+        Back
+    </a>
+
+    <h1 class="text-center">Add New Order</h1>
+    <p class="text-center"><strong>User ID:</strong> @ViewBag.UserId</p>
+
+    <form action="" method="post" class="bg-light pt-5 pb-5 ps-5 pe-5">
+        <div class="d-flex gap-3 overflow-scroll w-100">
+            @foreach (var item in products)
+            {
+                <div class="card" style="width: 18rem;">
+
+                    <div class="d-flex overflow-scroll w-100" style="scroll-snap-type: x mandatory;">
+                        @foreach (var img in item.Images)
+                        {
+                            <img style="width: 95%; scroll-snap-align: start" src="~/uploads/@img.Src" class="card-img-top"
+                                class="card-img-top" alt="img">
+                        }
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>
+                        <p class="card-text">@item.Subtitle</p>
+                        <p class="card-text">@item.Description</p>
+                        <p class="card-text">@item.Note</p>
+                    </div>
+                    <div class="row g-2">
+                        <select class="form-select col-md" id="floatingSelectGrid" place>
+                            <option selected>Size</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="row g-2">
+                        <select class="form-select col-md" id="floatingSelectGrid" place>
+                            <option selected>Type</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <select class="form-select col-md" id="floatingSelectGrid" place>
+                            <option selected>Format</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="row g-2">
+                        <select class="form-select col-md" id="floatingSelectGrid" place>
+                            <option selected>Roast</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <select class="form-select col-md" id="floatingSelectGrid" place>
+                            <option selected>Flavors</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
