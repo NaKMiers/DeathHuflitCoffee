@@ -40,12 +40,22 @@
    text-transform: uppercase;
    text-decoration: underline;
 }
-.BlogCarousel__slider-component-full-width {
+/* .BlogCarousel__slider-component-full-width {
    width: 150%;
    height: 390px;
    padding: 0px 75px;
    display: flex;
    position: relative;
+} */
+.BlogCarousel__slider-component-full-width {
+   width: 100%; /* Thay vì 150% */
+   height: auto; /* Sử dụng auto để điều chỉnh chiều cao tự động */
+   padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
+   display: flex;
+   position: relative;
+   width: 150vw; /* Sử dụng viewport width */
+   height: 55vh; /* Sử dụng viewport height */
+   padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
 }
 .BlogCarousel__blocks {
    display: flex;
@@ -115,7 +125,6 @@
    display: flex;
    height: 100%;
    gap: 1.6rem;
-   width: 200%;
    padding-left: 1rem;
 }
 .BlogCarousel__article-card-wrapper.BlogCarousel__card-wrapper.BlogCarousel__underline-links-hover {
@@ -180,7 +189,7 @@
 .BlogCarousel__blog-post.BlogCarousel__grid-item.BlogCarousel__article.BlogCarousel__slider-slide.BlogCarousel__scroll-trigger.BlogCarousel__animate-slide-in {
    color: #fff;
    list-style: none;
-   width: calc(150% / 6);
+   width: 100%;
 }
 .BlogCarousel__card.BlogCarousel__article-card.BlogCarousel__card-standard.BlogCarousel__card-media {
    background-color: #000;
@@ -189,17 +198,21 @@
 
 @media only screen and (max-width: 1300px) {
    .BlogCarousel__slider-component-full-width {
-      height: 415px;
+      height: 60vh;
    }
 }
 @media only screen and (max-width: 1200px) {
    .BlogCarousel__slider-component-full-width {
-      height: 500px;
+      height: 70vh;
    }
 }
 @media only screen and (max-width: 991px) {
    .BlogCarousel__slider-component-full-width {
-      width: 500%;
+      width: 100%; /* Điều chỉnh lại chiều rộng */
+      height: auto; /* Sử dụng auto để điều chỉnh chiều cao tự động */
+      width: 520vw;
+      height: 75vh;
+      padding-left: 8%;
    }
    #BlogCarousel__arrowRight {
       left: 18%;
