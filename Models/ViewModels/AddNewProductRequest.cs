@@ -1,8 +1,12 @@
-namespace DeathWishCoffee.Models.Domain
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace DeathWishCoffee.Models.ViewModels
 {
-    public class Product
+    public class AddNewProductRequest
     {
-        public Guid Id { get; set; }
         public string? Title { get; set; }
         public string? Subtitle { get; set; }
         public string? Description { get; set; }
@@ -25,57 +29,40 @@ namespace DeathWishCoffee.Models.Domain
         public List<Symbol>? Symbols { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime LastModifiedAt { get; set; }
-
-        // foreign key
-        public ICollection<Review>? Reviews { get; set; }
     }
 
     public class FlavorProfile
     {
-        public Guid Id { get; set; }
-        public Guid ProductId { get; set; }
         public string? Label { get; set; }
         public string? Text { get; set; }
     }
 
     public class Image
     {
-        public Guid Id { get; set; }
-        public Guid ProductId { get; set; }
         public string? Src { get; set; }
     }
 
     public class Type
     {
-        public Guid Id { get; set; }
-        public Guid ProductId { get; set; }
         public string? Text { get; set; }
     }
 
     public class Format
     {
-        public Guid Id { get; set; }
-        public Guid ProductId { get; set; }
         public string? Text { get; set; }
     }
 
     public class Roast
     {
-        public Guid Id { get; set; }
-        public Guid ProductId { get; set; }
         public string? Text { get; set; }
     }
     public class Flavor
     {
-        public Guid Id { get; set; }
-        public Guid ProductId { get; set; }
         public string? Text { get; set; }
     }
 
     public class Size
     {
-        public Guid Id { get; set; }
-        public Guid ProductId { get; set; }
         public string? Label { get; set; }
         public double Price { get; set; }
         public string? Text { get; set; }
@@ -83,16 +70,12 @@ namespace DeathWishCoffee.Models.Domain
 
     public class InsideType
     {
-        public Guid Id { get; set; }
-        public Guid ProductId { get; set; }
         public string? Icon { get; set; }
         public string? Label { get; set; }
     }
 
     public class Attribute
     {
-        public Guid Id { get; set; }
-        public Guid ProductId { get; set; }
         public string? Label { get; set; }
         public string? MinLabel { get; set; }
         public string? MaxLabel { get; set; }
@@ -100,19 +83,13 @@ namespace DeathWishCoffee.Models.Domain
     }
     public class Detail
     {
-        public Guid Id { get; set; }
-        public Guid ProductId { get; set; }
         public string? Label { get; set; }
         public string? Text { get; set; }
     }
 
     public class Symbol
     {
-        public Guid Id { get; set; }
-        public Guid ProductId { get; set; }
-        public string? Icon { get; set; }
         public string? Title { get; set; }
+        public string? Icon { get; set; }
     }
 }
-
-
