@@ -14,6 +14,7 @@
             <tr>
                 <th>Delete</th>
                 <th>Edit</th>
+                <th>Order</th>
                 <th>ID</th>
                 <th>Fullname</th>
                 <th>First Name</th>
@@ -40,6 +41,9 @@
                     </td>
                     <td>
                         <a href="/admin/users/edit/@user.Id" class="btn btn-info">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/admin/orders/add/@user.Id" class="btn btn-warning">Order</a>
                     </td>
                     <td>@user.Id</td>
                     <td>@user.Fullname</td>
