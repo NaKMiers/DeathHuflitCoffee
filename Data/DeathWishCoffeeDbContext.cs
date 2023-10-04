@@ -12,7 +12,7 @@ namespace DeathWishCoffee.Data
 
       public DbSet<Product> Products { get; set; }
       public DbSet<Review> Reviews { get; set; }
-      public DbSet<OrderHistory> OrdersHistory { get; set; }
+      public DbSet<Order> Orders { get; set; }
       public DbSet<User> Users { get; set; }
 
       public DbSet<FlavorProfile> FlavorProfiles { get; set; }

@@ -1,21 +1,23 @@
-﻿using DeathWishCoffee.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using DeathWishCoffee.Models;
+using DeathWishCoffee.Models.Domain;
 using DeathWishCoffee.Models.ViewModels;
 using DeathWishCoffee.Data;
-using DeathWishCoffee.Models.Domain;
-using Microsoft.EntityFrameworkCore;
 
 namespace DeathWishCoffee.Controllers
 {
     public class AdminController : Controller
     {
         private readonly DeathWishCoffeeDbContext _deathWishCoffeeDbContext;
+        private readonly IHttpContextAccessor _httpContext;
 
         // constructor
-        public AdminController(DeathWishCoffeeDbContext deathWishCoffeeDbContext)
+        public AdminController(DeathWishCoffeeDbContext deathWishCoffeeDbContext, IHttpContextAccessor httpContextAccessor)
         {
             _deathWishCoffeeDbContext = deathWishCoffeeDbContext;
+            _httpContext = httpContextAccessor;
         }
 
         // [/admin]
@@ -25,10 +27,22 @@ namespace DeathWishCoffee.Controllers
             return View();
         }
 
+        private void SetUpUserDataForAllPage(User user)
+        {
+            _httpContext.HttpContext.Session.SetString("Id", user.Id.ToString());
+            _httpContext.HttpContext.Session.SetString("Username", user.Username);
+            _httpContext.HttpContext.Session.SetString("Avatar", user.Avatar);
+        }
+
         // [/admin/login]
         [HttpGet]
         public IActionResult Login()
         {
+            if (HttpContext.Session.GetString("Id") != null)
+            {
+                return RedirectToAction("Index", "Account");
+            }
+
             return View();
         }
 
@@ -38,15 +52,22 @@ namespace DeathWishCoffee.Controllers
             Console.WriteLine("Login");
 
             // check user if exist
-            var user = _deathWishCoffeeDbContext.Users.SingleOrDefault(u => u.Username == loginRequest.Username && u.Password == loginRequest.Password);
+            var user = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Username == loginRequest.Username && u.Password == loginRequest.Password);
 
-            // return bad request if user doesn't exists
+            // return bad request if user does NOT EXISTS
             if (user == null)
             {
                 return BadRequest("Invalid username or password.");
             }
 
-            return View();
+            Console.WriteLine(user.Id);
+            Console.WriteLine(user.Username);
+            Console.WriteLine(user.Avatar);
+
+            // set user data to session
+            SetUpUserDataForAllPage(user);
+
+            return RedirectToAction("Index", "Home");
         }
 
         // [/admin/register]
@@ -57,40 +78,60 @@ namespace DeathWishCoffee.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(RegisterRequest registerRequest)
+        public IActionResult Register(RegisterRequest form)
         {
             Console.WriteLine("Register");
 
             // create new user (Models.User) from RegisterRequest (ViewModels)
-            if (string.IsNullOrEmpty(registerRequest.MiddleName))
+            if (string.IsNullOrEmpty(form.MiddleName))
             {
-                registerRequest.MiddleName = "";
+                form.MiddleName = "";
             }
-            if (string.IsNullOrEmpty(registerRequest.Country))
+            if (string.IsNullOrEmpty(form.Country))
             {
-                registerRequest.Country = "";
+                form.Country = "";
             }
 
+            string avatarPath = "";
+            if (form.Avatar != null)
+            {
+
+                Console.WriteLine(form.Avatar.FileName);
+                // get path to save in server
+                var imagePath = Path.Combine("wwwroot", "uploads");
+                var imageName = Guid.NewGuid().ToString() + Path.GetExtension(form.Avatar.FileName);
+                var fullPath = Path.Combine(Directory.GetCurrentDirectory(), imagePath, imageName);
+                avatarPath = Path.Combine(imageName);
+                // save file to server (/wwwroot/uploads)
+                using var stream = new FileStream(fullPath, FileMode.Create);
+                form.Avatar.CopyTo(stream);
+            }
 
             var newUser = new User
             {
-                Fullname = registerRequest.FirstName + registerRequest.MiddleName + registerRequest.LastName,
-                FirstName = registerRequest.FirstName,
-                MiddleName = registerRequest.MiddleName,
-                LastName = registerRequest.LastName,
-                Email = registerRequest.Email,
-                Username = registerRequest.Username,
-                Password = registerRequest.Password,
-                Phone = registerRequest.Phone,
-                Country = registerRequest.Country,
-                Address = registerRequest.Address,
+                Fullname = form.FirstName + form.MiddleName + form.LastName,
+                FirstName = form.FirstName,
+                MiddleName = form.MiddleName,
+                LastName = form.LastName,
+                Email = form.Email,
+                Username = form.Username,
+                Password = form.Password,
+                Phone = form.Phone,
+                Country = form.Country,
+                Address = form.Address,
+                Avatar = avatarPath,
             };
 
             // add users in database
             _deathWishCoffeeDbContext.Users.Add(newUser);
             _deathWishCoffeeDbContext.SaveChanges();
 
-            return View();
+            var registedUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Username == form.Username && u.Password == form.Password);
+
+            // set user data to session
+            SetUpUserDataForAllPage(registedUser);
+
+            return RedirectToAction("Index", "Home");
         }
 
         // [/admin/users]
@@ -1061,6 +1102,84 @@ namespace DeathWishCoffee.Controllers
             return RedirectToAction("AllReviews", "Admin");
         }
 
+        // [/admin/orders]
+        [HttpGet]
+        public IActionResult AllOrders()
+        {
+            return View();
+        }
+
+        // [/admin/orders/{userId}]
+        public IActionResult AllOrdersByUser(Guid userId)
+        {
+            return View();
+        }
+
+        // [/admin/orders/add/{userId}]
+        [HttpGet]
+        public IActionResult AddNewOrder(Guid userId)
+        {
+            // get All Products from DB to select
+            var allProducts = _deathWishCoffeeDbContext.Products
+                        .Include(p => p.Sizes)
+                        .Include(p => p.InsideTypes)
+                        .Include(p => p.Attributes)
+                        .Include(p => p.Images)
+                        .Include(p => p.Types)
+                        .ToList();
+
+            ViewBag.Products = allProducts;
+            ViewBag.UserId = userId;
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddNewOrder(AddNewOrderRequest form, Guid userId)
+        {
+            return View();
+        }
+
+        // [/admin/orders/edit/{id}]
+        [HttpGet]
+        public IActionResult EditOrder(Guid id)
+        {
+            // get order from database
+            var order = _deathWishCoffeeDbContext.Orders
+                            .Include(o => o.Products)
+                            .FirstOrDefault(o => o.Id == id);
+
+            // assign order to ViewBag to show in view
+            ViewBag.Order = order;
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult EditOrder(AddNewOrderRequest form, Guid id)
+        {
+            Console.WriteLine("EditOrder");
+
+            return View();
+        }
+
+        // [/admin/orders/delete/{id}]
+        public IActionResult DeleteOrder(Guid id)
+        {
+            Console.WriteLine("DeleteOrder");
+            // get order to delete from database
+            var orderToDelete = _deathWishCoffeeDbContext.Orders.FirstOrDefault(o => o.Id == id);
+
+            // if order does NOT EXISTS => BadRequest
+            if (orderToDelete == null)
+                return BadRequest("Order does not exists.");
+
+            // delete order
+            _deathWishCoffeeDbContext.Orders.Remove(orderToDelete);
+            _deathWishCoffeeDbContext.SaveChanges();
+
+            // redirect to All Orders
+            return RedirectToAction("AllOrders", "Admin");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

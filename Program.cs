@@ -9,6 +9,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DeathWishCoffeeDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("azureDB")));
 
+// config sesstion
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(120);
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -18,6 +26,9 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+// use Session Middleware
+app.UseSession();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -206,6 +217,43 @@ app.MapControllerRoute(
     name: "DeleteReview",
     pattern: "admin/reviews/delete/{id}",
     defaults: new { controller = "Admin", action = "DeleteReview" }
+);
+
+// [/admin/orders]
+app.MapControllerRoute(
+    name: "AllOrders",
+    pattern: "admin/orders",
+    defaults: new { controller = "Admin", action = "AllOrders" }
+);
+
+// [/admin/orders/{userId}]
+app.MapControllerRoute(
+    name: "AllOrdersByUser",
+    pattern: "admin/orders/{userId}",
+    defaults: new { controller = "Admin", action = "AllOrdersByUser" }
+);
+
+// [/admin/orders/add/{userId}]
+app.MapControllerRoute(
+    name: "AddNewOrder",
+    pattern: "admin/orders/add/{userId}",
+    defaults: new { controller = "Admin", action = "AddNewOrder" }
+);
+
+
+
+// [/admin/orders/edit/{id}]
+app.MapControllerRoute(
+    name: "EditOrder",
+    pattern: "admin/orders/edit/{id}",
+    defaults: new { controller = "Admin", action = "EditOrder" }
+);
+
+// [/admin/orders/delete/{id}]
+app.MapControllerRoute(
+    name: "DeleteOrder",
+    pattern: "admin/orders/delete/{id}",
+    defaults: new { controller = "Admin", action = "DeleteOrder" }
 );
 
 

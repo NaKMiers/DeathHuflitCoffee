@@ -13,6 +13,7 @@ namespace DeathWishCoffee.Models.Domain
         public string? Phone { get; set; }
         public string? Country { get; set; }
         public string? Address { get; set; }
+        public string? Avatar { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime LastModifiedAt { get; set; }
 

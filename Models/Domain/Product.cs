@@ -28,6 +28,7 @@ namespace DeathWishCoffee.Models.Domain
 
         // foreign key
         public ICollection<Review>? Reviews { get; set; }
+        public ICollection<Order>? Orders { get; set; }
     }
 
     public class FlavorProfile
