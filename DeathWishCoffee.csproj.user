@@ -2,5 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>https</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>D:\Desktop Fake\Programing\ASP.NET\ZZZ\.github\workflows\DeathHuflitCoffee.yml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

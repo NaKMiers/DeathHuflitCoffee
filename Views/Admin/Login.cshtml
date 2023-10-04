@@ -1,0 +1,23 @@
+﻿@model DeathWishCoffee.Models.ViewModels.LoginRequest
+@{
+    ViewData["Title"] = "Login Page";
+}
+
+<div class="bg-light pt-5">
+    <h1 class="text-center">Login</h1>
+
+    <form action="" method="post" class="bg-light pt-5 pb-5 ps-5 pe-5">
+        <div class="mb-3">
+            <label for="username" class="form-label">*Username:</label>
+            <input name="username" type="text" class="form-control" id="username" placeholder="Username..."
+                asp-for="Username" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">*Password:</label>
+            <input name="password" type="password" class="form-control" id="password" placeholder="Password..."
+                asp-for="Password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
