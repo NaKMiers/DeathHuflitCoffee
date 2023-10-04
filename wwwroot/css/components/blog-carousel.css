@@ -53,12 +53,14 @@
    padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
    display: flex;
    position: relative;
-   width: 150vw; /* Sử dụng viewport width */
    height: 55vh; /* Sử dụng viewport height */
    padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
 }
 .BlogCarousel__blocks {
+   position: relative;
    display: flex;
+   overflow: hidden;
+   width: 100%;
    transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
    z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
 }
@@ -69,7 +71,11 @@
    align-items: center;
    cursor: pointer; /* Biến con trỏ thành dấu tay khi trỏ vào mũi tên */
    position: relative;
+   top: 50%;
+   transform: translateY(-50%);
    width: 74px;
+
+   background: red;
 }
 #BlogCarousel__arrowLeft {
    background: #000;
@@ -124,8 +130,10 @@
 #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
    display: flex;
    height: 100%;
+   width: 100%;
    gap: 1.6rem;
    padding-left: 1rem;
+   overflow-x: scroll;
 }
 .BlogCarousel__article-card-wrapper.BlogCarousel__card-wrapper.BlogCarousel__underline-links-hover {
    padding: 16px;
@@ -190,6 +198,7 @@
    color: #fff;
    list-style: none;
    width: 100%;
+   flex-shrink: 0;
 }
 .BlogCarousel__card.BlogCarousel__article-card.BlogCarousel__card-standard.BlogCarousel__card-media {
    background-color: #000;
@@ -210,7 +219,6 @@
    .BlogCarousel__slider-component-full-width {
       width: 100%; /* Điều chỉnh lại chiều rộng */
       height: auto; /* Sử dụng auto để điều chỉnh chiều cao tự động */
-      width: 520vw;
       height: 75vh;
       padding-left: 8%;
    }
@@ -263,6 +271,8 @@
    display: flex;
    transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
    z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
+   overflow: hidden;
+   width: 100%;
 }
 #BlogCarousel__arrowLeft-next2 {
    background: #000;
@@ -297,6 +307,8 @@
    display: flex;
    transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
    z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
+   overflow: hidden;
+   width: 100%;
 }
 #BlogCarousel__arrowLeft-next3 {
    background: #000;
@@ -331,4 +343,9 @@
    display: flex;
    transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
    z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
+   overflow: hidden;
+   width: 100%;
+}
+.BlogCarousel__collectAll {
+   width: 100%;
 }
