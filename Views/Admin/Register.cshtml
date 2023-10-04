@@ -10,7 +10,7 @@
 
     <h1 class="text-center">Register</h1>
 
-    <form action="" method="post" class="bg-light pt-5 pb-5 ps-5 pe-5">
+    <form action="" method="post" class="bg-light pt-5 pb-5 ps-5 pe-5" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="firstName" class="form-label">*First Name:</label>
             <input name="firstName" type="text" class="form-control" id="firstName" placeholder="First name..."
@@ -25,6 +25,10 @@
             <label for="lastName" class="form-label">*Last Name:</label>
             <input name="lastName" type="text" class="form-control" id="lastName" placeholder="Last Name..."
                 asp-for="LastName" required>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="avatar" class="form-label">Avatar:</label>
+            <input name="avatar" type="file" class="form-control" id="avatar" asp-for="Avatar">
         </div>
         <div class="mb-3">
             <label for="username" class="form-label">*Username:</label>
@@ -56,7 +60,6 @@
             <input name="phone" type="text" class="form-control" id="phone" placeholder="Phone..." asp-for="Phone"
                 required>
         </div>
-
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

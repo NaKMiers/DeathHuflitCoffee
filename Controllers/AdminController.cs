@@ -5,7 +5,6 @@ using DeathWishCoffee.Models.ViewModels;
 using DeathWishCoffee.Data;
 using DeathWishCoffee.Models.Domain;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.DataAnnotations;
 
 namespace DeathWishCoffee.Controllers
 {
@@ -58,33 +57,48 @@ namespace DeathWishCoffee.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(RegisterRequest registerRequest)
+        public IActionResult Register(RegisterRequest form)
         {
             Console.WriteLine("Register");
 
             // create new user (Models.User) from RegisterRequest (ViewModels)
-            if (string.IsNullOrEmpty(registerRequest.MiddleName))
+            if (string.IsNullOrEmpty(form.MiddleName))
             {
-                registerRequest.MiddleName = "";
+                form.MiddleName = "";
             }
-            if (string.IsNullOrEmpty(registerRequest.Country))
+            if (string.IsNullOrEmpty(form.Country))
             {
-                registerRequest.Country = "";
+                form.Country = "";
             }
 
+            string avatarPath = "";
+            if (form.Avatar != null)
+            {
+
+                Console.WriteLine(form.Avatar.FileName);
+                // get path to save in server
+                var imagePath = Path.Combine("wwwroot", "uploads");
+                var imageName = Guid.NewGuid().ToString() + Path.GetExtension(form.Avatar.FileName);
+                var fullPath = Path.Combine(Directory.GetCurrentDirectory(), imagePath, imageName);
+                avatarPath = Path.Combine(imageName);
+                // save file to server (/wwwroot/uploads)
+                using var stream = new FileStream(fullPath, FileMode.Create);
+                form.Avatar.CopyTo(stream);
+            }
 
             var newUser = new User
             {
-                Fullname = registerRequest.FirstName + registerRequest.MiddleName + registerRequest.LastName,
-                FirstName = registerRequest.FirstName,
-                MiddleName = registerRequest.MiddleName,
-                LastName = registerRequest.LastName,
-                Email = registerRequest.Email,
-                Username = registerRequest.Username,
-                Password = registerRequest.Password,
-                Phone = registerRequest.Phone,
-                Country = registerRequest.Country,
-                Address = registerRequest.Address,
+                Fullname = form.FirstName + form.MiddleName + form.LastName,
+                FirstName = form.FirstName,
+                MiddleName = form.MiddleName,
+                LastName = form.LastName,
+                Email = form.Email,
+                Username = form.Username,
+                Password = form.Password,
+                Phone = form.Phone,
+                Country = form.Country,
+                Address = form.Address,
+                Avatar = avatarPath,
             };
 
             // add users in database

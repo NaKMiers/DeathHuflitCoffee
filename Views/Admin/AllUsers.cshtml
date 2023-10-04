@@ -16,6 +16,7 @@
                 <th>Edit</th>
                 <th>Order</th>
                 <th>ID</th>
+                <th>Avatar</th>
                 <th>Fullname</th>
                 <th>First Name</th>
                 <th>Middle Name</th>
@@ -46,6 +47,9 @@
                         <a href="/admin/orders/add/@user.Id" class="btn btn-warning">Order</a>
                     </td>
                     <td>@user.Id</td>
+                    <td>
+                        <img src="~/uploads/@user.Avatar" alt="avatar" width="100px">
+                    </td>
                     <td>@user.Fullname</td>
                     <td>@user.FirstName</td>
                     <td>@user.MiddleName</td>
