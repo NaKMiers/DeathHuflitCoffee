@@ -1,12 +1,101 @@
 .content-banner-1 {
    width: 100%;
    height: 41.6666667%;
+   overflow: hidden;
+   margin-bottom: 32px;
 }
 
-.content-banner-1 img {
+.content-banner-1__slide-track {
+   display: flex;
+   width: 100%;
+   height: 100%;
+
+   transition: 0.4s ease-in-out;
+   margin-left: 0;
+}
+
+.content-banner-1__slide {
+   flex-shrink: 0;
+   width: 100%;
+}
+
+.content-banner-1__slide img {
    width: 100%;
    height: 100%;
 
    object-fit: cover;
    object-position: center;
+}
+
+/* controls */
+.content-banner-1__slide-controls {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* background: aquamarine; */
+}
+
+.content-banner-1__control-btn {
+   width: 44px;
+   height: 44px;
+   border: 0;
+   outline: 0;
+   cursor: pointer;
+   background: none;
+}
+
+.content-banner-1__control-btn svg {
+   width: 10px;
+}
+
+.content-banner-1__control-btn.prev-btn {
+   transform: rotate(90deg)
+}
+
+.content-banner-1__control-btn.next-btn {
+   transform: rotate(-90deg)
+}
+
+/* play btn */
+.content-banner-1__control-btn.play-btn {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-left: 6px;
+   border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.content-banner-1__control-btn.play-btn.pause .content-banner-1__control-icon--playing {
+   display: none;
+}
+
+.content-banner-1__control-btn.play-btn.pause .content-banner-1__control-icon--pause {
+   display: block;
+}
+
+.content-banner-1__control-icon--playing {
+   display: block;
+}
+
+.content-banner-1__control-icon--pause {
+   display: none;
+}
+
+.content-banner-1__control-btn.play-btn svg {
+   width: 8px;
+}
+
+.content-banner-1__control-btn.play-btn svg path {
+   fill: #fff;
+}
+
+.content-banner-1__controls__current-slide {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 12px;
+   font-family: 'DM Sans', sans-serif;
+   width: 44px;
+   height: 44px;
+   color: #fff;
 }
