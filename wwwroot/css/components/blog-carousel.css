@@ -56,6 +56,7 @@
    height: 55vh; /* Sử dụng viewport height */
    padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
 }
+
 .BlogCarousel__blocks {
    position: relative;
    display: flex;
@@ -64,6 +65,27 @@
    transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
    z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
 }
+
+.BlogCarousel__slide__btn {
+   position: absolute;
+   top: 50%;
+   height: 100%;
+   width: 50px;
+   transform: translateY(-50%);
+   background: aquamarine;
+   z-index: 1;
+}
+
+.BlogCarousel__slide__btn.left {
+   left: 0;
+}
+
+.BlogCarousel__slide__btn.right {
+   right: 0;
+   transform: translateY(-50%) rotate(180deg);
+}
+
+
 .BlogCarousel__arrow {
    z-index: 2;
    display: flex;
