@@ -1,6 +1,8 @@
 const arrowRight = document.getElementById("BlogCarousel__arrowRight");
 const arrowLeft = document.getElementById("BlogCarousel__arrowLeft");
-const blocks = document.querySelector(".BlogCarousel__blocks");
+const blocks = document.getElementById(
+   "BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00"
+);
 
 let currentPosition = 0;
 
@@ -10,13 +12,18 @@ function updateBlockPosition() {
 
 arrowRight.addEventListener("click", () => {
    if (window.innerWidth <= 990) {
-      if (currentPosition > -80) {
-         currentPosition -= 16.7;
+      if (currentPosition > -385) {
+         currentPosition -= 94;
+         updateBlockPosition();
+      }
+   } else if (window.innerWidth <= 1200) {
+      if (currentPosition > -48) {
+         currentPosition -= 24;
          updateBlockPosition();
       }
    } else {
-      if (currentPosition > -30) {
-         currentPosition -= 18.5;
+      if (currentPosition > -42) {
+         currentPosition -= 21;
          updateBlockPosition();
       }
    }
@@ -25,12 +32,17 @@ arrowRight.addEventListener("click", () => {
 arrowLeft.addEventListener("click", () => {
    if (window.innerWidth <= 990) {
       if (currentPosition < 0) {
-         currentPosition += 16.7;
+         currentPosition += 94;
+         updateBlockPosition();
+      }
+   } else if (window.innerWidth <= 1200) {
+      if (currentPosition < 0) {
+         currentPosition += 24;
          updateBlockPosition();
       }
    } else {
       if (currentPosition < 0) {
-         currentPosition += 18.5;
+         currentPosition += 21;
          updateBlockPosition();
       }
    }
@@ -52,7 +64,9 @@ window.addEventListener("resize", handleResize);
 // Xử lý cho cặp mũi tên sau
 const arrowRightNext1 = document.getElementById("BlogCarousel__arrowRight-next1");
 const arrowLeftNext1 = document.getElementById("BlogCarousel__arrowLeft-next1");
-const blocksNext1 = document.querySelector(".BlogCarousel__blocks-next1");
+const blocksNext1 = document.getElementById(
+   "BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next1"
+);
 
 let currentPositionNext1 = 0;
 
@@ -62,13 +76,18 @@ function updateBlockPositionNext1() {
 
 arrowRightNext1.addEventListener("click", () => {
    if (window.innerWidth <= 990) {
-      if (currentPositionNext1 > -80) {
-         currentPositionNext1 -= 16.7;
+      if (currentPositionNext1 > -385) {
+         currentPositionNext1 -= 94;
+         updateBlockPositionNext1();
+      }
+   } else if (window.innerWidth <= 1200) {
+      if (currentPositionNext1 > -48) {
+         currentPositionNext1 -= 24;
          updateBlockPositionNext1();
       }
    } else {
-      if (currentPositionNext1 > -30) {
-         currentPositionNext1 -= 18.5;
+      if (currentPositionNext1 > -42) {
+         currentPositionNext1 -= 21;
          updateBlockPositionNext1();
       }
    }
@@ -77,12 +96,17 @@ arrowRightNext1.addEventListener("click", () => {
 arrowLeftNext1.addEventListener("click", () => {
    if (window.innerWidth <= 990) {
       if (currentPositionNext1 < 0) {
-         currentPositionNext1 += 16.7;
+         currentPositionNext1 += 94;
+         updateBlockPositionNext1();
+      }
+   } else if (window.innerWidth <= 1200) {
+      if (currentPositionNext1 < 0) {
+         currentPositionNext1 += 24;
          updateBlockPositionNext1();
       }
    } else {
       if (currentPositionNext1 < 0) {
-         currentPositionNext1 += 18.5;
+         currentPositionNext1 += 21;
          updateBlockPositionNext1();
       }
    }
@@ -103,7 +127,9 @@ window.addEventListener("resize", handleResizeNext1);
 
 const arrowRightNext2 = document.getElementById("BlogCarousel__arrowRight-next2");
 const arrowLeftNext2 = document.getElementById("BlogCarousel__arrowLeft-next2");
-const blocksNext2 = document.querySelector(".BlogCarousel__blocks-next2");
+const blocksNext2 = document.getElementById(
+   "BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next2"
+);
 
 let currentPositionNext2 = 0;
 
@@ -113,13 +139,18 @@ function updateBlockPositionNext2() {
 
 arrowRightNext2.addEventListener("click", () => {
    if (window.innerWidth <= 990) {
-      if (currentPositionNext2 > -80) {
-         currentPositionNext2 -= 16.7;
+      if (currentPositionNext2 > -385) {
+         currentPositionNext2 -= 94;
+         updateBlockPositionNext2();
+      }
+   } else if (window.innerWidth <= 1200) {
+      if (currentPositionNext2 > -48) {
+         currentPositionNext2 -= 24;
          updateBlockPositionNext2();
       }
    } else {
-      if (currentPositionNext2 > -30) {
-         currentPositionNext2 -= 18.5;
+      if (currentPositionNext2 > -42) {
+         currentPositionNext2 -= 21;
          updateBlockPositionNext2();
       }
    }
@@ -128,12 +159,17 @@ arrowRightNext2.addEventListener("click", () => {
 arrowLeftNext2.addEventListener("click", () => {
    if (window.innerWidth <= 990) {
       if (currentPositionNext2 < 0) {
-         currentPositionNext2 += 16.7;
+         currentPositionNext2 += 94;
+         updateBlockPositionNext2();
+      }
+   } else if (window.innerWidth <= 1200) {
+      if (currentPositionNext2 < 0) {
+         currentPositionNext2 += 24;
          updateBlockPositionNext2();
       }
    } else {
       if (currentPositionNext2 < 0) {
-         currentPositionNext2 += 18.5;
+         currentPositionNext2 += 21;
          updateBlockPositionNext2();
       }
    }
@@ -153,7 +189,9 @@ window.addEventListener("load", handleResizeNext2);
 window.addEventListener("resize", handleResizeNext2);
 const arrowRightNext3 = document.getElementById("BlogCarousel__arrowRight-next3");
 const arrowLeftNext3 = document.getElementById("BlogCarousel__arrowLeft-next3");
-const blocksNext3 = document.querySelector(".BlogCarousel__blocks-next3");
+const blocksNext3 = document.getElementById(
+   "BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next3"
+);
 
 let currentPositionNext3 = 0;
 
@@ -163,13 +201,18 @@ function updateBlockPositionNext3() {
 
 arrowRightNext3.addEventListener("click", () => {
    if (window.innerWidth <= 990) {
-      if (currentPositionNext3 > -80) {
-         currentPositionNext3 -= 16.7;
+      if (currentPositionNext3 > -385) {
+         currentPositionNext3 -= 94;
+         updateBlockPositionNext3();
+      }
+   } else if (window.innerWidth <= 1200) {
+      if (currentPositionNext3 > -48) {
+         currentPositionNext3 -= 24;
          updateBlockPositionNext3();
       }
    } else {
-      if (currentPositionNext3 > -30) {
-         currentPositionNext3 -= 18.5;
+      if (currentPositionNext3 > -42) {
+         currentPositionNext3 -= 21;
          updateBlockPositionNext3();
       }
    }
@@ -178,12 +221,17 @@ arrowRightNext3.addEventListener("click", () => {
 arrowLeftNext3.addEventListener("click", () => {
    if (window.innerWidth <= 990) {
       if (currentPositionNext3 < 0) {
-         currentPositionNext3 += 16.7;
+         currentPositionNext3 += 94;
+         updateBlockPositionNext3();
+      }
+   } else if (window.innerWidth <= 1200) {
+      if (currentPositionNext3 < 0) {
+         currentPositionNext3 += 24;
          updateBlockPositionNext3();
       }
    } else {
       if (currentPositionNext3 < 0) {
-         currentPositionNext3 += 18.5;
+         currentPositionNext3 += 21;
          updateBlockPositionNext3();
       }
    }
