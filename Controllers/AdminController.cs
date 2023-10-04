@@ -1,21 +1,23 @@
-﻿using DeathWishCoffee.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using DeathWishCoffee.Models;
+using DeathWishCoffee.Models.Domain;
 using DeathWishCoffee.Models.ViewModels;
 using DeathWishCoffee.Data;
-using DeathWishCoffee.Models.Domain;
-using Microsoft.EntityFrameworkCore;
 
 namespace DeathWishCoffee.Controllers
 {
     public class AdminController : Controller
     {
         private readonly DeathWishCoffeeDbContext _deathWishCoffeeDbContext;
+        private readonly IHttpContextAccessor _httpContext;
 
         // constructor
-        public AdminController(DeathWishCoffeeDbContext deathWishCoffeeDbContext)
+        public AdminController(DeathWishCoffeeDbContext deathWishCoffeeDbContext, IHttpContextAccessor httpContextAccessor)
         {
             _deathWishCoffeeDbContext = deathWishCoffeeDbContext;
+            _httpContext = httpContextAccessor;
         }
 
         // [/admin]
@@ -25,10 +27,22 @@ namespace DeathWishCoffee.Controllers
             return View();
         }
 
+        private void SetUpUserDataForAllPage(User user)
+        {
+            _httpContext.HttpContext.Session.SetString("Id", user.Id.ToString());
+            _httpContext.HttpContext.Session.SetString("Username", user.Username);
+            _httpContext.HttpContext.Session.SetString("Avatar", user.Avatar);
+        }
+
         // [/admin/login]
         [HttpGet]
         public IActionResult Login()
         {
+            if (HttpContext.Session.GetString("Id") != null)
+            {
+                return RedirectToAction("Index", "Account");
+            }
+
             return View();
         }
 
@@ -38,15 +52,22 @@ namespace DeathWishCoffee.Controllers
             Console.WriteLine("Login");
 
             // check user if exist
-            var user = _deathWishCoffeeDbContext.Users.SingleOrDefault(u => u.Username == loginRequest.Username && u.Password == loginRequest.Password);
+            var user = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Username == loginRequest.Username && u.Password == loginRequest.Password);
 
-            // return bad request if user doesn't exists
+            // return bad request if user does NOT EXISTS
             if (user == null)
             {
                 return BadRequest("Invalid username or password.");
             }
 
-            return View();
+            Console.WriteLine(user.Id);
+            Console.WriteLine(user.Username);
+            Console.WriteLine(user.Avatar);
+
+            // set user data to session
+            SetUpUserDataForAllPage(user);
+
+            return RedirectToAction("Index", "Home");
         }
 
         // [/admin/register]
@@ -105,7 +126,12 @@ namespace DeathWishCoffee.Controllers
             _deathWishCoffeeDbContext.Users.Add(newUser);
             _deathWishCoffeeDbContext.SaveChanges();
 
-            return View();
+            var registedUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Username == form.Username && u.Password == form.Password);
+
+            // set user data to session
+            SetUpUserDataForAllPage(registedUser);
+
+            return RedirectToAction("Index", "Home");
         }
 
         // [/admin/users]

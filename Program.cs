@@ -9,6 +9,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DeathWishCoffeeDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("azureDB")));
 
+// config sesstion
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(120);
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -20,6 +28,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 // use Session Middleware
+app.UseSession();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
