@@ -1,6 +1,43 @@
-﻿@{
+﻿@model List<DeathWishCoffee.Models.Domain.Order>
+@{
     ViewData["Title"] = "All Orders Page";
 }
 
+<div class="bg-light pt-5 overflow-scroll">
+    <a href="/admin" class="btn btn-secondary mb-3">
+        Back
+    </a>
 
-<h1>All Orders Page</h1>
+    <h2>Orders List:</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Delete</th>
+                <th>Edit</th>
+                <th>ID</th>
+                <th>Customer ID</th>
+                <th>Total Amount</th>
+                <th>Status</th>
+                <th>CreatedAt</th>
+                <th>LastModifiedAt</th>
+                <th>Products</th>
+            </tr>
+        </thead>
+        <tbody>
+            @* @foreach (var order in Model)
+            {
+            <tr>
+            <td>
+            <form method="post" action="/admin/order/delete/@order.Id">
+            <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+            </td>
+            <td>
+            <a href="/admin/orders/edit/@order.Id" class="btn btn-info">Edit</a>
+            </td>
+            <td>@order.Id</td>
+            </tr>
+            } *@
+        </tbody>
+    </table>
+</div>
