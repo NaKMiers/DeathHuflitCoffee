@@ -53,14 +53,21 @@
    padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
    display: flex;
    position: relative;
-   width: 150vw; /* Sử dụng viewport width */
-   height: 55vh; /* Sử dụng viewport height */
+   height: 56vh; /* Sử dụng viewport height */
    padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
 }
+
 .BlogCarousel__blocks {
+   position: relative;
    display: flex;
+   overflow: hidden;
+   width: 100%;
    transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
    z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
+   overflow-x: scroll;
+}
+.BlogCarousel__blocks::-webkit-scrollbar {
+   display: none;
 }
 .BlogCarousel__arrow {
    z-index: 2;
@@ -69,12 +76,15 @@
    align-items: center;
    cursor: pointer; /* Biến con trỏ thành dấu tay khi trỏ vào mũi tên */
    position: relative;
+   top: 50%;
+   transform: translateY(-50%);
    width: 74px;
+
+   background: red;
 }
 #BlogCarousel__arrowLeft {
    background: #000;
    position: absolute;
-   top: 0;
    left: 0;
    text-align: center;
    margin: auto;
@@ -86,9 +96,8 @@
    background: #000;
    position: absolute;
    top: 0;
-   width: 100px;
-   left: 63%;
-   padding-left: 40px;
+   right: 0;
+   padding-left: 30px;
    text-align: center;
    margin: auto;
    height: 100%;
@@ -124,9 +133,42 @@
 #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
    display: flex;
    height: 100%;
+   width: 100%;
    gap: 1.6rem;
    padding-left: 1rem;
+   transition: transform 0.3s ease-in-out;
+   /* overflow-x: scroll; */
 }
+#BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next1 {
+   display: flex;
+   height: 100%;
+   width: 100%;
+   gap: 1.6rem;
+   padding-left: 1rem;
+   transition: transform 0.3s ease-in-out;
+   /* overflow-x: scroll; */
+}
+#BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next2 {
+   display: flex;
+   height: 100%;
+   width: 100%;
+   gap: 1.6rem;
+   padding-left: 1rem;
+   transition: transform 0.3s ease-in-out;
+   /* overflow-x: scroll; */
+}
+#BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next3 {
+   display: flex;
+   height: 100%;
+   width: 100%;
+   gap: 1.6rem;
+   padding-left: 1rem;
+   transition: transform 0.3s ease-in-out;
+   /* overflow-x: scroll; */
+}
+/* #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00::-webkit-scrollbar {
+   display: none;
+} */
 .BlogCarousel__article-card-wrapper.BlogCarousel__card-wrapper.BlogCarousel__underline-links-hover {
    padding: 16px;
    border: 1px solid #3d3b3a;
@@ -189,7 +231,8 @@
 .BlogCarousel__blog-post.BlogCarousel__grid-item.BlogCarousel__article.BlogCarousel__slider-slide.BlogCarousel__scroll-trigger.BlogCarousel__animate-slide-in {
    color: #fff;
    list-style: none;
-   width: 100%;
+   width: 22%;
+   flex-shrink: 0;
 }
 .BlogCarousel__card.BlogCarousel__article-card.BlogCarousel__card-standard.BlogCarousel__card-media {
    background-color: #000;
@@ -203,19 +246,67 @@
 }
 @media only screen and (max-width: 1200px) {
    .BlogCarousel__slider-component-full-width {
-      height: 70vh;
+      height: 74vh;
+      position: relative;
+   }
+   #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
+      padding-left: 2rem;
+   }
+   #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next1 {
+      padding-left: 2rem;
+   }
+   #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next2 {
+      padding-left: 2rem;
+   }
+   #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next3 {
+      padding-left: 2rem;
    }
 }
 @media only screen and (max-width: 991px) {
+   #BlogCarousel__arrowRight {
+      width: 50px;
+   }
+   #BlogCarousel__arrowLeft {
+      width: 50px;
+   }
+   #BlogCarousel__arrowRight-next1 {
+      width: 50px;
+   }
+   #BlogCarousel__arrowLeft-next1 {
+      width: 50px;
+   }
+   #BlogCarousel__arrowRight-next2 {
+      width: 50px;
+   }
+   #BlogCarousel__arrowLeft-next2 {
+      width: 50px;
+   }
+   #BlogCarousel__arrowRight-next3 {
+      width: 50px;
+   }
+   #BlogCarousel__arrowLeft-next3 {
+      width: 50px;
+   }
    .BlogCarousel__slider-component-full-width {
       width: 100%; /* Điều chỉnh lại chiều rộng */
       height: auto; /* Sử dụng auto để điều chỉnh chiều cao tự động */
-      width: 520vw;
-      height: 75vh;
-      padding-left: 8%;
+      height: 80vh;
+      position: relative;
    }
-   #BlogCarousel__arrowRight {
-      left: 18%;
+   #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
+      padding-left: 2rem;
+   }
+   #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next1 {
+      padding-left: 2rem;
+   }
+   #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next2 {
+      padding-left: 2rem;
+   }
+   #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next3 {
+      padding-left: 2rem;
+   }
+   .BlogCarousel__blog-post.BlogCarousel__grid-item.BlogCarousel__article.BlogCarousel__slider-slide.BlogCarousel__scroll-trigger.BlogCarousel__animate-slide-in {
+      width: 95%;
    }
    .BlogCarousel__card-inner.BlogCarousel__color-background-2.BlogCarousel__gradient.BlogCarousel__ratio {
       height: 80%;
@@ -233,7 +324,6 @@
 #BlogCarousel__arrowLeft-next1 {
    background: #000;
    position: absolute;
-   top: 0;
    left: 0;
    text-align: center;
    margin: auto;
@@ -245,29 +335,29 @@
    background: #000;
    position: absolute;
    top: 0;
-   width: 100px;
-   left: 63%;
-   padding-left: 40px;
+   right: 0;
+   padding-left: 30px;
    text-align: center;
    margin: auto;
    height: 100%;
    border: none;
    transform: rotate(180deg);
 }
-@media only screen and (max-width: 991px) {
-   #BlogCarousel__arrowRight-next1 {
-      left: 17.9%;
-   }
-}
 .BlogCarousel__blocks-next1 {
+   position: relative;
    display: flex;
+   overflow: hidden;
+   width: 100%;
    transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
    z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
+   overflow-x: scroll;
+}
+.BlogCarousel__blocks-next1::-webkit-scrollbar {
+   display: none;
 }
 #BlogCarousel__arrowLeft-next2 {
    background: #000;
    position: absolute;
-   top: 0;
    left: 0;
    text-align: center;
    margin: auto;
@@ -279,29 +369,29 @@
    background: #000;
    position: absolute;
    top: 0;
-   width: 100px;
-   left: 63%;
-   padding-left: 40px;
+   right: 0;
+   padding-left: 30px;
    text-align: center;
    margin: auto;
    height: 100%;
    border: none;
    transform: rotate(180deg);
 }
-@media only screen and (max-width: 991px) {
-   #BlogCarousel__arrowRight-next2 {
-      left: 17.9%;
-   }
-}
 .BlogCarousel__blocks-next2 {
+   position: relative;
    display: flex;
+   overflow: hidden;
+   width: 100%;
    transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
    z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
+   overflow-x: scroll;
+}
+.BlogCarousel__blocks-next2::-webkit-scrollbar {
+   display: none;
 }
 #BlogCarousel__arrowLeft-next3 {
    background: #000;
    position: absolute;
-   top: 0;
    left: 0;
    text-align: center;
    margin: auto;
@@ -313,22 +403,65 @@
    background: #000;
    position: absolute;
    top: 0;
-   width: 100px;
-   left: 63%;
-   padding-left: 40px;
+   right: 0;
+   padding-left: 30px;
    text-align: center;
    margin: auto;
    height: 100%;
    border: none;
    transform: rotate(180deg);
 }
-@media only screen and (max-width: 991px) {
-   #BlogCarousel__arrowRight-next3 {
-      left: 17.9%;
-   }
-}
 .BlogCarousel__blocks-next3 {
+   position: relative;
    display: flex;
+   overflow: hidden;
+   width: 100%;
    transition: transform 0.5s ease; /* Tạo hiệu ứng di chuyển mượt mà */
    z-index: 1; /* Đặt z-index để đảm bảo các khối div nằm chìm bên dưới mũi tên */
+   overflow-x: scroll;
+}
+.BlogCarousel__blocks-next3::-webkit-scrollbar {
+   display: none;
+}
+@media only screen and (max-width: 600px) {
+   .BlogCarousel__slider-component-full-width {
+      height: 70vh;
+   }
+   .BlogCarousel__motion-reduce {
+      position: absolute;
+      width: 100%;
+      height: 84%;
+   }
+   .BlogCarousel__card-content {
+      position: relative;
+      bottom: 40px;
+   }
+   #BlogCarousel__arrowLeft {
+      padding-left: 0;
+   }
+   #BlogCarousel__arrowRight {
+      padding-left: 0;
+   }
+   #BlogCarousel__arrowLeft-next1 {
+      padding-left: 0px;
+   }
+   #BlogCarousel__arrowRight-next1 {
+      padding-left: 0px;
+   }
+   #BlogCarousel__arrowLeft-next2 {
+      padding-left: 0px;
+   }
+   #BlogCarousel__arrowRight-next2 {
+      padding-left: 0px;
+   }
+   #BlogCarousel__arrowLeft-next3 {
+      padding-left: 0px;
+   }
+   #BlogCarousel__arrowRight-next3 {
+      padding-left: 0px;
+   }
+}
+
+.BlogCarousel__collectAll {
+   width: 100%;
 }
