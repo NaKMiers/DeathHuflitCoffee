@@ -203,6 +203,7 @@
    font-size: 16px;
    text-transform: uppercase;
    font-weight: 900;
+   line-height: 24px;
 }
 .BlogCarousel__h2 {
    line-height: 12px;
@@ -238,7 +239,11 @@
    background-color: #000;
    overflow: hidden;
 }
-
+@media only screen and (max-width: 1650px) {
+   .BlogCarousel__slider-component-full-width {
+      height: 50vh;
+   }
+}
 @media only screen and (max-width: 1300px) {
    .BlogCarousel__slider-component-full-width {
       height: 60vh;
@@ -423,6 +428,46 @@
 .BlogCarousel__blocks-next3::-webkit-scrollbar {
    display: none;
 }
+
+@media only screen and (max-width: 600px) {
+   .BlogCarousel__slider-component-full-width {
+      height: 70vh;
+   }
+   .BlogCarousel__motion-reduce {
+      position: absolute;
+      width: 100%;
+      height: 84%;
+   }
+   .BlogCarousel__card-content {
+      position: relative;
+      bottom: 40px;
+   }
+   #BlogCarousel__arrowLeft {
+      padding-left: 0;
+   }
+   #BlogCarousel__arrowRight {
+      padding-left: 0;
+   }
+   #BlogCarousel__arrowLeft-next1 {
+      padding-left: 0px;
+   }
+   #BlogCarousel__arrowRight-next1 {
+      padding-left: 0px;
+   }
+   #BlogCarousel__arrowLeft-next2 {
+      padding-left: 0px;
+   }
+   #BlogCarousel__arrowRight-next2 {
+      padding-left: 0px;
+   }
+   #BlogCarousel__arrowLeft-next3 {
+      padding-left: 0px;
+   }
+   #BlogCarousel__arrowRight-next3 {
+      padding-left: 0px;
+   }
+}
+
 .BlogCarousel__collectAll {
    width: 100%;
 }
