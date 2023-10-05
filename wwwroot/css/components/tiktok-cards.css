@@ -1,6 +1,3 @@
-* {
-   font-family: Arial, Helvetica, sans-serif;
-}
 .TiktokCard__boxContainer {
    padding: 32px 16px;
    background-color: #000;
@@ -163,26 +160,34 @@ div[class^="Main__Inner"] {
    font-size: 35px;
    margin: 0;
    font-weight: 800;
+   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+   letter-spacing: -2px;
 }
 .TiktokCards__elfsight-section .TiktokCards__title-wrapper-with-link .TiktokCards__link {
    text-decoration: none;
    color: #000;
-   font-size: 17px;
+   font-size: 15px;
    padding-bottom: 5px;
    margin-left: 25px;
+   font-family: "DM Sans";
+   text-transform: uppercase;
+   font-weight: 550;
 }
 .TiktokCards__elfsight-section .TiktokCards__title-wrapper-with-link .TiktokCards__link:hover {
    text-decoration: underline;
    color: #e12727;
 }
 .hvpQIU {
-   color: white;
+   color: #000;
    font-size: 16px;
 }
 .hvpQIU:hover {
    color: #d24728;
 }
 .iktAoD a {
+   font-weight: 900;
+}
+.caAfeN {
    font-weight: 900;
 }
 .caAfeN:hover {
@@ -197,4 +202,9 @@ div[class^="Main__Inner"] {
       flex-direction: column;
       align-items: flex-start;
    }
+}
+.bOAeit .swiper-autoheight,
+.bOAeit .swiper-autoheight .swiper-slide {
+   height: auto;
+   width: 120%;
 }
