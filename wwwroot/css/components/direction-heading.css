@@ -89,6 +89,7 @@
 }
 @media (min-width: 991px) {
    #DirectionHeding__panel4BackButton {
+      width: 90%;
       left: 100px;
    }
 }
