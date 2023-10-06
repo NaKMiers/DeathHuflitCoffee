@@ -3,8 +3,8 @@
 
 @{
    // Lấy chuỗi JSON từ Session
-   string cartJson = _httpContext.HttpContext.Session.GetString("Cart");
-   var myCart = JsonConvert.DeserializeObject<List<DeathWishCoffee.Models.Domain.CartItem>>(cartJson);
+   @*string cartJson = _httpContext.HttpContext.Session.GetString("Cart");
+   var myCart = JsonConvert.DeserializeObject<List<DeathWishCoffee.Models.Domain.CartItem>>(cartJson);*@
 }
 
 <header class="header">
@@ -365,7 +365,7 @@
       </div>
    </div>
 </div>
-
+@*
 <div class="cart-modal">
    <div class="cart-modal__container">
       <div class="cart-modal__close-btn">
@@ -380,16 +380,16 @@
       </div>
 
 
-      @* <div class="cart-modal__announcemen">
+       <div class="cart-modal__announcemen">
       FREE SHIPPING TO CONTINENTAL US ON ORDERS OVER $50
-      </div> *@
+      </div> 
 
       <div class="cart-modal__progress-bar-wapper">
          <div class="cart-modal__progress-bar-meter"></div>
          <div class="cart-modal__progress-label">You are $50.00 away from FREE SHIPPING!</div>
       </div>
 
-      @*- Empty Cart - *@
+       Empty Cart - 
       @if (myCart == null || myCart.Count <= 0)
       {
          <div class="cart-modal__empty-card">
@@ -475,9 +475,9 @@
                      </div>
                   </div>
 
-                  @* <button class="cart-modal__product-body__btn">
+                   <button class="cart-modal__product-body__btn">
                Upgrade to subscription & Save 30%
-               </button> *@
+               </button> 
                </div>
             </div>
          }
@@ -511,7 +511,7 @@
          </div>
       </div>
 
-      @* - Not Empty Cart - *@
+       - Not Empty Cart - 
       @if (myCart != null && myCart.Count > 0)
       {
          <div class="cart-modal__checkout-container">
@@ -549,3 +549,4 @@
       }
    </div>
 </div>
+*@
