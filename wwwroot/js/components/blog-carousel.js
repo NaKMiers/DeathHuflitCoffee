@@ -4,13 +4,7 @@ const blocks = document.getElementById(
    "BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00"
 );
 
-document.addEventListener('DOMContentLoaded', function () {
-   const arrowRight = document.getElementById('BlogCarousel__arrowRight')
-   const arrowLeft = document.getElementById('BlogCarousel__arrowLeft')
-   const blocks = document.querySelector('.BlogCarousel__blocks')
-
-
-   let currentPosition = 0
+let currentPosition = 0;
 
 function updateBlockPosition() {
    blocks.style.transform = `translateX(${currentPosition}%)`;
@@ -32,26 +26,6 @@ arrowRight.addEventListener("click", () => {
          currentPosition -= 22;
          updateBlockPosition();
       }
-
-arrowLeft.addEventListener("click", () => {
-   if (window.innerWidth <= 990) {
-      if (currentPosition < 0) {
-         currentPosition += 94;
-         updateBlockPosition();
-      }
-   } else if (window.innerWidth <= 1200) {
-      if (currentPosition < 0) {
-         currentPosition += 24;
-         updateBlockPosition();
-      }
-   } else {
-      if (currentPosition < 0) {
-         currentPosition += 21;
-         updateBlockPosition();
-      }
-
-   function updateBlockPosition() {
-      blocks.style.transform = `translateX(${currentPosition}%)`
    }
 });
 
@@ -94,26 +68,12 @@ const blocksNext1 = document.getElementById(
    "BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next1"
 );
 
-// Xử lý cho cặp mũi tên sau
-const arrowRightNext1 = document.getElementById("BlogCarousel__arrowRight-next1");
-const arrowLeftNext1 = document.getElementById("BlogCarousel__arrowLeft-next1");
-const blocksNext1 = document.getElementById(
-   "BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next1"
-);
-
-   // Xử lý cho cặp mũi tên sau
-   const arrowRightNext1 = document.getElementById('BlogCarousel__arrowRight-next1')
-   const arrowLeftNext1 = document.getElementById('BlogCarousel__arrowLeft-next1')
-   const blocksNext1 = document.querySelector('.BlogCarousel__blocks-next1')
-
-
-   let currentPositionNext1 = 0
-
+let currentPositionNext1 = 0;
 
 function updateBlockPositionNext1() {
    blocksNext1.style.transform = `translateX(${currentPositionNext1}%)`;
 }
-  
+
 arrowRightNext1.addEventListener("click", () => {
    if (window.innerWidth <= 990) {
       if (currentPositionNext1 > -385) {
@@ -149,9 +109,6 @@ arrowLeftNext1.addEventListener("click", () => {
          currentPositionNext1 += 22;
          updateBlockPositionNext1();
       }
-
-   function updateBlockPositionNext1() {
-      blocksNext1.style.transform = `translateX(${currentPositionNext1}%)`
    }
 });
 
@@ -174,23 +131,12 @@ const blocksNext2 = document.getElementById(
    "BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next2"
 );
 
-const arrowRightNext2 = document.getElementById("BlogCarousel__arrowRight-next2");
-const arrowLeftNext2 = document.getElementById("BlogCarousel__arrowLeft-next2");
-const blocksNext2 = document.getElementById(
-   "BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next2"
-);
-
-   const arrowRightNext2 = document.getElementById('BlogCarousel__arrowRight-next2')
-   const arrowLeftNext2 = document.getElementById('BlogCarousel__arrowLeft-next2')
-   const blocksNext2 = document.querySelector('.BlogCarousel__blocks-next2')
-
-
-   let currentPositionNext2 = 0
-
+let currentPositionNext2 = 0;
 
 function updateBlockPositionNext2() {
    blocksNext2.style.transform = `translateX(${currentPositionNext2}%)`;
 }
+
 arrowRightNext2.addEventListener("click", () => {
    if (window.innerWidth <= 990) {
       if (currentPositionNext2 > -385) {
@@ -226,9 +172,6 @@ arrowLeftNext2.addEventListener("click", () => {
          currentPositionNext2 += 22;
          updateBlockPositionNext2();
       }
-
-   function updateBlockPositionNext2() {
-      blocksNext2.style.transform = `translateX(${currentPositionNext2}%)`
    }
 });
 
@@ -250,15 +193,7 @@ const blocksNext3 = document.getElementById(
    "BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-next3"
 );
 
-   window.addEventListener('load', handleResizeNext2)
-   window.addEventListener('resize', handleResizeNext2)
-   const arrowRightNext3 = document.getElementById('BlogCarousel__arrowRight-next3')
-   const arrowLeftNext3 = document.getElementById('BlogCarousel__arrowLeft-next3')
-   const blocksNext3 = document.querySelector('.BlogCarousel__blocks-next3')
-
-
-   let currentPositionNext3 = 0
-
+let currentPositionNext3 = 0;
 
 function updateBlockPositionNext3() {
    blocksNext3.style.transform = `translateX(${currentPositionNext3}%)`;
@@ -299,9 +234,7 @@ arrowLeftNext3.addEventListener("click", () => {
          currentPositionNext3 += 22;
          updateBlockPositionNext3();
       }
-
-   function updateBlockPositionNext3() {
-      blocksNext3.style.transform = `translateX(${currentPositionNext3}%)`
+   }
 });
 
 function handleResizeNext3() {
