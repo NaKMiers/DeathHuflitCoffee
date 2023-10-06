@@ -53,7 +53,7 @@
    padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
    display: flex;
    position: relative;
-   height: 43vh; /* Sử dụng viewport height */
+   height: 56vh; /* Sử dụng viewport height */
    padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
 }
 
@@ -232,7 +232,7 @@
 .BlogCarousel__blog-post.BlogCarousel__grid-item.BlogCarousel__article.BlogCarousel__slider-slide.BlogCarousel__scroll-trigger.BlogCarousel__animate-slide-in {
    color: #fff;
    list-style: none;
-   width: 22.4%;
+   width: 22%;
    flex-shrink: 0;
 }
 .BlogCarousel__card.BlogCarousel__article-card.BlogCarousel__card-standard.BlogCarousel__card-media {
@@ -251,7 +251,7 @@
 }
 @media only screen and (max-width: 1200px) {
    .BlogCarousel__slider-component-full-width {
-      height: 75vh;
+      height: 74vh;
       position: relative;
    }
    #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
@@ -295,7 +295,7 @@
    .BlogCarousel__slider-component-full-width {
       width: 100%; /* Điều chỉnh lại chiều rộng */
       height: auto; /* Sử dụng auto để điều chỉnh chiều cao tự động */
-      height: 85vh;
+      height: 80vh;
       position: relative;
    }
    #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
