@@ -428,7 +428,7 @@
 .BlogCarousel__blocks-next3::-webkit-scrollbar {
    display: none;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
    .BlogCarousel__slider-component-full-width {
       height: 70vh;
    }

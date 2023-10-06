@@ -22,8 +22,8 @@ arrowRight.addEventListener("click", () => {
          updateBlockPosition();
       }
    } else {
-      if (currentPosition > -42) {
-         currentPosition -= 21;
+      if (currentPosition > -44) {
+         currentPosition -= 22;
          updateBlockPosition();
       }
    }
@@ -42,7 +42,7 @@ arrowLeft.addEventListener("click", () => {
       }
    } else {
       if (currentPosition < 0) {
-         currentPosition += 21;
+         currentPosition += 22;
          updateBlockPosition();
       }
    }
@@ -86,8 +86,8 @@ arrowRightNext1.addEventListener("click", () => {
          updateBlockPositionNext1();
       }
    } else {
-      if (currentPositionNext1 > -42) {
-         currentPositionNext1 -= 21;
+      if (currentPositionNext1 > -44) {
+         currentPositionNext1 -= 22;
          updateBlockPositionNext1();
       }
    }
@@ -106,7 +106,7 @@ arrowLeftNext1.addEventListener("click", () => {
       }
    } else {
       if (currentPositionNext1 < 0) {
-         currentPositionNext1 += 21;
+         currentPositionNext1 += 22;
          updateBlockPositionNext1();
       }
    }
@@ -149,8 +149,8 @@ arrowRightNext2.addEventListener("click", () => {
          updateBlockPositionNext2();
       }
    } else {
-      if (currentPositionNext2 > -42) {
-         currentPositionNext2 -= 21;
+      if (currentPositionNext2 > -44) {
+         currentPositionNext2 -= 22;
          updateBlockPositionNext2();
       }
    }
@@ -169,7 +169,7 @@ arrowLeftNext2.addEventListener("click", () => {
       }
    } else {
       if (currentPositionNext2 < 0) {
-         currentPositionNext2 += 21;
+         currentPositionNext2 += 22;
          updateBlockPositionNext2();
       }
    }
@@ -211,8 +211,8 @@ arrowRightNext3.addEventListener("click", () => {
          updateBlockPositionNext3();
       }
    } else {
-      if (currentPositionNext3 > -42) {
-         currentPositionNext3 -= 21;
+      if (currentPositionNext3 > -44) {
+         currentPositionNext3 -= 22;
          updateBlockPositionNext3();
       }
    }
@@ -231,7 +231,7 @@ arrowLeftNext3.addEventListener("click", () => {
       }
    } else {
       if (currentPositionNext3 < 0) {
-         currentPositionNext3 += 21;
+         currentPositionNext3 += 22;
          updateBlockPositionNext3();
       }
    }
