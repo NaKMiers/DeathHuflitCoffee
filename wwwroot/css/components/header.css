@@ -457,11 +457,11 @@
    bottom: 0;
    z-index: 3;
 
-   /* display: none; */
-   /* opacity: 0; */
+   display: none;
+   opacity: 0;
 
-   display: block;
-   opacity: 1;
+   /* display: block; */
+   /* opacity: 1; */
    transition: 0.5s ease-in-out;
 
    background: rgba(255, 255, 255, 0.7);
@@ -475,10 +475,10 @@
    max-width: 500px;
    width: 100%;
    height: 100%;
-   /* transform: translateX(101%); */
-   /* opacity: 0; */
+   transform: translateX(101%);
+   opacity: 0;
 
-   opacity: 1;
+   /* opacity: 1; */
 
    display: flex;
    flex-direction: column;
@@ -857,6 +857,7 @@
 
 .cart-modal__checkout__sub-total {
    /* background: lightseagreen; */
+   overflow: hidden;
 }
 
 .cart-modal__checkout__sub-total__heading-wrap {

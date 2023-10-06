@@ -5,6 +5,7 @@ using DeathWishCoffee.Models;
 using DeathWishCoffee.Models.Domain;
 using DeathWishCoffee.Models.ViewModels;
 using DeathWishCoffee.Data;
+using Newtonsoft.Json;
 
 namespace DeathWishCoffee.Controllers
 {
@@ -1145,12 +1146,12 @@ namespace DeathWishCoffee.Controllers
         public IActionResult EditOrder(Guid id)
         {
             // get order from database
-            var order = _deathWishCoffeeDbContext.Orders
-                            .Include(o => o.Products)
-                            .FirstOrDefault(o => o.Id == id);
+            // var order = _deathWishCoffeeDbContext.Orders
+            //                 .Include(o => o.Products)
+            //                 .FirstOrDefault(o => o.Id == id);
 
-            // assign order to ViewBag to show in view
-            ViewBag.Order = order;
+            // // assign order to ViewBag to show in view
+            // ViewBag.Order = order;
             return View();
         }
 
@@ -1179,6 +1180,82 @@ namespace DeathWishCoffee.Controllers
 
             // redirect to All Orders
             return RedirectToAction("AllOrders", "Admin");
+        }
+
+        // [/admin/cart/add/{userId}]
+        [HttpGet]
+        public IActionResult MyCart(Guid userId)
+        {
+            Console.WriteLine("MyCart");
+
+            // get user from database
+            var user = _deathWishCoffeeDbContext.Users.Include(u => u.Cart).FirstOrDefault(u => u.Id == userId);
+
+            // if user do NOT EXIST => Bad Request
+            if (user == null)
+                return BadRequest("User ID does not exist");
+
+            var myCart = user.Cart;
+            ViewBag.UserId = userId;
+
+            string myCartCovertedToJson = JsonConvert.SerializeObject(myCart);
+            _httpContext.HttpContext.Session.SetString("Cart", myCartCovertedToJson);
+
+            return View(myCart);
+        }
+
+        // [/admin/cart/add/{userId}]
+        [HttpGet]
+        public IActionResult AddToCart(Guid userId)
+        {
+            // get All Products from DB to select
+            var allProducts = _deathWishCoffeeDbContext.Products
+                        .Include(p => p.Sizes)
+                        .Include(p => p.InsideTypes)
+                        .Include(p => p.Images)
+                        .ToList();
+            var cart = _deathWishCoffeeDbContext.Users.Include(u => u.Cart).FirstOrDefault(u => u.Id == userId);
+
+            ViewBag.Products = allProducts;
+            ViewBag.UserId = userId;
+            ViewBag.Cart = cart;
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddToCart(AddToCartRequest form, Guid userId, Guid productId)
+        {
+            Console.WriteLine("AddToCart");
+
+            // get product to add from database by productId
+            var productToAdd = _deathWishCoffeeDbContext.Products.Find(productId);
+            var user = _deathWishCoffeeDbContext.Users.Find(userId);
+
+            // if productToAdd does NOT EXISTS => BadRequest
+            if (productToAdd == null)
+                return BadRequest("Invalid Product");
+
+            // if user does NOT EXISTS => BadRequest
+            if (user == null)
+                return BadRequest("User does not exist");
+
+            if (form.Quantity <= 0)
+                return BadRequest("Invalid Quantity");
+
+            var newCartItem = new CartItem
+            {
+                UserId = userId,
+                ProductId = productId,
+                Quantity = form.Quantity,
+                Size = form.Size,
+                InsideType = form.InsideType,
+                CreatedAt = DateTime.Now,
+            };
+
+            _deathWishCoffeeDbContext.CartItems.Add(newCartItem);
+            _deathWishCoffeeDbContext.SaveChanges();
+
+            return RedirectToAction("AddToCart", "Admin");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

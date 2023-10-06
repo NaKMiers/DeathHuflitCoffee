@@ -256,6 +256,19 @@ app.MapControllerRoute(
     defaults: new { controller = "Admin", action = "DeleteOrder" }
 );
 
+// [/admin/cart/{userId}]
+app.MapControllerRoute(
+    name: "Cart",
+    pattern: "admin/cart/{userId}",
+    defaults: new { controller = "Admin", action = "MyCart" }
+);
+
+// [/admin/cart/add/{userId}]
+app.MapControllerRoute(
+    name: "AddToCart",
+    pattern: "/admin/cart/add/{userId}",
+    defaults: new { controller = "Admin", action = "AddToCart" }
+);
 
 // [/]
 // app.MapControllerRoute(

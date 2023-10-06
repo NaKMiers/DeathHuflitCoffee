@@ -15,6 +15,10 @@
                 <th>Delete</th>
                 <th>Edit</th>
                 <th>Order</th>
+                <th>Cart</th>
+                <th>Add To Cart</th>
+
+
                 <th>ID</th>
                 <th>Avatar</th>
                 <th>Fullname</th>
@@ -46,6 +50,13 @@
                     <td>
                         <a href="/admin/orders/add/@user.Id" class="btn btn-warning">Order</a>
                     </td>
+                    <td>
+                        <a href="/admin/cart/@user.Id" class="btn btn-success">Cart</a>
+                    </td>
+                    <td>
+                        <a href="/admin/cart/add/@user.Id" class="btn btn-secondary">Add To Cart</a>
+                    </td>
+
                     <td>@user.Id</td>
                     <td>
                         <img src="~/uploads/@user.Avatar" alt="avatar" width="100px">

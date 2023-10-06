@@ -17,5 +17,7 @@ namespace DeathWishCoffee.Models.Domain
         public DateTime CreatedAt { get; set; }
         public DateTime LastModifiedAt { get; set; }
 
+        public List<CartItem>? Cart { get; set; }
+
     }
 }
