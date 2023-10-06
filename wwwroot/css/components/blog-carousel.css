@@ -40,20 +40,12 @@
    text-transform: uppercase;
    text-decoration: underline;
 }
-/* .BlogCarousel__slider-component-full-width {
-   width: 150%;
-   height: 390px;
-   padding: 0px 75px;
-   display: flex;
-   position: relative;
-} */
 .BlogCarousel__slider-component-full-width {
    width: 100%; /* Thay vì 150% */
-   height: auto; /* Sử dụng auto để điều chỉnh chiều cao tự động */
    padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
    display: flex;
    position: relative;
-   height: 56vh; /* Sử dụng viewport height */
+   height: 45vh; /* Sử dụng viewport height */
    padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
 }
 
@@ -79,8 +71,6 @@
    top: 50%;
    transform: translateY(-50%);
    width: 74px;
-
-   background: red;
 }
 #BlogCarousel__arrowLeft {
    background: #000;
@@ -232,16 +222,16 @@
 .BlogCarousel__blog-post.BlogCarousel__grid-item.BlogCarousel__article.BlogCarousel__slider-slide.BlogCarousel__scroll-trigger.BlogCarousel__animate-slide-in {
    color: #fff;
    list-style: none;
-   width: 22%;
+   width: 22.4%;
    flex-shrink: 0;
 }
 .BlogCarousel__card.BlogCarousel__article-card.BlogCarousel__card-standard.BlogCarousel__card-media {
    background-color: #000;
    overflow: hidden;
 }
-@media only screen and (max-width: 1650px) {
+@media only screen and (min-width: 1300px) {
    .BlogCarousel__slider-component-full-width {
-      height: 50vh;
+      height: 55vh;
    }
 }
 @media only screen and (max-width: 1300px) {
@@ -251,7 +241,7 @@
 }
 @media only screen and (max-width: 1200px) {
    .BlogCarousel__slider-component-full-width {
-      height: 74vh;
+      height: 75vh;
       position: relative;
    }
    #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
@@ -295,7 +285,7 @@
    .BlogCarousel__slider-component-full-width {
       width: 100%; /* Điều chỉnh lại chiều rộng */
       height: auto; /* Sử dụng auto để điều chỉnh chiều cao tự động */
-      height: 80vh;
+      height: 85vh;
       position: relative;
    }
    #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
@@ -443,27 +433,35 @@
    }
    #BlogCarousel__arrowLeft {
       padding-left: 0;
+      background-color: rgba(0, 0, 0, 0);
    }
    #BlogCarousel__arrowRight {
       padding-left: 0;
+      background-color: rgba(0, 0, 0, 0);
    }
    #BlogCarousel__arrowLeft-next1 {
       padding-left: 0px;
+      background-color: rgba(0, 0, 0, 0);
    }
    #BlogCarousel__arrowRight-next1 {
       padding-left: 0px;
+      background-color: rgba(0, 0, 0, 0);
    }
    #BlogCarousel__arrowLeft-next2 {
       padding-left: 0px;
+      background-color: rgba(0, 0, 0, 0);
    }
    #BlogCarousel__arrowRight-next2 {
       padding-left: 0px;
+      background-color: rgba(0, 0, 0, 0);
    }
    #BlogCarousel__arrowLeft-next3 {
       padding-left: 0px;
+      background-color: rgba(0, 0, 0, 0);
    }
    #BlogCarousel__arrowRight-next3 {
       padding-left: 0px;
+      background-color: rgba(0, 0, 0, 0);
    }
 }
 
