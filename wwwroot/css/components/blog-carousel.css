@@ -301,7 +301,7 @@
       padding-left: 2rem;
    }
    .BlogCarousel__blog-post.BlogCarousel__grid-item.BlogCarousel__article.BlogCarousel__slider-slide.BlogCarousel__scroll-trigger.BlogCarousel__animate-slide-in {
-      width: 95%;
+      width: 97%;
    }
    .BlogCarousel__card-inner.BlogCarousel__color-background-2.BlogCarousel__gradient.BlogCarousel__ratio {
       height: 80%;
@@ -418,9 +418,23 @@
 .BlogCarousel__blocks-next3::-webkit-scrollbar {
    display: none;
 }
+@media only screen and (max-width: 895px) {
+   .BlogCarousel__slider-component-full-width {
+      height: 65vh;
+   }
+   .BlogCarousel__card-content {
+      position: relative;
+      bottom: 60px;
+   }
+   .BlogCarousel__motion-reduce {
+      position: absolute;
+      width: 100%;
+      height: 80%;
+   }
+}
 @media only screen and (max-width: 750px) {
    .BlogCarousel__slider-component-full-width {
-      height: 70vh;
+      height: 65vh;
    }
    .BlogCarousel__motion-reduce {
       position: absolute;
@@ -429,7 +443,7 @@
    }
    .BlogCarousel__card-content {
       position: relative;
-      bottom: 40px;
+      bottom: 55px;
    }
    #BlogCarousel__arrowLeft {
       padding-left: 0;
@@ -464,9 +478,37 @@
       background-color: rgba(0, 0, 0, 0);
    }
 }
+@media only screen and (max-width: 500px) {
+   .BlogCarousel__slider-component-full-width {
+      height: 72vh;
+   }
+   .BlogCarousel__card-content {
+      position: relative;
+      bottom: 75px;
+   }
+   .BlogCarousel__motion-reduce {
+      position: absolute;
+      width: 100%;
+      height: 80%;
+   }
+}
+@media only screen and (max-width: 434px) {
+   .BlogCarousel__slider-component-full-width {
+      height: 70vh;
+   }
+   .BlogCarousel__card-content {
+      position: relative;
+      bottom: 105px;
+   }
+   .BlogCarousel__motion-reduce {
+      position: absolute;
+      width: 100%;
+      height: 70%;
+   }
+}
 @media only screen and (max-width: 400px) {
    .BlogCarousel__slider-component-full-width {
-      height: 50vh;
+      height: 58vh;
    }
    .BlogCarousel__motion-reduce {
       height: 60%;
@@ -475,15 +517,15 @@
       bottom: 120px;
    }
 }
-@media only screen and (max-width: 376px) {
+@media only screen and (max-width: 377px) {
    .BlogCarousel__slider-component-full-width {
-      height: 58vh;
+      height: 70vh;
    }
    .BlogCarousel__motion-reduce {
       height: 65%;
    }
    .BlogCarousel__card-content {
-      bottom: 95px;
+      bottom: 120px;
    }
 }
 .BlogCarousel__collectAll {
