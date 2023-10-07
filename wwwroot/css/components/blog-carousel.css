@@ -478,6 +478,20 @@
       background-color: rgba(0, 0, 0, 0);
    }
 }
+@media only screen and (max-width: 615px) {
+   .BlogCarousel__slider-component-full-width {
+      height: 72vh;
+   }
+   .BlogCarousel__card-content {
+      position: relative;
+      bottom: 60px;
+   }
+   .BlogCarousel__motion-reduce {
+      position: absolute;
+      width: 100%;
+      height: 80%;
+   }
+}
 @media only screen and (max-width: 500px) {
    .BlogCarousel__slider-component-full-width {
       height: 72vh;
