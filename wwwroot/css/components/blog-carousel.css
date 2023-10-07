@@ -466,13 +466,13 @@
 }
 @media only screen and (max-width: 400px) {
    .BlogCarousel__slider-component-full-width {
-      height: 53vh;
+      height: 50vh;
    }
    .BlogCarousel__motion-reduce {
-      height: 65%;
+      height: 60%;
    }
    .BlogCarousel__card-content {
-      bottom: 105px;
+      bottom: 120px;
    }
 }
 @media only screen and (max-width: 376px) {
