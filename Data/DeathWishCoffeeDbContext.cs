@@ -18,13 +18,13 @@ namespace DeathWishCoffee.Data
 
       public DbSet<FlavorProfile> FlavorProfiles { get; set; }
       public DbSet<Image> Images { get; set; }
-      public DbSet<DeathWishCoffee.Models.Domain.Type> Types { get; set; }
+      public DbSet<Models.Domain.Type> Types { get; set; }
       public DbSet<Format> Formats { get; set; }
       public DbSet<Roast> Roasts { get; set; }
       public DbSet<Flavor> Flavors { get; set; }
       public DbSet<Size> Sizes { get; set; }
       public DbSet<InsideType> InsideTypes { get; set; }
-      public DbSet<DeathWishCoffee.Models.Domain.Attribute> Attributes { get; set; }
+      public DbSet<Models.Domain.Attribute> Attributes { get; set; }
       public DbSet<Detail> Details { get; set; }
       public DbSet<Symbol> Symbols { get; set; }
    }

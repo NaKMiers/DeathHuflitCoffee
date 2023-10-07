@@ -26,6 +26,7 @@ namespace DeathWishCoffee.Models.ViewModels
         public List<Flavor>? Flavors { get; set; }
         public int NumberOfReview { get; set; }
         public int AmountSold { get; set; }
+        public int Remain { get; set; }
         public List<Symbol>? Symbols { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime LastModifiedAt { get; set; }

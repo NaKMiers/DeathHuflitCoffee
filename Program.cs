@@ -219,43 +219,6 @@ app.MapControllerRoute(
     defaults: new { controller = "Admin", action = "DeleteReview" }
 );
 
-// [/admin/orders]
-app.MapControllerRoute(
-    name: "AllOrders",
-    pattern: "admin/orders",
-    defaults: new { controller = "Admin", action = "AllOrders" }
-);
-
-// [/admin/orders/{userId}]
-app.MapControllerRoute(
-    name: "AllOrdersByUser",
-    pattern: "admin/orders/{userId}",
-    defaults: new { controller = "Admin", action = "AllOrdersByUser" }
-);
-
-// [/admin/orders/add/{userId}]
-app.MapControllerRoute(
-    name: "AddNewOrder",
-    pattern: "admin/orders/add/{userId}",
-    defaults: new { controller = "Admin", action = "AddNewOrder" }
-);
-
-
-
-// [/admin/orders/edit/{id}]
-app.MapControllerRoute(
-    name: "EditOrder",
-    pattern: "admin/orders/edit/{id}",
-    defaults: new { controller = "Admin", action = "EditOrder" }
-);
-
-// [/admin/orders/delete/{id}]
-app.MapControllerRoute(
-    name: "DeleteOrder",
-    pattern: "admin/orders/delete/{id}",
-    defaults: new { controller = "Admin", action = "DeleteOrder" }
-);
-
 // [/admin/cart/{userId}]
 app.MapControllerRoute(
     name: "Cart",
@@ -268,6 +231,13 @@ app.MapControllerRoute(
     name: "AddToCart",
     pattern: "/admin/cart/add/{userId}",
     defaults: new { controller = "Admin", action = "AddToCart" }
+);
+
+// [/admin/cart/delete/{cartItemId}]
+app.MapControllerRoute(
+    name: "AddToCart",
+    pattern: "/admin/cart/delete/{cartItemId}",
+    defaults: new { controller = "Admin", action = "DeleteCartItem" }
 );
 
 // [/]

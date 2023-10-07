@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace DeathWishCoffee.Models.Domain
 {
     public class CartItem
@@ -10,5 +12,7 @@ namespace DeathWishCoffee.Models.Domain
         public string? InsideType { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime LastModifiedAt { get; set; }
+
+        public Product? Product { get; set; }
     }
 }

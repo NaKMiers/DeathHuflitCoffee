@@ -42,6 +42,11 @@
             <input name="primaryColor" type="color" class="form-control" id="primaryColor"
                 placeholder="Primary Color..." asp-for="PrimaryColor">
         </div>
+        <div class="mb-3 form-group">
+            <label for="remain" class="form-label">*Remain:</label>
+            <input name="remain" type="number" class="form-control" id="remain" placeholder="Remain..." asp-for="Remain"
+                min='0' required>
+        </div>
 
         @* Image *@
         <div class="mb-3 form-group">
@@ -57,6 +62,7 @@
                 <button type="button" id="admin-add-size-btn" class="btn btn-warning btn-sm">Add Size</button>
             </div>
         </div>
+
 
         @* Flavor Profiles *@
         <div id="admin-flavor-profile-container">

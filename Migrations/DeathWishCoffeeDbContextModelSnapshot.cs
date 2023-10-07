@@ -79,6 +79,8 @@ namespace DeathWishCoffee.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ProductId");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("CartItems");
@@ -238,40 +240,6 @@ namespace DeathWishCoffee.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.OrderDetail", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("InsideTypeId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("SizeId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("InsideTypeId");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("SizeId");
-
-                    b.ToTable("OrderDetail");
-                });
-
             modelBuilder.Entity("DeathWishCoffee.Models.Domain.Product", b =>
                 {
                     b.Property<Guid>("Id")
@@ -301,6 +269,9 @@ namespace DeathWishCoffee.Migrations
 
                     b.Property<double>("Rating")
                         .HasColumnType("float");
+
+                    b.Property<int>("Remain")
+                        .HasColumnType("int");
 
                     b.Property<string>("SubscribeAndSave")
                         .HasColumnType("nvarchar(max)");
@@ -496,11 +467,19 @@ namespace DeathWishCoffee.Migrations
 
             modelBuilder.Entity("DeathWishCoffee.Models.Domain.CartItem", b =>
                 {
+                    b.HasOne("DeathWishCoffee.Models.Domain.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("DeathWishCoffee.Models.Domain.User", null)
                         .WithMany("Cart")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("DeathWishCoffee.Models.Domain.Detail", b =>
@@ -564,37 +543,6 @@ namespace DeathWishCoffee.Migrations
                         .HasForeignKey("ProductId");
                 });
 
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.OrderDetail", b =>
-                {
-                    b.HasOne("DeathWishCoffee.Models.Domain.InsideType", "InsideType")
-                        .WithMany()
-                        .HasForeignKey("InsideTypeId");
-
-                    b.HasOne("DeathWishCoffee.Models.Domain.Order", "Order")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DeathWishCoffee.Models.Domain.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DeathWishCoffee.Models.Domain.Size", "Size")
-                        .WithMany()
-                        .HasForeignKey("SizeId");
-
-                    b.Navigation("InsideType");
-
-                    b.Navigation("Order");
-
-                    b.Navigation("Product");
-
-                    b.Navigation("Size");
-                });
-
             modelBuilder.Entity("DeathWishCoffee.Models.Domain.Review", b =>
                 {
                     b.HasOne("DeathWishCoffee.Models.Domain.Product", null)
@@ -638,11 +586,6 @@ namespace DeathWishCoffee.Migrations
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("DeathWishCoffee.Models.Domain.Order", b =>
-                {
-                    b.Navigation("OrderDetails");
                 });
 
             modelBuilder.Entity("DeathWishCoffee.Models.Domain.Product", b =>

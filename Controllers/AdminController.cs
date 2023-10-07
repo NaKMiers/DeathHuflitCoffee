@@ -35,6 +35,12 @@ namespace DeathWishCoffee.Controllers
             _httpContext.HttpContext.Session.SetString("Avatar", user.Avatar);
         }
 
+        private void SetUpCartDataForAllPage(List<CartItem> cart)
+        {
+            string myCartCovertedToJson = JsonConvert.SerializeObject(cart);
+            _httpContext.HttpContext.Session.SetString("Cart", myCartCovertedToJson);
+        }
+
         // [/admin/login]
         [HttpGet]
         public IActionResult Login()
@@ -53,7 +59,10 @@ namespace DeathWishCoffee.Controllers
             Console.WriteLine("Login");
 
             // check user if exist
-            var user = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Username == loginRequest.Username && u.Password == loginRequest.Password);
+            var user = _deathWishCoffeeDbContext.Users
+                        .Include(u => u.Cart)
+                        .ThenInclude(cartItem => cartItem.Product)
+                        .FirstOrDefault(u => u.Username == loginRequest.Username && u.Password == loginRequest.Password);
 
             // return bad request if user does NOT EXISTS
             if (user == null)
@@ -61,12 +70,11 @@ namespace DeathWishCoffee.Controllers
                 return BadRequest("Invalid username or password.");
             }
 
-            Console.WriteLine(user.Id);
-            Console.WriteLine(user.Username);
-            Console.WriteLine(user.Avatar);
-
-            // set user data to session
+            // set USER data to session
             SetUpUserDataForAllPage(user);
+
+            // set CART data to session
+            SetUpCartDataForAllPage(user.Cart);
 
             return RedirectToAction("Index", "Home");
         }
@@ -297,6 +305,7 @@ namespace DeathWishCoffee.Controllers
                 Description = form.Description.Trim(),
                 SubscribeAndSave = form.SubscribeAndSave.Trim(),
                 Note = form.Note.Trim(),
+                Remain = form.Remain,
                 PrimaryColor = form.PrimaryColor.Trim(),
                 CreatedAt = DateTime.Now
             };
@@ -1103,85 +1112,6 @@ namespace DeathWishCoffee.Controllers
             return RedirectToAction("AllReviews", "Admin");
         }
 
-        // [/admin/orders]
-        [HttpGet]
-        public IActionResult AllOrders()
-        {
-            return View();
-        }
-
-        // [/admin/orders/{userId}]
-        public IActionResult AllOrdersByUser(Guid userId)
-        {
-            return View();
-        }
-
-        // [/admin/orders/add/{userId}]
-        [HttpGet]
-        public IActionResult AddNewOrder(Guid userId)
-        {
-            // get All Products from DB to select
-            var allProducts = _deathWishCoffeeDbContext.Products
-                        .Include(p => p.Sizes)
-                        .Include(p => p.InsideTypes)
-                        .Include(p => p.Attributes)
-                        .Include(p => p.Images)
-                        .Include(p => p.Types)
-                        .ToList();
-
-            ViewBag.Products = allProducts;
-            ViewBag.UserId = userId;
-
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult AddNewOrder(AddNewOrderRequest form, Guid userId)
-        {
-            return View();
-        }
-
-        // [/admin/orders/edit/{id}]
-        [HttpGet]
-        public IActionResult EditOrder(Guid id)
-        {
-            // get order from database
-            // var order = _deathWishCoffeeDbContext.Orders
-            //                 .Include(o => o.Products)
-            //                 .FirstOrDefault(o => o.Id == id);
-
-            // // assign order to ViewBag to show in view
-            // ViewBag.Order = order;
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult EditOrder(AddNewOrderRequest form, Guid id)
-        {
-            Console.WriteLine("EditOrder");
-
-            return View();
-        }
-
-        // [/admin/orders/delete/{id}]
-        public IActionResult DeleteOrder(Guid id)
-        {
-            Console.WriteLine("DeleteOrder");
-            // get order to delete from database
-            var orderToDelete = _deathWishCoffeeDbContext.Orders.FirstOrDefault(o => o.Id == id);
-
-            // if order does NOT EXISTS => BadRequest
-            if (orderToDelete == null)
-                return BadRequest("Order does not exists.");
-
-            // delete order
-            _deathWishCoffeeDbContext.Orders.Remove(orderToDelete);
-            _deathWishCoffeeDbContext.SaveChanges();
-
-            // redirect to All Orders
-            return RedirectToAction("AllOrders", "Admin");
-        }
-
         // [/admin/cart/add/{userId}]
         [HttpGet]
         public IActionResult MyCart(Guid userId)
@@ -1242,6 +1172,8 @@ namespace DeathWishCoffee.Controllers
             if (form.Quantity <= 0)
                 return BadRequest("Invalid Quantity");
 
+
+            // create new CartItem
             var newCartItem = new CartItem
             {
                 UserId = userId,
@@ -1250,12 +1182,55 @@ namespace DeathWishCoffee.Controllers
                 Size = form.Size,
                 InsideType = form.InsideType,
                 CreatedAt = DateTime.Now,
+                Product = productToAdd,
             };
 
             _deathWishCoffeeDbContext.CartItems.Add(newCartItem);
             _deathWishCoffeeDbContext.SaveChanges();
 
+            user = _deathWishCoffeeDbContext.Users
+                        .Include(u => u.Cart)
+                        .FirstOrDefault(u => u.Id == userId);
+
+            // set CART data for all pages again
+            SetUpCartDataForAllPage(user.Cart);
+
+            // return bad request if user does NOT EXISTS
+            if (user == null)
+            {
+                return BadRequest("Invalid username or password.");
+            }
+
             return RedirectToAction("AddToCart", "Admin");
+        }
+
+        // [/admin/cart/delete/{cartItemId}]
+        public IActionResult DeleteCartItem(Guid cartItemId)
+        {
+            Console.WriteLine("DeleteCartItem");
+
+            // get cartItem to delete from database
+            var cartItemToDelete = _deathWishCoffeeDbContext.CartItems.FirstOrDefault(c => c.Id == cartItemId);
+
+            // if cartItem doen NOT EXISTS => BadRequest
+            if (cartItemToDelete == null)
+                return BadRequest("Cart item does not exists");
+
+            // delete cart item
+            _deathWishCoffeeDbContext.CartItems.Remove(cartItemToDelete);
+            _deathWishCoffeeDbContext.SaveChanges();
+
+            // get user to set cart again
+            var userId = _httpContext.HttpContext.Session.GetString("Id");
+            var user = _deathWishCoffeeDbContext.Users
+                        .Include(u => u.Cart)
+                        .ThenInclude(cartItem => cartItem.Product)
+                        .FirstOrDefault(u => u.Id.ToString() == userId);
+
+            SetUpCartDataForAllPage(user.Cart);
+
+            // redirect to HomePage
+            return RedirectToAction("Index", "Home");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
