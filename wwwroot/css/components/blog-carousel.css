@@ -466,7 +466,7 @@
 }
 @media only screen and (max-width: 400px) {
    .BlogCarousel__slider-component-full-width {
-      height: 50vh;
+      height: 51vh;
    }
    .BlogCarousel__motion-reduce {
       height: 65%;
@@ -477,7 +477,7 @@
 }
 @media only screen and (max-width: 376px) {
    .BlogCarousel__slider-component-full-width {
-      height: 55vh;
+      height: 56vh;
    }
    .BlogCarousel__motion-reduce {
       height: 65%;
