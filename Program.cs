@@ -7,7 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DeathWishCoffeeDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("azureDB")));
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("azureDB"));
+    options.EnableSensitiveDataLogging(false);
+}
+);
 
 // config sesstion
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -238,6 +242,20 @@ app.MapControllerRoute(
     name: "AddToCart",
     pattern: "/admin/cart/delete/{cartItemId}",
     defaults: new { controller = "Admin", action = "DeleteCartItem" }
+);
+
+// [/admin/cart/increase/{cartItemId}]
+app.MapControllerRoute(
+    name: "IncreaseCartItemQuantity",
+    pattern: "/admin/cart/increase/{cartItemId}",
+    defaults: new { controller = "Admin", action = "IncreaseCartItemQuantity" }
+);
+
+// [/admin/cart/decrease/{cartItemId}]
+app.MapControllerRoute(
+    name: "DecreaseCartItemQuantity",
+    pattern: "/admin/cart/decrease/{cartItemId}",
+    defaults: new { controller = "Admin", action = "DecreaseCartItemQuantity" }
 );
 
 // [/]

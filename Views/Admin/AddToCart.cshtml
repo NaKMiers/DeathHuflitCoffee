@@ -39,9 +39,8 @@
 
                             @foreach (var option in item.Sizes)
                             {
-                                <option value="@option.Label">@option.Label - $@option.Price</option>
+                                <option value="@option.Label - @option.Price">@option.Label - $@option.Price</option>
                             }
-
                         </select>
                     }
                 </div>

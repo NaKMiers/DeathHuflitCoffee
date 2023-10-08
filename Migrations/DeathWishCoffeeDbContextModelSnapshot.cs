@@ -65,6 +65,9 @@ namespace DeathWishCoffee.Migrations
                     b.Property<DateTime>("LastModifiedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
