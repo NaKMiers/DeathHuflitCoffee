@@ -480,7 +480,7 @@
 }
 @media only screen and (max-width: 615px) {
    .BlogCarousel__slider-component-full-width {
-      height: 72vh;
+      height: 60vh;
    }
    .BlogCarousel__card-content {
       position: relative;
@@ -506,10 +506,10 @@
       height: 80%;
    }
    .BlogCarousel__blog-post.BlogCarousel__grid-item.BlogCarousel__article.BlogCarousel__slider-slide.BlogCarousel__scroll-trigger.BlogCarousel__animate-slide-in {
-      width: 95%;
+      width: 94.5%;
    }
 }
-@media only screen and (max-width: 434px) {
+@media only screen and (max-width: 446px) {
    .BlogCarousel__slider-component-full-width {
       height: 70vh;
    }
@@ -523,7 +523,7 @@
       height: 70%;
    }
    .BlogCarousel__blog-post.BlogCarousel__grid-item.BlogCarousel__article.BlogCarousel__slider-slide.BlogCarousel__scroll-trigger.BlogCarousel__animate-slide-in {
-      width: 94%;
+      width: 93.5%;
    }
 }
 @media only screen and (max-width: 400px) {
@@ -536,8 +536,11 @@
    .BlogCarousel__card-content {
       bottom: 120px;
    }
+   .BlogCarousel__blog-post.BlogCarousel__grid-item.BlogCarousel__article.BlogCarousel__slider-slide.BlogCarousel__scroll-trigger.BlogCarousel__animate-slide-in {
+      width: 93%;
+   }
 }
-@media only screen and (max-width: 377px) {
+@media only screen and (max-width: 390px) {
    .BlogCarousel__slider-component-full-width {
       height: 70vh;
    }
@@ -545,10 +548,10 @@
       height: 65%;
    }
    .BlogCarousel__card-content {
-      bottom: 120px;
+      bottom: 125px;
    }
    .BlogCarousel__blog-post.BlogCarousel__grid-item.BlogCarousel__article.BlogCarousel__slider-slide.BlogCarousel__scroll-trigger.BlogCarousel__animate-slide-in {
-      width: 93%;
+      width: 92.7%;
    }
 }
 .BlogCarousel__collectAll {
