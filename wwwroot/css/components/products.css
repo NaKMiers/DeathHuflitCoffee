@@ -4,6 +4,7 @@
 .Products__section-template-14567496974391-product-grid-padding {
    padding: 12px 0px 20px;
    background: #000;
+   position: relative;
 }
 
 .Products__facets-wrapper-page-width {
@@ -89,12 +90,12 @@
    text-decoration-thickness: 0.2rem;
 }
 .Facet-1-template--14567496974391__product-grid-show {
-   position: relative;
+   position: absolute;
    display: block;
    width: 370px;
    height: 334px;
-   top: 45px;
-   right: 100px;
+   top: 55px;
+   left: 50px;
 }
 .Products__facets-list-list-unstyled-no-js-hidden {
    padding: 5px 20px;
@@ -151,4 +152,8 @@
 }
 .Products__twcss-font-fenomen-twcss-capitalize {
    color: #fff;
+}
+.Products__collection-page-width {
+   padding: 0px 50px;
+   background-color: #e12727;
 }

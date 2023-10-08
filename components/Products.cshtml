@@ -9,8 +9,6 @@
                     <path d="M1 1.27271L5 5.99998L1 10.7273" stroke="white"></path>
                 </svg>
             </span>
-
-
             <span>Merch</span>
         </nav>
         <div class="Products__facets-container-scroll-trigger-animate-fade-in">
@@ -202,6 +200,9 @@
             </div>
         </div>
     </div>
+    <div class="Products__collection-page-width">
+
+    </div>
 </div>
 <script>
     function toggleModal() {
@@ -213,17 +214,40 @@
             modal.classList.add("Facet-1-template--14567496974391__product-grid-show");
         }
     }
+    let originalProductCount = 45; // Số lượng sản phẩm ban đầu
+    let selectedProductCount = 0; // Số lượng sản phẩm đã chọn
+    let productCountSpan = document.getElementById("ProductCountDesktop");
+
     function toggleCheckmark(element) {
         const checkbox = element.querySelector('input[type="checkbox"]');
         const checkmark = element.querySelector(".Products__icon-icon-checkmark");
+        const labelText = element.querySelector(".visually-hidden").textContent;
+        const numberMatch = labelText.match(/\d+/);
 
         if (checkbox.checked) {
             checkbox.checked = false; // Bỏ chọn checkbox
             checkmark.style.display = "none"; // Ẩn dấu tích
+            selectedProductCount -= parseInt(numberMatch[0]);
         } else {
             checkbox.checked = true; // Chọn checkbox
             checkmark.style.display = "inline-block"; // Hiển thị dấu tích
+            selectedProductCount += parseInt(numberMatch[0]);
+        }
+
+        updateProductCount();
+    }
+
+    // Hàm cập nhật số lượng sản phẩm đã chọn
+    function updateProductCount() {
+        if (selectedProductCount === 0) {
+            productCountSpan.textContent = `${originalProductCount} products`;
+        } else {
+            productCountSpan.textContent = `${selectedProductCount / 2} of ${originalProductCount} products`;
         }
     }
+
+    // Gọi hàm cập nhật số lượng sản phẩm ban đầu
+    updateProductCount();
+
 
 </script>
