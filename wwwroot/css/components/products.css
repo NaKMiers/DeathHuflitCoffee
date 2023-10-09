@@ -225,3 +225,11 @@
    color: #e12727;
    text-decoration: underline;
 }
+.grid__item.scroll-trigger.animate--slide-in.il-2 {
+   position: relative;
+}
+.twcss-absolute.twcss-bottom-0.twcss-p-6.twcss-text-left.twcss-w-full {
+   position: absolute;
+   left: 10%;
+   top: 60%;
+}
