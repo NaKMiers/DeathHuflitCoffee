@@ -155,5 +155,73 @@
 }
 .Products__collection-page-width {
    padding: 0px 50px;
-   background-color: #e12727;
+}
+.items-list {
+   display: flex;
+   flex-wrap: wrap;
+   column-gap: 20px;
+   row-gap: 32px;
+   padding: 0;
+   margin: 0px 0px 20px;
+}
+.grid__item.scroll-trigger.animate--slide-in {
+   width: 23.4%;
+   cursor: pointer;
+}
+/* CSS cho phân trang */
+.pagination {
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+}
+
+.page-link {
+   margin: 0 10px;
+   cursor: pointer;
+}
+
+/* Ẩn nút "Prev" ban đầu */
+.prev-page-button {
+   display: none;
+}
+.motion-reduce {
+   width: 100%;
+   height: 100%;
+   transition: transform 0.5s ease;
+}
+.motion-reduce:hover {
+   transform: scale(1.1);
+}
+.Products__collection-page-width {
+   background: #000;
+   color: #fff;
+   text-decoration: none;
+}
+.media.media--transparent.media--hover-effect {
+   overflow: hidden;
+}
+.motion-reduce.twcss-object-cover.twcss-h-full {
+   transform: none;
+}
+.bv_main_container.bv_hover {
+   display: flex;
+   gap: 7px;
+   padding-top: 10px;
+}
+.bv_stars_component_container {
+   position: relative;
+   bottom: 4px;
+}
+.card__information {
+   padding: 17px 0px;
+}
+.twcss-font-fenomenBold.twcss-font-bold.twcss-text-body-14.twcss-uppercase {
+   font-weight: 800;
+   text-transform: uppercase;
+   font-size: 14px;
+}
+.grid__item.scroll-trigger.animate--slide-in:hover
+   .twcss-font-fenomenBold.twcss-font-bold.twcss-text-body-14.twcss-uppercase {
+   color: #e12727;
+   text-decoration: underline;
 }

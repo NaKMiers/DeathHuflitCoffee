@@ -27,3 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
       // });
    }
 });
+$(document).ready(function () {
+   // Chọn các thẻ <li> có class "grid__item scroll-trigger animate--slide-in"
+   $(".grid__item.scroll-trigger.animate--slide-in").click(function () {
+      var link = $(this).data("link"); // Lấy đường link từ thuộc tính data-link của <li>
+      window.location.href = link; // Chuyển hướng đến đường link khi nhấn vào <li>
+   });
+});
