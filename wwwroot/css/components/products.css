@@ -165,7 +165,7 @@
    margin: 0px 0px 20px;
 }
 .grid__item.scroll-trigger.animate--slide-in {
-   width: 23.4%;
+   width: 23.2%;
    cursor: pointer;
 }
 /* CSS cho phân trang */
@@ -204,6 +204,7 @@
    transform: none;
 }
 .bv_main_container.bv_hover {
+   color: #fff;
    display: flex;
    gap: 7px;
    padding-top: 10px;
@@ -225,11 +226,36 @@
    color: #e12727;
    text-decoration: underline;
 }
-.grid__item.scroll-trigger.animate--slide-in.il-2 {
+/* .grid__item.scroll-trigger.animate--slide-in.il-2 {
+   position: relative;
+} */
+.Products__card-wrapper-product-card-wrapper-underline-links-hover-twcss-relative {
    position: relative;
 }
-.twcss-absolute.twcss-bottom-0.twcss-p-6.twcss-text-left.twcss-w-full {
+.Products__twcss-absolute-twcss-bottom-0-twcss-p-6-twcss-text-left-twcss-w-full {
    position: absolute;
-   left: 10%;
-   top: 60%;
+   bottom: 0;
+   padding: 15px;
+   width: 100%;
+}
+.Products__twcss-uppercase-heading-6-twcss-text-white-group {
+   margin: 0;
+   color: #fff;
+   font-size: 24px;
+   font-weight: 800;
+   text-transform: uppercase;
+   line-height: 24px;
+}
+.Products__twcss-mt-6-button-button-tertiary {
+   margin: 15px 0px 0px;
+   padding: 12px 16px 14px;
+   text-transform: uppercase;
+   font-size: 14px;
+   font-weight: 500;
+   border: 2px solid #fff;
+}
+.Products__twcss-mt-6-button-button-tertiary:hover {
+   background-color: #e12727;
+   border: 2px solid #000;
+   transition: background-color 0.7s ease;
 }
