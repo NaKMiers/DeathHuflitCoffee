@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DeathWishCoffee.Migrations
 {
     /// <inheritdoc />
-    public partial class S : Migration
+    public partial class MIG : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

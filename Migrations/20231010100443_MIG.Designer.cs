@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DeathWishCoffee.Migrations
 {
     [DbContext(typeof(DeathWishCoffeeDbContext))]
-    [Migration("20231008040426_S")]
-    partial class S
+    [Migration("20231010100443_MIG")]
+    partial class MIG
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
