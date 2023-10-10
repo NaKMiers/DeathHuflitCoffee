@@ -1,0 +1,65 @@
+<section class="checkout-container">
+   @* Main *@
+   <div class="checkout__main">
+      @* logo *@
+      <div class="checkout__main__logo">
+         <img src="~/images/logo.png" alt="logo">
+      </div>
+
+      @* breakcrumb *@
+      <nav class="checkout__main__breakcrumb" aria-label="breadcrumb">
+         <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Cart</a></li>
+            <li class="breadcrumb-item active"><a href="#">Information</a></li>
+            <li class="breadcrumb-item">Shipping</li>
+            <li class="breadcrumb-item">Payment</li>
+         </ol>
+      </nav>
+
+      @* express checkouts *@
+      <div class="checkout__main__express-checkouts">
+         <h2 class="checkout__main__express-checkouts__title">
+            Express checkout
+         </h2>
+
+         <div class="checkout__main__express-checkouts__methods">
+            <div class="checkout__main__express-checkouts__method__item shop-pay" style="background: #5a31f4;">
+               <img src="~/images/amazon-pay.png" alt="payment">
+            </div>
+
+            <div class="checkout__main__express-checkouts__method__item amazon-pay" style="background: #fad676;">
+               <img src="~/images/amazon-pay.png" alt="payment" style="margin-bottom: -8px; object-fit: cover;">
+            </div>
+
+            <div class="checkout__main__express-checkouts__method__item paypal" style="background: #ffc439;">
+               <img src="~/images/paypal.png" alt="payment" style="width: 19px; height: 19px;">
+               <img src="~/images/paypal2.svg" alt="payment" style="height: 19px; width: 65px;">
+            </div>
+
+            <div class="checkout__main__express-checkouts__method__item google-pay" style="background: #000;">
+               <img src="~/images/google-pay.png" alt="payment" style="height: 100%;">
+            </div>
+         </div>
+      </div>
+
+      @* separator *@
+      <div class="checkout__main__separator">OR</div>
+
+      @* contact form *@
+      <div class="checkout__main__contact">
+         <h2 class="checkout__main__contact__title">Contact</h2>
+         <h3 class="checkout__main__contact__sub">Have an account? <a href="/account/login">Login</a></h3>
+
+         <input class="checkout__main__contact__email-input" type="email" placeholder="Email">
+
+         <div class="checkout__main__contact__email-checkbox">
+            <input type="checkbox" checked>
+            <p class="p-0">Email me with news and offers</p>
+         </div>
+      </div>
+
+   </div>
+
+   @* Sidebar *@
+   <div class="checkout__sidebar"></div>
+</section>

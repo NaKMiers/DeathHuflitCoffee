@@ -125,6 +125,13 @@ app.MapControllerRoute(
     defaults: new { controller = "Blog", action = "Index" }
 );
 
+// [/checkouts/{id}]
+app.MapControllerRoute(
+    name: "Checkout",
+    pattern: "checkouts/{id}",
+    defaults: new { controller = "Checkout", action = "Index" }
+);
+
 // [/admin]
 app.MapControllerRoute(
     name: "Admin",
