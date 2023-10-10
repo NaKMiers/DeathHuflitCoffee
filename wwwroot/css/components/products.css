@@ -168,6 +168,9 @@
    width: 23.2%;
    cursor: pointer;
 }
+.grid__item.scroll-trigger.animate--slide-in:hover .motion-reduce {
+   transform: scale(1.1);
+}
 /* CSS cho phân trang */
 .pagination {
    display: flex;
@@ -188,9 +191,6 @@
    width: 100%;
    height: 100%;
    transition: transform 0.5s ease;
-}
-.motion-reduce:hover {
-   transform: scale(1.1);
 }
 .Products__collection-page-width {
    background: #000;
@@ -226,9 +226,9 @@
    color: #e12727;
    text-decoration: underline;
 }
-/* .grid__item.scroll-trigger.animate--slide-in.il-2 {
-   position: relative;
-} */
+.grid__item.scroll-trigger.animate--slide-in.il-2:hover .motion-reduce {
+   transform: none;
+}
 .Products__card-wrapper-product-card-wrapper-underline-links-hover-twcss-relative {
    position: relative;
 }
