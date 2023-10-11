@@ -1,0 +1,253 @@
+<div class="checkout__top">
+   @* Logo *@
+   <div class="checkout__top__logo">
+      <img src="~/images/logo.png" alt="logo">
+   </div>
+
+   @* Show Cart *@
+   <div class="checkout__top__show-cart" data-bs-toggle="collapse" data-bs-target="#checkoutSidebar"
+      aria-expanded="false" aria-controls="checkoutSidebar">
+      <div class="checkout__top__show-cart__container">
+         <div class="checkout__top__show-cart__btn">
+            <div class="checkout__top__show-cart__icon me-2">
+               <svg width="20" height="19" xmlns="http://www.w3.org/2000/svg" class="order-summary-toggle__icon">
+                  <path
+                     d="M17.178 13.088H5.453c-.454 0-.91-.364-.91-.818L3.727 1.818H0V0h4.544c.455 0 .91.364.91.818l.09 1.272h13.45c.274 0 .547.09.73.364.18.182.27.454.18.727l-1.817 9.18c-.09.455-.455.728-.91.728zM6.27 11.27h10.09l1.454-7.362H5.634l.637 7.362zm.092 7.715c1.004 0 1.818-.813 1.818-1.817s-.814-1.818-1.818-1.818-1.818.814-1.818 1.818.814 1.817 1.818 1.817zm9.18 0c1.004 0 1.817-.813 1.817-1.817s-.814-1.818-1.818-1.818-1.818.814-1.818 1.818.814 1.817 1.818 1.817z">
+                  </path>
+               </svg>
+            </div>
+
+            <span>Show</span>
+
+            <div class="checkout__top__show-cart__icon ms-1">
+               <svg width="12" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                  <path
+                     d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+               </svg>
+            </div>
+         </div>
+
+         <div class="checkout__top__show-cart__price">
+            $226.90
+         </div>
+      </div>
+   </div>
+</div>
+
+<section class="checkout-container">
+   @* Main *@
+   <div class="checkout__main">
+      @* logo *@
+      <div class="checkout__main__logo">
+         <img src="~/images/logo.png" alt="logo">
+      </div>
+
+      @* breakcrumb *@
+      <nav class="checkout__main__breakcrumb" aria-label="breadcrumb">
+         <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Cart</a></li>
+            <li class="breadcrumb-item active"><a href="#">Information</a></li>
+            <li class="breadcrumb-item">Shipping</li>
+            <li class="breadcrumb-item">Payment</li>
+         </ol>
+      </nav>
+
+      @* express checkouts *@
+      <div class="checkout__main__express-checkouts">
+         <h2 class="checkout__main__express-checkouts__title">
+            Express checkout
+         </h2>
+
+         <div class="checkout__main__express-checkouts__methods">
+            <div class="checkout__main__express-checkouts__method__item shop-pay" style="background: #5a31f4;">
+               <img src="~/images/shop-pay.webp" alt="payment" style="height: 100%; width: 100%; object-fit: contain;">
+            </div>
+
+            <div class="checkout__main__express-checkouts__method__item amazon-pay" style="background: #fad676;">
+               <img src="~/images/amazon-pay.png" alt="payment" style="margin-bottom: -8px; object-fit: cover;">
+            </div>
+
+            <div class="checkout__main__express-checkouts__method__item paypal" style="background: #ffc439;">
+               <img src="~/images/paypal.png" alt="payment" style="width: 19px; height: 19px;">
+               <img src="~/images/paypal2.svg" alt="payment" style="height: 19px; width: 65px;">
+            </div>
+
+            <div class="checkout__main__express-checkouts__method__item google-pay" style="background: #000;">
+               <img src="~/images/google-pay.png" alt="payment" style="height: 100%;">
+            </div>
+         </div>
+      </div>
+
+      @* separator *@
+      <div class="checkout__main__separator">OR</div>
+
+      @* contact form *@
+      <div class="checkout__main__contact">
+         <h2 class="checkout__main__form__title">Contact</h2>
+         <h3 class="checkout__main__contact__sub">Have an account? <a href="/account/login">Login</a></h3>
+
+         <div class="form-floating mb-3 w-100 checkout__main__form__input">
+            <input type="email" class="form-control  id=" floatingInput" placeholder="Email...">
+            <label for="floatingInput">Email address</label>
+         </div>
+
+         <div class="checkout__main__contact__email-checkbox">
+            <input type="checkbox" checked>
+            <p class="p-0">Email me with news and offers</p>
+         </div>
+      </div>
+
+
+      @* shipping address *@
+      <div class="checkout__main__shipping-address">
+         <h2 class="checkout__main__form__title">Shipping address</h2>
+
+         <div class="form-floating checkout__main__form__input">
+            <select class="form-select" id="floatingSelectGrid">
+               <option selected>Vietnam</option>
+               <option value="1">One</option>
+               <option value="2">Two</option>
+               <option value="3">Three</option>
+            </select>
+            <label for="floatingSelectGrid">Country/region</label>
+         </div>
+
+         <div class="row" style="gap: 12px;">
+            <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+               <input type="text" class="form-control  id=" floatingInput" placeholder="Firstname...">
+               <label for="floatingInput">Firstname</label>
+            </div>
+
+            <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+               <input type="text" class="form-control  id=" floatingInput" placeholder="Lastname...">
+               <label for="floatingInput">Lastname</label>
+            </div>
+         </div>
+
+         <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+            <input type="text" class="form-control  id=" floatingInput" placeholder="Company...">
+            <label for="floatingInput">Company (optional)</label>
+         </div>
+
+         <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+            <input type="text" class="form-control  id=" floatingInput" placeholder="Address...">
+            <label for="floatingInput">Address</label>
+         </div>
+
+         <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+            <input type="text" class="form-control  id=" floatingInput" placeholder="Apartment...">
+            <label for="floatingInput">Apartment, suit, etc. (optional)</label>
+         </div>
+
+         <div class="row" style="gap: 12px;">
+            <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+               <input type="text" class="form-control  id=" floatingInput" placeholder="City...">
+               <label for="floatingInput">City</label>
+            </div>
+
+            <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+               <input type="email" class="form-control  id=" floatingInput" placeholder="Postal code...">
+               <label for="floatingInput">Postal code (optional)</label>
+            </div>
+         </div>
+
+         <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+            <input type="email" class="form-control  id=" floatingInput" placeholder="Phone...">
+            <label for="floatingInput">Phone (optional)</label>
+         </div>
+
+         <div class="checkout__main__form__checkbox">
+            <input type="checkbox" checked>
+            <p class="p-0">Email me with news and offers*</p>
+         </div>
+
+         <p class="checkout__main__form__footer">*By providing your phone number, you agree to receive recurring
+            automated marketing text messages (e.g. cart
+            reminders) from this shop and third parties acting on its behalf. Consent is not a condition to obtain goods
+            or services. Msg & data rates may apply. Msg frequency varies. Reply HELP for help and STOP to cancel. You
+            also agree to the <a href="/">Terms of Service</a> and <a href="/">Privacy Policy</a>.
+         </p>
+
+         <div class="checkout__main__btn-wrap">
+            <a href="/" class="checkout__main__btn-wrap__return-btn">
+               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                  <path
+                     d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+               </svg>
+
+               Return to cart
+            </a>
+
+            <button class="checkout__main__btn-wrap__continue-btn">Continue to shipping</button>
+         </div>
+
+         <div class="checkout__main__footer">
+            <ul class="checkout__main__footer__policy-list">
+               <li class="checkout__main__footer__policy-item">Refund policy</li>
+               <li class="checkout__main__footer__policy-item">Privacy policy</li>
+               <li class="checkout__main__footer__policy-item">Terms of service</li>
+               <li class="checkout__main__footer__policy-item">Subscription policy</li>
+            </ul>
+         </div>
+      </div>
+
+   </div>
+
+   @* Sidebar *@
+   <div class="checkout__sidebar collapse" id="checkoutSidebar">
+      <ul class="checkout__product__list">
+         @for (int i = 0; i < 10; i++)
+         {
+            <div class="checkout__product__item">
+               <div class="checkout__product__item__thumbnail position-relative">
+                  <img src="~/images/product1.jpg" alt="thumbnail">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                     1
+                     <span class="visually-hidden">unread messages</span>
+                  </span>
+               </div>
+
+               <div class="checkout__product__item__desc">
+                  <p class="checkout__product__item__desc__title m-0">Dark Roast Death Cups</p>
+                  <p class="checkout__product__item__desc__count  m-0">10 count</p>
+               </div>
+
+               <div class="checkout__product__item__price">
+                  $14.99
+               </div>
+            </div>
+         }
+      </ul>
+
+      <div class="checkout__discount">
+         <div class="form-floating mb-3 w-100 checkout__main__form__input discount">
+            <input type="text" class="form-control  id=" floatingInput" placeholder="Lastname...">
+            <label for="floatingInput">Discount code or gift card</label>
+         </div>
+
+         <button class="checkout__discount__btn btn disabled">Apply</button>
+      </div>
+
+      <hr style="margin: 21px 0;">
+      <div class="checkout__main__total-wrap">
+         <div class="checkout__main__total-line">
+            <span class="checkout__main__total-line__name">Subtotal</span>
+            <span class="checkout__main__total-line__price">$226.90</span>
+         </div>
+         <div class="checkout__main__total-line">
+            <span class="checkout__main__total-line__name">Shipping</span>
+            <span class="checkout__main__total-line__small-text">Calculated at next step</span>
+         </div>
+
+         <hr style="margin: 21px 0;">
+
+         <div class="checkout__main__total-line final-total">
+            <span class="checkout__main__total-line__name">Total</span>
+            <span class="d-flex gap-2">
+               <span class="checkout__main__total-line__small-text">USD</span>
+               <span class="checkout__main__total-line__price big-price">$226.90</span>
+            </span>
+         </div>
+      </div>
+   </div>
+</section>

@@ -6,22 +6,19 @@ namespace DeathWishCoffee.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
+        // [/]
+        [HttpGet]
         public IActionResult Index()
         {
-
             return View();
         }
 
-        public IActionResult PageNotFound(int id)
+        // [*]
+        [HttpGet]
+        public IActionResult PageNotFound()
         {
-            Console.WriteLine(id);
+            Console.WriteLine("PageNotFound");
             return View();
         }
 
