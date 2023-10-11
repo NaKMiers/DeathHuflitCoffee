@@ -1,0 +1,15 @@
+.Slider-button{
+    color: #201e1d;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Slideshow-banner{
+    text-align: center;
+    color: #ffffff;
+}
