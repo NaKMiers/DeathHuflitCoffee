@@ -17,9 +17,9 @@ namespace DeathWishCoffee.Controllers
 
         // [*]
         [HttpGet]
-        public IActionResult PageNotFound(int id)
+        public IActionResult PageNotFound()
         {
-            Console.WriteLine(id);
+            Console.WriteLine("PageNotFound");
             return View();
         }
 
