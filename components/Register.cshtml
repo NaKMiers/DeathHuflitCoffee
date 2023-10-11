@@ -1,37 +1,77 @@
-<div class="KRegister">
-        <div class="KRegister_Main">
+@* <div class="KRegister">
+<div class="KRegister_Main">
 
-            <div class="KRegister_Main_header">
-                <h1 class="KRegister_Main_header_account">Account</h1>
-                <a href="/account/logout" class="KRegister_Main_header_logout">
-                    <div class="KRegister_Main_header_logout__icon" style="padding-right:10px">
-                        <svg  xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 18 19" style="width:12px">
-                         <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4.5a3 3 0 116 0 3 3 0 01-6 0zm3-4a4 4 0 100 8 4 4 0 000-8zm5.58 12.15c1.12.82 1.83 2.24 1.91 4.85H1.51c.08-2.6.79-4.03 1.9-4.85C4.66 11.75 6.5 11.5 9 11.5s4.35.26 5.58 1.15zM9 10.5c-2.5 0-4.65.24-6.17 1.35C1.27 12.98.5 14.93.5 18v.5h17V18c0-3.07-.77-5.02-2.33-6.15-1.52-1.1-3.67-1.35-6.17-1.35z" fill="currentColor">
-                        </path>
-                         
-                        </svg>
-                    </div>  
-                    <p style="text-decoration: underline;"> Log out</p>
-                  </a>
-                  <br>
-                  <br>
-            </div>
+<div class="KRegister_Main_header">
+<h1 class="KRegister_Main_header_account">Account</h1>
+<a href="/account/logout" class="KRegister_Main_header_logout">
+<div class="KRegister_Main_header_logout__icon" style="padding-right:10px">
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 18 19"
+style="width:12px">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6 4.5a3 3 0 116 0 3 3 0 01-6 0zm3-4a4 4 0 100 8 4 4 0 000-8zm5.58
+12.15c1.12.82 1.83 2.24 1.91 4.85H1.51c.08-2.6.79-4.03 1.9-4.85C4.66 11.75 6.5 11.5 9 11.5s4.35.26 5.58 1.15zM9
+10.5c-2.5 0-4.65.24-6.17 1.35C1.27 12.98.5 14.93.5 18v.5h17V18c0-3.07-.77-5.02-2.33-6.15-1.52-1.1-3.67-1.35-6.17-1.35z"
+fill="currentColor">
+</path>
 
-            <div class="KRegister_Main_Text">
-                <div class="KRegister_Main_Text1">
-                    <h2>Order history</h2>
-                    <p>You haven't placed any orders yet.</p>
-                </div>
-                <div class="KRegister_Main_Text2">
-                    <h2 style="margin-bottom: 15px;">Account details</h2>
-                    <p style="margin-bottom:15px">Trần  Kha<br>United States</p>
-                    <a href="/account/addresses" style="color: white; text-decoration: underline;">
-                    View addresses (1)
-                    </a>        
-                    <p><a href="/apps/subscriptions/manage/?customer=6311218774071&amp;customer_signature=c01582485a717656e232169e1e3fc584da1bb4a16ca5f04f250386afd436ed1d&amp;customer_timestamp=1696184858" class="KRegister_Main_Manage_Your_Subscriptions" style="color:white; text-decoration: underline;">Manage Your Subscriptions</a>
-                    </p>
-                </div>
-            </div>
-    
-        </div>  
-    </div> 
+</svg>
+</div>
+<p style="text-decoration: underline;"> Log out</p>
+</a>
+<br>
+<br>
+</div>
+
+<div class="KRegister_Main_Text">
+<div class="KRegister_Main_Text1">
+<h2>Order history</h2>
+<p>You haven't placed any orders yet.</p>
+</div>
+<div class="KRegister_Main_Text2">
+<h2 style="margin-bottom: 15px;">Account details</h2>
+<p style="margin-bottom:15px">Trần Kha<br>United States</p>
+<a href="/account/addresses" style="color: white; text-decoration: underline;">
+View addresses (1)
+</a>
+<p><a
+href="/apps/subscriptions/manage/?customer=6311218774071&amp;customer_signature=c01582485a717656e232169e1e3fc584da1bb4a16ca5f04f250386afd436ed1d&amp;customer_timestamp=1696184858"
+class="KRegister_Main_Manage_Your_Subscriptions" style="color:white; text-decoration: underline;">Manage Your
+Subscriptions</a>
+</p>
+</div>
+</div>
+
+</div>
+</div> *@
+<div class="Kaccount_Main">
+    <h1  class="register_header"><strong>Create account</strong></h1>
+    <form class="Kaccount_Main_form_bentrong">
+        <div class="form-floating mb-3">
+            <input type="name" class="form-control iput" placeholder="First Name" required minlength="3" maxlength="100">
+            <label for="floatingInput">First Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="name" class="form-control iput" placeholder="Last Name" required minlength="3" maxlength="100">
+            <label for="floatingInput">Last Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="name" class="form-control iput" placeholder="name@example.com" required >
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="name" class="form-control iput" placeholder="Last Name" required minlength="6" maxlength="100" >
+            <label for="floatingInput">Password</label>
+        </div>
+
+        @* <div class="form-floating mb-3">
+            <input type="email" class="form-control iput" placeholder="name@example.com" required>
+            <label for="floatingInput">Email address</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control iput" placeholder="password" required minlength="6" maxlength="100">
+            <label for="floatingPassword">Email address</label>
+        </div> *@
+        <br>
+        <div><button class="Kaccount_button">Create</button> </div>
+    </form>
+</div>
