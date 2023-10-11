@@ -6,7 +6,7 @@
         object-fit: cover;
         object-position: center;
 }
-img{
+.ContentBanner2 img{
     display: block;
     max-width: 100%;
     height: 600px;
