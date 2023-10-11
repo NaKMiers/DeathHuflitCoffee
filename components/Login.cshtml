@@ -1,21 +1,23 @@
-<div class="Klogin" style="color: black">
+@* <div style="background-color: black;"> *@
+<div class="Klogin" style="color: black;background-color:black">
   <h1 class="Klogin__login"><strong>Login</strong></h1>
   <div class="Klogin_error-message" id="Klogin_error-message" style="color:white"></div>
 
   <form style="padding-top:20px;width: 448px;padding-bottom:30px">
     <div class="form-floating mb-3" style="width: 500px;color:black">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-      <label for="floatingInput">Email</label>
+      <input type="email" class="form-control iput" id="floatingInput" placeholder="name@example.com" required>
+      <label for="floatingInput" style="text-align: left;">Email</label>
     </div>
     <div class="form-floating mb-3" style=" width:500px;color:black">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="password" required minlength="6"
-        maxlength="100">
-      <label for="floatingPassword">Password</label>
-      <a href="https://www.deathwishcoffee.com/account/login#recover"
-        style="color:white;padding-right: 330px;text-decoration: underline;">Forgot your password?</a>
+      <input type="password" class="form-control iput" id="floatingPassword" placeholder="password" required
+        minlength="6" maxlength="100">
+      <label for="floatingPassword" style="text-align: left;">Password</label>
+      <a href="/account/reset-password" style="color:white;padding-right: 330px;text-decoration: underline"
+        class="Kloin_forgot">Forgot your password?</a>
     </div>
     <br>
-    <div class="Klogin_Signin" style="padding-bottom:10px"><button>Sign in</button></div>
+    <div class="Klogin_Signin" class="Klogin_signin1"><button>Sign in</button></div>
     <a href="https://www.deathwishcoffee.com/account/login#recover" class="Klogin_Create_account">Create account</a>
   </form>
 </div>
+@* </div> *@

@@ -175,6 +175,12 @@ namespace DeathWishCoffee.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        // [/account/reset-password]
+        public IActionResult ResetPassword()
+        {
+            return View();
+        }
+
 
         // ERRORS
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
