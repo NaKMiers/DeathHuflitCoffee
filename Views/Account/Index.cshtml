@@ -1,8 +1,9 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@inject IHttpContextAccessor _httpContext;
+@{
+    ViewData["Title"] = "Account Page";
+    var id = _httpContext.HttpContext?.Session.GetString("Id");
+    var username = _httpContext.HttpContext?.Session.GetString("Username");
+    var avatar = _httpContext.HttpContext?.Session.GetString("Avatar");
 }
 
-<div class="text-center">
-    <h1 class="display-4">Account</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<partial name="../../components/Account.cshtml" />

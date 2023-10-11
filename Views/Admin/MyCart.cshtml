@@ -1,0 +1,61 @@
+@model List<DeathWishCoffee.Models.Domain.CartItem>
+@{
+   ViewData["Title"] = "My Cart Page";
+   var userId = ViewBag.UserId;
+}
+
+<div class="bg-light pt-5">
+   <a href="/admin" class="btn btn-secondary mb-3">
+      Back
+   </a>
+
+   <h1 class="text-center">My Cart</h1>
+   <p class="text-center"><strong>User ID:</strong> @userId</p>
+
+   <table class="table">
+      <thead>
+         <tr>
+            <th>Delete</th>
+            <th>-1</th>
+            <th>+1</th>
+
+            <th>Id</th>
+            <th>Product ID</th>
+            <th>Quantity</th>
+            <th>Size</th>
+            <th>Inside Type</th>
+            <th>CreatedAt</th>
+            <th>LastModifiedAt</th>
+         </tr>
+      </thead>
+      <tbody>
+         @foreach (var cartItem in Model)
+         {
+            <tr>
+               <td>
+                  <a class="btn btn-danger" href="/admin/cart/delete/@cartItem.Id">Delete</a>
+               </td>
+               <td>
+                  <form action="/admin/cart/decrease/@cartItem.Id" method="post">
+                     <button class="btn btn-info">-</button>
+                  </form>
+               </td>
+               <td>
+                  <form action="/admin/cart/increase/@cartItem.Id" method="post">
+                     <button class="btn btn-info">+</button>
+                  </form>
+               </td>
+
+               <td>@cartItem.Id</td>
+               <td>@cartItem.ProductId</td>
+               <td>@cartItem.Quantity</td>
+               <td>@cartItem.Size</td>
+               <td>@cartItem.InsideType</td>
+               <td>@cartItem.CreatedAt</td>
+               <td>@cartItem.LastModifiedAt</td>
+            </tr>
+         }
+      </tbody>
+   </table>
+
+</div>

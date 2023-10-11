@@ -1,5 +1,104 @@
-.lkasdlkasjd {
-   color: green;
-
-   background: #000;
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+.DirectionHeding__header {
+   flex-flow: column;
+   background-color: #1c1d1d;
+   color: #fff;
+}
+.DirectionHeding__form-message-wrapper {
+   padding: 5px 0px 40px;
+   margin: 0px 50.875px;
+}
+.DirectionHeding__panel-4-back-button::before {
+   padding-right: 15px;
+   position: relative;
+   top: 1px;
+   font-size: 25px;
+   color: #fff;
+   content: "←";
+}
+#DirectionHeding__panel4BackButton {
+   margin: 0px 0px 10px;
+   font-size: 14px;
+   font-weight: 700;
+   height: 50px;
+   line-height: 50px;
+   position: relative;
+   text-align: left;
+   text-size-adjust: 100%;
+   text-transform: uppercase;
+   cursor: pointer;
+}
+.DirectionHeding__form-message-heading {
+   font-size: 34px;
+   font-family: Revans-Bold, sans-serif;
+   font-weight: 800;
+   margin: 0;
+   height: 43.2px;
+   text-align: center;
+   text-transform: uppercase;
+}
+.DirectionHeding__form-message-text {
+   margin: 10px 0px 20px;
+   font-size: 14px;
+   font-weight: 900;
+   font-family: Revans-Bold, sans-serif;
+   height: 19.2px;
+   text-align: center;
+   text-transform: uppercase;
+}
+@media (max-width: 769px) {
+   .DirectionHeding__header {
+      height: 190px;
+   }
+   #DirectionHeding__panel4BackButton {
+      margin: 0 0 25px;
+      align-self: flex-start;
+   }
+   .DirectionHeding__form-message-wrapper {
+      padding: 0;
+      margin: auto;
+      max-width: unset;
+      width: 90%;
+      flex-flow: column;
+   }
+   .DirectionHeding__form-message-heading {
+      font-size: 32px;
+   }
+   p.DirectionHeding__form-message-text {
+      margin: 10px 79px 35px;
+      line-height: 27px;
+   }
+}
+@media (max-width: 565px) {
+   .DirectionHeding__header {
+      height: 240px;
+   }
+   p.DirectionHeding__form-message-text {
+      position: relative;
+      top: 35px;
+   }
+}
+@media (max-width: 395px) {
+   .DirectionHeding__header {
+      height: 270px;
+   }
+}
+@media (min-width: 991px) {
+   #DirectionHeding__panel4BackButton {
+      width: 90%;
+      left: 100px;
+   }
+}
+@media (min-width: 565px) {
+   .DirectionHeding__header {
+      height: 250px;
+   }
+   p.DirectionHeding__form-message-text {
+      position: relative;
+      top: 35px;
+   }
 }

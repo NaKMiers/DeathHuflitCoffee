@@ -211,3 +211,15 @@ navsideSubmenuMerchTrigger.onclick = () => {
 navsideSubmenuMerchCloseBtn.onclick = () => {
    hideNavsideSubmenuMerch()
 }
+
+// recomment product
+$(document).ready(function () {
+   $('.cart-modal__product-item__body__add-btn').click(function () {
+      // Hiển thị select menu của form được nhấn
+      $(this).closest('.cart-modal__product-item').find('.cart-modal__product-item__selector').show()
+
+      setTimeout(() => {
+         $(this).attr('type', 'submit')
+      }, 0)
+   })
+})

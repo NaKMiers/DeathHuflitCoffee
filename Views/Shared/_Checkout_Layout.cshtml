@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DeathWishCoffee</title>
+    <link rel="stylesheet" href="~/fonts/Fenomen-Sans-Light.otf">
+    <link rel="stylesheet" href="~/fonts/Fenomen-Sans-SemiBold.otf">
+    <link rel="stylesheet" href="~/fonts/Fenomen-Sans-Book.woff">
+    <link rel="stylesheet" href="~/fonts/Fenomen-Sans-SemiBold.woff">
+    <link rel="stylesheet" href="~/fonts/fa-light-300.woff2">
+    <link rel="stylesheet" href="~/fonts/Fenomen-Sans-Bold.woff2">
+    <link rel="stylesheet" href="~/fonts/Fenomen-Sans-Book.woff2">
+    <link rel="stylesheet" href="~/fonts/Revans-Bold.woff2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DeathWishCoffee.styles.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="~/css/components/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/account.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/big-title1.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/big-title2.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/blog-banner.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/blog-carousel.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/blog-content.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/card-content.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/cards.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/carousel1.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/content-banner1.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/content-banner2.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/content-banner3.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/content-banner4.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/content-banner5.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/direction-heading.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/order.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/features.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/footer.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/icons.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/incentives.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/join-following.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/product-detail.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/products.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/register.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/related-products.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/reviews.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/ritual-rewards.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/search-result.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/sign-up.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/slideshow.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/split-content1.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/split-content2.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/tiktok-cards.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/timeline.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/title.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/checkout.css" asp-append-version="true" />
+
+</head>
+
+<body>
+    @* <partial name="../../components/Header.cshtml" /> *@
+    @* <partial name="../../components/RitualRewards.cshtml" /> *@
+
+    <div class="container p-0">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    @* <partial name="../../components/SignUp.cshtml" />
+    <partial name="../../components/Footer.cshtml" /> *@
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/58516b09e7.js" crossorigin="anonymous"></script>
+
+    <script src="~/js/components/header.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/account.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/big-title1.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/big-title2.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/blog-banner.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/blog-carousel.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/blog-content.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/card-content.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/cards.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/carousel1.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/content-banner1.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/content-banner2.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/content-banner3.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/content-banner4.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/content-banner5.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/direction-heading.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/order.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/features.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/footer.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/icons.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/incentives.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/join-following.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/login.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/product-detail.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/products.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/register.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/related-products.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/reviews.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/ritual-rewards.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/search-result.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/sign-up.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/slideshow.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/split-content1.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/split-content2.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/tiktok-cards.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/timeline.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/title.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/admin/add-new-product.js" type="module" asp-append-version="true"></script>
+    <script src="~/js/components/checkout.js" type="module" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

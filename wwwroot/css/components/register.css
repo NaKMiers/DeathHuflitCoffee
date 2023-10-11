@@ -1,0 +1,37 @@
+.KRegister_Main{
+    padding-top: 36px;
+    padding-bottom: 0px;
+    padding-left: 50px;
+    padding-right: 0px;
+}
+.KRegister_Main_header_logout{
+    width: 78px;
+    height: 18px;
+    display: flex;
+    
+    color: white;
+}
+.KRegister_Main_header_logout__icon{
+    width: 15px;
+    height: 15px;
+    color: white;
+}
+.KRegister_Main_header_account{
+    padding-bottom: 10px;
+    color: white;
+}
+.KRegister_Main_Text{
+    display: flex;
+    color: white;
+}
+.KRegister_Main_Text1{
+    width:70% ;
+}
+.KRegister_Main_Text2{
+    height: 250px;
+    /* width: 210; */
+    /* width: 220px; */
+    padding-left: 50px;
+    text-align: left;
+    font-size: 20px;
+}

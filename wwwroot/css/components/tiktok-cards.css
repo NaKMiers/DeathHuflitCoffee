@@ -1,0 +1,210 @@
+.TiktokCard__boxContainer {
+   padding: 32px 16px;
+   background-color: #000;
+   color: #fff;
+   display: flex;
+   justify-content: center;
+}
+.TiktokCard__button-group-btns-container {
+   display: flex;
+   width: 100%;
+   justify-content: center;
+   letter-spacing: 0.6px;
+   line-height: 24px;
+   margin-left: 0px;
+   margin-right: 0px;
+   max-width: 1440px;
+   gap: 16px;
+   tab-size: 4;
+}
+.TiktokCard__button-group-btn.TiktokCard__button.TiktokCard__filter-button-style.TiktokCard__twcss-px-0.TiktokCard__twcss-text-center {
+   display: inline-flex;
+   padding: 12px 0px 14px;
+   border: solid 0.8px rgb(92, 89, 87);
+   font-weight: 600;
+   line-height: 0.93;
+   letter-spacing: 0.56px;
+   text-transform: uppercase;
+   font-size: 14px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: 600;
+   width: calc(100% / 6);
+   justify-content: center;
+   text-align: center;
+   min-height: auto;
+   align-items: center;
+}
+@media (max-width: 751px) {
+   .TiktokCard__button-group-btns-container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+   }
+   .TiktokCard__button-group-btn.TiktokCard__button.TiktokCard__filter-button-style.TiktokCard__twcss-px-0.TiktokCard__twcss-text-center {
+      width: 100%;
+   }
+}
+.TiktokCard__button.TiktokCard__filter-button-style:hover {
+   background-color: #e12727;
+   border: 1.5px solid #5c5957;
+   color: #fff;
+   text-decoration: none;
+}
+.TiktokCards__Carousel-CarouselArrowControlContainer.TiktokCards__hXrUSE {
+   width: 32px;
+   height: 32px;
+   flex-basis: 32px;
+   margin-left: 8px;
+}
+.TiktokCards__eapps-tiktok-feed.global-styles,
+[class^="Popup__PopupContainer"] div:empty {
+   display: block;
+}
+div[class^="Main__Inner"] {
+   max-width: none !important;
+}
+
+.swiper-slide {
+   background: #fff;
+   color: #000;
+}
+
+.dLvfKD > div > div {
+   background: #fff;
+}
+
+.dLvfKD > div > .fumhUG {
+   background: #fff;
+}
+
+.iZcgmv,
+.ckyeTq {
+   display: block;
+   width: 50px !important;
+   height: 50px !important;
+   flex-basis: 50px !important;
+   margin: 0 !important;
+   transform: translateX(150%) !important;
+}
+
+@media (max-width: 991px) {
+   .iZcgmv {
+      transform: translateX(50%) !important;
+   }
+}
+
+@media (max-width: 767px) {
+   .iZcgmv,
+   .ckyeTq {
+      display: none !important;
+   }
+}
+
+.ckyeTq {
+   transform: scaleX(-1) translateX(150%) !important;
+}
+
+@media (max-width: 991px) {
+   .ckyeTq {
+      transform: translateX(-50%) scaleX(-1) !important;
+   }
+}
+
+.ckyeTq > div,
+.iZcgmv > div {
+   background: transparent !important;
+   box-shadow: none !important;
+   width: 50px !important;
+   height: 50px !important;
+}
+
+.hwNwGz {
+   background: transparent !important;
+   box-shadow: none !important;
+}
+
+.iZcgmv svg,
+.ckyeTq svg {
+   display: none;
+}
+
+.diRvtN {
+   max-width: none !important;
+}
+
+.iZcgmv:has(div):after,
+.ckyeTq:has(div):after {
+   content: url("https://cdn.shopify.com/s/files/1/0271/7209/files/arrow-50px.svg?v=1686673748");
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 100%;
+   transform: translate(-50%, -50%);
+   pointer-events: none;
+}
+.TiktokCards__section-template-padding {
+   padding: 9px 45px 39px;
+   background-color: #000;
+}
+.TiktokCards__elfsight-section .TiktokCards__title-wrapper-with-link {
+   display: flex;
+   align-items: flex-start;
+   padding: 0px 15px;
+   margin: 0px 0px 32px;
+   flex-direction: row;
+   align-items: flex-end;
+   justify-content: flex-start;
+}
+.TiktokCards__animate--slide-in {
+   color: white;
+   text-transform: uppercase;
+   font-size: 35px;
+   margin: 0;
+   font-weight: 800;
+   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+   letter-spacing: -2px;
+}
+.TiktokCards__elfsight-section .TiktokCards__title-wrapper-with-link .TiktokCards__link {
+   text-decoration: none;
+   color: #000;
+   font-size: 15px;
+   padding-bottom: 5px;
+   margin-left: 25px;
+   font-family: "DM Sans";
+   text-transform: uppercase;
+   font-weight: 550;
+}
+.TiktokCards__elfsight-section .TiktokCards__title-wrapper-with-link .TiktokCards__link:hover {
+   text-decoration: underline;
+   color: #e12727;
+}
+.hvpQIU {
+   color: #000;
+   font-size: 16px;
+}
+.hvpQIU:hover {
+   color: #d24728;
+}
+.iktAoD a {
+   font-weight: 900;
+}
+.caAfeN {
+   font-weight: 900;
+}
+.caAfeN:hover {
+   color: #d24728;
+   font-weight: 900;
+}
+@media (max-width: 991px) {
+   .TiktokCards__elfsight-section .TiktokCards__title-wrapper-with-link .TiktokCards__link {
+      color: #fff;
+   }
+   .TiktokCards__elfsight-section .TiktokCards__title-wrapper-with-link {
+      flex-direction: column;
+      align-items: flex-start;
+   }
+}
+.bOAeit .swiper-autoheight,
+.bOAeit .swiper-autoheight .swiper-slide {
+   height: auto;
+   width: 120%;
+}

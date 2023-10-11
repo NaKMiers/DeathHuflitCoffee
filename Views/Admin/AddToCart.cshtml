@@ -1,0 +1,73 @@
+﻿@model DeathWishCoffee.Models.ViewModels.AddToCartRequest
+@{
+    ViewData["Title"] = "Add To Cart Page";
+    var products = ViewBag.Products;
+    var userId = ViewBag.UserId;
+    var cart = ViewBag.Cart;
+}
+
+<div class="bg-light pt-5">
+    <a href="/admin" class="btn btn-secondary mb-3">
+        Back
+    </a>
+
+    <h1 class="text-center">Add To Cart</h1>
+    <p class="text-center"><strong>User ID:</strong> @ViewBag.UserId</p>
+
+    <div class="d-flex gap-4 overflow-scroll w-100 p-5">
+        @foreach (var item in products)
+        {
+            <form action='/admin/cart/add/@userId' method="post" class="card" style="width: 200px;">
+                <input class="form-control" name="productId" type="text" value="@item.Id" readonly>
+
+                <div class="d-flex overflow-scroll w-100" style="scroll-snap-type: x mandatory;">
+                    @foreach (var img in item.Images)
+                    {
+                        <img style="width: 200px; height: 150px; scroll-snap-align: start" src="~/uploads/@img.Src"
+                            class="card-img-top" class="card-img-top" alt="img">
+                    }
+                </div>
+
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">@item.Title</h5>
+                </div>
+                <div class="row">
+                    @if (item.Sizes != null && item.Sizes.Count > 0)
+                    {
+                        <select name="size" asp-for="Size" class="form-select col-md" id="floatingSelectGrid" required>
+                            <option selected value="">Size</option>
+
+                            @foreach (var option in item.Sizes)
+                            {
+                                <option value="@option.Label - @option.Price">@option.Label - $@option.Price</option>
+                            }
+                        </select>
+                    }
+                </div>
+
+                <div class="row">
+                    @if (item.InsideTypes != null && item.InsideTypes.Count > 0)
+                    {
+                        <select name="insideType" asp-for="InsideType" class="form-select col-md" id="floatingSelectGrid"
+                            required>
+                            <option selected value="">Inside Type</option>
+
+                            @foreach (var option in item.InsideTypes)
+                            {
+                                <option value="@option.Label">@option.Label</option>
+                            }
+
+                        </select>
+                    }
+                </div>
+
+                <div class="row">
+                    <input name='quantity' asp-for="Quantity" type="number" class="form-control" min="0"
+                        placeholder="Quantity" required>
+                </div>
+
+                <button class="btn btn-info m-2">Add</button>
+            </form>
+        }
+    </div>
+</div>

@@ -1,0 +1,222 @@
+.slip-content-1 {
+    margin: 0;
+   padding: 0;
+   position: relative;
+    display: flex; 
+    flex-direction: row-reverse; 
+      margin:0;
+
+   box-sizing: inherit;
+   font-size: 1.6rem;
+
+   box-sizing: border-box;
+   border: 2px solid black;
+   background-color: black; 
+} 
+
+/* Media Query cho thiết bị có màn hình nhỏ hơn 768px (mobile) */
+@media (max-width: 768px) {
+   
+   .slip-content-1{
+       display: flex;
+       flex-direction: column;
+   }
+   .slip-content-1__img__coffee{
+       width:100%;
+       height: 50%;
+      }
+      .slip-content-1__img{
+       width: 100%;
+   }
+   .slip-content-1__maintext__header{
+      color: white;
+       font-size: 40px; 
+   font-weight: bold;
+   display: inline-block; 
+   margin: 0; 
+   padding: 0; 
+   width: 100%;
+   height: 50%;
+   
+   }
+   .slip-content-1__text{
+       width: 100%;
+       padding-top: 30px;
+       padding: 0px;
+   }
+   .slip-content-1__maintext__body{
+       font-size: 20px;
+       padding-top: 0px;
+       color: white;
+   }
+   .slip-content-1__maintext{
+       padding: 50px 32px 32px 32px;
+   }
+} 
+
+/* Media Query cho thiết bị có màn hình lớn hơn 768px (máy tính) */
+@media (min-width: 769px) {
+  
+  .slip-content-1__img__coffee{
+   width:100%;
+   height: 100%;
+   padding-left: 70px;
+  }
+  .slip-content-1__img{
+      width: 100%;
+      padding-left: 30px;
+  }
+  
+  .slip-content-1__text{
+      color:black;
+      width: 70%;
+      padding: 60px 20px 70px 70px;
+  }
+  
+  .slip-content-1__maintext{
+      
+      align-items: flex-start;
+      height: 100%;
+      
+      position: relative;
+      z-index: 1;
+      padding: 0px;
+      
+  }
+  
+  .slip-content-1__maintext__header{
+      
+      width: 306px;
+      height: 108px;
+      font-size: 60px ;
+      font-weight: bold;
+      color: #FFFFFF;
+      padding-bottom: 60px;
+      margin: 0px;
+      line-height: 0.9;
+  
+  }
+   .slip-content-1__maintext__body{
+      font-size: 18px;
+      color:#FFFFFF;
+      padding-top: 30px;
+  } 
+}
+
+/* .Kslip-content-1_Main{
+   display: flex;
+} */
+/* Phan 2 */
+.slip-content-1__phan2 {
+   margin: 0;
+  padding: 0;
+  position: relative;
+   display: flex;  
+     margin:0;
+
+  box-sizing: inherit;
+  font-size: 1.6rem;
+
+  box-sizing: border-box;
+  border: 2px solid black;
+  background-color: black; 
+} 
+
+/* Media Query cho thiết bị có màn hình nhỏ hơn 768px (mobile) */
+@media (max-width: 768px) {
+  
+  .slip-content-1__phan2{
+      display: flex;
+      flex-direction: column;
+  }
+  .slip-content-1__img__coffee__phan2{
+      width:100%;
+      height: 85%;
+     }
+     .slip-content-1__img__phan2{
+      width: 100%;
+  }
+  .slip-content-1__maintext__header__phan2{
+     color: white;
+      font-size: 35px; 
+  font-weight: bold;
+  display: inline-block; 
+  margin: 0; 
+  padding: 0; 
+  width: 100%;
+  height: 50%;
+  
+  }
+  .slip-content-1__text__phan2{
+      width: 100%;
+      padding-top: 30px;
+      padding: 0px;
+  }
+  .slip-content-1__maintext__body__phan2{
+      font-size: 20px;
+      padding-top: 0px;
+      color: white;
+  }
+  .slip-content-1__maintext__phan2{
+      padding: 10px  20px 10px  20px;
+  }
+} 
+
+/* Media Query cho thiết bị có màn hình lớn hơn 768px (máy tính) */
+@media (min-width: 769px) {
+ 
+ .slip-content-1__img__coffee__phan2{
+  width:100%;
+  height: 100%;
+  padding-right: 55px;
+ }
+ .slip-content-1__img__phan2{
+     width: 1200px;
+     padding-right: 25px;
+     }
+ 
+ .slip-content-1__text__phan2{
+     color:black;
+     width: 70%;
+     padding-right: 10px;
+     padding-left: 5px;
+     padding-top: 70px;
+ }
+ 
+ .slip-content-1__maintext__phan2{
+     
+     align-items: flex-start;
+     height: 100%;
+     
+     position: relative;
+     z-index: 1;
+     padding: 0px;
+     padding-top: 30px;
+ }
+ 
+ .slip-content-1__maintext__header__phan2{
+     
+     width: 360px;
+     height: 162px;
+     font-size: 55px ;
+     font-weight: bold;
+     color: #FFFFFF;
+     margin: 0px;
+     padding-bottom: 10px;
+     line-height: 1.0;
+     margin-top: 10px;
+ 
+ }
+  .slip-content-1__maintext__body__phan2{
+     font-size: 17px;
+     line-height: 1.5;
+     color:#FFFFFF;
+     padding-right: 25px;
+     font-family: arial;
+     padding-top: 40px;
+ } 
+}
+
+
+
+

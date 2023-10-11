@@ -1,0 +1,29 @@
+﻿@model DeathWishCoffee.Models.ViewModels.AddNewReviewRequest
+@{
+    ViewData["Title"] = "Edit Review Page";
+    var review = ViewBag.Review;
+}
+
+<div class="bg-light pt-5">
+    <a href="/admin" class="btn btn-secondary mb-3">
+        Back
+    </a>
+
+    <h1 class="text-center">Edit Review</h1>
+
+    <form action="" method="post" class="bg-light pt-5 pb-5 ps-5 pe-5">
+        <h6 class="mb-3">Product ID: @review.ProductId</h6>
+        <div class="mb-3">
+            <label for="title" class="form-label">*Title:</label>
+            <input value="@review.Title" name="title" type="text" class="form-control" id="title" placeholder="Title..."
+                asp-for="Title" required>
+        </div>
+        <div class="mb-3">
+            <label for="text" class="form-label">*Message:</label>
+            <textarea name="text" rows="10" class="form-control" id="textasp-for=" Text"
+                required>@review.Text</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

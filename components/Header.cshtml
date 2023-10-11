@@ -1,3 +1,22 @@
+@* @model DeathWishCoffee.Models.ViewModels.AddToCartRequest *@
+@using Newtonsoft.Json;
+@inject IHttpContextAccessor _httpContext;
+
+@{
+   // Lấy chuỗi JSON từ Session
+   string cartJson = _httpContext.HttpContext.Session.GetString("Cart");
+   var myCart = !string.IsNullOrEmpty(cartJson)
+   ? JsonConvert.DeserializeObject<List<DeathWishCoffee.Models.Domain.CartItem>>(cartJson)
+   : null;
+
+   string rcmPrsJson = _httpContext.HttpContext.Session.GetString("recommendProducts");
+   var recommendProducts = !string.IsNullOrEmpty(rcmPrsJson)
+   ? JsonConvert.DeserializeObject<List<DeathWishCoffee.Models.Domain.Product>>(rcmPrsJson)
+   : null;
+
+   string userId = _httpContext.HttpContext.Session.GetString("Id");
+}
+
 <header class="header">
    <div class="header__container">
       <nav class="navbar">
@@ -32,7 +51,7 @@
 
       <nav class="navbar">
          <div class="nav-item">
-            <a href="storelocator" class="nav-item-link">Find In Store</a>
+            <a href="/storelocator" class="nav-item-link">Find In Store</a>
          </div>
          <div class="nav-item">
             <a href="/the-void" class="nav-item-link">The Void</a>
@@ -41,12 +60,12 @@
             <a href="/about" class="nav-item-link">About</a>
          </div>
          <div class="nav__icons-wrap">
-            <div class="icon user-icon">
+            <a href="/account/login" class="icon user-icon">
                <svg class="menu-icon-svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                   <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7
       512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                </svg>
-            </div>
+            </a>
 
             <div class="icon search-icon">
                <svg class="menu-icon-svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
@@ -194,7 +213,6 @@
 
    </div>
 </div>
-
 
 <div class="sub-menu coffee">
    <div class="sub-menu-container">
@@ -361,8 +379,9 @@
    <div class="cart-modal__container">
       <div class="cart-modal__close-btn">
          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
-            <path
-               d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+            <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8
+0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3
+0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
          </svg>
       </div>
 
@@ -379,39 +398,161 @@
          <div class="cart-modal__progress-label">You are $50.00 away from FREE SHIPPING!</div>
       </div>
 
-      <div class="cart-modal__empty-card">
-         <h4>Your cart is empty</h4>
-         <p>Add your favorite items to your cart.</p>
+      @* Empty Cart - *@
+      @if (myCart == null || myCart.Count <= 0)
+      {
+         <div class="cart-modal__empty-card">
+            <h4>Your cart is empty</h4>
+            <p>Add your favorite items to your cart.</p>
 
-         <button>Shop Now</button>
+            <button>Shop Now</button>
+         </div>
+      }
+
+      <div class="cart-modal__products">
+         @if (myCart != null && myCart.Count > 0)
+         {
+            <div class="cart-modal__product-no-empty-wrapper">
+               @foreach (var cartItem in myCart)
+               {
+                  <div class="cart-modal__product-no-empty-item">
+                     <div class="cart-modal__product-no-empty-body">
+                        <div class="cart-modal__product-no-empty-body__thumb">
+                           <img src="~/uploads/@cartItem.Product.Images[0].Src" alt="thumbnail">
+                        </div>
+                        <div class="cart-modal__product-no-empty-body__content">
+                           <div class="cart-modal__product-no-empty-body__content__title">
+                              <span>@cartItem.Product?.Title</span>
+
+                              <a href="/admin/cart/delete/@cartItem.Id"
+                                 class="cart-modal__product-no-empty-body__content__title__icon">
+                                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                                    <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4
+                                       6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0
+                                       46.3-19.7 47.9-45L416 128z" />
+                                 </svg>
+                              </a>
+                           </div>
+                           <div class="cart-modal__product-no-empty-body__content__count">
+                              @cartItem.Product?.Remain remaining
+                           </div>
+
+                           <div class="cart-modal__product-no-empty-body__content__amount">
+                              <div class="cart-modal__product-no-empty-body__content__amount__btn-wraper">
+                                 <form action="/admin/cart/decrease/@cartItem.Id" method="post"
+                                    class="cart-modal__product-no-empty-body__content__amount__button minus"
+                                    cart-item-id="@cartItem.Id"><button class="w-100">-</button></form>
+                                 <div class="cart-modal__product-no-empty-body__content__amount__amount-show">
+                                    @cartItem.Quantity</div>
+                                 <form action="/admin/cart/increase/@cartItem.Id" method="post"
+                                    class="cart-modal__product-no-empty-body__content__amount__button plus"
+                                    cart-item-id="@cartItem.Id"><button class="w-100">+</button></form>
+                              </div>
+
+                              <div class="cart-modal__product-no-empty-body__content__amount__price">
+                                 $@cartItem.Price
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <button class="cart-modal__product-body__btn">
+                        Upgrade to subscription & Save 30%
+                     </button>
+                  </div>
+               }
+            </div>
+         }
+
+         @if (recommendProducts != null && recommendProducts.Count > 0)
+         {
+            <div class="cart-modal__recommend">
+               <h4>Others Also Bought</h4>
+
+               <div class="cart-modal__product-wrapper">
+                  @foreach (var item in recommendProducts)
+                  {
+                     bool isITexist = item.InsideTypes != null && item.InsideTypes.Count > 0;
+
+                     <form action="/admin/cart/add/@userId" method="post" class="cart-modal__product-item">
+                        <div class="cart-modal__product-item__body">
+                           <img src="~/images/cart-product.jpg" alt="product">
+
+                           <div class="info">
+                              <a href="">@item.Title</a>
+                              <span>$@item.Sizes?[0].Price</span>
+                           </div>
+                           <input class="form-control" name="productId" type="hidden" value="@item.Id">
+                           <input type="hidden" name="size" value="@item.Sizes?[0].Label - @item.Sizes?[0].Price"
+                              asp-for="Size">
+                           <input type="hidden" name="quantity" value="1" asp-for="Quantity">
+
+                           <button class="cart-modal__product-item__body__add-btn"
+                              type="@(isITexist ? "button" : "submit")">Add</button>
+                        </div>
+
+                        @if (isITexist)
+                        {
+                           <select name="insideType" class="cart-modal__product-item__selector" asp-for="InsideType">
+                              <option value="" selected>Open this select menu</option>
+                              @foreach (var insideType in item.InsideTypes)
+                              {
+                                 <option value="@insideType.Label">@insideType.Label</option>
+                              }
+                           </select>
+                        }
+                     </form>
+                  }
+               </div>
+            </div>
+         }
       </div>
 
-      <div class="cart-modal__recommend">
-         <h4>Others Also Bought</h4>
-
-         <div class="cart-modal__product-wrapper">
-            <div class="cart-modal__product-item">
-               <img src="~/images/cart-product.jpg" alt="product">
-
-               <div class="info">
-                  <a href="">Dark Roast Coffee</a>
-                  <span>$19.99</span>
-               </div>
-
-               <button>Add</button>
+      @* - Not Empty Cart - *@
+      @if (myCart != null && myCart.Count > 0)
+      {
+         <div class="cart-modal__checkout-container">
+            <div class="cart-modal__checkout__discount">
+               <input class="cart-modal__checkout__discount__input" type="text" placeholder="Discount Code">
+               <button class="cart-modal__checkout__discount__submit-btn">Apply</button>
             </div>
+            <div class="cart-modal__checkout__sub-total">
+               <div class="cart-modal__checkout__sub-total__heading-wrap">
+                  <span>SUBTOTAL (4 Items)</span>
+                  @{
+                     double subtotal = 0;
+                     @foreach (var cartItem in myCart)
+                     {
+                        subtotal += cartItem.Price * cartItem.Quantity;
+                     }
 
-            <div class="cart-modal__product-item">
-               <img src="~/images/cart-product2.jpg" alt="product">
+                     Console.WriteLine(subtotal);
+                  }
 
-               <div class="info">
-                  <a href="">Dark Roast Death Cups</a>
-                  <span>$14.99</span>
+                  <span>$@subtotal</span>
                </div>
-
-               <button>Add</button>
+               <button class="cart-modal__checkout__sub-total__checkout-btn">
+                  <div class="cart-modal__checkout__icon">
+                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                        <path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3
+0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z" />
+                     </svg>
+                  </div>
+                  <span>Checkout</span>
+               </button>
+               <p class="cart-modal__checkout__sub-total__note">
+                  or 4 interest-free installments of $18.74 by <span>AfterPay</span>
+               </p>
+            </div>
+            <div class="cart-modal__checkout__below-wrap">
+               <div class="cart-modal__checkout__below__icon">
+                  <img src="~/images/checkout-icon.png" alt="">
+               </div>
+               <p class="cart-modal__checkout__below__text">
+                  Military, First Responder, Government Employee and Teacher discount available
+               </p>
             </div>
          </div>
-      </div>
+      }
    </div>
 </div>

@@ -1,68 +1,67 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
 }
 
 html {
-  font-size: 14px;
+   font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+   html {
+      font-size: 16px;
+   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+   position: relative;
+   min-height: 100%;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+   text-decoration: none;
+   color: inherit;
+   cursor: pointer;
 }
 
 .container {
-  min-width: 100%;
-  padding: 104px 0 0 0;
+   min-width: 100%;
+   padding: 104px 0 0 0;
 }
 
 /* tablet */
 @media (max-width: 990px) {
-  .container {
-    padding-top: 99px; 
-  }
+   .container {
+      padding-top: 99px;
+   }
 }
 
 @font-face {
-  font-family: 'Fenomen-Sans-Light';
-  src: url('~/fonts/Fenomen-Sans-Light.otf') format('opentype');
+   font-family: 'Fenomen-Sans-Light';
+   src: url('~/fonts/Fenomen-Sans-Light.otf') format('opentype');
 }
 @font-face {
-  font-family: 'Fenomen-Sans-Book';
-  src: url('~/fonts/Fenomen-Sans-Book.woff') format('opentype');
+   font-family: 'Fenomen-Sans-Book';
+   src: url('~/fonts/Fenomen-Sans-Book.woff') format('opentype');
 }
 @font-face {
-  font-family: 'Fa-Light-300';
-  src: url('~/fonts/fa-light-300.woff2') format('opentype');
+   font-family: 'Fa-Light-300';
+   src: url('~/fonts/fa-light-300.woff2') format('opentype');
 }
 @font-face {
-  font-family: 'Fenomen-Sans-Bold';
-  src: url('~/fonts/Fenomen-Sans-Bold.woff2') format('opentype');
+   font-family: 'Fenomen-Sans-Bold';
+   src: url('~/fonts/Fenomen-Sans-Bold.woff2') format('opentype');
 }
 @font-face {
-  font-family: 'Fenomen-Sans-Book';
-  src: url('~/fonts/Fenomen-Sans-Book.woff2') format('opentype');
+   font-family: 'Fenomen-Sans-Book';
+   src: url('~/fonts/Fenomen-Sans-Book.woff2') format('opentype');
 }
-@font-face {
-  font-family: 'Revans-Bold';
-  src: url('~/fonts/Revans-Bold.woff2') format('opentype');
-}
-

@@ -1,0 +1,201 @@
+﻿@model List<DeathWishCoffee.Models.Domain.Product>
+@{
+    ViewData["Title"] = "All Products Page";
+}
+
+<div class="bg-light pt-5 overflow-scroll">
+    <a href="/admin" class="btn btn-secondary mb-3">
+        Back
+    </a>
+
+    <div class="d-flex gap-3">
+        <h2 class="d-inline m-0">Product List:</h2>
+        <a href="/admin/products/add" class="btn btn-success">Add Product</a>
+    </div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Delete</th>
+                <th>Edit</th>
+                <th>Review</th>
+
+                <th>ID</th>
+                <th>Title</th>
+                <th>Subtitle</th>
+                <th>Description</th>
+                <th>Subscribe And Save</th>
+                <th>Note</th>
+                <th>PrimaryColor</th>
+
+                <th>Sizes</th>
+                <th>InsideTypes</th>
+                <th>FlavorProfiles</th>
+                <th>Attributes</th>
+                <th>Details</th>
+                <th>Images</th>
+                <th>Types</th>
+                <th>Formats</th>
+                <th>Roasts</th>
+                <th>Flavors</th>
+                <th>Symbols</th>
+                <th>Reviews</th>
+
+                <th>Rating</th>
+                <th>NumberOfReview</th>
+                <th>AmountSold</th>
+                <th>CreatedAt</th>
+                <th>LastModifiedAt</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>
+                        <form method="post" action="/admin/products/delete/@product.Id">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="/admin/products/edit/@product.Id" class="btn btn-info">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/admin/reviews/add/@product.Id" class="btn btn-warning">Review</a>
+                    </td>
+                    <td>@product.Id</td>
+                    <td>@product.Title</td>
+                    <td>@product.Subtitle</td>
+                    <td>@product.Description</td>
+                    <td>@product.SubscribeAndSave</td>
+                    <td>@product.Note</td>
+                    <td>@product.PrimaryColor</td>
+                    <td width='100%'>
+                        @if (product.Sizes != null && product.Sizes.Count > 0)
+                        {
+                            @foreach (var item in product.Sizes)
+                            {
+                                <p>@item.Label-@item.Price-@item.Text </p>
+                            }
+                        }
+                    </td>
+                    <td width='100%'>
+                        @if (product.InsideTypes != null && product.InsideTypes.Count > 0)
+                        {
+                            @foreach (var item in product.InsideTypes)
+                            {
+                                <p>@item.Label</p>
+                            }
+                        }
+                    </td>
+                    <td width='100%'>
+                        @if (product.FlavorProfiles != null && product.FlavorProfiles.Count > 0)
+                        {
+                            @foreach (var item in product.FlavorProfiles)
+                            {
+                                <p>@item.Label-@item.Text</p>
+                            }
+                        }
+                    </td>
+                    <td width='100%'>
+                        @if (product.Attributes != null && product.Attributes.Count > 0)
+                        {
+                            @foreach (var item in product.Attributes)
+                            {
+                                <div class="d-flex flex-column">
+                                    <span>@item.Label</span>
+                                    <p>@item.MinLabel-@item.Value-@item.MaxLabel</p>
+                                </div>
+                            }
+                        }
+                    </td>
+                    <td width='100%'>
+                        @if (product.Details != null && product.Details.Count > 0)
+                        {
+                            @foreach (var item in product.Details)
+                            {
+                                <p>@item.Label-@item.Text</p>
+                            }
+                        }
+                    </td>
+                    <td width='100%'>
+                        @if (product.Images != null && product.Images.Count > 0)
+                        {
+                            @foreach (var item in product.Images)
+                            {
+                                <img src="~/uploads/@item.Src" alt="thumb" width="50" height='50' style="object-fit: cover;" />
+                            }
+                        }
+                    </td>
+                    <td width='100%'>
+                        @if (product.Types != null && product.Types.Count > 0)
+                        {
+                            @foreach (var item in product.Types)
+                            {
+                                <p>@item.Text</p>
+                            }
+                        }
+                    </td>
+                    <td width='100%'>
+                        @if (product.Formats != null && product.Formats.Count > 0)
+                        {
+                            @foreach (var item in product.Formats)
+                            {
+                                <p>@item.Text</p>
+                            }
+                        }
+                    </td>
+                    <td width='100%'>
+                        @if (product.Roasts != null && product.Roasts.Count > 0)
+                        {
+                            @foreach (var item in product.Roasts)
+                            {
+                                <p>@item.Text</p>
+                            }
+                        }
+                    </td>
+                    <td width='100%'>
+                        @if (product.Flavors != null && product.Flavors.Count > 0)
+                        {
+                            @foreach (var item in product.Flavors)
+                            {
+                                <p>@item.Text</p>
+                            }
+                        }
+                    </td>
+                    <td width='100%'>
+                        @if (product.Symbols != null && product.Symbols.Count > 0)
+                        {
+                            @foreach (var item in product.Symbols)
+                            {
+                                <p>@item.Title</p>
+                            }
+                        }
+                    </td>
+                    <td width='100%'>
+                        @if (product.Reviews != null && product.Reviews.Count > 0)
+                        {
+                            @foreach (var item in product.Reviews)
+                            {
+                                <p>@item.Title</p>
+                            }
+                        }
+                    </td>
+
+                    <td>___Rating___</td>
+                    <td>
+                        @if (product.Reviews != null)
+                        {
+                            <span>@product.Reviews.Count</span>
+                        }
+                    </td>
+                    <td>___Amount_Sold___</td>
+
+                    <td>@product.CreatedAt</td>
+                    <td>@product.LastModifiedAt</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
