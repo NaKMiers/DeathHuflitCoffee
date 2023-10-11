@@ -272,19 +272,19 @@ app.MapControllerRoute(
     defaults: new { controller = "Cart", action = "DecreaseCartItemQuantity" }
 );
 
-// // [/]
-// app.MapControllerRoute(
-//     name: "PageNotFound",
-//     pattern: "/{*url}",
-//     defaults: new { controller = "Home", action = "PageNotFound" }
-// );
+// [/]
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
 
 // [/]
 app.MapControllerRoute(
-name: "default",
-pattern: "{controller=Home}/{action=Index}/{id?}");
+    name: "PageNotFound",
+    pattern: "/{*url}",
+    defaults: new { controller = "Home", action = "PageNotFound" }
+);
 
-
-
+// RUN
 app.Run();
 

@@ -11,11 +11,11 @@
 
 .sign-up__heading {
    width: 100%;
-   max-width: 450px;
+   /* max-width: 450px; */
    margin: 0 auto 16px;
 
    font-size: 16px;
-   font-weight: 700;
+   font-weight: 800;
    letter-spacing: -0.5px;
    line-height: 21px;
    text-align: center;
@@ -25,6 +25,7 @@
 
 .sign-up__form {
    display: flex;
+   align-items: center;
    width: 100%;
    max-width: 450px;
 }
@@ -33,9 +34,9 @@
    width: 100%;
    border: 0;
    outline: none;
-   padding-left: 16px;
-   
+   padding: 8px 10px 8px 16px;
    font-weight: 500;
+   margin: 0;
 }
 
 .sign-up__form input::placeholder {
@@ -61,4 +62,11 @@
 
 .sign-up__form button:hover {
    background: none;
+}
+
+@media (max-width: 400px) {
+   .sign-up__form button {
+      flex-shrink: 0;
+      overflow: hidden;
+   }
 }

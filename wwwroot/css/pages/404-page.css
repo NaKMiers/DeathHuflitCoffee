@@ -1,0 +1,108 @@
+.error404 {
+   display: flex;
+   flex-direction: column;
+   color: white;
+   background-color: black;
+   padding-top: 50px;
+}
+
+/* img */
+
+.error404__img {
+   align-self: center;
+}
+
+.hinhanh__404__img {
+   margin-left: 0px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   justify-content: center;
+}
+
+.error404__img__header {
+   text-align: center;
+   color: red;
+   margin: 0px;
+}
+
+.error404__img__p {
+   text-align: center;
+   font-size: 20px;
+}
+
+.error404__search__looking {
+   text-align: center;
+   margin-bottom: 0px;
+   color: rgb(171, 178, 185);
+   margin-bottom: 2px;
+}
+
+.error404__search__form {
+   width: 100%;
+   display: flex;
+   justify-content: left;
+   margin-bottom: 20px;
+}
+
+.error404__search__form__div9 {
+   display: flex;
+   justify-content: flex-end;
+   width: 60%;
+}
+
+.error404__search__form__div9__input {
+   width: 250px;
+   height: 30px;
+   border-radius: 0;
+}
+
+.error404__search__form__div9__button {
+   width: 34px;
+   height: 36px;
+   display: flex;
+   padding: 0px;
+}
+
+.error404__search__form__div9__button__icon {
+   width: 20px;
+   height: 25px;
+   margin-top: 5px;
+   margin-left: 6px;
+}
+
+.not-found-page__group-buttons {
+   display: flex;
+   justify-content: center;
+   gap: 14px;
+   width: 100%;
+   padding: 32px 16px;
+   margin-bottom: 22px;
+}
+
+.not-found-page__group-buttons button {
+   width: 206px;
+   padding: 12px 14px;
+   border-radius: 0;
+   border: 1px solid rgb(92, 89, 87);
+
+   font-size: 14px;
+   font-weight: 700;
+   line-height: 16px;
+   letter-spacing: 0.01em;
+   text-transform: uppercase;
+   color: #fff;
+   transition: 0.3s ease-in-out;
+}
+
+.not-found-page__group-buttons button:hover {
+   background: #e12727;
+   color: #fff;
+}
+
+@media (max-width: 750px) {
+   .error404__search__form__div9 {
+      display: flex;
+      justify-content: flex-end;
+      width: 70%;
+   }
+}
