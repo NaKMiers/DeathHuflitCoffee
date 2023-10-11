@@ -14,7 +14,6 @@ namespace DeathWishCoffee.Controllers
             return View();
         }
 
-
         // [*]
         [HttpGet]
         public IActionResult PageNotFound()
