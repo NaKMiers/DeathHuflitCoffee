@@ -63,7 +63,8 @@ namespace DeathWishCoffee.Controllers
                 return RedirectToAction("Index", "Account");
             }
 
-            return View("~/Views/Admin/Login.cshtml");
+            // return View("~/Views/Admin/Login.cshtml");
+            return View();
         }
 
         [HttpPost]
@@ -99,7 +100,8 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            return View("~/Views/Admin/Register.cshtml");
+            // return View("~/Views/Admin/Register.cshtml");
+            return View();
         }
 
         // [/account/logout]
