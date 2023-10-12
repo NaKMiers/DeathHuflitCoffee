@@ -77,12 +77,12 @@ namespace DeathWishCoffee.Controllers
                         .Include(u => u.Cart)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
-                        .FirstOrDefault(u => u.Username == loginRequest.Username && u.Password == loginRequest.Password);
+                        .FirstOrDefault(u => u.Email == loginRequest.Email && u.Password == loginRequest.Password);
 
             // return bad request if user does NOT EXISTS
             if (user == null)
             {
-                return BadRequest("Invalid username or password.");
+                return BadRequest("Invalid email or password.");
             }
 
             GetRecommendProducts();
@@ -119,19 +119,27 @@ namespace DeathWishCoffee.Controllers
             Console.WriteLine("Register");
 
             // check if the user exists or not
-            var existedUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Username == form.Username.Trim());
+            var existedUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Email == form.Email.Trim());
             if (existedUser != null)
                 return BadRequest("User already exists");
 
             // create new user (Models.User) from RegisterRequest (ViewModels)
+            if (string.IsNullOrEmpty(form.FirstName))
+                form.FirstName = "";
             if (string.IsNullOrEmpty(form.MiddleName))
-            {
                 form.MiddleName = "";
-            }
+            if (string.IsNullOrEmpty(form.LastName))
+                form.LastName = "";
+            if (string.IsNullOrEmpty(form.Username))
+                form.Username = "";
+            if (string.IsNullOrEmpty(form.Password))
+                form.Password = "";
+            if (string.IsNullOrEmpty(form.Phone))
+                form.Phone = "";
             if (string.IsNullOrEmpty(form.Country))
-            {
                 form.Country = "";
-            }
+            if (string.IsNullOrEmpty(form.Address))
+                form.Address = "";
 
             string avatarPath = "";
             if (form.Avatar != null)

@@ -22,6 +22,7 @@ namespace DeathWishCoffee.Controllers
             return View();
         }
 
+        // ERRORS
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

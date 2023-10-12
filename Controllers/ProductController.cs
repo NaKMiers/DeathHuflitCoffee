@@ -325,7 +325,7 @@ namespace DeathWishCoffee.Controllers
             _deathWishCoffeeDbContext.SaveChanges();
 
             // return RedirectToAction("AllProducts", "Admin");
-            return View("~/Views/Admin/AllProducts.cshtml");
+            return View("~/Views/Admin/AddNewProduct.cshtml");
         }
 
         // [/admin/products/delete/{1}]
@@ -399,71 +399,46 @@ namespace DeathWishCoffee.Controllers
                                 .FirstOrDefault(p => p.Id == id);
 
             if (productToEdit == null)
-            {
                 return BadRequest("Product does not exist");
-            }
 
             productToEdit.LastModifiedAt = DateTime.Now;
+            productToEdit.Remain = form.Remain;
 
-            Console.WriteLine("Title:" + form.Title);
             if (string.IsNullOrEmpty(form.Title))
-            {
                 form.Title = "";
-            }
             productToEdit.Title = form.Title;
 
-            Console.WriteLine("Subtitle:" + form.Subtitle);
             if (string.IsNullOrEmpty(form.Subtitle))
-            {
                 form.Subtitle = "";
-            }
             productToEdit.Subtitle = form.Subtitle;
 
-            Console.WriteLine("Description:" + form.Description);
             if (string.IsNullOrEmpty(form.Description))
-            {
                 form.Description = "";
-            }
             productToEdit.Description = form.Description;
 
-            Console.WriteLine("SubscribeAndSave:" + form.SubscribeAndSave);
             if (string.IsNullOrEmpty(form.SubscribeAndSave))
-            {
                 form.SubscribeAndSave = "";
-            }
             productToEdit.SubscribeAndSave = form.SubscribeAndSave;
 
-            Console.WriteLine("Note:" + form.Note);
             if (string.IsNullOrEmpty(form.Note))
-            {
                 form.Note = "";
-            }
             productToEdit.Note = form.Note;
 
-            Console.WriteLine("PrimaryColor:" + form.PrimaryColor);
             if (string.IsNullOrEmpty(form.PrimaryColor))
-            {
                 form.PrimaryColor = "";
-            }
             productToEdit.PrimaryColor = form.PrimaryColor;
 
-            Console.WriteLine("Sizes:");
             if (form.Sizes != null && form.Sizes.Count > 0)
             {
-
                 if (productToEdit.Sizes != null)
                     _deathWishCoffeeDbContext.Sizes.RemoveRange(productToEdit.Sizes);
 
                 foreach (var item in form.Sizes)
                 {
                     if (string.IsNullOrEmpty(item.Label))
-                    {
                         item.Label = "";
-                    }
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
                     var sizeToAdd = new DeathWishCoffee.Models.Domain.Size
                     {
                         ProductId = productId,
@@ -488,13 +463,9 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.FlavorProfiles)
                 {
                     if (string.IsNullOrEmpty(item.Label))
-                    {
                         item.Label = "";
-                    }
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
 
                     var flavorProfileToAdd = new DeathWishCoffee.Models.Domain.FlavorProfile
                     {
@@ -518,13 +489,9 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Details)
                 {
                     if (string.IsNullOrEmpty(item.Label))
-                    {
                         item.Label = "";
-                    }
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
 
                     var detailToAdd = new DeathWishCoffee.Models.Domain.Detail
                     {
@@ -549,9 +516,7 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Types)
                 {
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
 
                     var typeToAdd = new DeathWishCoffee.Models.Domain.Type
                     {
@@ -574,17 +539,11 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Attributes)
                 {
                     if (string.IsNullOrEmpty(item.Label))
-                    {
                         item.Label = "";
-                    }
                     if (string.IsNullOrEmpty(item.MinLabel))
-                    {
                         item.MinLabel = "";
-                    }
                     if (string.IsNullOrEmpty(item.MaxLabel))
-                    {
                         item.MaxLabel = "";
-                    }
 
                     var attributeToAdd = new DeathWishCoffee.Models.Domain.Attribute
                     {
@@ -612,13 +571,9 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.InsideTypes)
                 {
                     if (string.IsNullOrEmpty(item.Label))
-                    {
                         item.Label = "";
-                    }
                     if (string.IsNullOrEmpty(item.Icon))
-                    {
                         item.Icon = "0";
-                    }
 
                     var insideTypeToAdd = new DeathWishCoffee.Models.Domain.InsideType
                     {
@@ -642,13 +597,9 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Symbols)
                 {
                     if (string.IsNullOrEmpty(item.Title))
-                    {
                         item.Title = "";
-                    }
                     if (string.IsNullOrEmpty(item.Icon))
-                    {
                         item.Icon = "0";
-                    }
 
                     var symbolToAdd = new DeathWishCoffee.Models.Domain.Symbol
                     {
@@ -672,9 +623,7 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Formats)
                 {
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
 
                     var formatToAdd = new DeathWishCoffee.Models.Domain.Format
                     {
@@ -697,9 +646,7 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Roasts)
                 {
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
 
                     var roastToAdd = new DeathWishCoffee.Models.Domain.Roast
                     {
@@ -720,9 +667,7 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Flavors)
                 {
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
 
                     var flavorsToAdd = new DeathWishCoffee.Models.Domain.Flavor
                     {

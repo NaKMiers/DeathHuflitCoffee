@@ -1,14 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using DeathWishCoffee.Data;
 using DeathWishCoffee.Models.Domain;
 using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace DeathWishCoffee.Controllers
@@ -229,7 +223,6 @@ namespace DeathWishCoffee.Controllers
             if (user == null)
                 return BadRequest("User is does not exists");
 
-
             // set CART data for all pages again
             SetUpCartDataForAllPage(user.Cart);
 
@@ -271,7 +264,6 @@ namespace DeathWishCoffee.Controllers
             // user id does NOT EXISTS
             if (string.IsNullOrEmpty(userId))
                 return BadRequest("User ID is does not exists");
-
 
             var user = _deathWishCoffeeDbContext.Users
                         .Include(u => u.Cart)
