@@ -123,9 +123,7 @@ namespace DeathWishCoffee.Controllers
             var finalProductsList = finalProducts.Skip(skip).Take(pageSize).ToList();
 
             Console.WriteLine(finalProductsList.Count);
-            return View();
-
-            return View();
+            return View(finalProductsList);
         }
 
         // [/collections/merch]
