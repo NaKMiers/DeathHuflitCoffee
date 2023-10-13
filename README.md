@@ -35,7 +35,7 @@
 
 ### Quân - 25
 
--  2 ContentBanner 😁
+-  2 ContentBanner2 😁
 -  2 Cards 😁
 -  4 Slideshow 😗
 -  3 JoinFollowing 😃

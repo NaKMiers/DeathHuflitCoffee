@@ -1,0 +1,95 @@
+.Klogin {
+  width: 448px;
+  /* height: 52px; */
+  margin: 0 auto;
+  margin-top: 0px;
+  padding-top: 55px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: black;
+  color: white;
+   /* Để hiển thị dấu gạch chân */
+ text-decoration-color: white; /* Đặt màu cho dấu gạch chân */
+} 
+.Klogin__login{
+ font-size: 40px;
+ background-color: black;
+ color: white;
+ text-decoration: none; 
+}
+.Klogin_floating-mb-3{
+  height: 50px;
+  width:450px;
+ }
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  
+} 
+.Kloin_forgot{
+color:white;padding-right: 330px;text-decoration: underline
+}
+
+button {
+  width: 30%;
+  padding-top:10px;
+  padding-bottom:10px;
+  background-color: red;
+  border:solid red;
+  color: #fff;
+  text-align: center;
+} 
+
+.Klogin_Create_account{
+  color: white;
+  text-decoration: underline;
+  margin-bottom: 30px;
+} 
+.Klogin_signin1{
+padding-bottom:10px;
+}
+@media (max-width: 768px) {
+.Klogin {
+  width: 300px;
+  /* height: 52px; */
+  
+} 
+.form-control.iput {
+border-radius: 0;
+height: 50px;
+width: 300px;
+}
+.Klogin_header{
+width: 300px;height:52px;color:white;margin-bottom:35px;
+}
+.Klogin_button {
+width: 40%;
+padding-top: 10px;
+ /* margin-left: 50px;  */
+ margin-right:10px;
+padding-bottom: 10px;
+background-color: red;
+border: solid red;
+color: #fff;
+text-align: center;
+margin-bottom: 50px;
+}
+
+.Klogin_Create_account{
+  margin-right: 150px;
+  color: white;
+}
+.Kloin_forgot{
+  color:white;padding-right: 350px;text-decoration: underline
+ }
+ .Klogin_signin1{
+  padding-bottom:10px;
+}
+.Klogin_Signin{
+  width: 300px;
+}
+
+}

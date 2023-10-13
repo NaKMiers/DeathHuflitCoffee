@@ -15,6 +15,10 @@
    <table class="table">
       <thead>
          <tr>
+            <th>Delete</th>
+            <th>-1</th>
+            <th>+1</th>
+
             <th>Id</th>
             <th>Product ID</th>
             <th>Quantity</th>
@@ -28,6 +32,20 @@
          @foreach (var cartItem in Model)
          {
             <tr>
+               <td>
+                  <a class="btn btn-danger" href="/admin/cart/delete/@cartItem.Id">Delete</a>
+               </td>
+               <td>
+                  <form action="/admin/cart/decrease/@cartItem.Id" method="post">
+                     <button class="btn btn-info">-</button>
+                  </form>
+               </td>
+               <td>
+                  <form action="/admin/cart/increase/@cartItem.Id" method="post">
+                     <button class="btn btn-info">+</button>
+                  </form>
+               </td>
+
                <td>@cartItem.Id</td>
                <td>@cartItem.ProductId</td>
                <td>@cartItem.Quantity</td>

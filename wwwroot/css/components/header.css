@@ -682,6 +682,16 @@
    margin-top: -2px;
 }
 
+.cart-modal__product-no-empty-body__content__amount__button  button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+   background: none;
+   border: none;
+}
+
 .cart-modal__product-no-empty-body__content__amount__amount-show {
    width: 36px;
    height: 24px;
@@ -702,6 +712,7 @@
    padding: 8px 16px;
    border: 2px solid #e12727;
    outline: none;
+   width: 100%;
 
    font-size: 13px;
    font-family: Arial, Helvetica, sans-serif;
@@ -744,18 +755,20 @@
 
 .cart-modal__product-item {
    /* background: blueviolet; */
-
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-
    padding: 20px;
    margin-block-start: 20px;
    border: 1px solid #5c5957;
    border-radius: 0px;
 }
 
-.cart-modal__product-item img {
+.cart-modal__product-item__body {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 10px;
+}
+
+.cart-modal__product-item__body img {
    height: 90px;
    width: 90px;
 
@@ -763,7 +776,7 @@
    object-position: center;
 }
 
-.cart-modal__product-item .info {
+.cart-modal__product-item__body .info {
    display: flex;
    flex-direction: column;
    text-align: left;
@@ -771,21 +784,21 @@
    padding: 0 20px;
 }
 
-.cart-modal__product-item .info a {
+.cart-modal__product-item__body .info a {
    color: #fff;
    font-size: 14px;
    font-weight: 700;
    letter-spacing: 0.05em;
 }
 
-.cart-modal__product-item .info span {
+.cart-modal__product-item__body .info span {
    display: block;
    font-size: 12px;
    font-weight: 500;
    margin-top: 6px;
 }
 
-.cart-modal__product-item button {
+.cart-modal__product-item__body button {
    width: 60px;
    padding: 5px;
    border: 2px solid #e12727;
@@ -801,8 +814,30 @@
    transition: 0.2s ease-in-out;
 }
 
-.cart-modal__product-item button:hover {
+.cart-modal__product-item__body button:hover {
    background: none;
+}
+
+.cart-modal__product-item__selector {
+   display: none;
+   width: 100%;
+   padding: 10px 40px 10px 15px;
+   border: 1px solid #fff;
+   border-radius: 0;
+   background: none;
+   outline: none;
+   color: #fff;
+}
+
+.cart-modal__product-item__selector:focus {
+   border: 5px double #e12727;
+   outline: 1px solid #e12727;
+}
+
+.cart-modal__product-item__selector option {
+   border: none;
+   outline: none;
+   background: #201e1d;
 }
 
 

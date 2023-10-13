@@ -1,0 +1,24 @@
+.big-title-1{  
+     
+    display: flex;
+}
+.big-title-1-text{  
+
+    margin: 0 auto; 
+    text-align: center;
+}
+.big-title-1_heading{
+    color: rgb(255,255,255);
+    font-size: 40px;
+    width:500px;
+     
+    font-family: Revans-Bold,"DM Sans" ,"sans-serif";  
+}
+@media (max-width: 768px) {
+    .big-title-1{
+        word-break: break-word;     
+    }
+    .big-title-1_heading{
+        width: 100%;
+    }
+}

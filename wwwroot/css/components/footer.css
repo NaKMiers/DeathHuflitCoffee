@@ -86,6 +86,8 @@
    font-weight: 800;
    text-transform: uppercase;
    margin-bottom: 12px;
+   padding: 0;
+   text-align: left;
 }
 
 .footer__top__link-item {
