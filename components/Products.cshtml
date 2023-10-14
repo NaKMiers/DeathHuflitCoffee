@@ -3072,7 +3072,7 @@
         <span class="page-link" onclick="changePage(1)">1</span>
         <span class="page-link" onclick="changePage(2)">2</span>
         <span class="page-link" onclick="changePage(3)">3</span>
-        <span class="page-link next-page-button" onclick="submitForm()">Next <svg xmlns="http://www.w3.org/2000/svg" width="15" height="7.5" viewBox="0 0 21 14" fill="none" aria-hidden="true" focusable="false" class="Product__icon-icon-caret-next ">
+        <span class="page-link next-page-button" onclick="nextPage()">Next <svg xmlns="http://www.w3.org/2000/svg" width="15" height="7.5" viewBox="0 0 21 14" fill="none" aria-hidden="true" focusable="false" class="Product__icon-icon-caret-next ">
   <path d="M2.0293 2.48523L10.5146 10.9705L18.9999 2.48523" stroke="white" stroke-width="3" stroke-linecap="round"></path>
 </svg>
         </span>
@@ -3144,73 +3144,37 @@
     updateProductCount();
 
 
- function submitForm(page) {
-   // Lấy ra biểu mẫu bằng ID
-   const form = document.getElementById("Products__myNewForm");
-   
-   // Thiết lập giá trị của một trường ẩn (hidden field) để truyền số trang
-   const pageInput = document.createElement("input");
-   pageInput.type = "hidden";
-   pageInput.name = "page"; // Đặt tên trường tùy ý, ví dụ "page"
-   pageInput.value = page;
-
-   // Thêm trường ẩn vào biểu mẫu
-   form.appendChild(pageInput);
-
-   // Thiết lập phương thức của biểu mẫu thành "get"
-   form.method = "get";
-
-   // Submit biểu mẫu
-   form.submit();
-}
-// Khai báo một biến để theo dõi trang hiện tại
-let currentPage = 1;
+const baseUrl = "/collections/merch";
 
 function changePage(page) {
-    // Lấy ra biểu mẫu bằng ID
-    const form = document.getElementById("Products__myNewForm");
-   
-    // Thiết lập giá trị của một trường ẩn (hidden field) để truyền số trang
-    const pageInput = document.createElement("input");
-    pageInput.type = "hidden";
-    pageInput.name = "page"; // Đặt tên trường tùy ý, ví dụ "page"
-    pageInput.value = page;
-
-    // Thêm trường ẩn vào biểu mẫu
-    form.appendChild(pageInput);
-
-    // Thiết lập phương thức của biểu mẫu thành "get"
-    form.method = "get";
-
-    // Submit biểu mẫu
-    form.submit();
+    const params = new URLSearchParams(location.search);
+    params.set("page", page);
+    const finalUrl = `${baseUrl}?${params.toString()}`;
+    window.location.href = finalUrl; // Tải lại trang với URL mới
+    history.pushState(null, "", finalUrl);
 }
 
-function prevPage() {
-    // Lấy ra nút "Prev"
-    const prevButton = document.querySelector('.prev-page-button');
+function getCurrentPage() {
+    const params = new URLSearchParams(location.search);
+    return parseInt(params.get("page")) || 1;
+}
 
-    // Nếu bạn không ở trang đầu thì di chuyển đến trang trước đó
+document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = getCurrentPage();
     if (currentPage > 1) {
-        currentPage--;
-        changePage(currentPage);
+        // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
+        document.querySelector(".prev-page-button").addEventListener("click", () => {
+            changePage(currentPage - 1);
+        });
     }
-
-    // Hiển thị nút "Prev"
-    prevButton.style.display = 'block';
-}
-function nextPage() {
-    // Lấy ra nút "Prev"
-    const prevButton = document.querySelector('.prev-page-button');
-
-    // Nếu bạn không ở trang cuối cùng thì di chuyển đến trang kế tiếp
-    if (currentPage < 3) { // 3 là số trang tối đa, bạn có thể thay đổi nó
-        currentPage++;
-        changePage(currentPage);
+    if (currentPage <3)
+    {
+    // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
+    document.querySelector(".next-page-button").addEventListener("click", () => {
+        changePage(currentPage + 1);
+    });
     }
+});
 
-    // Hiển thị nút "Prev"
-    prevButton.style.display = 'block';
-}
 
 </script>
