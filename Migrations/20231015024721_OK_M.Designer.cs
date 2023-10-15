@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DeathWishCoffee.Migrations
 {
     [DbContext(typeof(DeathWishCoffeeDbContext))]
-    [Migration("20231010100443_MIG")]
-    partial class MIG
+    [Migration("20231015024721_OK_M")]
+    partial class OK_M
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -420,6 +420,9 @@ namespace DeathWishCoffee.Migrations
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Admin")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Avatar")
                         .HasColumnType("nvarchar(max)");

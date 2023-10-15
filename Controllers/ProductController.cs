@@ -19,15 +19,6 @@ namespace DeathWishCoffee.Controllers
             _httpContext = httpContextAccessor;
         }
 
-
-        // [/products/{id}]
-        [HttpGet]
-        public IActionResult Index(int id)
-        {
-            Console.WriteLine(id);
-            return View();
-        }
-
         // [/admin/products]
         [HttpGet]
         public IActionResult AllProducts()
@@ -688,10 +679,15 @@ namespace DeathWishCoffee.Controllers
         }
 
         // ERRORS
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
 }
+
+
+

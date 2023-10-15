@@ -2,16 +2,4 @@
     ViewData["Title"] = "Merch Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Merch</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
-<form action="" method="get" class="p-4 text-warning" style="max-width: 500px">
-    <input type="checkbox" name="filter" value="www"> <span>www</span>
-    <input type="checkbox" name="filter" value="aaa"> <span>aaa</span>
-    @* <input type="text" class="form-control" name="sort_by" value="a-z"> *@
-    <input type="number" class="form-control" name="page" value="1">
-
-    <button>Submit</button>
-</form>
+<partial name="../../components/Products.cshtml" />
