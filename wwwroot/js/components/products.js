@@ -37,7 +37,7 @@ $(document).ready(function () {
    );
 });
 
-const baseUrl = "/collections/merch";
+const baseUrl = "/collections/merch?";
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 checkboxes.forEach(checkbox => {
@@ -57,10 +57,10 @@ function updateURL() {
 
    let finalUrl = baseUrl;
    if (selectedTypes.length > 0) {
-      finalUrl += "?filter=" + selectedTypes.join("&filter=");
+      finalUrl += "filter=" + selectedTypes.join("&filter=") + "&";
    }
 
-   finalUrl += "&sort_by=" + selectedValue;
+   finalUrl += "sort_by=" + selectedValue;
 
    history.pushState(null, "", finalUrl);
 }
