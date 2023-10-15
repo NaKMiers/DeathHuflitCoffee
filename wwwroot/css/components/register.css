@@ -1,37 +1,81 @@
-.KRegister_Main{
-    padding-top: 36px;
-    padding-bottom: 0px;
-    padding-left: 50px;
-    padding-right: 0px;
+
+
+.register_header{
+    width: 448px;height:52px;color:white;margin-bottom:35px;
 }
-.KRegister_Main_header_logout{
-    width: 78px;
-    height: 18px;
-    display: flex;
+.Kaccount_Main {
+   width: 448px;
+   /* height: 52px; */
+   margin: 0 auto;
+   margin-top: 100px;
+   font-family: Arial, sans-serif;
+   text-align: center;
+   background-color: black;
+   color: black;
+}
+/* .Kaccountform-floating-mb-3{
+    height: 50px;
+    width:450px;
     
-    color: white;
+ } */
+/* .Kaccountform-floating-mb-3 {
+   height: 55px;
+} */
+.form-control {
+   border-radius: 0;
+   height: 40px;
 }
-.KRegister_Main_header_logout__icon{
-    width: 15px;
-    height: 15px;
-    color: white;
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+   width: 90%;
+   padding: 10px;
+   margin: 10px 0;
 }
-.KRegister_Main_header_account{
+
+.Kaccount_button {
+   width: 30%;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   background-color: red;
+   border: solid red;
+   color: #fff;
+   text-align: center;
+   margin-bottom: 50px;
+}
+@media (max-width: 768px) {
+   .Kaccount_Main {
+      width: 300px;
+      /* height: 52px; */
+      margin: 0 auto;
+      margin-top: 100px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: black;
+      color: black;
+   }
+   /* .Kaccountform-floating-mb-3{
+        height: 30px;
+        width: 250px ;
+    } */
+   .form-control.iput {
+      border-radius: 0;
+      height: 50px;
+      width: 300px;
+   }
+   .register_header{
+    width: 300px;height:52px;color:white;margin-bottom:35px;
+}
+.Kaccount_button {
+    width: 40%;
+    padding-top: 10px;
+     /* margin-left: 50px;  */
+     margin-right:10px;
     padding-bottom: 10px;
-    color: white;
-}
-.KRegister_Main_Text{
-    display: flex;
-    color: white;
-}
-.KRegister_Main_Text1{
-    width:70% ;
-}
-.KRegister_Main_Text2{
-    height: 250px;
-    /* width: 210; */
-    /* width: 220px; */
-    padding-left: 50px;
-    text-align: left;
-    font-size: 20px;
+    background-color: red;
+    border: solid red;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 50px;
+    }
 }
