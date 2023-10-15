@@ -5,7 +5,8 @@
    /* Để thấy rõ khu vực chứa và thanh cuộn  */
  background-color: #201e1d;
  color:white;
-padding-bottom: 50px;
+padding-bottom: 70px;
+
 }
 .KTimeline{
  display: flex;
@@ -16,7 +17,8 @@ padding-bottom: 50px;
  border: 1px solid #201e1d;
  margin-left: 80px;
  /* margin-right: 50px; */
-
+margin-left:60px;
+margin-right:20px;
 }
 /* Tùy chỉnh hình dáng của thanh cuộn */
 ::-webkit-scrollbar {
@@ -57,7 +59,9 @@ background: transparent; /* Ẩn góc thanh cuộn */
  padding: 20px 20px 20px 20px;
 margin-top: 30px;
 } 
-
+.KTimeline_Main9_img{
+  margin-bottom: 10px;
+}
 .KTimeline_Main9_text{
 
  padding-left: 35px;
@@ -66,8 +70,8 @@ margin-top: 30px;
  font-size: 22px;
 }
 .KTimeline_Main9_text_text_9{
- padding-left: 35px;
- padding-right: 35px;
+ padding-left: 25px;
+ padding-right: 25px;
  margin-bottom: 30px;
  font-size: 18px;
 } 
@@ -77,9 +81,11 @@ margin-top: 30px;
  font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   
+ 
  .KTimeline_Main9{
-   min-width: 25%;
+width: 50%;
+min-width: 70%;
  }
 }
