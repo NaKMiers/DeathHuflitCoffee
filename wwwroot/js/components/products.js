@@ -37,7 +37,7 @@ $(document).ready(function () {
    );
 });
 
-const baseUrl = "/collections/merch";
+const baseUrl = "/collections/merch?";
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 checkboxes.forEach(checkbox => {
@@ -57,10 +57,10 @@ function updateURL() {
 
    let finalUrl = baseUrl;
    if (selectedTypes.length > 0) {
-      finalUrl += "?filter.p.product_type=" + selectedTypes.join("&filter.p.product_type=");
+      finalUrl += "filter=" + selectedTypes.join("&filter=") + "&";
    }
 
-   finalUrl += "&sort_by=" + selectedValue;
+   finalUrl += "sort_by=" + selectedValue;
 
    history.pushState(null, "", finalUrl);
 }
@@ -78,3 +78,51 @@ sortSelect.addEventListener("change", function () {
    // Cập nhật URL mà không tải lại trang
    history.pushState(null, "", finalUrl);
 });
+
+// Lấy tất cả các liên kết "Remove filter"
+const removeLinks = document.querySelectorAll(
+   ".Products__active-facets-button-inner-twcss-text-body-12-twcss-font-fenomen"
+);
+
+removeLinks.forEach(link => {
+   link.addEventListener("click", removeFilter);
+});
+
+function removeFilter(event) {
+   event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+
+   // Lấy tham số từ thuộc tính dữ liệu "data-filter-url"
+   const filterURL = event.currentTarget.getAttribute("data-filter-url");
+
+   // Lấy URL hiện tại của trang
+   const currentURL = window.location.href;
+
+   // Kiểm tra nếu filterURL tồn tại trong URL, sau đó xóa nó
+   if (currentURL.includes(filterURL)) {
+      const modifiedURL = currentURL.replace(filterURL, "");
+
+      // Thay đổi URL của trang thành modifiedURL
+      history.pushState(null, "", modifiedURL);
+   }
+}
+
+// // Lấy tất cả các mục <li> chứa Accessories
+// const accessoriesItems = document.querySelectorAll(".list-menu__item.facets__item");
+
+// // Lấy tất cả các mục "Remove filter"
+// const removeButtons = document.querySelectorAll(
+//    ".Products__active-facets-button-inner-twcss-text-body-12-twcss-font-fenomen"
+// );
+
+// accessoriesItems.forEach((item, index) => {
+//    const removeButton = removeButtons[index];
+
+//    item.addEventListener("click", () => {
+//       // Đảo ngược trạng thái hiển thị của nút "Remove filter"
+//       if (removeButton.style.display === "none") {
+//          removeButton.style.display = "block";
+//       } else {
+//          removeButton.style.display = "none";
+//       }
+//    });
+// });
