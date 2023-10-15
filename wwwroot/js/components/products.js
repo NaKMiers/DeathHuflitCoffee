@@ -37,34 +37,44 @@ $(document).ready(function () {
    );
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-   var lis = document.querySelectorAll(".list-menu__item");
+const baseUrl = "/collections/merch";
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-   lis.forEach(function (li) {
-      li.addEventListener("click", function () {
-         // Lấy văn bản của mục li đã chọn
-         var selectedText = li.textContent;
-
-         // Thêm giá trị đã chọn vào trường tên "selected_item" của form
-         var form = document.querySelector("form");
-         var input = document.createElement("input");
-         input.type = "hidden";
-         input.name = "selected_item";
-         input.value = selectedText;
-         form.appendChild(input);
-
-         // Gửi form bằng phương thức "get"
-         form.submit();
-      });
-   });
+checkboxes.forEach(checkbox => {
+   checkbox.addEventListener("change", updateURL);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-   var selectElement = document.getElementById("SortBy");
-   var form = document.getElementById("myForm");
-
-   selectElement.addEventListener("change", function () {
-      // Submit form khi giá trị thay đổi
-      form.submit();
+function updateURL() {
+   const selectedTypes = [];
+   checkboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+         selectedTypes.push(checkbox.value);
+      }
    });
+
+   const sortSelect = document.getElementById("SortBy");
+   const selectedValue = sortSelect.value;
+
+   let finalUrl = baseUrl;
+   if (selectedTypes.length > 0) {
+      finalUrl += "?filter.p.product_type=" + selectedTypes.join("&filter.p.product_type=");
+   }
+
+   finalUrl += "&sort_by=" + selectedValue;
+
+   history.pushState(null, "", finalUrl);
+}
+// Lấy tham chiếu đến select box
+var sortSelect = document.getElementById("SortBy");
+
+// Lắng nghe sự kiện khi giá trị trong select box thay đổi
+sortSelect.addEventListener("change", function () {
+   var selectedValue = sortSelect.value;
+   var baseUrl = "/collections/merch";
+
+   // Tạo URL mới dựa trên giá trị đã chọn
+   var finalUrl = baseUrl + "?sort_by=" + selectedValue;
+
+   // Cập nhật URL mà không tải lại trang
+   history.pushState(null, "", finalUrl);
 });
