@@ -1,3 +1,8 @@
+@model List<DeathWishCoffee.Models.Domain.Product>;
+@{
+    string curPage = ViewBag.CurPage;
+}
+
 <div class="Products__section-template-14567496974391-product-grid-padding">
     <div class="Products__facets-wrapper-page-width" id="Products__main-collection-filters">
         <nav class="Products__breadcrumb-twcss-font-fenomen-twcss-flex-wrap-twcss-items-center" role="navigation"
@@ -8,7 +13,7 @@
                     <path d="M1 1.27271L5 5.99998L1 10.7273" stroke="white"></path>
                 </svg>
             </span>
-            <span>Merch</span>
+            <span>@curPage</span>
         </nav>
         <div class="Products__facets-container-scroll-trigger-animate-fade-in">
             <div id="Products__FacetsWrapperDesktop" class="Products__facets-wrapper">
@@ -180,7 +185,7 @@
             </div>
             <div class="Products__product-count" role="status">
                 <h2 class="product-count__text text-body">
-                    <span id="ProductCountDesktop" class="Products__twcss-font-fenomen-twcss-capitalize">45 products
+                    <span class="Products__twcss-font-fenomen-twcss-capitalize">@Model.Count products
                     </span>
                 </h2>
             </div>

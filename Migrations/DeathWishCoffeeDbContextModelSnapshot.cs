@@ -418,6 +418,9 @@ namespace DeathWishCoffee.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Admin")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Avatar")
                         .HasColumnType("nvarchar(max)");
 
