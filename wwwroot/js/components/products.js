@@ -57,7 +57,7 @@ function updateURL() {
 
    let finalUrl = baseUrl;
    if (selectedTypes.length > 0) {
-      finalUrl += "?filter.p.product_type=" + selectedTypes.join("&filter.p.product_type=");
+      finalUrl += "?filter=" + selectedTypes.join("&filter=");
    }
 
    finalUrl += "&sort_by=" + selectedValue;
