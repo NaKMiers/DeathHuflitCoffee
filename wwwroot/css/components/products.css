@@ -118,7 +118,7 @@
 }
 .Products__facet-filters-sorting-caption {
    position: absolute;
-   right: 14%;
+   right: 20%;
 }
 .Products__facet-filters-field {
    display: flex;
@@ -130,7 +130,7 @@
    font-weight: 800;
    font-size: 14px;
    position: relative;
-   bottom: 16px;
+   bottom: 26px;
 }
 .Products__facet-filters-sort-select-select-caption-large-twcss-text-body-16-twcss-font-fenomen {
    background-color: #000;
@@ -151,6 +151,8 @@
    top: 0;
 }
 .Products__twcss-font-fenomen-twcss-capitalize {
+   bottom: 12px;
+   position: relative;
    color: #fff;
 }
 .Products__collection-page-width {

@@ -98,6 +98,7 @@ $(document).ready(function () {
 // }
 
 const baseUrl = "/collections/merch";
+
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 const productItems = document.querySelectorAll(".list-menu__item.facets__item");
 
@@ -124,10 +125,10 @@ function updateURL() {
 
    let finalUrl = baseUrl;
    if (selectedTypes.length > 0) {
-      finalUrl += "?filter=" + selectedTypes.join("&filter=");
+      finalUrl += "?filter=" + selectedTypes.join("&filter=") + "&";
    }
 
-   finalUrl += "&sort_by=" + selectedValue;
+   finalUrl += "sort_by=" + selectedValue;
 
    // Điều hướng đến URL mới
    window.location.href = finalUrl;
