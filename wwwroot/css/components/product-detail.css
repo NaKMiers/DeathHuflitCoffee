@@ -105,6 +105,7 @@
    margin-bottom: 15px;
 }
 .KproductDetail__main__text_Header_h1 {
+   text-transform: uppercase;
    color: #d24728;
 }
 .paragraph {

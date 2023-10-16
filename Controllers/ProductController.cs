@@ -19,6 +19,32 @@ namespace DeathWishCoffee.Controllers
             _httpContext = httpContextAccessor;
         }
 
+        // [/admin/products/{id}]
+        public IActionResult Index(Guid id)
+        {
+            // get product from databasee
+            var product = _deathWishCoffeeDbContext.Products
+                            .Include(p => p.Sizes)
+                            .Include(p => p.InsideTypes)
+                            .Include(p => p.FlavorProfiles)
+                            .Include(p => p.Attributes)
+                            .Include(p => p.Details)
+                            .Include(p => p.Images)
+                            .Include(p => p.Types)
+                            .Include(p => p.Formats)
+                            .Include(p => p.Roasts)
+                            .Include(p => p.Flavors)
+                            .Include(p => p.Symbols)
+                            .Include(p => p.Reviews)
+                            .FirstOrDefault(p => p.Id == id);
+
+            // if product does NOT EXISTS => BadRequest
+            // if (product == null)
+            //     return BadRequest("Product does not exist");
+
+            return View(product);
+        }
+
         // [/admin/products]
         [HttpGet]
         public IActionResult AllProducts()
