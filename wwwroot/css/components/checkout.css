@@ -334,6 +334,8 @@
 }
 
 .checkout__product__item__price {
+   align-self: flex-start;
+   padding: 10px 0;
    font-size: 14px;
    font-weight: 500;
    color: #2c2c2b;

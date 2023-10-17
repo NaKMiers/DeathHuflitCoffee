@@ -1,3 +1,16 @@
+@model List<DeathWishCoffee.Models.Domain.CartItem>
+@{
+   var userId = ViewBag.UserId;
+
+   double subtotal = 0;
+
+   if (Model != null && Model.Count > 0)
+      @foreach (var cartItem in Model)
+         subtotal += cartItem.Quantity * cartItem.Price;
+
+   double total = subtotal;
+}
+
 <div class="checkout__top">
    @* Logo *@
    <div class="checkout__top__logo">
@@ -82,140 +95,149 @@
       <div class="checkout__main__separator">OR</div>
 
       @* contact form *@
-      <div class="checkout__main__contact">
-         <h2 class="checkout__main__form__title">Contact</h2>
-         <h3 class="checkout__main__contact__sub">Have an account? <a href="/account/login">Login</a></h3>
+      <form action="/checkouts/@userId" method="post">
+         <div class="checkout__main__contact">
+            <h2 class="checkout__main__form__title">Contact</h2>
+            <h3 class="checkout__main__contact__sub">Have an account? <a href="/account/login">Login</a></h3>
 
-         <div class="form-floating mb-3 w-100 checkout__main__form__input">
-            <input type="email" class="form-control  id=" floatingInput" placeholder="Email...">
-            <label for="floatingInput">Email address</label>
-         </div>
-
-         <div class="checkout__main__contact__email-checkbox">
-            <input type="checkbox" checked>
-            <p class="p-0">Email me with news and offers</p>
-         </div>
-      </div>
-
-
-      @* shipping address *@
-      <div class="checkout__main__shipping-address">
-         <h2 class="checkout__main__form__title">Shipping address</h2>
-
-         <div class="form-floating checkout__main__form__input">
-            <select class="form-select" id="floatingSelectGrid">
-               <option selected>Vietnam</option>
-               <option value="1">One</option>
-               <option value="2">Two</option>
-               <option value="3">Three</option>
-            </select>
-            <label for="floatingSelectGrid">Country/region</label>
-         </div>
-
-         <div class="row" style="gap: 12px;">
-            <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-               <input type="text" class="form-control  id=" floatingInput" placeholder="Firstname...">
-               <label for="floatingInput">Firstname</label>
+            <div class="form-floating mb-3 w-100 checkout__main__form__input">
+               <input type="email" class="form-control  id=" floatingInput" placeholder="Email...">
+               <label for="floatingInput">Email address</label>
             </div>
 
-            <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-               <input type="text" class="form-control  id=" floatingInput" placeholder="Lastname...">
-               <label for="floatingInput">Lastname</label>
+            <div class="checkout__main__contact__email-checkbox">
+               <input type="checkbox" checked>
+               <p class="p-0">Email me with news and offers</p>
             </div>
          </div>
 
-         <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-            <input type="text" class="form-control  id=" floatingInput" placeholder="Company...">
-            <label for="floatingInput">Company (optional)</label>
-         </div>
 
-         <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-            <input type="text" class="form-control  id=" floatingInput" placeholder="Address...">
-            <label for="floatingInput">Address</label>
-         </div>
+         @* shipping address *@
+         <div class="checkout__main__shipping-address">
+            <h2 class="checkout__main__form__title">Shipping address</h2>
 
-         <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-            <input type="text" class="form-control  id=" floatingInput" placeholder="Apartment...">
-            <label for="floatingInput">Apartment, suit, etc. (optional)</label>
-         </div>
+            <div class="form-floating checkout__main__form__input">
+               <select class="form-select" id="floatingSelectGrid">
+                  <option selected>Vietnam</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+               </select>
+               <label for="floatingSelectGrid">Country/region</label>
+            </div>
 
-         <div class="row" style="gap: 12px;">
-            <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-               <input type="text" class="form-control  id=" floatingInput" placeholder="City...">
-               <label for="floatingInput">City</label>
+            <div class="row" style="gap: 12px;">
+               <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+                  <input type="text" class="form-control  id=" floatingInput" placeholder="Firstname...">
+                  <label for="floatingInput">Firstname</label>
+               </div>
+
+               <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+                  <input type="text" class="form-control  id=" floatingInput" placeholder="Lastname...">
+                  <label for="floatingInput">Lastname</label>
+               </div>
             </div>
 
             <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-               <input type="email" class="form-control  id=" floatingInput" placeholder="Postal code...">
-               <label for="floatingInput">Postal code (optional)</label>
+               <input type="text" class="form-control  id=" floatingInput" placeholder="Company...">
+               <label for="floatingInput">Company (optional)</label>
+            </div>
+
+            <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+               <input type="text" class="form-control  id=" floatingInput" placeholder="Address...">
+               <label for="floatingInput">Address</label>
+            </div>
+
+            <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+               <input type="text" class="form-control  id=" floatingInput" placeholder="Apartment...">
+               <label for="floatingInput">Apartment, suit, etc. (optional)</label>
+            </div>
+
+            <div class="row" style="gap: 12px;">
+               <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+                  <input type="text" class="form-control  id=" floatingInput" placeholder="City...">
+                  <label for="floatingInput">City</label>
+               </div>
+
+               <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+                  <input type="email" class="form-control  id=" floatingInput" placeholder="Postal code...">
+                  <label for="floatingInput">Postal code (optional)</label>
+               </div>
+            </div>
+
+            <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
+               <input type="email" class="form-control  id=" floatingInput" placeholder="Phone...">
+               <label for="floatingInput">Phone (optional)</label>
+            </div>
+
+            <div class="checkout__main__form__checkbox">
+               <input type="checkbox" checked>
+               <p class="p-0">Email me with news and offers*</p>
+            </div>
+
+            <p class="checkout__main__form__footer">*By providing your phone number, you agree to receive recurring
+               automated marketing text messages (e.g. cart
+               reminders) from this shop and third parties acting on its behalf. Consent is not a condition to obtain
+               goods
+               or services. Msg & data rates may apply. Msg frequency varies. Reply HELP for help and STOP to cancel.
+               You
+               also agree to the <a href="/">Terms of Service</a> and <a href="/">Privacy Policy</a>.
+            </p>
+
+            <div class="checkout__main__btn-wrap">
+               <a href="/" class="checkout__main__btn-wrap__return-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                     <path
+                        d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                  </svg>
+
+                  Return to cart
+               </a>
+
+               <button class="checkout__main__btn-wrap__continue-btn">Continue to shipping</button>
+            </div>
+
+            <div class="checkout__main__footer">
+               <ul class="checkout__main__footer__policy-list">
+                  <li class="checkout__main__footer__policy-item">Refund policy</li>
+                  <li class="checkout__main__footer__policy-item">Privacy policy</li>
+                  <li class="checkout__main__footer__policy-item">Terms of service</li>
+                  <li class="checkout__main__footer__policy-item">Subscription policy</li>
+               </ul>
             </div>
          </div>
-
-         <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-            <input type="email" class="form-control  id=" floatingInput" placeholder="Phone...">
-            <label for="floatingInput">Phone (optional)</label>
-         </div>
-
-         <div class="checkout__main__form__checkbox">
-            <input type="checkbox" checked>
-            <p class="p-0">Email me with news and offers*</p>
-         </div>
-
-         <p class="checkout__main__form__footer">*By providing your phone number, you agree to receive recurring
-            automated marketing text messages (e.g. cart
-            reminders) from this shop and third parties acting on its behalf. Consent is not a condition to obtain goods
-            or services. Msg & data rates may apply. Msg frequency varies. Reply HELP for help and STOP to cancel. You
-            also agree to the <a href="/">Terms of Service</a> and <a href="/">Privacy Policy</a>.
-         </p>
-
-         <div class="checkout__main__btn-wrap">
-            <a href="/" class="checkout__main__btn-wrap__return-btn">
-               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
-                  <path
-                     d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
-               </svg>
-
-               Return to cart
-            </a>
-
-            <button class="checkout__main__btn-wrap__continue-btn">Continue to shipping</button>
-         </div>
-
-         <div class="checkout__main__footer">
-            <ul class="checkout__main__footer__policy-list">
-               <li class="checkout__main__footer__policy-item">Refund policy</li>
-               <li class="checkout__main__footer__policy-item">Privacy policy</li>
-               <li class="checkout__main__footer__policy-item">Terms of service</li>
-               <li class="checkout__main__footer__policy-item">Subscription policy</li>
-            </ul>
-         </div>
-      </div>
+      </form>
 
    </div>
 
    @* Sidebar *@
    <div class="checkout__sidebar collapse" id="checkoutSidebar">
       <ul class="checkout__product__list">
-         @for (int i = 0; i < 10; i++)
+         @if (Model != null && Model.Count > 0)
          {
-            <div class="checkout__product__item">
-               <div class="checkout__product__item__thumbnail position-relative">
-                  <img src="~/images/product1.jpg" alt="thumbnail">
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
-                     1
-                     <span class="visually-hidden">unread messages</span>
-                  </span>
-               </div>
 
-               <div class="checkout__product__item__desc">
-                  <p class="checkout__product__item__desc__title m-0">Dark Roast Death Cups</p>
-                  <p class="checkout__product__item__desc__count  m-0">10 count</p>
-               </div>
 
-               <div class="checkout__product__item__price">
-                  $14.99
+            @foreach (var cartItem in Model)
+            {
+               <div class="checkout__product__item">
+                  <div class="checkout__product__item__thumbnail position-relative">
+                     <img src="~/uploads/@cartItem.Product.Images[0].Src" alt="thumbnail">
+                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                        @cartItem.Quantity
+                     </span>
+                  </div>
+
+                  <div class="checkout__product__item__desc">
+                     <p class="checkout__product__item__desc__title m-0">@cartItem.Product.Title
+                     </p>
+                     <p class="checkout__product__item__desc__count  m-0">@cartItem.Product.Remain remaining</p>
+                  </div>
+
+                  <div class="checkout__product__item__price">
+                     @cartItem.Price.ToString("C2")
+                  </div>
                </div>
-            </div>
+            }
          }
       </ul>
 
@@ -232,7 +254,7 @@
       <div class="checkout__main__total-wrap">
          <div class="checkout__main__total-line">
             <span class="checkout__main__total-line__name">Subtotal</span>
-            <span class="checkout__main__total-line__price">$226.90</span>
+            <span class="checkout__main__total-line__price">@subtotal.ToString("C2")</span>
          </div>
          <div class="checkout__main__total-line">
             <span class="checkout__main__total-line__name">Shipping</span>
@@ -245,7 +267,7 @@
             <span class="checkout__main__total-line__name">Total</span>
             <span class="d-flex gap-2">
                <span class="checkout__main__total-line__small-text">USD</span>
-               <span class="checkout__main__total-line__price big-price">$226.90</span>
+               <span class="checkout__main__total-line__price big-price">@total.ToString("C2")</span>
             </span>
          </div>
       </div>

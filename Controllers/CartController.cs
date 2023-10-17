@@ -85,7 +85,7 @@ namespace DeathWishCoffee.Controllers
             ViewBag.UserId = userId;
             ViewBag.Cart = cart;
 
-            return View("~/Views/Admin/AddToCart.cshtml");
+            return RedirectToAction("Index", "Home");
         }
         [HttpPost]
         public IActionResult AddToCart(AddToCartRequest form, Guid userId, Guid productId)
@@ -149,9 +149,7 @@ namespace DeathWishCoffee.Controllers
 
             // return bad request if user does NOT EXISTS
             if (user == null)
-            {
                 return BadRequest("Invalid username or password.");
-            }
 
             return RedirectToAction("AddToCart", "Cart");
         }
