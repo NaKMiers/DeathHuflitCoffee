@@ -43,7 +43,7 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult Index()
         {
-            return Redirect(Request.Headers["Referer"].ToString());
+            return RedirectToAction("Index", "Home");
         }
 
         // ERRORS

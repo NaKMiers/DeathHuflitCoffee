@@ -85,7 +85,8 @@ namespace DeathWishCoffee.Controllers
             ViewBag.UserId = userId;
             ViewBag.Cart = cart;
 
-            return RedirectToAction("Index", "Home");
+            // return RedirectToAction("Index", "Home");
+            return View("~/Views/Admin/AddToCart.cshtml");
         }
         [HttpPost]
         public IActionResult AddToCart(AddToCartRequest form, Guid userId, Guid productId)
@@ -176,6 +177,7 @@ namespace DeathWishCoffee.Controllers
             var user = _deathWishCoffeeDbContext.Users
                         .Include(u => u.Cart)
                         .ThenInclude(cartItem => cartItem.Product)
+                        .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id.ToString() == userId);
 
             SetUpCartDataForAllPage(user.Cart);
