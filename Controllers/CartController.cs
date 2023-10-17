@@ -180,6 +180,7 @@ namespace DeathWishCoffee.Controllers
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id.ToString() == userId);
 
+            // set CART data for all pages again
             SetUpCartDataForAllPage(user.Cart);
 
             // redirect to HomePage
