@@ -19,6 +19,14 @@
    text-decoration: none;
  }
 
+ .Klogin__login__strong{
+ font-size: 38px;
+ padding-right: 25px;
+ }
+
+ .Klogin__divtong{
+  padding-top:20px;width: 100%;padding-bottom:30px
+ }
  .Klogin_floating-mb-3 {
    height: 50px;
    width: 450px;
@@ -35,10 +43,14 @@
 
  .Kloin_forgot {
    color: white;
-   padding-right: 330px;
-   text-decoration: underline
+   padding-right: 280px;
+   text-decoration: underline;
+   padding-top: 20px;
  }
 
+/* .Kloin_forgot__pass{
+  padding-right: 280px;
+} */
  button {
    width: 30%;
    padding-top: 10px;
@@ -54,9 +66,15 @@
    text-decoration: underline;
    margin-bottom: 30px;
  }
+ .Klogin__forgot__pass{
+  color:white;padding-right: 330px;text-decoration: underline
+ }
 
  .Klogin_signin1 {
    padding-bottom: 10px;
+ }
+ .Klogin__forgot__pass{
+  color:white;padding-right: 330px;text-decoration: underline
  }
 
  @media (max-width: 768px) {
@@ -93,14 +111,18 @@
    }
 
    .Klogin_Create_account {
-     margin-right: 150px;
+     margin-right: 0px;
      color: white;
    }
 
    .Kloin_forgot {
      color: white;
-     padding-right: 350px;
+     padding-right: 130px;
      text-decoration: underline
+   }
+   
+   .Klogin__forgot__pass{
+    color:white;padding-right: 45%;text-decoration: underline
    }
 
    .Klogin_signin1 {
