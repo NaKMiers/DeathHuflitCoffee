@@ -29,9 +29,9 @@
     height: 40px;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'] {
+.Kaccount_Main input[type='text'],
+.Kaccount_Main input[type='email'],
+.Kaccount_Main input[type='password'] {
     width: 90%;
     padding: 10px;
     margin: 10px 0;

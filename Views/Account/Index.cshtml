@@ -1,9 +1,5 @@
-﻿@inject IHttpContextAccessor _httpContext;
-@{
-    ViewData["Title"] = "Account Page";
-    var id = _httpContext.HttpContext?.Session.GetString("Id");
-    var username = _httpContext.HttpContext?.Session.GetString("Username");
-    var avatar = _httpContext.HttpContext?.Session.GetString("Avatar");
+﻿@{
+   ViewData["Title"] = "Account Page";
 }
 
 <partial name="../../components/Account.cshtml" />

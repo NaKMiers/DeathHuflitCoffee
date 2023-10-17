@@ -132,10 +132,10 @@ app.MapControllerRoute(
     defaults: new { controller = "Blog", action = "Index" }
 );
 
-// [/checkouts/{id}]
+// [/checkouts/{userId}]
 app.MapControllerRoute(
     name: "Checkout",
-    pattern: "checkouts/{id}",
+    pattern: "checkouts/{userId}",
     defaults: new { controller = "Checkout", action = "Index" }
 );
 

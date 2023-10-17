@@ -24,9 +24,9 @@
    width: 450px;
  }
 
- input[type='text'],
- input[type='email'],
- input[type='password'] {
+ .Klogin input[type='text'],
+ .Klogin input[type='email'],
+ .Klogin input[type='password'] {
    width: 90%;
    padding: 10px;
    margin: 10px 0;
@@ -39,7 +39,7 @@
    text-decoration: underline
  }
 
- button {
+ .Klogin button {
    width: 30%;
    padding-top: 10px;
    padding-bottom: 10px;
