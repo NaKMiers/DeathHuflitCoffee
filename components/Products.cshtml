@@ -41,121 +41,121 @@
                 </div>
                 <fieldset class="facets-wrap parent-wrap ">
                     <legend class="visually-hidden">Type</legend>
-                    <form action="trang_xu_ly.aspx" method="get">
-                    <ul class=" Products__facets-list-list-unstyled-no-js-hidden" role="list">
-                        <li class="list-menu__item facets__item" onclick="toggleCheckmark(this)"  >
-                            <label for="Filter-filter.p.product_type-1" class="Products__facet-checkbox">
-                                <input type="checkbox" name="filter.p.product_type" value="Accessories"
-                                    id="Filter-filter.p.product_type-1" style="display: none;">
-                                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
-                                    focusable="false">
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
-                                    </rect>
-                                </svg>
-                                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
-                                    height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
-                                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span aria-hidden="true">Accessories (7)</span>
-                                <span class="visually-hidden">Accessories (7 products)</span>
-                            </label>
-                        </li>
-                        <li class="list-menu__item facets__item" onclick="toggleCheckmark(this)">
-                            <label for="Filter-filter.p.product_type-2" class="Products__facet-checkbox">
-                                <input type="checkbox" name="filter.p.product_type" value="Apparel"
-                                    id="Filter-filter.p.product_type-2" style="display: none;">
-                                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
-                                    focusable="false">
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
-                                    </rect>
-                                </svg>
-                                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
-                                    height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
-                                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span aria-hidden="true">Apparel (23)</span>
-                                <span class="visually-hidden">Apparel (23 products)</span>
-                            </label>
-                        </li>
-                        <li class="list-menu__item facets__item" onclick="toggleCheckmark(this)" >
-                            <label for="Filter-filter.p.product_type-3" class="Products__facet-checkbox">
-                                <input type="checkbox" name="filter.p.product_type" value="Gift Card"
-                                    id="Filter-filter.p.product_type-3" style="display: none;">
+                  <form action="trang_xu_ly.aspx" method="get">
+    <ul class=" Products__facets-list-list-unstyled-no-js-hidden" role="list">
+        <li class="list-menu__item facets__item" id="accessories" onclick="toggleCheckmark(this)">
+            <label for="Filter-filter.p.product_type-1" class="Products__facet-checkbox">
+                <input type="checkbox" name="filter.p.product_type" value="Accessories"
+                       id="Filter-filter.p.product_type-1" style="display: none;">
+                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
+                     focusable="false">
+                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
+                    </rect>
+                </svg>
+                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
+                     height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
+                          stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span aria-hidden="true">Accessories (7)</span>
+                <span class="visually-hidden">Accessories (7 products)</span>
+            </label>
+        </li>
+        <li class="list-menu__item facets__item" id="apparel" onclick="toggleCheckmark(this)">
+            <label for="Filter-filter.p.product_type-2" class="Products__facet-checkbox">
+                <input type="checkbox" name="filter.p.product_type" value="Apparel"
+                       id="Filter-filter.p.product_type-2" style="display: none;">
+                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
+                     focusable="false">
+                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
+                    </rect>
+                </svg>
+                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
+                     height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
+                          stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span aria-hidden="true">Apparel (23)</span>
+                <span class="visually-hidden">Apparel (23 products)</span>
+            </label>
+        </li>
+        <li class="list-menu__item facets__item"  id="giftcard" onclick="toggleCheckmark(this)">
+            <label for="Filter-filter.p.product_type-3" class="Products__facet-checkbox">
+                <input type="checkbox" name="filter.p.product_type" value="Gift Card"
+                       id="Filter-filter.p.product_type-3" style="display: none;">
 
-                                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
-                                    focusable="false">
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
-                                    </rect>
-                                </svg>
-                                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
-                                    height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
-                                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span aria-hidden="true">Gift Card (1)</span>
-                                <span class="visually-hidden">Gift Card (1 product)</span>
-                            </label>
-                        </li>
-                        <li class="list-menu__item facets__item" onclick="toggleCheckmark(this)" >
-                            <label for="Filter-filter.p.product_type-4" class="Products__facet-checkbox">
-                                <input type="checkbox" name="filter.p.product_type" value="Mugs"
-                                    id="Filter-filter.p.product_type-4" style="display: none;">
-                                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
-                                    focusable="false">
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
-                                    </rect>
-                                </svg>
-                                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
-                                    height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
-                                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span aria-hidden="true">Mugs (3)</span>
-                                <span class="visually-hidden">Mugs (3 products)</span>
-                            </label>
-                        </li>
-                        <li class="list-menu__item facets__item" onclick="toggleCheckmark(this)" >
-                            <label for="Filter-filter.p.product_type-5" class="Products__facet-checkbox">
-                                <input type="checkbox" name="filter.p.product_type" value="On-The-Go Drinkware"
-                                    id="Filter-filter.p.product_type-5" style="display: none;">
+                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
+                     focusable="false">
+                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
+                    </rect>
+                </svg>
+                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
+                     height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
+                          stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span aria-hidden="true">Gift Card (1)</span>
+                <span class="visually-hidden">Gift Card (1 product)</span>
+            </label>
+        </li>
+        <li class="list-menu__item facets__item" id="mugs" onclick="toggleCheckmark(this)">
+            <label for="Filter-filter.p.product_type-4" class="Products__facet-checkbox">
+                <input type="checkbox" name="filter.p.product_type" value="Mugs"
+                       id="Filter-filter.p.product_type-4" style="display: none;">
+                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
+                     focusable="false">
+                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
+                    </rect>
+                </svg>
+                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
+                     height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
+                          stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span aria-hidden="true">Mugs (3)</span>
+                <span class="visually-hidden">Mugs (3 products)</span>
+            </label>
+        </li>
+        <li class="list-menu__item facets__item" id="on-the-godrinkware" onclick="toggleCheckmark(this)">
+            <label for="Filter-filter.p.product_type-5" class="Products__facet-checkbox">
+                <input type="checkbox" name="filter.p.product_type" value="On-The-Go Drinkware"
+                       id="Filter-filter.p.product_type-5" style="display: none;">
 
-                                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
-                                    focusable="false">
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
-                                    </rect>
-                                </svg>
-                                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
-                                    height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
-                                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span aria-hidden="true">On-The-Go Drinkware (6)</span>
-                                <span class="visually-hidden">On-The-Go Drinkware (6 products)</span>
-                            </label>
-                        </li>
-                        <li class="list-menu__item facets__item" onclick="toggleCheckmark(this)" >
-                            <label for="Filter-filter.p.product_type-6" class="Products__facet-checkbox">
-                                <input type="checkbox" name="filter.p.product_type" value="Storage &amp; Brewing"
-                                    id="Filter-filter.p.product_type-6" style="display: none;">
+                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
+                     focusable="false">
+                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
+                    </rect>
+                </svg>
+                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
+                     height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
+                          stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span aria-hidden="true">On-The-Go Drinkware (6)</span>
+                <span class="visually-hidden">On-The-Go Drinkware (6 products)</span>
+            </label>
+        </li>
+        <li class="list-menu__item facets__item" id="StorageBrewing" onclick="toggleCheckmark(this)">
+            <label for="Filter-filter.p.product_type-6" class="Products__facet-checkbox">
+                <input type="checkbox" name="filter.p.product_type" value="Storage &amp; Brewing"
+                       id="Filter-filter.p.product_type-6" style="display: none;">
 
-                                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
-                                    focusable="false">
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
-                                    </rect>
-                                </svg>
-                                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
-                                    height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
-                                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span aria-hidden="true">Storage &amp; Brewing (5)</span>
-                                <span class="visually-hidden">Storage &amp; Brewing (5 products)</span>
-                            </label>
-                        </li>
-                    </ul>
-                    </form>
+                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
+                     focusable="false">
+                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
+                    </rect>
+                </svg>
+                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
+                     height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
+                          stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span aria-hidden="true">Storage &amp; Brewing (5)</span>
+                <span class="visually-hidden">Storage &amp; Brewing (5 products)</span>
+            </label>
+        </li>
+    </ul>
+</form>
                 </fieldset>
             </div>
             <div class="Products__facet-filters-sorting-caption">
@@ -189,6 +189,85 @@
                     </span>
                 </h2>
             </div>
+            <div class="Products__active-facets-active-facets-desktop">
+    <facet-remove>
+        <span class="Products__active-facets-button-inner-twcss-text-body-12-twcss-font-fenomen">
+            Type: Accessories
+            <svg aria-hidden="true" focusable="false" width="12" height="13" class="icon icon-close-small" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.48627 9.32917L2.82849 3.67098" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.88539 9.38504L8.42932 3.61524" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+
+            <span class="visually-hidden">Remove filter</span>
+        </span>
+
+    </facet-remove><facet-remove>
+
+        <span class="Products__active-facets-button-inner-twcss-text-body-12-twcss-font-fenomen">
+            Type: Apparel
+            <svg aria-hidden="true" focusable="false" width="12" height="13" class="icon icon-close-small" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.48627 9.32917L2.82849 3.67098" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.88539 9.38504L8.42932 3.61524" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+
+            <span class="visually-hidden">Remove filter</span>
+        </span>
+
+    </facet-remove><facet-remove>
+
+        <span class="Products__active-facets-button-inner-twcss-text-body-12-twcss-font-fenomen">
+            Type: Gift Card
+            <svg aria-hidden="true" focusable="false" width="12" height="13" class="icon icon-close-small" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.48627 9.32917L2.82849 3.67098" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.88539 9.38504L8.42932 3.61524" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+
+            <span class="visually-hidden">Remove filter</span>
+        </span>
+
+    </facet-remove><facet-remove>
+
+        <span class="Products__active-facets-button-inner-twcss-text-body-12-twcss-font-fenomen">
+            Type: Mugs
+            <svg aria-hidden="true" focusable="false" width="12" height="13" class="icon icon-close-small" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.48627 9.32917L2.82849 3.67098" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.88539 9.38504L8.42932 3.61524" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+
+            <span class="visually-hidden">Remove filter</span>
+        </span>
+
+    </facet-remove><facet-remove>
+
+        <span class="Products__active-facets-button-inner-twcss-text-body-12-twcss-font-fenomen">
+            Type: On-The-Go Drinkware
+            <svg aria-hidden="true" focusable="false" width="12" height="13" class="icon icon-close-small" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.48627 9.32917L2.82849 3.67098" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.88539 9.38504L8.42932 3.61524" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+
+            <span class="visually-hidden">Remove filter</span>
+        </span>
+
+    </facet-remove><facet-remove>
+
+        <span class="Products__active-facets-button-inner-twcss-text-body-12-twcss-font-fenomen">
+            Type: Storage &amp; Brewing
+            <svg aria-hidden="true" focusable="false" width="12" height="13" class="icon icon-close-small" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.48627 9.32917L2.82849 3.67098" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.88539 9.38504L8.42932 3.61524" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+
+            <span class="visually-hidden">Remove filter</span>
+        </span>
+
+    </facet-remove>
+    <facet-remove class="active-facets__button-wrapper">
+        <a href="/collections/merch" class="Products__active-facets-button-remove-twcss-underline-twcss-text-body-12-twcss-font-fenomen" role="button">
+            <span>Remove all</span>
+        </a>
+    </facet-remove>
+</div>
         </div>
     </div>
     <div class="Products__collection-page-width">
@@ -3084,101 +3163,109 @@
 </form>
 </div>
 <script>
-    function toggleModal() {
-        const modal = document.getElementById("Facet-1-template--14567496974391__product-grid");
-        modal.classList.toggle("Products__Facet-1-template--14567496974391-product-grid-show");
-    }
-
+    const baseUrl = "/collections/merch";
     // Thêm sự kiện click cho toàn bộ tài liệu (document)
-    document.addEventListener("click", function (event) {
-        const modal = document.getElementById("Facet-1-template--14567496974391__product-grid");
+document.addEventListener("click", function (event) {
+   const modal = document.getElementById("Facet-1-template--14567496974391__product-grid");
 
-        // Kiểm tra xem sự kiện click có xảy ra bên ngoài modal và không phải là nút mở modal không
-        if (!modal.contains(event.target) && !event.target.classList.contains("Products__ads-button") && !event.target.classList.contains("Products__twcss-text-body-16-twcss-font-fenomen")) {
-            // Nếu click bên ngoài modal và không phải là nút mở modal, đóng modal
-            modal.classList.remove("Products__Facet-1-template--14567496974391-product-grid-show");
-        }
-    });
+   // Kiểm tra xem sự kiện click có xảy ra bên ngoài modal và không phải là nút mở modal không
+   if (
+      !modal.contains(event.target) &&
+      !event.target.classList.contains("Products__ads-button") &&
+      !event.target.classList.contains("Products__twcss-text-body-16-twcss-font-fenomen")
+   ) {
+      // Nếu click bên ngoài modal và không phải là nút mở modal, đóng modal
+      modal.classList.remove("Products__Facet-1-template--14567496974391-product-grid-show");
+   }
+});
 
-    // Sự kiện click trên chữ "Type" cũng gọi hàm toggleModal
-    document.querySelector(".Products__ads-button").addEventListener("click", toggleModal);
-    document.querySelector(".Products__twcss-text-body-16-twcss-font-fenomen").addEventListener("click", toggleModal);
-    // Lấy thẻ chứa chữ "Type" và biểu tượng SVG
-    const typeButton = document.querySelector(".Products__ads-button");
-    // Thêm sự kiện click cho biểu tượng SVG
-    const typeIcon = typeButton.querySelector("svg.Products__icon-icon-caret");
-    typeIcon.addEventListener("click", function (event) {
-        event.stopPropagation(); // Ngăn sự kiện click từ việc lan truyền lên thẻ chứa "Type"
-        toggleModal(); // Gọi hàm toggleModal để mở hoặc đóng modal
-    });
+      function toggleModal() {
+         const modal = document.getElementById("Facet-1-template--14567496974391__product-grid");
+         modal.classList.toggle("Products__Facet-1-template--14567496974391-product-grid-show");
+      }
+       let originalProductCount = 45; // Số lượng sản phẩm ban đầu
+   let selectedProductCount = 0; // Số lượng sản phẩm đã chọn
+   let productCountSpan = document.getElementById("ProductCountDesktop");
+   document.addEventListener("DOMContentLoaded", function () {
+     function updateProductCount() {
+         if (selectedProductCount === 0) {
+            productCountSpan.textContent = `${originalProductCount} products`;
+         } else {
+            productCountSpan.textContent = `${
+               selectedProductCount / 2
+            } of ${originalProductCount} products`;
+         }
+      }
+});
+    
+      function toggleCheckmark(element) {
+         const checkbox = element.querySelector('input[type="checkbox"]');
+         const checkmark = element.querySelector(".Products__icon-icon-checkmark");
+         const labelText = element.querySelector(".visually-hidden").textContent;
+         const numberMatch = labelText.match(/\d+/);
 
-    let originalProductCount = 45; // Số lượng sản phẩm ban đầu
-    let selectedProductCount = 0; // Số lượng sản phẩm đã chọn
-    let productCountSpan = document.getElementById("ProductCountDesktop");
-
-    function toggleCheckmark(element) {
-        const checkbox = element.querySelector('input[type="checkbox"]');
-        const checkmark = element.querySelector(".Products__icon-icon-checkmark");
-        const labelText = element.querySelector(".visually-hidden").textContent;
-        const numberMatch = labelText.match(/\d+/);
-
-        if (checkbox.checked) {
+         if (checkbox.checked) {
             checkbox.checked = false; // Bỏ chọn checkbox
             checkmark.style.display = "none"; // Ẩn dấu tích
             selectedProductCount -= parseInt(numberMatch[0]);
-        } else {
+         } else {
             checkbox.checked = true; // Chọn checkbox
             checkmark.style.display = "inline-block"; // Hiển thị dấu tích
             selectedProductCount += parseInt(numberMatch[0]);
-        }
+         }
+            document.addEventListener("DOMContentLoaded", function () {
+   updateProductCount();
+});
 
-        updateProductCount();
-    }
-
-    // Hàm cập nhật số lượng sản phẩm đã chọn
-    function updateProductCount() {
-        if (selectedProductCount === 0) {
-            productCountSpan.textContent = `${originalProductCount} products`;
-        } else {
-            productCountSpan.textContent = `${selectedProductCount / 2} of ${originalProductCount} products`;
-        }
-    }
-
-    // Gọi hàm cập nhật số lượng sản phẩm ban đầu
+        
+      }
+      // Gọi hàm cập nhật số lượng sản phẩm ban đầu
+      
     updateProductCount();
 
 
-const baseUrl = "/collections/merch";
-
 function changePage(page) {
-    const params = new URLSearchParams(location.search);
-    params.set("page", page);
-    const finalUrl = `${baseUrl}?${params.toString()}`;
-    window.location.href = finalUrl; // Tải lại trang với URL mới
-    history.pushState(null, "", finalUrl);
+   const params = new URLSearchParams(location.search);
+   params.set("page", page);
+   const finalUrl = `${baseUrl}?${params.toString()}`;
+   window.location.href = finalUrl; // Tải lại trang với URL mới
+   history.pushState(null, "", finalUrl);
 }
 
 function getCurrentPage() {
-    const params = new URLSearchParams(location.search);
-    return parseInt(params.get("page")) || 1;
+   const params = new URLSearchParams(location.search);
+   return parseInt(params.get("page")) || 1;
+}
+// Hàm xử lý khi người dùng nhấp vào nút "Prev"
+function prevPage() {
+    const currentPage = getCurrentPage();
+    if (currentPage > 1) {
+        changePage(currentPage - 1);
+    }
+}
+
+// Hàm xử lý khi người dùng nhấp vào nút "Next"
+function nextPage() {
+    const currentPage = getCurrentPage();
+    if (currentPage < 3) { // Có thể thay đổi giới hạn tối đa của trang tại đây
+        changePage(currentPage + 1);
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const currentPage = getCurrentPage();
-    if (currentPage > 1) {
-        // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
-        document.querySelector(".prev-page-button").addEventListener("click", () => {
-            changePage(currentPage - 1);
-        });
-    }
-    if (currentPage <3)
-    {
-    // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
-    document.querySelector(".next-page-button").addEventListener("click", () => {
-        changePage(currentPage + 1);
-    });
-    }
+   const currentPage = getCurrentPage();
+   if (currentPage > 1) {
+      // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
+      document.querySelector(".prev-page-button").addEventListener("click", () => {
+         changePage(currentPage - 1);
+      });
+   }
+   if (currentPage < 3) {
+      // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
+      document.querySelector(".next-page-button").addEventListener("click", () => {
+         changePage(currentPage + 1);
+      });
+   }
 });
-
 
 </script>
