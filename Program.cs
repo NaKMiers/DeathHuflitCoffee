@@ -272,6 +272,13 @@ app.MapControllerRoute(
     defaults: new { controller = "Order", action = "AllOrdersByUser" }
 );
 
+// [/admin/orders/detail/{id}]
+app.MapControllerRoute(
+    name: "AllOrdersByUser",
+    pattern: "/admin/orders/detail/{id}",
+    defaults: new { controller = "Order", action = "OrderDetail" }
+);
+
 // [/admin/orders/delete/{id}]
 app.MapControllerRoute(
     name: "DeleteOrder",

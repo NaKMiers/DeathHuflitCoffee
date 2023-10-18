@@ -4,6 +4,7 @@ using DeathWishCoffee.Models.Domain;
 using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace DeathWishCoffee.Controllers
 {
@@ -70,6 +71,24 @@ namespace DeathWishCoffee.Controllers
             ViewBag.UserId = userId;
 
             return View("~/Views/Admin/AllOrdersByUser.cshtml", orders);
+        }
+
+        // [/admin/orders/detail/{id}]
+        public IActionResult OrderDetail(Guid id)
+        {
+
+            // get order from database
+            var order = _deathWishCoffeeDbContext.Orders
+                                .Include(o => o.OrderDetails)
+                                .ThenInclude(oD => oD.Product)
+                                .ThenInclude(p => p.Images)
+                                .FirstOrDefault(o => o.Id == id);
+
+            // if orderDeatail does NOT EXIST => BadRequets
+            if (order == null)
+                return BadRequest("Order detail does not exist");
+
+            return View("~/Views/Admin/OrderDetail.cshtml", order);
         }
 
         // [/admin/orders/delete/{id}]
