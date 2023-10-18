@@ -146,20 +146,6 @@ app.MapControllerRoute(
     defaults: new { controller = "Admin", action = "Index" }
 );
 
-// [/admin/login]
-app.MapControllerRoute(
-    name: "Login",
-    pattern: "admin/login",
-    defaults: new { controller = "Admin", action = "Login" }
-);
-
-// [/admin/register]
-app.MapControllerRoute(
-    name: "Register",
-    pattern: "admin/register",
-    defaults: new { controller = "Admin", action = "Register" }
-);
-
 // [/admin/users]
 app.MapControllerRoute(
     name: "AllUser",
@@ -177,7 +163,7 @@ app.MapControllerRoute(
 // [/admin/users/edit/{id}]
 app.MapControllerRoute(
     name: "EditUser",
-    pattern: "admin/users/edit/{id}",
+pattern: "admin/users/edit/{id}",
     defaults: new { controller = "User", action = "EditUser" }
 );
 

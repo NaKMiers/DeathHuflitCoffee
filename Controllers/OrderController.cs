@@ -1,5 +1,7 @@
 
 using DeathWishCoffee.Data;
+using DeathWishCoffee.Models.Domain;
+using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +24,18 @@ namespace DeathWishCoffee.Controllers
         public IActionResult AllOrders()
         {
             Console.WriteLine("AllOrders");
+            // --Authentication
+            string curUserId = _httpContext.HttpContext.Session.GetString("Id");
+            if (string.IsNullOrEmpty(curUserId))
+                return RedirectToAction("Index", "Home");
+
+            var curUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id.ToString() == curUserId);
+            if (curUser == null)
+                return BadRequest("User does not exists");
+
+            if (!curUser.Admin)
+                return RedirectToAction("Index", "Home");
+            // Authentication--
 
             // get all orders from database
             var orders = _deathWishCoffeeDbContext.Orders
@@ -98,6 +112,71 @@ namespace DeathWishCoffee.Controllers
             ViewBag.Order = orderToEdit;
 
             return View("~/Views/Admin/EditOrder.cshtml");
+        }
+
+        [HttpPost]
+        public IActionResult EditOrder(EditOrderRequest form, Guid id)
+        {
+            Console.WriteLine("EditOrder");
+
+            var orderToEditInDB = _deathWishCoffeeDbContext.Orders.FirstOrDefault(o => o.Id == id);
+            // if orderToEdit does NOT EXIST => BadRequest
+            if (orderToEditInDB == null)
+                return BadRequest("Order does not exist");
+
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine(form.Email);
+            if (string.IsNullOrEmpty(form.Email))
+                form.Email = "";
+            Console.WriteLine(form.Country);
+            if (string.IsNullOrEmpty(form.Country))
+                form.Country = "";
+            Console.WriteLine(form.Firstname);
+            if (string.IsNullOrEmpty(form.Firstname))
+                form.Firstname = "";
+            Console.WriteLine(form.Lastname);
+            if (string.IsNullOrEmpty(form.Lastname))
+                form.Lastname = "";
+            Console.WriteLine(form.Company);
+            if (string.IsNullOrEmpty(form.Company))
+                form.Company = "";
+            Console.WriteLine(form.Address);
+            if (string.IsNullOrEmpty(form.Address))
+                form.Address = "";
+            Console.WriteLine(form.Apartment);
+            if (string.IsNullOrEmpty(form.Apartment))
+                form.Apartment = "";
+            Console.WriteLine(form.City);
+            if (string.IsNullOrEmpty(form.City))
+                form.City = "";
+            Console.WriteLine(form.PostalCode);
+            if (string.IsNullOrEmpty(form.PostalCode))
+                form.PostalCode = "";
+            Console.WriteLine(form.Phone);
+            if (string.IsNullOrEmpty(form.Phone))
+                form.Phone = "";
+            Console.WriteLine(form.TotalAmount);
+
+            Console.WriteLine("---------------------------------");
+
+            // update ORDER
+            orderToEditInDB.Status = "Active";
+            orderToEditInDB.Email = form.Email.Trim();
+            orderToEditInDB.Country = form.Country.Trim();
+            orderToEditInDB.Firstname = form.Firstname.Trim();
+            orderToEditInDB.Lastname = form.Lastname.Trim();
+            orderToEditInDB.Company = form.Company.Trim();
+            orderToEditInDB.Address = form.Address.Trim();
+            orderToEditInDB.Apartment = form.Apartment.Trim();
+            orderToEditInDB.City = form.City.Trim();
+            orderToEditInDB.PostalCode = form.PostalCode.Trim();
+            orderToEditInDB.Phone = form.Phone.Trim();
+            orderToEditInDB.LastModifiedAt = DateTime.Now;
+
+            // save update order to database
+            _deathWishCoffeeDbContext.SaveChanges();
+
+            return RedirectToAction("AllOrders", "Order");
         }
 
         // ERRORS

@@ -1,10 +1,10 @@
-using System.Security.Authentication;
 using DeathWishCoffee.Data;
 using DeathWishCoffee.Models.CompositeModels;
 using DeathWishCoffee.Models.Domain;
 using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace DeathWishCoffee.Controllers
 {
@@ -19,6 +19,12 @@ namespace DeathWishCoffee.Controllers
         {
             _deathWishCoffeeDbContext = deathWishCoffeeDbContext;
             _httpContext = httpContextAccessor;
+        }
+
+        public void SetUpCartDataForAllPage(List<CartItem> cart)
+        {
+            string myCartCovertedToJson = JsonConvert.SerializeObject(cart);
+            _httpContext.HttpContext.Session.SetString("Cart", myCartCovertedToJson);
         }
 
         // [/checkouts/{userId}]
@@ -144,8 +150,23 @@ namespace DeathWishCoffee.Controllers
                 LastModifiedAt = DateTime.Now
             };
 
+            // add new order to database
             _deathWishCoffeeDbContext.Orders.Add(newOrder);
+
+            // remove cartItem after make order
+            _deathWishCoffeeDbContext.CartItems.RemoveRange(cartItems);
+
+            // save change to database
             _deathWishCoffeeDbContext.SaveChanges();
+
+            var user = _deathWishCoffeeDbContext.Users
+                        .Include(u => u.Cart)
+                        .ThenInclude(cartItem => cartItem.Product)
+                        .ThenInclude(product => product.Images)
+                        .FirstOrDefault(u => u.Id == userId);
+
+            // set CART data to session
+            SetUpCartDataForAllPage(user.Cart);
 
             return RedirectToAction("Index", "Home");
         }
