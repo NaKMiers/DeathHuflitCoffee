@@ -272,6 +272,34 @@ app.MapControllerRoute(
     defaults: new { controller = "Cart", action = "DecreaseCartItemQuantity" }
 );
 
+// [/admin/orders]
+app.MapControllerRoute(
+    name: "AllOrders",
+    pattern: "/admin/orders",
+    defaults: new { controller = "Order", action = "AllOrders" }
+);
+
+// [/admin/orders/{userId}]
+app.MapControllerRoute(
+    name: "AllOrdersByUser",
+    pattern: "/admin/orders/{userId}",
+    defaults: new { controller = "Order", action = "AllOrdersByUser" }
+);
+
+// [/admin/orders/delete/{id}]
+app.MapControllerRoute(
+    name: "DeleteOrder",
+    pattern: "/admin/orders/delete/{id}",
+    defaults: new { controller = "Order", action = "DeleteOrder" }
+);
+
+// [/admin/orders/edit/{id}]
+app.MapControllerRoute(
+    name: "EditOrder",
+    pattern: "/admin/orders/edit/{id}",
+    defaults: new { controller = "Order", action = "EditOrder" }
+);
+
 // [/]
 app.MapControllerRoute(
     name: "default",
