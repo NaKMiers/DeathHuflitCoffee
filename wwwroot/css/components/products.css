@@ -306,9 +306,6 @@
 }
 .Products__filterppproducttype {
    width: 16px;
-}
-.Products__filterppproducttype:checked {
-   background-color: #000 !important;
-   border: 1px solid #fff !important;
-   color: #fff !important;
+   background-color: #000;
+   border: 1px solid #fff;
 }
