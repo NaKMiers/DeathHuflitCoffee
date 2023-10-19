@@ -18,11 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
       productItems.forEach(function (item) {
          item.style.fontWeight = "normal";
       });
-
-      // selectedCheckboxes.forEach(function (selected) {
-      //    const label = selected.closest("label");
-      //    label.style.fontWeight = "bold";
-      // });
    }
 });
 $(document).ready(function () {
@@ -35,119 +30,82 @@ $(document).ready(function () {
    );
 });
 
-// const baseUrl = "/collections/merch";
-// const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+document.addEventListener("DOMContentLoaded", function () {
+   const baseUrl = "/collections/merch";
+   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+   const productItems = document.querySelectorAll(".list-menu__item.facets__item");
 
-// checkboxes.forEach(checkbox => {
-//    checkbox.addEventListener("change", updateURL);
-// });
+   window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
 
-// function updateURL() {
-//    const selectedTypes = [];
-//    checkboxes.forEach(checkbox => {
-//       if (checkbox.checked) {
-//          selectedTypes.push(checkbox.value);
-//       }
-//    });
+      // Lấy các giá trị trong tham số "filter" từ URL
+      const filterValues = urlParams.getAll("filter");
+      filterValues.forEach(value => {
+         const checkbox = document.querySelector(`input[type="checkbox"][value="${value}"]`);
+         if (checkbox) {
+            checkbox.checked = true;
+         }
+      });
 
-//    const sortSelect = document.getElementById("SortBy");
-//    const selectedValue = sortSelect.value;
-
-//    let finalUrl = baseUrl;
-//    if (selectedTypes.length > 0) {
-//       finalUrl += "?filter=" + selectedTypes.join("&filter=");
-//    }
-
-//    finalUrl += "&sort_by=" + selectedValue;
-
-//    history.pushState(null, "", finalUrl);
-// }
-
-// const baseUrl = "/collections/merch";
-// const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-// const productItems = document.querySelectorAll(".list-menu__item.facets__item");
-
-// checkboxes.forEach(checkbox => {
-//    checkbox.addEventListener("change", updateURL);
-// });
-
-// productItems.forEach(item => {
-//    item.addEventListener("click", updateURL);
-// });
-
-// function updateURL() {
-//    const selectedTypes = [];
-//    checkboxes.forEach(checkbox => {
-//       if (checkbox.checked) {
-//          selectedTypes.push(checkbox.value);
-//       }
-//    });
-
-//    const sortSelect = document.getElementById("SortBy");
-//    const selectedValue = sortSelect.value;
-
-//    let finalUrl = baseUrl;
-//    if (selectedTypes.length > 0) {
-//       finalUrl += "?filter=" + selectedTypes.join("&filter=");
-//    }
-
-//    finalUrl += "&sort_by=" + selectedValue;
-
-//    // Điều hướng đến URL mới
-//    window.location.href = finalUrl;
-// }
-
-const baseUrl = "/collections/merch";
-
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-const productItems = document.querySelectorAll(".list-menu__item.facets__item");
-
-checkboxes.forEach(checkbox => {
-   checkbox.addEventListener("change", updateURL);
-});
-
-productItems.forEach(item => {
-   item.addEventListener("click", () => {
-      updateURL();
-   });
-});
-
-function updateURL() {
-   const selectedTypes = [];
-   checkboxes.forEach(checkbox => {
-      if (checkbox.checked) {
-         selectedTypes.push(checkbox.value);
+      // Lấy giá trị tham số "sort_by" từ URL và cập nhật dropdown
+      const sortValue = urlParams.get("sort_by");
+      if (sortValue) {
+         sortSelect.value = sortValue;
       }
+
+      // Kích hoạt các mục li tương ứng
+      productItems.forEach(item => {
+         const itemId = item.getAttribute("data-item-id");
+         if (filterValues.includes(itemId)) {
+            item.classList.add("active");
+         }
+      });
+
+      // Kích hoạt hoặc hủy kích hoạt các mục li khi người dùng nhấn vào chúng
+      productItems.forEach(item => {
+         item.addEventListener("click", () => {
+            item.classList.toggle("active");
+         });
+      });
+   };
+
+   checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", updateURL);
    });
 
-   const sortSelect = document.getElementById("SortBy");
-   const selectedValue = sortSelect.value;
+   function updateURL() {
+      const selectedTypes = [];
+      checkboxes.forEach(checkbox => {
+         if (checkbox.checked) {
+            selectedTypes.push(checkbox.value);
+         }
+      });
 
-   let finalUrl = baseUrl;
-   if (selectedTypes.length > 0) {
-      finalUrl += "?filter=" + selectedTypes.join("&filter=") + "&";
+      const selectedItems = Array.from(productItems)
+         .filter(item => item.classList.contains("active"))
+         .map(item => item.getAttribute("data-item-id"));
+
+      let finalUrl = baseUrl;
+      if (selectedTypes.length > 0) {
+         finalUrl += "?filter=" + selectedTypes.join("&filter=");
+      }
+      if (selectedItems.length > 0) {
+         if (selectedTypes.length > 0) {
+            finalUrl += "&";
+         }
+         finalUrl += selectedItems.map(itemId => `item=${itemId}`).join("&");
+      }
+
+      if (finalUrl === baseUrl) {
+         // Nếu không có filter nào được chọn, trở về trang gốc
+         finalUrl = baseUrl;
+      } else {
+         finalUrl += "&sort_by=" + sortSelect.value;
+      }
+      // Tải lại trang với URL mới
+      window.location.href = finalUrl;
    }
-
-   finalUrl += "sort_by=" + selectedValue;
-
-   // Điều hướng đến URL mới
-   window.location.href = finalUrl;
-}
-
-// // Lấy tham chiếu đến select box
-// var sortSelect = document.getElementById("SortBy");
-
-// // Lắng nghe sự kiện khi giá trị trong select box thay đổi
-// sortSelect.addEventListener("change", function () {
-//    var selectedValue = sortSelect.value;
-//    var baseUrl = "/collections/merch";
-
-//    // Tạo URL mới dựa trên giá trị đã chọn
-//    var finalUrl = baseUrl + "?sort_by=" + selectedValue;
-
-//    // Cập nhật URL mà không tải lại trang
-//    history.pushState(null, "", finalUrl);
-// });
+});
 
 // Lấy tham chiếu đến select box
 var sortSelect = document.getElementById("SortBy");
@@ -155,15 +113,18 @@ var sortSelect = document.getElementById("SortBy");
 // Lắng nghe sự kiện khi giá trị trong select box thay đổi
 sortSelect.addEventListener("change", function () {
    var selectedValue = sortSelect.value;
-   var baseUrl = "/collections/merch";
 
-   // Tạo URL mới dựa trên giá trị đã chọn
-   var finalUrl = baseUrl + "?sort_by=" + selectedValue;
+   // Lấy URL hiện tại
+   var currentUrl = window.location.href;
 
-   // Tạo một biến form để submit dữ liệu
-   var form = document.getElementById("myForm");
-   form.action = finalUrl;
-   form.submit();
+   // Tạo một URL mới dựa trên URL hiện tại
+   var url = new URL(currentUrl);
+
+   // Thiết lập hoặc thay thế tham số "sort_by" trong URL
+   url.searchParams.set("sort_by", selectedValue);
+
+   // Điều hướng trình duyệt đến URL mới
+   window.location.href = url.href;
 });
 
 // Sự kiện click trên chữ "Type" cũng gọi hàm toggleModal
@@ -179,3 +140,52 @@ typeIcon.addEventListener("click", function (event) {
    event.stopPropagation(); // Ngăn sự kiện click từ việc lan truyền lên thẻ chứa "Type"
    toggleModal(); // Gọi hàm toggleModal để mở hoặc đóng modal
 });
+
+// Lấy tất cả các checkbox
+const checkboxes = document.querySelectorAll(
+   'input[type="checkbox"][name="filter.p.product_type"]'
+);
+
+// Lấy thẻ span hiển thị số đã chọn
+const selectedCount = document.querySelector(".facets__selected");
+
+// Lắng nghe sự kiện thay đổi của checkbox
+checkboxes.forEach(checkbox => {
+   checkbox.addEventListener("change", updateSelectedCount);
+});
+
+// Hàm cập nhật số đã chọn
+function updateSelectedCount() {
+   const selectedCheckboxes = document.querySelectorAll(
+      'input[type="checkbox"][name="filter.p.product_type"]:checked'
+   );
+   const selectedCheckboxesCount = selectedCheckboxes.length;
+
+   // Cập nhật nội dung của thẻ span
+   selectedCount.textContent = `${selectedCheckboxesCount} selected`;
+
+   // Lưu trạng thái checkbox đã được chọn vào localStorage
+   const selectedCheckboxesArray = Array.from(selectedCheckboxes).map(checkbox => checkbox.value);
+   localStorage.setItem("selectedCheckboxes", JSON.stringify(selectedCheckboxesArray));
+}
+
+// Hàm khôi phục trạng thái checkbox đã được chọn sau khi trang tải lại
+function restoreSelectedCheckboxes() {
+   const selectedCheckboxesArray = JSON.parse(localStorage.getItem("selectedCheckboxes"));
+   if (selectedCheckboxesArray) {
+      selectedCheckboxesArray.forEach(value => {
+         const checkbox = document.querySelector(
+            `input[type="checkbox"][name="filter.p.product_type"][value="${value}"]`
+         );
+         if (checkbox) {
+            checkbox.checked = true;
+         }
+      });
+
+      // Gọi hàm cập nhật số đã chọn
+      updateSelectedCount();
+   }
+}
+
+// Lắng nghe sự kiện tải lại trang
+window.addEventListener("load", restoreSelectedCheckboxes);

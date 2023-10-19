@@ -96,6 +96,7 @@
    height: 334px;
    top: 55px;
    left: 50px;
+   z-index: 2;
 }
 .Products__facets-list-list-unstyled-no-js-hidden {
    padding: 5px 20px;
@@ -109,12 +110,6 @@
    gap: 14px;
    letter-spacing: 0.6px;
    font-weight: 550;
-}
-.Products__icon-icon-checkmark {
-   position: absolute;
-   bottom: 17px;
-   left: 4px;
-   display: none;
 }
 .Products__facet-filters-sorting-caption {
    position: absolute;
@@ -306,30 +301,11 @@
       display: none;
    }
 }
-.Products__active-facets-active-facets-desktop {
-   position: absolute;
-   top: 40%;
-   display: flex;
-   flex-wrap: wrap;
-   gap: 15px;
-}
-.Products__active-facets-button-inner-twcss-text-body-12-twcss-font-fenomen {
-   box-shadow: 0 0 0 0.1rem #5c5957;
-   padding: 2px 2px 3px 4px;
-   font-size: 14px;
-   font-weight: 550;
-   display: none;
-}
-.Products__active-facets-button-inner-twcss-text-body-12-twcss-font-fenomen:hover {
-   color: #fff;
-   box-shadow: 0 0 0 0.03rem #5c5957;
-}
-.Products__active-facets-button-remove-twcss-underline-twcss-text-body-12-twcss-font-fenomen {
-   color: rgba(250, 250, 250, 0.75);
-   font-size: 14px;
-   text-decoration: underline;
-   display: none;
-}
 .Products__active-facets-button-remove-twcss-underline-twcss-text-body-12-twcss-font-fenomen:hover {
    color: #e12727;
+}
+.Products__filterppproducttype {
+   width: 16px;
+   background-color: #000;
+   border: 1px solid #fff;
 }
