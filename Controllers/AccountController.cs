@@ -51,17 +51,29 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            Console.WriteLine("Account");
+            string userId = _httpContext.HttpContext.Session.GetString("Id");
+            Console.WriteLine(userId);
+
+            // user is not login yet
+            if (string.IsNullOrEmpty(userId))
+                return RedirectToAction("Login", "Account");
+
+            var user = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id.ToString() == userId);
+            // if user does NOT EXIST => BadRequest
+            if (user == null)
+                return BadRequest("User does not exist");
+
+            return View(user);
         }
 
         // [/account/login]
         [HttpGet]
         public IActionResult Login()
         {
+            // user is already login
             if (_httpContext.HttpContext.Session.GetString("Id") != null)
-            {
                 return RedirectToAction("Index", "Account");
-            }
 
             // return View("~/Views/Admin/Login.cshtml");
             return View();
@@ -81,9 +93,7 @@ namespace DeathWishCoffee.Controllers
 
             // return bad request if user does NOT EXISTS
             if (user == null)
-            {
                 return BadRequest("Invalid email or password.");
-            }
 
             GetRecommendProducts();
 

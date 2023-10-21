@@ -2,8 +2,7 @@
 @{
     string curPage = ViewBag.CurPage;
 }
-
-<div class="Products__section-template-14567496974391-product-grid-padding">
+<div class="Products__main Products__section-template-14567496974391-product-grid-padding">
     <div class="Products__facets-wrapper-page-width" id="Products__main-collection-filters">
         <nav class="Products__breadcrumb-twcss-font-fenomen-twcss-flex-wrap-twcss-items-center" role="navigation"
             aria-label="breadcrumbs">
@@ -41,121 +40,52 @@
                 </div>
                 <fieldset class="facets-wrap parent-wrap ">
                     <legend class="visually-hidden">Type</legend>
-                    <form action="trang_xu_ly.aspx" method="get">
-                    <ul class=" Products__facets-list-list-unstyled-no-js-hidden" role="list">
-                        <li class="list-menu__item facets__item" onclick="toggleCheckmark(this)"  >
-                            <label for="Filter-filter.p.product_type-1" class="Products__facet-checkbox">
-                                <input type="checkbox" name="filter.p.product_type" value="Accessories"
-                                    id="Filter-filter.p.product_type-1" style="display: none;">
-                                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
-                                    focusable="false">
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
-                                    </rect>
-                                </svg>
-                                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
-                                    height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
-                                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span aria-hidden="true">Accessories (7)</span>
-                                <span class="visually-hidden">Accessories (7 products)</span>
-                            </label>
-                        </li>
-                        <li class="list-menu__item facets__item" onclick="toggleCheckmark(this)">
-                            <label for="Filter-filter.p.product_type-2" class="Products__facet-checkbox">
-                                <input type="checkbox" name="filter.p.product_type" value="Apparel"
-                                    id="Filter-filter.p.product_type-2" style="display: none;">
-                                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
-                                    focusable="false">
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
-                                    </rect>
-                                </svg>
-                                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
-                                    height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
-                                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span aria-hidden="true">Apparel (23)</span>
-                                <span class="visually-hidden">Apparel (23 products)</span>
-                            </label>
-                        </li>
-                        <li class="list-menu__item facets__item" onclick="toggleCheckmark(this)" >
-                            <label for="Filter-filter.p.product_type-3" class="Products__facet-checkbox">
-                                <input type="checkbox" name="filter.p.product_type" value="Gift Card"
-                                    id="Filter-filter.p.product_type-3" style="display: none;">
-
-                                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
-                                    focusable="false">
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
-                                    </rect>
-                                </svg>
-                                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
-                                    height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
-                                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span aria-hidden="true">Gift Card (1)</span>
-                                <span class="visually-hidden">Gift Card (1 product)</span>
-                            </label>
-                        </li>
-                        <li class="list-menu__item facets__item" onclick="toggleCheckmark(this)" >
-                            <label for="Filter-filter.p.product_type-4" class="Products__facet-checkbox">
-                                <input type="checkbox" name="filter.p.product_type" value="Mugs"
-                                    id="Filter-filter.p.product_type-4" style="display: none;">
-                                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
-                                    focusable="false">
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
-                                    </rect>
-                                </svg>
-                                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
-                                    height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
-                                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span aria-hidden="true">Mugs (3)</span>
-                                <span class="visually-hidden">Mugs (3 products)</span>
-                            </label>
-                        </li>
-                        <li class="list-menu__item facets__item" onclick="toggleCheckmark(this)" >
-                            <label for="Filter-filter.p.product_type-5" class="Products__facet-checkbox">
-                                <input type="checkbox" name="filter.p.product_type" value="On-The-Go Drinkware"
-                                    id="Filter-filter.p.product_type-5" style="display: none;">
-
-                                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
-                                    focusable="false">
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
-                                    </rect>
-                                </svg>
-                                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
-                                    height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
-                                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span aria-hidden="true">On-The-Go Drinkware (6)</span>
-                                <span class="visually-hidden">On-The-Go Drinkware (6 products)</span>
-                            </label>
-                        </li>
-                        <li class="list-menu__item facets__item" onclick="toggleCheckmark(this)" >
-                            <label for="Filter-filter.p.product_type-6" class="Products__facet-checkbox">
-                                <input type="checkbox" name="filter.p.product_type" value="Storage &amp; Brewing"
-                                    id="Filter-filter.p.product_type-6" style="display: none;">
-
-                                <svg width="1.2rem" height="1.3rem" viewBox="0 0 16 16" aria-hidden="true"
-                                    focusable="false">
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1">
-                                    </rect>
-                                </svg>
-                                <svg aria-hidden="true" class="Products__icon-icon-checkmark" width="0.7rem"
-                                    height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor"
-                                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span aria-hidden="true">Storage &amp; Brewing (5)</span>
-                                <span class="visually-hidden">Storage &amp; Brewing (5 products)</span>
-                            </label>
-                        </li>
-                    </ul>
-                    </form>
+                  <form action="trang_xu_ly.aspx" method="get">
+     <ul class=" Products__facets-list-list-unstyled-no-js-hidden" role="list">
+                <li class="list-menu__item facets__item" id="accessories" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-1" class="Products__facet-checkbox">
+                        <input type="checkbox" name="filter.p.product_type" class="Products__filterppproducttype" value="Accessories" id="Filter-filter.p.product_type-1">
+                        <span aria-hidden="true">Accessories (7)</span>
+                        <span class="visually-hidden">Accessories (7 products)</span>
+                    </label>
+                </li>
+                <li class="list-menu__item facets__item" id="apparel" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-2" class="Products__facet-checkbox">
+                        <input type="checkbox" name="filter.p.product_type" class="Products__filterppproducttype" value="Apparel" id="Filter-filter.p.product_type-2">
+                        <span aria-hidden="true">Apparel (23)</span>
+                        <span class="visually-hidden">Apparel (23 products)</span>
+                    </label>
+                </li>
+                <li class="list-menu__item facets__item" id="giftcard" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-3" class="Products__facet-checkbox">
+                        <input type="checkbox" name="filter.p.product_type" class="Products__filterppproducttype" value="Gift+Card" id="Filter-filter.p.product_type-3">
+                        <span aria-hidden="true">Gift Card (1)</span>
+                        <span class="visually-hidden">Gift Card (1 product)</span>
+                    </label>
+                </li>
+                <li class="list-menu__item facets__item" id="mugs" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-4" class="Products__facet-checkbox">
+                        <input type="checkbox" name="filter.p.product_type" class="Products__filterppproducttype" value="Mugs" id="Filter-filter.p.product_type-4">
+                        <span aria-hidden="true">Mugs (3)</span>
+                        <span class="visually-hidden">Mugs (3 products)</span>
+                    </label>
+                </li>
+                <li class="list-menu__item facets__item" id="on-the-godrinkware" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-5" class="Products__facet-checkbox">
+                        <input type="checkbox" name="filter.p.product_type" class="Products__filterppproducttype" value="On-The-Go+Drinkware" id="Filter-filter.p.product_type-5">
+                        <span aria-hidden="true">On-The-Go Drinkware (6)</span>
+                        <span class="visually-hidden">On-The-Go Drinkware (6 products)</span>
+                    </label>
+                </li>
+                <li class="list-menu__item facets__item" id="StorageBrewing" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-6" class="Products__facet-checkbox">
+                        <input type="checkbox" name="filter.p.product_type" class="Products__filterppproducttype" value="Storage+Brewing" id="Filter-filter.p.product_type-6">
+                        <span aria-hidden="true">Storage &amp; Brewing (5)</span>
+                        <span class="visually-hidden">Storage &amp; Brewing (5 products)</span>
+                    </label>
+                </li>
+            </ul>
+</form>
                 </fieldset>
             </div>
             <div class="Products__facet-filters-sorting-caption">
@@ -190,12 +120,28 @@
                 </h2>
             </div>
         </div>
+        <div class="Products__facets-container-scroll-trigger-animate-fade-in Products__facets-container-level">
+    <div class="Products__ads-button" onclick="toggleModal()">
+        <svg class="Products__icon-icon-filter" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" width="20px" >
+            <path fill-rule="evenodd" d="M4.833 6.5a1.667 1.667 0 1 1 3.334 0 1.667 1.667 0 0 1-3.334 0ZM4.05 7H2.5a.5.5 0 0 1 0-1h1.55a2.5 2.5 0 0 1 4.9 0h8.55a.5.5 0 0 1 0 1H8.95a2.5 2.5 0 0 1-4.9 0Zm11.117 6.5a1.667 1.667 0 1 0-3.334 0 1.667 1.667 0 0 0 3.334 0ZM13.5 11a2.5 2.5 0 0 1 2.45 2h1.55a.5.5 0 0 1 0 1h-1.55a2.5 2.5 0 0 1-4.9 0H2.5a.5.5 0 0 1 0-1h8.55a2.5 2.5 0 0 1 2.45-2Z" fill="currentColor"></path>
+        </svg>
+        <span class="Products__twcss-text-body-16-twcss-font-fenomen Products__twcss-text-body-16-twcss-font-fenomen-hidden-facet-template">Filter and sort</span>
+    </div>
+
+    <div class="Products__product-count" role="status">
+        <h2 class="product-count__text text-body">
+            <span class="Products__twcss-font-fenomen-twcss-capitalize">
+                        @Model.Count products
+            </span>
+        </h2>
+    </div>
+</div>
     </div>
     <div class="Products__collection-page-width">
         <ul class="Products__items-list">
             <!-- Sử dụng JavaScript để thêm 72 mục -->
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/classic-long-sleeve-1">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -239,7 +185,7 @@
                     </div>
             </li>
              <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/no-sleep-sweatpants">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -284,7 +230,7 @@
             </li>
               <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in il-2">
                 <div class="Products__card-wrapper-product-card-wrapper-underline-links-hover-twcss-relative">
-                    <a href="/pages/performance-enhancing-coffee" class="twcss-group">
+                    <a href="/products/dark-roast-espresso-capsules" class="twcss-group">
                         <div class="twcss-h-full">
                             <div
                                 class="twcss-bg-black twcss-opacity-20 twcss-h-full twcss-w-full !twcss-block twcss-absolute">
@@ -306,7 +252,7 @@
                 </div>
             </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/black-logo-hoodie-1">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -486,7 +432,7 @@
                     </div>
             </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/shadow-travel-mug">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -673,7 +619,7 @@
                     </div>
              </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/lighten-up-crewneck">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -854,7 +800,7 @@
                     </div>
             </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/classic-snapback">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -1042,7 +988,7 @@
                     </div>
             </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/rise-grinder">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -1231,7 +1177,7 @@
                     </div>
             </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/hario-dripper-filter-bundle">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -1437,7 +1383,7 @@
                 </div>
             </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/its-black-and-white-striped-tee">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -1619,7 +1565,7 @@
                     </div>
             </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/classic-logo-crewneck">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -1808,7 +1754,7 @@
                     </div>
             </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/klean-kanteen-camp-mug">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -1998,7 +1944,7 @@
                     </div>
             </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/classic-socks">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -2185,7 +2131,7 @@
                     </div>
             </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/black-reusable-bag?variant=40222686806071">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -2373,7 +2319,7 @@
                     </div>
             </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/camping-bundle">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -2563,7 +2509,7 @@
             </li>
             @*Quần sort sale*@
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/classic-fleece-shorts">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -2761,7 +2707,7 @@
                     </div>
             </li>
              <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/eagle-crest-tee">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -2800,7 +2746,7 @@
                     </div>
             </li>
              <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/new-black-logo-tee">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -2844,7 +2790,7 @@
                     </div>
             </li>
              <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/2023-mug">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -2869,7 +2815,7 @@
           <div class="card-information"><span class="caption-large light"></span>
 <div class="
     price twcss-font-fenomen twcss-text-body-16 twcss-uppercase">
-  
+
     <div class="price__sale">
         <span class="visually-hidden visually-hidden--inline">Regular price</span>
         <span>
@@ -2889,7 +2835,7 @@
                     </div>
             </li>
              <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/board-shorts">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -2936,7 +2882,7 @@
                     </div>
             </li>
              <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/classic-pocket-tee">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -2979,7 +2925,7 @@
                     </div>
             </li>
             <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/shadow-canister">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -3022,7 +2968,7 @@
                     </div>
             </li>
           <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade="" style="--animation-order: 1;"
-                data-link="https://www.deathwishcoffee.com/products/new-classic-logo-tee">
+                data-link="http://localhost:5080/products/23213">
                 <div class="card-wrapper product-card-wrapper underline-links-hover">
                     <div class="Products__card Products__card-standard Products__card-media
                             " style="--ratio-percent: 100%;">
@@ -3082,103 +3028,159 @@
         </span>
     </div>
 </form>
+ <div id="Products__hiddenbox-facet-template"></div>
+    <div id="Products__Facet-1-template-14567496974391-grid" class="Products__parent-display-facets-display-14567496974391 ">
+    <div class="Products__facets__header">
+       <span class="Products__twcss-text-body-16-twcss-font-fenomen-type">Type</span>
+       <svg xmlns="http://www.w3.org/2000/svg" style="width:20px" aria-hidden="true" focusable="false" class="Products__icon-icon-close" fill="none" viewBox="0 0 18 17">
+  <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
+</path></svg>
+    </div>
+    <fieldset class="facets-wrap parent-wrap ">
+        <legend class="visually-hidden">Type</legend>
+        <form action="trang_xu_ly.aspx" method="get">
+             <ul class=" Products__facets-list-list-unstyled-no-js-hidden" role="list">
+                <li class="Products__list-menu-item-facets-item" id="accessories" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-7" class="Products__facet-checkbox">
+                        <input type="checkbox" name="filter.p.product_type" class="Products__filterproducttype" data-custom-value="Accessories" id="Filter-filter.p.product_type-7">
+                        <span aria-hidden="true">Accessories (7)</span>
+                        <span class="visually-hidden">Accessories (7 products)</span>
+                    </label>
+                </li>
+                <li class="Products__list-menu-item-facets-item" id="apparel" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-8" class="Products__facet-checkbox">
+                        <input type="checkbox" name="filter.p.product_type" class="Products__filterproducttype" data-custom-value="Apparel" id="Filter-filter.p.product_type-8">
+                        <span aria-hidden="true">Apparel (23)</span>
+                        <span class="visually-hidden">Apparel (23 products)</span>
+                    </label>
+                </li>
+                <li class="Products__list-menu-item-facets-item" id="giftcard" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-9" class="Products__facet-checkbox">
+                        <input type="checkbox" name="filter.p.product_type" class="Products__filterproducttype" data-custom-value="Gift+Card" id="Filter-filter.p.product_type-9">
+                        <span aria-hidden="true">Gift Card (1)</span>
+                        <span class="visually-hidden">Gift Card (1 product)</span>
+                    </label>
+                </li>
+                <li class="Products__list-menu-item-facets-item" id="mugs" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-10" class="Products__facet-checkbox">
+                        <input type="checkbox" name="filter.p.product_type" class="Products__filterproducttype" data-custom-value="Mugs" id="Filter-filter.p.product_type-10">
+                        <span aria-hidden="true">Mugs (3)</span>
+                        <span class="visually-hidden">Mugs (3 products)</span>
+                    </label>
+                </li>
+                <li class="Products__list-menu-item-facets-item" id="on-the-godrinkware" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-11" class="Products__facet-checkbox">
+                        <input type="checkbox" name="filter.p.product_type" class="Products__filterproducttype" data-custom-value="On-The-Go+Drinkware" id="Filter-filter.p.product_type-11">
+                        <span aria-hidden="true">On-The-Go Drinkware (6)</span>
+                        <span class="visually-hidden">On-The-Go Drinkware (6 products)</span>
+                    </label>
+                </li>
+                <li class="Products__list-menu-item-facets-item" id="StorageBrewing" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-12" class="Products__facet-checkbox">
+                        <input type="checkbox" name="filter.p.product_type" class="Products__filterproducttype" data-custom-value="Storage+Brewing" id="Filter-filter.p.product_type-12">
+                        <span aria-hidden="true">Storage &amp; Brewing (5)</span>
+                        <span class="visually-hidden">Storage &amp; Brewing (5 products)</span>
+                    </label>
+                </li>
+            </ul>
+        </form>
+    </fieldset>
+    <div class="Products__facet-filters-field">
+                    <h2 class="facet-filters__label caption-large text-body twcss-font-fenomenBold twcss-uppercase">
+                        <label class="Products__facet-filters-label-caption-large-text-body-twcss-font-fenomenBold-twcss-uppercase-label" for="SortBy">Sort by:</label>
+                    </h2>
+                    <form action="trang_xu_ly.aspx" method="get" id="myForm">
+                    <div class="select">
+                        <select name="sort_by" class="Products__facet-filters-sort-select-select-caption-large-twcss-text-body-16-twcss-font-fenomen" id="Products__SortBy" aria-describedby="a11y-refresh-page-message" fdprocessedid="wv39w">
+                            <option value="manual" selected="selected">Featured</option>
+                            <option value="best-selling">Best selling</option>
+                            <option value="title-ascending">Alphabetically, A-Z</option>
+                            <option value="title-descending">Alphabetically, Z-A</option>
+                            <option value="price-ascending">Price, low to high</option>
+                            <option value="price-descending">Price, high to low</option>
+                            <option value="created-ascending">Date, old to new</option>
+                            <option value="created-descending">Date, new to old</option>
+                        </select>
+                    </div>
+                    </form>
+                </div>
+                <div class="mobile-facets__footer">
+                <button class="Products__no-js-hidden-button-primary">
+                  Apply
+                </button>
+              </div>
+</div>
 </div>
 <script>
-    function toggleModal() {
-        const modal = document.getElementById("Facet-1-template--14567496974391__product-grid");
-        modal.classList.toggle("Products__Facet-1-template--14567496974391-product-grid-show");
-    }
-
+    const baseUrl = "/collections/merch";
     // Thêm sự kiện click cho toàn bộ tài liệu (document)
-    document.addEventListener("click", function (event) {
-        const modal = document.getElementById("Facet-1-template--14567496974391__product-grid");
+document.addEventListener("click", function (event) {
+   const modal = document.getElementById("Facet-1-template--14567496974391__product-grid");
 
-        // Kiểm tra xem sự kiện click có xảy ra bên ngoài modal và không phải là nút mở modal không
-        if (!modal.contains(event.target) && !event.target.classList.contains("Products__ads-button") && !event.target.classList.contains("Products__twcss-text-body-16-twcss-font-fenomen")) {
-            // Nếu click bên ngoài modal và không phải là nút mở modal, đóng modal
-            modal.classList.remove("Products__Facet-1-template--14567496974391-product-grid-show");
-        }
-    });
+   // Kiểm tra xem sự kiện click có xảy ra bên ngoài modal và không phải là nút mở modal không
+   if (
+      !modal.contains(event.target) &&
+      !event.target.classList.contains("Products__ads-button") &&
+      !event.target.classList.contains("Products__twcss-text-body-16-twcss-font-fenomen")
+   ) {
+      // Nếu click bên ngoài modal và không phải là nút mở modal, đóng modal
+      modal.classList.remove("Products__Facet-1-template--14567496974391-product-grid-show");
+   }
+});
 
-    // Sự kiện click trên chữ "Type" cũng gọi hàm toggleModal
-    document.querySelector(".Products__ads-button").addEventListener("click", toggleModal);
-    document.querySelector(".Products__twcss-text-body-16-twcss-font-fenomen").addEventListener("click", toggleModal);
-    // Lấy thẻ chứa chữ "Type" và biểu tượng SVG
-    const typeButton = document.querySelector(".Products__ads-button");
-    // Thêm sự kiện click cho biểu tượng SVG
-    const typeIcon = typeButton.querySelector("svg.Products__icon-icon-caret");
-    typeIcon.addEventListener("click", function (event) {
-        event.stopPropagation(); // Ngăn sự kiện click từ việc lan truyền lên thẻ chứa "Type"
-        toggleModal(); // Gọi hàm toggleModal để mở hoặc đóng modal
-    });
-
-    let originalProductCount = 45; // Số lượng sản phẩm ban đầu
-    let selectedProductCount = 0; // Số lượng sản phẩm đã chọn
-    let productCountSpan = document.getElementById("ProductCountDesktop");
-
-    function toggleCheckmark(element) {
-        const checkbox = element.querySelector('input[type="checkbox"]');
-        const checkmark = element.querySelector(".Products__icon-icon-checkmark");
-        const labelText = element.querySelector(".visually-hidden").textContent;
-        const numberMatch = labelText.match(/\d+/);
-
-        if (checkbox.checked) {
-            checkbox.checked = false; // Bỏ chọn checkbox
-            checkmark.style.display = "none"; // Ẩn dấu tích
-            selectedProductCount -= parseInt(numberMatch[0]);
-        } else {
-            checkbox.checked = true; // Chọn checkbox
-            checkmark.style.display = "inline-block"; // Hiển thị dấu tích
-            selectedProductCount += parseInt(numberMatch[0]);
-        }
-
-        updateProductCount();
-    }
-
-    // Hàm cập nhật số lượng sản phẩm đã chọn
-    function updateProductCount() {
-        if (selectedProductCount === 0) {
-            productCountSpan.textContent = `${originalProductCount} products`;
-        } else {
-            productCountSpan.textContent = `${selectedProductCount / 2} of ${originalProductCount} products`;
-        }
-    }
-
-    // Gọi hàm cập nhật số lượng sản phẩm ban đầu
-    updateProductCount();
+      function toggleModal() {
+         const modal = document.getElementById("Facet-1-template--14567496974391__product-grid");
+         modal.classList.toggle("Products__Facet-1-template--14567496974391-product-grid-show");
+      }
 
 
-const baseUrl = "/collections/merch";
+      function toggleCheckmark(element) {
+         const checkbox = element.querySelector('input[type="checkbox"]');
+         const labelText = element.querySelector(".visually-hidden").textContent;
+      }
+
 
 function changePage(page) {
-    const params = new URLSearchParams(location.search);
-    params.set("page", page);
-    const finalUrl = `${baseUrl}?${params.toString()}`;
-    window.location.href = finalUrl; // Tải lại trang với URL mới
-    history.pushState(null, "", finalUrl);
+   const params = new URLSearchParams(location.search);
+   params.set("page", page);
+   const finalUrl = `${baseUrl}?${params.toString()}`;
+   window.location.href = finalUrl; // Tải lại trang với URL mới
+   history.pushState(null, "", finalUrl);
 }
 
 function getCurrentPage() {
-    const params = new URLSearchParams(location.search);
-    return parseInt(params.get("page")) || 1;
+   const params = new URLSearchParams(location.search);
+   return parseInt(params.get("page")) || 1;
+}
+// Hàm xử lý khi người dùng nhấp vào nút "Prev"
+function prevPage() {
+    const currentPage = getCurrentPage();
+    if (currentPage > 1) {
+        changePage(currentPage - 1);
+    }
+}
+
+// Hàm xử lý khi người dùng nhấp vào nút "Next"
+function nextPage() {
+    const currentPage = getCurrentPage();
+    if (currentPage < 3) { // Có thể thay đổi giới hạn tối đa của trang tại đây
+        changePage(currentPage + 1);
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const currentPage = getCurrentPage();
-    if (currentPage > 1) {
-        // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
-        document.querySelector(".prev-page-button").addEventListener("click", () => {
-            changePage(currentPage - 1);
-        });
-    }
-    if (currentPage <3)
-    {
-    // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
-    document.querySelector(".next-page-button").addEventListener("click", () => {
-        changePage(currentPage + 1);
-    });
-    }
+   const currentPage = getCurrentPage();
+   if (currentPage > 1) {
+      // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
+      document.querySelector(".prev-page-button").addEventListener("click", () => {
+         changePage(currentPage - 1);
+      });
+   }
+   if (currentPage < 3) {
+      // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
+      document.querySelector(".next-page-button").addEventListener("click", () => {
+         changePage(currentPage + 1);
+      });
+   }
 });
-
-
 </script>

@@ -22,7 +22,27 @@ namespace DeathWishCoffee.Controllers
         // [/admin/products/{id}]
         public IActionResult Index(Guid id)
         {
-            return View();
+            // get product from databasee
+            var product = _deathWishCoffeeDbContext.Products
+                            .Include(p => p.Sizes)
+                            .Include(p => p.InsideTypes)
+                            .Include(p => p.FlavorProfiles)
+                            .Include(p => p.Attributes)
+                            .Include(p => p.Details)
+                            .Include(p => p.Images)
+                            .Include(p => p.Types)
+                            .Include(p => p.Formats)
+                            .Include(p => p.Roasts)
+                            .Include(p => p.Flavors)
+                            .Include(p => p.Symbols)
+                            .Include(p => p.Reviews)
+                            .FirstOrDefault(p => p.Id == id);
+
+            // if product does NOT EXISTS => BadRequest
+            // if (product == null)
+            //     return BadRequest("Product does not exist");
+
+            return View(product);
         }
 
         // [/admin/products]
@@ -30,6 +50,20 @@ namespace DeathWishCoffee.Controllers
         public IActionResult AllProducts()
         {
             Console.WriteLine("AllProducts");
+
+            // --Authentication
+            string curUserId = _httpContext.HttpContext.Session.GetString("Id");
+            if (string.IsNullOrEmpty(curUserId))
+                return RedirectToAction("Index", "Home");
+
+            var curUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id.ToString() == curUserId);
+            if (curUser == null)
+                return BadRequest("User does not exists");
+
+            if (!curUser.Admin)
+                return RedirectToAction("Index", "Home");
+            // Authentication--
+
             var products = _deathWishCoffeeDbContext.Products
                         .Include(p => p.Sizes)
                         .Include(p => p.InsideTypes)
