@@ -1,0 +1,56 @@
+@model DeathWishCoffee.Models.Domain.Order
+@{
+   ViewData["Title"] = "Order Detail Page";
+}
+
+<div class="bg-light p-4">
+   <a href="/admin" class="btn btn-secondary mb-3">
+      Back
+   </a>
+
+   <h1 class="text-center">Order Detail</h1>
+
+   <div>
+      <h6 class="mb-3"><strong>Order ID:</strong> @Model.Id</h6>
+      <h6 class="mb-3"><strong>Created At:</strong> @Model.CreatedAt</h6>
+      <h6 class="mb-3"><strong>Total Amount:</strong> @Model.TotalAmount.ToString("C2")</h6>
+      <h6 class="mb-3"><strong>Status:</strong> <span class="text-success">@Model.Status</span></h6>
+      <h6 class="mb-3"><strong>Country:</strong> @Model.Country</h6>
+      <h6 class="mb-3"><strong>Fullname:</strong> @Model.Firstname @Model.Lastname</h6>
+      <h6 class="mb-3"><strong>Address:</strong> @Model.Address</h6>
+      <h6 class="mb-3"><strong>City:</strong> @Model.City</h6>
+      <h6 class="mb-3"><strong>Email:</strong> @Model.Email</h6>
+      <h6 class="mb-3"><strong>Phone:</strong> @Model.Phone</h6>
+   </div>
+
+   @if (Model.OrderDetails != null && Model.OrderDetails.Count > 0)
+   {
+      <table class="w-100">
+         <tr>
+            <th>Image</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+            <th>Size</th>
+            <th>InsideType</th>
+         </tr>
+         @foreach (var orderDetail in Model.OrderDetails)
+         {
+            <tr>
+               <td style="width: 25%">
+                  @foreach (var img in orderDetail.Product.Images)
+                  {
+                     <img width='80' height="80" src="~/uploads/@img.Src" alt="images">
+                  }
+               </td>
+               <td>@orderDetail.Quantity</td>
+               <td>@orderDetail.Price.ToString("C2")</td>
+               <td>@orderDetail.Quantity * @orderDetail.Price.ToString("C2")</td>
+               <td>@orderDetail.Size</td>
+               <td>@orderDetail.InsideType</td>
+            </tr>
+         }
+      </table>
+
+   }
+</div>

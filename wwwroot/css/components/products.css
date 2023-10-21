@@ -1,4 +1,4 @@
-* {
+.Products_Main * {
    font-size: 16px;
 }
 .Products__section-template-14567496974391-product-grid-padding {
@@ -126,7 +126,7 @@
    font-weight: 800;
    font-size: 14px;
    position: relative;
-   bottom: 26px;
+   bottom: 16px;
 }
 .Products__facet-filters-sort-select-select-caption-large-twcss-text-body-16-twcss-font-fenomen {
    background-color: #000;
@@ -150,9 +150,10 @@
    top: 0;
 }
 .Products__twcss-font-fenomen-twcss-capitalize {
-   bottom: 12px;
+   bottom: 5px;
    position: relative;
    color: #fff;
+   font-size: 16px;
 }
 .Products__collection-page-width {
    padding: 0px 50px;
@@ -310,6 +311,13 @@
    .Products__facets-container-scroll-trigger-animate-fade-in.Products__facets-container-level {
       display: block;
    }
+   .Products__facet-filters-field {
+      padding-left: 24px;
+   }
+   .Products__twcss-font-fenomen-twcss-capitalize {
+      position: relative;
+      bottom: 0;
+   }
 }
 .Products__active-facets-button-remove-twcss-underline-twcss-text-body-12-twcss-font-fenomen:hover {
    color: #e12727;
@@ -340,14 +348,15 @@
 .Products__no-js-hidden-button-primary {
    text-transform: uppercase;
    font-weight: 550;
-   position: relative;
+   position: absolute;
    width: 90%;
-   height: 30%;
    left: 5%;
+   bottom: 10px;
    padding: 10px 0 10px;
    background-color: red;
    border: solid red;
-   margin-top: 65%;
+   margin-top: 60%;
+   color: #fff;
 }
 .Products__no-js-hidden-button-primary:hover {
    background-color: #000;
