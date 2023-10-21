@@ -29,10 +29,9 @@ $(document).ready(function () {
       }
    );
 });
-
 document.addEventListener("DOMContentLoaded", function () {
    const baseUrl = "/collections/merch";
-   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+   const checkboxes = document.querySelectorAll(".Products__filterppproducttype");
    const productItems = document.querySelectorAll(".list-menu__item.facets__item");
 
    window.onload = function () {
@@ -41,7 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
       // Lấy các giá trị trong tham số "filter" từ URL
       const filterValues = urlParams.getAll("filter");
       filterValues.forEach(value => {
-         const checkbox = document.querySelector(`input[type="checkbox"][value="${value}"]`);
+         const checkbox = document.querySelector(
+            `.Products__filterppproducttype[value="${value}"]`
+         );
          if (checkbox) {
             checkbox.checked = true;
          }
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Kích hoạt các mục li tương ứng
       productItems.forEach(item => {
-         const itemId = item.getAttribute("data-item-id");
+         const itemId = item.id; // Sử dụng id thay vì data-item-id
          if (filterValues.includes(itemId)) {
             item.classList.add("active");
          }
@@ -64,7 +65,14 @@ document.addEventListener("DOMContentLoaded", function () {
       // Kích hoạt hoặc hủy kích hoạt các mục li khi người dùng nhấn vào chúng
       productItems.forEach(item => {
          item.addEventListener("click", () => {
-            item.classList.toggle("active");
+            const itemId = item.id;
+            const checkbox = document.querySelector(
+               `.Products__filterppproducttype[value="${itemId}"]`
+            );
+
+            if (checkbox) {
+               checkbox.checked = !checkbox.checked;
+            }
          });
       });
    };
@@ -81,19 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
          }
       });
 
-      const selectedItems = Array.from(productItems)
-         .filter(item => item.classList.contains("active"))
-         .map(item => item.getAttribute("data-item-id"));
-
       let finalUrl = baseUrl;
       if (selectedTypes.length > 0) {
          finalUrl += "?filter=" + selectedTypes.join("&filter=");
-      }
-      if (selectedItems.length > 0) {
-         if (selectedTypes.length > 0) {
-            finalUrl += "&";
-         }
-         finalUrl += selectedItems.map(itemId => `item=${itemId}`).join("&");
       }
 
       if (finalUrl === baseUrl) {
@@ -105,6 +103,69 @@ document.addEventListener("DOMContentLoaded", function () {
       // Tải lại trang với URL mới
       window.location.href = finalUrl;
    }
+});
+document.addEventListener("DOMContentLoaded", function () {
+   const baseUrl = "/collections/merch";
+   const checkboxes = document.querySelectorAll(".Products__filterproducttype");
+   const productItems = document.querySelectorAll(".Products__list-menu-item-facets-item");
+
+   // Sử dụng Set để lưu trữ các giá trị đã chọn
+   const selectedValues = new Set();
+
+   function updateURL() {
+      selectedValues.clear(); // Xóa các giá trị đã chọn trước đó
+
+      checkboxes.forEach(checkbox => {
+         if (checkbox.checked) {
+            selectedValues.add(checkbox.getAttribute("data-custom-value"));
+         }
+      });
+
+      let finalUrl = baseUrl;
+
+      if (selectedValues.size > 0) {
+         finalUrl += "?filter=" + Array.from(selectedValues).join("&filter=");
+      }
+
+      // Lấy giá trị tham số "sort_by" từ URL và cập nhật dropdown
+      const urlParams = new URLSearchParams(window.location.search);
+      const sortValue = urlParams.get("sort_by");
+
+      if (sortValue) {
+         finalUrl += "&sort_by=" + sortValue;
+      } else {
+         // Nếu không có tham số "sort_by", thêm nó vào URL với giá trị mặc định "manual"
+         finalUrl += "&sort_by=manual";
+      }
+      if (selectedValues.size === 0) {
+         // Nếu không có checkbox nào được chọn, trở về trang gốc
+         finalUrl = baseUrl;
+      }
+      window.location.href = finalUrl;
+   }
+
+   checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", updateURL);
+   });
+
+   // Lấy trạng thái lưu trữ trong localStorage
+   const storedState = localStorage.getItem("checkboxState");
+   if (storedState) {
+      const storedValues = storedState.split(",");
+      checkboxes.forEach(checkbox => {
+         if (storedValues.includes(checkbox.getAttribute("data-custom-value"))) {
+            checkbox.checked = true;
+         }
+      });
+   }
+
+   // Lưu trạng thái khi checkbox thay đổi
+   checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", () => {
+         const checkedValues = Array.from(selectedValues);
+         localStorage.setItem("checkboxState", checkedValues);
+      });
+   });
 });
 
 // Lấy tham chiếu đến select box
@@ -126,6 +187,36 @@ sortSelect.addEventListener("change", function () {
    // Điều hướng trình duyệt đến URL mới
    window.location.href = url.href;
 });
+
+// Lấy tham chiếu đến select box
+var productssortSelect = document.getElementById("Products__SortBy");
+
+// Lắng nghe sự kiện khi giá trị trong select box thay đổi
+productssortSelect.addEventListener("change", function () {
+   var productselectedValue = productssortSelect.value;
+
+   // Lấy URL hiện tại
+   var productscurrentUrl = window.location.href;
+
+   // Tạo một URL mới dựa trên URL hiện tại
+   var productsurl = new URL(productscurrentUrl);
+
+   // Thiết lập hoặc thay thế tham số "sort_by" trong URL
+   productsurl.searchParams.set("sort_by", productselectedValue);
+
+   // Điều hướng trình duyệt đến URL mới
+   window.location.href = productsurl.href;
+});
+
+// Kiểm tra nếu có tham số "sort_by" trong URL
+var currentParams = new URLSearchParams(window.location.search);
+if (currentParams.has("sort_by")) {
+   // Lấy giá trị "sort_by" từ URL
+   var selectedSortBy = currentParams.get("sort_by");
+
+   // Đặt giá trị của select box bằng giá trị từ URL
+   productssortSelect.value = selectedSortBy;
+}
 
 // Sự kiện click trên chữ "Type" cũng gọi hàm toggleModal
 document.querySelector(".Products__ads-button").addEventListener("click", toggleModal);
@@ -189,3 +280,29 @@ function restoreSelectedCheckboxes() {
 
 // Lắng nghe sự kiện tải lại trang
 window.addEventListener("load", restoreSelectedCheckboxes);
+// Lấy thẻ SVG bằng cách sử dụng class "Products__icon-icon-close"
+const svgElement = document.querySelector(".Products__icon-icon-close");
+
+// Lấy thẻ div bằng cách sử dụng id "Products__Facet-1-template-14567496974391-grid"
+const divElement = document.querySelector("#Products__Facet-1-template-14567496974391-grid");
+const divElementon = document.querySelector("#Products__hiddenbox-facet-template");
+// Thêm sự kiện click vào thẻ SVG
+svgElement.addEventListener("click", function () {
+   // Khi SVG được nhấn, đặt thuộc tính display của thẻ div thành "none"
+   divElement.style.display = "none";
+   divElementon.style.display = "none";
+});
+const spanElement = document.querySelector(
+   ".Products__twcss-text-body-16-twcss-font-fenomen-hidden-facet-template"
+);
+const svgElementon = document.querySelector(".Products__icon-icon-filter");
+spanElement.addEventListener("click", function () {
+   // Khi span được nhấn, đặt thuộc tính display của cả hai thẻ div thành "block" để hiển thị chúng
+   divElement.style.display = "block";
+   divElementon.style.display = "block";
+});
+svgElementon.addEventListener("click", function () {
+   // Khi span được nhấn, đặt thuộc tính display của cả hai thẻ div thành "block" để hiển thị chúng
+   divElement.style.display = "block";
+   divElementon.style.display = "block";
+});
