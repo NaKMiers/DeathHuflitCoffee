@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DeathWishCoffeeDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("azureDB"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("localDB"));
     options.EnableSensitiveDataLogging(false);
 }
 );
@@ -300,11 +300,11 @@ app.MapControllerRoute(
 );
 
 // [/]
-// app.MapControllerRoute(
-//     name: "PageNotFound",
-//     pattern: "/{*url}",
-//     defaults: new { controller = "Home", action = "PageNotFound" }
-// );
+app.MapControllerRoute(
+    name: "PageNotFound",
+    pattern: "{*url}",
+    defaults: new { controller = "Home", action = "PageNotFound" }
+);
 
 // RUN
 app.Run();

@@ -168,7 +168,7 @@ namespace DeathWishCoffee.Controllers
 
             var newUser = new User
             {
-                Fullname = form.FirstName.Trim() + form.MiddleName.Trim() + form.LastName.Trim(),
+                Fullname = form.FirstName.Trim() + " " + form.MiddleName.Trim() + " " + form.LastName.Trim(),
                 FirstName = form.FirstName.Trim(),
                 MiddleName = form.MiddleName.Trim(),
                 LastName = form.LastName.Trim(),
