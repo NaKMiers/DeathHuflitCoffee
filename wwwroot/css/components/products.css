@@ -371,3 +371,6 @@
       pointer-events: none;
    }
 }
+.Products__filterproducttype {
+   width: 16px;
+}
