@@ -85,6 +85,7 @@ namespace DeathWishCoffee.Controllers
             ViewBag.UserId = userId;
             ViewBag.Cart = cart;
 
+            // return RedirectToAction("Index", "Home");
             return View("~/Views/Admin/AddToCart.cshtml");
         }
         [HttpPost]
@@ -149,9 +150,7 @@ namespace DeathWishCoffee.Controllers
 
             // return bad request if user does NOT EXISTS
             if (user == null)
-            {
                 return BadRequest("Invalid username or password.");
-            }
 
             return RedirectToAction("AddToCart", "Cart");
         }
@@ -178,8 +177,10 @@ namespace DeathWishCoffee.Controllers
             var user = _deathWishCoffeeDbContext.Users
                         .Include(u => u.Cart)
                         .ThenInclude(cartItem => cartItem.Product)
+                        .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id.ToString() == userId);
 
+            // set CART data for all pages again
             SetUpCartDataForAllPage(user.Cart);
 
             // redirect to HomePage
