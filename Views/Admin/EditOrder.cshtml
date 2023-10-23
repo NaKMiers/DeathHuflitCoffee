@@ -1,6 +1,103 @@
-﻿@{
-    ViewData["Title"] = "Edit Order Page";
+﻿@model DeathWishCoffee.Models.ViewModels.EditOrderRequest
+@{
+    ViewData["Title"] = "Edit Page";
+    var order = ViewBag.Order;
 }
 
+<div class="bg-light pt-5">
+    <a href="/admin" class="btn btn-secondary mb-3">
+        Back
+    </a>
 
-<h1>Edit Order Page</h1>
+    <h1 class="text-center">Edit Order</h1>
+
+    <form action="/admin/orders/edit/@order.Id" method="post" class="bg-light pt-5 pb-5 ps-5 pe-5">
+        <h6 class="mb-3"><strong>Order ID:</strong> @order.Id</h6>
+        <h6 class="mb-3"><strong>User ID:</strong> @order.UserId</h6>
+        <h6 class="mb-3"><strong>Created At:</strong> @order.CreatedAt</h6>
+        <h6 class="mb-3"><strong>Last Modified At:</strong> @order.LastModifiedAt</h6>
+
+        @* Status *@
+        <div class="mb-3">
+            <label for="status" class="form-label">*Status:</label>
+            <select asp-for="Status" name="status" id="status" class="form-control" required>
+                <option value="">Select</option>
+                <option value="Active">Active</option>
+                <option value="Pending">Pending</option>
+                <option value="Cancel">Cancel</option>
+            </select>
+        </div>
+
+        @* Email *@
+        <div class="mb-3">
+            <label for="email" class="form-label">*Email:</label>
+            <input value="@order.Email" asp-for="Email" name="email" type="email" class="form-control" id="email"
+                placeholder="Email..." required>
+        </div>
+
+        @* Country *@
+        <div class="mb-3">
+            <label for="country" class="form-label">Country:</label>
+            <input value="@order.Country" asp-for="Country" name="country" type="text" class="form-control" id="country"
+                placeholder="Country..." required>
+        </div>
+
+        @* Firstname *@
+        <div class="mb-3">
+            <label for="firstName" class="form-label">*Firstname:</label>
+            <input value="@order.Firstname" asp-for="Firstname" name="firstName" type="text" class="form-control"
+                id="firstName" placeholder="Firstname..." required>
+        </div>
+
+        @* Lastname *@
+        <div class="mb-3">
+            <label for="lastName" class="form-label">*Lastname:</label>
+            <input value="@order.Lastname" asp-for="Lastname" name="lastName" type="text" class="form-control"
+                id="lastName" placeholder="Lastname..." required>
+        </div>
+
+        @* Company *@
+        <div class="mb-3">
+            <label for="company" class="form-label">*Company:</label>
+            <input value="@order.Company" asp-for="Company" name="company" type="text" class="form-control" id="company"
+                placeholder="Company..." required>
+        </div>
+
+        @* Address *@
+        <div class="mb-3">
+            <label for="address" class="form-label">*Address:</label>
+            <input value="@order.Address" asp-for="Address" name="address" type="text" class="form-control" id="address"
+                placeholder="Address..." required>
+        </div>
+
+        @* Apartment *@
+        <div class="mb-3">
+            <label for="apartment" class="form-label">Apartment:</label>
+            <input value="@order.Apartment" asp-for="Apartment" name="apartment" type="text" class="form-control"
+                id="apartment" placeholder="Apartment..." required>
+        </div>
+
+        @* City *@
+        <div class="mb-3">
+            <label for="city" class="form-label">*City:</label>
+            <input value="@order.City" asp-for="City" name="city" type="text" class="form-control" id="city"
+                placeholder="City..." required>
+        </div>
+
+        @* PostalCode *@
+        <div class="mb-3">
+            <label for="postalCode" class="form-label">*PostalCode:</label>
+            <input value="@order.PostalCode" asp-for="PostalCode" name="postalCode" type="text" class="form-control"
+                id="postalCode" placeholder="PostalCode..." required>
+        </div>
+
+        @* Phone *@
+        <div class="mb-3">
+            <label for="phone" class="form-label">*Phone:</label>
+            <input value="@order.Phone" asp-for="Phone" name="phone" type="text" class="form-control" id="phone"
+                placeholder="Phone..." required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

@@ -18,7 +18,6 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult PageNotFound()
         {
-            Console.WriteLine("PageNotFound");
             return View();
         }
 

@@ -45,11 +45,23 @@ namespace DeathWishCoffee.Controllers
             _httpContext.HttpContext.Session.SetString("recommendProducts", rcmPrsJson);
         }
 
-
         // [/admin/users]
         [HttpGet]
         public IActionResult Index()
         {
+            // --Authentication
+            string curUserId = _httpContext.HttpContext.Session.GetString("Id");
+            if (string.IsNullOrEmpty(curUserId))
+                return RedirectToAction("Index", "Home");
+
+            var curUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id.ToString() == curUserId);
+            if (curUser == null)
+                return BadRequest("User does not exists");
+
+            if (!curUser.Admin)
+                return RedirectToAction("Index", "Home");
+            // Authentication--
+
             var users = _deathWishCoffeeDbContext.Users.ToList();
 
             return View("~/Views/Admin/AllUsers.cshtml", users);
@@ -84,9 +96,7 @@ namespace DeathWishCoffee.Controllers
 
             // if user does NOT EXISTS return bad request 
             if (user == null)
-            {
                 return BadRequest("Invalid username or password.");
-            }
 
             ViewBag.user = user;
             return View("~/Views/Admin/EditUser.cshtml");

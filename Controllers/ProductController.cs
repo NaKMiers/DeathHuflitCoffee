@@ -50,6 +50,20 @@ namespace DeathWishCoffee.Controllers
         public IActionResult AllProducts()
         {
             Console.WriteLine("AllProducts");
+
+            // --Authentication
+            string curUserId = _httpContext.HttpContext.Session.GetString("Id");
+            if (string.IsNullOrEmpty(curUserId))
+                return RedirectToAction("Index", "Home");
+
+            var curUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id.ToString() == curUserId);
+            if (curUser == null)
+                return BadRequest("User does not exists");
+
+            if (!curUser.Admin)
+                return RedirectToAction("Index", "Home");
+            // Authentication--
+
             var products = _deathWishCoffeeDbContext.Products
                         .Include(p => p.Sizes)
                         .Include(p => p.InsideTypes)

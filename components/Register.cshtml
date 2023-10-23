@@ -1,30 +1,31 @@
 @model DeathWishCoffee.Models.ViewModels.RegisterRequest
 
 <div class="Kaccount_Main">
-   <h1 style="width: 448px; height: 52px; color:white; margin-bottom: 35px; margin-top: 0;">
-      <strong>Create account</strong>
+   <h1 class="Kaccount_Main_header_h1">
+      <strong class="Kaccount_Main_header_h1__strong">Create account</strong>
    </h1>
 
    <form action="/account/register" method="post" class="Kaccount_Main_form_bentrong">
       <div class="form-floating mb-3">
          <input asp-for="FirstName" name="firstName" type="name" class="form-control" placeholder="First Name" required
-            minlength="3" maxlength="100">
+            minlength="2" maxlength="100">
          <label for="floatingInput" class="text-start">First Name</label>
       </div>
       <div class="form-floating mb-3">
          <input asp-for="LastName" name="lastName" type="name" class="form-control" placeholder="Last Name" required
-            minlength="3" maxlength="100">
+            minlength="1" maxlength="100">
          <label for="floatingInput" class="text-start">Last Name</label>
       </div>
 
-      <div class="form-floating mb-3" style="width: 500px;">
-         <input asp-for="Email" name="email" type="email" class="form-control" placeholder="name@example.com" required>
+      <div class="form-floating mb-3" style="width: 100%;">
+         <input asp-for="Email" name="email" type="email" class="form-control" id="form-control-K"
+            placeholder="name@example.com" required style="width: 100%;">
          <label for="floatingInput" class="text-start">Email address</label>
       </div>
 
-      <div class="form-floating mb-3" style=" width:500px;">
-         <input asp-for="Password" name="password" type="password" class="form-control" placeholder="password" required
-            minlength="6" maxlength="100">
+      <div class="form-floating mb-3" style=" width:100%;">
+         <input asp-for="Password" name="password" type="password" class="form-control" id="form-control-K"
+            placeholder="password" required minlength="6" maxlength="100" style="width: 100%;">
          <label for="floatingPassword" class="text-start">Password</label>
       </div>
       <br>

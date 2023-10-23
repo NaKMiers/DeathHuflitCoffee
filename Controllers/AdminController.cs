@@ -21,6 +21,7 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            // --Authentication
             string curUserId = _httpContext.HttpContext.Session.GetString("Id");
             if (string.IsNullOrEmpty(curUserId))
                 return RedirectToAction("Index", "Home");
@@ -29,10 +30,12 @@ namespace DeathWishCoffee.Controllers
             if (curUser == null)
                 return BadRequest("User does not exists");
 
-            if (curUser.Admin)
-                return View();
-            else
+            if (!curUser.Admin)
                 return RedirectToAction("Index", "Home");
+            // Authentication--
+
+
+            return View();
         }
 
         // ERRORS

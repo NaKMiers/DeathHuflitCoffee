@@ -146,20 +146,6 @@ app.MapControllerRoute(
     defaults: new { controller = "Admin", action = "Index" }
 );
 
-// [/admin/login]
-app.MapControllerRoute(
-    name: "Login",
-    pattern: "admin/login",
-    defaults: new { controller = "Admin", action = "Login" }
-);
-
-// [/admin/register]
-app.MapControllerRoute(
-    name: "Register",
-    pattern: "admin/register",
-    defaults: new { controller = "Admin", action = "Register" }
-);
-
 // [/admin/users]
 app.MapControllerRoute(
     name: "AllUser",
@@ -177,7 +163,7 @@ app.MapControllerRoute(
 // [/admin/users/edit/{id}]
 app.MapControllerRoute(
     name: "EditUser",
-    pattern: "admin/users/edit/{id}",
+pattern: "admin/users/edit/{id}",
     defaults: new { controller = "User", action = "EditUser" }
 );
 
@@ -272,6 +258,41 @@ app.MapControllerRoute(
     defaults: new { controller = "Cart", action = "DecreaseCartItemQuantity" }
 );
 
+// [/admin/orders]
+app.MapControllerRoute(
+    name: "AllOrders",
+    pattern: "/admin/orders",
+    defaults: new { controller = "Order", action = "AllOrders" }
+);
+
+// [/admin/orders/{userId}]
+app.MapControllerRoute(
+    name: "AllOrdersByUser",
+    pattern: "/admin/orders/{userId}",
+    defaults: new { controller = "Order", action = "AllOrdersByUser" }
+);
+
+// [/admin/orders/detail/{id}]
+app.MapControllerRoute(
+    name: "AllOrdersByUser",
+    pattern: "/admin/orders/detail/{id}",
+    defaults: new { controller = "Order", action = "OrderDetail" }
+);
+
+// [/admin/orders/delete/{id}]
+app.MapControllerRoute(
+    name: "DeleteOrder",
+    pattern: "/admin/orders/delete/{id}",
+    defaults: new { controller = "Order", action = "DeleteOrder" }
+);
+
+// [/admin/orders/edit/{id}]
+app.MapControllerRoute(
+    name: "EditOrder",
+    pattern: "/admin/orders/edit/{id}",
+    defaults: new { controller = "Order", action = "EditOrder" }
+);
+
 // [/]
 app.MapControllerRoute(
     name: "default",
@@ -279,11 +300,11 @@ app.MapControllerRoute(
 );
 
 // [/]
-// app.MapControllerRoute(
-//     name: "PageNotFound",
-//     pattern: "/{*url}",
-//     defaults: new { controller = "Home", action = "PageNotFound" }
-// );
+app.MapControllerRoute(
+    name: "PageNotFound",
+    pattern: "{*url}",
+    defaults: new { controller = "Home", action = "PageNotFound" }
+);
 
 // RUN
 app.Run();
