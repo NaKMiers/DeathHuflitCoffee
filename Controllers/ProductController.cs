@@ -326,32 +326,49 @@ namespace DeathWishCoffee.Controllers
                 }
             }
 
-            if (imageList != null && imageList.Count > 0)
+            if (form.Images != null && form.Images.Count > 0)
             {
-                foreach (var imageFile in imageList)
+                foreach (var item in form.Images)
                 {
-                    if (imageFile.Length > 0)
+                    if (string.IsNullOrEmpty(item.Src))
+                        item.Src = "";
+
+                    var ImagesToAdd = new DeathWishCoffee.Models.Domain.Image
                     {
+                        ProductId = productId,
+                        Src = item.Src.Trim(),
+                    };
 
-                        // get path to save in server
-                        var imagePath = Path.Combine("wwwroot", "uploads");
-                        var imageName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName);
-                        var fullPath = Path.Combine(Directory.GetCurrentDirectory(), imagePath, imageName);
-
-                        // save file to server (/wwwroot/uploads)
-                        using (var stream = new FileStream(fullPath, FileMode.Create))
-                            imageFile.CopyTo(stream);
-
-                        var imageToAdd = new DeathWishCoffee.Models.Domain.Image
-                        {
-                            ProductId = productId,
-                            Src = Path.Combine(imageName)
-                        };
-
-                        _deathWishCoffeeDbContext.Images.Add(imageToAdd);
-                    }
+                    _deathWishCoffeeDbContext.Images.Add(ImagesToAdd);
                 }
             }
+
+            // if (imageList != null && imageList.Count > 0)
+            // {
+            //     foreach (var imageFile in imageList)
+            //     {
+            //         if (imageFile.Length > 0)
+            //         {
+
+            //             // get path to save in server
+            //             var imagePath = Path.Combine("wwwroot", "uploads");
+            //             var imageName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName);
+            //             var fullPath = Path.Combine(Directory.GetCurrentDirectory(), imagePath, imageName);
+
+            //             // save file to server (/wwwroot/uploads)
+            //             using (var stream = new FileStream(fullPath, FileMode.Create))
+            //                 imageFile.CopyTo(stream);
+
+            //             var imageToAdd = new DeathWishCoffee.Models.Domain.Image
+            //             {
+            //                 ProductId = productId,
+            //                 Src = Path.Combine(imageName)
+            //             };
+
+            //             _deathWishCoffeeDbContext.Images.Add(imageToAdd);
+            //         }
+            //     }
+            // }
 
             _deathWishCoffeeDbContext.SaveChanges();
 
