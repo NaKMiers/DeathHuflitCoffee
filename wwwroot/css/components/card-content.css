@@ -1,0 +1,108 @@
+.content-list1{
+    color:#ffffff;
+    
+}
+.CardContent1{
+    background-color: #000000;
+    margin-left: 25px;/* Lề bên trái */
+    margin-right: 25px;/* Lề bên phải */
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.Cardcontent-container1 .content-list1 .content-tex1 .content-box1 .content-image1 img {
+    width: 70px;
+    height: 70px;
+}
+.Cardcontent-container1 .content-list1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    /* Để đảm bảo thẻ ul chiếm toàn bộ chiều rộng */
+    justify-content: space-between;
+    /* Để các thẻ li nằm cách nhau một khoảng */
+}
+
+
+
+.Cardcontent-container1 .content-list1 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Để các thẻ li nằm ngang thẳng hàng */
+  gap: 5px; /* Khoảng cách 5px giữa các thẻ li */
+}
+
+.Cardcontent-container1 .content-list1 .content-tex1 {
+  flex: 1; /* Kích thước giống nhau cho các thẻ li */
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+}
+
+.Cardcontent-container1 .content-list1 .content-tex1 .content-box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  text-align: center;
+}
+
+@media (max-width: 989px) {
+    .Cardcontent-container1 .content-list1 {
+        flex-direction: column;
+        align-items: center;
+    }
+        .content-list1 {
+            color: #ffffff;
+    
+        }
+    
+        .CardContent1 {
+            background-color: #000000;
+            margin-left: 25px;
+            /* Lề bên trái */
+            margin-right: 25px;
+            /* Lề bên phải */
+            display: flex;
+            justify-content: space-between;
+    
+        }
+    
+        .Cardcontent-container1 .content-list1 {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            width: 100%;
+            /* Để đảm bảo thẻ ul chiếm toàn bộ chiều rộng */
+            justify-content: space-between;
+            /* Để các thẻ li nằm cách nhau một khoảng */
+        }
+
+        .Cardcontent-container1 .content-list1 .content-tex1 .content-box1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Căn giữa theo chiều dọc */
+            text-align: center;
+        }
+         
+        .Cardcontent-container1 .content-list1 .content-tex1 .content-box1 .content-image1 img {
+            width: 300px;
+            /* Thay đổi kích thước của thẻ image1 thành 300px */
+            height: auto;
+            /* Để tự động điều chỉnh chiều cao để giữ tỷ lệ khung hình */
+        }
+
+    
+}
+
+
+
+
+
+
+
