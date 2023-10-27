@@ -1,0 +1,135 @@
+.card {
+    margin: 0 auto;
+    /* Để căn giữa lớp .card */
+    padding: 0 20px;
+    /* Để cách lề bên trái và phải là 20px */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #000000;
+}
+
+.card-slide {
+    overflow: hidden;
+    /* Để ẩn nội dung bên ngoài .card */
+}
+
+.card-list {
+    display: flex;
+    /* Hiển thị các thẻ li theo chiều ngang */
+    list-style: none;
+    /* Ẩn dấu hiệu danh sách */
+    width:100%;
+   
+}
+
+
+.card-box {
+    flex: 1;/* Để thẻ li có kích thước bằng nhau */
+    margin: 10px;/* Khoảng cách 10px giữa các thẻ li (5px bên trái và 5px bên phải) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;/* Canh giữa theo chiều ngang */
+    text-align: center;/* Canh văn bản theo chiều ngang */
+    position: relative;
+    transition: transform 0.4s ease-in-out;/* Thêm hiệu ứng phóng to trong 0.4 giây */
+  
+}
+
+.card-wraper {
+    border: 1px solid #000000;
+    /* Để tạo viền xung quanh thẻ li */
+    text-align: center;
+    /* Căn giữa nội dung trong thẻ li */
+}
+
+
+
+.card-heading {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    color: #fff;
+   
+    width: 100%;
+}
+
+.card-heading a {
+    text-decoration: none;
+    /* Loại bỏ gạch chân cho liên kết */
+    color: #fff;
+    /* Màu văn bản cho liên kết */
+}
+.card-heading a:hover {
+    color: red;
+    /* Màu đỏ khi đưa chuột vào */
+}
+.card-box:hover {
+    transform: scale(1.01);
+    /* Phóng to ảnh 1% khi đưa chuột vào */
+}
+.button {
+    display: none;
+    /* Ẩn nút button ban đầu */
+}
+.card-wraper .media img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+@media (max-width: 989px) {
+        
+        .card-heading a:hover {
+            color: red;
+            /* Màu đỏ khi đưa chuột vào */
+        }  
+        .card-box:hover {
+            transform: scale(1.01);
+            /* Phóng to ảnh 1% khi đưa chuột vào */
+        }
+        .card-slide {
+            overflow-x: auto;/* Cho phép thanh cuộn ngang */
+            
+        }
+        /* Ẩn thanh cuộn ngang */
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+        
+        .card-list {
+            white-space: nowrap;/* Ngăn các thẻ li xuống dòng */
+        }
+        .card-wraper {
+            width: 790px;
+            /* Kích thước hình vuông 790px */
+            height: auto;
+            /* Để tạo hình vuông */
+            overflow: auto;
+            /* Cho phép cuộn nếu nội dung vượt quá kích thước */
+        }
+        .prev-button,
+        .next-button {
+            background-color: transparent;
+            color: red;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            top: 50%;/* Đặt top là 50% để căn chỉnh theo chiều dọc */
+            transform: translateY(-50%);/* Đặt transform để căn chỉnh theo chiều dọc */
+            z-index: 1;/* Đặt z-index để đảm bảo nút nằm trên các thẻ li */
+        }
+        .button {
+            display: flex ;
+        }
+        .prev-button{
+            left: 10px;/* Đặt nút "prev" ở bên trái */
+        }
+        .next-button{
+            right: 10px; /* Đặt nút "next" ở bên phải */
+            transform: rotate(180deg);              
+        }
+    
+}
