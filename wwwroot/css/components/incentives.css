@@ -1,0 +1,54 @@
+.Incentives {
+    background-color: #201e1d;
+    color: #ffffff;
+}
+.Incentives-container{ 
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: center;
+}
+.Incentives-heading{
+    font-size: 50px;
+    
+}
+
+p{
+    font-size: 18px; 
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #000000;/* Đặt màu nền khi di chuột vào */
+    color: #ffffff;/* Màu chữ khi đưa chuột vào */
+}
+
+.Incentives-container {
+    overflow: hidden;/* Ẩn nội dung tràn ra ngoài khi màn hình thu nhỏ */
+    
+}
+.Incentives-button a.button {
+    
+    margin: 20px 0px 0px;
+    /* Khoảng cách trên và dưới là 10px, nên tổng khoảng cách là 20px */
+}
+@media (max-width: 990px) {
+    .Incentives-container{
+        margin-left: 50px;
+        /* Điều chỉnh khoảng trống khi thu nhỏ màn hình */
+        margin-right: 50px;
+        /* Điều chỉnh khoảng trống khi thu nhỏ màn hình */
+    }
+    .Incentives-heading {
+        font-size: 40px;
+    }
+        
+    
+}
+@media (max-width: 500px) {
+    .Incentives-blocks a.button {
+        display: block;/* Đặt chúng thành hàng dọc */
+        width: 100%;/* Đặt kích thước bằng nhau và chiếm toàn bộ chiều rộng */
+        margin-right: 0;/* Loại bỏ khoảng cách giữa các button */
+        margin-bottom: 5px;
+    }
+}
