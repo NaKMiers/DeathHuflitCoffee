@@ -1,15 +1,184 @@
-.Slider-button{
-    color: #201e1d;
-    background: transparent;
-    border: none;
+/* Để đảm bảo chỉ hiển thị một slide tại một thời điểm */
+.Slideshow-slide {
+    display: none;
+
+}
+
+/* CSS để tạo hiệu ứng từ phải qua trái */
+.Slideshow-banner {
+    overflow: hidden;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Slideshow-text-banner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;/* Đặt chiều rộng tùy ý (ví dụ 50%) */
+    height: 350px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 16px;
+}
+
+.banner-richtext {
+    font-size: 16px;
+}
+
+.slideshow-container {
+    overflow-x: scroll; /* Tạo thanh cuộn ngang */
+    /* Thiết lập điểm snap và căn giữa phần cuộn với phần tử snap */
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    background-color: #201e1d;
+}
+
+.Slideshow-text-wapper {
+    padding-top: 30px;
+    max-width: 100%;/* Đảm bảo rằng nội dung không bị tràn ra ngoài container cha */
+    text-align: center;
+    color: #fff;
+}
+
+/* Thêm CSS cho nút điều khiển */
+#prevButton,
+#nextButton,
+#playButton {
+    margin-top: 10px;
     cursor: pointer;
-    width: 44px;
-    height: 44px;
+}
+
+.slideshow-control {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 74px;
+    
+}
+
+.slider-couter {
+    display: flex;
+    align-items: center;
+
+    width: 34px;
+    height: 34px;
+    justify-content: center;
+    min-width: 4.4rem;
+}
+
+#prevButton {
+    transform: rotate(90deg);
+    width: 30px;
+    height: 30px;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+#nextButton {
+    transform: rotate(270deg);
+    width: 30px;
+    height: 30px;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+#playButton {
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;    
+    width: 30px;
+    height: 30px;
+    
+}
+.slideshow__control-icon--pause {
+    
+    opacity: 0;/* Đặt opacity thành 0 để ẩn biểu tượng "play" */
+    
+}
+.slideshow__control-icon--pause,
+.slideshow__control-icon--play {
+    text-align: center;
+    justify-content: center;
+    position: absolute;/* Đặt vị trí tuyệt đối cho cả hai biểu tượng */
+   
+}
+
+.slider-curren {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 12px;
+    width: 30px;
+    
 }
-.Slideshow-banner{
-    text-align: center;
-    color: #ffffff;
+
+svg{
+    width: 12px;
+    height:12px;
+}
+
+@media screen and (max-width: 750px) {
+
+    /* Để đảm bảo chỉ hiển thị một slide tại một thời điểm */
+    .Slideshow-slide {
+        max-width: 100%;/* Kích thước Slideshow thay đổi tùy thích theo chiều rộng của container */
+      
+    }
+
+    /* CSS để tạo hiệu ứng từ phải qua trái */
+    .Slideshow-banner {
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: transform 0.3s ease;/* Tạo hiệu ứng trượt mượt */
+    }
+
+    .Slideshow-text-banner {
+        width: 100%;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .banner-richtext {
+        font-size: 16px;
+    }
+
+    .slideshow-container {
+        width: 100%;
+        height: 300px;
+        background-color: #201e1d;
+    }
+
+    .Slideshow-text-wapper {       
+        max-width: 100%;/* Đảm bảo rằng nội dung không bị tràn ra ngoài container cha */
+        text-align: center;
+        color: #fff;
+    }
+
+    /* Thêm CSS cho nút điều khiển */
+    #prevButton,
+    #nextButton,
+    #playButton {
+        margin-top: 10px;
+        cursor: pointer;
+    }
 }
