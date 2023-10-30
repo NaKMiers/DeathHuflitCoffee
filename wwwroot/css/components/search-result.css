@@ -1,0 +1,16 @@
+.Searching {
+   display: flex;
+}
+.Line {
+   font-weight: bolder;
+   color: white;
+   height: 2px;
+}
+.Rating_cmt {
+   display: flex;
+   color: white;
+}
+.SearchResult_Body {
+   color: white;
+   font-weight: bolder;
+}
