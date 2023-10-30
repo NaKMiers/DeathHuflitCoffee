@@ -28,6 +28,7 @@
                 <th>Subscribe And Save</th>
                 <th>Note</th>
                 <th>PrimaryColor</th>
+                <th>Remain</th>
 
                 <th>Sizes</th>
                 <th>InsideTypes</th>
@@ -55,7 +56,7 @@
                 <tr>
                     <td>
                         <form method="post" action="/admin/products/delete/@product.Id">
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger w-100">Delete</button>
                         </form>
                     </td>
                     <td>
@@ -71,6 +72,7 @@
                     <td>@product.SubscribeAndSave</td>
                     <td>@product.Note</td>
                     <td>@product.PrimaryColor</td>
+                    <td>@product.Remain</td>
                     <td width='100%'>
                         @if (product.Sizes != null && product.Sizes.Count > 0)
                         {
@@ -124,7 +126,7 @@
                         {
                             @foreach (var item in product.Images)
                             {
-                                <img src="~/uploads/@item.Src" alt="thumb" width="50" height='50' style="object-fit: cover;" />
+                                <img src="@item.Src" alt="thumb" width="50" height='50' style="object-fit: cover;" />
                             }
                         }
                     </td>

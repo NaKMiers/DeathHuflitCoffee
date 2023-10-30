@@ -1,0 +1,123 @@
+.features h2{
+    font-size: 40px;
+    margin: 0px 0px 15px;
+    padding: 0px 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.features-text{
+    text-align: center;
+    display: block;
+    font-size: 18px;
+}
+.features-table{
+    color: #ffffff;   
+    padding: 8px;
+    text-align: center;
+}
+.features p{
+    padding: 10px;
+}
+.features-table-custom{
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px auto;
+
+    
+}
+.detail-even th:not(:last-of-type) {
+    border-right: 1px solid #403D3C;
+}
+
+.row-title{
+    color: #000000;
+    background-color: #e12727;
+    height: 60px;
+    
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.row-subtitle{
+    font-size: 18px;
+    background-color: #403d3c;
+    height: 48px;
+}
+.detail-odd{
+    background-color: #201e1d;
+    height: 60px;
+    border-collapse: collapse;
+    
+}
+.detail-even{
+    background-color: #201e1d;
+        height: 60px;
+}
+/* định nghĩa trong mobile*/
+@media (max-width: 768px) {
+    .features h2 {
+        font-size: 40px;
+        margin: 0px 0px 15px;
+        padding: 0px 20px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .features-text {
+        text-align: center;
+        display: block;
+        font-size: 18px;
+    }
+
+    .features-table {
+        color: #ffffff;
+        text-align: center;
+        padding: 8px;
+        overflow-x: scroll;
+    }
+
+    .features-table::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .features-table-custom {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px auto;
+            
+    }   
+    .detail-even th:not(:last-of-type) {
+        border-right: 1px solid #403D3C;
+    }
+
+    .row-title {
+        color: #000000;
+        background-color: #e12727;
+        height: 60px;
+
+        font-size: 14px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .row-subtitle {
+        font-size: 18px;
+        background-color: #403d3c;
+        height: 48px;
+    }
+
+    .detail-odd {
+        background-color: #201e1d;
+        height: 60px;
+        border-collapse: collapse;
+
+    }
+
+    .detail-even {
+        background-color: #201e1d;
+        height: 60px;
+    }
+    .features p {
+        padding: 10px;
+    }
+        
+}

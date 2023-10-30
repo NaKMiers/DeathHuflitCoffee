@@ -1,0 +1,92 @@
+.card-list {
+    display: flex;
+    text-align: center;
+}
+
+.card-slide {
+
+    display: flex;
+    justify-content: center;
+    /* Căn giữa theo chiều ngang */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+}
+
+.card-heading :hover {
+    color: red;
+}
+
+#card .card-box {
+    justify-content: center;
+    text-align: center;
+   
+
+}
+
+.card-heading {
+    text-decoration: none;
+    margin-top: -50px;
+    color: #ffffff;
+
+}
+
+.card-heading span {
+    color: #ffffff;
+}
+
+
+.card-box {
+    
+    flex-shrink: 0;
+    width: 33.33%;
+}
+
+
+
+
+
+@media screen and (max-width: 990px) {
+    
+
+    .card-list {
+        display: flex;
+       
+        white-space: nowrap;
+
+    }
+
+    .card-heading {
+        text-decoration: none;
+        margin-top: -50px;
+        color: #ffffff;
+
+    }
+
+    .card-heading :hover {
+        color: red;
+    }
+
+    .card-box {
+        position: relative;
+        overflow: hidden;
+        
+    }
+
+    .card-box {  
+        flex-shrink: 0;       
+    }
+
+    .card-slide {
+        overflow-x: auto;
+        /* Tạo thanh cuộn ngang */
+        overflow-y: auto;
+    }
+    .image {
+        transition: transform 0s;
+        /* Thêm hiệu ứng chuyển hình */
+        max-width: 100%;
+        
+    }
+    
+
+}

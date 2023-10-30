@@ -418,7 +418,7 @@
                   <div class="cart-modal__product-no-empty-item">
                      <div class="cart-modal__product-no-empty-body">
                         <div class="cart-modal__product-no-empty-body__thumb">
-                           <img src="~/uploads/@cartItem.Product.Images[0].Src" alt="thumbnail">
+                           <img src="@cartItem.Product.Images[0].Src" alt="thumbnail">
                         </div>
                         <div class="cart-modal__product-no-empty-body__content">
                            <div class="cart-modal__product-no-empty-body__content__title">
@@ -441,12 +441,12 @@
                               <div class="cart-modal__product-no-empty-body__content__amount__btn-wraper">
                                  <form action="/admin/cart/decrease/@cartItem.Id" method="post"
                                     class="cart-modal__product-no-empty-body__content__amount__button minus"
-                                    cart-item-id="@cartItem.Id"><button class="w-100">-</button></form>
+                                    cart-item-id="@cartItem.Id"><button class="w-100 text-light">-</button></form>
                                  <div class="cart-modal__product-no-empty-body__content__amount__amount-show">
                                     @cartItem.Quantity</div>
                                  <form action="/admin/cart/increase/@cartItem.Id" method="post"
                                     class="cart-modal__product-no-empty-body__content__amount__button plus"
-                                    cart-item-id="@cartItem.Id"><button class="w-100">+</button></form>
+                                    cart-item-id="@cartItem.Id"><button class="w-100 text-light">+</button></form>
                               </div>
 
                               <div class="cart-modal__product-no-empty-body__content__amount__price">
@@ -480,7 +480,7 @@
 
                            <div class="info">
                               <a href="">@item.Title</a>
-                              <span>$@item.Sizes?[0].Price</span>
+                              @* <span>$@item.Sizes?[0].Price</span> *@
                            </div>
                            <input class="form-control" name="productId" type="hidden" value="@item.Id">
                            <input type="hidden" name="size" value="@item.Sizes?[0].Label - @item.Sizes?[0].Price"
@@ -531,15 +531,15 @@
 
                   <span>$@subtotal</span>
                </div>
-               <button class="cart-modal__checkout__sub-total__checkout-btn">
+               <a href="/checkouts/@userId" class="cart-modal__checkout__sub-total__checkout-btn">
                   <div class="cart-modal__checkout__icon">
                      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
-                        <path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3
-0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z" />
+                        <path
+                           d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z" />
                      </svg>
                   </div>
                   <span>Checkout</span>
-               </button>
+               </a>
                <p class="cart-modal__checkout__sub-total__note">
                   or 4 interest-free installments of $18.74 by <span>AfterPay</span>
                </p>

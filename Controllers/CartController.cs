@@ -1,14 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using DeathWishCoffee.Data;
 using DeathWishCoffee.Models.Domain;
 using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace DeathWishCoffee.Controllers
@@ -91,6 +85,7 @@ namespace DeathWishCoffee.Controllers
             ViewBag.UserId = userId;
             ViewBag.Cart = cart;
 
+            // return RedirectToAction("Index", "Home");
             return View("~/Views/Admin/AddToCart.cshtml");
         }
         [HttpPost]
@@ -155,9 +150,7 @@ namespace DeathWishCoffee.Controllers
 
             // return bad request if user does NOT EXISTS
             if (user == null)
-            {
                 return BadRequest("Invalid username or password.");
-            }
 
             return RedirectToAction("AddToCart", "Cart");
         }
@@ -184,8 +177,10 @@ namespace DeathWishCoffee.Controllers
             var user = _deathWishCoffeeDbContext.Users
                         .Include(u => u.Cart)
                         .ThenInclude(cartItem => cartItem.Product)
+                        .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id.ToString() == userId);
 
+            // set CART data for all pages again
             SetUpCartDataForAllPage(user.Cart);
 
             // redirect to HomePage
@@ -229,7 +224,6 @@ namespace DeathWishCoffee.Controllers
             if (user == null)
                 return BadRequest("User is does not exists");
 
-
             // set CART data for all pages again
             SetUpCartDataForAllPage(user.Cart);
 
@@ -271,7 +265,6 @@ namespace DeathWishCoffee.Controllers
             // user id does NOT EXISTS
             if (string.IsNullOrEmpty(userId))
                 return BadRequest("User ID is does not exists");
-
 
             var user = _deathWishCoffeeDbContext.Users
                         .Include(u => u.Cart)

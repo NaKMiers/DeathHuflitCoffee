@@ -46,6 +46,11 @@
             <input value="@product.PrimaryColor" name="primaryColor" type="color" class="form-control" id="primaryColor"
                 placeholder="Primary Color..." asp-for="PrimaryColor">
         </div>
+        <div class="mb-3 form-group">
+            <label for="remain" class="form-label">Remain:</label>
+            <input value="@product.Remain" name="remain" type="number" class="form-control" id="remain"
+                placeholder="Remain..." asp-for="Remain">
+        </div>
 
         @* Image *@
         <div class="mb-3 form-group">
@@ -56,7 +61,7 @@
                 <div class="d-flex gap-4" style="width: 100%;">
                     @for(int i = 0; i < product.Images.Count; i++) {
                         var item = product.Images[i];
-                        <img  src="~/uploads/@item.Src" alt="thumb" style="width: 100%; height: 200px; object-fit: cover;"/>
+                        <img  src="@item.Src" alt="thumb" style="width: 100%; height: 200px; object-fit: cover;"/>
                     }
                 </div>
             }

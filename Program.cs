@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DeathWishCoffeeDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("localDB"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("azureDB"));
     options.EnableSensitiveDataLogging(false);
 }
 );
@@ -111,6 +111,13 @@ app.MapControllerRoute(
     defaults: new { controller = "Account", action = "Register" }
 );
 
+// [/account/reset-password]
+app.MapControllerRoute(
+    name: "ResetPassword",
+    pattern: "account/reset-password",
+    defaults: new { controller = "Account", action = "ResetPassword" }
+);
+
 // [/products/{id}]
 app.MapControllerRoute(
     name: "Product",
@@ -125,10 +132,10 @@ app.MapControllerRoute(
     defaults: new { controller = "Blog", action = "Index" }
 );
 
-// [/checkouts/{id}]
+// [/checkouts/{userId}]
 app.MapControllerRoute(
     name: "Checkout",
-    pattern: "checkouts/{id}",
+    pattern: "checkouts/{userId}",
     defaults: new { controller = "Checkout", action = "Index" }
 );
 
@@ -137,20 +144,6 @@ app.MapControllerRoute(
     name: "Admin",
     pattern: "admin",
     defaults: new { controller = "Admin", action = "Index" }
-);
-
-// [/admin/login]
-app.MapControllerRoute(
-    name: "Login",
-    pattern: "admin/login",
-    defaults: new { controller = "Admin", action = "Login" }
-);
-
-// [/admin/register]
-app.MapControllerRoute(
-    name: "Register",
-    pattern: "admin/register",
-    defaults: new { controller = "Admin", action = "Register" }
 );
 
 // [/admin/users]
@@ -170,7 +163,7 @@ app.MapControllerRoute(
 // [/admin/users/edit/{id}]
 app.MapControllerRoute(
     name: "EditUser",
-    pattern: "admin/users/edit/{id}",
+pattern: "admin/users/edit/{id}",
     defaults: new { controller = "User", action = "EditUser" }
 );
 
@@ -265,19 +258,54 @@ app.MapControllerRoute(
     defaults: new { controller = "Cart", action = "DecreaseCartItemQuantity" }
 );
 
-// // [/]
-// app.MapControllerRoute(
-//     name: "PageNotFound",
-//     pattern: "/{*url}",
-//     defaults: new { controller = "Home", action = "PageNotFound" }
-// );
+// [/admin/orders]
+app.MapControllerRoute(
+    name: "AllOrders",
+    pattern: "/admin/orders",
+    defaults: new { controller = "Order", action = "AllOrders" }
+);
+
+// [/admin/orders/{userId}]
+app.MapControllerRoute(
+    name: "AllOrdersByUser",
+    pattern: "/admin/orders/{userId}",
+    defaults: new { controller = "Order", action = "AllOrdersByUser" }
+);
+
+// [/admin/orders/detail/{id}]
+app.MapControllerRoute(
+    name: "AllOrdersByUser",
+    pattern: "/admin/orders/detail/{id}",
+    defaults: new { controller = "Order", action = "OrderDetail" }
+);
+
+// [/admin/orders/delete/{id}]
+app.MapControllerRoute(
+    name: "DeleteOrder",
+    pattern: "/admin/orders/delete/{id}",
+    defaults: new { controller = "Order", action = "DeleteOrder" }
+);
+
+// [/admin/orders/edit/{id}]
+app.MapControllerRoute(
+    name: "EditOrder",
+    pattern: "/admin/orders/edit/{id}",
+    defaults: new { controller = "Order", action = "EditOrder" }
+);
 
 // [/]
 app.MapControllerRoute(
-name: "default",
-pattern: "{controller=Home}/{action=Index}/{id?}");
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
 
+// [/]
+app.MapControllerRoute(
+    name: "PageNotFound",
+    pattern: "{*url}",
+    defaults: new { controller = "Home", action = "PageNotFound" }
+);
 
-
+// RUN
 app.Run();
 

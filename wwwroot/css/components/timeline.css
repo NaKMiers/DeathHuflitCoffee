@@ -1,39 +1,91 @@
 .Timeline {
-    width: 100%; /* Điều chỉnh chiều rộng của container  */
-   height: 100%;  
-   /* Điều chỉnh chiều cao của container  */
-   overflow: auto;  
-   /* Hiển thị thanh cuộn khi cần  */
-   border: 1px solid #201e1d;
-     /* Để thấy rõ khu vực chứa và thanh cuộn  */
-   background-color: #201e1d;
-   color:white;
- }
-  
-  .KTimeline{
-   display: flex;
-   flex-wrap: nowrap;  
-   /* Ngăn các phần tử con xuống dòng  */
-   overflow-x: scroll;  
- }
- 
-  .KTimeline_Main9 {
-   min-width: 450px;  
-   /* Điều chỉnh độ rộng tối thiểu của mỗi phần tử con  */
-   min-height: 100px;  
-   /* Điều chỉnh chiều cao tối thiểu của mỗi phần tử con  */
-   margin: 5px;
-   /* padding-right: 21px;
-    border: 1px solid #ddd;  */
-   text-align: center;
- } 
+  width: 100%; /* Điều chỉnh chiều rộng của container  */
+ height: 100%;  
+ /* Điều chỉnh chiều cao của container  */
+   /* Để thấy rõ khu vực chứa và thanh cuộn  */
+ background-color: #201e1d;
+ color:white;
+padding-bottom: 70px;
 
-  .KTimeline_Main9_text{
-   padding-left: 20px;
-   padding-right: 20px;
- }
- .KTimeline_Main9_text_text_9{
-   padding-left: 20px;
-   padding-right: 20px;
- } 
+}
+.KTimeline{
+ display: flex;
+ flex-wrap: nowrap;  
+ /* Ngăn các phần tử con xuống dòng  */
+ overflow: auto;  
+ /* Hiển thị thanh cuộn khi cần  */
+ border: 1px solid #201e1d;
+ margin-left: 80px;
+ /* margin-right: 50px; */
+margin-left:60px;
+margin-right:20px;
+}
+/* Tùy chỉnh hình dáng của thanh cuộn */
+::-webkit-scrollbar {
+width: 3px; /* Chiều rộng của thanh cuộn */
+height: 5px;
+
+}
+
+::-webkit-scrollbar-thumb {
+background-color: white; /* Màu của nút cuộn */
+
+border-radius: 10px; /* Độ bo tròn của đầu nút cuộn */
+
+}
+
+::-webkit-scrollbar-track {
+background-color: gray; /* Màu nền của thanh cuộn */
+border-radius: 3px; /* Độ bo tròn của đầu thanh cuộn */
+margin-left: 70px;
+margin-right: 70px;
+}
+
+::-webkit-scrollbar-corner {
+background: transparent; /* Ẩn góc thanh cuộn */
+}
+
+
+
+.KTimeline_Main9 {
+ min-width:28%;
+ /* Điều chỉnh độ rộng tối thiểu của mỗi phần tử con  */
  
+ /* Điều chỉnh chiều cao tối thiểu của mỗi phần tử con  */
+ margin: 5px;
+ /* padding-right: 21px;
+  border: 1px solid #ddd;  */
+ text-align: center;
+ padding: 20px 20px 20px 20px;
+margin-top: 30px;
+} 
+.KTimeline_Main9_img{
+  margin-bottom: 10px;
+}
+.KTimeline_Main9_text{
+
+ padding-left: 35px;
+ padding-right: 35px;
+ margin-top: 0px;
+ font-size: 22px;
+}
+.KTimeline_Main9_text_text_9{
+ padding-left: 25px;
+ padding-right: 25px;
+ margin-bottom: 30px;
+ font-size: 18px;
+} 
+.KTimeline_Main9_text_year{
+ margin-bottom: 10px;
+ font-size: 30px;
+ font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  
+ 
+ .KTimeline_Main9{
+width: 50%;
+min-width: 70%;
+ }
+}

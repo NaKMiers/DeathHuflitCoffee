@@ -1,3 +1,18 @@
+@model DeathWishCoffee.Models.CompositeModels.Order_ListCartItem
+@{
+   var userId = ViewBag.UserId;
+
+   double subtotal = 0;
+
+   var myCart = Model.CartItems;
+
+   if (myCart != null && myCart.Count > 0)
+      @foreach (var cartItem in myCart)
+         subtotal += cartItem.Quantity * cartItem.Price;
+
+   double total = subtotal;
+}
+
 <div class="checkout__top">
    @* Logo *@
    <div class="checkout__top__logo">
@@ -34,7 +49,7 @@
    </div>
 </div>
 
-<section class="checkout-container">
+<form action="/checkouts/@userId" method="post" class="checkout-container">
    @* Main *@
    <div class="checkout__main">
       @* logo *@
@@ -87,13 +102,14 @@
          <h3 class="checkout__main__contact__sub">Have an account? <a href="/account/login">Login</a></h3>
 
          <div class="form-floating mb-3 w-100 checkout__main__form__input">
-            <input type="email" class="form-control  id=" floatingInput" placeholder="Email...">
+            <input asp-for="Email" name="email" type="email" class="form-control id=" floatingInput"
+               placeholder="Email..." required>
             <label for="floatingInput">Email address</label>
          </div>
 
-         <div class="checkout__main__contact__email-checkbox">
+         <div class="checkout__main__contact__email-checkbox d-flex align-items-center">
             <input type="checkbox" checked>
-            <p class="p-0">Email me with news and offers</p>
+            <p class="p-0 ps-2 m-0">Email me with news and offers</p>
          </div>
       </div>
 
@@ -103,7 +119,7 @@
          <h2 class="checkout__main__form__title">Shipping address</h2>
 
          <div class="form-floating checkout__main__form__input">
-            <select class="form-select" id="floatingSelectGrid">
+            <select asp-for="Country" name="country" class="form-select" id="floatingSelectGrid" required>
                <option selected>Vietnam</option>
                <option value="1">One</option>
                <option value="2">Two</option>
@@ -114,57 +130,62 @@
 
          <div class="row" style="gap: 12px;">
             <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-               <input type="text" class="form-control  id=" floatingInput" placeholder="Firstname...">
+               <input asp-for="Firstname" name="firstname" type="text" class="form-control id=" floatingInput"
+                  placeholder="Firstname..." required>
                <label for="floatingInput">Firstname</label>
             </div>
 
             <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-               <input type="text" class="form-control  id=" floatingInput" placeholder="Lastname...">
+               <input asp-for="Lastname" name="lastname" type="text" class="form-control  id=" floatingInput"
+                  placeholder="Lastname..." required>
                <label for="floatingInput">Lastname</label>
             </div>
          </div>
 
          <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-            <input type="text" class="form-control  id=" floatingInput" placeholder="Company...">
+            <input asp-for="Company" name="company" type="text" class="form-control  id=" floatingInput"
+               placeholder="Company...">
             <label for="floatingInput">Company (optional)</label>
          </div>
 
          <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-            <input type="text" class="form-control  id=" floatingInput" placeholder="Address...">
+            <input asp-for="Address" name="address" type="text" class="form-control id=" floatingInput"
+               placeholder="Address..." required>
             <label for="floatingInput">Address</label>
          </div>
 
          <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-            <input type="text" class="form-control  id=" floatingInput" placeholder="Apartment...">
+            <input asp-for="Apartment" name="apartment" type="text" class="form-control  id=" floatingInput"
+               placeholder="Apartment...">
             <label for="floatingInput">Apartment, suit, etc. (optional)</label>
          </div>
 
          <div class="row" style="gap: 12px;">
             <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-               <input type="text" class="form-control  id=" floatingInput" placeholder="City...">
+               <input asp-for="City" name="city" type="text" class="form-control  id=" floatingInput"
+                  placeholder="City..." required>
                <label for="floatingInput">City</label>
             </div>
 
             <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-               <input type="email" class="form-control  id=" floatingInput" placeholder="Postal code...">
+               <input asp-for="PostalCode" name="postalCode" type="text" class="form-control  id=" floatingInput"
+                  placeholder="Postal code...">
                <label for="floatingInput">Postal code (optional)</label>
             </div>
          </div>
 
          <div class="form-floating mb-3 w-100 col-md checkout__main__form__input">
-            <input type="email" class="form-control  id=" floatingInput" placeholder="Phone...">
-            <label for="floatingInput">Phone (optional)</label>
-         </div>
-
-         <div class="checkout__main__form__checkbox">
-            <input type="checkbox" checked>
-            <p class="p-0">Email me with news and offers*</p>
+            <input asp-for="Phone" name="phone" type="text" class="form-control  id=" floatingInput"
+               placeholder="Phone..." required>
+            <label for="floatingInput">Phone</label>
          </div>
 
          <p class="checkout__main__form__footer">*By providing your phone number, you agree to receive recurring
             automated marketing text messages (e.g. cart
-            reminders) from this shop and third parties acting on its behalf. Consent is not a condition to obtain goods
-            or services. Msg & data rates may apply. Msg frequency varies. Reply HELP for help and STOP to cancel. You
+            reminders) from this shop and third parties acting on its behalf. Consent is not a condition to obtain
+            goods
+            or services. Msg & data rates may apply. Msg frequency varies. Reply HELP for help and STOP to cancel.
+            You
             also agree to the <a href="/">Terms of Service</a> and <a href="/">Privacy Policy</a>.
          </p>
 
@@ -190,32 +211,35 @@
             </ul>
          </div>
       </div>
-
    </div>
 
    @* Sidebar *@
    <div class="checkout__sidebar collapse" id="checkoutSidebar">
       <ul class="checkout__product__list">
-         @for (int i = 0; i < 10; i++)
+         @if (myCart != null && myCart.Count > 0)
          {
-            <div class="checkout__product__item">
-               <div class="checkout__product__item__thumbnail position-relative">
-                  <img src="~/images/product1.jpg" alt="thumbnail">
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
-                     1
-                     <span class="visually-hidden">unread messages</span>
-                  </span>
-               </div>
+            @foreach (var cartItem in myCart)
+            {
+               <div class="checkout__product__item">
+                  <input asp-for="CartIds" name="cartIds" value="@cartItem.Id" type="hidden">
+                  <div class="checkout__product__item__thumbnail position-relative">
+                     <img src="@cartItem.Product.Images[0].Src" alt="thumbnail">
+                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                        @cartItem.Quantity
+                     </span>
+                  </div>
 
-               <div class="checkout__product__item__desc">
-                  <p class="checkout__product__item__desc__title m-0">Dark Roast Death Cups</p>
-                  <p class="checkout__product__item__desc__count  m-0">10 count</p>
-               </div>
+                  <div class="checkout__product__item__desc">
+                     <p class="checkout__product__item__desc__title m-0">@cartItem.Product.Title
+                     </p>
+                     <p class="checkout__product__item__desc__count  m-0">@cartItem.Product.Remain remaining</p>
+                  </div>
 
-               <div class="checkout__product__item__price">
-                  $14.99
+                  <div class="checkout__product__item__price">
+                     @((cartItem.Price * cartItem.Quantity).ToString("C2"))
+                  </div>
                </div>
-            </div>
+            }
          }
       </ul>
 
@@ -232,7 +256,7 @@
       <div class="checkout__main__total-wrap">
          <div class="checkout__main__total-line">
             <span class="checkout__main__total-line__name">Subtotal</span>
-            <span class="checkout__main__total-line__price">$226.90</span>
+            <span class="checkout__main__total-line__price">@subtotal.ToString("C2")</span>
          </div>
          <div class="checkout__main__total-line">
             <span class="checkout__main__total-line__name">Shipping</span>
@@ -245,9 +269,10 @@
             <span class="checkout__main__total-line__name">Total</span>
             <span class="d-flex gap-2">
                <span class="checkout__main__total-line__small-text">USD</span>
-               <span class="checkout__main__total-line__price big-price">$226.90</span>
+               <span class="checkout__main__total-line__price big-price">@total.ToString("C2")</span>
             </span>
+            <input asp-for="TotalAmount" name="totalAmount" value="@total" type="hidden">
          </div>
       </div>
    </div>
-</section>
+   </section>

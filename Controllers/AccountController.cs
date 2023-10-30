@@ -51,19 +51,32 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            Console.WriteLine("Account");
+            string userId = _httpContext.HttpContext.Session.GetString("Id");
+            Console.WriteLine(userId);
+
+            // user is not login yet
+            if (string.IsNullOrEmpty(userId))
+                return RedirectToAction("Login", "Account");
+
+            var user = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id.ToString() == userId);
+            // if user does NOT EXIST => BadRequest
+            if (user == null)
+                return BadRequest("User does not exist");
+
+            return View(user);
         }
 
         // [/account/login]
         [HttpGet]
         public IActionResult Login()
         {
+            // user is already login
             if (_httpContext.HttpContext.Session.GetString("Id") != null)
-            {
                 return RedirectToAction("Index", "Account");
-            }
 
-            return View("~/Views/Admin/Login.cshtml");
+            // return View("~/Views/Admin/Login.cshtml");
+            return View();
         }
 
         [HttpPost]
@@ -76,13 +89,11 @@ namespace DeathWishCoffee.Controllers
                         .Include(u => u.Cart)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
-                        .FirstOrDefault(u => u.Username == loginRequest.Username && u.Password == loginRequest.Password);
+                        .FirstOrDefault(u => u.Email == loginRequest.Email && u.Password == loginRequest.Password);
 
             // return bad request if user does NOT EXISTS
             if (user == null)
-            {
-                return BadRequest("Invalid username or password.");
-            }
+                return BadRequest("Invalid email or password.");
 
             GetRecommendProducts();
 
@@ -99,7 +110,8 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            return View("~/Views/Admin/Register.cshtml");
+            // return View("~/Views/Admin/Register.cshtml");
+            return View();
         }
 
         // [/account/logout]
@@ -117,19 +129,27 @@ namespace DeathWishCoffee.Controllers
             Console.WriteLine("Register");
 
             // check if the user exists or not
-            var existedUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Username == form.Username.Trim());
+            var existedUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Email == form.Email.Trim());
             if (existedUser != null)
                 return BadRequest("User already exists");
 
             // create new user (Models.User) from RegisterRequest (ViewModels)
+            if (string.IsNullOrEmpty(form.FirstName))
+                form.FirstName = "";
             if (string.IsNullOrEmpty(form.MiddleName))
-            {
                 form.MiddleName = "";
-            }
+            if (string.IsNullOrEmpty(form.LastName))
+                form.LastName = "";
+            if (string.IsNullOrEmpty(form.Username))
+                form.Username = "";
+            if (string.IsNullOrEmpty(form.Password))
+                form.Password = "";
+            if (string.IsNullOrEmpty(form.Phone))
+                form.Phone = "";
             if (string.IsNullOrEmpty(form.Country))
-            {
                 form.Country = "";
-            }
+            if (string.IsNullOrEmpty(form.Address))
+                form.Address = "";
 
             string avatarPath = "";
             if (form.Avatar != null)
@@ -148,7 +168,7 @@ namespace DeathWishCoffee.Controllers
 
             var newUser = new User
             {
-                Fullname = form.FirstName.Trim() + form.MiddleName.Trim() + form.LastName.Trim(),
+                Fullname = form.FirstName.Trim() + " " + form.MiddleName.Trim() + " " + form.LastName.Trim(),
                 FirstName = form.FirstName.Trim(),
                 MiddleName = form.MiddleName.Trim(),
                 LastName = form.LastName.Trim(),
@@ -171,6 +191,12 @@ namespace DeathWishCoffee.Controllers
             SetUpUserDataForAllPage(registedUser);
 
             return RedirectToAction("Index", "Home");
+        }
+
+        // [/account/reset-password]
+        public IActionResult ResetPassword()
+        {
+            return View();
         }
 
 

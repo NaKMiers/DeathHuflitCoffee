@@ -19,13 +19,30 @@ namespace DeathWishCoffee.Controllers
             _httpContext = httpContextAccessor;
         }
 
-
-        // [/products/{id}]
-        [HttpGet]
-        public IActionResult Index(int id)
+        // [/admin/products/{id}]
+        public IActionResult Index(Guid id)
         {
-            Console.WriteLine(id);
-            return View();
+            // get product from databasee
+            var product = _deathWishCoffeeDbContext.Products
+                            .Include(p => p.Sizes)
+                            .Include(p => p.InsideTypes)
+                            .Include(p => p.FlavorProfiles)
+                            .Include(p => p.Attributes)
+                            .Include(p => p.Details)
+                            .Include(p => p.Images)
+                            .Include(p => p.Types)
+                            .Include(p => p.Formats)
+                            .Include(p => p.Roasts)
+                            .Include(p => p.Flavors)
+                            .Include(p => p.Symbols)
+                            .Include(p => p.Reviews)
+                            .FirstOrDefault(p => p.Id == id);
+
+            // if product does NOT EXISTS => BadRequest
+            // if (product == null)
+            //     return BadRequest("Product does not exist");
+
+            return View(product);
         }
 
         // [/admin/products]
@@ -33,6 +50,20 @@ namespace DeathWishCoffee.Controllers
         public IActionResult AllProducts()
         {
             Console.WriteLine("AllProducts");
+
+            // --Authentication
+            string curUserId = _httpContext.HttpContext.Session.GetString("Id");
+            if (string.IsNullOrEmpty(curUserId))
+                return RedirectToAction("Index", "Home");
+
+            var curUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id.ToString() == curUserId);
+            if (curUser == null)
+                return BadRequest("User does not exists");
+
+            if (!curUser.Admin)
+                return RedirectToAction("Index", "Home");
+            // Authentication--
+
             var products = _deathWishCoffeeDbContext.Products
                         .Include(p => p.Sizes)
                         .Include(p => p.InsideTypes)
@@ -295,37 +326,54 @@ namespace DeathWishCoffee.Controllers
                 }
             }
 
-            if (imageList != null && imageList.Count > 0)
+            if (form.Images != null && form.Images.Count > 0)
             {
-                foreach (var imageFile in imageList)
+                foreach (var item in form.Images)
                 {
-                    if (imageFile.Length > 0)
+                    if (string.IsNullOrEmpty(item.Src))
+                        item.Src = "";
+
+                    var ImagesToAdd = new DeathWishCoffee.Models.Domain.Image
                     {
+                        ProductId = productId,
+                        Src = item.Src.Trim(),
+                    };
 
-                        // get path to save in server
-                        var imagePath = Path.Combine("wwwroot", "uploads");
-                        var imageName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName);
-                        var fullPath = Path.Combine(Directory.GetCurrentDirectory(), imagePath, imageName);
-
-                        // save file to server (/wwwroot/uploads)
-                        using (var stream = new FileStream(fullPath, FileMode.Create))
-                            imageFile.CopyTo(stream);
-
-                        var imageToAdd = new DeathWishCoffee.Models.Domain.Image
-                        {
-                            ProductId = productId,
-                            Src = Path.Combine(imageName)
-                        };
-
-                        _deathWishCoffeeDbContext.Images.Add(imageToAdd);
-                    }
+                    _deathWishCoffeeDbContext.Images.Add(ImagesToAdd);
                 }
             }
+
+            // if (imageList != null && imageList.Count > 0)
+            // {
+            //     foreach (var imageFile in imageList)
+            //     {
+            //         if (imageFile.Length > 0)
+            //         {
+
+            //             // get path to save in server
+            //             var imagePath = Path.Combine("wwwroot", "uploads");
+            //             var imageName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName);
+            //             var fullPath = Path.Combine(Directory.GetCurrentDirectory(), imagePath, imageName);
+
+            //             // save file to server (/wwwroot/uploads)
+            //             using (var stream = new FileStream(fullPath, FileMode.Create))
+            //                 imageFile.CopyTo(stream);
+
+            //             var imageToAdd = new DeathWishCoffee.Models.Domain.Image
+            //             {
+            //                 ProductId = productId,
+            //                 Src = Path.Combine(imageName)
+            //             };
+
+            //             _deathWishCoffeeDbContext.Images.Add(imageToAdd);
+            //         }
+            //     }
+            // }
 
             _deathWishCoffeeDbContext.SaveChanges();
 
             // return RedirectToAction("AllProducts", "Admin");
-            return View("~/Views/Admin/AllProducts.cshtml");
+            return View("~/Views/Admin/AddNewProduct.cshtml");
         }
 
         // [/admin/products/delete/{1}]
@@ -399,71 +447,46 @@ namespace DeathWishCoffee.Controllers
                                 .FirstOrDefault(p => p.Id == id);
 
             if (productToEdit == null)
-            {
                 return BadRequest("Product does not exist");
-            }
 
             productToEdit.LastModifiedAt = DateTime.Now;
+            productToEdit.Remain = form.Remain;
 
-            Console.WriteLine("Title:" + form.Title);
             if (string.IsNullOrEmpty(form.Title))
-            {
                 form.Title = "";
-            }
             productToEdit.Title = form.Title;
 
-            Console.WriteLine("Subtitle:" + form.Subtitle);
             if (string.IsNullOrEmpty(form.Subtitle))
-            {
                 form.Subtitle = "";
-            }
             productToEdit.Subtitle = form.Subtitle;
 
-            Console.WriteLine("Description:" + form.Description);
             if (string.IsNullOrEmpty(form.Description))
-            {
                 form.Description = "";
-            }
             productToEdit.Description = form.Description;
 
-            Console.WriteLine("SubscribeAndSave:" + form.SubscribeAndSave);
             if (string.IsNullOrEmpty(form.SubscribeAndSave))
-            {
                 form.SubscribeAndSave = "";
-            }
             productToEdit.SubscribeAndSave = form.SubscribeAndSave;
 
-            Console.WriteLine("Note:" + form.Note);
             if (string.IsNullOrEmpty(form.Note))
-            {
                 form.Note = "";
-            }
             productToEdit.Note = form.Note;
 
-            Console.WriteLine("PrimaryColor:" + form.PrimaryColor);
             if (string.IsNullOrEmpty(form.PrimaryColor))
-            {
                 form.PrimaryColor = "";
-            }
             productToEdit.PrimaryColor = form.PrimaryColor;
 
-            Console.WriteLine("Sizes:");
             if (form.Sizes != null && form.Sizes.Count > 0)
             {
-
                 if (productToEdit.Sizes != null)
                     _deathWishCoffeeDbContext.Sizes.RemoveRange(productToEdit.Sizes);
 
                 foreach (var item in form.Sizes)
                 {
                     if (string.IsNullOrEmpty(item.Label))
-                    {
                         item.Label = "";
-                    }
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
                     var sizeToAdd = new DeathWishCoffee.Models.Domain.Size
                     {
                         ProductId = productId,
@@ -488,13 +511,9 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.FlavorProfiles)
                 {
                     if (string.IsNullOrEmpty(item.Label))
-                    {
                         item.Label = "";
-                    }
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
 
                     var flavorProfileToAdd = new DeathWishCoffee.Models.Domain.FlavorProfile
                     {
@@ -518,13 +537,9 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Details)
                 {
                     if (string.IsNullOrEmpty(item.Label))
-                    {
                         item.Label = "";
-                    }
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
 
                     var detailToAdd = new DeathWishCoffee.Models.Domain.Detail
                     {
@@ -549,9 +564,7 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Types)
                 {
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
 
                     var typeToAdd = new DeathWishCoffee.Models.Domain.Type
                     {
@@ -574,17 +587,11 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Attributes)
                 {
                     if (string.IsNullOrEmpty(item.Label))
-                    {
                         item.Label = "";
-                    }
                     if (string.IsNullOrEmpty(item.MinLabel))
-                    {
                         item.MinLabel = "";
-                    }
                     if (string.IsNullOrEmpty(item.MaxLabel))
-                    {
                         item.MaxLabel = "";
-                    }
 
                     var attributeToAdd = new DeathWishCoffee.Models.Domain.Attribute
                     {
@@ -612,13 +619,9 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.InsideTypes)
                 {
                     if (string.IsNullOrEmpty(item.Label))
-                    {
                         item.Label = "";
-                    }
                     if (string.IsNullOrEmpty(item.Icon))
-                    {
                         item.Icon = "0";
-                    }
 
                     var insideTypeToAdd = new DeathWishCoffee.Models.Domain.InsideType
                     {
@@ -642,13 +645,9 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Symbols)
                 {
                     if (string.IsNullOrEmpty(item.Title))
-                    {
                         item.Title = "";
-                    }
                     if (string.IsNullOrEmpty(item.Icon))
-                    {
                         item.Icon = "0";
-                    }
 
                     var symbolToAdd = new DeathWishCoffee.Models.Domain.Symbol
                     {
@@ -672,9 +671,7 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Formats)
                 {
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
 
                     var formatToAdd = new DeathWishCoffee.Models.Domain.Format
                     {
@@ -697,9 +694,7 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Roasts)
                 {
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
 
                     var roastToAdd = new DeathWishCoffee.Models.Domain.Roast
                     {
@@ -720,9 +715,7 @@ namespace DeathWishCoffee.Controllers
                 foreach (var item in form.Flavors)
                 {
                     if (string.IsNullOrEmpty(item.Text))
-                    {
                         item.Text = "";
-                    }
 
                     var flavorsToAdd = new DeathWishCoffee.Models.Domain.Flavor
                     {
@@ -743,10 +736,15 @@ namespace DeathWishCoffee.Controllers
         }
 
         // ERRORS
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
 }
+
+
+

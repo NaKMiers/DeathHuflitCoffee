@@ -1,21 +1,44 @@
-.banner__media
-{
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-     height: 100%;
-     object-fit: cover;
-     object-position: center;
-      
+.ContentBanner3__media {
+   position: relative;
+   overflow: hidden;
+   width: 100%;
+   object-fit: cover;
+   object-position: center;
 }
-.banner__content
-{
-    position: absolute;
-    right: 60%;
-    top:65%;
+
+.ContentBanner3__media img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
 }
-.banner__heading
-{
-    font-weight: bold;
-    font-family:Georgia;
+
+.ContentBanner3__content {
+   position: absolute;
+   bottom: 70px;
+   left: 70px;
+}
+
+.ContentBanner3__heading {
+   font-weight: bold;
+   font-family: Georgia;
+   font-size: 55px;
+   text-align: left;
+   margin: 0;
+}
+.ContentBanner3__textphagragrap {
+   margin: 0;
+   padding: 0;
+   padding-left: 20px;
+}
+@media (max-width: 991px) {
+   .ContentBanner3__heading {
+      font-size: 24px;
+   }
+}
+@media (max-width: 751px) {
+   .ContentBanner3__content {
+      bottom: 40px;
+      left: 20px;
+   }
 }

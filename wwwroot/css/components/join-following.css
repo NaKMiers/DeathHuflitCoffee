@@ -1,0 +1,97 @@
+.JohnFollowing {
+    color: #ffffff;
+}
+
+h3 {
+    color: #e12727;
+    text-align: center;
+    font-size: 20px;
+}
+
+.glider-container .list {
+    display: flex;/* Hiển thị các phần tử li nằm ngang */
+    justify-content: space-between;/* Canh lề giữa các phần tử li */
+    list-style: none;/* Loại bỏ dấu đầu dòng cho danh sách */
+}
+
+.join-list {
+    flex: 1;/* Các phần tử li chiếm phần bằng nhau của không gian ngang */
+}
+
+/* Đảm bảo hình ảnh trong phần tử li có kích thước 100% */
+.slide {
+    width: 100%;
+    margin-right: 10px;/* Điều chỉnh khoảng cách giữa các slide */
+}
+
+/* Đảm bảo hình ảnh có kích thước 100% và tỷ lệ khung hình không bị biến đổi */
+.image img {
+    width: 100%;
+    height: auto;
+}
+
+.glider-container {
+    padding: 100px;/* lề trái và phải 100px */
+    padding-top: 25px;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    /* Canh giữa theo chiều ngang */
+    align-items: center;
+    /* Canh giữa theo chiều dọc */
+}
+
+.glider-container .list .join-list {
+    margin: 0 10px;
+    /* Khoảng cách 5px ở cả hai phía trái và phải */
+}
+
+@media screen and (max-width: 749px) {
+
+    .prev-button,
+    .next-button {
+        background-color: transparent;
+        color: red;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 50%;
+        /* Đặt top là 50% để căn chỉnh theo chiều dọc */
+        transform: translateY(-50%);
+        /* Đặt transform để căn chỉnh theo chiều dọc */
+        z-index: 1;
+        /* Đặt z-index để đảm bảo nút nằm trên các thẻ li */
+    }
+
+    .button {
+        display: flex;
+    }
+
+    .prev-button {
+        left: 10px;
+        /* Đặt nút "prev" ở bên trái */
+    }
+
+    .next-button {
+        right: 10px;
+        /* Đặt nút "next" ở bên phải */
+        transform: rotate(180deg);
+    }
+
+    .JohnFollowing {
+        flex-direction: row;
+        /* Giữ nguyên hướng ngang */
+        overflow-x: scroll;
+        /* Tạo thanh cuộn ngang */
+    }
+
+    .JohnFollowing .join-list {
+        display: inline-block;
+        width: 100%;
+        /* Mỗi lần hiện một thẻ, chiếm toàn bộ chiều rộng */
+        margin-right: 0;
+        /* Xóa khoảng cách giữa các thẻ <li> */
+    }
+}
