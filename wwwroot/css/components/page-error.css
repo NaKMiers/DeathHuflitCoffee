@@ -22,7 +22,7 @@
     text-align: center; margin-bottom: 0px; color: rgb(171, 178, 185);margin-bottom: 2px;
 }
 .error404__search__form{
-    width: 100%;display: flex;justify-content: left; margin-bottom: 20px;
+    width: 100%;display: flex;justify-content: center; margin-bottom: 20px;
 }
 .error404__search__form__div9{
     display:flex;justify-content: flex-end;width:60%;
@@ -31,12 +31,30 @@
     width: 250px;height: 30px;
     border-radius: 0;
 }
+/* .error404__search__form__div9__button{
+     width: 34px; height: 36px;display: flex;padding: 0px; 
+    width:60px;height:58px;background-color:white;border-color:white
+} */
 .error404__search__form__div9__button{
-    width: 34px; height: 36px;display: flex;padding: 0px;
+    width:60px;
+    height:58px;
+    background-color:white;
+    border-color:white
+}
+
+.error404__search__form__div9__butt{
+    width: 60px;
 }
 .error404__search__form__div9__button__icon{
     width:20px;height:25px;margin-top:5px;margin-left:6px;
 }
+.error404__search__form__f{
+    padding-top:40px;width: 448px;height:45px; 
+}
+#error404__search__form__mb3{
+    width: 500px;left:300px;color:black
+}
+
 @media (max-width: 750px) {
     .error404__search__form__div9{
         display:flex;justify-content: flex-end;width:70%;
