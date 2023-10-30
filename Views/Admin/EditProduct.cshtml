@@ -61,7 +61,7 @@
                 <div class="d-flex gap-4" style="width: 100%;">
                     @for(int i = 0; i < product.Images.Count; i++) {
                         var item = product.Images[i];
-                        <img  src="~/uploads/@item.Src" alt="thumb" style="width: 100%; height: 200px; object-fit: cover;"/>
+                        <img  src="@item.Src" alt="thumb" style="width: 100%; height: 200px; object-fit: cover;"/>
                     }
                 </div>
             }
