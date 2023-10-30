@@ -300,11 +300,11 @@ app.MapControllerRoute(
 );
 
 // [/]
-// app.MapControllerRoute(
-//     name: "PageNotFound",
-//     pattern: "/{*url}",
-//     defaults: new { controller = "Home", action = "PageNotFound" }
-// );
+app.MapControllerRoute(
+    name: "PageNotFound",
+    pattern: "{*url}",
+    defaults: new { controller = "Home", action = "PageNotFound" }
+);
 
 // RUN
 app.Run();

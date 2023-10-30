@@ -96,12 +96,14 @@
    height: 334px;
    top: 55px;
    left: 50px;
+   z-index: 2;
 }
 .Products__facets-list-list-unstyled-no-js-hidden {
    padding: 5px 20px;
    list-style: none;
 }
 .Products__facet-checkbox {
+   cursor: pointer;
    position: relative;
    padding: 10px 20px 10px 0px;
    display: flex;
@@ -109,12 +111,6 @@
    gap: 14px;
    letter-spacing: 0.6px;
    font-weight: 550;
-}
-.Products__icon-icon-checkmark {
-   position: absolute;
-   bottom: 17px;
-   left: 4px;
-   display: none;
 }
 .Products__facet-filters-sorting-caption {
    position: absolute;
@@ -130,7 +126,7 @@
    font-weight: 800;
    font-size: 14px;
    position: relative;
-   bottom: 26px;
+   bottom: 16px;
 }
 .Products__facet-filters-sort-select-select-caption-large-twcss-text-body-16-twcss-font-fenomen {
    background-color: #000;
@@ -139,7 +135,10 @@
    border: 1px solid transparent; /* Đặt đường viền mặc định là trong suốt */
    transition: border 0.2s; /* Tạo hiệu ứng chuyển đổi cho đường viền */
    font-size: 16px;
-   padding: 0 17.5px 0 0;
+   padding: 8px 5px 10px 5px;
+   cursor: pointer;
+   position: relative;
+   bottom: 10px;
 }
 .Products__facet-filters-sort-select-select-caption-large-twcss-text-body-16-twcss-font-fenomen:focus {
    border: 2px solid #ccc; /* Khi phần tử nhận trạng thái tập trung, hiện đường viền màu xanh (#007bff) */
@@ -151,9 +150,10 @@
    top: 0;
 }
 .Products__twcss-font-fenomen-twcss-capitalize {
-   bottom: 12px;
+   bottom: 5px;
    position: relative;
    color: #fff;
+   font-size: 16px;
 }
 .Products__collection-page-width {
    padding: 0px 50px;
@@ -296,6 +296,9 @@
    color: rgba(250, 250, 250, 0.75);
    font-weight: 550;
 }
+.Products__facets-container-scroll-trigger-animate-fade-in.Products__facets-container-level {
+   display: none;
+}
 @media screen and (max-width: 991px) {
    .Products__grid-item.Products__scroll-trigger.Products__animate--slide-in {
       width: 100%;
@@ -305,31 +308,78 @@
    .Products__facets-container-scroll-trigger-animate-fade-in {
       display: none;
    }
-}
-.Products__active-facets-active-facets-desktop {
-   position: absolute;
-   top: 40%;
-   display: flex;
-   flex-wrap: wrap;
-   gap: 15px;
-}
-.Products__active-facets-button-inner-twcss-text-body-12-twcss-font-fenomen {
-   box-shadow: 0 0 0 0.1rem #5c5957;
-   padding: 2px 2px 3px 4px;
-   font-size: 14px;
-   font-weight: 550;
-   display: none;
-}
-.Products__active-facets-button-inner-twcss-text-body-12-twcss-font-fenomen:hover {
-   color: #fff;
-   box-shadow: 0 0 0 0.03rem #5c5957;
-}
-.Products__active-facets-button-remove-twcss-underline-twcss-text-body-12-twcss-font-fenomen {
-   color: rgba(250, 250, 250, 0.75);
-   font-size: 14px;
-   text-decoration: underline;
-   display: none;
+   .Products__facets-container-scroll-trigger-animate-fade-in.Products__facets-container-level {
+      display: block;
+   }
+   .Products__facet-filters-field {
+      padding-left: 24px;
+   }
+   .Products__twcss-font-fenomen-twcss-capitalize {
+      position: relative;
+      bottom: 0;
+   }
 }
 .Products__active-facets-button-remove-twcss-underline-twcss-text-body-12-twcss-font-fenomen:hover {
    color: #e12727;
+}
+.Products__filterppproducttype {
+   width: 16px;
+   background-color: #000;
+   border: 1px solid #fff;
+}
+
+#Products__Facet-1-template-14567496974391-grid {
+   background-color: #000;
+   color: #fff;
+   position: fixed;
+   width: 50%;
+   height: 100%;
+   right: 0;
+   z-index: 3;
+   top: 0%;
+   display: none;
+}
+.Products__twcss-text-body-16-twcss-font-fenomen-type {
+   text-transform: uppercase;
+   color: #fff;
+   font-weight: 800;
+   font-size: 14px;
+}
+.Products__no-js-hidden-button-primary {
+   text-transform: uppercase;
+   font-weight: 550;
+   position: absolute;
+   width: 90%;
+   left: 5%;
+   bottom: 10px;
+   padding: 10px 0 10px;
+   background-color: red;
+   border: solid red;
+   margin-top: 60%;
+   color: #fff;
+}
+.Products__no-js-hidden-button-primary:hover {
+   background-color: #000;
+   transition: background-color 0.5s ease;
+}
+#Products__hiddenbox-facet-template {
+   background: rgba(128, 128, 128, 0.65);
+   position: fixed;
+   height: 100%;
+   width: 100%;
+   z-index: 3;
+   top: 0;
+   display: none;
+}
+.Products__icon-icon-close {
+   cursor: pointer;
+}
+@media (min-width: 750px) {
+   /* Khi độ rộng màn hình lớn hơn hoặc bằng 750px, vô hiệu hóa toàn bộ đoạn mã HTML */
+   .disable-on-large-screen {
+      pointer-events: none;
+   }
+}
+.Products__filterproducttype {
+   width: 16px;
 }
