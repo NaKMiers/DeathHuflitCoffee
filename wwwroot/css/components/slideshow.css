@@ -19,11 +19,11 @@
     height: 350px;
 }
 
-h2 {
+.Slideshow h2 {
     font-size: 40px;
 }
 
-p {
+.Slideshow p {
     font-size: 16px;
 }
 
@@ -122,7 +122,7 @@ p {
     
 }
 
-svg{
+.Slideshow svg{
     width: 12px;
     height:12px;
 }
@@ -150,11 +150,11 @@ svg{
         height: auto;
     }
 
-    h2 {
+    .Slideshow h2 {
         font-size: 40px;
     }
 
-    p {
+    .Slideshow p {
         font-size: 16px;
     }
 
