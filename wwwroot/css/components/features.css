@@ -1,21 +1,32 @@
-.features h2{
-    font-size: 40px;
-    margin: 0px 0px 15px;
-    padding: 0px 20px;
-    text-transform: uppercase;
+.features{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.features-heading{
+    font-size: 60px;
+    color: #ffffff;
     text-align: center;
+    margin-top: 20px;
+}
+.text{
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .features-text{
     text-align: center;
     display: block;
     font-size: 18px;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
 }
+
 .features-table{
     color: #ffffff;   
     padding: 8px;
     text-align: center;
 }
-.features p{
+.features text{
     padding: 10px;
 }
 .features-table-custom{
@@ -53,19 +64,25 @@
         height: 60px;
 }
 /* định nghĩa trong mobile*/
-@media (max-width: 768px) {
-    .features h2 {
+@media (max-width: 989px) {
+    .features {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .features-heading {
         font-size: 40px;
-        margin: 0px 0px 15px;
-        padding: 0px 20px;
-        text-transform: uppercase;
+        color: #ffffff;
         text-align: center;
+        margin-top: 20px;
     }
 
     .features-text {
         text-align: center;
         display: block;
         font-size: 18px;
+        color: #fff;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .features-table {
@@ -116,7 +133,7 @@
         background-color: #201e1d;
         height: 60px;
     }
-    .features p {
+    .features text {
         padding: 10px;
     }
         
