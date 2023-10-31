@@ -10,7 +10,7 @@ window.addEventListener('scroll', function() {
 
   // Áp dụng padding mới cho container
   const container = document.querySelector('.container');
-  container.style.padding = `${Math.max(minPadding, Math.min(maxPadding, newPadding))}px`;
+  // container.style.padding = `${Math.max(minPadding, Math.min(maxPadding, newPadding))}px`;
 });
 
 
