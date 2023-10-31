@@ -387,3 +387,8 @@
 .card__heading.h5 {
    text-align: left;
 }
+@media (max-width: 751px) {
+   #Products__Facet-1-template-14567496974391-grid {
+      width: 80%;
+   }
+}
