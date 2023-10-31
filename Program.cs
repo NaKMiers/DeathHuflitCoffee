@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DeathWishCoffeeDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("localDB"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("azureDB"));
     options.EnableSensitiveDataLogging(false);
 }
 );
