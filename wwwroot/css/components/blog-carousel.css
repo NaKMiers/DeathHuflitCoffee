@@ -187,18 +187,28 @@
 .BlogCarousel__card-content {
    height: 100%;
 }
-.BlogCarousel__card-heading a {
+.BlogCarousel__card-heading,
+.Products__full-unstyled-link-fourcard {
    color: #fff;
    text-decoration: none;
    font-size: 16px;
    text-transform: uppercase;
    font-weight: 900;
    line-height: 24px;
+   text-align: left;
+}
+.Products__full-unstyled-link-fourcard.Products__tyles-hidden {
+   color: #000;
+   bottom: 12px;
+   position: relative;
 }
 .BlogCarousel__h2 {
    line-height: 12px;
 }
-.BlogCarousel__card-heading a:hover {
+.BlogCarousel__card-heading:hover {
+   text-decoration: none;
+}
+.Products__full-unstyled-link-fourcard:hover {
    color: #e12727;
    text-decoration: underline;
 }
@@ -259,6 +269,12 @@
    }
 }
 @media only screen and (max-width: 991px) {
+   .Products__full-unstyled-link-fourcard.Products__tyles-hidden {
+      color: #fff;
+   }
+   .Products__full-unstyled-link-fourcard.Products__tyles-hidden:hover {
+      color: #e12727;
+   }
    #BlogCarousel__arrowRight {
       width: 50px;
    }
