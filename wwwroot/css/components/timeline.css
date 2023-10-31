@@ -27,21 +27,21 @@ height: 5px;
 
 }
 
-::-webkit-scrollbar-thumb {
+.KTimeline::-webkit-scrollbar-thumb {
 background-color: white; /* Màu của nút cuộn */
 
 border-radius: 10px; /* Độ bo tròn của đầu nút cuộn */
 
 }
 
-::-webkit-scrollbar-track {
+.KTimeline::-webkit-scrollbar-track {
 background-color: gray; /* Màu nền của thanh cuộn */
 border-radius: 3px; /* Độ bo tròn của đầu thanh cuộn */
 margin-left: 70px;
 margin-right: 70px;
 }
 
-::-webkit-scrollbar-corner {
+.KTimeline::-webkit-scrollbar-corner {
 background: transparent; /* Ẩn góc thanh cuộn */
 }
 
