@@ -46,11 +46,8 @@
 
 
 @media screen and (max-width: 990px) {
-    
-
     .card-list {
-        display: flex;
-       
+        display: flex;   
         white-space: nowrap;
 
     }
@@ -82,8 +79,7 @@
         overflow-y: auto;
     }
     .image {
-        transition: transform 0s;
-        /* Thêm hiệu ứng chuyển hình */
+        transition: transform 0s;/* Thêm hiệu ứng chuyển hình */
         max-width: 100%;
         
     }
