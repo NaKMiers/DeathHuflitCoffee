@@ -1,12 +1,14 @@
-/* Để đảm bảo chỉ hiển thị một slide tại một thời điểm */
-.Slideshow-slide {
-    display: none;
+.Slideshow {
+    display: flex;
+}
 
+.Slideshow-slide {
+    padding-top: 30px;
 }
 
 /* CSS để tạo hiệu ứng từ phải qua trái */
 .Slideshow-banner {
-    overflow: hidden;  
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,15 +17,21 @@
 .Slideshow-text-banner {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;/* Đặt chiều rộng tùy ý (ví dụ 50%) */
-    height: 350px;
+    width: 50%;
+    /* Đặt chiều rộng tùy ý (ví dụ 50%) */
+    height: 300px;
 }
 
-.Slideshow h2 {
+.Slide-heading {
+    letter-spacing: 0.2px;
+}
+
+
+.Slideshow .Slide-heading {
     font-size: 40px;
 }
 
-.Slideshow p {
+.Slideshow text {
     font-size: 16px;
 }
 
@@ -32,16 +40,15 @@
 }
 
 .slideshow-container {
-    overflow-x: scroll; /* Tạo thanh cuộn ngang */
-    /* Thiết lập điểm snap và căn giữa phần cuộn với phần tử snap */
-    scroll-snap-type: x mandatory;
+
     width: 100%;
     background-color: #201e1d;
 }
 
 .Slideshow-text-wapper {
     padding-top: 30px;
-    max-width: 100%;/* Đảm bảo rằng nội dung không bị tràn ra ngoài container cha */
+    max-width: 100%;
+    /* Đảm bảo rằng nội dung không bị tràn ra ngoài container cha */
     text-align: center;
     color: #fff;
 }
@@ -55,13 +62,13 @@
 }
 
 .slideshow-control {
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 74px;
-    
+
 }
 
 .slider-couter {
@@ -95,22 +102,38 @@
 #playButton {
     justify-content: center;
     align-items: center;
-    margin-left: 10px;    
+    margin-left: 10px;
     width: 30px;
     height: 30px;
-    
+
 }
-.slideshow__control-icon--pause {
-    
-    opacity: 0;/* Đặt opacity thành 0 để ẩn biểu tượng "play" */
-    
+
+.Slideshow__icon-icon-caret {
+    width: 10px;
+    position: relative;
 }
+
+.Slideshow__icon-icon-caret.slideshow__left-icon {
+    right: 3px;
+}
+
+.Slideshow__icon-icon-caret.slideshow__right-icon {
+    left: 3px;
+}
+
 .slideshow__control-icon--pause,
 .slideshow__control-icon--play {
+    width: 10px;
+    padding-top: 4px;
     text-align: center;
     justify-content: center;
-    position: absolute;/* Đặt vị trí tuyệt đối cho cả hai biểu tượng */
-   
+    position: absolute;
+    /* Đặt vị trí tuyệt đối cho cả hai biểu tượng */
+
+}
+
+.slideshow__control-icon--pause {
+    display: none;
 }
 
 .slider-curren {
@@ -119,20 +142,25 @@
     justify-content: center;
     font-size: 12px;
     width: 30px;
-    
+
 }
 
-.Slideshow svg{
+.Slideshow svg {
     width: 12px;
-    height:12px;
+    height: 12px;
+}
+
+.Slideshow-slide.active {
+    display: block;
 }
 
 @media screen and (max-width: 750px) {
 
     /* Để đảm bảo chỉ hiển thị một slide tại một thời điểm */
     .Slideshow-slide {
-        max-width: 100%;/* Kích thước Slideshow thay đổi tùy thích theo chiều rộng của container */
-      
+        max-width: 100%;
+        /* Kích thước Slideshow thay đổi tùy thích theo chiều rộng của container */
+
     }
 
     /* CSS để tạo hiệu ứng từ phải qua trái */
@@ -142,7 +170,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        transition: transform 0.3s ease;/* Tạo hiệu ứng trượt mượt */
+        transition: transform 0.3s ease;
+        /* Tạo hiệu ứng trượt mượt */
     }
 
     .Slideshow-text-banner {
@@ -150,11 +179,11 @@
         height: auto;
     }
 
-    .Slideshow h2 {
+    .Slideshow .Slide-heading {
         font-size: 40px;
     }
 
-    .Slideshow p {
+    .Slideshow text {
         font-size: 16px;
     }
 
@@ -168,8 +197,9 @@
         background-color: #201e1d;
     }
 
-    .Slideshow-text-wapper {       
-        max-width: 100%;/* Đảm bảo rằng nội dung không bị tràn ra ngoài container cha */
+    .Slideshow-text-wapper {
+        max-width: 100%;
+        /* Đảm bảo rằng nội dung không bị tràn ra ngoài container cha */
         text-align: center;
         color: #fff;
     }
