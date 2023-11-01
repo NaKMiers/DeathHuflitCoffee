@@ -1,12 +1,20 @@
+<<<<<<< HEAD
 .Slideshow{
     display: flex;
 }
 .Slideshow-slide{
+=======
+.Slideshow {
+    display: flex;
+}
+
+.Slideshow-slide {
+>>>>>>> Quan-Slideshow
     padding-top: 30px;
 }
 /* CSS để tạo hiệu ứng từ phải qua trái */
 .Slideshow-banner {
-    overflow: hidden;  
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,6 +23,7 @@
 .Slideshow-text-banner {
     margin-left: auto;
     margin-right: auto;
+<<<<<<< HEAD
     width: 50%;/* Đặt chiều rộng tùy ý (ví dụ 50%) */
     height: 300px;
 }
@@ -22,6 +31,17 @@
     letter-spacing: 0.2px;  
 }
 
+=======
+    width: 50%;
+    /* Đặt chiều rộng tùy ý (ví dụ 50%) */
+    height: 300px;
+}
+
+.Slide-heading {
+    letter-spacing: 0.2px;
+}
+
+>>>>>>> Quan-Slideshow
 
 .Slideshow .Slide-heading {
     font-size: 40px;
@@ -36,14 +56,19 @@
 }
 
 .slideshow-container {
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> Quan-Slideshow
     width: 100%;
     background-color: #201e1d;
 }
 
 .Slideshow-text-wapper {
     padding-top: 30px;
-    max-width: 100%;/* Đảm bảo rằng nội dung không bị tràn ra ngoài container cha */
+    max-width: 100%;
+    /* Đảm bảo rằng nội dung không bị tràn ra ngoài container cha */
     text-align: center;
     color: #fff;
 }
@@ -57,13 +82,13 @@
 }
 
 .slideshow-control {
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 74px;
-    
+
 }
 
 .slider-couter {
@@ -97,11 +122,12 @@
 #playButton {
     justify-content: center;
     align-items: center;
-    margin-left: 10px;    
+    margin-left: 10px;
     width: 30px;
     height: 30px;
-    
+
 }
+<<<<<<< HEAD
 .Slideshow__icon-icon-caret
 {
 width: 10px;
@@ -113,15 +139,39 @@ position: relative;
 }
 .Slideshow__icon-icon-caret.slideshow__right-icon {
     left: 3px;
+=======
+
+.Slideshow__icon-icon-caret {
+    width: 10px;
+    position: relative;
+>>>>>>> Quan-Slideshow
 }
+
+.Slideshow__icon-icon-caret.slideshow__left-icon {
+    right: 3px;
+}
+
+.Slideshow__icon-icon-caret.slideshow__right-icon {
+    left: 3px;
+}
+
 .slideshow__control-icon--pause,
 .slideshow__control-icon--play {
     width: 10px;
+<<<<<<< HEAD
     padding-top:4px;
+=======
+    padding-top: 4px;
+>>>>>>> Quan-Slideshow
     text-align: center;
     justify-content: center;
-    position: absolute;/* Đặt vị trí tuyệt đối cho cả hai biểu tượng */
-   
+    position: absolute;
+    /* Đặt vị trí tuyệt đối cho cả hai biểu tượng */
+
+}
+
+.slideshow__control-icon--pause {
+    display: none;
 }
 .slideshow__control-icon--pause {
     display: none;
@@ -132,12 +182,16 @@ position: relative;
     justify-content: center;
     font-size: 12px;
     width: 30px;
-    
+
 }
 
-.Slideshow svg{
+.Slideshow svg {
     width: 12px;
-    height:12px;
+    height: 12px;
+}
+
+.Slideshow-slide.active {
+    display: block;
 }
 .Slideshow-slide.active {
     display: block;
@@ -147,8 +201,9 @@ position: relative;
 
     /* Để đảm bảo chỉ hiển thị một slide tại một thời điểm */
     .Slideshow-slide {
-        max-width: 100%;/* Kích thước Slideshow thay đổi tùy thích theo chiều rộng của container */
-      
+        max-width: 100%;
+        /* Kích thước Slideshow thay đổi tùy thích theo chiều rộng của container */
+
     }
 
     /* CSS để tạo hiệu ứng từ phải qua trái */
@@ -158,7 +213,8 @@ position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        transition: transform 0.3s ease;/* Tạo hiệu ứng trượt mượt */
+        transition: transform 0.3s ease;
+        /* Tạo hiệu ứng trượt mượt */
     }
 
     .Slideshow-text-banner {
@@ -184,8 +240,9 @@ position: relative;
         background-color: #201e1d;
     }
 
-    .Slideshow-text-wapper {       
-        max-width: 100%;/* Đảm bảo rằng nội dung không bị tràn ra ngoài container cha */
+    .Slideshow-text-wapper {
+        max-width: 100%;
+        /* Đảm bảo rằng nội dung không bị tràn ra ngoài container cha */
         text-align: center;
         color: #fff;
     }
