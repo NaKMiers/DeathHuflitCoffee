@@ -1,4 +1,4 @@
-using DeathWishCoffee.Models.Domain;
+using DeathWishCoffee.Models.Main;
 using DeathWishCoffee.Models.ViewModels;
 
 namespace DeathWishCoffee.Models.CompositeModels

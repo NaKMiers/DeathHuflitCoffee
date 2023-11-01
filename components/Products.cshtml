@@ -1,4 +1,4 @@
-@model List<DeathWishCoffee.Models.Domain.Product>;
+@model List<DeathWishCoffee.Models.Main.Product>;
 @{
     string curPage = ViewBag.CurPage;
 }
@@ -151,7 +151,7 @@
                             style="--ratio-percent: 100%;">
                             <div class="card__media">
                                 <div class="Products__media Products__media--transparent Products__media--hover-effect">
-                                    <img src="@item.Images[0].Src" 
+                                    <img src="@item.Images.FirstOrDefault()?.Src"
                                         alt="thumbnail" class="Products__motion-reduce"
                                         width="1500" height="1500">
                                 </div>
@@ -174,7 +174,7 @@
           </s>
         </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
       <span class="price-item price-item--sale price-item--last">
-        @item.Sizes[0].Price.ToString("C2")
+        @item..FirstOrDefault()?.Price.ToString("C2")
       </span>
     </div>
   </div></div>

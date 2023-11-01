@@ -1,6 +1,5 @@
-﻿using DeathWishCoffee.Data;
-using DeathWishCoffee.Models;
-using DeathWishCoffee.Models.Domain;
+﻿using DeathWishCoffee.Models;
+using DeathWishCoffee.Models.Main;
 using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -43,7 +42,11 @@ namespace DeathWishCoffee.Controllers
                                     .Take(2)
                                     .ToList();
 
-            string rcmPrsJson = JsonConvert.SerializeObject(recommendProducts);
+            string rcmPrsJson = JsonConvert.SerializeObject(recommendProducts, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+
             _httpContext.HttpContext.Session.SetString("recommendProducts", rcmPrsJson);
         }
 
@@ -86,7 +89,7 @@ namespace DeathWishCoffee.Controllers
 
             // check user if exist
             var user = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Email == loginRequest.Email && u.Password == loginRequest.Password);
@@ -101,7 +104,7 @@ namespace DeathWishCoffee.Controllers
             SetUpUserDataForAllPage(user);
 
             // set CART data to session
-            SetUpCartDataForAllPage(user.Cart);
+            SetUpCartDataForAllPage(user.CartItems.ToList());
 
             return RedirectToAction("Index", "Home");
         }

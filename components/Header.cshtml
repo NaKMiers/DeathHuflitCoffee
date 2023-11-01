@@ -6,12 +6,12 @@
    // Lấy chuỗi JSON từ Session
    string cartJson = _httpContext.HttpContext.Session.GetString("Cart");
    var myCart = !string.IsNullOrEmpty(cartJson)
-   ? JsonConvert.DeserializeObject<List<DeathWishCoffee.Models.Domain.CartItem>>(cartJson)
+   ? JsonConvert.DeserializeObject<List<DeathWishCoffee.Models.Main.CartItem>>(cartJson)
    : null;
 
    string rcmPrsJson = _httpContext.HttpContext.Session.GetString("recommendProducts");
    var recommendProducts = !string.IsNullOrEmpty(rcmPrsJson)
-   ? JsonConvert.DeserializeObject<List<DeathWishCoffee.Models.Domain.Product>>(rcmPrsJson)
+   ? JsonConvert.DeserializeObject<List<DeathWishCoffee.Models.Main.Product>>(rcmPrsJson)
    : null;
 
    string userId = _httpContext.HttpContext.Session.GetString("Id");
@@ -421,7 +421,7 @@
                   <div class="cart-modal__product-no-empty-item">
                      <div class="cart-modal__product-no-empty-body">
                         <div class="cart-modal__product-no-empty-body__thumb">
-                           <img src="@cartItem.Product.Images[0].Src" alt="thumbnail">
+                           <img src="@cartItem.Product.Images.FirstOrDefault()?.Src" alt="thumbnail">
                         </div>
                         <div class="cart-modal__product-no-empty-body__content">
                            <div class="cart-modal__product-no-empty-body__content__title">
@@ -486,7 +486,8 @@
                               @* <span>$@item.Sizes?[0].Price</span> *@
                            </div>
                            <input class="form-control" name="productId" type="hidden" value="@item.Id">
-                           <input type="hidden" name="size" value="@item.Sizes?[0].Label - @item.Sizes?[0].Price"
+                           <input type="hidden" name="size"
+                              value="@item.Sizes.FirstOrDefault()?.Label - @item.Sizes.FirstOrDefault()?.Price"
                               asp-for="Size">
                            <input type="hidden" name="quantity" value="1" asp-for="Quantity">
 

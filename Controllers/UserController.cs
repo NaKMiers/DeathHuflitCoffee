@@ -1,5 +1,4 @@
-using DeathWishCoffee.Data;
-using DeathWishCoffee.Models.Domain;
+using DeathWishCoffee.Models.Main;
 using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -138,7 +137,7 @@ namespace DeathWishCoffee.Controllers
 
             // get user in database again after edited
             var userEdited = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id == id);
@@ -153,7 +152,7 @@ namespace DeathWishCoffee.Controllers
             SetUpUserDataForAllPage(userEdited);
 
             // set CART data to session
-            SetUpCartDataForAllPage(userEdited.Cart);
+            SetUpCartDataForAllPage(userEdited.CartItems.ToList());
 
             Console.WriteLine(_httpContext.HttpContext.Session.GetString("Username"));
 

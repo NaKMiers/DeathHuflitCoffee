@@ -1,5 +1,4 @@
-using DeathWishCoffee.Data;
-using DeathWishCoffee.Models.Domain;
+using DeathWishCoffee.Models.Main;
 using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -53,14 +52,14 @@ namespace DeathWishCoffee.Controllers
 
             // get user from database
             var user = _deathWishCoffeeDbContext.Users
-                    .Include(u => u.Cart)
+                    .Include(u => u.CartItems)
                     .FirstOrDefault(u => u.Id == userId);
 
             // if user do NOT EXIST => Bad Request
             if (user == null)
                 return BadRequest("User ID does not exist");
 
-            var myCart = user.Cart;
+            var myCart = user.CartItems.ToList();
             ViewBag.UserId = userId;
 
             // string myCartCovertedToJson = JsonConvert.SerializeObject(myCart);
@@ -79,7 +78,7 @@ namespace DeathWishCoffee.Controllers
                         .Include(p => p.InsideTypes)
                         .Include(p => p.Images)
                         .ToList();
-            var cart = _deathWishCoffeeDbContext.Users.Include(u => u.Cart).FirstOrDefault(u => u.Id == userId);
+            var cart = _deathWishCoffeeDbContext.Users.Include(u => u.CartItems).FirstOrDefault(u => u.Id == userId);
 
             ViewBag.Products = allProducts;
             ViewBag.UserId = userId;
@@ -96,7 +95,7 @@ namespace DeathWishCoffee.Controllers
             // get product to add from database by productId
             var productToAdd = _deathWishCoffeeDbContext.Products.Find(productId);
             var user = _deathWishCoffeeDbContext.Users
-                    .Include(u => u.Cart)
+                    .Include(u => u.CartItems)
                     .FirstOrDefault(u => u.Id == userId);
 
             // if productToAdd does NOT EXISTS => BadRequest
@@ -108,7 +107,7 @@ namespace DeathWishCoffee.Controllers
                 return BadRequest("User does not exist");
 
             // if product is ALREADY EXISTS in cart
-            var existingCartItem = user.Cart.FirstOrDefault(ci => ci.ProductId == productId);
+            var existingCartItem = user.CartItems.FirstOrDefault(ci => ci.ProductId == productId);
             if (existingCartItem != null && form.Size == existingCartItem.Size)
             {
                 // not enough product
@@ -124,7 +123,7 @@ namespace DeathWishCoffee.Controllers
             double price = double.Parse(form.Size.Split('-')[1].Trim());
 
             // create new CartItem
-            var newCartItem = new Models.Domain.CartItem
+            var newCartItem = new Models.Main.CartItem
             {
                 UserId = userId,
                 ProductId = productId,
@@ -140,13 +139,13 @@ namespace DeathWishCoffee.Controllers
             _deathWishCoffeeDbContext.SaveChanges();
 
             user = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id == userId);
 
             // set CART data for all pages again
-            SetUpCartDataForAllPage(user.Cart);
+            SetUpCartDataForAllPage(user.CartItems.ToList());
 
             // return bad request if user does NOT EXISTS
             if (user == null)
@@ -175,13 +174,13 @@ namespace DeathWishCoffee.Controllers
             // get user to set cart again
             var userId = _httpContext.HttpContext.Session.GetString("Id");
             var user = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id.ToString() == userId);
 
             // set CART data for all pages again
-            SetUpCartDataForAllPage(user.Cart);
+            SetUpCartDataForAllPage(user.CartItems.ToList());
 
             // redirect to HomePage
             return RedirectToAction("Index", "Home");
@@ -216,7 +215,7 @@ namespace DeathWishCoffee.Controllers
                 return BadRequest("User ID is does not exists");
 
             var user = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id.ToString() == userId);
@@ -225,7 +224,7 @@ namespace DeathWishCoffee.Controllers
                 return BadRequest("User is does not exists");
 
             // set CART data for all pages again
-            SetUpCartDataForAllPage(user.Cart);
+            SetUpCartDataForAllPage(user.CartItems.ToList());
 
             // return bad request if user does NOT EXISTS
             if (user == null)
@@ -267,7 +266,7 @@ namespace DeathWishCoffee.Controllers
                 return BadRequest("User ID is does not exists");
 
             var user = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id.ToString() == userId);
@@ -276,7 +275,7 @@ namespace DeathWishCoffee.Controllers
                 return BadRequest("User is does not exists");
 
             // set CART data for all pages again
-            SetUpCartDataForAllPage(user.Cart);
+            SetUpCartDataForAllPage(user.CartItems.ToList());
 
             // return bad request if user does NOT EXISTS
             if (user == null)

@@ -1,6 +1,5 @@
-using DeathWishCoffee.Data;
 using DeathWishCoffee.Models.CompositeModels;
-using DeathWishCoffee.Models.Domain;
+using DeathWishCoffee.Models.Main;
 using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -35,7 +34,7 @@ namespace DeathWishCoffee.Controllers
 
             // get user from database
             var user = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id == userId);
@@ -44,13 +43,13 @@ namespace DeathWishCoffee.Controllers
             if (user == null)
                 return BadRequest("User ID does not exist");
 
-            var myCart = user.Cart;
+            var myCart = user.CartItems;
             ViewBag.UserId = userId;
 
             var order_listCartItem = new Order_ListCartItem
             {
                 OrderRequest = new AddNewOrderRequest(),
-                CartItems = myCart,
+                CartItems = myCart.ToList(),
             };
 
             return View(order_listCartItem);
@@ -160,13 +159,13 @@ namespace DeathWishCoffee.Controllers
             _deathWishCoffeeDbContext.SaveChanges();
 
             var user = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id == userId);
 
             // set CART data to session
-            SetUpCartDataForAllPage(user.Cart);
+            SetUpCartDataForAllPage(user.CartItems.ToList());
 
             return RedirectToAction("Index", "Home");
         }

@@ -1,4 +1,4 @@
-using DeathWishCoffee.Data;
+using DeathWishCoffee.Models.Main;
 using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -56,7 +56,7 @@ namespace DeathWishCoffee.Controllers
             {
                 form.Text = "";
             }
-            var newReview = new Models.Domain.Review
+            var newReview = new Models.Main.Review
             {
                 ProductId = productId,
                 Title = form.Title,

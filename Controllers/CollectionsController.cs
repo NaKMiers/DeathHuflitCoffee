@@ -1,5 +1,5 @@
-﻿using DeathWishCoffee.Data;
-using DeathWishCoffee.Models;
+﻿using DeathWishCoffee.Models;
+using DeathWishCoffee.Models.Main;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -19,7 +19,7 @@ namespace DeathWishCoffee.Controllers
             _httpContext = httpContextAccessor;
         }
 
-        private IEnumerable<Models.Domain.Product> FilterAndSortForProductPage()
+        private IEnumerable<Models.Main.Product> FilterAndSortForProductPage()
         {
             string filterTypes = _httpContext.HttpContext.Request.Query["filter"];
             string sortBy = _httpContext.HttpContext.Request.Query["sort_by"];
@@ -39,7 +39,7 @@ namespace DeathWishCoffee.Controllers
                         .Include(p => p.Reviews)
                         .ToList();
 
-            IEnumerable<Models.Domain.Product> finalProducts = null;
+            IEnumerable<Models.Main.Product> finalProducts = null;
 
             // has FILTER
             if (!string.IsNullOrEmpty(filterTypes))

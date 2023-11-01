@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using DeathWishCoffee.Models;
-using DeathWishCoffee.Data;
+using DeathWishCoffee.Models.Main;
 
 namespace DeathWishCoffee.Controllers
 {

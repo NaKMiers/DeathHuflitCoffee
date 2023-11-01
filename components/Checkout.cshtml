@@ -223,7 +223,7 @@
                <div class="checkout__product__item">
                   <input asp-for="CartIds" name="cartIds" value="@cartItem.Id" type="hidden">
                   <div class="checkout__product__item__thumbnail position-relative">
-                     <img src="@cartItem.Product.Images[0].Src" alt="thumbnail">
+                     <img src="@cartItem.Product.Images.FirstOrDefault()?.Src" alt="thumbnail">
                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
                         @cartItem.Quantity
                      </span>
