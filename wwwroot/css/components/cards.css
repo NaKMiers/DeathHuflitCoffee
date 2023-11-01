@@ -4,12 +4,9 @@
 }
 
 .card-slide {
-
     display: flex;
-    justify-content: center;
-    /* Căn giữa theo chiều ngang */
-    align-items: center;
-    /* Căn giữa theo chiều dọc */
+    justify-content: center;/* Căn giữa theo chiều ngang */
+    align-items: center;/* Căn giữa theo chiều dọc */
 }
 
 .card-heading :hover {
@@ -19,8 +16,7 @@
 #card .card-box {
     justify-content: center;
     text-align: center;
-   
-
+    padding-left: 0px;
 }
 
 .card-heading {
@@ -33,49 +29,36 @@
 .card-heading span {
     color: #ffffff;
 }
-
-
-.card-box {
-    
+.card-box{
     flex-shrink: 0;
-    width: 33.33%;
+    width: 100%;
 }
 
 
+.button button {
+    display: inline-block;
+}
+.card-wraper {
+    display: flex;
+    align-items: center;/* Căn giữa nội dung theo trục dọc */
+    text-align: center;/* Căn văn bản giữa phần tử */
+    flex-direction: column;/* Xếp nội dung theo chiều dọc */
+    gap: 10px;/* Khoảng cách giữa các phần tử con */
+}
+.card-wraper .image {
+    width: 100%;
+}.card-wraper .content {
+    text-align: center;
+    /* Căn văn bản giữa phần tử .content */
+}
 
 
-
-@media screen and (max-width: 990px) {
-    
-
+@media screen and (max-width: 989px) {
     .card-list {
+        padding: 0px;
         display: flex;
-       
-        white-space: nowrap;
-
+        flex-direction: row;/* Hiển thị các thẻ từ trái qua phải */
     }
-
-    .card-heading {
-        text-decoration: none;
-        margin-top: -50px;
-        color: #ffffff;
-
-    }
-
-    .card-heading :hover {
-        color: red;
-    }
-
-    .card-box {
-        position: relative;
-        overflow: hidden;
-        
-    }
-
-    .card-box {  
-        flex-shrink: 0;       
-    }
-
     .card-slide {
         overflow-x: auto;
         /* Tạo thanh cuộn ngang */
@@ -84,9 +67,9 @@
     .image {
         transition: transform 0s;
         /* Thêm hiệu ứng chuyển hình */
-        max-width: 100%;
-        
+        max-width: 100%;    
     }
-    
-
+    .button{
+        display: block;
+    }
 }
