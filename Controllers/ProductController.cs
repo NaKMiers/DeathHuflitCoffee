@@ -476,7 +476,7 @@ namespace DeathWishCoffee.Controllers
                 form.PrimaryColor = "";
             productToEdit.PrimaryColor = form.PrimaryColor;
 
-            if (form.Sizes != null && form.Sizes.Count > 0)
+            if (form.Sizes != null && form.Sizes.Count >= 0)
             {
                 if (productToEdit.Sizes != null)
                     _deathWishCoffeeDbContext.Sizes.RemoveRange(productToEdit.Sizes);
@@ -503,7 +503,7 @@ namespace DeathWishCoffee.Controllers
             }
 
             Console.WriteLine("FlavorProfiles:");
-            if (form.FlavorProfiles != null && form.FlavorProfiles.Count > 0)
+            if (form.FlavorProfiles != null && form.FlavorProfiles.Count >= 0)
             {
                 if (productToEdit.FlavorProfiles != null)
                     _deathWishCoffeeDbContext.FlavorProfiles.RemoveRange(productToEdit.FlavorProfiles);
@@ -529,7 +529,7 @@ namespace DeathWishCoffee.Controllers
             }
 
             Console.WriteLine("Details:");
-            if (form.Details != null && form.Details.Count > 0)
+            if (form.Details != null && form.Details.Count >= 0)
             {
                 if (productToEdit.Details != null)
                     _deathWishCoffeeDbContext.Details.RemoveRange(productToEdit.Details);
@@ -556,17 +556,18 @@ namespace DeathWishCoffee.Controllers
             }
 
             Console.WriteLine("Types:");
-            if (form.Types != null && form.Types.Count > 0)
+            if (form.Types != null && form.Types.Count >= 0)
             {
                 if (productToEdit.Types != null)
                     _deathWishCoffeeDbContext.Types.RemoveRange(productToEdit.Types);
 
                 foreach (var item in form.Types)
                 {
+                    Console.WriteLine("---------Type: " + item.Text);
                     if (string.IsNullOrEmpty(item.Text))
                         item.Text = "";
 
-                    var typeToAdd = new DeathWishCoffee.Models.Domain.Type
+                    var typeToAdd = new Models.Domain.Type
                     {
                         ProductId = productId,
                         Text = item.Text.Trim(),
@@ -574,12 +575,11 @@ namespace DeathWishCoffee.Controllers
                     Console.WriteLine("Text: " + item.Text);
 
                     _deathWishCoffeeDbContext.Types.Add(typeToAdd);
-
                 }
             }
 
             Console.WriteLine("Attributes:");
-            if (form.Attributes != null && form.Attributes.Count > 0)
+            if (form.Attributes != null && form.Attributes.Count >= 0)
             {
                 if (productToEdit.Attributes != null)
                     _deathWishCoffeeDbContext.Attributes.RemoveRange(productToEdit.Attributes);
@@ -611,7 +611,7 @@ namespace DeathWishCoffee.Controllers
             }
 
             Console.WriteLine("InsideTypes:");
-            if (form.InsideTypes != null && form.InsideTypes.Count > 0)
+            if (form.InsideTypes != null && form.InsideTypes.Count >= 0)
             {
                 if (productToEdit.InsideTypes != null)
                     _deathWishCoffeeDbContext.InsideTypes.RemoveRange(productToEdit.InsideTypes);
@@ -637,7 +637,7 @@ namespace DeathWishCoffee.Controllers
             }
 
             Console.WriteLine("Symbols:");
-            if (form.Symbols != null && form.Symbols.Count > 0)
+            if (form.Symbols != null && form.Symbols.Count >= 0)
             {
                 if (productToEdit.Symbols != null)
                     _deathWishCoffeeDbContext.Symbols.RemoveRange(productToEdit.Symbols);
@@ -663,7 +663,7 @@ namespace DeathWishCoffee.Controllers
             }
 
             Console.WriteLine("Formats:");
-            if (form.Formats != null && form.Formats.Count > 0)
+            if (form.Formats != null && form.Formats.Count >= 0)
             {
                 if (productToEdit.Formats != null)
                     _deathWishCoffeeDbContext.Formats.RemoveRange(productToEdit.Formats);
@@ -685,7 +685,7 @@ namespace DeathWishCoffee.Controllers
             }
 
             Console.WriteLine("Roasts:");
-            if (form.Roasts != null && form.Roasts.Count > 0)
+            if (form.Roasts != null && form.Roasts.Count >= 0)
             {
 
                 if (productToEdit.Roasts != null)
@@ -708,7 +708,7 @@ namespace DeathWishCoffee.Controllers
             }
 
             Console.WriteLine("Flavors:");
-            if (form.Flavors != null && form.Flavors.Count > 0)
+            if (form.Flavors != null && form.Flavors.Count >= 0)
             {
                 if (productToEdit.Flavors != null)
                     _deathWishCoffeeDbContext.Flavors.RemoveRange(productToEdit.Flavors);

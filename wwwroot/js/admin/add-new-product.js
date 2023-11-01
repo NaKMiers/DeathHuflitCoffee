@@ -1,7 +1,18 @@
 function handleImages() {
-   var itemContainer = $("#admin-image-container");
-   var itemButton = $("#admin-add-image-btn");
-   var itemCounter = 0;
+   var itemContainer = $('#admin-image-container')
+   var itemButton = $('#admin-add-image-btn')
+
+   var lastIndex = itemButton
+      .closest('#admin-type-container')
+      .find(".form-item:last input[name^='Images']")
+   console.log(lastIndex)
+
+   var itemCounter = 0
+
+   if (lastIndex.length) {
+      lastIndex = lastIndex.attr('name').match(/\[(\d+)\]/)[1]
+      itemCounter = +lastIndex + 1
+   }
 
    itemButton.click(function () {
       // Tạo các trường input cho Image mới
@@ -13,23 +24,34 @@ function handleImages() {
                   <input type="url" id="Images[${itemCounter}].Src" name="Images[${itemCounter}].Src" class="form-control" />
                </div>
          </div>
-      `;
+      `
 
-      itemCounter++;
+      itemCounter++
 
       // Thêm Image mới vào container và cập nhật hiển thị
-      itemContainer.append(newHtml);
+      itemContainer.append(newHtml)
 
-      $(".remove-item").click(function () {
-         $(this).closest(".form-item").remove(); // Xóa 'form-item' chứa nút xóa được bấm
-      });
-   });
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
+   })
 }
 
 function handleSizes() {
-   var itemContainer = $("#admin-size-container");
-   var itemButton = $("#admin-add-size-btn");
-   var itemCounter = 0;
+   var itemContainer = $('#admin-size-container')
+   var itemButton = $('#admin-add-size-btn')
+
+   var lastIndex = itemButton
+      .closest('#admin-type-container')
+      .find(".form-item:last input[name^='Sizes']")
+   console.log(lastIndex)
+
+   var itemCounter = 0
+
+   if (lastIndex.length) {
+      lastIndex = lastIndex.attr('name').match(/\[(\d+)\]/)[1]
+      itemCounter = +lastIndex + 1
+   }
 
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
@@ -49,23 +71,34 @@ function handleSizes() {
                   <input type="text" class="form-control" id="Sizes[${itemCounter}].Text" name="Sizes[${itemCounter}].Text"></input>
                </div>
          </div>
-      `;
+      `
 
-      itemCounter++;
+      itemCounter++
 
       // Thêm Size mới vào container và cập nhật hiển thị
-      itemContainer.append(newHtml);
+      itemContainer.append(newHtml)
 
-      $(".remove-item").click(function () {
-         $(this).closest(".form-item").remove(); // Xóa 'form-item' chứa nút xóa được bấm
-      });
-   });
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
+   })
 }
 
 function handleFlavorProfiles() {
-   var itemContainer = $("#admin-flavor-profile-container");
-   var itemButton = $("#admin-add-flavor-profile-btn");
-   var itemCounter = 0;
+   var itemContainer = $('#admin-flavor-profile-container')
+   var itemButton = $('#admin-add-flavor-profile-btn')
+
+   var lastIndex = itemButton
+      .closest('#admin-type-container')
+      .find(".form-item:last input[name^='FlavorProfiles']")
+   console.log(lastIndex)
+
+   var itemCounter = 0
+
+   if (lastIndex.length) {
+      lastIndex = lastIndex.attr('name').match(/\[(\d+)\]/)[1]
+      itemCounter = +lastIndex + 1
+   }
 
    itemButton.click(function () {
       // Tạo các trường input cho FlavorProfile mới
@@ -81,23 +114,34 @@ function handleFlavorProfiles() {
                <textarea class="form-control" id="FlavorProfiles[${itemCounter}].Text" name="FlavorProfiles[${itemCounter}].Text"></textarea>
             </div>
          </div>
-      `;
+      `
 
-      itemCounter++;
+      itemCounter++
 
       // Thêm FlavorProfile mới vào container và cập nhật hiển thị
-      itemContainer.append(newHtml);
+      itemContainer.append(newHtml)
 
-      $(".remove-item").click(function () {
-         $(this).closest(".form-item").remove(); // Xóa 'form-item' chứa nút xóa được bấm
-      });
-   });
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
+   })
 }
 
 function handleDetails() {
-   var itemContainer = $("#admin-detail-container");
-   var itemButton = $("#admin-add-detail-btn");
-   var itemCounter = 0;
+   var itemContainer = $('#admin-detail-container')
+   var itemButton = $('#admin-add-detail-btn')
+
+   var lastIndex = itemButton
+      .closest('#admin-type-container')
+      .find(".form-item:last input[name^='Details']")
+   console.log(lastIndex)
+
+   var itemCounter = 0
+
+   if (lastIndex.length) {
+      lastIndex = lastIndex.attr('name').match(/\[(\d+)\]/)[1]
+      itemCounter = +lastIndex + 1
+   }
 
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
@@ -113,23 +157,34 @@ function handleDetails() {
                <input type="text" class="form-control" id="Details[${itemCounter}].Text" name="Details[${itemCounter}].Text"></input>
             </div>
          </div>
-      `;
+      `
 
-      itemCounter++;
+      itemCounter++
 
       // Thêm Size mới vào container và cập nhật hiển thị
-      itemContainer.append(newHtml);
+      itemContainer.append(newHtml)
 
-      $(".remove-item").click(function () {
-         $(this).closest(".form-item").remove(); // Xóa 'form-item' chứa nút xóa được bấm
-      });
-   });
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
+   })
 }
 
 function handleTypes() {
-   var itemContainer = $("#admin-type-container");
-   var itemButton = $("#admin-add-type-btn");
-   var itemCounter = 0;
+   var itemContainer = $('#admin-type-container')
+   var itemButton = $('#admin-add-type-btn')
+
+   var lastIndex = itemButton
+      .closest('#admin-type-container')
+      .find(".form-item:last input[name^='Types']")
+   console.log(lastIndex)
+
+   var itemCounter = 0
+
+   if (lastIndex.length) {
+      lastIndex = lastIndex.attr('name').match(/\[(\d+)\]/)[1]
+      itemCounter = +lastIndex + 1
+   }
 
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
@@ -141,23 +196,34 @@ function handleTypes() {
                <input type="text" class="form-control" id="Types[${itemCounter}].Text" name="Types[${itemCounter}].Text"></input>
             </div>
          </div>
-      `;
+      `
 
-      itemCounter++;
+      itemCounter++
 
       // Thêm Size mới vào container và cập nhật hiển thị
-      itemContainer.append(newHtml);
+      itemContainer.append(newHtml)
 
-      $(".remove-item").click(function () {
-         $(this).closest(".form-item").remove(); // Xóa 'form-item' chứa nút xóa được bấm
-      });
-   });
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
+   })
 }
 
 function handleAttributes() {
-   var itemContainer = $("#admin-attribute-container");
-   var itemButton = $("#admin-add-attribute-btn");
-   var itemCounter = 0;
+   var itemContainer = $('#admin-attribute-container')
+   var itemButton = $('#admin-add-attribute-btn')
+
+   var lastIndex = itemButton
+      .closest('#admin-type-container')
+      .find(".form-item:last input[name^='Attributes']")
+   console.log(lastIndex)
+
+   var itemCounter = 0
+
+   if (lastIndex.length) {
+      lastIndex = lastIndex.attr('name').match(/\[(\d+)\]/)[1]
+      itemCounter = +lastIndex + 1
+   }
 
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
@@ -181,23 +247,34 @@ function handleAttributes() {
                <input type="number" class="form-control" id="Attributes[${itemCounter}].Value" name="Attributes[${itemCounter}].Value" min="0" max="100"/>
             </div>
          </div>
-      `;
+      `
 
-      itemCounter++;
+      itemCounter++
 
       // Thêm Size mới vào container và cập nhật hiển thị
-      itemContainer.append(newHtml);
+      itemContainer.append(newHtml)
 
-      $(".remove-item").click(function () {
-         $(this).closest(".form-item").remove(); // Xóa 'form-item' chứa nút xóa được bấm
-      });
-   });
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
+   })
 }
 
 function handleInsideTypes() {
-   var itemContainer = $("#admin-inside-type-container");
-   var itemButton = $("#admin-add-inside-type-btn");
-   var itemCounter = 0;
+   var itemContainer = $('#admin-inside-type-container')
+   var itemButton = $('#admin-add-inside-type-btn')
+
+   var lastIndex = itemButton
+      .closest('#admin-type-container')
+      .find(".form-item:last input[name^='InsideTypes']")
+   console.log(lastIndex)
+
+   var itemCounter = 0
+
+   if (lastIndex.length) {
+      lastIndex = lastIndex.attr('name').match(/\[(\d+)\]/)[1]
+      itemCounter = +lastIndex + 1
+   }
 
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
@@ -217,23 +294,34 @@ function handleInsideTypes() {
                </select>
             </div>
          </div>
-      `;
+      `
 
-      itemCounter++;
+      itemCounter++
 
       // Thêm Size mới vào container và cập nhật hiển thị
-      itemContainer.append(newHtml);
+      itemContainer.append(newHtml)
 
-      $(".remove-item").click(function () {
-         $(this).closest(".form-item").remove(); // Xóa 'form-item' chứa nút xóa được bấm
-      });
-   });
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
+   })
 }
 
 function handleSymbols() {
-   var itemContainer = $("#admin-symbol-container");
-   var itemButton = $("#admin-add-symbol-btn");
-   var itemCounter = 0;
+   var itemContainer = $('#admin-symbol-container')
+   var itemButton = $('#admin-add-symbol-btn')
+
+   var lastIndex = itemButton
+      .closest('#admin-type-container')
+      .find(".form-item:last input[name^='Symbols']")
+   console.log(lastIndex)
+
+   var itemCounter = 0
+
+   if (lastIndex.length) {
+      lastIndex = lastIndex.attr('name').match(/\[(\d+)\]/)[1]
+      itemCounter = +lastIndex + 1
+   }
 
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
@@ -253,23 +341,34 @@ function handleSymbols() {
                </select>
             </div>
          </div>
-      `;
+      `
 
-      itemCounter++;
+      itemCounter++
 
       // Thêm Size mới vào container và cập nhật hiển thị
-      itemContainer.append(newHtml);
+      itemContainer.append(newHtml)
 
-      $(".remove-item").click(function () {
-         $(this).closest(".form-item").remove(); // Xóa 'form-item' chứa nút xóa được bấm
-      });
-   });
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
+   })
 }
 
 function handleFormats() {
-   var itemContainer = $("#admin-format-container");
-   var itemButton = $("#admin-add-format-btn");
-   var itemCounter = 0;
+   var itemContainer = $('#admin-format-container')
+   var itemButton = $('#admin-add-format-btn')
+
+   var lastIndex = itemButton
+      .closest('#admin-type-container')
+      .find(".form-item:last input[name^='Formats']")
+   console.log(lastIndex)
+
+   var itemCounter = 0
+
+   if (lastIndex.length) {
+      lastIndex = lastIndex.attr('name').match(/\[(\d+)\]/)[1]
+      itemCounter = +lastIndex + 1
+   }
 
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
@@ -281,23 +380,34 @@ function handleFormats() {
                <input type="text" class="form-control" id="Formats[${itemCounter}].Text" name="Formats[${itemCounter}].Text"></input>
             </div>
          </div>
-      `;
+      `
 
-      itemCounter++;
+      itemCounter++
 
       // Thêm Size mới vào container và cập nhật hiển thị
-      itemContainer.append(newHtml);
+      itemContainer.append(newHtml)
 
-      $(".remove-item").click(function () {
-         $(this).closest(".form-item").remove(); // Xóa 'form-item' chứa nút xóa được bấm
-      });
-   });
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
+   })
 }
 
 function handleRoasts() {
-   var itemContainer = $("#admin-roast-container");
-   var itemButton = $("#admin-add-roast-btn");
-   var itemCounter = 0;
+   var itemContainer = $('#admin-roast-container')
+   var itemButton = $('#admin-add-roast-btn')
+
+   var lastIndex = itemButton
+      .closest('#admin-type-container')
+      .find(".form-item:last input[name^='Roasts']")
+   console.log(lastIndex)
+
+   var itemCounter = 0
+
+   if (lastIndex.length) {
+      lastIndex = lastIndex.attr('name').match(/\[(\d+)\]/)[1]
+      itemCounter = +lastIndex + 1
+   }
 
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
@@ -309,23 +419,34 @@ function handleRoasts() {
                <input type="text" class="form-control" id="Roasts[${itemCounter}].Text" name="Roasts[${itemCounter}].Text"></input>
             </div>
          </div>
-      `;
+      `
 
-      itemCounter++;
+      itemCounter++
 
       // Thêm Size mới vào container và cập nhật hiển thị
-      itemContainer.append(newHtml);
+      itemContainer.append(newHtml)
 
-      $(".remove-item").click(function () {
-         $(this).closest(".form-item").remove(); // Xóa 'form-item' chứa nút xóa được bấm
-      });
-   });
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
+   })
 }
 
 function handleFlavors() {
-   var itemContainer = $("#admin-flavor-container");
-   var itemButton = $("#admin-add-flavor-btn");
-   var itemCounter = 0;
+   var itemContainer = $('#admin-flavor-container')
+   var itemButton = $('#admin-add-flavor-btn')
+
+   var lastIndex = itemButton
+      .closest('#admin-type-container')
+      .find(".form-item:last input[name^='Flavors']")
+   console.log(lastIndex)
+
+   var itemCounter = 0
+
+   if (lastIndex.length) {
+      lastIndex = lastIndex.attr('name').match(/\[(\d+)\]/)[1]
+      itemCounter = +lastIndex + 1
+   }
 
    itemButton.click(function () {
       // Tạo các trường input cho Size mới
@@ -337,33 +458,33 @@ function handleFlavors() {
                <input type="text" class="form-control" id="Flavors[${itemCounter}].Text" name="Flavors[${itemCounter}].Text"></input>
             </div>
          </div>
-      `;
+      `
 
-      itemCounter++;
+      itemCounter++
 
       // Thêm Size mới vào container và cập nhật hiển thị
-      itemContainer.append(newHtml);
+      itemContainer.append(newHtml)
 
-      $(".remove-item").click(function () {
-         $(this).closest(".form-item").remove(); // Xóa 'form-item' chứa nút xóa được bấm
-      });
-   });
+      $('.remove-item').click(function () {
+         $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+      })
+   })
 }
 
 $(document).ready(function () {
-   handleImages();
-   handleSizes();
-   handleFlavorProfiles();
-   handleDetails();
-   handleTypes();
-   handleAttributes();
-   handleInsideTypes();
-   handleSymbols();
-   handleFormats();
-   handleRoasts();
-   handleFlavors();
+   handleImages()
+   handleSizes()
+   handleFlavorProfiles()
+   handleDetails()
+   handleTypes()
+   handleAttributes()
+   handleInsideTypes()
+   handleSymbols()
+   handleFormats()
+   handleRoasts()
+   handleFlavors()
 
-   $(".remove-item").click(function () {
-      $(this).closest(".form-item").remove(); // Xóa 'form-item' chứa nút xóa được bấm
-   });
-});
+   $('.remove-item').click(function () {
+      $(this).closest('.form-item').remove() // Xóa 'form-item' chứa nút xóa được bấm
+   })
+})

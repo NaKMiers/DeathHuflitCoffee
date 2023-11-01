@@ -25,8 +25,19 @@ namespace DeathWishCoffee.Controllers
             string sortBy = _httpContext.HttpContext.Request.Query["sort_by"];
 
             var products = _deathWishCoffeeDbContext.Products
-                .Include(p => p.Types)
-                .ToList();
+                        .Include(p => p.Sizes)
+                        .Include(p => p.InsideTypes)
+                        .Include(p => p.FlavorProfiles)
+                        .Include(p => p.Attributes)
+                        .Include(p => p.Details)
+                        .Include(p => p.Images)
+                        .Include(p => p.Types)
+                        .Include(p => p.Formats)
+                        .Include(p => p.Roasts)
+                        .Include(p => p.Flavors)
+                        .Include(p => p.Symbols)
+                        .Include(p => p.Reviews)
+                        .ToList();
 
             IEnumerable<Models.Domain.Product> finalProducts = null;
 

@@ -3,7 +3,7 @@
     ViewData["Title"] = "All Products Page";
 }
 
-<div class="bg-light pt-5 overflow-scroll">
+<div class="admin bg-light pt-5 overflow-scroll">
     <a href="/admin" class="btn btn-secondary mb-3">
         Back
     </a>
@@ -68,7 +68,9 @@
                     <td>@product.Id</td>
                     <td>@product.Title</td>
                     <td>@product.Subtitle</td>
-                    <td>@product.Description</td>
+                    <td>
+                        @* @product.Description *@
+                    </td>
                     <td>@product.SubscribeAndSave</td>
                     <td>@product.Note</td>
                     <td>@product.PrimaryColor</td>
