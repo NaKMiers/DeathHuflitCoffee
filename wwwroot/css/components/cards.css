@@ -61,6 +61,7 @@
     .card-list {
         display: flex;
         flex-direction: row;/* Hiển thị các thẻ từ trái qua phải */
+        justify-content: space-between;
     }
     .card-slide {
         overflow-x: auto;
@@ -72,10 +73,16 @@
         text-align: center;/* Căn giữa nội dung trong thẻ li */
     }
     
-    .card-box .image {
-        transition: transform 0s;
-        /* Thêm hiệu ứng chuyển hình */
-        max-width: 100%;   
+    .card-wraper .image {
+        transition: transform 0s;/* Thêm hiệu ứng chuyển hình */
+       width: 150%; 
+       object-fit: cover;
+    }
+    .card-box .card-wraper{
+        width: 100%;
+    }
+    .media{
+        width: 100%;    
     }
     .prevous-button{
         left: 0px;
