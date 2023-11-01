@@ -1,19 +1,31 @@
-.Incentives {
+.Incentives {   
     background-color: #201e1d;
     color: #ffffff;
+    width: 100%;
 }
 .Incentives-container{ 
-    margin-left: 200px;
-    margin-right: 200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: 220px;
+    margin-right: 220px;
     text-align: center;
 }
 .Incentives-heading{
-    font-size: 50px;
-    
+    font-size: 60px;  
+}
+.Incentives-text{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.Incentives-container .Incentive-fonttext {
+    align-items: baseline;
+    /* Căn lề trái cho phần văn bản */
+    padding-left: 20px;
+    /* Thêm padding bên trái để căn lề và giữ lại khoảng cách ban đầu */
 }
 
-p{
-    font-size: 18px; 
+.Incentive-fonttext{
+    font-size: 17px; 
     text-align: center;
 }
 
@@ -21,34 +33,71 @@ p{
     background-color: #000000;/* Đặt màu nền khi di chuột vào */
     color: #ffffff;/* Màu chữ khi đưa chuột vào */
 }
+.Incentives-button a {
+    display: inline-block;
+    margin-right: 10px;/* Đặt khoảng cách ban đầu */
+}
+@media (max-width: 1078px){
+    .Incentives-heading {
+        font-size: 50px;
+    }
+    .Incentives-container {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-left: 220px;
+        margin-right: 220px;
+        text-align: center;
+    }
+    .Incentives-text {
+        margin-left: 0px;
+        margin-right: 0px;
+    }     
+}
 
-.Incentives-container {
-    overflow: hidden;/* Ẩn nội dung tràn ra ngoài khi màn hình thu nhỏ */
-    
-}
-.Incentives-button a.button {
-    
-    margin: 20px 0px 0px;
-    /* Khoảng cách trên và dưới là 10px, nên tổng khoảng cách là 20px */
-}
 @media (max-width: 990px) {
-    .Incentives-container{
-        margin-left: 50px;
-        /* Điều chỉnh khoảng trống khi thu nhỏ màn hình */
-        margin-right: 50px;
-        /* Điều chỉnh khoảng trống khi thu nhỏ màn hình */
+    .Incentives-container {
+        margin-left: 150px;
+        margin-right: 150px;
+        text-align: center;
+    }
+    .Incentive-fonttext {
+        font-size: 17px;
+        text-align: center;
     }
     .Incentives-heading {
-        font-size: 40px;
+        font-size: 45px;
     }
-        
+          
+}
+@media (max-width: 750px){
+    .Incentives-container {
+            margin-left: 15px;
+            margin-right: 15px;
+            text-align: center;
+    }
+    .Incentive-fonttext {
+        font-size: 17px;
+        text-align: center;
+    }
+    .button:hover {
+        background-color: #000000;/* Đặt màu nền khi di chuột vào */
+        color: #ffffff;/* Màu chữ khi đưa chuột vào */
+    }
     
+    .Incentives-button a {
+        display: inline-block;
+        margin-right: 10px;/* Đặt khoảng cách ban đầu */
+    }
 }
 @media (max-width: 500px) {
     .Incentives-blocks a.button {
         display: block;/* Đặt chúng thành hàng dọc */
         width: 100%;/* Đặt kích thước bằng nhau và chiếm toàn bộ chiều rộng */
         margin-right: 0;/* Loại bỏ khoảng cách giữa các button */
-        margin-bottom: 5px;
+        margin-bottom: 8px;
+    }
+    .Incentive-fonttext {           
+        font-size: 17px;
+        text-align: center;
     }
 }

@@ -121,10 +121,10 @@ textarea {
    max-height: 309px;
    overflow-y: scroll;
 }
-::-webkit-scrollbar {
+.DirectionHeding__form-product-list::-webkit-scrollbar {
    width: 5px;
 }
-::-webkit-scrollbar-thumb {
+.DirectionHeding__form-product-list::-webkit-scrollbar-thumb {
    background-color: #363737;
 }
 .DirectionHeding__panel-4-crf-category_name {

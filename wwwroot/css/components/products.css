@@ -233,6 +233,7 @@
    padding: 17px 0px;
 }
 .Products__twcss-font-fenomenBold.Products__twcss-font-bold.Products__twcss-text-body-14.Products__twcss-uppercase {
+   color: #fff;
    font-weight: 800;
    text-transform: uppercase;
    font-size: 14px;
@@ -382,4 +383,12 @@
 }
 .Products__filterproducttype {
    width: 16px;
+}
+.card__heading.h5 {
+   text-align: left;
+}
+@media (max-width: 751px) {
+   #Products__Facet-1-template-14567496974391-grid {
+      width: 80%;
+   }
 }

@@ -14,7 +14,7 @@
     <h1 class="text-center">Add To Cart</h1>
     <p class="text-center"><strong>User ID:</strong> @ViewBag.UserId</p>
 
-    <div class="d-flex gap-4 overflow-scroll w-100 p-5">
+    <div class="d-flex flex-wrap gap-4 overflow-scroll w-100 p-5">
         @foreach (var item in products)
         {
             <form action='/admin/cart/add/@userId' method="post" class="card" style="width: 200px;">
