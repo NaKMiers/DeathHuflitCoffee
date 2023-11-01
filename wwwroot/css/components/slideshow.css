@@ -1,9 +1,9 @@
-/* Để đảm bảo chỉ hiển thị một slide tại một thời điểm */
-.Slideshow-slide {
-    display: none;
-
+.Slideshow{
+    display: flex;
 }
-
+.Slideshow-slide{
+    padding-top: 30px;
+}
 /* CSS để tạo hiệu ứng từ phải qua trái */
 .Slideshow-banner {
     overflow: hidden;  
@@ -16,14 +16,18 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;/* Đặt chiều rộng tùy ý (ví dụ 50%) */
-    height: 350px;
+    height: 300px;
+}
+.Slide-heading{
+    letter-spacing: 0.2px;  
 }
 
-.Slideshow h2 {
+
+.Slideshow .Slide-heading {
     font-size: 40px;
 }
 
-.Slideshow p {
+.Slideshow text {
     font-size: 16px;
 }
 
@@ -32,9 +36,7 @@
 }
 
 .slideshow-container {
-    overflow-x: scroll; /* Tạo thanh cuộn ngang */
-    /* Thiết lập điểm snap và căn giữa phần cuộn với phần tử snap */
-    scroll-snap-type: x mandatory;
+   
     width: 100%;
     background-color: #201e1d;
 }
@@ -100,19 +102,30 @@
     height: 30px;
     
 }
-.slideshow__control-icon--pause {
-    
-    opacity: 0;/* Đặt opacity thành 0 để ẩn biểu tượng "play" */
-    
+.Slideshow__icon-icon-caret
+{
+width: 10px;
+position: relative;
+}
+.Slideshow__icon-icon-caret.slideshow__left-icon
+{
+    right: 3px;
+}
+.Slideshow__icon-icon-caret.slideshow__right-icon {
+    left: 3px;
 }
 .slideshow__control-icon--pause,
 .slideshow__control-icon--play {
+    width: 10px;
+    padding-top:4px;
     text-align: center;
     justify-content: center;
     position: absolute;/* Đặt vị trí tuyệt đối cho cả hai biểu tượng */
    
 }
-
+.slideshow__control-icon--pause {
+    display: none;
+}
 .slider-curren {
     display: flex;
     align-items: center;
@@ -125,6 +138,9 @@
 .Slideshow svg{
     width: 12px;
     height:12px;
+}
+.Slideshow-slide.active {
+    display: block;
 }
 
 @media screen and (max-width: 750px) {
@@ -150,11 +166,11 @@
         height: auto;
     }
 
-    .Slideshow h2 {
+    .Slideshow .Slide-heading {
         font-size: 40px;
     }
 
-    .Slideshow p {
+    .Slideshow text {
         font-size: 16px;
     }
 

@@ -1,26 +1,35 @@
-const cardSlide = document.querySelector('.card-slide');
-const cardList = document.querySelector('.card-list');
-const cardBoxes = document.querySelectorAll('.card-box');
-const sectionWidth = cardBoxes[0].offsetWidth; // Kích thước của mỗi phần
-let currentSection = 0; // Phần hiện tại
+const cardList = document.querySelector(".card-list");
+const cardBoxes = document.querySelectorAll(".card-box");
+const nextButton = document.querySelector(".nextcard-button");
+const prevButton = document.querySelector(".prevous-button");
 
-function scrollToSection(section) {
-    currentSection = section;
-    const targetX = currentSection * sectionWidth;
-    cardSlide.scrollLeft = targetX;
-}
+let currentSlide = 0;
 
-function scrollToPreviousSection() {
-    if (currentSection > 0) {
-        scrollToSection(currentSection - 1);
+nextButton.addEventListener("click", () => {
+    if (currentSlide < cardBoxes.length - 1) {
+        currentSlide++;
+        updateSlide();
     }
-}
+});
 
-function scrollToNextSection() {
-    if (currentSection < cardBoxes.length - 1) {
-        scrollToSection(currentSection + 1);
+prevButton.addEventListener("click", () => {
+    if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
     }
+});
+
+function updateSlide() {
+    cardList.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    cardBoxes.forEach((box, index) => {
+        if (index === currentSlide) {
+            box.classList.add("active");
+        } else {
+            box.classList.remove("active");
+        }
+    });
 }
 
-document.querySelector('.prev-button').addEventListener('click', scrollToPreviousSection);
-document.querySelector('.next-button').addEventListener('click', scrollToNextSection);
+// Hiển thị thẻ đầu tiên khi trang web tải lên
+updateSlide();

@@ -1,15 +1,13 @@
 .card-list {
     display: flex;
     text-align: center;
+    padding-left: 0px;
 }
 
 .card-slide {
-
     display: flex;
-    justify-content: center;
-    /* Căn giữa theo chiều ngang */
-    align-items: center;
-    /* Căn giữa theo chiều dọc */
+    justify-content: center;/* Căn giữa theo chiều ngang */
+    align-items: center;/* Căn giữa theo chiều dọc */
 }
 
 .card-heading :hover {
@@ -19,74 +17,101 @@
 #card .card-box {
     justify-content: center;
     text-align: center;
-   
-
+    padding-left: 0px;
 }
 
 .card-heading {
     text-decoration: none;
-    margin-top: -50px;
     color: #ffffff;
-
+    font-size: 28px;
+    padding-bottom: 20px;
 }
 
 .card-heading span {
     color: #ffffff;
 }
-
-
-.card-box {
-    
+.card-box{
     flex-shrink: 0;
     width: 33.33%;
 }
 
 
+.card-wraper {
+    display: flex;
+    align-items: center;/* Căn giữa nội dung theo trục dọc */
+    text-align: center;/* Căn văn bản giữa phần tử */
+    flex-direction: column;/* Xếp nội dung theo chiều dọc */
+    gap: 10px;/* Khoảng cách giữa các phần tử con */
+}
+.card-wraper .image {
+    width: 100%;
+}.card-wraper .content {
+    text-align: center;
+    /* Căn văn bản giữa phần tử .content */
+}
+.nextcard-button{
+    display: none;
+}
+.prevous-button{
+    display: none;
+}
 
 
-
-@media screen and (max-width: 990px) {
-    
-
+@media screen and (max-width: 989px) {
     .card-list {
         display: flex;
-       
-        white-space: nowrap;
-
+        flex-direction: row;/* Hiển thị các thẻ từ trái qua phải */
+        justify-content: space-between;
+        transition: transform 0.5s;
     }
-
-    .card-heading {
-        text-decoration: none;
-        margin-top: -50px;
-        color: #ffffff;
-
-    }
-
-    .card-heading :hover {
-        color: red;
-    }
-
-    .card-box {
-        position: relative;
-        overflow: hidden;
-        
-    }
-
-    .card-box {  
-        flex-shrink: 0;       
-    }
-
     .card-slide {
         overflow-x: auto;
         /* Tạo thanh cuộn ngang */
         overflow-y: auto;
     }
-    .image {
-        transition: transform 0s;
-        /* Thêm hiệu ứng chuyển hình */
-        max-width: 100%;
-        
+    .card-box {
+        flex: 0 0 100%;/* Chia đều chiều rộng cho từng thẻ li */
+        text-align: center;/* Căn giữa nội dung trong thẻ li */
+        flex-shrink: 0;
+
     }
     
-
+    .card-wraper .image {
+        transition: transform 0s;/* Thêm hiệu ứng chuyển hình */
+       width: 150%; 
+       object-fit: cover;
+    }
+    .card-box .card-wraper{
+        width: 100%;
+    }
+    .media{
+        width: 100%; 
+        text-align: center;
+    }
+    .image {
+        max-width: 100%;
+        height: auto;
+    }
+    .prevous-button{
+        left: 0px;
+        display: block;
+        background-color: transparent;
+        border: 0;
+    }
+    .nextcard-button{
+        display: block;
+        right: 0;
+        transform: rotate(180deg);
+        background-color: transparent;
+        border: 0;
+    }
+        .prevous-button,
+        .nextcard-button {
+            position: absolute;
+            top: 50%;
+            /* Đặt ở giữa theo trục dọc */
+            transform: translateY(-50%) rotate-(180deg);
+            /* Để căn giữa theo trục dọc */
+            cursor: pointer;
+        }
 }
