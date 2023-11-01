@@ -293,6 +293,13 @@ app.MapControllerRoute(
     defaults: new { controller = "Order", action = "EditOrder" }
 );
 
+
+app.MapControllerRoute(
+    name: "DetailOrder",
+    pattern: "user/order-history",
+    defaults: new { controller = "User", action = "OrderHistory" }
+);
+
 // [/]
 app.MapControllerRoute(
     name: "default",
@@ -306,6 +313,6 @@ app.MapControllerRoute(
     defaults: new { controller = "Home", action = "PageNotFound" }
 );
 
+
 // RUN
 app.Run();
-

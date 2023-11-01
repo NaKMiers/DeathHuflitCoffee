@@ -45,6 +45,12 @@ namespace DeathWishCoffee.Controllers
             _httpContext.HttpContext.Session.SetString("recommendProducts", rcmPrsJson);
         }
 
+        // [/user/order-history]
+        public IActionResult OrderHistory()
+        {
+            return View();
+        }
+
         // [/admin/users]
         [HttpGet]
         public IActionResult Index()
