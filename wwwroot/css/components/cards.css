@@ -1,6 +1,7 @@
 .card-list {
     display: flex;
     text-align: center;
+    padding-left: 0px;
 }
 
 .card-slide {
@@ -21,9 +22,9 @@
 
 .card-heading {
     text-decoration: none;
-    margin-top: -50px;
     color: #ffffff;
-
+    font-size: 28px;
+    padding-bottom: 20px;
 }
 
 .card-heading span {
@@ -31,13 +32,10 @@
 }
 .card-box{
     flex-shrink: 0;
-    width: 100%;
+    width: 33.33%;
 }
 
 
-.button button {
-    display: inline-block;
-}
 .card-wraper {
     display: flex;
     align-items: center;/* Căn giữa nội dung theo trục dọc */
@@ -51,11 +49,16 @@
     text-align: center;
     /* Căn văn bản giữa phần tử .content */
 }
+.nextcard-button{
+    display: none;
+}
+.prevous-button{
+    display: none;
+}
 
 
 @media screen and (max-width: 989px) {
     .card-list {
-        padding: 0px;
         display: flex;
         flex-direction: row;/* Hiển thị các thẻ từ trái qua phải */
     }
@@ -64,12 +67,34 @@
         /* Tạo thanh cuộn ngang */
         overflow-y: auto;
     }
-    .image {
+    .card-box {
+        flex: 0 0 100%;/* Chia đều chiều rộng cho từng thẻ li */
+        text-align: center;/* Căn giữa nội dung trong thẻ li */
+    }
+    
+    .card-box .image {
         transition: transform 0s;
         /* Thêm hiệu ứng chuyển hình */
-        max-width: 100%;    
+        max-width: 100%;   
     }
-    .button{
+    .prevous-button{
+        left: 0px;
         display: block;
+        background-color: transparent;
     }
+    .nextcard-button{
+        display: block;
+        right: 0;
+        transform: rotate(180deg);
+        background-color: transparent;
+
+    }
+        .prevous-button,
+        .nextcard-button {
+            position: absolute;
+            top: 50%;
+            /* Đặt ở giữa theo trục dọc */
+            transform: translateY(-50%) rotate-(180deg);
+            /* Để căn giữa theo trục dọc */
+        }
 }
