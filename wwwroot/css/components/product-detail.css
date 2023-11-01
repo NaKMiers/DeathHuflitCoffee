@@ -248,9 +248,9 @@ padding: 0px;
 .KproductDetail__main__text__add_button {
    width: 400px;
    height: 43px;
-   background-color: #d24728;
+   background-color: red;
    color: white;
-   border: 1px solid #d24728;
+   border: 1px solid red;
 }
 
 .KproductDetail__main__text_FlavorProfile__hr {
