@@ -38,9 +38,8 @@ namespace DeathWishCoffee.Controllers
                             .Include(p => p.Reviews)
                             .FirstOrDefault(p => p.Id == id);
 
-            // if product does NOT EXISTS => BadRequest
-            // if (product == null)
-            //     return BadRequest("Product does not exist");
+            if (product == null)
+                return RedirectToAction("Index", "Home");
 
             return View(product);
         }
