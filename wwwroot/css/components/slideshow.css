@@ -1,16 +1,10 @@
-<<<<<<< HEAD
-.Slideshow{
-    display: flex;
-}
-.Slideshow-slide{
-=======
 .Slideshow {
     display: flex;
 }
 
 .Slideshow-slide {
->>>>>>> Quan-Slideshow
     padding-top: 30px;
+    
 }
 /* CSS để tạo hiệu ứng từ phải qua trái */
 .Slideshow-banner {
@@ -23,15 +17,6 @@
 .Slideshow-text-banner {
     margin-left: auto;
     margin-right: auto;
-<<<<<<< HEAD
-    width: 50%;/* Đặt chiều rộng tùy ý (ví dụ 50%) */
-    height: 300px;
-}
-.Slide-heading{
-    letter-spacing: 0.2px;  
-}
-
-=======
     width: 50%;
     /* Đặt chiều rộng tùy ý (ví dụ 50%) */
     height: 300px;
@@ -41,28 +26,26 @@
     letter-spacing: 0.2px;
 }
 
->>>>>>> Quan-Slideshow
 
 .Slideshow .Slide-heading {
     font-size: 40px;
+    font-family: fantasy;
 }
 
 .Slideshow text {
-    font-size: 16px;
+    font-size: 18px;
+    font-family: inherit;
 }
 
 .banner-richtext {
     font-size: 16px;
+    font-family: fantasy;
 }
 
 .slideshow-container {
-<<<<<<< HEAD
-   
-=======
-
->>>>>>> Quan-Slideshow
     width: 100%;
     background-color: #201e1d;
+    transition: transform 0.5s ease-in-out;
 }
 
 .Slideshow-text-wapper {
@@ -127,24 +110,10 @@
     height: 30px;
 
 }
-<<<<<<< HEAD
-.Slideshow__icon-icon-caret
-{
-width: 10px;
-position: relative;
-}
-.Slideshow__icon-icon-caret.slideshow__left-icon
-{
-    right: 3px;
-}
-.Slideshow__icon-icon-caret.slideshow__right-icon {
-    left: 3px;
-=======
 
 .Slideshow__icon-icon-caret {
     width: 10px;
     position: relative;
->>>>>>> Quan-Slideshow
 }
 
 .Slideshow__icon-icon-caret.slideshow__left-icon {
@@ -158,11 +127,7 @@ position: relative;
 .slideshow__control-icon--pause,
 .slideshow__control-icon--play {
     width: 10px;
-<<<<<<< HEAD
-    padding-top:4px;
-=======
     padding-top: 4px;
->>>>>>> Quan-Slideshow
     text-align: center;
     justify-content: center;
     position: absolute;
@@ -173,9 +138,7 @@ position: relative;
 .slideshow__control-icon--pause {
     display: none;
 }
-.slideshow__control-icon--pause {
-    display: none;
-}
+
 .slider-curren {
     display: flex;
     align-items: center;
@@ -190,9 +153,6 @@ position: relative;
     height: 12px;
 }
 
-.Slideshow-slide.active {
-    display: block;
-}
 .Slideshow-slide.active {
     display: block;
 }
@@ -223,7 +183,7 @@ position: relative;
     }
 
     .Slideshow .Slide-heading {
-        font-size: 40px;
+        font-size: 46px;
     }
 
     .Slideshow text {
