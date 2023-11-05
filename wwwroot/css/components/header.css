@@ -573,8 +573,8 @@
    margin: 2px 0 15px;
 }
 
-.cart-modal__empty-card button {
-   width: 100%;
+.cart-modal__empty-card .shop-now-btn {
+   display: block;
    padding: 10px 15px;
    margin: 0 0 15px;
    border: 2px solid #e12727;
@@ -590,7 +590,7 @@
    transition: 0.2s ease-in-out;
 }
 
-.cart-modal__empty-card button:hover {
+.cart-modal__empty-card .shop-now-btn:hover {
    background: none;
 }  
 

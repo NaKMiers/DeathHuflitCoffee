@@ -40,7 +40,7 @@
     {
         @foreach (var order in Model)
         {
-            <div class="OrderHistory__hiXKxx mb-4">
+            <div class="OrderHistory__hiXKxx m-4 mt-0">
                 <div class="OrderHistory__x0QT2k">
                     <div class="OrderHistory__qCUYY8">
                         <div class="border-end pe-3">
@@ -63,7 +63,7 @@
                 {
                     @foreach (var orderDetail in order.OrderDetails)
                     {
-                        <div class="OrderHistory__kvXy0c ps-0 pe-0">
+                        <div class="OrderHistory__kvXy0c">
                             <div class="OrderHistory__aybVBK"><img src="@orderDetail.Product.Images.FirstOrDefault()?.Src"
                                     class="OrderHistory__rGP9Yd" alt="" tabindex="0">
                                 <div class="_7uZf6Q">
@@ -89,8 +89,8 @@
                 }
 
                 <div class="OrderHistory__kvXy0c-into-money">
-                    <div class="OrderHistory__78s2g ps-0 pe-0">
-                        <label class="_0NMXyN me-1">Total:</label>
+                    <div class="OrderHistory__78s2g fs-4">
+                        <b class="me-1">Total:</b>
                         <div class="DeWpya" tabindex="0" aria-label="Thành tiền: ₫173.500">@total.ToString("C2")</div>
                     </div>
                 </div>

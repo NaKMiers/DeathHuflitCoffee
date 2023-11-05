@@ -408,7 +408,7 @@
             <h4>Your cart is empty</h4>
             <p>Add your favorite items to your cart.</p>
 
-            <button>Shop Now</button>
+            <a href='/collections/coffee' class="shop-now-btn">Shop Now</a>
          </div>
       }
 
@@ -453,7 +453,7 @@
                               </div>
 
                               <div class="cart-modal__product-no-empty-body__content__amount__price">
-                                 $@cartItem.Price
+                                 @cartItem.Price.ToString("C2")
                               </div>
                            </div>
                         </div>
@@ -531,7 +531,7 @@
                      }
                   }
 
-                  <span>$@subtotal</span>
+                  <span>@subtotal.ToString("C2")</span>
                </div>
                <a href="/checkouts/@userId" class="cart-modal__checkout__sub-total__checkout-btn">
                   <div class="cart-modal__checkout__icon">
