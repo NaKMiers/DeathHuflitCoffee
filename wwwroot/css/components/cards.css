@@ -63,17 +63,18 @@
         flex-direction: row;/* Hiển thị các thẻ từ trái qua phải */
         justify-content: space-between;
         transition: transform 0.5s;
+
     }
     .card-slide {
         overflow-x: auto;
         /* Tạo thanh cuộn ngang */
         overflow-y: auto;
     }
+    
     .card-box {
         flex: 0 0 100%;/* Chia đều chiều rộng cho từng thẻ li */
         text-align: center;/* Căn giữa nội dung trong thẻ li */
         flex-shrink: 0;
-
     }
     
     .card-wraper .image {
