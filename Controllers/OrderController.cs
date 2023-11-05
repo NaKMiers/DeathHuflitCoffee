@@ -19,6 +19,8 @@ namespace DeathWishCoffee.Controllers
             _httpContext = httpContextAccessor;
         }
 
+        // [/user/]
+
         // [/admin/orders]
         [HttpGet]
         public IActionResult AllOrders()
@@ -73,22 +75,22 @@ namespace DeathWishCoffee.Controllers
         }
 
         // [/admin/orders/detail/{id}]
-        public IActionResult OrderDetail(Guid id)
-        {
+        // public IActionResult OrderDetail(Guid id)
+        // {
 
-            // get order from database
-            var order = _deathWishCoffeeDbContext.Orders
-                                .Include(o => o.OrderDetails)
-                                .ThenInclude(oD => oD.Product)
-                                .ThenInclude(p => p.Images)
-                                .FirstOrDefault(o => o.Id == id);
+        //     // get order from database
+        //     var order = _deathWishCoffeeDbContext.Orders
+        //                         .Include(o => o.OrderDetails)
+        //                         .ThenInclude(oD => oD.Product)
+        //                         .ThenInclude(p => p.Images)
+        //                         .FirstOrDefault(o => o.Id == id);
 
-            // if orderDeatail does NOT EXIST => BadRequets
-            if (order == null)
-                return BadRequest("Order detail does not exist");
+        //     // if orderDeatail does NOT EXIST => BadRequets
+        //     if (order == null)
+        //         return BadRequest("Order detail does not exist");
 
-            return View("~/Views/Admin/OrderDetail.cshtml", order);
-        }
+        //     return View("~/Views/Admin/OrderDetail.cshtml", order);
+        // }
 
         // [/admin/orders/delete/{id}]
         public IActionResult DeleteOrder(Guid id)
