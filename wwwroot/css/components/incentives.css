@@ -28,10 +28,20 @@
     font-size: 17px; 
     text-align: center;
 }
-
-.button:hover {
-    background-color: #000000;/* Đặt màu nền khi di chuột vào */
-    color: #ffffff;/* Màu chữ khi đưa chuột vào */
+.Incentives-button a.Incentives__button.button {
+    display: inline-block;
+    margin-right: 10px;/* Đặt khoảng cách giữa chúng */
+    padding-right: 10px;/* Đặt khoảng cách giữa chữ và đường kẻ */
+    background-color: red;/* Đặt màu nền thành màu đỏ */
+    color: white;/* Đặt màu chữ thành màu trắng */
+    border: 1px solid red;
+    text-decoration: none;/* Loại bỏ gạch chân trên đường dẫn */
+    padding: 5px 20px;/* Đặt khoảng cách bên trong thẻ */
+}
+.Incentives-button a.Incentives__button.button:hover {
+    background-color: black;
+    color: white;
+    /* Đặt màu chữ thành màu trắng */
 }
 .Incentives-button a {
     display: inline-block;
@@ -79,14 +89,14 @@
         font-size: 17px;
         text-align: center;
     }
-    .button:hover {
-        background-color: #000000;/* Đặt màu nền khi di chuột vào */
+    .Incentives__button button:hover {
+        background-color: #000;/* Đặt màu nền khi di chuột vào */
         color: #ffffff;/* Màu chữ khi đưa chuột vào */
     }
     
-    .Incentives-button a {
-        display: inline-block;
-        margin-right: 10px;/* Đặt khoảng cách ban đầu */
+    .Incentives-button a.Incentives__button {
+        display: inline-block;/* Đảm bảo các thẻ nằm trên cùng một hàng ngang */
+        margin-right: 10px;/* Đặt khoảng cách giữa chúng bằng 10px (có thể điều chỉnh theo ý muốn) */
     }
 }
 @media (max-width: 500px) {
