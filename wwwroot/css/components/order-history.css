@@ -124,3 +124,35 @@
       gap: 5px;
    }
 }
+.OrderHistory__text-center {
+   text-transform: uppercase;
+   font-weight: 550;
+}
+.OrderHistory__FK6kaK {
+   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+   border-radius: 0.125rem;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   padding: 20px;
+}
+.OrderHistory__bi4dk5 {
+   background-position: 50%;
+   background-size: contain;
+   background-repeat: no-repeat;
+   width: 100px;
+   height: 100px;
+   background-image: url(https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/orderlist/5fafbb923393b712b96488590b8f781f.png);
+}
+.OrderHistory__dYtuu1 {
+   margin: 20px 0 0;
+   font-size: 18px;
+   line-height: 1.4;
+   color: rgba(0, 0, 0, 0.8);
+   font-weight: 550;
+}

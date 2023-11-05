@@ -38,10 +38,10 @@
 label {
    width: 100%;
 }
-/* .row {
+.row {
    --bs-gutter-x: none;
    --bs-gutter-y: 0;
-} */
+}
 div.DirectionHeding__cell {
    position: relative;
    margin: 0px;
