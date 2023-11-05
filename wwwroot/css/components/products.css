@@ -392,3 +392,6 @@
       width: 80%;
    }
 }
+.Products__card-media-overflow-hidden {
+   overflow: hidden;
+}

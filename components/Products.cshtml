@@ -168,10 +168,10 @@
                         style="--animation-order: 1;" data-link="http://localhost:5080/products/23213">
                         <div class="card-wrapper product-card-wrapper underline-links-hover">
                             <div class="Products__card Products__card-standard Products__card-media
-                                                                    " style="--ratio-percent: 100%;">
+                                                                                            " style="--ratio-percent: 100%;">
                                 <div class="card__inner color-background-2 gradient Products__ratio"
                                     style="--ratio-percent: 100%;">
-                                    <div class="card__media">
+                                    <div class="Products__card-media-overflow-hidden">
                                         <a href="/products/@item.Id"
                                             class="Products__media Products__media--transparent Products__media--hover-effect">
                                             <img src="@item.Images.FirstOrDefault()?.Src" alt="thumbnail"
@@ -542,6 +542,29 @@
         if (currentPage < 3) {
             // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
             document.querySelector(".next-page-button").addEventListener("click", () => {
+                changePage(currentPage + 1);
+            });
+        }
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+        const currentPage = getCurrentPage();
+        const prevButton = document.querySelector(".prev-page-button");
+        const nextButton = document.querySelector(".next-page-button");
+
+        if (currentPage === 1) {
+            // Nếu ở trang 1, ẩn nút "Prev"
+            prevButton.style.display = "none";
+        } else {
+            prevButton.addEventListener("click", () => {
+                changePage(currentPage - 1);
+            });
+        }
+
+        if (currentPage === 3) {
+            // Nếu ở trang 3, ẩn nút "Next"
+            nextButton.style.display = "none";
+        } else {
+            nextButton.addEventListener("click", () => {
                 changePage(currentPage + 1);
             });
         }
