@@ -41,6 +41,9 @@ namespace DeathWishCoffee.Controllers
             if (product == null)
                 return RedirectToAction("Index", "Home");
 
+            ViewBag.UserId = _httpContext.HttpContext.Session.GetString("Id");
+            Console.WriteLine("===============" + ViewBag.UserId);
+
             return View(product);
         }
 
@@ -66,16 +69,16 @@ namespace DeathWishCoffee.Controllers
             var products = _deathWishCoffeeDbContext.Products
                         .Include(p => p.Sizes)
                         .Include(p => p.InsideTypes)
-                        .Include(p => p.FlavorProfiles)
-                        .Include(p => p.Attributes)
-                        .Include(p => p.Details)
+                        // .Include(p => p.FlavorProfiles)
+                        // .Include(p => p.Attributes)
+                        // .Include(p => p.Details)
                         .Include(p => p.Images)
                         .Include(p => p.Types)
                         .Include(p => p.Formats)
                         .Include(p => p.Roasts)
                         .Include(p => p.Flavors)
-                        .Include(p => p.Symbols)
-                        .Include(p => p.Reviews)
+                        // .Include(p => p.Symbols)
+                        // .Include(p => p.Reviews)
                         .ToList();
 
             return View("~/Views/Admin/AllProducts.cshtml", products);

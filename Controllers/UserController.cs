@@ -47,7 +47,36 @@ namespace DeathWishCoffee.Controllers
         // [/user/order-history]
         public IActionResult OrderHistory()
         {
-            return View();
+            string userId = _httpContext.HttpContext.Session.GetString("Id");
+            if (string.IsNullOrEmpty(userId))
+                return RedirectToAction("Index", "Account");
+
+            string pageQuery = _httpContext.HttpContext.Request.Query["page"];
+            int page = 1;
+            int pageSize = 8;
+            if (!string.IsNullOrEmpty(pageQuery))
+            {
+                int pageNumber = int.Parse(pageQuery);
+                if (pageNumber <= 0)
+                    return RedirectToAction("PageNotFound", "Home");
+                else
+                    page = pageNumber;
+            }
+            int skip = (page - 1) * pageSize; // Số sản phẩm để bỏ qua
+
+            var orders = _deathWishCoffeeDbContext.Orders
+                        .Where(o => o.UserId.ToString() == userId)
+                        .Include(o => o.OrderDetails)
+                        .ThenInclude(oD => oD.Product)
+                        .ThenInclude(p => p.Images)
+                        .OrderByDescending(o => o.CreatedAt)
+                        .Skip(skip)
+                        .Take(pageSize)
+                        .ToList();
+
+            Console.WriteLine($"OrderLength: {orders.Count}");
+
+            return View(orders);
         }
 
         // [/admin/users]

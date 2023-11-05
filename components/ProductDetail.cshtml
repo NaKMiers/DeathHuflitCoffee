@@ -244,9 +244,15 @@
                     </div>
                 </div>
                 <!-- add to cart -->
-                <div class="KproductDetail__main__text__add">
+                <form action="/admin/cart/add/@ViewBag.UserId" method="post" class="cart-KproductDetail__main__text__add-item">
+                    <input class="form-control" name="productId" type="hidden" value="@Model.Id">
+                    <input type="hidden" name="size"
+                        value="@Model.Sizes.FirstOrDefault()?.Label - @Model.Sizes.FirstOrDefault()?.Price"
+                        asp-for="Size">
+                    <input type="hidden" name="quantity" value="1" asp-for="Quantity">
+
                     <button class="KproductDetail__main__text__add_button">ADD TO CART</button>
-                </div>
+                </form>
 
                 <!-- flavor profile -->
                 <div class="KproductDetail__main__text_FlavorProfile">
@@ -274,20 +280,6 @@
                                     </p>
                                 }
                             }
-                            @* <p class="metafield-rich_text_field__p">
-                                <strong>Taste:</strong> 
-                                Cinnamon and clove, rounded
-                                out with hints of spices like nutmeg
-                                and black pepper. Rounded out with sweetness from coffee blend.
-                                </p>
-                            <p class="metafield-rich_text_field__p">
-                                <strong>Aftertaste:</strong> Warm brown spices with
-                                sweet notes from roast
-                            </p>
-                            <p class="metafield-rich_text_field__p">
-                                <strong>Aroma:</strong> Blend of warm spices:
-                                Cinnamon, cardamom, nutmeg, and clove
-                            </p> *@
                         </div>
 
                     </details>

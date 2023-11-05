@@ -1,4 +1,4 @@
-using DeathWishCoffee.Data;
+using DeathWishCoffee.Models.Main;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace DeathWishCoffee.Middlewares

@@ -1,42 +1,5 @@
 @model DeathWishCoffee.Models.Main.User
 
-@* @inject IHttpContextAccessor _httpContext;
-@{
-var id = _httpContext.HttpContext?.Session.GetString("Id");
-var username = _httpContext.HttpContext?.Session.GetString("Username");
-var avatar = _httpContext.HttpContext?.Session.GetString("Avatar");
-} *@
-
-@* <div class="Kaccount_Main" >
-<h1 style="width: 448px;height:52px;color:white;margin-bottom:35px" ><strong>Create account</strong></h1>
-<form class="Kaccount_Main_form_bentrong">
-<div class="form-floating mb-3" >
-<input type="name" class="form-control" placeholder="First Name" required minlength="3" maxlength="100">
-<label for="floatingInput">First Name</label>
-</div>
-<div class="form-floating mb-3" >
-<input type="name" class="form-control" placeholder="Last Name" required minlength="3" maxlength="100">
-<label for="floatingInput">Last Name</label>
-</div>
-
-<div class="form-floating mb-3" style="width: 500px;">
-<input type="email" class="form-control" placeholder="name@example.com" required >
-<label for="floatingInput">Email address</label>
-</div>
-
-<div class="form-floating mb-3">
-<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-<label for="floatingInput">Email address</label>
-</div>
-<div class="form-floating mb-3" style=" width:500px;">
-<input type="password" class="form-control" placeholder="password" required minlength="6" maxlength="100">
-<label for="floatingPassword">Password</label>
-</div>
-<br>
-<div ><button class="Kaccount_button">Create</button> </div>
-</form>
-</div>
-*@
 <div class="KRegister">
    <div class="KRegister_Main pb-4">
 
@@ -63,24 +26,44 @@ var avatar = _httpContext.HttpContext?.Session.GetString("Avatar");
       <div class="KRegister_Main_Text">
          <div class="KRegister_Main_Text1">
             <h2 style="font-size: 30px;" class="text-start p-0 fs-3">Order history</h2>
-            <p class="ps-0 pe-0">You haven't placed any orders yet.</p>
+            @* <p class="ps-0 pe-0">You haven't placed any orders yet.</p> *@
+            <a href="/user/order-history" class="btn btn-link ps-0 pe-0 text-secondary">Click here to see your
+               orders</a>
          </div>
          <div class="KRegister_Main_Text2">
             <h2 style="margin-bottom: 15px;" class="text-start p-0 fs-3">Account details</h2>
             <p class="pe-0 ps-0" style="margin-bottom:15px">
+               <b>Fullname:</b>
                <span>@Model.Fullname</span>
                <br>
                <span>@Model.Country</span>
             </p>
-            <a href="/account" class="ps-0 pe-0" style="color: white; text-decoration: underline; padding-left: 10px">
-               View addresses (1)
+            <p class="pe-0 ps-0" style="margin-bottom:15px">
+               <b>Address:</b> @(Model.Address != "" ? Model.Address : "Haven't add address yet.")
+            </p>
+            <p class="pe-0 ps-0" style="margin-bottom:15px">
+               <b>Username:</b> @(Model.Username != "" ? Model.Username : "Haven't add Username yet.")
+            </p>
+            <p class="pe-0 ps-0" style="margin-bottom:15px">
+               <b>Email:</b> @(Model.Email != "" ? Model.Email : "Haven't add Email yet.")
+            </p>
+            <p class="pe-0 ps-0" style="margin-bottom:15px">
+               <b>Phone:</b> @(Model.Phone != "" ? Model.Phone : "Haven't add Phone yet.")
+            </p>
+            <p class="pe-0 ps-0" style="margin-bottom:15px">
+               <b>Country:</b> @(Model.Country != "" ? Model.Country : "Haven't add Country yet.")
+            </p>
+
+            @* <a href="/account" class="ps-0 pe-0" style="color: white; text-decoration: underline; padding-left:
+            10px">
+            View addresses (1)
             </a>
             <p class="ps-0 pe-0">
-               <a href="/account" class="KRegister_Main_Manage_Your_Subscriptions "
-                  style="color:white; text-decoration: underline;">
-                  Manage Your Subscriptions
-               </a>
-            </p>
+            <a href="/account" class="KRegister_Main_Manage_Your_Subscriptions "
+            style="color:white; text-decoration: underline;">
+            Manage Your Subscriptions
+            </a>
+            </p> *@
          </div>
       </div>
 

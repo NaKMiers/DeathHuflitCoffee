@@ -483,7 +483,7 @@
 
                            <div class="info">
                               <a href="">@item.Title</a>
-                              @* <span>$@item.Sizes?[0].Price</span> *@
+                              <span>@item.Sizes.FirstOrDefault()?.Price.ToString("C2")</span>
                            </div>
                            <input class="form-control" name="productId" type="hidden" value="@item.Id">
                            <input type="hidden" name="size"

@@ -113,6 +113,7 @@ namespace DeathWishCoffee.Controllers
             {
                 var orderDetails = cartItems.Select(cartItem => new OrderDetail
                 {
+                    Id = Guid.NewGuid(),
                     OrderId = orderId,
                     Quantity = cartItem.Quantity,
                     Size = cartItem.Size,

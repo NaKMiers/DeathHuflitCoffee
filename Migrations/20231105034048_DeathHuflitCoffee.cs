@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DeathWishCoffee.Migrations
 {
     /// <inheritdoc />
-    public partial class OK_OK : Migration
+    public partial class DeathHuflitCoffee : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

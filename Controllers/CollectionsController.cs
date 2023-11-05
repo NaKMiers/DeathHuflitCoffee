@@ -19,27 +19,27 @@ namespace DeathWishCoffee.Controllers
             _httpContext = httpContextAccessor;
         }
 
-        private IEnumerable<Models.Main.Product> FilterAndSortForProductPage()
+        private IEnumerable<Product> FilterAndSortForProductPage()
         {
             string filterTypes = _httpContext.HttpContext.Request.Query["filter"];
             string sortBy = _httpContext.HttpContext.Request.Query["sort_by"];
 
             var products = _deathWishCoffeeDbContext.Products
                         .Include(p => p.Sizes)
-                        .Include(p => p.InsideTypes)
-                        .Include(p => p.FlavorProfiles)
-                        .Include(p => p.Attributes)
-                        .Include(p => p.Details)
+                        // .Include(p => p.InsideTypes)
+                        // .Include(p => p.FlavorProfiles)
+                        // .Include(p => p.Attributes)
+                        // .Include(p => p.Details)
                         .Include(p => p.Images)
                         .Include(p => p.Types)
-                        .Include(p => p.Formats)
-                        .Include(p => p.Roasts)
-                        .Include(p => p.Flavors)
-                        .Include(p => p.Symbols)
-                        .Include(p => p.Reviews)
+                        // .Include(p => p.Formats)
+                        // .Include(p => p.Roasts)
+                        // .Include(p => p.Flavors)
+                        // .Include(p => p.Symbols)
+                        // .Include(p => p.Reviews)
                         .ToList();
 
-            IEnumerable<Models.Main.Product> finalProducts = null;
+            IEnumerable<Product> finalProducts = null;
 
             // has FILTER
             if (!string.IsNullOrEmpty(filterTypes))
