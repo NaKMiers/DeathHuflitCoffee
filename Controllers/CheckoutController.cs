@@ -62,53 +62,53 @@ namespace DeathWishCoffee.Controllers
 
             Guid orderId = Guid.NewGuid();
 
-            Console.WriteLine("---------------------------------");
-            Console.WriteLine(form.Email);
+            // Console.WriteLine("---------------------------------");
+            // Console.WriteLine(form.Email);
             if (string.IsNullOrEmpty(form.Email))
                 form.Email = "";
-            Console.WriteLine(form.Country);
+            // Console.WriteLine(form.Country);
             if (string.IsNullOrEmpty(form.Country))
                 form.Country = "";
-            Console.WriteLine(form.Firstname);
+            // Console.WriteLine(form.Firstname);
             if (string.IsNullOrEmpty(form.Firstname))
                 form.Firstname = "";
-            Console.WriteLine(form.Lastname);
+            // Console.WriteLine(form.Lastname);
             if (string.IsNullOrEmpty(form.Lastname))
                 form.Lastname = "";
-            Console.WriteLine(form.Company);
+            // Console.WriteLine(form.Company);
             if (string.IsNullOrEmpty(form.Company))
                 form.Company = "";
-            Console.WriteLine(form.Address);
+            // Console.WriteLine(form.Address);
             if (string.IsNullOrEmpty(form.Address))
                 form.Address = "";
-            Console.WriteLine(form.Apartment);
+            // Console.WriteLine(form.Apartment);
             if (string.IsNullOrEmpty(form.Apartment))
                 form.Apartment = "";
-            Console.WriteLine(form.City);
+            // Console.WriteLine(form.City);
             if (string.IsNullOrEmpty(form.City))
                 form.City = "";
-            Console.WriteLine(form.PostalCode);
+            // Console.WriteLine(form.PostalCode);
             if (string.IsNullOrEmpty(form.PostalCode))
                 form.PostalCode = "";
-            Console.WriteLine(form.Phone);
+            // Console.WriteLine(form.Phone);
             if (string.IsNullOrEmpty(form.Phone))
                 form.Phone = "";
-            Console.WriteLine(form.TotalAmount);
+            // Console.WriteLine(form.TotalAmount);
 
-            if (form.CartIds != null && form.CartIds.Count > 0)
-            {
-                foreach (var id in form.CartIds)
-                {
-                    Console.WriteLine("id: " + id);
-                }
-            }
+            // if (form.CartIds != null && form.CartIds.Count > 0)
+            // {
+            //     foreach (var id in form.CartIds)
+            //     {
+            //          Console.WriteLine("id: " + id);
+            //     }
+            // }
 
             var cartItems = _deathWishCoffeeDbContext.CartItems
                             .Where(cartItem => form.CartIds.Contains(cartItem.Id))
                             .Include(cartItem => cartItem.Product)
                             .ToList();
 
-            Console.WriteLine("CartItems Product");
+            // Console.WriteLine("CartItems Product");
             if (cartItems != null && cartItems.Count > 0)
             {
                 var orderDetails = cartItems.Select(cartItem => new OrderDetail
@@ -126,7 +126,7 @@ namespace DeathWishCoffee.Controllers
                 _deathWishCoffeeDbContext.OrderDetails.AddRange(orderDetails);
             }
 
-            Console.WriteLine("---------------------------------");
+            // Console.WriteLine("---------------------------------");
 
             // create NEW ORDER
             var newOrder = new Order

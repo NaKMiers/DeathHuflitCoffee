@@ -5,7 +5,7 @@ function handleImages() {
    var lastIndex = itemButton
       .closest('#admin-type-container')
       .find(".form-item:last input[name^='Images']")
-   console.log(lastIndex)
+   // console.log(lastIndex)
 
    var itemCounter = 0
 
@@ -44,7 +44,7 @@ function handleSizes() {
    var lastIndex = itemButton
       .closest('#admin-type-container')
       .find(".form-item:last input[name^='Sizes']")
-   console.log(lastIndex)
+   // console.log(lastIndex)
 
    var itemCounter = 0
 
@@ -91,7 +91,7 @@ function handleFlavorProfiles() {
    var lastIndex = itemButton
       .closest('#admin-type-container')
       .find(".form-item:last input[name^='FlavorProfiles']")
-   console.log(lastIndex)
+   // console.log(lastIndex)
 
    var itemCounter = 0
 
@@ -134,7 +134,7 @@ function handleDetails() {
    var lastIndex = itemButton
       .closest('#admin-type-container')
       .find(".form-item:last input[name^='Details']")
-   console.log(lastIndex)
+   // console.log(lastIndex)
 
    var itemCounter = 0
 
@@ -177,7 +177,7 @@ function handleTypes() {
    var lastIndex = itemButton
       .closest('#admin-type-container')
       .find(".form-item:last input[name^='Types']")
-   console.log(lastIndex)
+   // console.log(lastIndex)
 
    var itemCounter = 0
 
@@ -216,7 +216,7 @@ function handleAttributes() {
    var lastIndex = itemButton
       .closest('#admin-type-container')
       .find(".form-item:last input[name^='Attributes']")
-   console.log(lastIndex)
+   // console.log(lastIndex)
 
    var itemCounter = 0
 
@@ -267,7 +267,7 @@ function handleInsideTypes() {
    var lastIndex = itemButton
       .closest('#admin-type-container')
       .find(".form-item:last input[name^='InsideTypes']")
-   console.log(lastIndex)
+   // console.log(lastIndex)
 
    var itemCounter = 0
 
@@ -314,7 +314,7 @@ function handleSymbols() {
    var lastIndex = itemButton
       .closest('#admin-type-container')
       .find(".form-item:last input[name^='Symbols']")
-   console.log(lastIndex)
+   // console.log(lastIndex)
 
    var itemCounter = 0
 
@@ -361,7 +361,7 @@ function handleFormats() {
    var lastIndex = itemButton
       .closest('#admin-type-container')
       .find(".form-item:last input[name^='Formats']")
-   console.log(lastIndex)
+   // console.log(lastIndex)
 
    var itemCounter = 0
 
@@ -400,7 +400,7 @@ function handleRoasts() {
    var lastIndex = itemButton
       .closest('#admin-type-container')
       .find(".form-item:last input[name^='Roasts']")
-   console.log(lastIndex)
+   // console.log(lastIndex)
 
    var itemCounter = 0
 
@@ -439,7 +439,7 @@ function handleFlavors() {
    var lastIndex = itemButton
       .closest('#admin-type-container')
       .find(".form-item:last input[name^='Flavors']")
-   console.log(lastIndex)
+   // console.log(lastIndex)
 
    var itemCounter = 0
 

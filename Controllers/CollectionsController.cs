@@ -56,15 +56,15 @@ namespace DeathWishCoffee.Controllers
                     switch (sortBy)
                     {
                         case "a-z":
-                            Console.WriteLine("a-z");
+                            // Console.WriteLine("a-z");
                             finalProducts = filteredProducts.OrderBy(product => product.Title);
                             break;
                         case "time-created":
-                            Console.WriteLine("time-created");
+                            // Console.WriteLine("time-created");
                             // finalProducts = filteredProducts.OrderBy(product => product.Time);
                             break;
                         case "best-seller":
-                            Console.WriteLine("best-seller");
+                            // Console.WriteLine("best-seller");
                             // finalProducts = filteredProducts.OrderByDescending(product => product.SalesCount);
                             break;
                         default:
@@ -84,15 +84,15 @@ namespace DeathWishCoffee.Controllers
                     switch (sortBy)
                     {
                         case "a-z":
-                            Console.WriteLine("a-z");
+                            // Console.WriteLine("a-z");
                             finalProducts = products.OrderBy(product => product.Title);
                             break;
                         case "time-created":
-                            Console.WriteLine("time-created");
+                            // Console.WriteLine("time-created");
                             // finalProducts = products.OrderBy(product => product.Time);
                             break;
                         case "best-seller":
-                            Console.WriteLine("best-seller");
+                            // Console.WriteLine("best-seller");
                             // finalProducts = products.OrderByDescending(product => product.SalesCount);
                             break;
                         default:
@@ -133,7 +133,7 @@ namespace DeathWishCoffee.Controllers
             int skip = (page - 1) * pageSize; // Số sản phẩm để bỏ qua
             var finalProductsList = finalProducts.Skip(skip).Take(pageSize).ToList();
 
-            Console.WriteLine(finalProductsList.Count);
+            // Console.WriteLine(finalProductsList.Count);
             ViewBag.CurPage = "Coffee";
             return View(finalProductsList);
         }
@@ -157,7 +157,7 @@ namespace DeathWishCoffee.Controllers
             int skip = (page - 1) * pageSize; // Số sản phẩm để bỏ qua
             var finalProductsList = finalProducts.Skip(skip).Take(pageSize).ToList();
 
-            Console.WriteLine(finalProductsList.Count);
+            // Console.WriteLine(finalProductsList.Count);
             ViewBag.CurPage = "Merch";
             return View(finalProductsList);
 

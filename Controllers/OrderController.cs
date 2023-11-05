@@ -142,40 +142,40 @@ namespace DeathWishCoffee.Controllers
             if (orderToEditInDB == null)
                 return BadRequest("Order does not exist");
 
-            Console.WriteLine("---------------------------------");
-            Console.WriteLine(form.Email);
+            // Console.WriteLine("---------------------------------");
+            // Console.WriteLine(form.Email);
             if (string.IsNullOrEmpty(form.Email))
                 form.Email = "";
-            Console.WriteLine(form.Country);
+            // Console.WriteLine(form.Country);
             if (string.IsNullOrEmpty(form.Country))
                 form.Country = "";
-            Console.WriteLine(form.Firstname);
+            // Console.WriteLine(form.Firstname);
             if (string.IsNullOrEmpty(form.Firstname))
                 form.Firstname = "";
-            Console.WriteLine(form.Lastname);
+            // Console.WriteLine(form.Lastname);
             if (string.IsNullOrEmpty(form.Lastname))
                 form.Lastname = "";
-            Console.WriteLine(form.Company);
+            // Console.WriteLine(form.Company);
             if (string.IsNullOrEmpty(form.Company))
                 form.Company = "";
-            Console.WriteLine(form.Address);
+            // Console.WriteLine(form.Address);
             if (string.IsNullOrEmpty(form.Address))
                 form.Address = "";
-            Console.WriteLine(form.Apartment);
+            // Console.WriteLine(form.Apartment);
             if (string.IsNullOrEmpty(form.Apartment))
                 form.Apartment = "";
-            Console.WriteLine(form.City);
+            // Console.WriteLine(form.City);
             if (string.IsNullOrEmpty(form.City))
                 form.City = "";
-            Console.WriteLine(form.PostalCode);
+            // Console.WriteLine(form.PostalCode);
             if (string.IsNullOrEmpty(form.PostalCode))
                 form.PostalCode = "";
-            Console.WriteLine(form.Phone);
+            // Console.WriteLine(form.Phone);
             if (string.IsNullOrEmpty(form.Phone))
                 form.Phone = "";
-            Console.WriteLine(form.TotalAmount);
+            // Console.WriteLine(form.TotalAmount);
 
-            Console.WriteLine("---------------------------------");
+            // Console.WriteLine("---------------------------------");
 
             // update ORDER
             orderToEditInDB.Status = "Active";

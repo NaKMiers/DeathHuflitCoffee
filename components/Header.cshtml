@@ -479,7 +479,7 @@
 
                      <form action="/admin/cart/add/@userId" method="post" class="cart-modal__product-item">
                         <div class="cart-modal__product-item__body">
-                           <img src="~/images/cart-product.jpg" alt="product">
+                           <img src="@item.Images.FirstOrDefault()?.Src" alt="product">
 
                            <div class="info">
                               <a href="">@item.Title</a>
@@ -529,8 +529,6 @@
                      {
                         subtotal += cartItem.Price * cartItem.Quantity;
                      }
-
-                     Console.WriteLine(subtotal);
                   }
 
                   <span>$@subtotal</span>

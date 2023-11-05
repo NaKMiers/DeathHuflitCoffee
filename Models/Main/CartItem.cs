@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DeathWishCoffee.Models.Main;
+﻿namespace DeathWishCoffee.Models.Main;
 
 public partial class CartItem
 {

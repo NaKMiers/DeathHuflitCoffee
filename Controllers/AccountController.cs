@@ -56,7 +56,6 @@ namespace DeathWishCoffee.Controllers
         {
             Console.WriteLine("Account");
             string userId = _httpContext.HttpContext.Session.GetString("Id");
-            Console.WriteLine(userId);
 
             // user is not login yet
             if (string.IsNullOrEmpty(userId))
@@ -109,14 +108,6 @@ namespace DeathWishCoffee.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        // [/account/register]
-        [HttpGet]
-        public IActionResult Register()
-        {
-            // return View("~/Views/Admin/Register.cshtml");
-            return View();
-        }
-
         // [/account/logout]
         [HttpGet]
         public IActionResult Logout()
@@ -124,6 +115,14 @@ namespace DeathWishCoffee.Controllers
             _httpContext.HttpContext.Session.Clear();
 
             return RedirectToAction("Index", "Home");
+        }
+
+        // [/account/register]
+        [HttpGet]
+        public IActionResult Register()
+        {
+            // return View("~/Views/Admin/Register.cshtml");
+            return View();
         }
 
         [HttpPost]
@@ -158,7 +157,6 @@ namespace DeathWishCoffee.Controllers
             if (form.Avatar != null)
             {
 
-                Console.WriteLine(form.Avatar.FileName);
                 // get path to save in server
                 var imagePath = Path.Combine("wwwroot", "uploads");
                 var imageName = Guid.NewGuid().ToString() + Path.GetExtension(form.Avatar.FileName);

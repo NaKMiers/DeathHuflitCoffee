@@ -154,7 +154,7 @@ namespace DeathWishCoffee.Controllers
             // set CART data to session
             SetUpCartDataForAllPage(userEdited.CartItems.ToList());
 
-            Console.WriteLine(_httpContext.HttpContext.Session.GetString("Username"));
+            // Console.WriteLine(_httpContext.HttpContext.Session.GetString("Username"));
 
             // return [/admin/users]
             return RedirectToAction("Index", "User");

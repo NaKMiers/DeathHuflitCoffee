@@ -1,5 +1,6 @@
 using DeathWishCoffee.Models.Main;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +9,10 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DeathWishCoffeeDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("azureDB"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("localDB"))
+        .LogTo(Console.WriteLine, LogLevel.None);
     options.EnableSensitiveDataLogging(false);
+
 }
 );
 
@@ -20,6 +23,11 @@ builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(120);
 });
+JsonConvert.DefaultSettings = () => new JsonSerializerSettings
+{
+    Formatting = Formatting.Indented,
+    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+};
 
 var app = builder.Build();
 
