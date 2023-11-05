@@ -19,7 +19,7 @@
     margin-right: auto;
     width: 50%;
     /* Đặt chiều rộng tùy ý (ví dụ 50%) */
-    height: 300px;
+    height: 320px;
 }
 
 .Slide-heading {
@@ -108,7 +108,7 @@
     margin-left: 10px;
     width: 30px;
     height: 30px;
-
+    border-left: 0.1px solid #353637;
 }
 
 .Slideshow__icon-icon-caret {
@@ -157,7 +157,7 @@
     display: block;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 749px) {
 
     /* Để đảm bảo chỉ hiển thị một slide tại một thời điểm */
     .Slideshow-slide {
@@ -183,11 +183,11 @@
     }
 
     .Slideshow .Slide-heading {
-        font-size: 46px;
+        font-size: 33px;
     }
 
     .Slideshow text {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .banner-richtext {
@@ -213,5 +213,14 @@
     #playButton {
         margin-top: 10px;
         cursor: pointer;
+    }
+    .slideshow__control-icon--pause{
+        right: 20px;
+    }
+    .slideshow__control-icon--play{
+        right: 20px;
+    }
+    #playButton{
+        border: 0;
     }
 }
