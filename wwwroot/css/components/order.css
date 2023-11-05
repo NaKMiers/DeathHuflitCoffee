@@ -3,9 +3,11 @@
    margin: 0;
    box-sizing: border-box;
 }
+
 .DirectionHeding__form-all {
    background-color: #fff;
 }
+
 .DirectionHeding__form-inner-liner {
    display: flex;
    justify-content: center;
@@ -17,6 +19,7 @@
    width: 90%;
    background-color: #fff;
 }
+
 .DirectionHeding__form-wrapper {
    width: 50%;
    padding: 100px 0 0;
@@ -24,6 +27,7 @@
    margin: 0;
    text-align: left;
 }
+
 .DirectionHeding__form-input-heading {
    -webkit-font-smoothing: antialiased;
    box-sizing: border-box;
@@ -35,35 +39,43 @@
    text-transform: uppercase;
    color: #000;
 }
+
 label {
    width: 100%;
 }
-/* .row {
+
+.row {
    --bs-gutter-x: none;
    --bs-gutter-y: 0;
-} */
+}
+
 div.DirectionHeding__cell {
    position: relative;
    margin: 0px;
    padding: 0px;
    height: 55px;
 }
+
 .DirectionHeding__row3 div.DirectionHeding__cell {
    position: relative;
    height: 105px;
 }
+
 .DirectionHeding__contactinfo .DirectionHeding__row1 .DirectionHeding__cell {
    width: 50%;
    margin: 0 auto;
 }
+
 div.row.DirectionHeding__row1 {
    gap: 11px;
    flex-wrap: nowrap;
 }
+
 .DirectionHeding__contactinfo .DirectionHeding__row1 {
    width: 98%;
    margin: 0;
 }
+
 .DirectionHeding__panel-4-crf-name,
 .DirectionHeding__panel-4-crf-zip,
 .DirectionHeding__panel-4-crf-email,
@@ -83,34 +95,42 @@ div.row.DirectionHeding__row1 {
    width: 100%;
    box-shadow: inset 0 0 0 1px #f6f6f6;
 }
+
 input:focus {
    border: 2px solid black;
 }
+
 textarea:focus {
    border: 2px solid black;
 }
+
 .DirectionHeding__panel-4-crf-name,
 .DirectionHeding__panel-4-crf-zip,
 .DirectionHeding__panel-4-crf-email {
    padding: 0px 15px;
    margin: 0px 0px 10px;
 }
+
 textarea {
    resize: none;
 }
+
 .DirectionHeding__panel-4-crf-storearea,
 .DirectionHeding__panel-4-crf-commentarea {
    padding: 10px;
    height: 95px;
 }
+
 .DirectionHeding__form-product-selection {
    width: 50%;
    padding: 100px 0 0;
 }
+
 .DirectionHeding__form-product-list-container {
    margin: 0 auto 0 10%;
    width: 90%;
 }
+
 .DirectionHeding__form-product-list {
    overflow-y: auto;
    background-color: transparent;
@@ -121,12 +141,15 @@ textarea {
    max-height: 309px;
    overflow-y: scroll;
 }
+
 .DirectionHeding__form-product-list::-webkit-scrollbar {
    width: 5px;
 }
+
 .DirectionHeding__form-product-list::-webkit-scrollbar-thumb {
    background-color: #363737;
 }
+
 .DirectionHeding__panel-4-crf-category_name {
    padding: 16px 0 10px;
    text-align: left;
@@ -135,6 +158,7 @@ textarea {
    color: #000;
    font-weight: 500;
 }
+
 .DirectionHeding__panel-4-crf-product-name {
    position: relative;
    padding: 0 0 8px 25px;
@@ -145,6 +169,7 @@ textarea {
    font-weight: normal;
    color: #1c1d1d;
 }
+
 .DirectionHeding__panel-4-crf-product-name::before {
    font-size: 15px;
    display: inline-block;
@@ -153,6 +178,7 @@ textarea {
    position: absolute;
    left: 1px;
 }
+
 .DirectionHeding__panel-4-crf-product-name:after {
    border-radius: 2px;
    border: 1px solid #4d4d4d;
@@ -182,14 +208,17 @@ textarea {
    text-align: center;
    top: 3px;
 }
+
 .DirectionHeding__panel-4-crf-product-name.active::after {
    display: block;
 }
+
 @media (max-width: 991px) {
    div.row.DirectionHeding__row1 {
       gap: 9px;
    }
 }
+
 @media (max-width: 769px) {
    .DirectionHeding__form-inner-liner {
       max-width: none;
@@ -198,38 +227,46 @@ textarea {
       padding-bottom: 0;
       flex-flow: column;
    }
+
    .DirectionHeding__form-liner {
       width: 90%;
       margin: auto;
    }
+
    div.row.DirectionHeding__row1 {
       flex-wrap: wrap;
       gap: 0px;
    }
+
    .DirectionHeding__contactinfo .DirectionHeding__row1 {
       width: 100%;
       margin: 0;
    }
+
    .DirectionHeding__contactinfo .DirectionHeding__row1 .DirectionHeding__cell {
       width: 100%;
       margin: 0 auto;
    }
+
    .DirectionHeding__form-wrapper {
       width: 100%;
       padding: 27px 0 20px;
       background-color: #fff;
       flex-direction: column;
    }
+
    .DirectionHeding__form-product-selection {
       width: 100%;
       float: none;
       padding: 0 0 10px;
       box-shadow: none;
    }
+
    .DirectionHeding__form-product-list-container {
       margin: auto;
       width: 90%;
    }
+
    .DirectionHeding__form-product-list {
       max-width: unset;
       max-height: unset;
@@ -238,13 +275,16 @@ textarea {
       box-shadow: none;
       padding: 0;
    }
+
    ::-webkit-scrollbar-thumb {
       background-color: none;
    }
 }
+
 .DirectionHeding__bottom-row-container {
    background-color: #fff;
 }
+
 .DirectionHeding__bottom-row {
    display: flex;
    flex-flow: column nowrap;
@@ -253,6 +293,7 @@ textarea {
    width: 90%;
    padding: 10px 0 20px;
 }
+
 .DirectionHeding__panel-4-crf-submit {
    text-align: center;
    display: block;
@@ -267,10 +308,12 @@ textarea {
    font-weight: 900;
    text-transform: uppercase;
 }
+
 .DirectionHeding__panel-4-crf-submit:hover {
    background: #fff;
    transition: background-color 0.4s ease-out;
 }
+
 .DirectionHeding__pro-footer-forms {
    margin-top: 10px;
    font-family: "FenomenSans-Light", sans-serif;
@@ -279,6 +322,7 @@ textarea {
    font-size: 9px;
    height: 12px;
 }
+
 .DirectionHeding__pro-footer-forms a {
    display: inline-block;
    vertical-align: top;
@@ -286,26 +330,32 @@ textarea {
    color: #d51211;
    text-decoration: none;
 }
+
 .DirectionHeding__pro-footer-forms a:hover {
    text-decoration: underline;
 }
+
 @media (max-width: 769px) {
    .DirectionHeding__bottom-row-container {
       width: 100%;
    }
+
    .DirectionHeding__bottom-row {
       width: 90%;
    }
+
    .DirectionHeding__crfsubmit {
       width: 100%;
       max-width: 400px;
       margin: auto;
    }
+
    .DirectionHeding__panel-4-crf-submit {
       width: 100%;
       min-width: calc(300px - 10%);
       margin: auto;
    }
+
    .DirectionHeding__pro-footer-forms.DirectionHeding__mobile {
       text-align: center;
    }
