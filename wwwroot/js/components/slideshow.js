@@ -68,7 +68,6 @@ function getTranslateX() {
    const matrix = new DOMMatrix(transform)
    return matrix.m41
 }
-
 function setTranslateX(translateX) {
-   slideshow.style.transform = `translateX(${translateX}px)`
+  slideshow.style.transform = `translateX(${translateX}px)`;
 }
