@@ -90,6 +90,7 @@ width: 220px;
 
    .KRegister_Main_Text1 {
       order: 2;
+      margin-top: 100px;
       padding-bottom: 20px;
    }
 
@@ -97,5 +98,8 @@ width: 220px;
       order: 1;
       height: 200px;
       padding-bottom: 0;
+      font-size: 15px;
+      padding: 0px;
    }
+   
 }
