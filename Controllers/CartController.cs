@@ -220,7 +220,8 @@ namespace DeathWishCoffee.Controllers
 
             // not enough product
             if (cartItem.Quantity + 1 > cartItem.Product.Remain)
-                return BadRequest("Not enough product to sold");
+                return Json(new { newQuantity = cartItem.Quantity });
+
 
             cartItem.Quantity += 1;
             _deathWishCoffeeDbContext.SaveChanges();
@@ -248,7 +249,7 @@ namespace DeathWishCoffee.Controllers
             if (user == null)
                 return BadRequest("Invalid username or password");
 
-            return RedirectToAction("Index", "Home");
+            return Json(new { newQuantity = cartItem.Quantity });
         }
 
         // [/admin/cart/decrease/{cartItemId}]
@@ -266,12 +267,8 @@ namespace DeathWishCoffee.Controllers
                 return BadRequest("Invalid cart item");
 
             // not enough product
-            if (cartItem.Quantity - 1 < 0)
-                return BadRequest("Invalid quantity");
-
-            // remove cart item when quantity = 0
-            if (cartItem.Quantity - 1 == 0)
-                DeleteCartItem(cartItemId);
+            if (cartItem.Quantity - 1 <= 0)
+                return Json(new { newQuantity = cartItem.Quantity });
 
             cartItem.Quantity -= 1;
             _deathWishCoffeeDbContext.SaveChanges();
@@ -299,7 +296,7 @@ namespace DeathWishCoffee.Controllers
             if (user == null)
                 return BadRequest("Invalid username or password");
 
-            return RedirectToAction("Index", "Home");
+            return Json(new { newQuantity = cartItem.Quantity });
         }
 
         // ERRORS

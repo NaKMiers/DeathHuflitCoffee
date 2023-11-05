@@ -441,15 +441,24 @@
                            </div>
 
                            <div class="cart-modal__product-no-empty-body__content__amount">
-                              <div class="cart-modal__product-no-empty-body__content__amount__btn-wraper">
-                                 <form action="/admin/cart/decrease/@cartItem.Id" method="post"
+                              <div class="cart-modal__product-no-empty-body__content__amount__btn-wraper"
+                                 data-cart-item-id="@cartItem.Id">
+                                 <div action="/admin/cart/decrease/@cartItem.Id" method="post"
                                     class="cart-modal__product-no-empty-body__content__amount__button minus"
-                                    cart-item-id="@cartItem.Id"><button class="w-100 text-light">-</button></form>
+                                    cart-item-id="@cartItem.Id">
+                                    <button class="cart__quantity-btn decrease w-100 text-light">-</button>
+                                 </div>
+
                                  <div class="cart-modal__product-no-empty-body__content__amount__amount-show">
-                                    @cartItem.Quantity</div>
-                                 <form action="/admin/cart/increase/@cartItem.Id" method="post"
+                                    @cartItem.Quantity
+                                 </div>
+
+                                 <div action="/admin/cart/increase/@cartItem.Id" method="post"
                                     class="cart-modal__product-no-empty-body__content__amount__button plus"
-                                    cart-item-id="@cartItem.Id"><button class="w-100 text-light">+</button></form>
+                                    cart-item-id="@cartItem.Id">
+
+                                    <button class="cart__quantity-btn increase w-100 text-light">+</button>
+                                 </div>
                               </div>
 
                               <div class="cart-modal__product-no-empty-body__content__amount__price">
