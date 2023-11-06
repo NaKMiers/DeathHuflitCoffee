@@ -68,7 +68,7 @@ namespace DeathWishCoffee.Controllers
             return View("~/Views/Admin/MyCart.cshtml", myCart);
         }
 
-        // [/admin/cart/add/{userId}]
+        // [/cart/add/{userId}]
         [HttpGet]
         public IActionResult AddToCart(Guid userId)
         {
@@ -94,6 +94,12 @@ namespace DeathWishCoffee.Controllers
         {
             Console.WriteLine("AddToCart");
 
+            if (userId == null || userId == Guid.Empty)
+            {
+                return RedirectToAction("Index", "Account");
+
+            }
+
             // get product to add from database by productId
             var productToAdd = _deathWishCoffeeDbContext.Products.Find(productId);
             var user = _deathWishCoffeeDbContext.Users
@@ -114,16 +120,16 @@ namespace DeathWishCoffee.Controllers
 
             // if cartItem is ALREADY EXISTS in cart
             var existingCartItem = user.CartItems.FirstOrDefault(ci => ci.ProductId == productId);
-            Console.WriteLine("-----------------------------------------------------------------");
-            if (existingCartItem != null)
-            {
-                Console.WriteLine(existingCartItem.Id);
-                Console.WriteLine(existingCartItem.UserId);
-                Console.WriteLine(existingCartItem.ProductId);
-                Console.WriteLine(existingCartItem.Size);
-                Console.WriteLine(existingCartItem.Price);
-            }
-            Console.WriteLine("-----------------------------------------------------------------");
+            // Console.WriteLine("-----------------------------------------------------------------");
+            // if (existingCartItem != null)
+            // {
+            //     Console.WriteLine(existingCartItem.Id);
+            //     Console.WriteLine(existingCartItem.UserId);
+            //     Console.WriteLine(existingCartItem.ProductId);
+            //     Console.WriteLine(existingCartItem.Size);
+            //     Console.WriteLine(existingCartItem.Price);
+            // }
+            // Console.WriteLine("-----------------------------------------------------------------");
 
             if (existingCartItem != null && form.Size == existingCartItem.Size)
             {
@@ -169,10 +175,11 @@ namespace DeathWishCoffee.Controllers
             if (user == null)
                 return BadRequest("Invalid username or password.");
 
-            return RedirectToAction("Index", "Home");
+            string referrer = HttpContext.Request.Headers["Referer"].ToString();
+            return Redirect(referrer);
         }
 
-        // [/admin/cart/delete/{cartItemId}]
+        // [/cart/delete/{cartItemId}]
         [HttpGet]
         public IActionResult DeleteCartItem(Guid cartItemId)
         {
@@ -204,7 +211,7 @@ namespace DeathWishCoffee.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        // [/admin/cart/increase/{cartItemId}]
+        // [/cart/increase/{cartItemId}]
         [HttpPost]
         public IActionResult IncreaseCartItemQuantity(Guid cartItemId)
         {
@@ -252,7 +259,7 @@ namespace DeathWishCoffee.Controllers
             return Json(new { newQuantity = cartItem.Quantity });
         }
 
-        // [/admin/cart/decrease/{cartItemId}]
+        // [/cart/decrease/{cartItemId}]
         [HttpPost]
         public IActionResult DecreaseCartItemQuantity(Guid cartItemId)
         {

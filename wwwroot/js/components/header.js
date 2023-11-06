@@ -233,6 +233,13 @@ $(document).ready(function () {
 $(document).ready(function () {
    const plusCartBtn = $('.cart__quantity-btn.increase')
    const minusCartBtn = $('.cart__quantity-btn.decrease')
+   const totalBox = $('.cart__total')
+
+   const calcNewPrice = (cartItemId, newQuantity) => {
+      const price = myCartData.find(cartItem => cartItem.Id === cartItemId).Price
+      const newPrice = price * newQuantity
+      return newPrice
+   }
 
    plusCartBtn.click(function () {
       const quantityWrap = $(this).closest(
@@ -242,12 +249,29 @@ $(document).ready(function () {
       const quantityCartBox = quantityWrap.find(
          '.cart-modal__product-no-empty-body__content__amount__amount-show'
       )
+      const subtotalBox = quantityWrap
+         .closest('.cart-modal__product-no-empty-body__content__amount')
+         .find('.cart-modal__product-no-empty-body__content__amount__price')
 
       $.ajax({
          method: 'POST',
-         url: `/admin/cart/increase/${cartItemId}`,
+         url: `/cart/increase/${cartItemId}`,
          success: function (data) {
+            // update showing quantity
             quantityCartBox.text(data.newQuantity)
+
+            // update showing subtotal
+            const newPrice = calcNewPrice(cartItemId, data.newQuantity)
+            subtotalBox.text('$' + newPrice.toFixed(2))
+
+            // update showing total
+            let total = 0
+            const subTotalBoxs = $('.cart-modal__product-no-empty-body__content__amount__price')
+            subTotalBoxs.each(function () {
+               console.log($(this).text())
+               total += parseFloat($(this).text().replace('$', ''))
+            })
+            totalBox.text('$' + total.toFixed(2))
          },
 
          error: function (err) {
@@ -264,14 +288,31 @@ $(document).ready(function () {
       const quantityCartBox = quantityWrap.find(
          '.cart-modal__product-no-empty-body__content__amount__amount-show'
       )
+      const subtotalBox = quantityWrap
+         .closest('.cart-modal__product-no-empty-body__content__amount')
+         .find('.cart-modal__product-no-empty-body__content__amount__price')
 
       // prevent case the quantity = 0
       if (+quantityCartBox.text().trim() - 1 > 0) {
          $.ajax({
             method: 'POST',
-            url: `/admin/cart/decrease/${cartItemId}`,
+            url: `/cart/decrease/${cartItemId}`,
             success: function (data) {
+               // update showing quantity
                quantityCartBox.text(data.newQuantity)
+
+               // update showing subtotal
+               const newPrice = calcNewPrice(cartItemId, data.newQuantity)
+               subtotalBox.text('$' + newPrice.toFixed(2))
+
+               // update showing total
+               let total = 0
+               const subTotalBoxs = $('.cart-modal__product-no-empty-body__content__amount__price')
+               subTotalBoxs.each(function () {
+                  console.log($(this).text())
+                  total += parseFloat($(this).text().replace('$', ''))
+               })
+               totalBox.text('$' + total.toFixed(2))
             },
 
             error: function (err) {

@@ -244,7 +244,7 @@
                     </div>
                 </div>
                 <!-- add to cart -->
-                <form action="/admin/cart/add/@ViewBag.UserId" method="post" class="cart-KproductDetail__main__text__add-item">
+                <form action="/cart/add/@ViewBag.UserId" method="post" class="cart-KproductDetail__main__text__add-item">
                     <input class="form-control" name="productId" type="hidden" value="@Model.Id">
                     <input type="hidden" name="size"
                         value="@Model.Sizes.FirstOrDefault()?.Label - @Model.Sizes.FirstOrDefault()?.Price"

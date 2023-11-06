@@ -18,7 +18,7 @@
         @foreach (var item in products)
         {
             <div class="col-12 col-md-3">
-                <form action='/admin/cart/add/@userId' method="post" class="card">
+                <form action='/cart/add/@userId' method="post" class="card">
                         <input class=" form-control" name="productId" type="text" value="@item.Id" readonly>
 
                     <div class="d-flex overflow-scroll w-100" style="scroll-snap-type: x mandatory;">

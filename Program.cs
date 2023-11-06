@@ -237,31 +237,31 @@ app.MapControllerRoute(
     defaults: new { controller = "Cart", action = "MyCart" }
 );
 
-// [/admin/cart/add/{userId}]
+// [/cart/add/{userId}]
 app.MapControllerRoute(
     name: "AddToCart",
-    pattern: "/admin/cart/add/{userId}",
+    pattern: "/cart/add/{userId?}",
     defaults: new { controller = "Cart", action = "AddToCart" }
 );
 
-// [/admin/cart/delete/{cartItemId}]
+// [/cart/delete/{cartItemId}]
 app.MapControllerRoute(
     name: "AddToCart",
-    pattern: "/admin/cart/delete/{cartItemId}",
+    pattern: "/cart/delete/{cartItemId}",
     defaults: new { controller = "Cart", action = "DeleteCartItem" }
 );
 
-// [/admin/cart/increase/{cartItemId}]
+// [/cart/increase/{cartItemId}]
 app.MapControllerRoute(
     name: "IncreaseCartItemQuantity",
-    pattern: "/admin/cart/increase/{cartItemId}",
+    pattern: "/cart/increase/{cartItemId}",
     defaults: new { controller = "Cart", action = "IncreaseCartItemQuantity" }
 );
 
-// [/admin/cart/decrease/{cartItemId}]
+// [/cart/decrease/{cartItemId}]
 app.MapControllerRoute(
     name: "DecreaseCartItemQuantity",
-    pattern: "/admin/cart/decrease/{cartItemId}",
+    pattern: "/cart/decrease/{cartItemId}",
     defaults: new { controller = "Cart", action = "DecreaseCartItemQuantity" }
 );
 
