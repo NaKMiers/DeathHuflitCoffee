@@ -1,23 +1,27 @@
 .Slideshow {
     width: 100%;
-    height: auto;
+    height: 370px;
     background-color: #201e1d;
     color: #ffffff;
     text-align: center;
     padding: 40px 300px;
 }
-.Slideshow-heading{
+
+.Slideshow-heading {
     font-family: fantasy;
     font-size: 42px;
 }
-.Slideshow-text{
+
+.Slideshow-text {
     font-family: inherit;
     font-size: 18px;
 }
-.banner-richtext{
+
+.banner-richtext {
     font-family: fantasy;
     font-size: 16px;
 }
+
 /* CSS cho trình chiếu */
 .slideshow-container {
     position: relative;
@@ -31,50 +35,7 @@
 }
 
 .Slideshow-slide {
-<<<<<<< HEAD
-    padding-top: 30px;
-    
-}
-/* CSS để tạo hiệu ứng từ phải qua trái */
-.Slideshow-banner {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.Slideshow-text-banner {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    /* Đặt chiều rộng tùy ý (ví dụ 50%) */
-    height: 320px;
-}
-
-.Slide-heading {
-    letter-spacing: 0.2px;
-}
-
-
-.Slideshow .Slide-heading {
-    font-size: 40px;
-    font-family: fantasy;
-}
-
-.Slideshow text {
-    font-size: 18px;
-    font-family: inherit;
-}
-
-.banner-richtext {
-    font-size: 16px;
-    font-family: fantasy;
-}
-
-.slideshow-container {
-=======
     flex: 0 0 100%;
->>>>>>> origin/Quan-Slideshow
     width: 100%;
 }
 
@@ -114,70 +75,31 @@
 
 .Slideshow-control {
     display: flex;
-    justify-content: center;/* Để căn giữa theo chiều ngang */
-    align-items: center;/* Để căn giữa theo chiều dọc */
+    justify-content: center;
+    /* Để căn giữa theo chiều ngang */
+    align-items: center;
+    /* Để căn giữa theo chiều dọc */
     background-color: #201e1d;
 }
-.Slideshow-prevousbutton{
+
+.Slideshow-prevousbutton {
     background-color: transparent;
     border: 0;
 }
-.Slideshow-nextbutton { 
+
+.Slideshow-nextbutton {
     background-color: transparent;
     border: 0;
 }
 
-<<<<<<< HEAD
-#playButton {
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
-    width: 30px;
-    height: 30px;
-    border-left: 0.1px solid #353637;
-}
-
-.Slideshow__icon-icon-caret {
-    width: 10px;
-    position: relative;
-}
-
-.Slideshow__icon-icon-caret.slideshow__left-icon {
-    right: 3px;
-}
-
-.Slideshow__icon-icon-caret.slideshow__right-icon {
-    left: 3px;
-}
-
-.slideshow__control-icon--pause,
-.slideshow__control-icon--play {
-    width: 10px;
-    padding-top: 4px;
-    text-align: center;
-    justify-content: center;
-    position: absolute;
-    /* Đặt vị trí tuyệt đối cho cả hai biểu tượng */
-
-}
-
-.slideshow__control-icon--pause {
-    display: none;
-}
-
-.slider-curren {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-=======
-.Slider-couter {
+.Slideshow-couter {
     color: #ffffff;
     margin-left: 20px;
     margin-right: 20px;
->>>>>>> origin/Quan-Slideshow
     font-size: 12px;
 }
-.Slideshow-auto{
+
+.Slideshow-auto {
     color: #ffffff;
     border: 0;
     margin-left: 20px;
@@ -186,91 +108,72 @@
     width: 34px;
     height: 44px;
 }
+
 /* Ẩn nút "play" ban đầu */
 .slideshow-icon-play {
     display: none;
     margin-left: 10px;
 }
-.slideshow-icon-pause{
-margin-left: 10px;
+
+.slideshow-icon-pause {
+    margin-left: 10px;
 }
+
 /* Thiết lập cùng vị trí và kích thước cho cả nút "play" và nút "pause" */
 .slideshow-icon-pause,
 .slideshow-icon-play {
     width: 14px;
     height: 12px;
     position: absolute;
-  
+
 }
 
 /* Thiết lập nút "play" để nằm trên cùng của nút "pause" */
 .slideshow-icon-play {
     position: absolute;
 }
-<<<<<<< HEAD
 
-@media screen and (max-width: 749px) {
-
-    /* Để đảm bảo chỉ hiển thị một slide tại một thời điểm */
-    .Slideshow-slide {
-        max-width: 100%;
-        /* Kích thước Slideshow thay đổi tùy thích theo chiều rộng của container */
-
-=======
-@media (max-width: 989px){
-.Slideshow {
-    padding: 40px 190px;
-    }
-.Slideshow-heading {
-    font-size: 30px;
-}
-}
-@media (max-width: 900px) {
+@media (max-width: 989px) {
     .Slideshow {
-        padding: 40px 170px;
->>>>>>> origin/Quan-Slideshow
+        height: 350px;
+        padding: 40px 190px;
     }
 
     .Slideshow-heading {
         font-size: 30px;
     }
 }
+
+@media (max-width: 900px) {
+    .Slideshow {
+        height: 350px;
+        padding: 40px 170px;
+    }
+
+    .Slideshow-heading {
+        font-size: 30px;
+    }
+}
+
 @media (max-width: 749px) {
     .Slideshow {
+        height: 300px;
         padding: 40px 50px;
     }
-<<<<<<< HEAD
 
-    .Slideshow .Slide-heading {
-        font-size: 33px;
-    }
-
-    .Slideshow text {
-        font-size: 18px;
-=======
-    .Slideshow-auto {          
+    .Slideshow-auto {
         border: 0;
     }
-    .slideshow-icon-pause{
+
+    .slideshow-icon-pause {
         right: 20px;
->>>>>>> origin/Quan-Slideshow
     }
-    .slideshow-icon-play{
+
+    .slideshow-icon-play {
         right: 20px
     }
-<<<<<<< HEAD
-    .slideshow__control-icon--pause{
-        right: 20px;
+
+    .Slideshow-heading {
+        font-size: 30px;
     }
-    .slideshow__control-icon--play{
-        right: 20px;
-    }
-    #playButton{
-        border: 0;
-    }
-=======
-.Slideshow-heading {
-    font-size: 30px;
-}
->>>>>>> origin/Quan-Slideshow
 }
