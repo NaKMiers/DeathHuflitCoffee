@@ -1,8 +1,37 @@
 .Slideshow {
+    width: 100%;
+    height: auto;
+    background-color: #201e1d;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 300px;
+}
+.Slideshow-heading{
+    font-family: fantasy;
+    font-size: 42px;
+}
+.Slideshow-text{
+    font-family: inherit;
+    font-size: 18px;
+}
+.banner-richtext{
+    font-family: fantasy;
+    font-size: 16px;
+}
+/* CSS cho trình chiếu */
+.slideshow-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.Slideshow-banner {
     display: flex;
+    transition: transform 0.5s ease;
+    animation: slideshow 10s infinite;
 }
 
 .Slideshow-slide {
+<<<<<<< HEAD
     padding-top: 30px;
     
 }
@@ -43,65 +72,62 @@
 }
 
 .slideshow-container {
+=======
+    flex: 0 0 100%;
+>>>>>>> origin/Quan-Slideshow
     width: 100%;
+}
+
+@keyframes slideshow {
+    0% {
+        transform: translateX(0);
+        /* Bắt đầu tại vị trí đầu tiên */
+    }
+
+    25% {
+        transform: translateX(0);
+    }
+
+    33.33% {
+        transform: translateX(-100%);
+        /* Di chuyển sang slide thứ 2 */
+    }
+
+    58.33% {
+        transform: translateX(-100%);
+    }
+
+    66.66% {
+        transform: translateX(-200%);
+        /* Di chuyển sang slide thứ 3 */
+    }
+
+    91.66% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(0);
+        /* Quay lại slide đầu tiên */
+    }
+}
+
+.Slideshow-control {
+    display: flex;
+    justify-content: center;/* Để căn giữa theo chiều ngang */
+    align-items: center;/* Để căn giữa theo chiều dọc */
     background-color: #201e1d;
-    transition: transform 0.5s ease-in-out;
 }
-
-.Slideshow-text-wapper {
-    padding-top: 30px;
-    max-width: 100%;
-    /* Đảm bảo rằng nội dung không bị tràn ra ngoài container cha */
-    text-align: center;
-    color: #fff;
-}
-
-/* Thêm CSS cho nút điều khiển */
-#prevButton,
-#nextButton,
-#playButton {
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.slideshow-control {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 74px;
-
-}
-
-.slider-couter {
-    display: flex;
-    align-items: center;
-
-    width: 34px;
-    height: 34px;
-    justify-content: center;
-    min-width: 4.4rem;
-}
-
-#prevButton {
-    transform: rotate(90deg);
-    width: 30px;
-    height: 30px;
-    border: 0;
-    outline: 0;
+.Slideshow-prevousbutton{
     background-color: transparent;
-}
-
-#nextButton {
-    transform: rotate(270deg);
-    width: 30px;
-    height: 30px;
     border: 0;
-    outline: 0;
+}
+.Slideshow-nextbutton { 
     background-color: transparent;
+    border: 0;
 }
 
+<<<<<<< HEAD
 #playButton {
     justify-content: center;
     align-items: center;
@@ -143,19 +169,45 @@
     display: flex;
     align-items: center;
     justify-content: center;
+=======
+.Slider-couter {
+    color: #ffffff;
+    margin-left: 20px;
+    margin-right: 20px;
+>>>>>>> origin/Quan-Slideshow
     font-size: 12px;
-    width: 30px;
-
 }
-
-.Slideshow svg {
-    width: 12px;
+.Slideshow-auto{
+    color: #ffffff;
+    border: 0;
+    margin-left: 20px;
+    background-color: transparent;
+    border-left: 0.1px solid #4d5258;
+    width: 34px;
+    height: 44px;
+}
+/* Ẩn nút "play" ban đầu */
+.slideshow-icon-play {
+    display: none;
+    margin-left: 10px;
+}
+.slideshow-icon-pause{
+margin-left: 10px;
+}
+/* Thiết lập cùng vị trí và kích thước cho cả nút "play" và nút "pause" */
+.slideshow-icon-pause,
+.slideshow-icon-play {
+    width: 14px;
     height: 12px;
+    position: absolute;
+  
 }
 
-.Slideshow-slide.active {
-    display: block;
+/* Thiết lập nút "play" để nằm trên cùng của nút "pause" */
+.slideshow-icon-play {
+    position: absolute;
 }
+<<<<<<< HEAD
 
 @media screen and (max-width: 749px) {
 
@@ -164,23 +216,30 @@
         max-width: 100%;
         /* Kích thước Slideshow thay đổi tùy thích theo chiều rộng của container */
 
+=======
+@media (max-width: 989px){
+.Slideshow {
+    padding: 40px 190px;
+    }
+.Slideshow-heading {
+    font-size: 30px;
+}
+}
+@media (max-width: 900px) {
+    .Slideshow {
+        padding: 40px 170px;
+>>>>>>> origin/Quan-Slideshow
     }
 
-    /* CSS để tạo hiệu ứng từ phải qua trái */
-    .Slideshow-banner {
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        transition: transform 0.3s ease;
-        /* Tạo hiệu ứng trượt mượt */
+    .Slideshow-heading {
+        font-size: 30px;
     }
-
-    .Slideshow-text-banner {
-        width: 100%;
-        height: auto;
+}
+@media (max-width: 749px) {
+    .Slideshow {
+        padding: 40px 50px;
     }
+<<<<<<< HEAD
 
     .Slideshow .Slide-heading {
         font-size: 33px;
@@ -188,32 +247,18 @@
 
     .Slideshow text {
         font-size: 18px;
+=======
+    .Slideshow-auto {          
+        border: 0;
     }
-
-    .banner-richtext {
-        font-size: 16px;
+    .slideshow-icon-pause{
+        right: 20px;
+>>>>>>> origin/Quan-Slideshow
     }
-
-    .slideshow-container {
-        width: 100%;
-        height: 300px;
-        background-color: #201e1d;
+    .slideshow-icon-play{
+        right: 20px
     }
-
-    .Slideshow-text-wapper {
-        max-width: 100%;
-        /* Đảm bảo rằng nội dung không bị tràn ra ngoài container cha */
-        text-align: center;
-        color: #fff;
-    }
-
-    /* Thêm CSS cho nút điều khiển */
-    #prevButton,
-    #nextButton,
-    #playButton {
-        margin-top: 10px;
-        cursor: pointer;
-    }
+<<<<<<< HEAD
     .slideshow__control-icon--pause{
         right: 20px;
     }
@@ -223,4 +268,9 @@
     #playButton{
         border: 0;
     }
+=======
+.Slideshow-heading {
+    font-size: 30px;
+}
+>>>>>>> origin/Quan-Slideshow
 }
