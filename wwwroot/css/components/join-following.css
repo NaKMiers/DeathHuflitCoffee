@@ -1,5 +1,7 @@
 .JohnFollowing {
-    padding-left: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
     color: #ffffff;
 }
 .Join-heading{
@@ -56,14 +58,23 @@
     display: none;
 }
 @media screen and (max-width: 749px) {
+    .JohnFollowing {
+        padding-left: 40px;
+        padding-right: 0px;
+        padding-bottom: 30px;
+        color: #ffffff;
+        }
     .glider-container{
         padding-left: 0px;
-        padding-right: 0px;    
+        padding-right: 0px;  
+        display: flex;
+        overflow: hidden;
     }
     .slide {
         flex: 0 0 100%;/* Mỗi slide chiếm 100% chiều rộng */
         transition: transform 0.5s;/* Hiệu ứng chuyển đổi */
         padding-right: 20px;
+        transition: transform 0.5s ease;/* Hiệu ứng chuyển động dựa trên transform */
     }
     .image {
         padding-right: 20px;
@@ -91,4 +102,5 @@
         flex-direction: row;/* Giữ nguyên hướng ngang */
         overflow-x: scroll; /* Tạo thanh cuộn ngang */
     } 
+    
 }

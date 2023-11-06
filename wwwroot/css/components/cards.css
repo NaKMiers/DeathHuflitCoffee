@@ -78,7 +78,7 @@
     }
     
     .card-wraper .image {
-        transition: transform 0s;/* Thêm hiệu ứng chuyển hình */
+       transition: transform 0s;/* Thêm hiệu ứng chuyển hình */
        width: 150%; 
        object-fit: cover;
     }
@@ -106,13 +106,11 @@
         background-color: transparent;
         border: 0;
     }
-        .prevous-button,
-        .nextcard-button {
-            position: absolute;
-            top: 50%;
-            /* Đặt ở giữa theo trục dọc */
-            transform: translateY(-50%) rotate-(180deg);
-            /* Để căn giữa theo trục dọc */
-            cursor: pointer;
-        }
+    .prevous-button,
+    .nextcard-button {
+        position: absolute;
+        top: 50%; /* Đặt ở giữa theo trục dọc */
+        transform: translateY(-50%) rotate-(180deg);/* Để căn giữa theo trục dọc */
+        cursor: pointer;
+    }
 }
