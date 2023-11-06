@@ -450,7 +450,13 @@
       width: 80%;
    }
 }
+<<<<<<< HEAD
 
 .Products__card-media-overflow-hidden {
    overflow: hidden;
 }
+=======
+.Products__card-media-overflow-hidden {
+   overflow: hidden;
+}
+>>>>>>> origin/Lan-SuaLoiAll

@@ -43,12 +43,18 @@
 label {
    width: 100%;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/Lan-SuaLoiAll
 .row {
    --bs-gutter-x: none;
    --bs-gutter-y: 0;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/Lan-SuaLoiAll
 div.DirectionHeding__cell {
    position: relative;
    margin: 0px;
