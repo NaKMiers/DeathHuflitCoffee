@@ -193,7 +193,8 @@
    cursor: pointer;
 }
 
-.Products__grid-item.Products__scroll-trigger.Products__animate--slide-in:hover .Products__motion-reduce {
+.Products__grid-item.Products__scroll-trigger.Products__animate--slide-in:hover
+   .Products__motion-reduce {
    transform: scale(1.1);
 }
 
@@ -272,12 +273,14 @@
    font-size: 14px;
 }
 
-.Products__grid-item.Products__scroll-trigger.Products__animate--slide-in:hover .Products__twcss-font-fenomenBold.Products__twcss-font-bold.Products__twcss-text-body-14.Products__twcss-uppercase {
+.Products__grid-item.Products__scroll-trigger.Products__animate--slide-in:hover
+   .Products__twcss-font-fenomenBold.Products__twcss-font-bold.Products__twcss-text-body-14.Products__twcss-uppercase {
    color: #e12727;
    text-decoration: underline;
 }
 
-.Products__grid-item.Products__scroll-trigger.Products__animate--slide-in.il-2:hover .Products__motion-reduce {
+.Products__grid-item.Products__scroll-trigger.Products__animate--slide-in.il-2:hover
+   .Products__motion-reduce {
    transform: none;
 }
 
@@ -430,7 +433,6 @@
 }
 
 @media (min-width: 750px) {
-
    /* Khi độ rộng màn hình lớn hơn hoặc bằng 750px, vô hiệu hóa toàn bộ đoạn mã HTML */
    .disable-on-large-screen {
       pointer-events: none;
@@ -450,13 +452,6 @@
       width: 80%;
    }
 }
-<<<<<<< HEAD
-
 .Products__card-media-overflow-hidden {
    overflow: hidden;
 }
-=======
-.Products__card-media-overflow-hidden {
-   overflow: hidden;
-}
->>>>>>> origin/Lan-SuaLoiAll
