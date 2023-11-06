@@ -1,3 +1,5 @@
+@model DeathWishCoffee.Models.Main.Product
+
 <div class="KproductDetail" style="width: 100%; height: 100%; background-color: black;">
     <div class="Main_KproductDetail">
         <div class="KproductDetail__header" height="20%">
@@ -230,7 +232,8 @@
                         </div>
                     </div>
                     <!-- add to cart -->
-                    <form action="/cart/add/@ViewBag.UserId" method="post" class="cart-KproductDetail__main__text__add-item">
+                    <form action="/cart/add/@ViewBag.UserId" method="post"
+                        class="cart-KproductDetail__main__text__add-item">
                         <input class="form-control" name="productId" type="hidden" value="@Model.Id">
                         <input type="hidden" name="size"
                             value="@Model.Sizes.FirstOrDefault()?.Label - @Model.Sizes.FirstOrDefault()?.Price"
@@ -272,7 +275,7 @@
                             <details class="KproductDetail__main__text_Atribute__detail">
                                 <summary class="KproductDetail__main__text_Atribute__summary">
                                     <div class="summary__title__twcss__uppercase__twcss__grow">
-                                        <h2 class="summary__title__twcss__uppercase__twcss__grow__h2">ATTRIBUTES </h2>
+                                        <h2 class="summary__title__twcss__uppercase__twcss__grow__h2">Attributes </h2>
                                     </div>
                                     <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
                                         <path d="M1.27344 1L6.00071 5L10.728 1" stroke="white" stroke-width="2"></path>
@@ -348,7 +351,7 @@
                             <summary
                                 style="flex: 1; display: flex; align-items: center; color: white; background-color: black;">
                                 <div class="summary__title__twcss__uppercase__twcss__grow" style="margin-bottom: 20px;">
-                                    <h2 class="summary__title__twcss__uppercase__twcss__grow__Detail">DETAILS </h2>
+                                    <h2 class="summary__title__twcss__uppercase__twcss__grow__Detail">Details </h2>
                                 </div>
                                 <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
                                     <path d="M1.27344 1L6.00071 5L10.728 1" stroke="white" stroke-width="2"></path>
@@ -364,7 +367,6 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
     </div>
