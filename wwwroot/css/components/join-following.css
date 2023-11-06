@@ -4,85 +4,113 @@
     padding-bottom: 30px;
     color: #ffffff;
 }
-.Join-heading{
+
+.Join-heading {
     font-size: 35px;
     margin: 0;
     color: #ffffff;
     text-align: center;
 }
+
 .JohnFollowing .heading {
     color: #e12727;
     text-align: center;
     font-size: 20px;
 }
+
 .glider-container .list {
-    display: flex;/* Hiển thị các phần tử li nằm ngang */
-    justify-content: space-between;/* Canh lề giữa các phần tử li */
-    list-style: none;/* Loại bỏ dấu đầu dòng cho danh sách */
+    display: flex;
+    /* Hiển thị các phần tử li nằm ngang */
+    justify-content: space-between;
+    /* Canh lề giữa các phần tử li */
+    list-style: none;
+    /* Loại bỏ dấu đầu dòng cho danh sách */
 }
+
 .join-list {
-    flex: 1;/* Các phần tử li chiếm phần bằng nhau của không gian ngang */
+    flex: 1;
+    /* Các phần tử li chiếm phần bằng nhau của không gian ngang */
 }
+
 /* Đảm bảo hình ảnh trong phần tử li có kích thước 100% */
 .slide {
     width: 100%;
-    margin-right: 10px;/* Điều chỉnh khoảng cách giữa các slide */
+    margin-right: 10px;
+    /* Điều chỉnh khoảng cách giữa các slide */
 }
+
 /* Đảm bảo hình ảnh có kích thước 100% và tỷ lệ khung hình không bị biến đổi */
 .image img {
     width: 100%;
     height: auto;
 }
-.glider-container { 
+
+.glider-container {
     padding-left: 70px;
-    padding-right: 70px; 
+    padding-right: 70px;
     display: flex;
-    justify-content: space-between;/* Canh giữa theo chiều ngang */
-    align-items: center;/* Canh giữa theo chiều dọc */
-}.button-control {
+    justify-content: space-between;
+    /* Canh giữa theo chiều ngang */
+    align-items: center;
+    /* Canh giữa theo chiều dọc */
+}
+
+.button-control {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .Sliderprev-button,
 .Slidernext-button {
     width: 30px;
     height: 30px;
     background-color: transparent;
-    border: none;   
+    border: none;
 }
-.Slidernext-button{
+
+.Slidernext-button {
     display: none;
 }
-.Sliderprevous-button{
+
+.Sliderprevous-button {
     display: none;
 }
+
 @media screen and (max-width: 749px) {
     .JohnFollowing {
         padding-left: 40px;
         padding-right: 0px;
         padding-bottom: 30px;
         color: #ffffff;
-        }
-    .glider-container{
+    }
+
+    .glider-container {
         padding-left: 0px;
-        padding-right: 0px;  
+        padding-right: 0px;
         display: flex;
         overflow: hidden;
     }
+
     .slide {
-        flex: 0 0 100%;/* Mỗi slide chiếm 100% chiều rộng */
-        transition: transform 0.5s;/* Hiệu ứng chuyển đổi */
+        flex: 0 0 100%;
+        /* Mỗi slide chiếm 100% chiều rộng */
+        transition: transform 0.5s;
+        /* Hiệu ứng chuyển đổi */
         padding-right: 20px;
-        transition: transform 0.5s ease;/* Hiệu ứng chuyển động dựa trên transform */
+        transition: transform 0.5s ease;
+        /* Hiệu ứng chuyển động dựa trên transform */
     }
+
     .image {
         padding-right: 20px;
-        width: 100%;/* Thẻ .image chiếm toàn bộ chiều rộng của slide */
+        width: 100%;
+        /* Thẻ .image chiếm toàn bộ chiều rộng của slide */
         height: auto;
         text-align: center;
     }
-    .Sliderprevous-button { 
+
+    .Sliderprevous-button {
         display: block;
         float: left;
         margin-top: -300px;
@@ -90,17 +118,71 @@
         background-color: transparent;
         border: 0px;
     }
+
     .Slidernext-button {
         display: block;
-        float:right;
-        margin-top: -300px;
+        float: right;
+        margin-top: -305px;
         transform: rotate(180deg);
         background-color: transparent;
         border: 0px;
     }
+
     .JohnFollowing {
-        flex-direction: row;/* Giữ nguyên hướng ngang */
-        overflow-x: scroll; /* Tạo thanh cuộn ngang */
-    } 
-    
+        flex-direction: row;
+        /* Giữ nguyên hướng ngang */
+        overflow-x: scroll;
+        /* Tạo thanh cuộn ngang */
+    }
+
+}
+
+@media (max-width: 550px) {
+    .Sliderprevous-button {
+        margin-top: -290px;
+    }
+
+    .Slidernext-button {
+        margin-top: -295px;
+    }
+}
+
+@media (max-width: 500px) {
+    .Sliderprevous-button {
+        margin-top: -270px;
+    }
+
+    .Slidernext-button {
+        margin-top: -275px;
+    }
+}
+
+@media (max-width: 450px) {
+    .Sliderprevous-button {
+        margin-top: -230px;
+    }
+
+    .Slidernext-button {
+        margin-top: -235px;
+    }
+}
+
+@media (max-width: 350px) {
+    .Sliderprevous-button {
+        margin-top: -160px;
+    }
+
+    .Slidernext-button {
+        margin-top: -165px;
+    }
+}
+
+@media (max-width: 299px) {
+    .Sliderprevous-button {
+        margin-top: -120px;
+    }
+
+    .Slidernext-button {
+        margin-top: -125px;
+    }
 }
