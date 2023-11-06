@@ -268,7 +268,7 @@ $(document).ready(function () {
             let total = 0
             const subTotalBoxs = $('.cart-modal__product-no-empty-body__content__amount__price')
             subTotalBoxs.each(function () {
-               console.log($(this).text())
+               // console.log($(this).text())
                total += parseFloat($(this).text().replace('$', ''))
             })
             totalBox.text('$' + total.toFixed(2))
@@ -309,7 +309,7 @@ $(document).ready(function () {
                let total = 0
                const subTotalBoxs = $('.cart-modal__product-no-empty-body__content__amount__price')
                subTotalBoxs.each(function () {
-                  console.log($(this).text())
+                  // console.log($(this).text())
                   total += parseFloat($(this).text().replace('$', ''))
                })
                totalBox.text('$' + total.toFixed(2))
