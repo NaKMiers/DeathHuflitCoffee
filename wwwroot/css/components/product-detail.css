@@ -119,6 +119,11 @@
    width: 400px;
 }
 /* size */
+.KproductDetail__main__text__size_header{
+ font-size: 25px;
+ margin-bottom: 3px;
+
+}
 
 .KproductDetail__main__text__select {
    width: 400px;
@@ -134,10 +139,11 @@
    border: 1.5px solid white;
    font-size: 14px;
    height: 50px;
-   width: 200px;
+   width: 200px !important;
    padding-top: 10px;
    margin: 0px;
-   padding-left: 20px;
+   padding-left: 30px;
+
 }
 .KproductDetail_Size_main_p {
    padding-right: 30px;
@@ -171,6 +177,10 @@
 .KproductDetail__main__text__size2__all {
    width: 50%;
 }
+/* .KproductDetail__main__text__size2 */
+.KproductDetail__main__text__size2_header{
+   margin-bottom: 25px;
+}
 .KproductDetail__main__text__size2 {
    position: relative;
    background: black;
@@ -181,10 +191,21 @@
    text-align: center;
    /* padding: 20px; */
    cursor: pointer; /* Sử dụng con trỏ để chỉ ra rằng .main9 có thể được click */
-   padding-bottom: 0px;
-   border: 1px solid white;
+   /* padding-bottom: 0px; */
+   border: 1.5px solid white;
    left: 5px;
    /* height: %; */
+   
+   height: 52px;
+   padding:3px 0px 0px 0px!important;
+   padding-top:4px ;
+}
+.KproductDetail_Size_div92{
+   margin-bottom: 8px;
+}
+.KproductDetail_Size_div92__img{
+   width:30px !important;
+    height:30px !important;
 }
 .KproductDetail_Size_p{
    padding-top: 10px;
@@ -235,7 +256,8 @@
    margin: 0px;
    height: 50px;
    padding-left: 40px;
-   padding-top: 10px;
+   padding-top: 7px;
+   /* height: 30px; */
 <<<<<<< HEAD
 <<<<<<< HEAD
    margin-left: 35px;
@@ -263,6 +285,7 @@
 }
 .KproductDetail__main__text__size__choice__p2{
    width:104%; 
+   padding-left: 8px;
 }
 /* .KproductDetail_Size_p2{} */
 
@@ -372,9 +395,12 @@ width:100%;font-size:20px;
       width: 80%;
       font-size: 15px;
    }
-   /* .KproductDetail_Size_p {
-      width: 120%;
-   } */
+
+    .KproductDetail_Size_p {
+      width: 100% !important;
+      font-size: 10px;
+   } 
+   
    .KproductDetail__main__text__add_button {
       width: 120%;
    }
@@ -409,6 +435,12 @@ width:100%;font-size:20px;
       font-size: 10px;
       width: 100%;
       height: 50px;
+      padding-left: 10px;
+   }
+   .KproductDetail_Size_div92__img{
+      width: 18px !important
+      ;
+      height: 18px !important;
    }
    .KproductDetail__main__text__size__choice{
       width: 100%;
@@ -429,6 +461,9 @@ width:100%;font-size:20px;
    }
 
    /* type */
+   .KproductDetail__main__text__size2_header{
+      margin-bottom:13px ;
+   }
    .KproductDetail__main__text__size2__all{
       width: 46%;
    }
@@ -439,16 +474,24 @@ width:100%;font-size:20px;
       font-size: 10px;
    }
    .KproductDetail__main__text__size_42{
-      font-size: 15px;
+      font-size: 23px;
+      padding-left: 10px;
    }
    .KproductDetail_Size_p2{
       margin-left: 8px;
+      width: 96%;
+      padding-left: 15px;
    }
    .KproductDetail_Size_div92{
       font-size: 10px;
    }
+   .KproductDetail__main__text__size__choice{
+      padding-top: 10px;
+   }
    .KproductDetail__main__text__size__choice__p2{
       font-size: 10px;
+      padding-left: 0px;
+      
    }
    /* .KproductDetail__main__text__size  */
    /* FlavorProfile */
