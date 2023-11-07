@@ -1,163 +1,169 @@
-// Lấy các phần tử div
-const divA = document.getElementById('KproductDetail_Size_a')
-const divB = document.getElementById('KproductDetail_Size_b')
-const divC = document.getElementById('KproductDetail_Size_c')
+document.addEventListener("DOMContentLoaded", function () {
+   const checkboxes = document.querySelectorAll('input[type="checkbox"][name="filter"]');
+   const selectedCount = document.querySelector(".facets__selected");
+   const productItems = document.querySelectorAll(".list-menu__item.facets__item");
 
-// Sử dụng biến để theo dõi trạng thái của div A
-let isDivAClicked = false
+   checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener("change", updateSelectedCount);
+   });
 
-// Xử lý sự kiện khi click vào div A
-divA.addEventListener('click', function () {
-   if (!isDivAClicked) {
-      // Hiển thị div B và C khi div A chưa được click
-      divB.style.display = 'block'
-      divC.style.display = 'block'
+   function updateSelectedCount() {
+      const selectedCheckboxes = document.querySelectorAll(
+         'input[type="checkbox"][name="filter"]:checked'
+      );
+      const selectedCheckboxesCount = selectedCheckboxes.length;
 
-      // Đánh dấu div A đã được click
-      isDivAClicked = true
-   } else {
-      // Ẩn div B và C khi div A đã được click trước đó
-      divB.style.display = 'none'
-      divC.style.display = 'none'
+      selectedCount.textContent = `${selectedCheckboxesCount} selected`;
 
-      // Bỏ đánh dấu div A
-      isDivAClicked = false
+      productItems.forEach(function (item) {
+         item.style.fontWeight = "normal";
+      });
+   }
+});
+$(document).ready(function () {
+   // Chọn các thẻ <li> có class "grid__item scroll-trigger animate--slide-in"
+   $(".Products__grid-item.Products__scroll-trigger.Products__animate--slide-in").click(
+      function () {
+         var link = $(this).data("link"); // Lấy đường link từ thuộc tính data-link của <li>
+         window.location.href = link; // Chuyển hướng đến đường link khi nhấn vào <li>
+      }
+   );
+});
+document.addEventListener("DOMContentLoaded", function () {
+   const baseUrl = "/collections/merch";
+   const checkboxes = document.querySelectorAll(".Products__filterppproducttype");
+   const productItems = document.querySelectorAll(".list-menu__item.facets__item");
+
+   window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+
+      // Lấy các giá trị trong tham số "filter" từ URL
+      const filterValues = urlParams.getAll("filter");
+      filterValues.forEach(value => {
+         const checkbox = document.querySelector(
+            `.Products__filterppproducttype[value="${value}"]`
+         );
+         if (checkbox) {
+            checkbox.checked = true;
+         }
+      });
+
+      // Lấy giá trị tham số "sort_by" từ URL và cập nhật dropdown
+      const sortValue = urlParams.get("sort_by");
+      if (sortValue) {
+         sortSelect.value = sortValue;
+      }
+
+      // Kích hoạt các mục li tương ứng
+      productItems.forEach(item => {
+         const itemId = item.id; // Sử dụng id thay vì data-item-id
+         if (filterValues.includes(itemId)) {
+            item.classList.add("active");
+         }
+      });
+
+      // Kích hoạt hoặc hủy kích hoạt các mục li khi người dùng nhấn vào chúng
+      productItems.forEach(item => {
+         item.addEventListener("click", () => {
+            const itemId = item.id;
+            const checkbox = document.querySelector(
+               `.Products__filterppproducttype[value="${itemId}"]`
+            );
+
+            if (checkbox) {
+               checkbox.checked = !checkbox.checked;
+            }
+         });
+      });
+   };
+
+   checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", updateURL);
+   });
+
+   function updateURL() {
+      const selectedTypes = [];
+      checkboxes.forEach(checkbox => {
+         if (checkbox.checked) {
+            selectedTypes.push(checkbox.value);
+         }
+      });
+
+      let finalUrl = baseUrl;
+      if (selectedTypes.length > 0) {
+         finalUrl += "?filter=" + selectedTypes.join("&filter=");
+      }
+
+      if (finalUrl === baseUrl) {
+         // Nếu không có filter nào được chọn, trở về trang gốc
+         finalUrl = baseUrl;
+      } else {
+         finalUrl += "&sort_by=" + sortSelect.value;
+      }
+      // Tải lại trang với URL mới
+      window.location.href = finalUrl;
+   }
+});
+document.addEventListener("DOMContentLoaded", function () {
+   const baseUrl = "/collections/merch";
+   const checkboxes = document.querySelectorAll(".Products__filterproducttype");
+   const productItems = document.querySelectorAll(".Products__list-menu-item-facets-item");
+
+   // Sử dụng Set để lưu trữ các giá trị đã chọn
+   const selectedValues = new Set();
+
+   function updateURL() {
+      selectedValues.clear(); // Xóa các giá trị đã chọn trước đó
+
+      checkboxes.forEach(checkbox => {
+         if (checkbox.checked) {
+            selectedValues.add(checkbox.getAttribute("data-custom-value"));
+         }
+      });
+
+      let finalUrl = baseUrl;
+
+      if (selectedValues.size > 0) {
+         finalUrl += "?filter=" + Array.from(selectedValues).join("&filter=");
+      }
+
+      // Lấy giá trị tham số "sort_by" từ URL và cập nhật dropdown
+      const urlParams = new URLSearchParams(window.location.search);
+      const sortValue = urlParams.get("sort_by");
+
+      if (sortValue) {
+         finalUrl += "&sort_by=" + sortValue;
+      } else {
+         // Nếu không có tham số "sort_by", thêm nó vào URL với giá trị mặc định "manual"
+         finalUrl += "&sort_by=manual";
+      }
+      if (selectedValues.size === 0) {
+         // Nếu không có checkbox nào được chọn, trở về trang gốc
+         finalUrl = baseUrl;
+      }
+      window.location.href = finalUrl;
    }
 
-   // Hiển thị lên là div đã chọn
-   divA.classList.add('selected')
+   checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", updateURL);
+   });
 
-   // Loại bỏ lớp 'selected' cho các div khác nếu có
-   if (divB.classList.contains('selected')) {
-      divB.classList.remove('selected')
-   }
-   if (divC.classList.contains('selected')) {
-      divC.classList.remove('selected')
-   }
-})
-
-// Xử lý sự kiện khi click vào div B
-divB.addEventListener('click', function () {
-   if (!isDivAClicked) {
-      // Hiển thị div B và C khi div A chưa được click
-      divA.style.display = 'block'
-      divC.style.display = 'block'
-
-      // Đánh dấu div A đã được click
-      isDivAClicked = true
-   } else {
-      // Ẩn div B và C khi div A đã được click trước đó
-      divA.style.display = 'none'
-      divC.style.display = 'none'
-
-      // Bỏ đánh dấu div A
-      isDivAClicked = false
+   // Lấy trạng thái lưu trữ trong localStorage
+   const storedState = localStorage.getItem("checkboxState");
+   if (storedState) {
+      const storedValues = storedState.split(",");
+      checkboxes.forEach(checkbox => {
+         if (storedValues.includes(checkbox.getAttribute("data-custom-value"))) {
+            checkbox.checked = true;
+         }
+      });
    }
 
-   // Hiển thị lên là div đã chọn
-   divA.classList.add('selected')
-
-   // Loại bỏ lớp 'selected' cho các div khác nếu có
-   if (divA.classList.contains('selected')) {
-      divB.classList.remove('selected')
-   }
-   if (divC.classList.contains('selected')) {
-      divC.classList.remove('selected')
-   }
-})
-// Xử lý sự kiện khi click vào div C
-divC.addEventListener('click', function () {
-   if (!isDivAClicked) {
-      // Hiển thị div B và C khi div A chưa được click
-      divA.style.display = 'block'
-      divB.style.display = 'block'
-
-      // Đánh dấu div A đã được click
-      isDivAClicked = true
-   } else {
-      // Ẩn div B và C khi div A đã được click trước đó
-      divA.style.display = 'none'
-      divB.style.display = 'none'
-
-      // Bỏ đánh dấu div A
-      isDivAClicked = false
-   }
-
-   // Hiển thị lên là div đã chọn
-   divA.classList.add('selected')
-
-   // Loại bỏ lớp 'selected' cho các div khác nếu có
-   if (divA.classList.contains('selected')) {
-      divA.classList.remove('selected')
-   }
-   if (divB.classList.contains('selected')) {
-      divB.classList.remove('selected')
-   }
-})
-
-// Lấy các phần tử div
-const divX = document.getElementById('KproductDetail_Size_x')
-const divY = document.getElementById('KproductDetail_Size_y')
-
-// Sử dụng biến để theo dõi trạng thái của div A
-let isDivXClicked = false
-
-// Xử lý sự kiện khi click vào div A
-divX.addEventListener('click', function () {
-   if (!isDivXClicked) {
-      // Hiển thị div B và C khi div A chưa được click
-      divY.style.display = 'block'
-      // divC.style.display = 'block';
-
-      // Đánh dấu div A đã được click
-      isDivXClicked = true
-   } else {
-      // Ẩn div B và C khi div A đã được click trước đó
-      divY.style.display = 'none'
-      // divC.style.display = 'none';
-
-      // Bỏ đánh dấu div A
-      isDivXClicked = false
-   }
-
-   // Hiển thị lên là div đã chọn
-   divX.classList.add('selected')
-
-   // Loại bỏ lớp 'selected' cho các div khác nếu có
-   if (divY.classList.contains('selected')) {
-      divY.classList.remove('selected')
-   }
-   // if (divC.classList.contains('selected')) {
-   //   divC.classList.remove('selected');
-   // }
-})
-
-// Xử lý sự kiện khi click vào div B
-divY.addEventListener('click', function () {
-   if (!isDivXClicked) {
-      // Hiển thị div B và C khi div A chưa được click
-      divX.style.display = 'block'
-      // divC.style.display = 'block';
-
-      // Đánh dấu div A đã được click
-      isDivXClicked = true
-   } else {
-      // Ẩn div B và C khi div A đã được click trước đó
-      divX.style.display = 'none'
-      // divC.style.display = 'none';
-
-      // Bỏ đánh dấu div A
-      isDivXClicked = false
-   }
-
-   // Hiển thị lên là div đã chọn
-   divX.classList.add('selected')
-
-   // Loại bỏ lớp 'selected' cho các div khác nếu có
-   if (divX.classList.contains('selected')) {
-      divY.classList.remove('selected')
-   }
-   // if (divC.classList.contains('selected')) {
-   //   divC.classList.remove('selected');
-   // }
-})
+   // Lưu trạng thái khi checkbox thay đổi
+   checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", () => {
+         const checkedValues = Array.from(selectedValues);
+         localStorage.setItem("checkboxState", checkedValues);
+      });
+   });
+});
