@@ -32,9 +32,12 @@
 /* CSS cho trình chiếu */
 .slideshow-container {
     position: relative;
-    overflow: hidden;
+    overflow: scroll;
 }
-
+.slideshow-container::-webkit-scrollbar
+{
+    display:none;
+}
 .Slideshow-banner {
     display: flex;
     transition: transform 0.5s ease;
@@ -178,8 +181,8 @@
 
 @media (max-width: 749px) {
     .Slideshow {
-        height: 300px;
-        padding: 40px 50px;
+        height: auto;
+        padding: 40px 10px;
     }
     .Slideshow-auto {
         border: 0;
@@ -194,4 +197,27 @@
     .Slideshow-heading {
         font-size: 30px;
     }
+}
+@media(max-width: 500px){
+    .Slideshow {
+            height: auto;
+            padding: 40px 5px;
+        }
+    
+        .Slideshow-auto {
+            border: 0;
+        }
+    
+        .slideshow-icon-pause {
+            right: 20px;
+        }
+    
+        .slideshow-icon-play {
+            right: 20px
+        }
+    
+        .Slideshow-heading {
+            font-size: 30px;
+            font-family: fantasy;
+        }
 }
