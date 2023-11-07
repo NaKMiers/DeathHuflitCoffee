@@ -38,9 +38,7 @@ $(document).ready(function () {
          hideCart()
       }
    }
-})
 
-$(document).ready(function () {
    // sub-menu coffee
    const subMenuCoffeeTrigger = document.querySelector('.sub-menu-coffee-trigger')
    const subMenuCoffee = document.querySelector('.sub-menu.coffee')
@@ -72,39 +70,37 @@ $(document).ready(function () {
       hideSubMenuCoffee()
    }
 
-   // sub-menu merch
-   const subMenuMerchTrigger = document.querySelector('.sub-menu-merch-trigger')
-   const subMenuMerch = document.querySelector('.sub-menu.merch')
+   // // sub-menu merch
+   // const subMenuMerchTrigger = document.querySelector('.sub-menu-merch-trigger')
+   // const subMenuMerch = document.querySelector('.sub-menu.merch')
 
-   const showSubMenuMerch = () => {
-      subMenuMerch.style.display = 'block'
-      setTimeout(() => {
-         subMenuMerch.style.opacity = 1
-         subMenuMerch.style.transform = 'translateY(0)'
-      }, 0)
-   }
+   // const showSubMenuMerch = () => {
+   //    subMenuMerch.style.display = 'block'
+   //    setTimeout(() => {
+   //       subMenuMerch.style.opacity = 1
+   //       subMenuMerch.style.transform = 'translateY(0)'
+   //    }, 0)
+   // }
 
-   const hideSubMenuMerch = () => {
-      subMenuMerch.style.opacity = 0
-      subMenuMerch.style.transform = 'translateY(-101%)'
-      setTimeout(() => {
-         subMenuMerch.style.display = 'none'
-      }, 510) // transition: 0.5s
-   }
+   // const hideSubMenuMerch = () => {
+   //    subMenuMerch.style.opacity = 0
+   //    subMenuMerch.style.transform = 'translateY(-101%)'
+   //    setTimeout(() => {
+   //       subMenuMerch.style.display = 'none'
+   //    }, 510) // transition: 0.5s
+   // }
 
-   subMenuMerchTrigger.onmouseover = () => {
-      showSubMenuMerch()
+   // subMenuMerchTrigger.onmouseover = () => {
+   //    showSubMenuMerch()
 
-      // hideSubMenuCoffee
-      hideSubMenuCoffee()
-   }
+   //    // hideSubMenuCoffee
+   //    hideSubMenuCoffee()
+   // }
 
-   subMenuMerch.onmouseleave = () => {
-      hideSubMenuMerch()
-   }
-})
+   // subMenuMerch.onmouseleave = () => {
+   //    hideSubMenuMerch()
+   // }
 
-$(document).ready(function () {
    // navside
    const navBarIcon = document.querySelector('.nav__icon.bar-icon')
    const navCloseIcon = document.querySelector('.nav__icon.close-icon')
@@ -209,16 +205,14 @@ $(document).ready(function () {
       }, 310) // transition: 0.3s
    }
 
-   navsideSubmenuMerchTrigger.onclick = () => {
-      showNavsideSubmenuMerch()
-   }
+   // navsideSubmenuMerchTrigger.onclick = () => {
+   //    showNavsideSubmenuMerch()
+   // }
 
    navsideSubmenuMerchCloseBtn.onclick = () => {
       hideNavsideSubmenuMerch()
    }
-})
 
-$(document).ready(function () {
    // recomment product
    $('.cart-modal__product-item__body__add-btn').click(function () {
       // Hiển thị select menu của form được nhấn
@@ -228,9 +222,7 @@ $(document).ready(function () {
          $(this).attr('type', 'submit')
       }, 0)
    })
-})
 
-$(document).ready(function () {
    const plusCartBtn = $('.cart__quantity-btn.increase')
    const minusCartBtn = $('.cart__quantity-btn.decrease')
    const totalBox = $('.cart__total')
@@ -268,7 +260,7 @@ $(document).ready(function () {
             let total = 0
             const subTotalBoxs = $('.cart-modal__product-no-empty-body__content__amount__price')
             subTotalBoxs.each(function () {
-               console.log($(this).text())
+               // console.log($(this).text())
                total += parseFloat($(this).text().replace('$', ''))
             })
             totalBox.text('$' + total.toFixed(2))
@@ -309,7 +301,7 @@ $(document).ready(function () {
                let total = 0
                const subTotalBoxs = $('.cart-modal__product-no-empty-body__content__amount__price')
                subTotalBoxs.each(function () {
-                  console.log($(this).text())
+                  // console.log($(this).text())
                   total += parseFloat($(this).text().replace('$', ''))
                })
                totalBox.text('$' + total.toFixed(2))
