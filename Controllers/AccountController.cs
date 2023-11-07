@@ -153,22 +153,23 @@ namespace DeathWishCoffee.Controllers
             if (string.IsNullOrEmpty(form.Address))
                 form.Address = "";
 
-            string avatarPath = "";
-            if (form.Avatar != null)
-            {
+            // string avatarPath = "";
+            // if (form.Avatar != null)
+            // {
 
-                // get path to save in server
-                var imagePath = Path.Combine("wwwroot", "uploads");
-                var imageName = Guid.NewGuid().ToString() + Path.GetExtension(form.Avatar.FileName);
-                var fullPath = Path.Combine(Directory.GetCurrentDirectory(), imagePath, imageName);
-                avatarPath = Path.Combine(imageName);
-                // save file to server (/wwwroot/uploads)
-                using var stream = new FileStream(fullPath, FileMode.Create);
-                form.Avatar.CopyTo(stream);
-            }
+            //     // get path to save in server
+            //     var imagePath = Path.Combine("wwwroot", "uploads");
+            //     var imageName = Guid.NewGuid().ToString() + Path.GetExtension(form.Avatar.FileName);
+            //     var fullPath = Path.Combine(Directory.GetCurrentDirectory(), imagePath, imageName);
+            //     avatarPath = Path.Combine(imageName);
+            //     // save file to server (/wwwroot/uploads)
+            //     using var stream = new FileStream(fullPath, FileMode.Create);
+            //     form.Avatar.CopyTo(stream);
+            // }
 
             var newUser = new User
             {
+                Id = Guid.NewGuid(),
                 Fullname = form.FirstName.Trim() + " " + form.MiddleName.Trim() + " " + form.LastName.Trim(),
                 FirstName = form.FirstName.Trim(),
                 MiddleName = form.MiddleName.Trim(),
@@ -179,7 +180,7 @@ namespace DeathWishCoffee.Controllers
                 Phone = form.Phone.Trim(),
                 Country = form.Country.Trim(),
                 Address = form.Address.Trim(),
-                Avatar = avatarPath,
+                // Avatar = avatarPath,
             };
 
             // add users in database
