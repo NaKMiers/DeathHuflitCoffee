@@ -207,8 +207,8 @@ namespace DeathWishCoffee.Controllers
             // set CART data for all pages again
             SetUpCartDataForAllPage(user.CartItems.ToList());
 
-            // redirect to HomePage
-            return RedirectToAction("Index", "Home");
+            string referrer = HttpContext.Request.Headers["Referer"].ToString();
+            return Redirect(referrer);
         }
 
         // [/cart/increase/{cartItemId}]

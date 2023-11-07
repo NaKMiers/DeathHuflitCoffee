@@ -24,7 +24,7 @@ namespace DeathWishCoffee.Controllers
         {
             _httpContext.HttpContext.Session.SetString("Id", user.Id.ToString());
             _httpContext.HttpContext.Session.SetString("Username", user.Username);
-            _httpContext.HttpContext.Session.SetString("Avatar", user.Avatar);
+            // _httpContext.HttpContext.Session.SetString("Avatar", user.Avatar);
         }
 
         public void SetUpCartDataForAllPage(List<CartItem> cart)
@@ -62,6 +62,7 @@ namespace DeathWishCoffee.Controllers
                 return RedirectToAction("Login", "Account");
 
             var user = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id.ToString() == userId);
+            Console.WriteLine("userId: " + userId);
             // if user does NOT EXIST => BadRequest
             if (user == null)
                 return BadRequest("User does not exist");
@@ -85,6 +86,9 @@ namespace DeathWishCoffee.Controllers
         public IActionResult Login(LoginRequest loginRequest)
         {
             Console.WriteLine("Login");
+
+            Console.WriteLine(loginRequest.Email);
+            Console.WriteLine(loginRequest.Password);
 
             // check user if exist
             var user = _deathWishCoffeeDbContext.Users
@@ -187,10 +191,21 @@ namespace DeathWishCoffee.Controllers
             _deathWishCoffeeDbContext.Users.Add(newUser);
             _deathWishCoffeeDbContext.SaveChanges();
 
-            var registedUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Username == form.Username && u.Password == form.Password);
+            var registedUser = _deathWishCoffeeDbContext.Users
+                        .Include(u => u.CartItems)
+                        .ThenInclude(cartItem => cartItem.Product)
+                        .ThenInclude(product => product.Images)
+                        .FirstOrDefault(u => u.Email == form.Email && u.Password == form.Password);
 
-            // set user data to session
+            Console.WriteLine("OOKOKOKOKOKOKO==============================");
+            Console.WriteLine(form.Email);
+            // clear all session before update again
+            // _httpContext.HttpContext.Session.Clear();
+            GetRecommendProducts();
+            // set USER data to session
             SetUpUserDataForAllPage(registedUser);
+            // set CART data to session
+            SetUpCartDataForAllPage(registedUser.CartItems.ToList());
 
             return RedirectToAction("Index", "Home");
         }
