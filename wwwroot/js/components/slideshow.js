@@ -1,7 +1,7 @@
 
 const slides = document.querySelectorAll('.Slideshow-slide');
 const banner = document.querySelector('.Slideshow-banner');
-const counter = document.querySelector('.slider-counter--current');
+const counter = document.querySelector('.slideshow-counter--current');
 const playButton = document.querySelector('.slideshow-icon-play');
 const pauseButton = document.querySelector('.slideshow-icon-pause');
 const nextButton = document.querySelector('.Slideshow-nextbutton');

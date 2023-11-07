@@ -7,21 +7,21 @@
     padding: 40px 300px;
 }
 
-.Slideshow-heading {
+
 
 .Slideshow-heading {
     font-family: fantasy;
     font-size: 42px;
 }
 
-.Slideshow-text {
+
 
 .Slideshow-text {
     font-family: inherit;
     font-size: 18px;
 }
 
-.banner-richtext {
+
 
 .banner-richtext {
     font-family: fantasy;
@@ -93,28 +93,28 @@
     background-color: #201e1d;
 }
 
-.Slideshow-prevousbutton {
+
 
 .Slideshow-prevousbutton {
     background-color: transparent;
     border: 0;
 }
 
-.Slideshow-nextbutton {
+
 
 .Slideshow-nextbutton {
     background-color: transparent;
     border: 0;
 }
 
-.Slider-couter {
+.Slideshow-couter{
     color: #ffffff;
     margin-left: 20px;
     margin-right: 20px;
     font-size: 12px;
 }
 
-.Slideshow-auto {
+
 
 .Slideshow-auto {
     color: #ffffff;
@@ -133,8 +133,6 @@
     margin-left: 10px;
 }
 
-.slideshow-icon-pause {
-    margin-left: 10px;
 
 .slideshow-icon-pause {
     margin-left: 10px;
@@ -164,10 +162,6 @@
     .Slideshow-heading {
         font-size: 30px;
     }
-
-    .Slideshow-heading {
-        font-size: 30px;
-    }
 }
 
 
@@ -187,26 +181,14 @@
         height: 300px;
         padding: 40px 50px;
     }
-
-    .Slideshow-auto {
     .Slideshow-auto {
         border: 0;
     }
-
-    .slideshow-icon-pause {
-
     .slideshow-icon-pause {
         right: 20px;
     }
-
-    .slideshow-icon-play {
-
     .slideshow-icon-play {
         right: 20px
-    }
-
-    .Slideshow-heading {
-        font-size: 30px;
     }
 
     .Slideshow-heading {
