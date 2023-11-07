@@ -19,7 +19,7 @@ namespace DeathWishCoffee.Controllers
             _httpContext = httpContextAccessor;
         }
 
-        // [/admin/products/{id}]
+        // [/products/{id}]
         public IActionResult Index(Guid id)
         {
             // get product from databasee
