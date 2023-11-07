@@ -247,12 +247,12 @@
 }
 @media only screen and (max-width: 1300px) {
    .BlogCarousel__slider-component-full-width {
-      height: 60vh;
+      height: 65vh;
    }
 }
 @media only screen and (max-width: 1200px) {
    .BlogCarousel__slider-component-full-width {
-      height: 84vh;
+      height: 70vh;
       position: relative;
    }
    #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
