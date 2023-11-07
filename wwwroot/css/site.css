@@ -14,6 +14,10 @@ html {
    }
 }
 
+svg path {
+   fill: #fff;
+}
+
 .btn:focus,
 .btn:active:focus,
 .btn-link.nav-link:focus,
