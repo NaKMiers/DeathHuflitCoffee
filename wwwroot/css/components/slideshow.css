@@ -1,6 +1,6 @@
 .Slideshow {
     width: 100%;
-    height: auto;
+    height: 370px;
     background-color: #201e1d;
     color: #ffffff;
     text-align: center;
@@ -8,9 +8,13 @@
 }
 
 .Slideshow-heading {
+
+.Slideshow-heading {
     font-family: fantasy;
     font-size: 42px;
 }
+
+.Slideshow-text {
 
 .Slideshow-text {
     font-family: inherit;
@@ -18,9 +22,12 @@
 }
 
 .banner-richtext {
+
+.banner-richtext {
     font-family: fantasy;
     font-size: 16px;
 }
+
 
 /* CSS cho trình chiếu */
 .slideshow-container {
@@ -79,13 +86,21 @@
     /* Để căn giữa theo chiều ngang */
     align-items: center;
     /* Để căn giữa theo chiều dọc */
+    justify-content: center;
+    /* Để căn giữa theo chiều ngang */
+    align-items: center;
+    /* Để căn giữa theo chiều dọc */
     background-color: #201e1d;
 }
+
+.Slideshow-prevousbutton {
 
 .Slideshow-prevousbutton {
     background-color: transparent;
     border: 0;
 }
+
+.Slideshow-nextbutton {
 
 .Slideshow-nextbutton {
     background-color: transparent;
@@ -100,6 +115,8 @@
 }
 
 .Slideshow-auto {
+
+.Slideshow-auto {
     color: #ffffff;
     border: 0;
     margin-left: 20px;
@@ -109,6 +126,7 @@
     height: 44px;
 }
 
+
 /* Ẩn nút "play" ban đầu */
 .slideshow-icon-play {
     display: none;
@@ -117,7 +135,11 @@
 
 .slideshow-icon-pause {
     margin-left: 10px;
+
+.slideshow-icon-pause {
+    margin-left: 10px;
 }
+
 
 /* Thiết lập cùng vị trí và kích thước cho cả nút "play" và nút "pause" */
 .slideshow-icon-pause,
@@ -125,6 +147,7 @@
     width: 14px;
     height: 12px;
     position: absolute;
+
 
 }
 
@@ -141,7 +164,12 @@
     .Slideshow-heading {
         font-size: 30px;
     }
+
+    .Slideshow-heading {
+        font-size: 30px;
+    }
 }
+
 
 @media (max-width: 900px) {
     .Slideshow {
@@ -153,21 +181,32 @@
     }
 }
 
+
 @media (max-width: 749px) {
     .Slideshow {
+        height: 300px;
         padding: 40px 50px;
     }
 
     .Slideshow-auto {
+    .Slideshow-auto {
         border: 0;
     }
+
+    .slideshow-icon-pause {
 
     .slideshow-icon-pause {
         right: 20px;
     }
 
     .slideshow-icon-play {
+
+    .slideshow-icon-play {
         right: 20px
+    }
+
+    .Slideshow-heading {
+        font-size: 30px;
     }
 
     .Slideshow-heading {
