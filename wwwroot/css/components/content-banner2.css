@@ -3,44 +3,56 @@
     position: relative;
     overflow: hidden;
     width: 100%; 
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
 .ContentBanner2-media img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
 .ContentBanner2-container{
     position: absolute;
     overflow: hidden;
-    left: 70px;
-    bottom: 70px;
+    left: 120px;
+    bottom: 80px;
 }
 .ContentBanner2-box {
     width: 60%;
 }
 .Banner-heading{
     color: #ffffff;
-    font-size: 70px;
+    font-size: 90px;
+    font-family: fantasy;
+    letter-spacing: 2px;
 }
 .Content-text{
-    font-size: 16px;
+    font-size: 20px;
+    margin: 0;
 }
-
+.font-heading{
+    font-family: inherit;
+    margin: 0;
+    font-size: 20px;
+}
 .Banner-button button {
+    
     display: inline-block; /* Hiển thị như inline-block để nằm cạnh nhau */
     margin-right: 30px;
 }
 
 .button:hover {
+    transition: background-color .5s ease,
+        color .5s ease;
     background-color: #000000;/* Đặt màu nền khi đưa chuột vào */
     color: #ffffff;/* Màu chữ khi đưa chuột vào */
 }
 
 .Banner-button a {
-    padding: 5px;
+    font-family: serif;
+    padding: 10px 8px;
     background-color: red;
     display: inline-block;
     border: 1px solid red;
@@ -50,7 +62,9 @@
 .font-heading {  
     text-align: left;   
 }
-
+.ContentBanner2-container1{
+    display: none;
+}
 @media  (max-width:990px) {
     .Banner-heading {
         font-size: 48px;
@@ -81,6 +95,8 @@
         padding-right: 40px;
         padding-left: 40px;
     }
+   
+    
 }
 @media (max-width:749px){
     .ContentBanner2-container .Content-text,
@@ -92,4 +108,123 @@
     .ContentBanner2-media img{
         clip-path: inset(10% 0 10% 0)
     }
+        .ContentBanner2-container1 {
+            display: block;
+            text-align: center;
+        }
+    .Banner-button1 .button1 {
+      font-family: serif;
+      padding: 8px 12px;
+      background-color: red;
+      display: inline-block;
+      border: 1px solid red;
+    }
+    .Content-text1{
+        font-size: 16px;
+        font-family: inherit;
+        margin: 0;
+    }
+    .Banner-heading1{
+        font-size: 48px;
+        font-family: fantasy;
+        margin: 0;
+    }
+    .font-heading1{
+        font-size: 18px;
+        font-family: inherit;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .ContentBanner2-box1{
+        padding: 20px;
+    }
+        .button1:hover {
+            transition: background-color .5s ease,
+                color .5s ease;
+            background-color: #000000;
+            /* Đặt màu nền khi đưa chuột vào */
+            color: #ffffff;
+            /* Màu chữ khi đưa chuột vào */
+        }
+    .button1{
+        width: 220px;
+        margin: 0 5px;
+    }
+        .Banner-button1 {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+}
+@media (max-width:519px) {
+
+    .ContentBanner2-container .Content-text,
+    .ContentBanner2-container .Banner-heading,
+    .ContentBanner2-container .Banner-text,
+    .ContentBanner2-container .Banner-button {
+        display: none;
+    }
+
+    .ContentBanner2-media img {
+        clip-path: inset(10% 0 10% 0)
+    }
+
+    .ContentBanner2-container1 {
+        display: block;
+        text-align: center;
+    }
+
+    .Banner-button1 .button1 {
+        font-family: serif;
+        padding: 8px 12px;
+        background-color: red;
+        display: inline-block;
+        border: 1px solid red;
+    }
+
+    .Content-text1 {
+        font-size: 16px;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .Banner-heading1 {
+        font-size: 48px;
+        font-family: fantasy;
+        margin: 0;
+    }
+
+    .font-heading1 {
+        font-size: 18px;
+        font-family: inherit;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .ContentBanner2-box1 {
+        padding: 20px;
+    }
+
+    .button1:hover {
+        transition: background-color .5s ease,
+            color .5s ease;
+        background-color: #000000;
+        /* Đặt màu nền khi đưa chuột vào */
+        color: #ffffff;
+        /* Màu chữ khi đưa chuột vào */
+    }
+
+        .Banner-button1 {
+            display: flex;
+            flex-direction: column;
+            /* Hiển thị các thẻ con dọc */
+            width: 100%;
+        }
+    
+        .button1 {
+            text-align: center;
+            margin: 5px 0;
+            /* 10px khoảng cách giữa các thẻ dọc */
+            width: 100%;
+        }
 }
