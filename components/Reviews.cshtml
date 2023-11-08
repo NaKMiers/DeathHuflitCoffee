@@ -14,266 +14,264 @@
          <button class="Reviews__search-button" disabled>Search</button>
       </div>
    </div>
-   <div class="Reviews_outside">
-      <div class="Reviews__bv-header">
-         <div class="Reviews__bv-action-bar">
-            <h2 class="Reviews__bv-action-bar-header Reviews__bv-focusable" tabindex="-1">Reviews</h2>
+</div>
+<div class="Reviews_outside">
+   <div class="Reviews__bv-header">
+      <div class="Reviews__bv-action-bar">
+         <h2 class="Reviews__bv-action-bar-header Reviews__bv-focusable" tabindex="-1">Reviews</h2>
+         <div class="Reviews__bv-write-review-container Reviews__bv-write-container">
             <div class="Reviews__bv-write-review-container Reviews__bv-write-container">
-               <div class="Reviews__bv-write-review-container Reviews__bv-write-container">
-                  <button id="writeReviewButton" type="button"
-                     class="Reviews__bv-write-review Reviews__bv-focusable Reviews__bv-submission-button">Write a
-                     review</button>
-               </div>
-               @* Review Modal *@
-               <div id="reviewModal" class="modal">
-                  <div class="review-modal__body review-modal-slider" style="margin: 80px 0px !important;
+               <button id="writeReviewButton" type="button"
+                  class="Reviews__bv-write-review Reviews__bv-focusable Reviews__bv-submission-button">Write a
+                  review</button>
+            </div>
+            @* Review Modal *@
+            <div id="reviewModal" class="modal">
+               <div class="review-modal__body review-modal-slider" style="margin: 80px 0px !important;
     height: 100%;">
-                     <div class="review-modal-slidetrack">
-                        <div class="review-modal-slide" style="background:black;">
-                           <div class="modal-content1">
+                  <div class="review-modal-slidetrack">
+                     <div class="review-modal-slide" style="background:black;">
+                        <div class="modal-content1">
 
-                              <div data-bv-v="submissionSidebar:12" class="Products__views">
-                                 <div class="Products-info"> <img class="Products-image"
-                                       src="https://cdn.shopify.com/s/files/1/0271/7209/files/Dark_Roast_10ct_Angle_Vertical_Pods_A1.jpg?v=1694696848"
-                                       alt="Death Wish Coffee Company-Dark Roast Death Cups">
-                                    <span class="Products__name-header"> Death
-                                       Wish Coffee Company - Dark Roast Death Cups </span>
+                           <div data-bv-v="submissionSidebar:12" class="Products__views">
+                              <div class="Products-info"> <img class="Products-image"
+                                    src="https://cdn.shopify.com/s/files/1/0271/7209/files/Dark_Roast_10ct_Angle_Vertical_Pods_A1.jpg?v=1694696848"
+                                    alt="Death Wish Coffee Company-Dark Roast Death Cups">
+                                 <span class="Products__name-header"> Death
+                                    Wish Coffee Company - Dark Roast Death Cups </span>
+                              </div>
+                           </div>
+                           <div class="form_reviews-box">
+                              <div class="first_row">
+                                 <h2 class="Tilte">My Review for Dark Roast Death Cups</h2>
+                                 <div class="close-button">
+                                    <span class="close" id="closeModal">&times;</span>
                                  </div>
                               </div>
-                              <div class="form_reviews-box">
-                                 <div class="first_row">
-                                    <h2 class="Tilte">My Review for Dark Roast Death Cups</h2>
-                                    <div class="close-button">
-                                       <span class="close" id="closeModal">&times;</span>
-                                    </div>
-                                 </div>
-                                 <form id="reviewForm">
-                                    <p class="text-rows">Required fields are marked with *</p>
-                                    <fieldset>
-                                       <div class="Overall_Ratting">
-                                          <span class="overall-title">Overall Rating*</span>
+                              <form id="reviewForm">
+                                 <p class="text-rows">Required fields are marked with *</p>
+                                 <fieldset>
+                                    <div class="Overall_Ratting">
+                                       <span class="overall-title">Overall Rating*</span>
+                                       <div class="Rating_Star">
                                           <div class="Rating_Star">
-                                             <div class="Rating_Star">
-                                                <div class="star-container" data-rating="1">
-                                                   <span class="star-icon">★</span>
-                                                </div>
-                                                <div class="star-container" data-rating="2">
-                                                   <span class="star-icon">★</span>
-                                                </div>
-                                                <div class="star-container" data-rating="3">
-                                                   <span class="star-icon">★</span>
-                                                </div>
-                                                <div class="star-container" data-rating="4">
-                                                   <span class="star-icon">★</span>
-                                                </div>
-                                                <div class="star-container" data-rating="5">
-                                                   <span class="star-icon">★</span>
-                                                </div>
+                                             <div class="star-container" data-rating="1">
+                                                <span class="star-icon">★</span>
                                              </div>
-
-                                             <div class="rating-text">
-                                                <span> click to rate! </span>
-                                                <span data-rating="1" style="display: none">Poor.</span>
-                                                <span data-rating="2" style="display: none">Fair.</span>
-                                                <span data-rating="3" style="display: none">Average.</span>
-                                                <span data-rating="4" style="display: none">Good.</span>
-                                                <span data-rating="5" style="display: none">Excellent.</span>
+                                             <div class="star-container" data-rating="2">
+                                                <span class="star-icon">★</span>
+                                             </div>
+                                             <div class="star-container" data-rating="3">
+                                                <span class="star-icon">★</span>
+                                             </div>
+                                             <div class="star-container" data-rating="4">
+                                                <span class="star-icon">★</span>
+                                             </div>
+                                             <div class="star-container" data-rating="5">
+                                                <span class="star-icon">★</span>
                                              </div>
                                           </div>
+
+                                          <div class="rating-text">
+                                             <span> click to rate! </span>
+                                             <span data-rating="1" style="display: none">Poor.</span>
+                                             <span data-rating="2" style="display: none">Fair.</span>
+                                             <span data-rating="3" style="display: none">Average.</span>
+                                             <span data-rating="4" style="display: none">Good.</span>
+                                             <span data-rating="5" style="display: none">Excellent.</span>
+                                          </div>
                                        </div>
-                                       <div class="review-title">
-                                          <label for="review-title">Review Title*</label>
-                                          <input id="review-title" type="text" name="title" maxlength="255"
-                                             style="width: 100%;" placeholder="Maximum of 255 characters." required>
-                                       </div>
-                                       <div class="review-text">
-                                          <label for="review-text">Review*</label>
-                                          <textarea id="review-text" name="reviewtext" maxlength="10000"
-                                             style="width: 100%;"
-                                             placeholder="Example: I'll never drink any other coffee again." required>
+                                    </div>
+                                    <div class="review-title">
+                                       <label for="review-title">Review Title*</label>
+                                       <input id="review-title" type="text" name="title" maxlength="255"
+                                          style="width: 100%;" placeholder="Maximum of 255 characters." required>
+                                    </div>
+                                    <div class="review-text">
+                                       <label for="review-text">Review*</label>
+                                       <textarea id="review-text" name="reviewtext" maxlength="10000"
+                                          style="width: 100%;"
+                                          placeholder="Example: I'll never drink any other coffee again." required>
                                           </textarea>
-                                          <button type="button" id="add-photo-button">Add Photo</button>
-                                          <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                                       <button type="button" id="add-photo-button">Add Photo</button>
+                                       <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                                    </div>
+                                 </fieldset>
+                                 <div class="T__review__yesno__recommendation-container"
+                                    style="background-color: black; color: white">
+                                    <div class="T__review__yesno__button-container" style="display:flex">
+                                       <div class="T__review__yesno__recommendation-question">
+                                          Would you recommend this product to a friend?
                                        </div>
-                                    </fieldset>
-                                    <div class="T__review__yesno__recommendation-container"
-                                       style="background-color: black; color: white">
-                                       <div class="T__review__yesno__button-container" style="display:flex">
-                                          <div class="T__review__yesno__recommendation-question">
-                                             Would you recommend this product to a friend?
-                                          </div>
-                                          <div class="T__review__yesno__button" id="yesButton">Yes</div>
-                                          <div class="T__review__yesno__button" id="noButton">No</div>
-                                          <div class="T__review__yesno__checkmark" id="checkmark" style="display: none">
-                                             &#10004;</div>
+                                       <div class="T__review__yesno__button" id="yesButton">Yes</div>
+                                       <div class="T__review__yesno__button" id="noButton">No</div>
+                                       <div class="T__review__yesno__checkmark" id="checkmark" style="display: none">
+                                          &#10004;</div>
+                                    </div>
+                                 </div>
+                                 @* < style="background-color:black; color:white"> *@
+                                 <div class="Treview_namevsnickname__info">
+                                    <div class="Treview_namevsnickname">
+                                       <div class="Treview_namevsnickname__text">
+                                          Name/Nickname*
+                                       </div>
+                                       <div class="Treview_namevsnickname__input">
+                                          <input type="text" class="Treview_namevsnickname__input_text"
+                                             placeholder="Example: MugCollector(Maximun of 25 character)">
                                        </div>
                                     </div>
-                                    @* < style="background-color:black; color:white"> *@
-                                    <div class="Treview_namevsnickname__info">
-                                       <div class="Treview_namevsnickname">
-                                          <div class="Treview_namevsnickname__text">
-                                             Name/Nickname*
-                                          </div>
-                                          <div class="Treview_namevsnickname__input">
-                                             <input type="text" class="Treview_namevsnickname__input_text"
-                                                placeholder="Example: MugCollector(Maximun of 25 character)">
-                                          </div>
+                                    <div class="Treview__location">
+                                       <div class="Treview__location__text">
+                                          Location*
                                        </div>
-                                       <div class="Treview__location">
-                                          <div class="Treview__location__text">
-                                             Location*
-                                          </div>
-                                          <div class="Treview__location__input">
-                                             <input type="text" class="Treview_location__input_text"
-                                                placeholder="Example: Newyork, NY,..">
-                                          </div>
+                                       <div class="Treview__location__input">
+                                          <input type="text" class="Treview_location__input_text"
+                                             placeholder="Example: Newyork, NY,..">
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <hr>
+                                 <Div class="Treview__email">
+                                    <div class="Treview__email__text">
+                                       Email*
+                                    </div>
+                                    <div class="Treview__email__input">
+                                       <input type="text" class="Treview__email__input__text"
+                                          placeholder="Example: youremail@example.com">
+                                    </div>
+                                 </Div>
+                                 <hr>
+
+                                 <div class="Treview__select__how">
+                                    <p class="Treview__select__how__p">How do you take your coffee?</p>
+                                    <select class="Treview__select__how__choice">
+                                       <option selected>Select</option>
+                                       <option value="1">Black</option>
+                                       <option value="2">With sugar</option>
+                                       <option value="3">With cream</option>
+                                       <option value="3">With cream and sugar</option>
+                                       <option value="3">Other</option>
+                                    </select>
+                                    <div class="T__review__select__checkmark" id="checkmark" style="display: block">
+                                       &#10004;
+                                    </div>
+                                 </div>
+
+                                 <hr>
+                                 <div class="Treview__select__how">
+                                    <p class="Treview__select__how__p">What's your preferred brew method?</p>
+                                    <select class="Treview__select__how__choice">
+                                       <option selected>Select</option>
+                                       <option value="1">Auto-dripk</option>
+                                       <option value="2">French Press</option>
+                                       <option value="3">Keurig</option>
+                                       <option value="3">Chemex/Pour Over</option>
+                                       <option value="3">Other</option>
+                                    </select>
+                                    <div class="T__review__select__checkmark" id="checkmark" style="display: block">
+                                       &#10004;
+                                    </div>
+                                 </div>
+                                 <hr>
+                                 <div class="New_Overall_Rating">
+                                    <span class="new-overall-title">How would you rate the quality of this
+                                       product?</span>
+                                    <div class="New_Rating_Star">
+                                       <div class="New_Star_Container" data-rating="1">
+                                          <span class="New_Star_Icon">★</span>
+                                       </div>
+                                       <div class="New_Star_Container" data-rating="2">
+                                          <span class="New_Star_Icon">★</span>
+                                       </div>
+                                       <div class="New_Star_Container" data-rating="3">
+                                          <span class="New_Star_Icon">★</span>
+                                       </div>
+                                       <div class="New_Star_Container" data-rating="4">
+                                          <span class="New_Star_Icon">★</span>
+                                       </div>
+                                       <div class="New_Star_Container" data-rating="5">
+                                          <span class="New_Star_Icon">★</span>
                                        </div>
                                     </div>
 
-                                    <hr>
-                                    <Div class="Treview__email">
-                                       <div class="Treview__email__text">
-                                          Email*
+                                    <div class="New_Rating_Text">
+                                       <span> click to rate! </span>
+                                       <span data-rating="1" style="display: none">Poor.</span>
+                                       <span data-rating="2" style="display: none">Fair.</span>
+                                       <span data-rating="3" style="display: none">Average.</span>
+                                       <span data-rating="4" style="display: none">Good.</span>
+                                       <span data-rating="5" style="display: none">Excellent.</span>
+                                    </div>
+                                 </div>
+                                 <hr>
+                                 <div class="Custom_Overall_Rating">
+                                    <span class="custom-overall-title">How would you rate the value of this
+                                       product?</span>
+                                    <div class="Custom_Rating_Star">
+                                       <div class="Custom_Star_Container" data-rating="1">
+                                          <span class="Custom_Star_Icon">★</span>
                                        </div>
-                                       <div class="Treview__email__input">
-                                          <input type="text" class="Treview__email__input__text"
-                                             placeholder="Example: youremail@example.com">
+                                       <div class="Custom_Star_Container" data-rating="2">
+                                          <span class="Custom_Star_Icon">★</span>
                                        </div>
-                                    </Div>
-                                    <hr>
-
-                                    <div class="Treview__select__how">
-                                       <p class="Treview__select__how__p">How do you take your coffee?</p>
-                                       <select class="Treview__select__how__choice">
-                                          <option selected>Select</option>
-                                          <option value="1">Black</option>
-                                          <option value="2">With sugar</option>
-                                          <option value="3">With cream</option>
-                                          <option value="3">With cream and sugar</option>
-                                          <option value="3">Other</option>
-                                       </select>
-                                       <div class="T__review__select__checkmark" id="checkmark" style="display: block">
-                                          &#10004;
+                                       <div class="Custom_Star_Container" data-rating="3">
+                                          <span class="Custom_Star_Icon">★</span>
+                                       </div>
+                                       <div class="Custom_Star_Container" data-rating="4">
+                                          <span class="Custom_Star_Icon">★</span>
+                                       </div>
+                                       <div class="Custom_Star_Container" data-rating="5">
+                                          <span class="Custom_Star_Icon">★</span>
                                        </div>
                                     </div>
-
-                                    <hr>
-                                    <div class="Treview__select__how">
-                                       <p class="Treview__select__how__p">What's your preferred brew method?</p>
-                                       <select class="Treview__select__how__choice">
-                                          <option selected>Select</option>
-                                          <option value="1">Auto-dripk</option>
-                                          <option value="2">French Press</option>
-                                          <option value="3">Keurig</option>
-                                          <option value="3">Chemex/Pour Over</option>
-                                          <option value="3">Other</option>
-                                       </select>
-                                       <div class="T__review__select__checkmark" id="checkmark" style="display: block">
-                                          &#10004;
-                                       </div>
+                                    <div class="Custom_Rating_Text">
+                                       <span>Click to rate!</span>
+                                       <span data-rating="1" style="display: none">Poor.</span>
+                                       <span data-rating="2" style="display: none">Fair.</span>
+                                       <span data-rating="3" style="display: none">Average.</span>
+                                       <span data-rating="4" style="display: none">Good.</span>
+                                       <span data-rating="5" style="display: none">Excellent.</span>
                                     </div>
-                                    <hr>
-                                    <div class="New_Overall_Rating">
-                                       <span class="new-overall-title">How would you rate the quality of this
-                                          product?</span>
-                                       <div class="New_Rating_Star">
-                                          <div class="New_Star_Container" data-rating="1">
-                                             <span class="New_Star_Icon">★</span>
-                                          </div>
-                                          <div class="New_Star_Container" data-rating="2">
-                                             <span class="New_Star_Icon">★</span>
-                                          </div>
-                                          <div class="New_Star_Container" data-rating="3">
-                                             <span class="New_Star_Icon">★</span>
-                                          </div>
-                                          <div class="New_Star_Container" data-rating="4">
-                                             <span class="New_Star_Icon">★</span>
-                                          </div>
-                                          <div class="New_Star_Container" data-rating="5">
-                                             <span class="New_Star_Icon">★</span>
-                                          </div>
-                                       </div>
-
-                                       <div class="New_Rating_Text">
-                                          <span> click to rate! </span>
-                                          <span data-rating="1" style="display: none">Poor.</span>
-                                          <span data-rating="2" style="display: none">Fair.</span>
-                                          <span data-rating="3" style="display: none">Average.</span>
-                                          <span data-rating="4" style="display: none">Good.</span>
-                                          <span data-rating="5" style="display: none">Excellent.</span>
-                                       </div>
-                                    </div>
-                                    <hr>
-                                    <div class="Custom_Overall_Rating">
-                                       <span class="custom-overall-title">How would you rate the value of this
-                                          product?</span>
-                                       <div class="Custom_Rating_Star">
-                                          <div class="Custom_Star_Container" data-rating="1">
-                                             <span class="Custom_Star_Icon">★</span>
-                                          </div>
-                                          <div class="Custom_Star_Container" data-rating="2">
-                                             <span class="Custom_Star_Icon">★</span>
-                                          </div>
-                                          <div class="Custom_Star_Container" data-rating="3">
-                                             <span class="Custom_Star_Icon">★</span>
-                                          </div>
-                                          <div class="Custom_Star_Container" data-rating="4">
-                                             <span class="Custom_Star_Icon">★</span>
-                                          </div>
-                                          <div class="Custom_Star_Container" data-rating="5">
-                                             <span class="Custom_Star_Icon">★</span>
-                                          </div>
-                                       </div>
-
-                                       <div class="Custom_Rating_Text">
-                                          <span>Click to rate!</span>
-                                          <span data-rating="1" style="display: none">Poor.</span>
-                                          <span data-rating="2" style="display: none">Fair.</span>
-                                          <span data-rating="3" style="display: none">Average.</span>
-                                          <span data-rating="4" style="display: none">Good.</span>
-                                          <span data-rating="5" style="display: none">Excellent.</span>
-                                       </div>
-                                    </div>
-                                    <hr>
-                                    <div class="end-form">
-                                       <form>
-                                          <label>
-                                             <input type="checkbox" name="agreement" required>
-                                             I agree to the <a href="#" style="border-bottom: 1px solid red;">terms &
-                                                conditions</a>
-                                          </label>
-
-                                          <p style="font-size: small;">You may receive emails regarding this submission.
-                                             Any emails will include
-                                             the
-                                             ability to opt-out of future communications.</p>
-
-                                          <button type="submit">Post Review</button>
-                                       </form>
-                                    </div>
-                                 </form>
-                              </div>
+                                 </div>
+                                 <hr>
+                                 <div class="end-form">
+                                    <form>
+                                       <label>
+                                          <input type="checkbox" name="agreement" required>
+                                          I agree to the <a href="#" style="border-bottom: 1px solid red;">terms &
+                                             conditions</a>
+                                       </label>
+                                       <p style="font-size: small;">You may receive emails regarding this submission.
+                                          Any emails will include
+                                          the
+                                          ability to opt-out of future communications.</p>
+                                       <button type="submit">Post Review</button>
+                                    </form>
+                                 </div>
+                              </form>
                            </div>
                         </div>
                      </div>
-                     <div class="review-modal-slide" style="background: black;">
-                        <div class="modal-content2">
-                           <div class="optop_slide">
-                              <div class="nextslide_photo">
-                                 <h4 class="head-photo">Add Photo</h4>
-                              </div>
-                              <button id="close-modal-button" style="height: 30px; width:30px; background-color: black;
-                                color: white;">X</button>
-                              <!-- Nút "X" để đóng -->
-                           </div>
-                           <div class="add-photo">
-                              <div class="camera-photo">
-                                 <img src="~/images/camera_icons.jpg" alt="">
-                              </div>
-                              <button type="button" id="choose-photo_file">choose file</button>
-                           </div>
-                        </div>
+                  </div>
+                  <div class="review-modal-slide" style="background: black;">
+                     <h1>sakjdkjasdjh</h1>
+                     @* <div class="modal-content2">
+                     <div class="optop_slide">
+                     <div class="nextslide_photo">
+                     <h4 class="head-photo">Add Photo</h4>
                      </div>
+                     <button id="close-modal-button" style="height: 30px; width:30px; background-color: black;
+                     color: white;">X</button>
+                     <!-- Nút "X" để đóng -->
+                     </div>
+                     <div class="add-photo">
+                     <div class="camera-photo">
+                     <img src="~/images/camera_icons.jpg" alt="">
+                     </div>
+                     <button type="button" id="choose-photo_file">choose file</button>
+                     </div>
+                     </div> *@
                   </div>
                </div>
             </div>
@@ -591,5 +589,6 @@
       <br>
       I start every day with a cup of coffee, and it never fails to kickstart my morning. The rich aroma and bold
       flavor are just what I need to wake up and face the day.
+      >>>>>>> Stashed changes
    </p>
 </div>
