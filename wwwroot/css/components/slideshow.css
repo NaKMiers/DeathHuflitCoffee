@@ -1,34 +1,23 @@
 .Slideshow {
     width: 100%;
-    height: 370px;
+    height: auto;
     background-color: #201e1d;
     color: #ffffff;
     text-align: center;
     padding: 40px 300px;
 }
-
-
-
 .Slideshow-heading {
     font-family: fantasy;
     font-size: 42px;
 }
-
-
-
 .Slideshow-text {
     font-family: inherit;
     font-size: 18px;
 }
-
-
-
 .banner-richtext {
     font-family: fantasy;
     font-size: 16px;
 }
-
-
 /* CSS cho trình chiếu */
 .slideshow-container {
     position: relative;
@@ -46,7 +35,7 @@
 
 .Slideshow-slide {
     flex: 0 0 100%;
-    width: 100%;
+    max-width: 100%;
 }
 
 @keyframes slideshow {
@@ -85,14 +74,9 @@
 
 .Slideshow-control {
     display: flex;
-    justify-content: center;
-    /* Để căn giữa theo chiều ngang */
-    align-items: center;
-    /* Để căn giữa theo chiều dọc */
-    justify-content: center;
-    /* Để căn giữa theo chiều ngang */
-    align-items: center;
-    /* Để căn giữa theo chiều dọc */
+    align-items: center;/* Để căn giữa theo chiều dọc */
+    justify-content: center;/* Để căn giữa theo chiều ngang */
+    align-items: center;/* Để căn giữa theo chiều dọc */
     background-color: #201e1d;
 }
 
@@ -148,8 +132,6 @@
     width: 14px;
     height: 12px;
     position: absolute;
-
-
 }
 
 /* Thiết lập nút "play" để nằm trên cùng của nút "pause" */
@@ -177,8 +159,6 @@
         font-size: 30px;
     }
 }
-
-
 @media (max-width: 749px) {
     .Slideshow {
         height: auto;
