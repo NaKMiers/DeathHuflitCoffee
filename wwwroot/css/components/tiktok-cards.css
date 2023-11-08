@@ -33,6 +33,7 @@
    text-align: center;
    min-height: auto;
    align-items: center;
+   transition: background-color 0.8s;
 }
 @media (max-width: 751px) {
    .TiktokCard__button-group-btns-container {
