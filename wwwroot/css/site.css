@@ -14,9 +14,9 @@ html {
    }
 }
 
-svg path {
+/* svg path {
    fill: #fff;
-}
+} */
 
 .btn:focus,
 .btn:active:focus,
@@ -50,22 +50,22 @@ a {
 }
 
 @font-face {
-   font-family: 'Fenomen-Sans-Light';
-   src: url('~/fonts/Fenomen-Sans-Light.otf') format('opentype');
+   font-family: "Fenomen-Sans-Light";
+   src: url("~/fonts/Fenomen-Sans-Light.otf") format("opentype");
 }
 @font-face {
-   font-family: 'Fenomen-Sans-Book';
-   src: url('~/fonts/Fenomen-Sans-Book.woff') format('opentype');
+   font-family: "Fenomen-Sans-Book";
+   src: url("~/fonts/Fenomen-Sans-Book.woff") format("opentype");
 }
 @font-face {
-   font-family: 'Fa-Light-300';
-   src: url('~/fonts/fa-light-300.woff2') format('opentype');
+   font-family: "Fa-Light-300";
+   src: url("~/fonts/fa-light-300.woff2") format("opentype");
 }
 @font-face {
-   font-family: 'Fenomen-Sans-Bold';
-   src: url('~/fonts/Fenomen-Sans-Bold.woff2') format('opentype');
+   font-family: "Fenomen-Sans-Bold";
+   src: url("~/fonts/Fenomen-Sans-Bold.woff2") format("opentype");
 }
 @font-face {
-   font-family: 'Fenomen-Sans-Book';
-   src: url('~/fonts/Fenomen-Sans-Book.woff2') format('opentype');
+   font-family: "Fenomen-Sans-Book";
+   src: url("~/fonts/Fenomen-Sans-Book.woff2") format("opentype");
 }
