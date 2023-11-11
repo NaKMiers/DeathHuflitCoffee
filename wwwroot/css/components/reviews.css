@@ -1,8 +1,8 @@
 /* Thiết lập các biến CSS */
 /* Rating Section Styles */
-.Reviews__Header {
+/* .Reviews__Header {
    padding: 0px 50px;
-}
+} */
 .Reviews__rating-section {
    width: 100%;
    display: flex;
@@ -54,7 +54,7 @@
 }
 
 .Reviews__search-button {
-   width: 7%;
+   width: 9%;
    background-color: gray;
    color: white;
    border: none;
@@ -111,29 +111,270 @@
    background-color: #000;
    border: none;
 }
-.bv-section-summary-inline.bv-flex-container-responsive {
+
+.review-bv_views {
    display: flex;
+   justify-content: space-between;
+   padding-right: 200px;
+}
+.review-ratings {
    color: #fff;
-   font-size: 14px;
-   gap: 15%;
 }
-.bv-secondary-rating-summary.bv-section-summary-block {
-   width: 40%;
+.average-ratings {
+   color: #fff;
 }
-.bv-secondary-rating-summary-stars.bv-table-row {
+.rating-item {
    display: flex;
+   justify-content: space-between;
+   align-items: center;
 }
-.bv-secondary-rating-summary-bars {
-   list-style: none;
-   background: #fff;
+.Rating--bar {
+   border-radius: 20px;
 }
-.bv-content-title {
-   font-size: 20px;
+.color-bar {
+   border-radius: 20px;
 }
-.bv-secondary-rating-summary-bars-container.bv-table-row {
+.bar_11 {
+   border-radius: 20px;
+}
+/* Tùy chỉnh giao diện modal */
+.modal {
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgba(0, 0, 0, 0.4);
+   display: none;
+}
+.modal-content1 {
+   position: relative;
    display: flex;
+   flex-direction: row;
+   background-color: black;
+   color: white;
+   width: 100%;
+   height: 100%;
 }
-.bv-table-cell {
-   width: 144px;
-   padding: 10px 0px 0px 20px;
+
+.close-button {
+   position: absolute;
+   top: 0px;
+   right: 12px;
+   font-size: 24px;
+   cursor: pointer;
+}
+
+/* Tùy chỉnh giao diện form và nút đóng */
+form {
+   text-align: left;
+}
+.Products__views {
+   width: 30%;
+   padding: 20px;
+}
+
+.Products-info {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+.Products-image {
+   width: 100%;
+}
+/* .form_reviews-box {
+   padding: 20px;
+   margin-right: 80px;
+} */
+.text-rows {
+   border-bottom: 1px solid;
+}
+.Overall_Ratting {
+   display: flex;
+   border-bottom: 1px solid;
+}
+.overall-title {
+   width: 25%;
+}
+.Rating_Star {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: -11px;
+}
+.star-icon {
+   font-size: 48px;
+   cursor: pointer;
+}
+.star-icon:hover {
+   color: #ffcc00;
+}
+.rating-text {
+   /* display: none; */
+   font-size: medium;
+   margin: 15px;
+}
+.result {
+   margin-top: 20px;
+}
+
+.hidden {
+   display: none;
+}
+
+.hidden-radio {
+   display: none;
+}
+.review-title {
+   border-bottom: 1px solid;
+}
+
+/* Review Modal Slider */
+.review-modal-slider {
+   position: absolute;
+   top: 60%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   margin: auto;
+   height: 500px;
+   width: 65%;
+   background: bisque;
+   overflow: hidden;
+}
+
+.review-modal-slidetrack {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+
+   transition: 0.5s ease-in-out;
+   /* margin-left: -100%; */
+}
+
+.review-modal-slide {
+   flex-shrink: 0;
+   width: 100%;
+   height: 100%;
+   overflow: scroll;
+}
+.optop_slide {
+   display: flex;
+   justify-content: space-between;
+   border-bottom: 1px solid;
+}
+.nextslide_photo {
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: center;
+}
+
+.modal-content2 {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   /* justify-content: space-between; */
+}
+
+.add-photo {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 100%;
+   /* justify-content: center; */
+}
+
+.camera-photo {
+   width: 100%;
+   height: 100%;
+   height: calc(100% - 100px);
+   /* max-height: 300px; */
+   overflow: hidden;
+}
+
+.camera-photo img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center;
+}
+.review-text {
+   border-bottom: 2px solid;
+}
+.T__review__yesno__button {
+   display: inline-block;
+   padding: 10px 20px;
+   font-size: 10px;
+   cursor: pointer;
+   border: 1px solid white;
+   background-color: gray;
+   transition: background-color 0.2s;
+}
+
+.T__review__yesno__button:hover {
+   background-color: dimgray; /* Màu khi con trỏ chuột nằm trên nút */
+}
+
+.T__review__yesno__selected {
+   background-color: gray;
+   color: white;
+}
+
+.T__review__yesno__checkmark {
+   padding-left: 30px;
+}
+
+.T__review__yesno__recommendation-question {
+   padding-right: 30px;
+}
+.T__review__yesno__checkmark {
+   color: green;
+}
+.control-bar-count {
+   color: #fff;
+   padding: 36px 0;
+}
+.Treview_namevsnickname__info {
+   display: flex;
+   justify-content: space-between;
+}
+.New_Overall_Rating {
+   display: flex;
+   justify-content: space-between;
+}
+.New_Rating_Star {
+   display: flex;
+   align-items: center;
+   margin-top: -11px;
+}
+.New_Star_Icon {
+   font-size: 48px;
+   cursor: pointer;
+}
+.New_Star_Icon:hover {
+   color: #ffcc00;
+}
+.new-overall-title {
+   width: 48%;
+}
+.Custom_Overall_Rating {
+   display: flex;
+   justify-content: space-between;
+}
+.Custom_Rating_Star {
+   display: flex;
+   align-items: center;
+   margin-top: -11px;
+}
+.Custom_Star_Icon {
+   font-size: 48px;
+   cursor: pointer;
+}
+.Custom_Star_Icon:hover {
+   color: #ffcc00;
+}
+.Custom-overall-title {
+   width: 48%;
 }
