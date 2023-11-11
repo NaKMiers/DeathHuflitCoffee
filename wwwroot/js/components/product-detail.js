@@ -1,3 +1,4 @@
+//
 const KproductDetail__main__text__size = document.querySelector('.KproductDetail__main__text__size')
 const KproductDetail__main__text__size__choice = document.querySelector(
    '.KproductDetail__main__text__size__choice'
@@ -32,7 +33,7 @@ KproductDetail__main__text__size__choice__text.forEach(item => {
    item.addEventListener('click', () => {
       const selectedValue = item.innerHTML
       const mainContent = document.createElement('div')
-      mainContent.className = 'main'
+      mainContent.className = 'Kha__main'
       mainContent.style.display = 'inline-block'
       // mainContent.style.border = '1.5px solid white';
       mainContent.innerHTML = selectedValue
