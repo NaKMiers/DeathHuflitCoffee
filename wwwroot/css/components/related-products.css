@@ -1,0 +1,109 @@
+.RelatedProducts_Header {
+   background-color: black;
+}
+.RelatedProducts_Tilte {
+   padding-top: 40px;
+   padding-bottom: 40px;
+}
+
+.Tilte_Text {
+   display: flex;
+   justify-content: center;
+   color: white;
+   width: 100%;
+}
+.AllProducts_1 {
+   display: flex;
+   flex-wrap: nowrap;
+   list-style: none;
+   padding: 0;
+   height: 100%;
+}
+
+.ProductList_body {
+   /* height: 350px; */
+}
+
+.card__item {
+   display: flex;
+   flex-direction: column;
+
+   width: 25%;
+   padding: 0 10px;
+   margin-bottom: 10px;
+}
+
+.card__content {
+}
+
+.card__heading {
+   /* position: absolute; */
+}
+
+.card__media {
+   position: relative;
+   width: 100%;
+   padding-top: 100%;
+}
+.card__media img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   object-fit: cover;
+   object-position: center;
+   width: 100%;
+   height: 100%;
+}
+
+.full-unstyled-link {
+   font-size: large;
+   color: white;
+}
+.price {
+   color: #fff;
+   /* position: absolute; */
+   /* bottom: -60px; */
+}
+.bv_main_container.bv_hover {
+   display: flex;
+   gap: 5px;
+}
+.bv_averageRating {
+   color: #fff;
+}
+.bv_numReviews {
+   color: #fff;
+}
+.grid__item {
+   width: 20%;
+   position: relative;
+}
+.RelatedProducts__stars {
+   /* position: absolute; */
+}
+.bv_main_container.bv_hover {
+   /* position: absolute; */
+   /* bottom: -80px; */
+}
+@media screen and (max-width: 990px) {
+   .AllProducts_1 {
+      display: flex;
+      flex-wrap: wrap;
+   }
+
+   .card__item {
+      width: 50%;
+      box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi kích thước */
+   }
+}
+@media screen and (max-width: 420px) {
+   .AllProducts_1 {
+      display: flex;
+      flex-wrap: wrap;
+   }
+
+   .card__item {
+      width: 100%;
+      box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi kích thước */
+   }
+}
