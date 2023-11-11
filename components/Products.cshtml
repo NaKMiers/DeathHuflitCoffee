@@ -1,1 +1,637 @@
-<h1>Products</h1>
+@model List<DeathWishCoffee.Models.Main.Product>;
+@{
+    string curPage = ViewBag.CurPage;
+}
+
+<div class="Products__main Products__section-template-14567496974391-product-grid-padding">
+    <div class="Products__facets-wrapper-page-width" id="Products__main-collection-filters">
+        <nav class="Products__breadcrumb-twcss-font-fenomen-twcss-flex-wrap-twcss-items-center" role="navigation"
+            aria-label="breadcrumbs">
+            <a class="Products__twcss-font-fenomen" href="/" title="Homepage">Homepage</a>
+            <span aria-hidden="true" class="twcss-px-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12" fill="none">
+                    <path d="M1 1.27271L5 5.99998L1 10.7273" stroke="white"></path>
+                </svg>
+            </span>
+            <span>@curPage</span>
+        </nav>
+        <div class="Products__facets-container-scroll-trigger-animate-fade-in">
+            <div id="Products__FacetsWrapperDesktop" class="Products__facets-wrapper">
+                <h2 class="Products__twcss-font-fenomenBold" id="Products__verticalTitle">
+                    Filter:
+                </h2>
+            </div>
+            <div class="Products__ads-button" onclick="toggleModal()">
+                <span class="Products__twcss-text-body-16-twcss-font-fenomen">Type</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="15" viewBox="0 0 21 14" fill="none"
+                    aria-hidden="true" focusable="false" class="Products__icon-icon-caret ">
+                    <path d="M2.0293 2.48523L10.5146 10.9705L18.9999 2.48523" stroke="white" stroke-width="3"
+                        stroke-linecap="round"></path>
+                </svg>
+            </div>
+            <!-- Modal -->
+            <div id="Facet-1-template--14567496974391__product-grid" class="Products__parent-display-facets-display">
+                <div class="Products__facets__header">
+                    <span class="facets__selected no-js-hidden">0 selected</span>
+                    <facet-remove>
+                        <a href="/collections/merch" class="Products__facets-reset-link-underlined-link" role="button">
+                            Reset
+                        </a>
+                    </facet-remove>
+                </div>
+                <fieldset class="facets-wrap parent-wrap ">
+                    <legend class="visually-hidden">Type</legend>
+                    <form action="trang_xu_ly.aspx" method="get">
+                        <ul class=" Products__facets-list-list-unstyled-no-js-hidden" role="list">
+                            <li class="list-menu__item facets__item" id="Bundle" onclick="toggleCheckmark(this)">
+                                <label for="Filter-filter.p.product_type-1" class="Products__facet-checkbox">
+                                    <input type="checkbox" name="filter.p.product_type"
+                                        class="Products__filterppproducttype" value="Bundle"
+                                        id="Filter-filter.p.product_type-1">
+                                    <span aria-hidden="true">Bundle</span>
+                                    <span class="visually-hidden">Bundle (19 products)</span>
+                                </label>
+                            </li>
+                            <li class="list-menu__item facets__item" id="Coffee" onclick="toggleCheckmark(this)">
+                                <label for="Filter-filter.p.product_type-2" class="Products__facet-checkbox">
+                                    <input type="checkbox" name="filter.p.product_type"
+                                        class="Products__filterppproducttype" value="Coffee"
+                                        id="Filter-filter.p.product_type-2">
+                                    <span aria-hidden="true">Coffee</span>
+                                    <span class="visually-hidden">Coffee (19 products)</span>
+                                </label>
+                            </li>
+                            @* <li class="list-menu__item facets__item" id="giftcard" onclick="toggleCheckmark(this)">
+                            <label for="Filter-filter.p.product_type-3" class="Products__facet-checkbox">
+                            <input type="checkbox" name="filter.p.product_type"
+                            class="Products__filterppproducttype" value="Gift+Card"
+                            id="Filter-filter.p.product_type-3">
+                            <span aria-hidden="true">Gift Card (1)</span>
+                            <span class="visually-hidden">Gift Card (1 product)</span>
+                            </label>
+                            </li>
+                            <li class="list-menu__item facets__item" id="mugs" onclick="toggleCheckmark(this)">
+                            <label for="Filter-filter.p.product_type-4" class="Products__facet-checkbox">
+                            <input type="checkbox" name="filter.p.product_type"
+                            class="Products__filterppproducttype" value="Mugs"
+                            id="Filter-filter.p.product_type-4">
+                            <span aria-hidden="true">Mugs (3)</span>
+                            <span class="visually-hidden">Mugs (3 products)</span>
+                            </label>
+                            </li>
+                            <li class="list-menu__item facets__item" id="on-the-godrinkware"
+                            onclick="toggleCheckmark(this)">
+                            <label for="Filter-filter.p.product_type-5" class="Products__facet-checkbox">
+                            <input type="checkbox" name="filter.p.product_type"
+                            class="Products__filterppproducttype" value="On-The-Go+Drinkware"
+                            id="Filter-filter.p.product_type-5">
+                            <span aria-hidden="true">On-The-Go Drinkware (6)</span>
+                            <span class="visually-hidden">On-The-Go Drinkware (6 products)</span>
+                            </label>
+                            </li>
+                            <li class="list-menu__item facets__item" id="StorageBrewing"
+                            onclick="toggleCheckmark(this)">
+                            <label for="Filter-filter.p.product_type-6" class="Products__facet-checkbox">
+                            <input type="checkbox" name="filter.p.product_type"
+                            class="Products__filterppproducttype" value="Storage+Brewing"
+                            id="Filter-filter.p.product_type-6">
+                            <span aria-hidden="true">Storage &amp; Brewing (5)</span>
+                            <span class="visually-hidden">Storage &amp; Brewing (5 products)</span>
+                            </label>
+                            </li> *@
+                        </ul>
+                    </form>
+                </fieldset>
+            </div>
+            <div class="Products__facet-filters-sorting-caption">
+                <div class="Products__facet-filters-field">
+                    <h2 class="facet-filters__label caption-large text-body twcss-font-fenomenBold twcss-uppercase">
+                        <label
+                            class="Products__facet-filters-label-caption-large-text-body-twcss-font-fenomenBold-twcss-uppercase-label"
+                            for="SortBy">Sort by:</label>
+                    </h2>
+                    <form action="trang_xu_ly.aspx" method="get" id="myForm">
+                        <div class="select">
+                            <select name="sort_by"
+                                class="Products__facet-filters-sort-select-select-caption-large-twcss-text-body-16-twcss-font-fenomen"
+                                id="SortBy" aria-describedby="a11y-refresh-page-message">
+                                <option value="manual" selected="selected">Featured</option>
+                                <option value="best-selling">Best selling</option>
+                                <option value="title-ascending">Alphabetically, A-Z</option>
+                                <option value="title-descending">Alphabetically, Z-A</option>
+                                <option value="price-ascending">Price, low to high</option>
+                                <option value="price-descending">Price, high to low</option>
+                                <option value="created-ascending">Date, old to new</option>
+                                <option value="created-descending">Date, new to old</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="Products__product-count" role="status">
+                <h2 class="product-count__text text-body">
+                    <span class="Products__twcss-font-fenomen-twcss-capitalize">@Model.Count products
+                    </span>
+                </h2>
+            </div>
+        </div>
+        <div class="Products__facets-container-scroll-trigger-animate-fade-in Products__facets-container-level">
+            <div class="Products__ads-button" onclick="toggleModal()">
+                <svg class="Products__icon-icon-filter" aria-hidden="true" focusable="false"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" width="20px">
+                    <path fill-rule="evenodd"
+                        d="M4.833 6.5a1.667 1.667 0 1 1 3.334 0 1.667 1.667 0 0 1-3.334 0ZM4.05 7H2.5a.5.5 0 0 1 0-1h1.55a2.5 2.5 0 0 1 4.9 0h8.55a.5.5 0 0 1 0 1H8.95a2.5 2.5 0 0 1-4.9 0Zm11.117 6.5a1.667 1.667 0 1 0-3.334 0 1.667 1.667 0 0 0 3.334 0ZM13.5 11a2.5 2.5 0 0 1 2.45 2h1.55a.5.5 0 0 1 0 1h-1.55a2.5 2.5 0 0 1-4.9 0H2.5a.5.5 0 0 1 0-1h8.55a2.5 2.5 0 0 1 2.45-2Z"
+                        fill="currentColor"></path>
+                </svg>
+                <span
+                    class="Products__twcss-text-body-16-twcss-font-fenomen Products__twcss-text-body-16-twcss-font-fenomen-hidden-facet-template">Filter
+                    and sort</span>
+            </div>
+
+            <div class="Products__product-count" role="status">
+                <h2 class="product-count__text text-body">
+                    <span class="Products__twcss-font-fenomen-twcss-capitalize">
+                        @Model.Count products
+                    </span>
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="Products__collection-page-width">
+        <ul class="Products__items-list">
+            <!-- Sử dụng JavaScript để thêm 72 mục -->
+            @if (Model != null && Model.Count > 0)
+            {
+                @foreach (var item in Model)
+                {
+                    Random rd = new Random();
+                    Random rdd = new Random();
+                    <li class="Products__grid-item Products__scroll-trigger Products__animate--slide-in" data-cascade=""
+                        style="--animation-order: 1;" data-link="http://localhost:5080/products/23213">
+                        <div class="card-wrapper product-card-wrapper underline-links-hover">
+                            <div class="Products__card Products__card-standard Products__card-media"
+                                style="--ratio-percent: 100%;">
+                                <div class="card__inner color-background-2 gradient Products__ratio"
+                                    style="--ratio-percent: 100%;">
+                                    <div class="Products__card-media-overflow-hidden">
+                                        <a href="/products/@item.Id"
+                                            class="Products__media Products__media--transparent Products__media--hover-effect">
+                                            <img src="@item.Images.FirstOrDefault()?.Src" alt="thumbnail"
+                                                class="Products__motion-reduce" width="1500" height="1500">
+                                        </a>
+                                    </div>
+                                    <div class="card__content">
+                                        <div class="Products__card-information">
+                                            <h3 class="card__heading h5"
+                                                id="title-template--14567496974391__product-grid-6790239289399">
+                                                <a href="/products/@item.Id"
+                                                    id="CardLink-template--14567496974391__product-grid-6790239289399"
+                                                    class="Products__twcss-font-fenomenBold Products__twcss-font-bold Products__twcss-text-body-14 Products__twcss-uppercase"
+                                                    aria-labelledby="CardLink-template--14567496974391__product-grid-6790239289399 Badge-template--14567496974391__product-grid-6790239289399">
+                                                    @* Classic Long Sleeve *@
+                                                    @item.Title
+                                                </a>
+                                            </h3>
+                                            <div class="card-information"><span class="caption-large light"></span>
+                                                <div class="
+    price twcss-font-fenomen twcss-text-body-16 twcss-uppercase">
+                                                    <div class="price__sale">
+                                                        <span class="visually-hidden visually-hidden--inline">Regular
+                                                            price</span>
+                                                        <span>
+                                                            <s class="price-item price-item--regular">
+                                                            </s>
+                                                        </span><span class="visually-hidden visually-hidden--inline">Sale
+                                                            price</span>
+                                                        <span class="price-item price-item--sale price-item--last">
+                                                            @item.Sizes.FirstOrDefault()?.Price.ToString("C2")
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-bv-show="inline_rating" data-bv-product-id="6790239289399"
+                                                data-bv-redirect-url="/products/classic-long-sleeve-1" data-bv-seo="false"
+                                                data-bv-ready="true">
+                                                <div><a id="1d17152a-b524-4baf-b92f-f97dad53d4f2"
+                                                        href="/products/classic-long-sleeve-1"
+                                                        class="Products__bv-maincontainer Products__bv-hover"
+                                                        aria-label="0.0 out of 5 stars.  ">
+                                                        <div class="Products__bv-stars-component-container" aria-hidden="true">
+                                                            <div class="Products__bv-stars-component-container"
+                                                                aria-hidden="true">
+                                                               @{
+    int ketqua = rd.Next(1,5);
+    string formattedKetqua = string.Format("{0:0.0}", (double)ketqua);
+}
+                                                                @for (int i = 1; i <= ketqua; i++)
+                                                                {
+
+                                                                    <span class="Products__bv-stars-svg-no-wrap"
+                                                                        aria-hidden="true"><svg focusable="false"
+                                                                            xmlns="http://www.w3.org/2000/svg" width="16px"
+                                                                            height="16px" viewBox="0 0 25 25"
+                                                                            style="width: 16px !important; height: 16px !important;">
+                                                                            <polygon
+                                                                                points="25 9.12 15.5669599 9.12 12.512219 0 9.40860215 9.12 0 9.12 7.55131965 14.856 4.47214076 24 12.512219 18.216 20.5522972 24 17.4731183 14.856"
+                                                                                style="fill: url(&quot;#bv_inline_ratings_star_filled_0_99.99_XlLJ6caLDH&quot;) !important;">
+                                                                            </polygon>
+                                                                            <path d=""
+                                                                                style="fill: url(&quot;#bv_inline_ratings_star_filled_0_99.99_XlLJ6caLDH&quot;) !important;">
+                                                                            </path>
+                                                                            <defs>
+                                                                                <linearGradient
+                                                                                    id="bv_inline_ratings_star_filled_0_99.99_XlLJ6caLDH"
+                                                                                    x1="99.99%" y1="0%" x2="100%" y2="0%">
+                                                                                    <stop offset="0%"
+                                                                                        style="stop-color: rgb(255, 255, 255); stop-opacity: 1;">
+                                                                                    </stop>
+                                                                                    <stop offset="1%"
+                                                                                        style="stop-color: rgb(102, 102, 102); stop-opacity: 1;">
+                                                                                    </stop>
+                                                                                </linearGradient>
+                                                                            </defs>
+                                                                        </svg>
+                                                                    </span>
+
+                                                                }
+                                                            </div>
+                                                            <span>@formattedKetqua</span>
+                                                            <span>(@rdd.Next(4227))</span>
+                                                            @* <div class="Products__bv-averageRating-component-container"
+                                                    aria-hidden="true">
+                                                    <div class="Products__bv-text">5.0</div>
+                                                    </div>
+                                                    <div class="Products__bv-numReviews-component-container"
+                                                    aria-hidden="true">
+                                                    <div class="Products__bv-text">(0)</div>
+                                                    </div> *@
+                                                    </a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card__badge bottom left"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
+
+        </ul>
+    </div>
+    <form action="trang_xu_ly.aspx" method="get" id="Products__myNewForm">
+        <div class="pagination">
+            <!-- Thêm nút "Prev" và nút "Next" -->
+            <span class="page-link prev-page-button" onclick="prevPage()"> <svg xmlns="http://www.w3.org/2000/svg"
+                    width="15" height="7.5" viewBox="0 0 21 14" fill="none" aria-hidden="true" focusable="false"
+                    class="Product__icon-icon-caret-prev ">
+                    <path d="M2.0293 2.48523L10.5146 10.9705L18.9999 2.48523" stroke="white" stroke-width="3"
+                        stroke-linecap="round"></path>
+                </svg>Prev</span>
+            <span class="page-link" onclick="changePage(1)">1</span>
+            <span class="page-link" onclick="changePage(2)">2</span>
+            <span class="page-link" onclick="changePage(3)">3</span>
+            <span class="page-link next-page-button" onclick="nextPage()">Next <svg xmlns="http://www.w3.org/2000/svg"
+                    width="15" height="7.5" viewBox="0 0 21 14" fill="none" aria-hidden="true" focusable="false"
+                    class="Product__icon-icon-caret-next ">
+                    <path d="M2.0293 2.48523L10.5146 10.9705L18.9999 2.48523" stroke="white" stroke-width="3"
+                        stroke-linecap="round"></path>
+                </svg>
+            </span>
+        </div>
+    </form>
+    <div id="Products__hiddenbox-facet-template"></div>
+    <div id="Products__Facet-1-template-14567496974391-grid"
+        class="Products__parent-display-facets-display-14567496974391 ">
+        <div class="Products__facets__header">
+            <span class="Products__twcss-text-body-16-twcss-font-fenomen-type">Type</span>
+            <svg xmlns="http://www.w3.org/2000/svg" style="width:20px" aria-hidden="true" focusable="false"
+                class="Products__icon-icon-close" fill="none" viewBox="0 0 18 17">
+                <path
+                    d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+                    fill="currentColor">
+                </path>
+            </svg>
+        </div>
+        <fieldset class="facets-wrap parent-wrap ">
+            <legend class="visually-hidden">Type</legend>
+            <form action="trang_xu_ly.aspx" method="get">
+                <ul class=" Products__facets-list-list-unstyled-no-js-hidden" role="list">
+                    <li class="Products__list-menu-item-facets-item" id="Bundle" onclick="toggleCheckmark(this)">
+                        <label for="Filter-filter.p.product_type-7" class="Products__facet-checkbox">
+                            <input type="checkbox" name="filter.p.product_type" class="Products__filterproducttype"
+                                data-custom-value="Bundle" id="Filter-filter.p.product_type-7">
+                            <span aria-hidden="true">Bundle</span>
+                            <span class="visually-hidden">Bundle (19 products)</span>
+                        </label>
+                    </li>
+                    <li class="Products__list-menu-item-facets-item" id="Coffee" onclick="toggleCheckmark(this)">
+                        <label for="Filter-filter.p.product_type-8" class="Products__facet-checkbox">
+                            <input type="checkbox" name="filter.p.product_type" class="Products__filterproducttype"
+                                data-custom-value="Coffee" id="Filter-filter.p.product_type-8">
+                            <span aria-hidden="true">Coffee</span>
+                            <span class="visually-hidden">Coffee (19 products)</span>
+                        </label>
+                    </li>
+                    @* <li class="Products__list-menu-item-facets-item" id="giftcard" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-9" class="Products__facet-checkbox">
+                    <input type="checkbox" name="filter.p.product_type" class="Products__filterproducttype"
+                    data-custom-value="Gift+Card" id="Filter-filter.p.product_type-9">
+                    <span aria-hidden="true">Gift Card (1)</span>
+                    <span class="visually-hidden">Gift Card (1 product)</span>
+                    </label>
+                    </li>
+                    <li class="Products__list-menu-item-facets-item" id="mugs" onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-10" class="Products__facet-checkbox">
+                    <input type="checkbox" name="filter.p.product_type" class="Products__filterproducttype"
+                    data-custom-value="Mugs" id="Filter-filter.p.product_type-10">
+                    <span aria-hidden="true">Mugs (3)</span>
+                    <span class="visually-hidden">Mugs (3 products)</span>
+                    </label>
+                    </li>
+                    <li class="Products__list-menu-item-facets-item" id="on-the-godrinkware"
+                    onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-11" class="Products__facet-checkbox">
+                    <input type="checkbox" name="filter.p.product_type" class="Products__filterproducttype"
+                    data-custom-value="On-The-Go+Drinkware" id="Filter-filter.p.product_type-11">
+                    <span aria-hidden="true">On-The-Go Drinkware (6)</span>
+                    <span class="visually-hidden">On-The-Go Drinkware (6 products)</span>
+                    </label>
+                    </li>
+                    <li class="Products__list-menu-item-facets-item" id="StorageBrewing"
+                    onclick="toggleCheckmark(this)">
+                    <label for="Filter-filter.p.product_type-12" class="Products__facet-checkbox">
+                    <input type="checkbox" name="filter.p.product_type" class="Products__filterproducttype"
+                    data-custom-value="Storage+Brewing" id="Filter-filter.p.product_type-12">
+                    <span aria-hidden="true">Storage &amp; Brewing (5)</span>
+                    <span class="visually-hidden">Storage &amp; Brewing (5 products)</span>
+                    </label>
+                    </li> *@
+                </ul>
+            </form>
+        </fieldset>
+        <div class="Products__facet-filters-field">
+            <h2 class="facet-filters__label caption-large text-body twcss-font-fenomenBold twcss-uppercase">
+                <label
+                    class="Products__facet-filters-label-caption-large-text-body-twcss-font-fenomenBold-twcss-uppercase-label"
+                    for="SortBy">Sort by:</label>
+            </h2>
+            <form action="trang_xu_ly.aspx" method="get" id="myForm">
+                <div class="select">
+                    <select name="sort_by"
+                        class="Products__facet-filters-sort-select-select-caption-large-twcss-text-body-16-twcss-font-fenomen"
+                        id="Products__SortBy" aria-describedby="a11y-refresh-page-message" fdprocessedid="wv39w">
+                        <option value="manual" selected="selected">Featured</option>
+                        <option value="best-selling">Best selling</option>
+                        <option value="title-ascending">Alphabetically, A-Z</option>
+                        <option value="title-descending">Alphabetically, Z-A</option>
+                        <option value="price-ascending">Price, low to high</option>
+                        <option value="price-descending">Price, high to low</option>
+                        <option value="created-ascending">Date, old to new</option>
+                        <option value="created-descending">Date, new to old</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="mobile-facets__footer">
+            <button class="Products__no-js-hidden-button-primary">
+                Apply
+            </button>
+        </div>
+    </div>
+</div>
+<script>
+    const baseUrl = "/collections/merch";
+    // Thêm sự kiện click cho toàn bộ tài liệu (document)
+    document.addEventListener("click", function (event) {
+        const modal = document.getElementById("Facet-1-template--14567496974391__product-grid");
+
+        // Kiểm tra xem sự kiện click có xảy ra bên ngoài modal và không phải là nút mở modal không
+        if (
+            !modal.contains(event.target) &&
+            !event.target.classList.contains("Products__ads-button") &&
+            !event.target.classList.contains("Products__twcss-text-body-16-twcss-font-fenomen")
+        ) {
+            // Nếu click bên ngoài modal và không phải là nút mở modal, đóng modal
+            modal.classList.remove("Products__Facet-1-template--14567496974391-product-grid-show");
+        }
+    });
+
+    function toggleModal() {
+        const modal = document.getElementById("Facet-1-template--14567496974391__product-grid");
+        modal.classList.toggle("Products__Facet-1-template--14567496974391-product-grid-show");
+    }
+
+
+    function toggleCheckmark(element) {
+        const checkbox = element.querySelector('input[type="checkbox"]');
+        const labelText = element.querySelector(".visually-hidden").textContent;
+    }
+
+
+    function changePage(page) {
+        const params = new URLSearchParams(location.search);
+        params.set("page", page);
+        const finalUrl = `${baseUrl}?${params.toString()}`;
+        window.location.href = finalUrl; // Tải lại trang với URL mới
+        history.pushState(null, "", finalUrl);
+    }
+
+    function getCurrentPage() {
+        const params = new URLSearchParams(location.search);
+        return parseInt(params.get("page")) || 1;
+    }
+    // Hàm xử lý khi người dùng nhấp vào nút "Prev"
+    function prevPage() {
+        const currentPage = getCurrentPage();
+        if (currentPage > 1) {
+            changePage(currentPage - 1);
+        }
+    }
+
+    // Hàm xử lý khi người dùng nhấp vào nút "Next"
+    function nextPage() {
+        const currentPage = getCurrentPage();
+        if (currentPage < 3) { // Có thể thay đổi giới hạn tối đa của trang tại đây
+            changePage(currentPage + 1);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const currentPage = getCurrentPage();
+        if (currentPage > 1) {
+            // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
+            document.querySelector(".prev-page-button").addEventListener("click", () => {
+                changePage(currentPage - 1);
+            });
+        }
+        if (currentPage < 3) {
+            // Có thể chỉnh sửa tùy theo số trang tối đa của bạn
+            document.querySelector(".next-page-button").addEventListener("click", () => {
+                changePage(currentPage + 1);
+            });
+        }
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+        const currentPage = getCurrentPage();
+        const prevButton = document.querySelector(".prev-page-button");
+        const nextButton = document.querySelector(".next-page-button");
+
+        if (currentPage === 1) {
+            // Nếu ở trang 1, ẩn nút "Prev"
+            prevButton.style.display = "none";
+        } else {
+            prevButton.addEventListener("click", () => {
+                changePage(currentPage - 1);
+            });
+        }
+
+        if (currentPage === 3) {
+            // Nếu ở trang 3, ẩn nút "Next"
+            nextButton.style.display = "none";
+        } else {
+            nextButton.addEventListener("click", () => {
+                changePage(currentPage + 1);
+            });
+        }
+    });
+    // Lấy tham chiếu đến select box
+    var sortSelect = document.getElementById("SortBy");
+
+    // Lắng nghe sự kiện khi giá trị trong select box thay đổi
+    sortSelect.addEventListener("change", function () {
+        var selectedValue = sortSelect.value;
+
+        // Lấy URL hiện tại
+        var currentUrl = window.location.href;
+
+        // Tạo một URL mới dựa trên URL hiện tại
+        var url = new URL(currentUrl);
+
+        // Thiết lập hoặc thay thế tham số "sort_by" trong URL
+        url.searchParams.set("sort_by", selectedValue);
+
+        // Điều hướng trình duyệt đến URL mới
+        window.location.href = url.href;
+    });
+
+    // Lấy tham chiếu đến select box
+    var productssortSelect = document.getElementById("Products__SortBy");
+
+    // Lắng nghe sự kiện khi giá trị trong select box thay đổi
+    productssortSelect.addEventListener("change", function () {
+        var productselectedValue = productssortSelect.value;
+
+        // Lấy URL hiện tại
+        var productscurrentUrl = window.location.href;
+
+        // Tạo một URL mới dựa trên URL hiện tại
+        var productsurl = new URL(productscurrentUrl);
+
+        // Thiết lập hoặc thay thế tham số "sort_by" trong URL
+        productsurl.searchParams.set("sort_by", productselectedValue);
+
+        // Điều hướng trình duyệt đến URL mới
+        window.location.href = productsurl.href;
+    });
+
+    // Kiểm tra nếu có tham số "sort_by" trong URL
+    var currentParams = new URLSearchParams(window.location.search);
+    if (currentParams.has("sort_by")) {
+        // Lấy giá trị "sort_by" từ URL
+        var selectedSortBy = currentParams.get("sort_by");
+
+        // Đặt giá trị của select box bằng giá trị từ URL
+        productssortSelect.value = selectedSortBy;
+    }
+
+    // Sự kiện click trên chữ "Type" cũng gọi hàm toggleModal
+    document.querySelector(".Products__ads-button").addEventListener("click", toggleModal);
+    document
+        .querySelector(".Products__twcss-text-body-16-twcss-font-fenomen")
+        .addEventListener("click", toggleModal);
+    // Lấy thẻ chứa chữ "Type" và biểu tượng SVG
+    const typeButton = document.querySelector(".Products__ads-button");
+    // Thêm sự kiện click cho biểu tượng SVG
+    const typeIcon = typeButton.querySelector("svg.Products__icon-icon-caret");
+    typeIcon.addEventListener("click", function (event) {
+        event.stopPropagation(); // Ngăn sự kiện click từ việc lan truyền lên thẻ chứa "Type"
+        toggleModal(); // Gọi hàm toggleModal để mở hoặc đóng modal
+    });
+
+    // Lấy tất cả các checkbox
+    const checkboxes = document.querySelectorAll(
+        'input[type="checkbox"][name="filter.p.product_type"]'
+    );
+
+    // Lấy thẻ span hiển thị số đã chọn
+    const selectedCount = document.querySelector(".facets__selected");
+
+    // Lắng nghe sự kiện thay đổi của checkbox
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", updateSelectedCount);
+    });
+
+    // Hàm cập nhật số đã chọn
+    function updateSelectedCount() {
+        const selectedCheckboxes = document.querySelectorAll(
+            'input[type="checkbox"][name="filter.p.product_type"]:checked'
+        );
+        const selectedCheckboxesCount = selectedCheckboxes.length;
+
+        // Cập nhật nội dung của thẻ span
+        selectedCount.textContent = `${selectedCheckboxesCount} selected`;
+
+        // Lưu trạng thái checkbox đã được chọn vào localStorage
+        const selectedCheckboxesArray = Array.from(selectedCheckboxes).map(checkbox => checkbox.value);
+        localStorage.setItem("selectedCheckboxes", JSON.stringify(selectedCheckboxesArray));
+    }
+
+    // Hàm khôi phục trạng thái checkbox đã được chọn sau khi trang tải lại
+    function restoreSelectedCheckboxes() {
+        const selectedCheckboxesArray = JSON.parse(localStorage.getItem("selectedCheckboxes"));
+        if (selectedCheckboxesArray) {
+            selectedCheckboxesArray.forEach(value => {
+                const checkbox = document.querySelector(
+                    `input[type="checkbox"][name="filter.p.product_type"][value="${value}"]`
+                );
+                if (checkbox) {
+                    checkbox.checked = true;
+                }
+            });
+
+            // Gọi hàm cập nhật số đã chọn
+            updateSelectedCount();
+        }
+    }
+
+    // Lắng nghe sự kiện tải lại trang
+    window.addEventListener("load", restoreSelectedCheckboxes);
+    // Lấy thẻ SVG bằng cách sử dụng class "Products__icon-icon-close"
+    const svgElement = document.querySelector(".Products__icon-icon-close");
+
+    // Lấy thẻ div bằng cách sử dụng id "Products__Facet-1-template-14567496974391-grid"
+    const divElement = document.querySelector("#Products__Facet-1-template-14567496974391-grid");
+    const divElementon = document.querySelector("#Products__hiddenbox-facet-template");
+    // Thêm sự kiện click vào thẻ SVG
+    svgElement.addEventListener("click", function () {
+        // Khi SVG được nhấn, đặt thuộc tính display của thẻ div thành "none"
+        divElement.style.display = "none";
+        divElementon.style.display = "none";
+    });
+    const spanElement = document.querySelector(
+        ".Products__twcss-text-body-16-twcss-font-fenomen-hidden-facet-template"
+    );
+    const svgElementon = document.querySelector(".Products__icon-icon-filter");
+    spanElement.addEventListener("click", function () {
+        // Khi span được nhấn, đặt thuộc tính display của cả hai thẻ div thành "block" để hiển thị chúng
+        divElement.style.display = "block";
+        divElementon.style.display = "block";
+    });
+    svgElementon.addEventListener("click", function () {
+        // Khi span được nhấn, đặt thuộc tính display của cả hai thẻ div thành "block" để hiển thị chúng
+        divElement.style.display = "block";
+        divElementon.style.display = "block";
+    });
+
+</script>

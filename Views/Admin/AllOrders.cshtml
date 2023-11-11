@@ -1,4 +1,4 @@
-﻿@model List<DeathWishCoffee.Models.Domain.Order>
+﻿@model List<DeathWishCoffee.Models.Main.Order>
 @{
     ViewData["Title"] = "All Orders Page";
 }
@@ -14,30 +14,52 @@
             <tr>
                 <th>Delete</th>
                 <th>Edit</th>
+                <th>Order Detail</th>
+                <th>This user's orders</th>
+
                 <th>ID</th>
-                <th>Customer ID</th>
+                <th>User ID</th>
                 <th>Total Amount</th>
                 <th>Status</th>
+                <th>Products</th>
                 <th>CreatedAt</th>
                 <th>LastModifiedAt</th>
-                <th>Products</th>
             </tr>
         </thead>
         <tbody>
-            @* @foreach (var order in Model)
+            @foreach (var order in Model)
             {
-            <tr>
-            <td>
-            <form method="post" action="/admin/order/delete/@order.Id">
-            <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
-            </td>
-            <td>
-            <a href="/admin/orders/edit/@order.Id" class="btn btn-info">Edit</a>
-            </td>
-            <td>@order.Id</td>
-            </tr>
-            } *@
+                <tr>
+                    <td>
+                        <a href="/admin/orders/delete/@order.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                    <td>
+                        <a href="/admin/orders/edit/@order.Id" class="btn btn-info">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/admin/orders/detail/@order.Id" class="btn btn-warning">Detail</a>
+                    </td>
+                    <td>
+                        <a href="/admin/orders/@order.UserId" class="btn btn-success">This user's orders</a>
+                    </td>
+
+                    <td>@order.Id</td>
+                    <td>@order.UserId</td>
+                    <td>@order.TotalAmount</td>
+                    <td>@order.Status</td>
+                    <td>
+                        @if (order.OrderDetails != null && order.OrderDetails.Count > 0)
+                        {
+                            @foreach (var oD in order.OrderDetails)
+                            {
+                                <p>@oD.Product?.Title</p>
+                            }
+                        }
+                    </td>
+                    <td>@order.CreatedAt</td>
+                    <td>@order.LastModifiedAt</td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>

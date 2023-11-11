@@ -6,16 +6,22 @@
    // Lấy chuỗi JSON từ Session
    string cartJson = _httpContext.HttpContext.Session.GetString("Cart");
    var myCart = !string.IsNullOrEmpty(cartJson)
-   ? JsonConvert.DeserializeObject<List<DeathWishCoffee.Models.Domain.CartItem>>(cartJson)
+   ? JsonConvert.DeserializeObject<List<DeathWishCoffee.Models.Main.CartItem>>(cartJson)
    : null;
 
    string rcmPrsJson = _httpContext.HttpContext.Session.GetString("recommendProducts");
    var recommendProducts = !string.IsNullOrEmpty(rcmPrsJson)
-   ? JsonConvert.DeserializeObject<List<DeathWishCoffee.Models.Domain.Product>>(rcmPrsJson)
+   ? JsonConvert.DeserializeObject<List<DeathWishCoffee.Models.Main.Product>>(rcmPrsJson)
    : null;
 
    string userId = _httpContext.HttpContext.Session.GetString("Id");
 }
+
+
+<script>
+   @* pass data from cs to js *@
+   var myCartData = @Html.Raw(JsonConvert.SerializeObject(myCart));
+</script>
 
 <header class="header">
    <div class="header__container">
@@ -27,8 +33,11 @@
             <a href="/subscription" class="nav-item-link">Subscribe & Save</a>
          </div>
          <div class="nav-item">
-            <a href="/collections/merch" class="nav-item-link sub-menu-merch-trigger">Merch</a>
+            <a href="/about" class="nav-item-link">About</a>
          </div>
+         @* <div class="nav-item">
+         <a href="/collections/merch" class="nav-item-link sub-menu-merch-trigger">Merch</a>
+         </div> *@
          <div class="nav__icon bar-icon">
             <svg class="menu-icon-svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                <path
@@ -55,9 +64,6 @@
          </div>
          <div class="nav-item">
             <a href="/the-void" class="nav-item-link">The Void</a>
-         </div>
-         <div class="nav-item">
-            <a href="/about" class="nav-item-link">About</a>
          </div>
          <div class="nav__icons-wrap">
             <a href="/account/login" class="icon user-icon">
@@ -101,15 +107,16 @@
                </svg>
             </div>
          </div>
-         <div class="navside__item list-menu navside__submenu-merch__trigger">
-            <span class="navside___item__link " href="/">Merch</span>
-            <div class="navside__icon">
-               <svg class="navside__icon__svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-                  <path
-                     d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-               </svg>
-            </div>
+         @* <div class="navside__item list-menu navside__submenu-merch__trigger">
+         <span class="navside___item__link " href="/">Merch</span>
+         <div class="navside__icon">
+         <svg class="navside__icon__svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+         <path
+         d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6
+         169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+         </svg>
          </div>
+         </div> *@
          <div class="navside__item">
             <a class="navside___item__link" href="/subscription">Subscribe & Save</a>
          </div>
@@ -144,6 +151,9 @@
 
 
          <div class="navside__submenu__products-wrapper">
+            <div class="navside__submenu__products-item">
+               <a class="navside__submenu__link title" href="/collections/coffee">All Coffee</a>
+            </div>
             <div class="navside__submenu__products-item">
                <a class="navside__submenu__link title" href="/">Brew Format</a>
                <a class="navside__submenu__link item" href="/">Ground</a>
@@ -192,7 +202,7 @@
 
          <div class="navside__submenu__products-wrapper">
             <div class="navside__submenu__products-item">
-               <a class="navside__submenu__link title" href="/">All Merch</a>
+               <a class="navside__submenu__link title" href="/collections/merch">All Merch</a>
                <a class="navside__submenu__link item" href="/">Apparel</a>
                <a class="navside__submenu__link item" href="/">Accessories</a>
                <a class="navside__submenu__link item" href="/">Mugs</a>
@@ -405,26 +415,27 @@
             <h4>Your cart is empty</h4>
             <p>Add your favorite items to your cart.</p>
 
-            <button>Shop Now</button>
+            <a href='/collections/coffee' class="shop-now-btn">Shop Now</a>
          </div>
       }
 
       <div class="cart-modal__products">
          @if (myCart != null && myCart.Count > 0)
          {
+            <div data-cart=""></div>
             <div class="cart-modal__product-no-empty-wrapper">
                @foreach (var cartItem in myCart)
                {
                   <div class="cart-modal__product-no-empty-item">
-                     <div class="cart-modal__product-no-empty-body">
-                        <div class="cart-modal__product-no-empty-body__thumb">
-                           <img src="~/uploads/@cartItem.Product.Images[0].Src" alt="thumbnail">
-                        </div>
+                     <div class="cart-modal__product-no-empty-body mb-0">
+                        <a href="/products/@cartItem.Product.Id" class="cart-modal__product-no-empty-body__thumb">
+                           <img src="@cartItem.Product.Images.FirstOrDefault()?.Src" alt="thumbnail">
+                        </a>
                         <div class="cart-modal__product-no-empty-body__content">
                            <div class="cart-modal__product-no-empty-body__content__title">
-                              <span>@cartItem.Product?.Title</span>
+                              <a href="/products/@cartItem.Product.Id">@cartItem.Product?.Title</a>
 
-                              <a href="/admin/cart/delete/@cartItem.Id"
+                              <a href="/cart/delete/@cartItem.Id"
                                  class="cart-modal__product-no-empty-body__content__title__icon">
                                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                                     <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4
@@ -438,27 +449,39 @@
                            </div>
 
                            <div class="cart-modal__product-no-empty-body__content__amount">
-                              <div class="cart-modal__product-no-empty-body__content__amount__btn-wraper">
-                                 <form action="/admin/cart/decrease/@cartItem.Id" method="post"
+                              <div class="cart-modal__product-no-empty-body__content__amount__btn-wraper"
+                                 data-cart-item-id="@cartItem.Id">
+                                 <div action="/cart/decrease/@cartItem.Id" method="post"
                                     class="cart-modal__product-no-empty-body__content__amount__button minus"
-                                    cart-item-id="@cartItem.Id"><button class="w-100">-</button></form>
+                                    cart-item-id="@cartItem.Id">
+                                    <button class="cart__quantity-btn decrease w-100 text-light">-</button>
+                                 </div>
+
                                  <div class="cart-modal__product-no-empty-body__content__amount__amount-show">
-                                    @cartItem.Quantity</div>
-                                 <form action="/admin/cart/increase/@cartItem.Id" method="post"
+
+                                    @cartItem.Quantity
+                                 </div>
+
+                                 <div action="/cart/increase/@cartItem.Id" method="post"
                                     class="cart-modal__product-no-empty-body__content__amount__button plus"
-                                    cart-item-id="@cartItem.Id"><button class="w-100">+</button></form>
+                                    cart-item-id="@cartItem.Id">
+                                    <button class="cart__quantity-btn increase w-100 text-light">+</button>
+                                 </div>
                               </div>
 
                               <div class="cart-modal__product-no-empty-body__content__amount__price">
-                                 $@cartItem.Price
+                                 @{
+                                    var subtotal = cartItem.Price * cartItem.Quantity;
+                                 }
+                                 @subtotal.ToString("C2")
                               </div>
                            </div>
                         </div>
                      </div>
 
-                     <button class="cart-modal__product-body__btn">
-                        Upgrade to subscription & Save 30%
-                     </button>
+                     @* <button class="cart-modal__product-body__btn">
+               Upgrade to subscription & Save 30%
+               </button> *@
                   </div>
                }
             </div>
@@ -474,16 +497,17 @@
                   {
                      bool isITexist = item.InsideTypes != null && item.InsideTypes.Count > 0;
 
-                     <form action="/admin/cart/add/@userId" method="post" class="cart-modal__product-item">
+                     <form action="/cart/add/@userId" method="post" class="cart-modal__product-item">
                         <div class="cart-modal__product-item__body">
-                           <img src="~/images/cart-product.jpg" alt="product">
+                           <img src="@item.Images.FirstOrDefault()?.Src" alt="product">
 
                            <div class="info">
                               <a href="">@item.Title</a>
-                              <span>$@item.Sizes?[0].Price</span>
+                              <span>@item.Sizes.FirstOrDefault()?.Price.ToString("C2")</span>
                            </div>
                            <input class="form-control" name="productId" type="hidden" value="@item.Id">
-                           <input type="hidden" name="size" value="@item.Sizes?[0].Label - @item.Sizes?[0].Price"
+                           <input type="hidden" name="size"
+                              value="@item.Sizes.FirstOrDefault()?.Label - @item.Sizes.FirstOrDefault()?.Price"
                               asp-for="Size">
                            <input type="hidden" name="quantity" value="1" asp-for="Quantity">
 
@@ -518,28 +542,26 @@
             </div>
             <div class="cart-modal__checkout__sub-total">
                <div class="cart-modal__checkout__sub-total__heading-wrap">
-                  <span>SUBTOTAL (4 Items)</span>
+                  <span>TOTAL (4 Items)</span>
                   @{
-                     double subtotal = 0;
+                     double total = 0;
                      @foreach (var cartItem in myCart)
                      {
-                        subtotal += cartItem.Price * cartItem.Quantity;
+                        total += cartItem.Price * cartItem.Quantity;
                      }
-
-                     Console.WriteLine(subtotal);
                   }
 
-                  <span>$@subtotal</span>
+                  <span class="cart__total">@total.ToString("C2")</span>
                </div>
-               <button class="cart-modal__checkout__sub-total__checkout-btn">
+               <a href="/checkouts/@userId" class="cart-modal__checkout__sub-total__checkout-btn">
                   <div class="cart-modal__checkout__icon">
                      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
-                        <path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3
-0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z" />
+                        <path
+                           d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z" />
                      </svg>
                   </div>
                   <span>Checkout</span>
-               </button>
+               </a>
                <p class="cart-modal__checkout__sub-total__note">
                   or 4 interest-free installments of $18.74 by <span>AfterPay</span>
                </p>

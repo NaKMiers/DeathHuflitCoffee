@@ -1,0 +1,223 @@
+.Slideshow {
+    width: 100%;
+    height: 370px;
+    background-color: #201e1d;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 300px;
+}
+
+
+
+.Slideshow-heading {
+    font-family: fantasy;
+    font-size: 42px;
+}
+
+
+
+.Slideshow-text {
+    font-family: inherit;
+    font-size: 18px;
+}
+
+
+
+.banner-richtext {
+    font-family: fantasy;
+    font-size: 16px;
+}
+
+
+/* CSS cho trình chiếu */
+.slideshow-container {
+    position: relative;
+    overflow: scroll;
+}
+.slideshow-container::-webkit-scrollbar
+{
+    display:none;
+}
+.Slideshow-banner {
+    display: flex;
+    transition: transform 0.5s ease;
+    animation: slideshow 10s infinite;
+}
+
+.Slideshow-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+@keyframes slideshow {
+    0% {
+        transform: translateX(0);
+        /* Bắt đầu tại vị trí đầu tiên */
+    }
+
+    25% {
+        transform: translateX(0);
+    }
+
+    33.33% {
+        transform: translateX(-100%);
+        /* Di chuyển sang slide thứ 2 */
+    }
+
+    58.33% {
+        transform: translateX(-100%);
+    }
+
+    66.66% {
+        transform: translateX(-200%);
+        /* Di chuyển sang slide thứ 3 */
+    }
+
+    91.66% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(0);
+        /* Quay lại slide đầu tiên */
+    }
+}
+
+.Slideshow-control {
+    display: flex;
+    justify-content: center;
+    /* Để căn giữa theo chiều ngang */
+    align-items: center;
+    /* Để căn giữa theo chiều dọc */
+    justify-content: center;
+    /* Để căn giữa theo chiều ngang */
+    align-items: center;
+    /* Để căn giữa theo chiều dọc */
+    background-color: #201e1d;
+}
+
+
+
+.Slideshow-prevousbutton {
+    background-color: transparent;
+    border: 0;
+}
+
+
+
+.Slideshow-nextbutton {
+    background-color: transparent;
+    border: 0;
+}
+
+.Slideshow-couter{
+    color: #ffffff;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 12px;
+}
+
+
+
+.Slideshow-auto {
+    color: #ffffff;
+    border: 0;
+    margin-left: 20px;
+    background-color: transparent;
+    border-left: 0.1px solid #4d5258;
+    width: 34px;
+    height: 44px;
+}
+
+
+/* Ẩn nút "play" ban đầu */
+.slideshow-icon-play {
+    display: none;
+    margin-left: 10px;
+}
+
+
+.slideshow-icon-pause {
+    margin-left: 10px;
+}
+
+
+/* Thiết lập cùng vị trí và kích thước cho cả nút "play" và nút "pause" */
+.slideshow-icon-pause,
+.slideshow-icon-play {
+    width: 14px;
+    height: 12px;
+    position: absolute;
+
+
+}
+
+/* Thiết lập nút "play" để nằm trên cùng của nút "pause" */
+.slideshow-icon-play {
+    position: absolute;
+}
+
+@media (max-width: 989px) {
+    .Slideshow {
+        padding: 40px 190px;
+    }
+
+    .Slideshow-heading {
+        font-size: 30px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .Slideshow {
+        padding: 40px 170px;
+    }
+
+    .Slideshow-heading {
+        font-size: 30px;
+    }
+}
+
+
+@media (max-width: 749px) {
+    .Slideshow {
+        height: auto;
+        padding: 40px 10px;
+    }
+    .Slideshow-auto {
+        border: 0;
+    }
+    .slideshow-icon-pause {
+        right: 20px;
+    }
+    .slideshow-icon-play {
+        right: 20px
+    }
+
+    .Slideshow-heading {
+        font-size: 30px;
+    }
+}
+@media(max-width: 500px){
+    .Slideshow {
+            height: auto;
+            padding: 40px 5px;
+        }
+    
+        .Slideshow-auto {
+            border: 0;
+        }
+    
+        .slideshow-icon-pause {
+            right: 20px;
+        }
+    
+        .slideshow-icon-play {
+            right: 20px
+        }
+    
+        .Slideshow-heading {
+            font-size: 30px;
+            font-family: fantasy;
+        }
+}

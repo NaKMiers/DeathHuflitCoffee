@@ -1,0 +1,93 @@
+@model List<DeathWishCoffee.Models.Main.Order>
+
+<div class="OrderHistory__container-method-dad">
+    <h1 class="text-center">Order History</h1>
+
+    <div class="OrderHistory__VrgkXA">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+            viewBox="0 0 600 600"><!--! Font Awesome Free 6.4.2 by @@fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+        </svg>
+        <input aria-label="" role="search" autocomplete="off" class="OrderHistory__VrgkXA-input"
+            placeholder="Bạn có thể tìm kiếm theo tên Shop, ID đơn hàng hoặc Tên Sản phẩm" value=""
+            fdprocessedid="nu27mm">
+    </div>
+
+    @if (Model != null && Model.Count > 0)
+    {
+        @foreach (var order in Model)
+        {
+            <div class="OrderHistory__hiXKxx m-4 mt-0 h-auto">
+                <div class="OrderHistory__x0QT2k">
+                    <div class="OrderHistory__qCUYY8">
+                        <div class="border-end pe-3">
+                            Order Date: @order.CreatedAt
+                        </div>
+                        <div>
+                            Order ID: @order.Id
+                        </div>
+                    </div>
+                    <div class="OrderHistory__Vw7Xs text-success">
+                        Received
+                    </div>
+                </div>
+
+                @{
+                    double total = 0;
+                }
+
+                @if (order.OrderDetails != null)
+                {
+                    @foreach (var orderDetail in order.OrderDetails)
+                    {
+                        <div class="OrderHistory__kvXy0c">
+                            <div class="OrderHistory__aybVBK"><img src="@orderDetail.Product.Images.FirstOrDefault()?.Src"
+                                    class="OrderHistory__rGP9Yd" alt="" tabindex="0">
+                                <div class="_7uZf6Q">
+                                    <div>
+                                        <div class="iJlxsT">
+                                            <b class="x5GTyN" tabindex="0">
+                                                @orderDetail.Product.Title
+                                            </b>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="_3F1-5M" tabindex="0">@("x" + orderDetail.Quantity)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            @{
+                                double subTotal = orderDetail.Price * orderDetail.Quantity;
+                                total += subTotal;
+                            }
+                            <span class="x3Dqh">@subTotal.ToString("C2")</span>
+                        </div>
+                    }
+                }
+
+                <div class="OrderHistory__kvXy0c-into-money">
+                    <div class="OrderHistory__78s2g fs-4">
+                        <b class="me-1">Total:</b>
+                        <div class="DeWpya" tabindex="0" aria-label="Thành tiền: ₫173.500">@total.ToString("C2")</div>
+                    </div>
+                </div>
+
+                <div class="OrderHistory__AM4Cxf">
+                    <div class="OrderHistory__EOjXew">
+                        <a href="/collections/coffee" class="btn btn-success" style="width: 200px"> Repurchase
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    }
+    else
+    {
+        <div class="OrderHistory__FK6kaK">
+            <div class="OrderHistory__bi4dk5"></div>
+            <h2 class="OrderHistory__dYtuu1">Chưa có đơn hàng</h2>
+        </div>
+    }
+</div>
