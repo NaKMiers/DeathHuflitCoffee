@@ -1,23 +1,18 @@
  .card {
-    margin: 0 auto;
-    /* Để căn giữa lớp .card */
-    padding: 0 20px;
-    /* Để cách lề bên trái và phải là 20px */
+    margin: 0 auto;/* Để căn giữa lớp .card */
+    padding: 0 20px;/* Để cách lề bên trái và phải là 20px */
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: #000000;
 }
 
 .card-slide {
-    overflow: hidden;
-    /* Để ẩn nội dung bên ngoài .card */
+    overflow: hidden; /* Để ẩn nội dung bên ngoài .card */
 }
 
 .card-list {
-    display: flex;
-    /* Hiển thị các thẻ li theo chiều ngang */
-    list-style: none;
-    /* Ẩn dấu hiệu danh sách */
+    display: flex;/* Hiển thị các thẻ li theo chiều ngang */
+    list-style: none;/* Ẩn dấu hiệu danh sách */
     width:100%;
    
 }
@@ -36,10 +31,8 @@
 }
 
 .card-wraper {
-    border: 1px solid #000000;
-    /* Để tạo viền xung quanh thẻ li */
-    text-align: center;
-    /* Căn giữa nội dung trong thẻ li */
+    border: 1px solid #000000;/* Để tạo viền xung quanh thẻ li */
+    text-align: center;/* Căn giữa nội dung trong thẻ li */
 }
 
 
@@ -47,27 +40,20 @@
 .card-heading {
     position: absolute;
     bottom: 0;
-    left: 50%;
     transform: translateX(-50%);
-    
     color: #fff;
-   
     width: 100%;
 }
 
 .card-heading a {
-    text-decoration: none;
-    /* Loại bỏ gạch chân cho liên kết */
-    color: #fff;
-    /* Màu văn bản cho liên kết */
+    text-decoration: none;/* Loại bỏ gạch chân cho liên kết */
+    color: #fff;/* Màu văn bản cho liên kết */
 }
 .card-heading a:hover {
-    color: red;
-    /* Màu đỏ khi đưa chuột vào */
+    color: red;/* Màu đỏ khi đưa chuột vào */
 }
 .card-box:hover {
-    transform: scale(1.01);
-    /* Phóng to ảnh 1% khi đưa chuột vào */
+    transform: scale(1.01);/* Phóng to ảnh 1% khi đưa chuột vào */
 }
 .button {
     display: none;
@@ -101,12 +87,9 @@
             white-space: nowrap;/* Ngăn các thẻ li xuống dòng */
         }
         .card-wraper {
-            width: 790px;
-            /* Kích thước hình vuông 790px */
-            height: auto;
-            /* Để tạo hình vuông */
-            overflow: auto;
-            /* Cho phép cuộn nếu nội dung vượt quá kích thước */
+            width: 790px;/* Kích thước hình vuông 790px */
+            height: auto;/* Để tạo hình vuông */
+            overflow: auto;/* Cho phép cuộn nếu nội dung vượt quá kích thước */
         }
         .prev-button,
         .next-button {
@@ -133,59 +116,52 @@
         }
     
 }
-
 .content-list1{
     color:#ffffff;
-    
 }
 .CardContent1{
     background-color: #000000;
-    margin-left: 25px;/* Lề bên trái */
-    margin-right: 25px;/* Lề bên phải */
-    display: flex;
+    margin-left: 20px;/* Lề bên trái */
+    margin-right: 20px;/* Lề bên phải */
+    display: flex;  
     justify-content: space-between;
-
 }
 
 .Cardcontent-container1 .content-list1 .content-tex1 .content-box1 .content-image1 img {
-    width: 70px;
-    height: 70px;
+    width: 120px;
+    height: 120px;
 }
 .Cardcontent-container1 .content-list1 {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    width: 100%;
-    /* Để đảm bảo thẻ ul chiếm toàn bộ chiều rộng */
-    justify-content: space-between;
-    /* Để các thẻ li nằm cách nhau một khoảng */
+    width: 100%;/* Để đảm bảo thẻ ul chiếm toàn bộ chiều rộng */
+    justify-content: space-between;/* Để các thẻ li nằm cách nhau một khoảng */
 }
-
-
-
 .Cardcontent-container1 .content-list1 {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-wrap: wrap; /* Để các thẻ li nằm ngang thẳng hàng */
-  gap: 5px; /* Khoảng cách 5px giữa các thẻ li */
+  gap: 10px; /* Khoảng cách 5px giữa các thẻ li */
 }
-
 .Cardcontent-container1 .content-list1 .content-tex1 {
   flex: 1; /* Kích thước giống nhau cho các thẻ li */
   display: flex;
   justify-content: center; /* Căn giữa theo chiều ngang */
 }
-
+.card1{
+    margin-left: 15px;
+    margin-right: 15px;
+}
 .Cardcontent-container1 .content-list1 .content-tex1 .content-box1 {
   display: flex;
   flex-direction: column;
   align-items: center; /* Căn giữa theo chiều dọc */
   text-align: center;
 }
-
 @media (max-width: 989px) {
     .Cardcontent-container1 .content-list1 {
         flex-direction: column;
@@ -195,16 +171,14 @@
             color: #ffffff;
     
         }
-    
         .CardContent1 {
             background-color: #000000;
-            margin-left: 25px;
+            margin-left: 20px;
             /* Lề bên trái */
-            margin-right: 25px;
+            margin-right: 20px;
             /* Lề bên phải */
             display: flex;
             justify-content: space-between;
-    
         }
     
         .Cardcontent-container1 .content-list1 {
@@ -212,26 +186,32 @@
             padding: 0;
             margin: 0;
             display: flex;
-            width: 100%;
-            /* Để đảm bảo thẻ ul chiếm toàn bộ chiều rộng */
-            justify-content: space-between;
-            /* Để các thẻ li nằm cách nhau một khoảng */
+            width: 100%;/* Để đảm bảo thẻ ul chiếm toàn bộ chiều rộng */
+            justify-content: space-between;/* Để các thẻ li nằm cách nhau một khoảng */
         }
 
         .Cardcontent-container1 .content-list1 .content-tex1 .content-box1 {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            /* Căn giữa theo chiều dọc */
+            align-items: center;/* Căn giữa theo chiều dọc */
             text-align: center;
         }
-         
-        .Cardcontent-container1 .content-list1 .content-tex1 .content-box1 .content-image1 img {
-            width: 300px;
-            /* Thay đổi kích thước của thẻ image1 thành 300px */
-            height: auto;
-            /* Để tự động điều chỉnh chiều cao để giữ tỷ lệ khung hình */
-        }
-
+.Cardcontent-container1 .content-list1 .content-tex1 .content-box1 .content-image1 img {
+    width: 100%;
+    height: 250px;
+}
     
+}
+@media (max-width: 500px)
+{
+    .Cardcontent-container1 .content-list1 .content-tex1 .content-box1 .content-image1 img {
+            width: 120px;
+            height: 120px;
+        }
+}
+@media (max-width: 200px) {
+    .Cardcontent-container1 .content-list1 .content-tex1 .content-box1 .content-image1 img {
+        width: 70px;
+        height: 70px;
+    }
 }

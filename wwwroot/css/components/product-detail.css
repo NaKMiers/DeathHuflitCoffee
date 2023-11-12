@@ -139,11 +139,14 @@
    border: 1.5px solid white;
    font-size: 14px;
    height: 50px;
-   width: 200px !important;
-   padding-top: 10px;
+   width: 100% !important;
+   /* padding-top: 10px; */
    margin: 0px;
-   padding-left: 30px;
-
+   /* padding-left: 30px; */
+   padding-left: 10px;
+}
+.Kha__main{
+   width:100% !important;
 }
 .KproductDetail_Size_main_p {
    padding-right: 30px;
@@ -168,8 +171,13 @@
    background-color: black;
    /* padding: 10px; */
    color: white;
+   position: absolute;
+   width: 18.5%;
    /* margin-top: 10px; */
-   
+   /* width:500px; */
+}
+.KproductDetail__main__text__size__choice__text{
+   width:100%;
 }
 
 
@@ -210,20 +218,14 @@
 .KproductDetail_Size_p{
    padding-top: 10px;
    padding-left: 10px;
-<<<<<<< HEAD
-<<<<<<< HEAD
    font-size: 15px;
    width:180px;
-=======
->>>>>>> origin/Kha-SplitConten1
-=======
->>>>>>> origin/sualoiaccount
 }
 .KproductDetail_Size_main_p{
-   padding:10px;
+   /* padding:10px; */
    padding-top:10px;
-   padding-left: 10px;
-   margin-bottom: 0px;
+   /* padding-left: 10px; */
+   margin-bottom: 10px;
 }
 
 
@@ -235,6 +237,8 @@
    /* padding: 10px; */
    color: white;
    margin-top: 10px;
+   position: absolute;
+   width:18.5%;
 }
 /* het phan size */
 .KproductDetail__main__text__size__mainn2 {
@@ -258,22 +262,13 @@
    padding-left: 40px;
    padding-top: 7px;
    /* height: 30px; */
-<<<<<<< HEAD
-<<<<<<< HEAD
-   margin-left: 35px;
-   width:200px;
+   /* margin-left: 5px; */
+   width:100%;
 }
-#KproductDetail_Size_y {
-=======
-} 
+
+
 
 .KproductDetail__main__text__size__choice2 {
->>>>>>> origin/Kha-SplitConten1
-=======
-} 
-
-.KproductDetail__main__text__size__choice2 {
->>>>>>> origin/sualoiaccount
    display: none;
    flex-direction: column;
    align-items: center;
@@ -292,6 +287,9 @@
 
 /* hetphan type */
 
+.KproductDetail__main__text__add_button{
+   width: 100% !important;
+}
 .KproductDetail__main__text__column {
    padding: 0;
 }
@@ -333,12 +331,7 @@ width:100%;font-size:20px;
    height: 43px;
    background-color: #d24728;
    color: white;
-<<<<<<< HEAD
-<<<<<<< HEAD
    border: 1px solid red;
-=======
-=======
->>>>>>> origin/sualoiaccount
    border: 1px solid #d24728;
    margin-top: 15px;
 }
@@ -347,14 +340,10 @@ width:100%;font-size:20px;
 }
 .KproductDetail__main__text_FlavorProfile__h2{
    width:390px;font-size:20px;
-<<<<<<< HEAD
->>>>>>> origin/Kha-SplitConten1
-=======
->>>>>>> origin/sualoiaccount
 }
 .KproductDetail__main__text_FlavorProfile__hr {
    margin: 0;
-   width: 400px;
+   width: 100%;
 }
 /* attribute */
 .KproductDetail__main__text_Atribute__detail{
@@ -374,6 +363,10 @@ width:100%;font-size:20px;
 }
 .summary__title__twcss__uppercase__twcss__grow__Detail{
    width:390px;font-size: 20px;
+}
+.metafield__rich__text__summary__div1__thanh{
+   width:100%;
+   display: flex;
 }
 
 @media (max-width: 970px) {
@@ -402,12 +395,13 @@ width:100%;font-size:20px;
    } 
    
    .KproductDetail__main__text__add_button {
-      width: 120%;
+      width: 70%;
    }
    .KproductDetail__main__text_FlavorProfile__hr {
       margin: 0;
-      width: 70%;
+      width: 90%;
    }
+  
    .summary__title twcss-uppercase twcss-grow {
       width: 550px;
    }
@@ -416,11 +410,12 @@ width:100%;font-size:20px;
       margin-left: 50px;
    } */
    .KproductDetail__main__text__add_button {
-      width: 70%;
+      width: 90% !important;
    }
+   
    /* Size */
    .KproductDetail__main__text__size__all__div9{
-      width: 80%;
+      width: 100%;
    }
    .KproductDetail__main__text__size__all{
       width: 44%;
@@ -432,15 +427,15 @@ width:100%;font-size:20px;
       width: 100%;
    }
    .KproductDetail_Size_main_p{
-      font-size: 10px;
+      font-size: 15px;
       width: 100%;
       height: 50px;
       padding-left: 10px;
    }
    .KproductDetail_Size_div92__img{
-      width: 18px !important
+      width: 21px !important
       ;
-      height: 18px !important;
+      height: 21px !important;
    }
    .KproductDetail__main__text__size__choice{
       width: 100%;
@@ -450,7 +445,7 @@ width:100%;font-size:20px;
       width: 100%;
    }
    .KproductDetail_Size_p{
-      font-size: 10px;
+      font-size: 15px;
       padding: 0px;
       width: 100%;
       padding-top: 8px;
@@ -469,6 +464,8 @@ width:100%;font-size:20px;
    }
    .KproductDetail__main__text__size2{
       top:10px;
+      padding-top: 10px;
+      height: 63px;
    }
    .KproductDetail__main__text__size__mainn2{
       font-size: 10px;
@@ -486,7 +483,13 @@ width:100%;font-size:20px;
       font-size: 10px;
    }
    .KproductDetail__main__text__size__choice{
-      padding-top: 10px;
+      padding-top: 0px;
+      width:35%;
+   }
+   .KproductDetail__main__text__size__choice2{
+      margin-top:10px;
+      width: 36.5%;
+      margin-left: 1px;
    }
    .KproductDetail__main__text__size__choice__p2{
       font-size: 10px;
@@ -499,13 +502,14 @@ width:100%;font-size:20px;
       width: 100%;
    }
    .summary__title__twcss__uppercase__twcss__grow{
-      width:67%;
+      width:85%;
    }
    .metafield__rich_text_field{
-      width: 74%;
+      width: 90%;
    }
+ 
    .KproductDetail__main__text_Atribute__cacthanh{
-      width: 72%;
+      width: 90%;
    }
    .summary__title__twcss__uppercase__twcss__grow__Detail{
       width: 100%;

@@ -98,7 +98,7 @@
    position: absolute;
    display: block;
    width: 370px;
-   height: 334px;
+   height: 160px;
    top: 55px;
    left: 50px;
    z-index: 2;
@@ -259,7 +259,7 @@
 
 .Products__bv-stars-component-container {
    position: relative;
-   bottom: 4px;
+   bottom: 2.5px;
 }
 
 .Products__card-information {

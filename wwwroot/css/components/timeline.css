@@ -17,7 +17,7 @@ padding-bottom: 70px;
  border: 1px solid #201e1d;
  margin-left: 80px;
  /* margin-right: 50px; */
-margin-left:60px;
+margin-left:0px;
 margin-right:20px;
 }
 /* Tùy chỉnh hình dáng của thanh cuộn */
@@ -37,8 +37,8 @@ border-radius: 10px; /* Độ bo tròn của đầu nút cuộn */
 .KTimeline::-webkit-scrollbar-track {
 background-color: gray; /* Màu nền của thanh cuộn */
 border-radius: 3px; /* Độ bo tròn của đầu thanh cuộn */
-margin-left: 70px;
-margin-right: 70px;
+margin-left: 200px;
+margin-right: 200px;
 }
 
 .KTimeline::-webkit-scrollbar-corner {

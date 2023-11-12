@@ -12,7 +12,14 @@
    box-sizing: border-box;
    border: 2px solid black;
    background-color: black; 
+   /* padding: 0px; */
 } 
+.slip-content-1__phan2{
+    padding: 0px;
+}
+.slip-content-1__img__coffee__phan2{
+    padding: 0px;
+}
 
 /* Media Query cho thiết bị có màn hình nhỏ hơn 768px (mobile) */
 @media (max-width: 768px) {
@@ -60,17 +67,18 @@
   .slip-content-1__img__coffee{
    width:100%;
    height: 100%;
-   padding-left: 70px;
+   /* padding-left: 70px; */
   }
   .slip-content-1__img{
-      width: 100%;
-      padding-left: 30px;
+      width: 73%;
+      /* padding-left: 30px; */
   }
   
   .slip-content-1__text{
       color:black;
       width: 70%;
       padding: 60px 20px 70px 70px;
+      /* font-size: 20px; */
   }
   
   .slip-content-1__maintext{
@@ -97,7 +105,7 @@
   
   }
    .slip-content-1__maintext__body{
-      font-size: 18px;
+      font-size: 22px;
       color:#FFFFFF;
       padding-top: 30px;
   } 
@@ -168,11 +176,11 @@
  .slip-content-1__img__coffee__phan2{
   width:100%;
   height: 100%;
-  padding-right: 55px;
+  /* padding-right: 55px; */
  }
  .slip-content-1__img__phan2{
      width: 1200px;
-     padding-right: 25px;
+     /* padding-right: 25px; */
      }
  
  .slip-content-1__text__phan2{
@@ -187,11 +195,13 @@
      
      align-items: flex-start;
      height: 100%;
-     
+     /* font-size: 35px; */
      position: relative;
-     z-index: 1;
+     /* z-index: 1; */
      padding: 0px;
      padding-top: 30px;
+     padding-left: 35px;
+     padding-right: 35px;
  }
  
  .slip-content-1__maintext__header__phan2{
@@ -208,7 +218,7 @@
  
  }
   .slip-content-1__maintext__body__phan2{
-     font-size: 17px;
+     font-size: 25px;
      line-height: 1.5;
      color:#FFFFFF;
      padding-right: 25px;
