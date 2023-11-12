@@ -1,0 +1,29 @@
+.contentBanner5 {
+   display: flex;
+   width: 100%;
+}
+.image-container {
+   width: 70%;
+}
+.text-container {
+   display: flex;
+   flex-direction: column;
+   width: 30%;
+   justify-content: center;
+   align-items: center;
+}
+@media screen and (max-width: 768px) {
+   .contentBanner5 {
+      flex-direction: column; /* Change to a column layout for mobile */
+      text-align: center; /* Center align text in mobile view */
+   }
+
+   .image-container,
+   .text-container {
+      width: 100%; /* Make both containers full width in mobile view */
+   }
+
+   .text-button {
+      margin-top: 20px; /* Add some space between text and button in mobile view */
+   }
+}
