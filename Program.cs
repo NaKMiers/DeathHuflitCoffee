@@ -118,11 +118,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Account", action = "Register" }
 );
 
-// [/account/reset-password]
+// [/account/forget-password]
 app.MapControllerRoute(
-    name: "ResetPassword",
-    pattern: "account/reset-password",
-    defaults: new { controller = "Account", action = "ResetPassword" }
+    name: "ForgetPassword",
+    pattern: "account/foget-password",
+    defaults: new { controller = "Account", action = "ForgetPassword" }
 );
 
 // [/products/{id}]

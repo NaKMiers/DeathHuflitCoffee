@@ -135,6 +135,7 @@ namespace DeathWishCoffee.Controllers
 
             // Console.WriteLine(finalProductsList.Count);
             ViewBag.CurPage = "Coffee";
+            ViewBag.NumberOfProduct = finalProducts.Count();
             return View(finalProductsList);
         }
 

@@ -210,8 +210,8 @@ namespace DeathWishCoffee.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        // [/account/reset-password]
-        public IActionResult ResetPassword()
+        // [/account/forget-password]
+        public IActionResult ForgetPassword()
         {
             return View();
         }
