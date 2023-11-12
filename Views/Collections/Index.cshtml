@@ -2,7 +2,9 @@
     ViewData["Title"] = "Collections Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Collections</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row">
+    @for (int i = 0; i < 3; i++)
+    {
+        <partial name="../../components/ContentBanner5.cshtml" />
+    }
 </div>
