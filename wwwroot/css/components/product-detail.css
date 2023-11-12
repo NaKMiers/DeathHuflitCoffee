@@ -1,0 +1,517 @@
+.KproductDetail {
+   box-sizing: inherit;
+   display: block; /* đảm bảo rằng phần tử đó sẽ được hiển thị dưới dạng khối, và mọi nội dung tiếp theo sẽ xuất hiện ở dưới nó */
+   /* line-height: inherit;
+    /* color: rgba(var(--color-foreground), 1);
+    background-color: rgb(var(--color-background)); */
+
+   box-sizing: border-box;
+   border-width: 0;
+   border-style: solid;
+   border-color: currentColor;
+   background-color: black;
+}
+.Main_KproductDetail {
+   padding-top: 27px;
+   padding-bottom: 12px;
+   padding-left: 15px;
+   padding-right: 15px;
+
+   box-sizing: border-box;
+   border-width: 0;
+   border-style: solid;
+   border-color: currentColor;
+
+   background-color: black;
+
+   margin: 0 auto;
+   padding: 0 1.5rem;
+}
+
+/* header */
+
+.KproductDetail__header {
+   padding-top: 32px;
+   padding-bottom: 32px;
+   padding-left: 0px;
+   padding-right: 0px;
+
+   letter-spacing: 0em;
+   font-size: 15px;
+   font-family: Fenomen-Sans-Light;
+   align-items: center;
+   display: flex;
+   flex-wrap: wrap;
+
+   color: white;
+   background-color: black;
+}
+
+.KproductDetail__header__a {
+   color: #fff;
+   font-family: Fenomen-Sans-Light;
+   padding-top: 8px;
+   padding-bottom: 8px;
+   padding-left: 10px;
+   padding-right: 10px;
+
+   font-size: 15px;
+   font-weight: 700;
+   line-height: 1.3;
+
+   text-decoration: inherit;
+}
+.KproductDetail__header__p {
+   padding-left: 10px;
+   padding-right: 10px;
+   margin: 0;
+}
+
+/* Main chính */
+.KproductDetail__main {
+   gap: 0;
+   margin: 0;
+   background-color: black;
+   color: white;
+   display: flex;
+}
+/* img */
+.KproductDetail__main__img {
+   /* padding-top: min(var(--constrained-height), var(--ratio-percent));
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; */
+   margin-left: 15px;
+   display: flex;
+}
+/* .KproductDetail__main__img__div1{
+    color: black;
+    background-color: black;
+} */
+.KproductDetail__main__img__div2 {
+   padding: 0px;
+}
+
+/* text quan trọng */
+/* phan đầu */
+.KproductDetail__main__text {
+   padding-left: 40px;
+   padding-right: 40px;
+   width: 45%;
+}
+.KproductDetail__main__text_Header {
+   margin-top: 15px;
+   margin-bottom: 15px;
+}
+.KproductDetail__main__text_Header_h1 {
+   color: #d24728;
+}
+.paragraph {
+   display: inline;
+   margin-right: 10px; /* Để tạo khoảng cách giữa các đoạn văn */
+}
+/* <!-- phần info của caffee --> */
+
+.KproductDetail__main__text__infoofcoffee {
+   font-style: normal;
+   font-family: Arial, Helvetica, sans-serif;
+   width: 400px;
+}
+/* size */
+.KproductDetail__main__text__size_header{
+ font-size: 25px;
+ margin-bottom: 3px;
+
+}
+
+.KproductDetail__main__text__select {
+   width: 400px;
+}
+/* size */
+.KproductDetail__main__text__size_42{
+   text-align: left;
+}
+.KproductDetail__main__text__size__all {
+   width: 50%;
+}
+.KproductDetail_Size_p {
+   border: 1.5px solid white;
+   font-size: 14px;
+   height: 50px;
+   width: 100% !important;
+   /* padding-top: 10px; */
+   margin: 0px;
+   /* padding-left: 30px; */
+   padding-left: 10px;
+}
+.Kha__main{
+   width:100% !important;
+}
+.KproductDetail_Size_main_p {
+   padding-right: 30px;
+}
+.KproductDetail__main__text__size {
+   position: relative;
+   background: black;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   /* padding: 20px; */
+   cursor: pointer; /* Sử dụng con trỏ để chỉ ra rằng .main9 có thể được click */
+   border: 1.5px solid white;
+}
+
+.KproductDetail__main__text__size__choice {
+   display: none;
+   flex-direction: column;
+   align-items: center;
+   background-color: black;
+   /* padding: 10px; */
+   color: white;
+   position: absolute;
+   width: 18.5%;
+   /* margin-top: 10px; */
+   /* width:500px; */
+}
+.KproductDetail__main__text__size__choice__text{
+   width:100%;
+}
+
+
+/* hết size */
+.KproductDetail__main__text__size2__all {
+   width: 50%;
+}
+/* .KproductDetail__main__text__size2 */
+.KproductDetail__main__text__size2_header{
+   margin-bottom: 25px;
+}
+.KproductDetail__main__text__size2 {
+   position: relative;
+   background: black;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   /* padding: 20px; */
+   cursor: pointer; /* Sử dụng con trỏ để chỉ ra rằng .main9 có thể được click */
+   /* padding-bottom: 0px; */
+   border: 1.5px solid white;
+   left: 5px;
+   /* height: %; */
+   
+   height: 52px;
+   padding:3px 0px 0px 0px!important;
+   padding-top:4px ;
+}
+.KproductDetail_Size_div92{
+   margin-bottom: 8px;
+}
+.KproductDetail_Size_div92__img{
+   width:30px !important;
+    height:30px !important;
+}
+.KproductDetail_Size_p{
+   padding-top: 10px;
+   padding-left: 10px;
+   font-size: 15px;
+   width:180px;
+}
+.KproductDetail_Size_main_p{
+   /* padding:10px; */
+   padding-top:10px;
+   /* padding-left: 10px; */
+   margin-bottom: 10px;
+}
+
+
+.KproductDetail__main__text__size__choice2 {
+   display: none;
+   flex-direction: column;
+   align-items: center;
+   background-color: black;
+   /* padding: 10px; */
+   color: white;
+   margin-top: 10px;
+   position: absolute;
+   width:18.5%;
+}
+/* het phan size */
+.KproductDetail__main__text__size__mainn2 {
+   position: relative;
+   background: black;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   /* padding: 20px; */
+   cursor: pointer; /* Sử dụng con trỏ để chỉ ra rằng .main9 có thể được click */
+}
+.KproductDetail__main__text__size2{
+   padding-top: 10px;
+}
+ .KproductDetail_Size_p2{
+   border: 1px solid white;
+   margin: 0px;
+   height: 50px;
+   padding-left: 40px;
+   padding-top: 7px;
+   /* height: 30px; */
+   /* margin-left: 5px; */
+   width:100%;
+}
+
+
+
+.KproductDetail__main__text__size__choice2 {
+   display: none;
+   flex-direction: column;
+   align-items: center;
+   background-color: black;
+   /* padding: 10px; */
+   color: white;
+   /* margin-top: 10px; */
+   margin: 0px;
+}
+.KproductDetail__main__text__size__choice__p2{
+   width:104%; 
+   padding-left: 8px;
+}
+/* .KproductDetail_Size_p2{} */
+
+
+/* hetphan type */
+
+.KproductDetail__main__text__add_button{
+   width: 100% !important;
+}
+.KproductDetail__main__text__column {
+   padding: 0;
+}
+.KproductDetail__main__text__column__select {
+   width: 300px;
+   height: 50px;
+   background-color: black;
+   color: white;
+}
+.summary__title__twcss__uppercase__twcss__grow{
+   width: 100%;
+}
+.summary__title__twcss__uppercase__twcss__grow__h2{
+width:100%;font-size:20px;
+}
+.KproductDetail__main__text__column__select__op1 {
+   display: flex;
+   height: 50px;
+   width: 300px;
+}
+.xyz2 {
+   text-align: center;
+}
+.KproductDetail__main__text__column__select__op1_div2 {
+   height: 50px;
+   width: 300px;
+}
+.KproductDetail__main__text__size_4 {
+   margin: 0;
+}
+/* .KproductDetail__main__text__add_button{
+    background-color: #D24728;
+
+    width:400px;height: 43px;background-color: #D24728;color: white ;border: 1px solid #D24728 ; 
+} */
+
+.KproductDetail__main__text__add_button {
+   width: 400px;
+   height: 43px;
+   background-color: #d24728;
+   color: white;
+   border: 1px solid red;
+   border: 1px solid #d24728;
+   margin-top: 15px;
+}
+.summary__title__twcss__uppercase__twcss__grow__FlavorProfile{
+   font-size: 22px;
+}
+.KproductDetail__main__text_FlavorProfile__h2{
+   width:390px;font-size:20px;
+}
+.KproductDetail__main__text_FlavorProfile__hr {
+   margin: 0;
+   width: 100%;
+}
+/* attribute */
+.KproductDetail__main__text_Atribute__detail{
+   display: flex; align-items: center;
+}
+.KproductDetail__main__text_Atribute__summary{
+   flex: 1; display: flex; align-items: center; color: white; background-color: black;padding-bottom:10px;
+}
+.metafield-rich_text_summary_div1_cirle {
+   width: 15px; /* Độ rộng 50% của ô cha (màu cam) */
+   background-color: orangered; /* Màu cam */
+   border-radius: 50%; /* Làm cho thẻ có hình tròn */
+   height: 15px;
+   position: relative;
+   bottom: 4px;
+   right: 4px;
+}
+.summary__title__twcss__uppercase__twcss__grow__Detail{
+   width:390px;font-size: 20px;
+}
+.metafield__rich__text__summary__div1__thanh{
+   width:100%;
+   display: flex;
+}
+
+@media (max-width: 970px) {
+   .KproductDetail__main {
+      gap: 0;
+      margin: 0;
+      background-color: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+   }
+   .KproductDetail__main__text {
+      width: 100%;
+   }
+   .KproductDetail__main__text_Header_h1 {
+      font-size: 30px;
+   }
+   .KproductDetail__main__text__infoofcoffee {
+      width: 80%;
+      font-size: 15px;
+   }
+
+    .KproductDetail_Size_p {
+      width: 100% !important;
+      font-size: 10px;
+   } 
+   
+   .KproductDetail__main__text__add_button {
+      width: 70%;
+   }
+   .KproductDetail__main__text_FlavorProfile__hr {
+      margin: 0;
+      width: 90%;
+   }
+  
+   .summary__title twcss-uppercase twcss-grow {
+      width: 550px;
+   }
+   /* .KproductDetail_Size_p2 {
+      width: 120%;
+      margin-left: 50px;
+   } */
+   .KproductDetail__main__text__add_button {
+      width: 90% !important;
+   }
+   
+   /* Size */
+   .KproductDetail__main__text__size__all__div9{
+      width: 100%;
+   }
+   .KproductDetail__main__text__size__all{
+      width: 44%;
+   }
+   .KproductDetail__main__text__size{
+      width: 100%;
+   }
+   .KproductDetail__main__text__size__choice__text1{
+      width: 100%;
+   }
+   .KproductDetail_Size_main_p{
+      font-size: 15px;
+      width: 100%;
+      height: 50px;
+      padding-left: 10px;
+   }
+   .KproductDetail_Size_div92__img{
+      width: 21px !important
+      ;
+      height: 21px !important;
+   }
+   .KproductDetail__main__text__size__choice{
+      width: 100%;
+   }
+   .KproductDetail__main__text__size__choice__text{
+      /* margin-left: 80px; */
+      width: 100%;
+   }
+   .KproductDetail_Size_p{
+      font-size: 15px;
+      padding: 0px;
+      width: 100%;
+      padding-top: 8px;
+   }
+   .main{
+      width: 100%;
+      border: 0px solid black;
+   }
+
+   /* type */
+   .KproductDetail__main__text__size2_header{
+      margin-bottom:13px ;
+   }
+   .KproductDetail__main__text__size2__all{
+      width: 46%;
+   }
+   .KproductDetail__main__text__size2{
+      top:10px;
+      padding-top: 10px;
+      height: 63px;
+   }
+   .KproductDetail__main__text__size__mainn2{
+      font-size: 10px;
+   }
+   .KproductDetail__main__text__size_42{
+      font-size: 23px;
+      padding-left: 10px;
+   }
+   .KproductDetail_Size_p2{
+      margin-left: 8px;
+      width: 96%;
+      padding-left: 15px;
+   }
+   .KproductDetail_Size_div92{
+      font-size: 10px;
+   }
+   .KproductDetail__main__text__size__choice{
+      padding-top: 0px;
+      width:35%;
+   }
+   .KproductDetail__main__text__size__choice2{
+      margin-top:10px;
+      width: 36.5%;
+      margin-left: 1px;
+   }
+   .KproductDetail__main__text__size__choice__p2{
+      font-size: 10px;
+      padding-left: 0px;
+      
+   }
+   /* .KproductDetail__main__text__size  */
+   /* FlavorProfile */
+   .summary__title__twcss__uppercase__twcss__grow__h2{
+      width: 100%;
+   }
+   .summary__title__twcss__uppercase__twcss__grow{
+      width:85%;
+   }
+   .metafield__rich_text_field{
+      width: 90%;
+   }
+ 
+   .KproductDetail__main__text_Atribute__cacthanh{
+      width: 90%;
+   }
+   .summary__title__twcss__uppercase__twcss__grow__Detail{
+      width: 100%;
+   }
+}

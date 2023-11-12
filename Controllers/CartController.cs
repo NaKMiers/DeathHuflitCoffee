@@ -1,14 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using DeathWishCoffee.Data;
-using DeathWishCoffee.Models.Domain;
+using DeathWishCoffee.Models.Main;
 using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace DeathWishCoffee.Controllers
@@ -59,14 +52,14 @@ namespace DeathWishCoffee.Controllers
 
             // get user from database
             var user = _deathWishCoffeeDbContext.Users
-                    .Include(u => u.Cart)
+                    .Include(u => u.CartItems)
                     .FirstOrDefault(u => u.Id == userId);
 
             // if user do NOT EXIST => Bad Request
             if (user == null)
                 return BadRequest("User ID does not exist");
 
-            var myCart = user.Cart;
+            var myCart = user.CartItems.ToList();
             ViewBag.UserId = userId;
 
             // string myCartCovertedToJson = JsonConvert.SerializeObject(myCart);
@@ -75,7 +68,7 @@ namespace DeathWishCoffee.Controllers
             return View("~/Views/Admin/MyCart.cshtml", myCart);
         }
 
-        // [/admin/cart/add/{userId}]
+        // [/cart/add/{userId}]
         [HttpGet]
         public IActionResult AddToCart(Guid userId)
         {
@@ -85,12 +78,15 @@ namespace DeathWishCoffee.Controllers
                         .Include(p => p.InsideTypes)
                         .Include(p => p.Images)
                         .ToList();
-            var cart = _deathWishCoffeeDbContext.Users.Include(u => u.Cart).FirstOrDefault(u => u.Id == userId);
+            var cart = _deathWishCoffeeDbContext.Users
+                        .Include(u => u.CartItems)
+                        .FirstOrDefault(u => u.Id == userId);
 
             ViewBag.Products = allProducts;
             ViewBag.UserId = userId;
             ViewBag.Cart = cart;
 
+            // return RedirectToAction("Index", "Home");
             return View("~/Views/Admin/AddToCart.cshtml");
         }
         [HttpPost]
@@ -98,10 +94,16 @@ namespace DeathWishCoffee.Controllers
         {
             Console.WriteLine("AddToCart");
 
+            if (userId == null || userId == Guid.Empty)
+            {
+                return RedirectToAction("Index", "Account");
+
+            }
+
             // get product to add from database by productId
             var productToAdd = _deathWishCoffeeDbContext.Products.Find(productId);
             var user = _deathWishCoffeeDbContext.Users
-                    .Include(u => u.Cart)
+                    .Include(u => u.CartItems)
                     .FirstOrDefault(u => u.Id == userId);
 
             // if productToAdd does NOT EXISTS => BadRequest
@@ -112,57 +114,72 @@ namespace DeathWishCoffee.Controllers
             if (user == null)
                 return BadRequest("User does not exist");
 
-            // if product is ALREADY EXISTS in cart
-            var existingCartItem = user.Cart.FirstOrDefault(ci => ci.ProductId == productId);
+            // invalid quantity
+            if (form.Quantity <= 0)
+                return BadRequest("Invalid Quantity");
+
+            // if cartItem is ALREADY EXISTS in cart
+            var existingCartItem = user.CartItems.FirstOrDefault(ci => ci.ProductId == productId);
+            // Console.WriteLine("-----------------------------------------------------------------");
+            // if (existingCartItem != null)
+            // {
+            //     Console.WriteLine(existingCartItem.Id);
+            //     Console.WriteLine(existingCartItem.UserId);
+            //     Console.WriteLine(existingCartItem.ProductId);
+            //     Console.WriteLine(existingCartItem.Size);
+            //     Console.WriteLine(existingCartItem.Price);
+            // }
+            // Console.WriteLine("-----------------------------------------------------------------");
+
             if (existingCartItem != null && form.Size == existingCartItem.Size)
             {
                 // not enough product
                 if (existingCartItem.Quantity + form.Quantity > productToAdd.Remain)
-                    return BadRequest("Not enough product to sold");
+                    return RedirectToAction("Index", "Home");
+                // return RedirectToAction("AddToCart", "Cart");
+                // return BadRequest("Not enough product to sold");
 
                 existingCartItem.Quantity += form.Quantity;
             }
-
-            if (form.Quantity <= 0)
-                return BadRequest("Invalid Quantity");
-
-            double price = double.Parse(form.Size.Split('-')[1].Trim());
-
-            // create new CartItem
-            var newCartItem = new Models.Domain.CartItem
+            else
             {
-                UserId = userId,
-                ProductId = productId,
-                Quantity = form.Quantity,
-                Size = form.Size,
-                Price = price,
-                InsideType = form.InsideType,
-                CreatedAt = DateTime.Now,
-                Product = productToAdd,
-            };
+                // create new CartItem
+                double price = double.Parse(form.Size.Split('-')[1].Trim());
+                var newCartItem = new CartItem
+                {
+                    Id = Guid.NewGuid(),
+                    UserId = userId,
+                    ProductId = productId,
+                    Quantity = form.Quantity,
+                    Size = form.Size,
+                    Price = price,
+                    InsideType = form.InsideType,
+                    CreatedAt = DateTime.Now,
+                    Product = productToAdd,
+                };
 
-            _deathWishCoffeeDbContext.CartItems.Add(newCartItem);
+                _deathWishCoffeeDbContext.CartItems.Add(newCartItem);
+            }
             _deathWishCoffeeDbContext.SaveChanges();
 
             user = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id == userId);
 
             // set CART data for all pages again
-            SetUpCartDataForAllPage(user.Cart);
+            SetUpCartDataForAllPage(user.CartItems.ToList());
 
             // return bad request if user does NOT EXISTS
             if (user == null)
-            {
                 return BadRequest("Invalid username or password.");
-            }
 
-            return RedirectToAction("AddToCart", "Cart");
+            string referrer = HttpContext.Request.Headers["Referer"].ToString();
+            return Redirect(referrer);
         }
 
-        // [/admin/cart/delete/{cartItemId}]
+        // [/cart/delete/{cartItemId}]
         [HttpGet]
         public IActionResult DeleteCartItem(Guid cartItemId)
         {
@@ -182,17 +199,19 @@ namespace DeathWishCoffee.Controllers
             // get user to set cart again
             var userId = _httpContext.HttpContext.Session.GetString("Id");
             var user = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
+                        .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id.ToString() == userId);
 
-            SetUpCartDataForAllPage(user.Cart);
+            // set CART data for all pages again
+            SetUpCartDataForAllPage(user.CartItems.ToList());
 
-            // redirect to HomePage
-            return RedirectToAction("Index", "Home");
+            string referrer = HttpContext.Request.Headers["Referer"].ToString();
+            return Redirect(referrer);
         }
 
-        // [/admin/cart/increase/{cartItemId}]
+        // [/cart/increase/{cartItemId}]
         [HttpPost]
         public IActionResult IncreaseCartItemQuantity(Guid cartItemId)
         {
@@ -208,7 +227,8 @@ namespace DeathWishCoffee.Controllers
 
             // not enough product
             if (cartItem.Quantity + 1 > cartItem.Product.Remain)
-                return BadRequest("Not enough product to sold");
+                return Json(new { newQuantity = cartItem.Quantity });
+
 
             cartItem.Quantity += 1;
             _deathWishCoffeeDbContext.SaveChanges();
@@ -221,7 +241,7 @@ namespace DeathWishCoffee.Controllers
                 return BadRequest("User ID is does not exists");
 
             var user = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id.ToString() == userId);
@@ -229,18 +249,17 @@ namespace DeathWishCoffee.Controllers
             if (user == null)
                 return BadRequest("User is does not exists");
 
-
             // set CART data for all pages again
-            SetUpCartDataForAllPage(user.Cart);
+            SetUpCartDataForAllPage(user.CartItems.ToList());
 
             // return bad request if user does NOT EXISTS
             if (user == null)
                 return BadRequest("Invalid username or password");
 
-            return RedirectToAction("Index", "Home");
+            return Json(new { newQuantity = cartItem.Quantity });
         }
 
-        // [/admin/cart/decrease/{cartItemId}]
+        // [/cart/decrease/{cartItemId}]
         [HttpPost]
         public IActionResult DecreaseCartItemQuantity(Guid cartItemId)
         {
@@ -255,12 +274,8 @@ namespace DeathWishCoffee.Controllers
                 return BadRequest("Invalid cart item");
 
             // not enough product
-            if (cartItem.Quantity - 1 < 0)
-                return BadRequest("Invalid quantity");
-
-            // remove cart item when quantity = 0
-            if (cartItem.Quantity - 1 == 0)
-                DeleteCartItem(cartItemId);
+            if (cartItem.Quantity - 1 <= 0)
+                return Json(new { newQuantity = cartItem.Quantity });
 
             cartItem.Quantity -= 1;
             _deathWishCoffeeDbContext.SaveChanges();
@@ -272,9 +287,8 @@ namespace DeathWishCoffee.Controllers
             if (string.IsNullOrEmpty(userId))
                 return BadRequest("User ID is does not exists");
 
-
             var user = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id.ToString() == userId);
@@ -283,13 +297,13 @@ namespace DeathWishCoffee.Controllers
                 return BadRequest("User is does not exists");
 
             // set CART data for all pages again
-            SetUpCartDataForAllPage(user.Cart);
+            SetUpCartDataForAllPage(user.CartItems.ToList());
 
             // return bad request if user does NOT EXISTS
             if (user == null)
                 return BadRequest("Invalid username or password");
 
-            return RedirectToAction("Index", "Home");
+            return Json(new { newQuantity = cartItem.Quantity });
         }
 
         // ERRORS

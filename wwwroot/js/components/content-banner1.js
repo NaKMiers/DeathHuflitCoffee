@@ -1,7 +1,7 @@
 const contentBanner1 = document.querySelector('.content-banner-1.sliders')
 
 if (contentBanner1) {
-   console.log(contentBanner1)
+   // console.log(contentBanner1)
    const slideTrack = document.querySelector('.content-banner-1__slide-track')
    const showCurSlide = document.querySelector('.content-banner-1__controls__current-slide')
    const prevBtn = document.querySelector('.content-banner-1__control-btn.prev-btn')

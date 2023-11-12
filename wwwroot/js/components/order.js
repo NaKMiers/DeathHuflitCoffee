@@ -1,26 +1,26 @@
-const buttons = document.querySelectorAll(".DirectionHeding__panel-4-crf-product-name");
+const buttons = document.querySelectorAll('.DirectionHeding__panel-4-crf-product-name')
 
 buttons.forEach(button => {
-   let isClicked = false;
+   let isClicked = false
 
-   button.addEventListener("mouseenter", function () {
+   button.addEventListener('mouseenter', function () {
       if (!isClicked) {
-         button.classList.add("active");
+         button.classList.add('active')
       }
-   });
+   })
 
-   button.addEventListener("click", function () {
+   button.addEventListener('click', function () {
       if (!isClicked) {
-         button.classList.add("active");
+         button.classList.add('active')
       } else {
-         button.classList.remove("active");
+         button.classList.remove('active')
       }
-      isClicked = !isClicked; // Đảo trạng thái isClicked khi click
-   });
+      isClicked = !isClicked // Đảo trạng thái isClicked khi click
+   })
 
-   button.addEventListener("mouseleave", function () {
+   button.addEventListener('mouseleave', function () {
       if (!isClicked) {
-         button.classList.remove("active");
+         button.classList.remove('active')
       }
-   });
-});
+   })
+})

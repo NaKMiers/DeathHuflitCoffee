@@ -1,0 +1,70 @@
+.CardContent2{
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    color: #fff;   
+    background-color: #201e1d;
+}
+.content-list2 {
+    padding-left: 0px;
+    display: flex;/* Sử dụng Flexbox để căn chỉnh các thành phần ngang */
+    justify-content: space-between;/* Các thành phần được căn cách đều nhau */
+    list-style: none;/* Loại bỏ dấu hiệu danh sách */
+}
+.content-tex2 {
+    flex: 1;/* Cài đặt các mục li để có chiều rộng bằng nhau */
+    margin-right: 15px;/* Đặt khoảng cách 15px giữa các thẻ */
+    flex: 0 0 calc(33.33% - 25px);/* 33.33% cho ba thẻ li và trừ 25px để tạo khoảng cách */
+}
+/* Để loại bỏ margin phía bên phải của thẻ cuối cùng */
+.content-tex2:last-child {
+    margin-right: 0;
+}
+.inline-heading2{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.content-media {
+    width: 115px;
+    height: auto;/* Đảm bảo tỷ lệ khung hình không bị biến dạng */
+}
+.content-box2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;/* Căn giữa nội dung theo chiều ngang */
+    text-align: center;/* Căn giữa nội dung theo chiều ngang */
+}
+@media(max-width: 1200px) {
+    .inline-heading2 {
+        font-size: 22px;
+
+    }
+}
+ @media(max-width: 989px) {
+    .content-list2 {
+        display: flex;/* Sử dụng mô hình flexbox */
+        flex-direction: column;/* Hiển thị danh sách dọc */
+    }
+    .content-media {
+        width: 50%;/* Đặt kích thước ảnh là 50% của thẻ li (hoặc bất kỳ giá trị nào bạn muốn) */
+        height:auto;
+        display: block;/* Để căn giữa ảnh */
+        margin: 0 auto;/* Để căn giữa ảnh ngang theo chiều ngang của thẻ li */
+    }
+    .inline-heading2 .content-box2 {
+        width: 100%;/* Đặt chiều rộng của thẻ inline-heading2 là 100% */
+        max-width: 100%;/* Đặt chiều rộng tối đa cũng là 100% để tránh tràn ra ngoài */
+    }
+    .content-tex2 {
+        margin-bottom: 25px;/* Đặt khoảng cách dưới giữa các thẻ có lớp content-tex2 */
+    }
+    .content-media {
+        width: 100%;
+        height: auto;
+        /* Đảm bảo tỷ lệ khung hình không bị biến dạng */
+    }
+}

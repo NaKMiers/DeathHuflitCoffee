@@ -1,20 +1,5 @@
-﻿@inject IHttpContextAccessor _httpContext;
-@{
-    ViewData["Title"] = "Account Page";
-    var id = _httpContext.HttpContext?.Session.GetString("Id");
-    var username = _httpContext.HttpContext?.Session.GetString("Username");
-    var avatar = _httpContext.HttpContext?.Session.GetString("Avatar");
+﻿@{
+   ViewData["Title"] = "Account Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Account</h1>
-    <a href="/account/logout" class="btn btn-danger">Logout</a>
-    <div class="bg-light p-4">
-        <h3>ID: @id</h3>
-        <h3>Username: @username</h3>
-        <div style="width: 100px; height: 100px; margin: 0 auto;">
-            <img src="~/uploads/@avatar" alt="avatar"
-                style="width: 100%; height: 100%; object-fit:cover; border-radius: 50%">
-        </div>
-    </div>
-</div>
+<partial name="../../components/Account.cshtml" />

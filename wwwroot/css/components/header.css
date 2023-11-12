@@ -682,6 +682,16 @@
    margin-top: -2px;
 }
 
+.cart-modal__product-no-empty-body__content__amount__button  button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+   background: none;
+   border: none;
+}
+
 .cart-modal__product-no-empty-body__content__amount__amount-show {
    width: 36px;
    height: 24px;
@@ -702,6 +712,7 @@
    padding: 8px 16px;
    border: 2px solid #e12727;
    outline: none;
+   width: 100%;
 
    font-size: 13px;
    font-family: Arial, Helvetica, sans-serif;

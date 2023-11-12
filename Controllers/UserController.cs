@@ -1,5 +1,4 @@
-using DeathWishCoffee.Data;
-using DeathWishCoffee.Models.Domain;
+using DeathWishCoffee.Models.Main;
 using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -45,11 +44,58 @@ namespace DeathWishCoffee.Controllers
             _httpContext.HttpContext.Session.SetString("recommendProducts", rcmPrsJson);
         }
 
+        // [/user/order-history]
+        public IActionResult OrderHistory()
+        {
+            string userId = _httpContext.HttpContext.Session.GetString("Id");
+            if (string.IsNullOrEmpty(userId))
+                return RedirectToAction("Index", "Account");
+
+            string pageQuery = _httpContext.HttpContext.Request.Query["page"];
+            int page = 1;
+            int pageSize = 8;
+            if (!string.IsNullOrEmpty(pageQuery))
+            {
+                int pageNumber = int.Parse(pageQuery);
+                if (pageNumber <= 0)
+                    return RedirectToAction("PageNotFound", "Home");
+                else
+                    page = pageNumber;
+            }
+            int skip = (page - 1) * pageSize; // Số sản phẩm để bỏ qua
+
+            var orders = _deathWishCoffeeDbContext.Orders
+                        .Where(o => o.UserId.ToString() == userId)
+                        .Include(o => o.OrderDetails)
+                        .ThenInclude(oD => oD.Product)
+                        .ThenInclude(p => p.Images)
+                        .OrderByDescending(o => o.CreatedAt)
+                        .Skip(skip)
+                        .Take(pageSize)
+                        .ToList();
+
+            Console.WriteLine($"OrderLength: {orders.Count}");
+
+            return View(orders);
+        }
 
         // [/admin/users]
         [HttpGet]
         public IActionResult Index()
         {
+            // --Authentication
+            string curUserId = _httpContext.HttpContext.Session.GetString("Id");
+            if (string.IsNullOrEmpty(curUserId))
+                return RedirectToAction("Index", "Home");
+
+            var curUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id.ToString() == curUserId);
+            if (curUser == null)
+                return BadRequest("User does not exists");
+
+            if (!curUser.Admin)
+                return RedirectToAction("Index", "Home");
+            // Authentication--
+
             var users = _deathWishCoffeeDbContext.Users.ToList();
 
             return View("~/Views/Admin/AllUsers.cshtml", users);
@@ -84,9 +130,7 @@ namespace DeathWishCoffee.Controllers
 
             // if user does NOT EXISTS return bad request 
             if (user == null)
-            {
                 return BadRequest("Invalid username or password.");
-            }
 
             ViewBag.user = user;
             return View("~/Views/Admin/EditUser.cshtml");
@@ -128,7 +172,7 @@ namespace DeathWishCoffee.Controllers
 
             // get user in database again after edited
             var userEdited = _deathWishCoffeeDbContext.Users
-                        .Include(u => u.Cart)
+                        .Include(u => u.CartItems)
                         .ThenInclude(cartItem => cartItem.Product)
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Id == id);
@@ -143,9 +187,9 @@ namespace DeathWishCoffee.Controllers
             SetUpUserDataForAllPage(userEdited);
 
             // set CART data to session
-            SetUpCartDataForAllPage(userEdited.Cart);
+            SetUpCartDataForAllPage(userEdited.CartItems.ToList());
 
-            Console.WriteLine(_httpContext.HttpContext.Session.GetString("Username"));
+            // Console.WriteLine(_httpContext.HttpContext.Session.GetString("Username"));
 
             // return [/admin/users]
             return RedirectToAction("Index", "User");

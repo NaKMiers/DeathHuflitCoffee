@@ -1,4 +1,4 @@
-using DeathWishCoffee.Data;
+using DeathWishCoffee.Models.Main;
 using DeathWishCoffee.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,8 +38,8 @@ namespace DeathWishCoffee.Controllers
         {
             Console.WriteLine("AddNewReview");
 
-            Console.WriteLine("Title: " + form.Title);
-            Console.WriteLine("Text: " + form.Text);
+            // Console.WriteLine("Title: " + form.Title);
+            // Console.WriteLine("Text: " + form.Text);
 
             var reviewToProduct = _deathWishCoffeeDbContext.Products.FirstOrDefault(p => p.Id == productId);
 
@@ -56,7 +56,7 @@ namespace DeathWishCoffee.Controllers
             {
                 form.Text = "";
             }
-            var newReview = new Models.Domain.Review
+            var newReview = new Models.Main.Review
             {
                 ProductId = productId,
                 Title = form.Title,

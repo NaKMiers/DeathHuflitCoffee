@@ -48,10 +48,18 @@
                 min='0' required>
         </div>
 
-        @* Image *@
+        @* Image
         <div class="mb-3 form-group">
-            <label for="images" class="form-label">Images:</label>
-            <input name="imageList" type="file" class="form-control" id="images" multiple>
+        <label for="images" class="form-label">Images:</label>
+        <input name="imageList" type="file" class="form-control" id="images" multiple>
+        </div> *@
+
+        @* Image *@
+        <div id="admin-image-container">
+            <div class="d-flex align-center gap-2 mb-3">
+                <h6 class="d-inline">Image:</h6>
+                <button type="button" id="admin-add-image-btn" class="btn btn-warning btn-sm">Add Image</button>
+            </div>
         </div>
 
 

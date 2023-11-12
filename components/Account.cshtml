@@ -1,1 +1,71 @@
-<h1>Account</h1>
+@model DeathWishCoffee.Models.Main.User
+
+<div class="KRegister">
+   <div class="KRegister_Main pb-4">
+
+      <div class="KRegister_Main_header">
+         <h1 class="KRegister_Main_header_account">Account</h1>
+         <a href="/account/logout" class="KRegister_Main_header_logout  d-flex align-items-center; height: 50px">
+            <div class="KRegister_Main_header_logout__icon" style="margin-right:10px; width: 20px; height: 20px">
+               <svg style="width: 20px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                  fill="none" viewBox="0 0 18 19" style="width:12px">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4.5a3 3 0 116 0 3 3 0 01-6 0zm3-4a4 4 0 100 8 4 4 0 000-8zm5.58
+12.15c1.12.82 1.83 2.24 1.91 4.85H1.51c.08-2.6.79-4.03 1.9-4.85C4.66 11.75 6.5 11.5 9 11.5s4.35.26 5.58 1.15zM9
+10.5c-2.5 0-4.65.24-6.17 1.35C1.27 12.98.5 14.93.5 18v.5h17V18c0-3.07-.77-5.02-2.33-6.15-1.52-1.1-3.67-1.35-6.17-1.35z"
+                     fill="currentColor">
+                  </path>
+
+               </svg>
+            </div>
+            <p class="p-0 m-0" style="text-decoration: underline; min-width: 100px; line-height: 25px">Log out</p>
+         </a>
+         <br>
+         <br>
+      </div>
+
+      <div class="KRegister_Main_Text">
+         <div class="KRegister_Main_Text1">
+            <h2 style="font-size: 30px;" class="text-start p-0 fs-3">Order history</h2>
+            @* <p class="ps-0 pe-0">You haven't placed any orders yet.</p> *@
+            <a href="/user/order-history" class="btn btn-link ps-0 pe-0 text-secondary">Click here to see your
+               orders</a>
+         </div>
+         <div class="KRegister_Main_Text2">
+            <h2 style="margin-bottom: 10px;" class="text-start p-0 fs-3">Account details</h2>
+            <p class="pe-0 ps-0" style="margin-bottom:10px">
+               <b>Fullname:</b>
+               <span>@Model.Fullname</span>
+               <br>
+               <span>@Model.Country</span>
+            </p>
+            <p class="pe-0 ps-0" style="margin-bottom:10px">
+               <b>Address:</b> @(Model.Address != "" ? Model.Address : "Haven't add address yet.")
+            </p>
+            <p class="pe-0 ps-0" style="margin-bottom:10px">
+               <b>Username:</b> @(Model.Username != "" ? Model.Username : "Haven't add Username yet.")
+            </p>
+            <p class="pe-0 ps-0" style="margin-bottom:10px">
+               <b>Email:</b> @(Model.Email != "" ? Model.Email : "Haven't add Email yet.")
+            </p>
+            <p class="pe-0 ps-0" style="margin-bottom:10px">
+               <b>Phone:</b> @(Model.Phone != "" ? Model.Phone : "Haven't add Phone yet.")
+            </p>
+            <p class="pe-0 ps-0" style="margin-bottom:10px">
+               <b>Country:</b> @(Model.Country != "" ? Model.Country : "Haven't add Country yet.")
+            </p>
+
+            @* <a href="/account" class="ps-0 pe-0" style="color: white; text-decoration: underline; padding-left:
+            10px">
+            View addresses (1)
+            </a>
+            <p class="ps-0 pe-0">
+            <a href="/account" class="KRegister_Main_Manage_Your_Subscriptions "
+            style="color:white; text-decoration: underline;">
+            Manage Your Subscriptions
+            </a>
+            </p> *@
+         </div>
+      </div>
+
+   </div>
+</div>

@@ -5,7 +5,7 @@
 }
 .BlogCarousel__section-template--14566367264823__f44704c6-4d2b-4de8-82bc-a58b9d2d4c00-padding {
    padding-top: 0px;
-   padding-bottom: 15px;
+   padding-bottom: 74px;
    background: black;
 }
 .BlogCarousel__featured-blog .BlogCarousel__title-wrapper-with-link {
@@ -45,7 +45,7 @@
    padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
    display: flex;
    position: relative;
-   height: 45vh; /* Sử dụng viewport height */
+   height: 50vh; /* Sử dụng viewport height */
    padding: 0 5%; /* Sử dụng % cho padding để linh hoạt hơn */
 }
 
@@ -187,25 +187,35 @@
 .BlogCarousel__card-content {
    height: 100%;
 }
-.BlogCarousel__card-heading a {
+.BlogCarousel__card-heading,
+.Products__full-unstyled-link-fourcard {
    color: #fff;
    text-decoration: none;
    font-size: 16px;
    text-transform: uppercase;
    font-weight: 900;
    line-height: 24px;
+   text-align: left;
+}
+.Products__full-unstyled-link-fourcard.Products__tyles-hidden {
+   color: #000;
+   bottom: 12px;
+   position: relative;
 }
 .BlogCarousel__h2 {
    line-height: 12px;
 }
-.BlogCarousel__card-heading a:hover {
+.BlogCarousel__card-heading:hover {
+   text-decoration: none;
+}
+.Products__full-unstyled-link-fourcard:hover {
    color: #e12727;
    text-decoration: underline;
 }
 .BlogCarousel__article-card .BlogCarousel__card-information {
    display: flex;
    flex-direction: column;
-   padding: 15px 0 0;
+   padding: 20px 0 0;
 }
 .BlogCarousel__article-card-image-wrapper.BlogCarousel__card-media {
    width: 100%;
@@ -218,6 +228,7 @@
    position: absolute;
    width: 100%; /* Hình ảnh sẽ tự động thay đổi kích thước sao cho phù hợp với chiều rộng của thẻ div */
    height: 100%;
+   object-fit: cover;
 }
 .BlogCarousel__blog-post.BlogCarousel__grid-item.BlogCarousel__article.BlogCarousel__slider-slide.BlogCarousel__scroll-trigger.BlogCarousel__animate-slide-in {
    color: #fff;
@@ -231,17 +242,17 @@
 }
 @media only screen and (min-width: 1300px) {
    .BlogCarousel__slider-component-full-width {
-      height: 55vh;
+      height: 62vh;
    }
 }
 @media only screen and (max-width: 1300px) {
    .BlogCarousel__slider-component-full-width {
-      height: 60vh;
+      height: 65vh;
    }
 }
 @media only screen and (max-width: 1200px) {
    .BlogCarousel__slider-component-full-width {
-      height: 75vh;
+      height: 70vh;
       position: relative;
    }
    #BlogCarousel__Slider-template-14566367264823-f44704c6-4d2b-4de8-82bc-a58b9d2d4c00 {
@@ -258,6 +269,12 @@
    }
 }
 @media only screen and (max-width: 991px) {
+   .Products__full-unstyled-link-fourcard.Products__tyles-hidden {
+      color: #fff;
+   }
+   .Products__full-unstyled-link-fourcard.Products__tyles-hidden:hover {
+      color: #e12727;
+   }
    #BlogCarousel__arrowRight {
       width: 50px;
    }
@@ -307,7 +324,7 @@
       height: 80%;
    }
    .BlogCarousel__card-inner.BlogCarousel__color-background-2.BlogCarousel__gradient.BlogCarousel__ratio.BlogCarousel__head-picture {
-      height: 400%;
+      height: 374%;
    }
    .BlogCarousel__article-card-wrapper.BlogCarousel__card-wrapper.BlogCarousel__underline-links-hover:hover
       .BlogCarousel__motion-reduce {
@@ -433,6 +450,9 @@
    }
 }
 @media only screen and (max-width: 750px) {
+   .BlogCarousel__card-inner.BlogCarousel__color-background-2.BlogCarousel__gradient.BlogCarousel__ratio.BlogCarousel__head-picture {
+      height: 300%;
+   }
    .BlogCarousel__slider-component-full-width {
       height: 65vh;
    }

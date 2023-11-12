@@ -1,0 +1,140 @@
+.features{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.features-heading{
+    font-size: 60px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+}
+.text{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.features-text{
+    text-align: center;
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.features-table{
+    color: #ffffff;   
+    padding: 8px;
+    text-align: center;
+}
+.features text{
+    padding: 10px;
+}
+.features-table-custom{
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px auto;
+
+    
+}
+.detail-even th:not(:last-of-type) {
+    border-right: 1px solid #403D3C;
+}
+
+.row-title{
+    color: #000000;
+    background-color: #e12727;
+    height: 60px;
+    
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.row-subtitle{
+    font-size: 18px;
+    background-color: #403d3c;
+    height: 48px;
+}
+.detail-odd{
+    background-color: #201e1d;
+    height: 60px;
+    border-collapse: collapse;
+    
+}
+.detail-even{
+    background-color: #201e1d;
+        height: 60px;
+}
+/* định nghĩa trong mobile*/
+@media (max-width: 989px) {
+    .features {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .features-heading {
+        font-size: 40px;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .features-text {
+        text-align: center;
+        display: block;
+        font-size: 18px;
+        color: #fff;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .features-table {
+        color: #ffffff;
+        text-align: center;
+        padding: 8px;
+        overflow-x: scroll;
+    }
+
+    .features-table::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .features-table-custom {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px auto;
+            
+    }   
+    .detail-even th:not(:last-of-type) {
+        border-right: 1px solid #403D3C;
+    }
+
+    .row-title {
+        color: #000000;
+        background-color: #e12727;
+        height: 60px;
+
+        font-size: 14px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .row-subtitle {
+        font-size: 18px;
+        background-color: #403d3c;
+        height: 48px;
+    }
+
+    .detail-odd {
+        background-color: #201e1d;
+        height: 60px;
+        border-collapse: collapse;
+
+    }
+
+    .detail-even {
+        background-color: #201e1d;
+        height: 60px;
+    }
+    .features text {
+        padding: 10px;
+    }
+        
+}
