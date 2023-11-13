@@ -1,3 +1,6 @@
+.SearchResult_Header {
+   background: black;
+}
 .Searching {
    display: flex;
 }
