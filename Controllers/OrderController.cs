@@ -25,7 +25,7 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult AllOrders()
         {
-            Console.WriteLine("AllOrders");
+            // Console.WriteLine("AllOrders");
             // --Authentication
             string curUserId = _httpContext.HttpContext.Session.GetString("Id");
             if (string.IsNullOrEmpty(curUserId))
@@ -56,7 +56,7 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult AllOrdersByUser(Guid userId)
         {
-            Console.WriteLine("AllOrdersByUser");
+            // Console.WriteLine("AllOrdersByUser");
 
             // get all orders by userId from database
             var orders = _deathWishCoffeeDbContext.Orders
@@ -75,22 +75,22 @@ namespace DeathWishCoffee.Controllers
         }
 
         // [/admin/orders/detail/{id}]
-        // public IActionResult OrderDetail(Guid id)
-        // {
+        public IActionResult OrderDetail(Guid id)
+        {
 
-        //     // get order from database
-        //     var order = _deathWishCoffeeDbContext.Orders
-        //                         .Include(o => o.OrderDetails)
-        //                         .ThenInclude(oD => oD.Product)
-        //                         .ThenInclude(p => p.Images)
-        //                         .FirstOrDefault(o => o.Id == id);
+            // get order from database
+            var order = _deathWishCoffeeDbContext.Orders
+                        .Include(o => o.OrderDetails)
+                        .ThenInclude(oD => oD.Product)
+                        .ThenInclude(p => p.Images)
+                        .FirstOrDefault(o => o.Id == id);
 
-        //     // if orderDeatail does NOT EXIST => BadRequets
-        //     if (order == null)
-        //         return BadRequest("Order detail does not exist");
+            // if orderDeatail does NOT EXIST => BadRequets
+            if (order == null)
+                return BadRequest("Order detail does not exist");
 
-        //     return View("~/Views/Admin/OrderDetail.cshtml", order);
-        // }
+            return View("~/Views/Admin/OrderDetail.cshtml", order);
+        }
 
         // [/admin/orders/delete/{id}]
         public IActionResult DeleteOrder(Guid id)
@@ -121,7 +121,7 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult EditOrder(Guid id)
         {
-            Console.WriteLine("EditOrder");
+            // Console.WriteLine("EditOrder");
             // get order from database
             var orderToEdit = _deathWishCoffeeDbContext.Orders.FirstOrDefault(o => o.Id == id);
 
@@ -137,14 +137,13 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult EditOrder(EditOrderRequest form, Guid id)
         {
-            Console.WriteLine("EditOrder");
+            // Console.WriteLine("EditOrder");
 
             var orderToEditInDB = _deathWishCoffeeDbContext.Orders.FirstOrDefault(o => o.Id == id);
             // if orderToEdit does NOT EXIST => BadRequest
             if (orderToEditInDB == null)
                 return BadRequest("Order does not exist");
 
-            // Console.WriteLine("---------------------------------");
             // Console.WriteLine(form.Email);
             if (string.IsNullOrEmpty(form.Email))
                 form.Email = "";
@@ -176,8 +175,6 @@ namespace DeathWishCoffee.Controllers
             if (string.IsNullOrEmpty(form.Phone))
                 form.Phone = "";
             // Console.WriteLine(form.TotalAmount);
-
-            // Console.WriteLine("---------------------------------");
 
             // update ORDER
             orderToEditInDB.Status = "Active";

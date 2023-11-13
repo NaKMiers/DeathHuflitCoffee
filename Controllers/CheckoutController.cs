@@ -30,7 +30,7 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult Index(Guid userId)
         {
-            Console.WriteLine("Checkout");
+            // Console.WriteLine("Checkout");
 
             // get user from database
             var user = _deathWishCoffeeDbContext.Users
@@ -58,11 +58,10 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult Index(AddNewOrderRequest form, Guid userId)
         {
-            Console.WriteLine("NewOrder");
+            // Console.WriteLine("NewOrder");
 
             Guid orderId = Guid.NewGuid();
 
-            // Console.WriteLine("---------------------------------");
             // Console.WriteLine(form.Email);
             if (string.IsNullOrEmpty(form.Email))
                 form.Email = "";
@@ -96,12 +95,8 @@ namespace DeathWishCoffee.Controllers
             // Console.WriteLine(form.TotalAmount);
 
             // if (form.CartIds != null && form.CartIds.Count > 0)
-            // {
             //     foreach (var id in form.CartIds)
-            //     {
             //          Console.WriteLine("id: " + id);
-            //     }
-            // }
 
             var cartItems = _deathWishCoffeeDbContext.CartItems
                             .Where(cartItem => form.CartIds.Contains(cartItem.Id))

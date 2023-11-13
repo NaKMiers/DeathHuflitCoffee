@@ -74,7 +74,6 @@ namespace DeathWishCoffee.Controllers
                         .Take(pageSize)
                         .ToList();
 
-            Console.WriteLine($"OrderLength: {orders.Count}");
 
             return View(orders);
         }
@@ -105,7 +104,7 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult DeleteUser(Guid id)
         {
-            Console.WriteLine("DeleteUser");
+            // Console.WriteLine("DeleteUser");
 
             // select user to delete
             var userToDelete = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id == id);
@@ -139,7 +138,7 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult EditUser(RegisterRequest registerRequest, Guid id)
         {
-            Console.WriteLine("EditUser");
+            // Console.WriteLine("EditUser");
 
             // CREATE new user (Models.User) from RegisterRequest (ViewModels)
             if (string.IsNullOrEmpty(registerRequest.MiddleName))

@@ -42,7 +42,6 @@ namespace DeathWishCoffee.Controllers
                 return RedirectToAction("Index", "Home");
 
             ViewBag.UserId = _httpContext.HttpContext.Session.GetString("Id");
-            Console.WriteLine("===============" + ViewBag.UserId);
 
             return View(product);
         }
@@ -51,7 +50,7 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult AllProducts()
         {
-            Console.WriteLine("AllProducts");
+            // Console.WriteLine("AllProducts");
 
             // --Authentication
             string curUserId = _httpContext.HttpContext.Session.GetString("Id");
@@ -94,7 +93,7 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult AddNewProduct(AddNewProductRequest form, List<IFormFile> imageList)
         {
-            Console.WriteLine("AddNewProduct");
+            // Console.WriteLine("AddNewProduct");
 
             // create product id
             var productId = Guid.NewGuid();
@@ -382,7 +381,7 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult DeleteProduct(Guid id)
         {
-            Console.WriteLine("DeleteProduct");
+            // Console.WriteLine("DeleteProduct");
 
             // get product to delete by productId
             var productToDelete = _deathWishCoffeeDbContext.Products.FirstOrDefault(p => p.Id == id);
@@ -565,7 +564,6 @@ namespace DeathWishCoffee.Controllers
 
                 foreach (var item in form.Types)
                 {
-                    // Console.WriteLine("---------Type: " + item.Text);
                     if (string.IsNullOrEmpty(item.Text))
                         item.Text = "";
 

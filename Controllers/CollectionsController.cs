@@ -56,15 +56,12 @@ namespace DeathWishCoffee.Controllers
                     switch (sortBy)
                     {
                         case "a-z":
-                            // Console.WriteLine("a-z");
                             finalProducts = filteredProducts.OrderBy(product => product.Title);
                             break;
                         case "time-created":
-                            // Console.WriteLine("time-created");
                             // finalProducts = filteredProducts.OrderBy(product => product.Time);
                             break;
                         case "best-seller":
-                            // Console.WriteLine("best-seller");
                             // finalProducts = filteredProducts.OrderByDescending(product => product.SalesCount);
                             break;
                         default:
@@ -111,7 +108,14 @@ namespace DeathWishCoffee.Controllers
         // [/collections/]
         public IActionResult Index()
         {
-            return View();
+            var randomProducts = _deathWishCoffeeDbContext.Products
+                .Include(p => p.Sizes)
+                .Include(p => p.Images)
+                .OrderBy(x => Guid.NewGuid())
+                .Take(8)
+                .ToList();
+
+            return View(randomProducts);
         }
 
         // [/collections/coffee]

@@ -36,10 +36,7 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult AddNewReview(AddNewReviewRequest form, Guid productId)
         {
-            Console.WriteLine("AddNewReview");
-
-            // Console.WriteLine("Title: " + form.Title);
-            // Console.WriteLine("Text: " + form.Text);
+            // Console.WriteLine("AddNewReview");
 
             var reviewToProduct = _deathWishCoffeeDbContext.Products.FirstOrDefault(p => p.Id == productId);
 
@@ -73,7 +70,7 @@ namespace DeathWishCoffee.Controllers
         // [/admin/reviews/delete/{id}]
         public IActionResult DeleteReview(Guid id)
         {
-            Console.WriteLine("DeleteReivew");
+            // Console.WriteLine("DeleteReivew");
 
             // get review to delete from reviewId
             var reviewToDelete = _deathWishCoffeeDbContext.Reviews.FirstOrDefault(r => r.Id == id);
@@ -110,7 +107,7 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult EditReview(AddNewReviewRequest form, Guid id)
         {
-            Console.WriteLine("EditReview");
+            // Console.WriteLine("EditReview");
 
             // prevent null & empty string
             if (string.IsNullOrEmpty(form.Title))

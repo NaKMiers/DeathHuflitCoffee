@@ -48,7 +48,7 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult MyCart(Guid userId)
         {
-            Console.WriteLine("MyCart");
+            // Console.WriteLine("MyCart");
 
             // get user from database
             var user = _deathWishCoffeeDbContext.Users
@@ -92,7 +92,7 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult AddToCart(AddToCartRequest form, Guid userId, Guid productId)
         {
-            Console.WriteLine("AddToCart");
+            // Console.WriteLine("AddToCart");
 
             if (userId == null || userId == Guid.Empty)
             {
@@ -120,16 +120,6 @@ namespace DeathWishCoffee.Controllers
 
             // if cartItem is ALREADY EXISTS in cart
             var existingCartItem = user.CartItems.FirstOrDefault(ci => ci.ProductId == productId);
-            // Console.WriteLine("-----------------------------------------------------------------");
-            // if (existingCartItem != null)
-            // {
-            //     Console.WriteLine(existingCartItem.Id);
-            //     Console.WriteLine(existingCartItem.UserId);
-            //     Console.WriteLine(existingCartItem.ProductId);
-            //     Console.WriteLine(existingCartItem.Size);
-            //     Console.WriteLine(existingCartItem.Price);
-            // }
-            // Console.WriteLine("-----------------------------------------------------------------");
 
             if (existingCartItem != null && form.Size == existingCartItem.Size)
             {
@@ -183,7 +173,7 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult DeleteCartItem(Guid cartItemId)
         {
-            Console.WriteLine("DeleteCartItem");
+            // Console.WriteLine("DeleteCartItem");
 
             // get cartItem to delete from database
             var cartItemToDelete = _deathWishCoffeeDbContext.CartItems.FirstOrDefault(c => c.Id == cartItemId);
@@ -215,7 +205,8 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult IncreaseCartItemQuantity(Guid cartItemId)
         {
-            Console.WriteLine("IncreaseCartItemQuantity");
+            // Console.WriteLine("IncreaseCartItemQuantity");
+
             // get cartItem from database
             var cartItem = _deathWishCoffeeDbContext.CartItems
                         .Include(ci => ci.Product)
@@ -263,7 +254,8 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult DecreaseCartItemQuantity(Guid cartItemId)
         {
-            Console.WriteLine("DecreaseCartItemQuantity");
+            // Console.WriteLine("DecreaseCartItemQuantity");
+
             // get cartItem from database
             var cartItem = _deathWishCoffeeDbContext.CartItems
                         .Include(ci => ci.Product)

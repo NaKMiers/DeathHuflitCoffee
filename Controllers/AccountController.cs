@@ -54,7 +54,7 @@ namespace DeathWishCoffee.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            Console.WriteLine("Account");
+            // Console.WriteLine("Account");
             string userId = _httpContext.HttpContext.Session.GetString("Id");
 
             // user is not login yet
@@ -62,7 +62,7 @@ namespace DeathWishCoffee.Controllers
                 return RedirectToAction("Login", "Account");
 
             var user = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id.ToString() == userId);
-            Console.WriteLine("userId: " + userId);
+
             // if user does NOT EXIST => BadRequest
             if (user == null)
                 return BadRequest("User does not exist");
@@ -85,10 +85,7 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult Login(LoginRequest loginRequest)
         {
-            Console.WriteLine("Login");
-
-            Console.WriteLine(loginRequest.Email);
-            Console.WriteLine(loginRequest.Password);
+            // Console.WriteLine("Login");
 
             // check user if exist
             var user = _deathWishCoffeeDbContext.Users
@@ -132,7 +129,7 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult Register(RegisterRequest form)
         {
-            Console.WriteLine("Register");
+            // Console.WriteLine("Register");
 
             // check if the user exists or not
             var existedUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Email == form.Email.Trim());
@@ -197,8 +194,6 @@ namespace DeathWishCoffee.Controllers
                         .ThenInclude(product => product.Images)
                         .FirstOrDefault(u => u.Email == form.Email && u.Password == form.Password);
 
-            Console.WriteLine("OOKOKOKOKOKOKO==============================");
-            Console.WriteLine(form.Email);
             // clear all session before update again
             // _httpContext.HttpContext.Session.Clear();
             GetRecommendProducts();
