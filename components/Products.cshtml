@@ -636,19 +636,29 @@
 
 
 // Lấy phần tử select
-var selectElement = document.getElementById("Products__SortBy");
+var selectElement1 = document.getElementById("Products__SortBy");
+var selectElement2 = document.getElementById("SortBy");
 
 // Lắng nghe sự kiện khi giá trị của select thay đổi
-selectElement.addEventListener("change", function () {
+selectElement1.addEventListener("change", handleSortChange);
+selectElement2.addEventListener("change", handleSortChange);
+
+// Gọi hàm sắp xếp khi trang được tải
+document.addEventListener("DOMContentLoaded", function () {
+   sortProductList();
+});
+
+// Hàm xử lý sự kiện thay đổi giá trị của select
+function handleSortChange(event) {
    // Lấy giá trị được chọn từ select
-   var selectedValue = selectElement.value;
+   var selectedValue = event.target.value;
 
    // Lưu giá trị được chọn vào localStorage
    localStorage.setItem("selectedSort", selectedValue);
 
    // Gọi hàm sắp xếp
    sortProductList();
-});
+}
 
 // Hàm sắp xếp danh sách sản phẩm
 function sortProductList() {
@@ -706,7 +716,7 @@ function sortProductList() {
       // Thêm các trường hợp sắp xếp khác tại đây nếu cần
 
       default:
-         // Mặc định sắp xếp theo giá trị "Featured" hoặc các trường hợp khác
+         // Mặc định sắp xếp theo giá trị "manual" hoặc các trường hợp khác
          break;
    }
 
@@ -721,8 +731,4 @@ function sortProductList() {
    });
 }
 
-// Gọi hàm sắp xếp khi trang được tải
-document.addEventListener("DOMContentLoaded", function () {
-   sortProductList();
-});
 </script>
