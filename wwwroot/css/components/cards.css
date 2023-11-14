@@ -52,7 +52,7 @@
 .nextcard-button{
     display: none;
 }
-.prevous-button{
+.previouscard-button{
     display: none;
 }
 
@@ -93,7 +93,7 @@
         max-width: 100%;
         height: auto;
     }
-    .prevous-button{
+    .previouscard-button{
         left: 0px;
         display: block;
         background-color: transparent;
@@ -106,7 +106,7 @@
         background-color: transparent;
         border: 0;
     }
-    .prevous-button,
+    .previouscard-button,
     .nextcard-button {
         position: absolute;
         top: 50%; /* Đặt ở giữa theo trục dọc */
