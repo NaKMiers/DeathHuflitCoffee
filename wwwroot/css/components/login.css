@@ -17,6 +17,7 @@
    background-color: black;
    color: white;
    text-decoration: none;
+   
  }
 
  .Klogin__login__strong{
@@ -35,7 +36,7 @@
  .Klogin input[type='text'],
  .Klogin input[type='email'],
  .Klogin input[type='password'] {
-   width: 90%;
+   width: 100%;
    padding: 10px;
    margin: 10px 0;
 
@@ -69,6 +70,10 @@
 
  .Klogin_signin1 {
    padding-bottom: 10px;
+   text-align: center;
+ }
+ .Klogin_Signin{
+  text-align: center;
  }
  .Klogin__forgot__pass{
   color:white;padding-right: 330px;text-decoration: underline
@@ -128,6 +133,7 @@
 
    .Klogin_Signin {
      width: 300px;
+     text-align: center;
    }
 
  }

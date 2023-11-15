@@ -6,20 +6,28 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Diagnostics;
 
+// ten khong gian
 namespace DeathWishCoffee.Controllers
 {
+    //Controller: Chịu trách nhiệm xử lý các yêu cầu từ người dùng, 
+    //thực hiện logic xử lý, và cập nhật Model hoặc View tương ứng.
     public class AccountController : Controller
     {
+        //readonly: sau khi trường đã nhận giá trị, giá trị đó không thể thay đổi trong suốt vòng đời của đối tượng.
+        //dea1: tenlop
+        //_dea1: ten truong
         private readonly DeathWishCoffeeDbContext _deathWishCoffeeDbContext;
+
         private readonly IHttpContextAccessor _httpContext;
 
         // constructor
+        // khởi tạo 2 đối tượng và nhnaj giá trị trả về
         public AccountController(DeathWishCoffeeDbContext deathWishCoffeeDbContext, IHttpContextAccessor httpContextAccessor)
         {
             _deathWishCoffeeDbContext = deathWishCoffeeDbContext;
             _httpContext = httpContextAccessor;
         }
-
+        //Phương thức SetUpUserDataForAllPage có mục đích thiết lập dữ liệu người dùng vào Session của HttpContext. Session trong ASP.NET Core là một cơ chế lưu trữ tạm thời trên máy chủ, giúp lưu trữ thông tin liên quan đến phiên làm việc của người dùng.
         public void SetUpUserDataForAllPage(User user)
         {
             _httpContext.HttpContext.Session.SetString("Id", user.Id.ToString());
@@ -27,14 +35,17 @@ namespace DeathWishCoffee.Controllers
             // _httpContext.HttpContext.Session.SetString("Avatar", user.Avatar);
         }
 
+        //Phương thức SetUpCartDataForAllPage có mục đích thiết lập dữ liệu giỏ hàng (cart) của người dùng vào Session của HttpContext. 
         public void SetUpCartDataForAllPage(List<CartItem> cart)
         {
             string myCartCovertedToJson = JsonConvert.SerializeObject(cart);
             _httpContext.HttpContext.Session.SetString("Cart", myCartCovertedToJson);
         }
+        //Phương thức GetRecommendProducts có mục đích lấy thông tin về sản phẩm được đề xuất (recommend products) từ cơ sở dữ liệu và lưu trữ nó vào Session của HttpContext. 
 
         public void GetRecommendProducts()
         {
+            //: Sử dụng Include để chỉ định rằng các thuộc tính Images, Sizes, và InsideTypes của đối tượng Product cũng được load từ cơ sở dữ liệu.
             var recommendProducts = _deathWishCoffeeDbContext.Products
                                     .Include(p => p.Images)
                                     .Include(p => p.Sizes)
@@ -42,6 +53,7 @@ namespace DeathWishCoffee.Controllers
                                     .Take(2)
                                     .ToList();
 
+            //có mục đích chuyển đổi đối tượng recommendProducts (một danh sách các sản phẩm) thành một chuỗi JSON
             string rcmPrsJson = JsonConvert.SerializeObject(recommendProducts, new JsonSerializerSettings
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
@@ -58,9 +70,10 @@ namespace DeathWishCoffee.Controllers
             string userId = _httpContext.HttpContext.Session.GetString("Id");
 
             // user is not login yet
+            //là một điều kiện kiểm tra xem có giá trị "userId" trong Session không. Nếu giá trị này là null hoặc chuỗi rỗng, điều này có nghĩa là người dùng chưa đăng nhập hoặc phiên làm việc đã kết thúc.
             if (string.IsNullOrEmpty(userId))
                 return RedirectToAction("Login", "Account");
-
+            //có nhiệm vụ truy vấn cơ sở dữ liệu để lấy thông tin về người dùng (user) dựa trên giá trị của userId
             var user = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id.ToString() == userId);
 
             // if user does NOT EXIST => BadRequest
@@ -72,10 +85,12 @@ namespace DeathWishCoffee.Controllers
 
         // [/account/login]
         [HttpGet]
+
         public IActionResult Login()
         {
             // user is already login
             if (_httpContext.HttpContext.Session.GetString("Id") != null)
+                //Nếu người dùng đã đăng nhập, phương thức chuyển hướng (redirect) đến action "Index" của controller "Account" bằng cách sử dụng RedirectToAction.
                 return RedirectToAction("Index", "Account");
 
             // return View("~/Views/Admin/Login.cshtml");
@@ -95,9 +110,10 @@ namespace DeathWishCoffee.Controllers
                         .FirstOrDefault(u => u.Email == loginRequest.Email && u.Password == loginRequest.Password);
 
             // return bad request if user does NOT EXISTS
+            // sai mk
             if (user == null)
                 return BadRequest("Invalid email or password.");
-
+            //để lấy và lưu trữ thông tin về sản phẩm được đề xuất vào Session.
             GetRecommendProducts();
 
             // set USER data to session
@@ -111,6 +127,8 @@ namespace DeathWishCoffee.Controllers
 
         // [/account/logout]
         [HttpGet]
+        //xử lí đăng xuất
+
         public IActionResult Logout()
         {
             _httpContext.HttpContext.Session.Clear();
