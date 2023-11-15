@@ -20,8 +20,10 @@ image = "https://bom.so/UAHpyS"
 
 
 @if (collections != null && collections.Count > 0)
+{
     @foreach (var item in collections)
     {
-        <partial name="../../components/ContentBanner5.cshtml" />
+        <partial name="../../components/ContentBanner5.cshtml" model=item />
         <partial name="../../components/Carousel1.cshtml" />
     }
+}

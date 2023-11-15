@@ -8,6 +8,7 @@
    display: flex;
    align-items: center;
    font-size: 1rem;
+   background: #000;
 }
 
 .Reviews__star-rating {
