@@ -1,0 +1,28 @@
+@* @model List<DeathWishCoffee.Models.Main.Order> *@
+@{
+    ViewData["Title"] = "All Orders Statistic";
+    var userId = ViewBag.UserId;
+}
+
+<div class="bg-light pt-5 overflow-scroll">
+    <a href="/admin" class="btn btn-secondary mb-3">
+        Back
+    </a>
+
+    <h2 class="AllOrdersByUser__tiltle">Orders Statistic: @userId</h2>
+    <table class="table">
+        <thead>
+            <tr class="AllOderStatistic__Content-type">
+                <th class="AllOderStatistic__type">Products</th>
+                <th class="AllOderStatistic__type">ID</th>
+                <th class="AllOderStatistic__type">Quantity Purchased</th>
+                <th class="AllOderStatistic__type">remain</th>
+                <th class="AllOderStatistic__type">Status</th>
+                <th class="AllOderStatistic__type">CreatedAt</th>
+                <th class="AllOderStatistic__type">LastModifiedAt</th>
+                <th class="AllOderStatistic__type">Delete</th>
+                <th class="AllOderStatistic__type">Edit</th>
+            </tr>
+        </thead>
+    </table>
+</div>

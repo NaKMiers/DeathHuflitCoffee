@@ -1,0 +1,9 @@
+.AllOderStatistic__Content-type {
+   display: flex;
+   justify-content: center;
+   gap: 50px;
+}
+.AllOderStatistic__type {
+   text-align: center;
+   border: 1px solid #ccc;
+}

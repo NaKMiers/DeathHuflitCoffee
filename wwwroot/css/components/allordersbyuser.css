@@ -1,0 +1,9 @@
+.AllOrderByUser__Content-type {
+   display: flex;
+   justify-content: center;
+   gap: 40px;
+}
+.AllOrderByUser__type {
+   text-align: center;
+   border: 1px solid #ccc !important;
+}

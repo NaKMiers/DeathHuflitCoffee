@@ -51,7 +51,36 @@ namespace DeathWishCoffee.Controllers
 
             return View("~/Views/Admin/AllOrders.cshtml", orders);
         }
+        // [/admin/orders-statistic]
+        [HttpGet]
+        public IActionResult AllOrderStatistic()
+        {
+            // Console.WriteLine("AllOrders");
+            // --Authentication
+            string curUserId = _httpContext.HttpContext.Session.GetString("Id");
+            if (string.IsNullOrEmpty(curUserId))
+                return RedirectToAction("Index", "Home");
 
+            var curUser = _deathWishCoffeeDbContext.Users.FirstOrDefault(u => u.Id.ToString() == curUserId);
+            if (curUser == null)
+                return BadRequest("User does not exists");
+
+            if (!curUser.Admin)
+                return RedirectToAction("Index", "Home");
+            // Authentication--
+
+            // get all orders from database
+            var orders = _deathWishCoffeeDbContext.Orders
+                        .Include(o => o.OrderDetails)
+                        .ThenInclude(oD => oD.Product)
+                        .ToList();
+
+            // if order does NOT EXIST => BadRequest
+            if (orders == null)
+                return BadRequest("Orders do not exist");
+
+            return View("~/Views/Admin/AllOrderStatistic.cshtml", orders);
+        }
         // [/admin/orders/{userId}]
         [HttpGet]
         public IActionResult AllOrdersByUser(Guid userId)
