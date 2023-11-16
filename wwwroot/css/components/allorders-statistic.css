@@ -1,9 +1,20 @@
-.AllOderStatistic__Content-type {
-   display: flex;
-   justify-content: center;
-   gap: 50px;
-}
 .AllOderStatistic__type {
    text-align: center;
    border: 1px solid #ccc;
+}
+.AllOderStatistic__Delete {
+   background-color: #d24728;
+   width: 100%;
+   color: #fff;
+   font-size: 14px;
+   font-weight: 550;
+   text-transform: uppercase;
+}
+.AllOderStatistic__Edit {
+   background: rgb(12, 105, 226);
+   width: 100%;
+   color: #fff;
+   font-size: 14px;
+   font-weight: 550;
+   text-transform: uppercase;
 }

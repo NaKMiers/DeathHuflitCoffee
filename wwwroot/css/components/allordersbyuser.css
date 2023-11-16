@@ -1,9 +1,20 @@
-.AllOrderByUser__Content-type {
-   display: flex;
-   justify-content: center;
-   gap: 40px;
-}
 .AllOrderByUser__type {
    text-align: center;
    border: 1px solid #ccc !important;
+}
+.AllOrderByUser__Delete {
+   background-color: #d24728;
+   width: 100%;
+   color: #fff;
+   font-size: 14px;
+   font-weight: 550;
+   text-transform: uppercase;
+}
+.AllOrderByUser__Edit {
+   background: rgb(12, 105, 226);
+   width: 100%;
+   color: #fff;
+   font-size: 14px;
+   font-weight: 550;
+   text-transform: uppercase;
 }
