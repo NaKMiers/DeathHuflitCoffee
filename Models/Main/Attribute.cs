@@ -19,3 +19,4 @@ public partial class Attribute
 
     public virtual Product Product { get; set; } = null!;
 }
+
