@@ -5,61 +5,82 @@
 
 <div class="bg-light pt-5 overflow-scroll">
     <a href="/admin" class="btn btn-secondary mb-3">
-        Back
+        <i class="fas fa-arrow-left"></i> Back
     </a>
 
-    <h2>Orders List:</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Delete</th>
-                <th>Edit</th>
-                <th>Order Detail</th>
-                <th>This user's orders</th>
+    <h2 style="border-bottom:2px solid #000; font-size: 40px">Orders List:</h2>
 
-                <th>ID</th>
-                <th>User ID</th>
-                <th>Total Amount</th>
-                <th>Status</th>
-                <th>Products</th>
-                <th>CreatedAt</th>
-                <th>LastModifiedAt</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var order in Model)
-            {
-                <tr>
-                    <td>
-                        <a href="/admin/orders/delete/@order.Id" class="btn btn-danger">Delete</a>
-                    </td>
-                    <td>
-                        <a href="/admin/orders/edit/@order.Id" class="btn btn-info">Edit</a>
-                    </td>
-                    <td>
-                        <a href="/admin/orders/detail/@order.Id" class="btn btn-warning">Detail</a>
-                    </td>
-                    <td>
-                        <a href="/admin/orders/@order.UserId" class="btn btn-success">This user's orders</a>
-                    </td>
+    <ul class="order-list">
+        @foreach (var order in Model)
+        {
+            <li class="order-item">
+                <div class="action-buttons" style="padding-top: 20px">
+                    <a href="/admin/orders/delete/@order.Id" class="btn btn-danger">Delete</a>
+                    <a href="/admin/orders/edit/@order.Id" class="btn btn-info">Edit</a>
+                    <a href="/admin/orders/detail/@order.Id" class="btn btn-warning">Detail</a>
+                    <a href="/admin/orders/@order.UserId" class="btn btn-success">This user's orders</a>
+                </div>
 
-                    <td>@order.Id</td>
-                    <td>@order.UserId</td>
-                    <td>@order.TotalAmount</td>
-                    <td>@order.Status</td>
-                    <td>
+                <div class="order-details" style="border-bottom: 1px solid rgb(131, 115, 123);">
+                    <p><strong>ID:</strong> @order.Id</p>
+                    <p><strong>User ID:</strong> @order.UserId</p>
+                    <p><strong>Total Amount:</strong> @order.TotalAmount</p>
+                    <p><strong>Status:</strong> @order.Status</p>
+                    <p><strong>Products:</strong>
                         @if (order.OrderDetails != null && order.OrderDetails.Count > 0)
                         {
-                            @foreach (var oD in order.OrderDetails)
-                            {
-                                <p>@oD.Product?.Title</p>
-                            }
+                        <ul class="product-list">
+                                @foreach (var oD in order.OrderDetails)
+                                {
+                                <li>@oD.Product?.Title</li>
+                                }
+                        </ul>
                         }
-                    </td>
-                    <td>@order.CreatedAt</td>
-                    <td>@order.LastModifiedAt</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+                    </p>
+                    <p><strong>CreatedAt:</strong> @order.CreatedAt</p>
+                    <p><strong>LastModifiedAt:</strong> @order.LastModifiedAt</p>
+                </div>
+            </li>
+        }
+    </ul>
 </div>
+<style>
+    .btn-secondary {
+        color: #fff;
+        background-color: #565e64;
+    }
+
+    .btn-secondary:hover {
+        color: #fff;
+        background-color: #000;
+        border: 1px solid #565e64;
+    }
+
+    .btn-danger {
+        color: #fff;
+    }
+
+    .btn-danger:hover {
+        color: red;
+        background-color: #000;
+        border: 1px solid red;
+    }
+
+    .btn-info:hover {
+        color: #3132f2;
+        background-color: #000;
+        border: 1px solid #3132f2;
+    }
+
+    .btn-warning:hover {
+        color: #ffc239;
+        background-color: #000;
+        border: 1px solid #ffc239;
+    }
+
+    .btn-success:hover {
+        color: #157347;
+        background-color: #000;
+        border: 1px solid #157347;
+    }
+</style>
