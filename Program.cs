@@ -270,14 +270,18 @@ app.MapControllerRoute(
     pattern: "/admin/orders",
     defaults: new { controller = "Order", action = "AllOrders" }
 );
-
+// [/admin/orders-statistic]
+app.MapControllerRoute(
+    name: "AllOrderStatistic",
+    pattern: "/admin/orders-statistic",
+    defaults: new { controller = "Order", action = "AllOrderStatistic" }
+);
 // [/admin/orders/{userId}]
 app.MapControllerRoute(
     name: "AllOrdersByUser",
     pattern: "/admin/orders/{userId}",
     defaults: new { controller = "Order", action = "AllOrdersByUser" }
 );
-
 // [/admin/orders/detail/{id}]
 app.MapControllerRoute(
     name: "AllOrdersByUser",
