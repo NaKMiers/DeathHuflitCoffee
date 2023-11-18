@@ -122,6 +122,19 @@ namespace DeathWishCoffee.Controllers
                 _deathWishCoffeeDbContext.OrderDetails.AddRange(orderDetails);
             }
 
+            // update product remain
+            cartItems.ForEach(cartItem =>
+            {
+                var product = _deathWishCoffeeDbContext.Products
+                            .FirstOrDefault(p => p.Id == cartItem.ProductId);
+
+                product.Remain -= cartItem.Quantity;
+
+                Console.WriteLine("====================================");
+                Console.WriteLine("product.Remain: " + product.Remain);
+                Console.WriteLine("====================================");
+            });
+
             // Console.WriteLine("---------------------------------");
 
             // create NEW ORDER

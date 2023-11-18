@@ -55,6 +55,7 @@ namespace DeathWishCoffee.Controllers
             }
             var newReview = new Models.Main.Review
             {
+                Id = Guid.NewGuid(),
                 ProductId = productId,
                 Title = form.Title,
                 Text = form.Text,

@@ -209,23 +209,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div data-bv-show="inline_rating" data-bv-product-id="6790239289399"
+                                            @* <div data-bv-show="inline_rating" data-bv-product-id="6790239289399"
                                                 data-bv-redirect-url="/products/classic-long-sleeve-1" data-bv-seo="false"
                                                 data-bv-ready="true">
-                                                <div><a id="1d17152a-b524-4baf-b92f-f97dad53d4f2"
+                                                <div>
+                                                    <a id="1d17152a-b524-4baf-b92f-f97dad53d4f2"
                                                         href="/products/classic-long-sleeve-1"
                                                         class="Products__bv-maincontainer Products__bv-hover"
                                                         aria-label="0.0 out of 5 stars.  ">
                                                         <div class="Products__bv-stars-component-container" aria-hidden="true">
                                                             <div class="Products__bv-stars-component-container"
                                                                 aria-hidden="true">
-                                                               @{
-    int ketqua = rd.Next(1,5);
-    string formattedKetqua = string.Format("{0:0.0}", (double)ketqua);
-}
+                                                                @{
+                                                                    int ketqua = rd.Next(1, 5);
+                                                                    string formattedKetqua = string.Format("{0:0.0}",
+                                                                    (double)ketqua);
+                                                                }
                                                                 @for (int i = 1; i <= ketqua; i++)
                                                                 {
-
                                                                     <span class="Products__bv-stars-svg-no-wrap"
                                                                         aria-hidden="true"><svg focusable="false"
                                                                             xmlns="http://www.w3.org/2000/svg" width="16px"
@@ -252,21 +253,13 @@
                                                                             </defs>
                                                                         </svg>
                                                                     </span>
-
                                                                 }
                                                             </div>
                                                             <span>@formattedKetqua</span>
                                                             <span>(@rdd.Next(4227))</span>
-                                                            @* <div class="Products__bv-averageRating-component-container"
-                                                    aria-hidden="true">
-                                                    <div class="Products__bv-text">5.0</div>
-                                                    </div>
-                                                    <div class="Products__bv-numReviews-component-container"
-                                                    aria-hidden="true">
-                                                    <div class="Products__bv-text">(0)</div>
-                                                    </div> *@
-                                                    </a></div>
-                                            </div>
+                                                    </a>
+                                                </div>
+                                            </div> *@
                                         </div>
                                     </div>
                                     <div class="card__badge bottom left"></div>
@@ -635,100 +628,100 @@
     });
 
 
-// Lấy phần tử select
-var selectElement1 = document.getElementById("Products__SortBy");
-var selectElement2 = document.getElementById("SortBy");
+    // Lấy phần tử select
+    var selectElement1 = document.getElementById("Products__SortBy");
+    var selectElement2 = document.getElementById("SortBy");
 
-// Lắng nghe sự kiện khi giá trị của select thay đổi
-selectElement1.addEventListener("change", handleSortChange);
-selectElement2.addEventListener("change", handleSortChange);
+    // Lắng nghe sự kiện khi giá trị của select thay đổi
+    selectElement1.addEventListener("change", handleSortChange);
+    selectElement2.addEventListener("change", handleSortChange);
 
-// Gọi hàm sắp xếp khi trang được tải
-document.addEventListener("DOMContentLoaded", function () {
-   sortProductList();
-});
+    // Gọi hàm sắp xếp khi trang được tải
+    document.addEventListener("DOMContentLoaded", function () {
+        sortProductList();
+    });
 
-// Hàm xử lý sự kiện thay đổi giá trị của select
-function handleSortChange(event) {
-   // Lấy giá trị được chọn từ select
-   var selectedValue = event.target.value;
+    // Hàm xử lý sự kiện thay đổi giá trị của select
+    function handleSortChange(event) {
+        // Lấy giá trị được chọn từ select
+        var selectedValue = event.target.value;
 
-   // Lưu giá trị được chọn vào localStorage
-   localStorage.setItem("selectedSort", selectedValue);
+        // Lưu giá trị được chọn vào localStorage
+        localStorage.setItem("selectedSort", selectedValue);
 
-   // Gọi hàm sắp xếp
-   sortProductList();
-}
+        // Gọi hàm sắp xếp
+        sortProductList();
+    }
 
-// Hàm sắp xếp danh sách sản phẩm
-function sortProductList() {
-   // Lấy giá trị được lưu trữ trong localStorage
-   var selectedValue = localStorage.getItem("selectedSort") || "manual";
+    // Hàm sắp xếp danh sách sản phẩm
+    function sortProductList() {
+        // Lấy giá trị được lưu trữ trong localStorage
+        var selectedValue = localStorage.getItem("selectedSort") || "manual";
 
-   // Lấy danh sách sản phẩm cần sắp xếp
-   var productList = document.querySelectorAll(".Products__items-list li");
+        // Lấy danh sách sản phẩm cần sắp xếp
+        var productList = document.querySelectorAll(".Products__items-list li");
 
-   // Chuyển NodeList thành mảng để sử dụng sort
-   var productListArray = Array.from(productList);
+        // Chuyển NodeList thành mảng để sử dụng sort
+        var productListArray = Array.from(productList);
 
-   // Sắp xếp danh sách sản phẩm dựa trên giá trị được chọn
-   switch (selectedValue) {
-      case "title-ascending":
-         productListArray.sort(function (a, b) {
-            var titleA = a.querySelector(".card__heading a").textContent.toUpperCase();
-            var titleB = b.querySelector(".card__heading a").textContent.toUpperCase();
-            return titleA.localeCompare(titleB);
-         });
-         break;
+        // Sắp xếp danh sách sản phẩm dựa trên giá trị được chọn
+        switch (selectedValue) {
+            case "title-ascending":
+                productListArray.sort(function (a, b) {
+                    var titleA = a.querySelector(".card__heading a").textContent.toUpperCase();
+                    var titleB = b.querySelector(".card__heading a").textContent.toUpperCase();
+                    return titleA.localeCompare(titleB);
+                });
+                break;
 
-      case "title-descending":
-         productListArray.sort(function (a, b) {
-            var titleA = a.querySelector(".card__heading a").textContent.toUpperCase();
-            var titleB = b.querySelector(".card__heading a").textContent.toUpperCase();
-            return titleB.localeCompare(titleA);
-         });
-         break;
+            case "title-descending":
+                productListArray.sort(function (a, b) {
+                    var titleA = a.querySelector(".card__heading a").textContent.toUpperCase();
+                    var titleB = b.querySelector(".card__heading a").textContent.toUpperCase();
+                    return titleB.localeCompare(titleA);
+                });
+                break;
 
-      case "price-ascending":
-         productListArray.sort(function (a, b) {
-            var priceA = parseFloat(
-               a.querySelector(".price-item--sale").textContent.replace("$", "").replace(",", "")
-            );
-            var priceB = parseFloat(
-               b.querySelector(".price-item--sale").textContent.replace("$", "").replace(",", "")
-            );
-            return priceA - priceB;
-         });
-         break;
+            case "price-ascending":
+                productListArray.sort(function (a, b) {
+                    var priceA = parseFloat(
+                        a.querySelector(".price-item--sale").textContent.replace("$", "").replace(",", "")
+                    );
+                    var priceB = parseFloat(
+                        b.querySelector(".price-item--sale").textContent.replace("$", "").replace(",", "")
+                    );
+                    return priceA - priceB;
+                });
+                break;
 
-      case "price-descending":
-         productListArray.sort(function (a, b) {
-            var priceA = parseFloat(
-               a.querySelector(".price-item--sale").textContent.replace("$", "").replace(",", "")
-            );
-            var priceB = parseFloat(
-               b.querySelector(".price-item--sale").textContent.replace("$", "").replace(",", "")
-            );
-            return priceB - priceA;
-         });
-         break;
+            case "price-descending":
+                productListArray.sort(function (a, b) {
+                    var priceA = parseFloat(
+                        a.querySelector(".price-item--sale").textContent.replace("$", "").replace(",", "")
+                    );
+                    var priceB = parseFloat(
+                        b.querySelector(".price-item--sale").textContent.replace("$", "").replace(",", "")
+                    );
+                    return priceB - priceA;
+                });
+                break;
 
-      // Thêm các trường hợp sắp xếp khác tại đây nếu cần
+            // Thêm các trường hợp sắp xếp khác tại đây nếu cần
 
-      default:
-         // Mặc định sắp xếp theo giá trị "manual" hoặc các trường hợp khác
-         break;
-   }
+            default:
+                // Mặc định sắp xếp theo giá trị "manual" hoặc các trường hợp khác
+                break;
+        }
 
-   // Xóa các phần tử trong danh sách hiện tại
-   productList.forEach(function (item) {
-      item.remove();
-   });
+        // Xóa các phần tử trong danh sách hiện tại
+        productList.forEach(function (item) {
+            item.remove();
+        });
 
-   // Thêm lại các phần tử đã sắp xếp vào danh sách
-   productListArray.forEach(function (item) {
-      document.querySelector(".Products__items-list").appendChild(item);
-   });
-}
+        // Thêm lại các phần tử đã sắp xếp vào danh sách
+        productListArray.forEach(function (item) {
+            document.querySelector(".Products__items-list").appendChild(item);
+        });
+    }
 
 </script>

@@ -97,7 +97,6 @@ namespace DeathWishCoffee.Controllers
             if (userId == null || userId == Guid.Empty)
             {
                 return RedirectToAction("Index", "Account");
-
             }
 
             // get product to add from database by productId
@@ -130,27 +129,32 @@ namespace DeathWishCoffee.Controllers
                 // return BadRequest("Not enough product to sold");
 
                 existingCartItem.Quantity += form.Quantity;
+                _deathWishCoffeeDbContext.SaveChanges();
             }
             else
             {
-                // create new CartItem
-                double price = double.Parse(form.Size.Split('-')[1].Trim());
-                var newCartItem = new CartItem
+                if (productToAdd.Remain > 0 && form.Quantity <= productToAdd.Remain)
                 {
-                    Id = Guid.NewGuid(),
-                    UserId = userId,
-                    ProductId = productId,
-                    Quantity = form.Quantity,
-                    Size = form.Size,
-                    Price = price,
-                    InsideType = form.InsideType,
-                    CreatedAt = DateTime.Now,
-                    Product = productToAdd,
-                };
 
-                _deathWishCoffeeDbContext.CartItems.Add(newCartItem);
+                    // create new CartItem
+                    double price = double.Parse(form.Size.Split('-')[1].Trim());
+                    var newCartItem = new CartItem
+                    {
+                        Id = Guid.NewGuid(),
+                        UserId = userId,
+                        ProductId = productId,
+                        Quantity = form.Quantity,
+                        Size = form.Size,
+                        Price = price,
+                        InsideType = form.InsideType,
+                        CreatedAt = DateTime.Now,
+                        Product = productToAdd,
+                    };
+
+                    _deathWishCoffeeDbContext.CartItems.Add(newCartItem);
+                    _deathWishCoffeeDbContext.SaveChanges();
+                }
             }
-            _deathWishCoffeeDbContext.SaveChanges();
 
             user = _deathWishCoffeeDbContext.Users
                         .Include(u => u.CartItems)

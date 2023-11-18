@@ -11,7 +11,6 @@ builder.Services.AddDbContext<DeathWishCoffeeDbContext>(options =>
     {
         options.UseSqlServer(builder.Configuration.GetConnectionString("azureDB"));
         options.EnableSensitiveDataLogging(false);
-
     }
 );
 

@@ -232,7 +232,19 @@
                             asp-for="Size">
                         <input type="hidden" name="quantity" value="1" asp-for="Quantity">
 
-                        <button class="KproductDetail__main__text__add_button">ADD TO CART</button>
+                        @if (Model.Remain == 0)
+                        {
+                            <button class="KproductDetail__main__text__add_button btn-secondary" disabled>
+                                HẾT HÀNG
+                            </button>
+                        }
+                        else
+                        {
+                            <button class="KproductDetail__main__text__add_button">
+                                ADD TO CART
+                            </button>
+                        }
+
                     </form>
 
                     <!-- flavor profile -->

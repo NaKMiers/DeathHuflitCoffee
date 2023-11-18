@@ -117,7 +117,7 @@ namespace DeathWishCoffee.Controllers
                 form.PrimaryColor = "";
 
             // Create PRODUCT model
-            var newProduct = new Models.Main.Product
+            var newProduct = new Product
             {
                 Id = productId,
                 Title = form.Title.Trim(),
@@ -143,6 +143,7 @@ namespace DeathWishCoffee.Controllers
 
                     var sizeToAdd = new Models.Main.Size
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Label = item.Label.Trim(),
                         Price = item.Price,
@@ -164,6 +165,7 @@ namespace DeathWishCoffee.Controllers
 
                     var flavorProfileToAdd = new Models.Main.FlavorProfile
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Label = item.Label.Trim(),
                         Text = item.Text.Trim()
@@ -184,6 +186,7 @@ namespace DeathWishCoffee.Controllers
 
                     var detailToAdd = new Models.Main.Detail
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Label = item.Label.Trim(),
                         Text = item.Text.Trim()
@@ -203,6 +206,7 @@ namespace DeathWishCoffee.Controllers
 
                     var typeToAdd = new Models.Main.Type
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Text = item.Text.Trim(),
                     };
@@ -225,6 +229,7 @@ namespace DeathWishCoffee.Controllers
 
                     var attributeToAdd = new Models.Main.Attribute
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Label = item.Label.Trim(),
                         MinLabel = item.MinLabel.Trim(),
@@ -247,6 +252,7 @@ namespace DeathWishCoffee.Controllers
 
                     var insideTypeToAdd = new Models.Main.InsideType
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Label = item.Label.Trim(),
                         Icon = item.Icon.Trim(),
@@ -267,6 +273,7 @@ namespace DeathWishCoffee.Controllers
 
                     var symbolToAdd = new Models.Main.Symbol
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Title = item.Title.Trim(),
                         Icon = item.Icon.Trim(),
@@ -285,6 +292,7 @@ namespace DeathWishCoffee.Controllers
 
                     var formatToAdd = new Models.Main.Format
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Text = item.Text.Trim(),
                     };
@@ -302,6 +310,7 @@ namespace DeathWishCoffee.Controllers
 
                     var roastToAdd = new Models.Main.Roast
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Text = item.Text.Trim(),
                     };
@@ -319,6 +328,7 @@ namespace DeathWishCoffee.Controllers
 
                     var flavorsToAdd = new Models.Main.Flavor
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Text = item.Text.Trim(),
                     };
@@ -336,6 +346,7 @@ namespace DeathWishCoffee.Controllers
 
                     var ImagesToAdd = new Models.Main.Image
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Src = item.Src.Trim(),
                     };
@@ -362,6 +373,7 @@ namespace DeathWishCoffee.Controllers
 
             //             var imageToAdd = new Models.Main.Image
             //             {
+            //                 Id = Guid.NewGuid(),
             //                 ProductId = productId,
             //                 Src = Path.Combine(imageName)
             //             };
@@ -431,6 +443,7 @@ namespace DeathWishCoffee.Controllers
         [HttpPost]
         public IActionResult EditProduct(AddNewProductRequest form, Guid id, List<IFormFile> imageList)
         {
+            Console.WriteLine("EditProduct");
             var productId = id;
 
             // get product to edit from database
@@ -490,6 +503,7 @@ namespace DeathWishCoffee.Controllers
                         item.Text = "";
                     var sizeToAdd = new Models.Main.Size
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Label = item.Label.Trim(),
                         Price = item.Price,
@@ -518,6 +532,7 @@ namespace DeathWishCoffee.Controllers
 
                     var flavorProfileToAdd = new Models.Main.FlavorProfile
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Label = item.Label.Trim(),
                         Text = item.Text.Trim()
@@ -544,6 +559,7 @@ namespace DeathWishCoffee.Controllers
 
                     var detailToAdd = new Models.Main.Detail
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Label = item.Label.Trim(),
                         Text = item.Text.Trim()
@@ -569,6 +585,7 @@ namespace DeathWishCoffee.Controllers
 
                     var typeToAdd = new Models.Main.Type
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Text = item.Text.Trim(),
                     };
@@ -595,6 +612,7 @@ namespace DeathWishCoffee.Controllers
 
                     var attributeToAdd = new Models.Main.Attribute
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Label = item.Label.Trim(),
                         MinLabel = item.MinLabel.Trim(),
@@ -625,6 +643,7 @@ namespace DeathWishCoffee.Controllers
 
                     var insideTypeToAdd = new Models.Main.InsideType
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Label = item.Label.Trim(),
                         Icon = item.Icon.Trim(),
@@ -651,6 +670,7 @@ namespace DeathWishCoffee.Controllers
 
                     var symbolToAdd = new Models.Main.Symbol
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Title = item.Title.Trim(),
                         Icon = item.Icon.Trim(),
@@ -675,6 +695,7 @@ namespace DeathWishCoffee.Controllers
 
                     var formatToAdd = new Models.Main.Format
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Text = item.Text.Trim(),
                     };
@@ -698,6 +719,7 @@ namespace DeathWishCoffee.Controllers
 
                     var roastToAdd = new Models.Main.Roast
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Text = item.Text.Trim(),
                     };
@@ -719,6 +741,7 @@ namespace DeathWishCoffee.Controllers
 
                     var flavorsToAdd = new Models.Main.Flavor
                     {
+                        Id = Guid.NewGuid(),
                         ProductId = productId,
                         Text = item.Text.Trim(),
                     };
