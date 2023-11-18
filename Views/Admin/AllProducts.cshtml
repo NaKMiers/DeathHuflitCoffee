@@ -3,21 +3,34 @@
     ViewData["Title"] = "All Products Page";
 }
 
-<div class="admin bg-light pt-5 overflow-scroll">
-    <a href="/admin" class="btn btn-secondary mb-3">
-        Back
-    </a>
+<div class="admin bg-light p-3 overflow-scroll">
+    <div class="d-flex justify-content-center">
+        <div class="btn-group mt-5" role="group" aria-label="Basic outlined example">
+            <a href="/admin" class="btn btn-outline-primary">Admin</a>
+            <a href="/admin/users" class="btn btn-outline-primary">Users</a>
+            <a href="/admin/products" class="btn btn-outline-primary">Products</a>
+            <a href="/admin/orders" class="btn btn-outline-primary">Orders</a>
+            <a href="/admin/reviews" class="btn btn-outline-primary">Reviews</a>
+            <a href="/admin/attributes" class="btn btn-outline-primary">Attributes</a>
+            <a href="/admin/details" class="btn btn-outline-primary">Details</a>
+            <a href="/admin/flavors" class="btn btn-outline-primary">Flavors</a>
+            <a href="/admin/flavor-profiles" class="btn btn-outline-primary">Flavor Profiles</a>
+            <a href="/admin/formats" class="btn btn-outline-primary">Formats</a>
+            <a href="/admin/types" class="btn btn-outline-primary">Types</a>
+            <a href="/admin/images" class="btn btn-outline-primary">Images</a>
+        </div>
+    </div>
 
-    <div class="d-flex gap-3" style="border-bottom: 2px solid #000;padding-bottom: 5px;">
-        <h2 class="d-inline m-0">Product List:</h2>
+    <div class="d-flex align-items-center gap-3 mt-5" style="border-bottom: 2px solid #000;padding-bottom: 5px;">
+        <h1 class="d-inline m-0">Product List:</h1>
         <a href="/admin/products/add" class="btn btn-success">Add Product</a>
     </div>
 
 
-    <ul class="product-list" style="padding-top: 5px;">
+    <ul class="product-list pt-4" style="padding-top: 5px;">
         @foreach (var product in Model)
         {
-            <li class="product-item" style="border-bottom: 1px solid #000;padding-top: 2px">
+            <li class="product-item mb-4" style="border-bottom: 1px solid #000;padding-top: 2px">
                 <a hef="/admin/products/delete/@product.Id" class="btn btn-danger">Delete</a>
                 <a href="/admin/products/edit/@product.Id" class="btn btn-info">Edit</a>
                 <a href="/admin/reviews/add/@product.Id" class="btn btn-warning">Review</a>
@@ -189,6 +202,7 @@
                     <li><strong>Amount Sold:</strong> ___Amount_Sold___</li>
                     <li><strong>CreatedAt:</strong> @product.CreatedAt</li>
                     <li><strong>LastModifiedAt:</strong> @product.LastModifiedAt</li>
+                    <br>
                 </ul>
             </li>
         }

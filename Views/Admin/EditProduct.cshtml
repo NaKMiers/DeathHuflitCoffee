@@ -6,7 +6,7 @@
 
 
 <div class="bg-light pt-5">
-    <a href="/admin" class="btn btn-secondary mb-3">
+    <a href="/admin" class="btn btn-secondary mb-3 ms-5">
         Back
     </a>
 
@@ -18,37 +18,37 @@
         enctype="multipart/form-data">
         <div class="mb-3 form-group">
             <label for="title" class="form-label">*Title:</label>
-            <input value="@product.Title" name="title" type="text" class="form-control" id="title"
+            <input maxlength="500" value="@product.Title" name="title" type="text" class="form-control" id="title"
                 placeholder="Title..." asp-for="Title" required>
         </div>
         <div class="mb-3 form-group">
             <label for="subtitle" class="form-label">Subtitle:</label>
-            <input value="@product.Subtitle" name="subtitle" type="text" class="form-control" id="subtitle"
+            <input maxlength="500" value="@product.Subtitle" name="subtitle" type="text" class="form-control" id="subtitle"
                 placeholder="Subtitle..." asp-for="Subtitle">
         </div>
         <div class="mb-3 form-group">
             <label for="description" class="form-label">Description:</label>
-            <input value="@product.Description" name="description" type="text" class="form-control" id="description"
+            <input maxlength="500" value="@product.Description" name="description" type="text" class="form-control" id="description"
                 placeholder="Description..." asp-for="Description">
         </div>
         <div class="mb-3 form-group">
             <label for="subscribeAndSave" class="form-label">Subscribe And Save:</label>
-            <input value="@product.SubscribeAndSave" name="subscribeAndSave" type="text" class="form-control"
+            <input maxlength="500" value="@product.SubscribeAndSave" name="subscribeAndSave" type="text" class="form-control"
                 id="subscribeAndSave" placeholder="Subscribe And Save..." asp-for="SubscribeAndSave">
         </div>
         <div class="mb-3 form-group">
             <label for="note" class="form-label">Note:</label>
-            <input value="@product.Note" name="note" type="text" class="form-control" id="note" placeholder="Note..."
+            <input maxlength="500" value="@product.Note" name="note" type="text" class="form-control" id="note" placeholder="Note..."
                 asp-for="Note">
         </div>
         <div class="mb-3 form-group">
             <label for="primaryColor" class="form-label">Primary Color:</label>
-            <input value="@product.PrimaryColor" name="primaryColor" type="color" class="form-control" id="primaryColor"
+            <input maxlength="500" value="@product.PrimaryColor" name="primaryColor" type="color" class="form-control" id="primaryColor"
                 placeholder="Primary Color..." asp-for="PrimaryColor">
         </div>
         <div class="mb-3 form-group">
             <label for="remain" class="form-label">Remain:</label>
-            <input value="@product.Remain" name="remain" type="number" class="form-control" id="remain"
+            <input maxlength="500" value="@product.Remain" name="remain" type="number" class="form-control" id="remain"
                 placeholder="Remain..." asp-for="Remain">
         </div>
 
@@ -83,17 +83,17 @@
                         <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
                         <div class="form-group mb-3 w-100">
                             <label for="Sizes[@i].Label">Size Label:</label>
-                            <input value="@item.Label" type="text" id="Sizes[@i].Label"
+                            <input maxlength="500" value="@item.Label" type="text" id="Sizes[@i].Label"
                                 name="Sizes[@i].Label" class="form-control" />
                         </div>
                         <div class="form-group mb-3 w-100">
                             <label for="Sizes[@i].Price">Size Price:</label>
-                            <input value="@item.Price" type="number" id="Sizes[@i].Price"
+                            <input maxlength="500" value="@item.Price" type="number" id="Sizes[@i].Price"
                                 name="Sizes[@i].Price" class="form-control" />
                         </div>
                         <div class="form-group mb-3 w-100">
                             <label for="Sizes[@i].Text">Text:</label>
-                            <input value="@item.Text" type="text" class="form-control" id="Sizes[@i].Text"
+                            <input maxlength="500" value="@item.Text" type="text" class="form-control" id="Sizes[@i].Text"
                                 name="Sizes[@i].Text"></input>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                         <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
                         <div class="form-group mb-3 w-100">
                             <label for="FlavorProfiles[@i].Label">FlavorProfile Label:</label>
-                            <input value="@item.Label" type="text" id="FlavorProfiles[@i].Label"
+                            <input maxlength="500" value="@item.Label" type="text" id="FlavorProfiles[@i].Label"
                                 name="FlavorProfiles[@i].Label" class="form-control" />
                         </div>
                         <div class="form-group mb-3 w-100">
@@ -148,12 +148,12 @@
                         <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
                         <div class="form-group mb-3 w-100">
                             <label for="Details[@i].Label">Detail Label:</label>
-                            <input value="@item.Label" type="text" id="Details[@i].Label"
+                            <input maxlength="500" value="@item.Label" type="text" id="Details[@i].Label"
                                 name="Details[@i].Label" class="form-control" />
                         </div>
                         <div class="form-group mb-3 w-100">
                             <label for="Details[@i].Text">Detail Text:</label>
-                            <input value="@item.Text" type="text" class="form-control" id="Details[@i].Text"
+                            <input maxlength="500" value="@item.Text" type="text" class="form-control" id="Details[@i].Text"
                                 name="Details[@i].Text"></input>
                         </div>
                     </div>
@@ -177,7 +177,7 @@
                         <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
                         <div class="form-group mb-3 w-100">
                             <label for="Types[@i].Text">Text:</label>
-                            <input value="@item.Text" type="text" class="form-control" id="Types[@i].Text"
+                            <input maxlength="500" value="@item.Text" type="text" class="form-control" id="Types[@i].Text"
                                 name="Types[@i].Text"></input>
                         </div>
                     </div>
@@ -202,22 +202,22 @@
                         <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
                         <div class="form-group mb-3 w-100">
                             <label for="Attributes[@i].Label">Attribute Label:</label>
-                            <input value="@item.Label" type="text" class="form-control" id="Attributes[@i].Label"
+                            <input maxlength="500" value="@item.Label" type="text" class="form-control" id="Attributes[@i].Label"
                                 name="Attributes[@i].Label" />
                         </div>
                         <div class="form-group mb-3 w-100">
                             <label for="Attributes[@i].MinLabel">Attribute Min Label:</label>
-                            <input value="@item.MinLabel" type="text" class="form-control"
+                            <input maxlength="500" value="@item.MinLabel" type="text" class="form-control"
                                 id="Attributes[@i].MinLabel" name="Attributes[@i].MinLabel" />
                         </div>
                         <div class="form-group mb-3 w-100">
                             <label for="Attributes[@i].MaxLabel">Attribute Max Label:</label>
-                            <input value="@item.MaxLabel" type="text" class="form-control"
+                            <input maxlength="500" value="@item.MaxLabel" type="text" class="form-control"
                                 id="Attributes[@i].MaxLabel" name="Attributes[@i].MaxLabel" />
                         </div>
                         <div class="form-group mb-3 w-100">
                             <label for="Attributes[@i].Value">Attribute Value:</label>
-                            <input value="@item.Value" type="number" class="form-control" id="Attributes[@i].Value"
+                            <input maxlength="500" value="@item.Value" type="number" class="form-control" id="Attributes[@i].Value"
                                 name="Attributes[@i].Value" min="0" max="100" />
                         </div>
                     </div>
@@ -242,7 +242,7 @@
                         <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
                         <div class="form-group mb-3 w-100">
                             <label for="InsideTypes[@i].Label">Inside Type Label:</label>
-                            <input value="@item.Label" type="text" class="form-control" id="InsideTypes[@i].Label"
+                            <input maxlength="500" value="@item.Label" type="text" class="form-control" id="InsideTypes[@i].Label"
                                 name="InsideTypes[@i].Label" />
                         </div>
                         <div class="form-group mb-3 w-100">
@@ -281,7 +281,7 @@
                         <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
                         <div class="form-group mb-3 w-100">
                             <label for="Symbols[@i].Title">Symbol Title:</label>
-                            <input value="@item.Title" type="text" class="form-control" id="Symbols[@i].Title"
+                            <input maxlength="500" value="@item.Title" type="text" class="form-control" id="Symbols[@i].Title"
                                 name="Symbols[@i].Title" />
                         </div>
                         <div class="form-group mb-3 w-100">
@@ -319,7 +319,7 @@
                         <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
                         <div class="form-group mb-3 w-100">
                             <label for="Formats[@i].Text">Text:</label>
-                            <input value="@item.Text" type="text" class="form-control" id="Formats[@i].Text"
+                            <input maxlength="500" value="@item.Text" type="text" class="form-control" id="Formats[@i].Text"
                                 name="Formats[@i].Text"></input>
                         </div>
                     </div>
@@ -345,7 +345,7 @@
                         <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
                         <div class="form-group mb-3 w-100">
                             <label for="Roasts[@i].Text">Text:</label>
-                            <input value="@item.Text" type="text" class="form-control" id="Roasts[@i].Text"
+                            <input maxlength="500" value="@item.Text" type="text" class="form-control" id="Roasts[@i].Text"
                                 name="Roasts[@i].Text"></input>
                         </div>
                     </div>
@@ -370,7 +370,7 @@
                         <button style="max-height: 40px" class="btn btn-danger remove-item mt-2" type="button">Remove</button>
                         <div class="form-group mb-3 w-100">
                             <label for="Flavors[@i].Text">Text:</label>
-                            <input value="@item.Text" type="text" class="form-control" id="Flavors[@i].Text"
+                            <input maxlength="500" value="@item.Text" type="text" class="form-control" id="Flavors[@i].Text"
                                 name="Flavors[@i].Text"></input>
                         </div>
                     </div>
@@ -379,6 +379,6 @@
         </div>
 
         <button type="submit" class="btn btn-primary mt-3">Submit</button>
-        <input type='reset' class="btn btn-secondary mt-3 ms-2" />
+        <input maxlength="500" type='reset' class="btn btn-secondary mt-3 ms-2" />
     </form>
 </div>

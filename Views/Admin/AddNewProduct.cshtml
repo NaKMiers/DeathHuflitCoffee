@@ -5,7 +5,7 @@
 
 
 <div class="bg-light pt-5">
-    <a href="/admin" class="btn btn-secondary mb-3">
+    <a href="/admin" class="btn btn-secondary mb-3 ms-5">
         Back
     </a>
 
@@ -15,43 +15,43 @@
         enctype="multipart/form-data">
         <div class="mb-3 form-group">
             <label for="title" class="form-label">*Title:</label>
-            <input name="title" type="text" class="form-control" id="title" placeholder="Title..." asp-for="Title"
+            <input maxlength="500" name="title" type="text" class="form-control" id="title" placeholder="Title..." asp-for="Title"
                 required>
         </div>
         <div class="mb-3 form-group">
             <label for="subtitle" class="form-label">Subtitle:</label>
-            <input name="subtitle" type="text" class="form-control" id="subtitle" placeholder="Subtitle..."
+            <input maxlength="500" name="subtitle" type="text" class="form-control" id="subtitle" placeholder="Subtitle..."
                 asp-for="Subtitle">
         </div>
         <div class="mb-3 form-group">
             <label for="description" class="form-label">Description:</label>
-            <input name="description" type="text" class="form-control" id="description" placeholder="Description..."
+            <input maxlength="500" name="description" type="text" class="form-control" id="description" placeholder="Description..."
                 asp-for="Description">
         </div>
         <div class="mb-3 form-group">
             <label for="subscribeAndSave" class="form-label">Subscribe And Save:</label>
-            <input name="subscribeAndSave" type="text" class="form-control" id="subscribeAndSave"
+            <input maxlength="500" name="subscribeAndSave" type="text" class="form-control" id="subscribeAndSave"
                 placeholder="Subscribe And Save..." asp-for="SubscribeAndSave">
         </div>
         <div class="mb-3 form-group">
             <label for="note" class="form-label">Note:</label>
-            <input name="note" type="text" class="form-control" id="note" placeholder="Note..." asp-for="Note">
+            <input maxlength="500" name="note" type="text" class="form-control" id="note" placeholder="Note..." asp-for="Note">
         </div>
         <div class="mb-3 form-group">
             <label for="primaryColor" class="form-label">Primary Color:</label>
-            <input name="primaryColor" type="color" class="form-control" id="primaryColor"
+            <input maxlength="500" name="primaryColor" type="color" class="form-control" id="primaryColor"
                 placeholder="Primary Color..." asp-for="PrimaryColor">
         </div>
         <div class="mb-3 form-group">
             <label for="remain" class="form-label">*Remain:</label>
-            <input name="remain" type="number" class="form-control" id="remain" placeholder="Remain..." asp-for="Remain"
+            <input maxlength="500" name="remain" type="number" class="form-control" id="remain" placeholder="Remain..." asp-for="Remain"
                 min='0' required>
         </div>
 
         @* Image
         <div class="mb-3 form-group">
         <label for="images" class="form-label">Images:</label>
-        <input name="imageList" type="file" class="form-control" id="images" multiple>
+        <input maxlength="500" name="imageList" type="file" class="form-control" id="images" multiple>
         </div> *@
 
         @* Image *@
@@ -152,6 +152,6 @@
         </div>
 
         <button type="submit" class="btn btn-primary mt-3">Submit</button>
-        <input type='reset' class="btn btn-secondary mt-3 ms-2" />
+        <input maxlength="500" type='reset' class="btn btn-secondary mt-3 ms-2" />
     </form>
 </div>

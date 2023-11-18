@@ -3,25 +3,53 @@
     ViewData["Title"] = "Admin Page";
 }
 
-<div class="text-left bg-light mt-5 mb-5 pt-5 ps-3 pe-3">
-    @* Users *@
-    <div class="d-flex flex-wrap justify-content-center mb-3">
-        <a class="btn m-2 btn-success d-inline-block" href="/admin/users">See All Users</a>
-    </div>
+<div class="text-left bg-light mb-5 pt-5 ps-3 pe-3">
+    <div class="row">
+        @* Users *@
+        <div class="col-6 col-md-2">
+            <h4 class="p-2 pb-0">Users</h4>
+            <div class="d-flex flex-wrap mb-3">
+                <a class="btn m-2 btn-outline-primary d-inline-block" href="/admin/users">See All Users</a>
+            </div>
+        </div>
 
-    @* Products *@
-    <div class="d-flex flex-wrap justify-content-center mb-3">
-        <a class="btn m-2 btn-warning d-inline-block" href="/admin/products">See All Products</a>
-        <a class="btn m-2 btn-info d-inline-block" href="/admin/products/add">Add New Product</a>
-    </div>
+        @* Products *@
+        <div class="col-6 col-md-2">
+            <h4 class="p-2 pb-0">Products</h4>
+            <div class="d-flex flex-wrap mb-3">
+                <a class="btn m-2 btn-outline-primary d-inline-block" href="/admin/products">See All Products</a>
+                <a class="btn m-2 btn-outline-primary d-inline-block" href="/admin/products/add">Add New Product</a>
+            </div>
+        </div>
 
-    @* Review *@
-    <div class="d-flex flex-wrap justify-content-center mb-3">
-        <a class="btn m-2 btn-dark d-inline-block" href="/admin/reviews">See All Reviews</a>
-    </div>
+        @* Reviews *@
+        <div class="col-6 col-md-2">
+            <h4 class="p-2 pb-0">Reviews</h4>
+            <div class="d-flex flex-wrap mb-3">
+                <a class="btn m-2 btn-outline-primary d-inline-block" href="/admin/reviews">See All Reviews</a>
+            </div>
+        </div>
 
-    @* Order History *@
-    <div class="d-flex flex-wrap justify-content-center mb-3">
-        <a class="btn m-2 btn-primary d-inline-block" href="/admin/orders">See All Orders</a>
+        @* Orders *@
+        <div class="col-6 col-md-2">
+            <h4 class="p-2 pb-0">Orders</h4>
+            <div class="d-flex flex-wrap mb-3">
+                <a class="btn m-2 btn-outline-primary d-inline-block" href="/admin/orders">See All Orders</a>
+            </div>
+        </div>
+
+        @* Categories *@
+        <div class="col-4">
+            <h4 class="p-2 pb-0">Categories</h4>
+            <div class="d-flex flex-wrap mb-3">
+                <a class="btn m-2 btn-outline-primary d-inline-block" href="admin/attributes">Attributes</a>
+                <a class="btn m-2 btn-outline-primary d-inline-block" href="admin/details">Details</a>
+                <a class="btn m-2 btn-outline-primary d-inline-block" href="admin/flavors">Flavors</a>
+                <a class="btn m-2 btn-outline-primary d-inline-block" href="admin/flavor-profiles">Flavor Profiles</a>
+                <a class="btn m-2 btn-outline-primary d-inline-block" href="admin/images">Images</a>
+                <a class="btn m-2 btn-outline-primary d-inline-block" href="admin/formats">Formats</a>
+                <a class="btn m-2 btn-outline-primary d-inline-block" href="admin/types">Types</a>
+            </div>
+        </div>
     </div>
 </div>

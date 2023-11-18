@@ -3,12 +3,25 @@
     ViewData["Title"] = "All Reviews Page";
 }
 
-<div class="bg-light mt-5 overflow-scroll">
-    <a href="/admin" class="btn btn-secondary mb-3">
-        Back
-    </a>
+<div class="bg-light p-3 mt-5 overflow-scroll">
+    <div class="d-flex justify-content-center">
+        <div class="btn-group mt-5" role="group" aria-label="Basic outlined example">
+            <a href="/admin" class="btn btn-outline-primary">Admin</a>
+            <a href="/admin/users" class="btn btn-outline-primary">Users</a>
+            <a href="/admin/products" class="btn btn-outline-primary">Products</a>
+            <a href="/admin/orders" class="btn btn-outline-primary">Orders</a>
+            <a href="/admin/reviews" class="btn btn-outline-primary">Reviews</a>
+            <a href="/admin/attributes" class="btn btn-outline-primary">Attributes</a>
+            <a href="/admin/details" class="btn btn-outline-primary">Details</a>
+            <a href="/admin/flavors" class="btn btn-outline-primary">Flavors</a>
+            <a href="/admin/flavor-profiles" class="btn btn-outline-primary">Flavor Profiles</a>
+            <a href="/admin/formats" class="btn btn-outline-primary">Formats</a>
+            <a href="/admin/types" class="btn btn-outline-primary">Types</a>
+            <a href="/admin/images" class="btn btn-outline-primary">Images</a>
+        </div>
+    </div>
 
-    <h2>Reviews List:</h2>
+    <h1 class="mt-5">Reviews List:</h1>
     <table class="table">
         <thead>
             <tr>

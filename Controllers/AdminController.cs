@@ -34,7 +34,6 @@ namespace DeathWishCoffee.Controllers
                 return RedirectToAction("Index", "Home");
             // Authentication--
 
-
             return View();
         }
 
@@ -54,7 +53,10 @@ namespace DeathWishCoffee.Controllers
                 return RedirectToAction("Index", "Home");
             // Authentication--
 
-            return View("~/Views/Admin/Categories/Attributes.cshtml");
+            // get attributes from database
+            var attributes = _deathWishCoffeeDbContext.Attributes.ToList();
+
+            return View("~/Views/Admin/Categories/Attributes.cshtml", attributes);
         }
 
         // [/admin/details]
@@ -72,8 +74,10 @@ namespace DeathWishCoffee.Controllers
             if (!curUser.Admin)
                 return RedirectToAction("Index", "Home");
             // Authentication--
+            // get attributes from database
+            var details = _deathWishCoffeeDbContext.Details.ToList();
 
-            return View("~/Views/Admin/Categories/Details.cshtml");
+            return View("~/Views/Admin/Categories/Details.cshtml", details);
         }
 
         // [/admin/flavor-profiles]
@@ -91,8 +95,10 @@ namespace DeathWishCoffee.Controllers
             if (!curUser.Admin)
                 return RedirectToAction("Index", "Home");
             // Authentication--
+            // get attributes from database
+            var flavorProfiles = _deathWishCoffeeDbContext.FlavorProfiles.ToList();
 
-            return View("~/Views/Admin/Categories/FlavorProfiles.cshtml");
+            return View("~/Views/Admin/Categories/FlavorProfiles.cshtml", flavorProfiles);
         }
 
         // [/admin/flavors]
@@ -110,8 +116,10 @@ namespace DeathWishCoffee.Controllers
             if (!curUser.Admin)
                 return RedirectToAction("Index", "Home");
             // Authentication--
+            // get attributes from database
+            var flavors = _deathWishCoffeeDbContext.Flavors.ToList();
 
-            return View("~/Views/Admin/Categories/Flavors.cshtml");
+            return View("~/Views/Admin/Categories/Flavors.cshtml", flavors);
         }
 
         // [/admin/formats]
@@ -129,8 +137,10 @@ namespace DeathWishCoffee.Controllers
             if (!curUser.Admin)
                 return RedirectToAction("Index", "Home");
             // Authentication--
+            // get attributes from database
+            var formats = _deathWishCoffeeDbContext.Formats.ToList();
 
-            return View("~/Views/Admin/Categories/Formats.cshtml");
+            return View("~/Views/Admin/Categories/Formats.cshtml", formats);
         }
 
         // [/admin/roasts]
@@ -148,8 +158,10 @@ namespace DeathWishCoffee.Controllers
             if (!curUser.Admin)
                 return RedirectToAction("Index", "Home");
             // Authentication--
+            // get attributes from database
+            var roasts = _deathWishCoffeeDbContext.Roasts.ToList();
 
-            return View("~/Views/Admin/Categories/Roasts.cshtml");
+            return View("~/Views/Admin/Categories/Roasts.cshtml", roasts);
         }
 
         // [/admin/types]
@@ -167,8 +179,10 @@ namespace DeathWishCoffee.Controllers
             if (!curUser.Admin)
                 return RedirectToAction("Index", "Home");
             // Authentication--
+            // get attributes from database
+            var types = _deathWishCoffeeDbContext.Types.ToList();
 
-            return View("~/Views/Admin/Categories/Types.cshtml");
+            return View("~/Views/Admin/Categories/Types.cshtml", types);
         }
 
         // [/admin/images]
@@ -186,8 +200,10 @@ namespace DeathWishCoffee.Controllers
             if (!curUser.Admin)
                 return RedirectToAction("Index", "Home");
             // Authentication--
+            // get attributes from database
+            var images = _deathWishCoffeeDbContext.Images.ToList();
 
-            return View("~/Views/Admin/Categories/Images.cshtml");
+            return View("~/Views/Admin/Categories/Images.cshtml", images);
         }
 
         // ERRORS

@@ -3,14 +3,27 @@
     ViewData["Title"] = "All Orders Page";
 }
 
-<div class="bg-light pt-5 overflow-scroll">
-    <a href="/admin" class="btn btn-secondary mb-3">
-        <i class="fas fa-arrow-left"></i> Back
-    </a>
+<div class="bg-light p-3 ps-4 pe-4 overflow-scroll">
+    <div class="d-flex justify-content-center">
+        <div class="btn-group mt-5" role="group" aria-label="Basic outlined example">
+            <a href="/admin" class="btn btn-outline-primary">Admin</a>
+            <a href="/admin/users" class="btn btn-outline-primary">Users</a>
+            <a href="/admin/products" class="btn btn-outline-primary">Products</a>
+            <a href="/admin/orders" class="btn btn-outline-primary">Orders</a>
+            <a href="/admin/reviews" class="btn btn-outline-primary">Reviews</a>
+            <a href="/admin/attributes" class="btn btn-outline-primary">Attributes</a>
+            <a href="/admin/details" class="btn btn-outline-primary">Details</a>
+            <a href="/admin/flavors" class="btn btn-outline-primary">Flavors</a>
+            <a href="/admin/flavor-profiles" class="btn btn-outline-primary">Flavor Profiles</a>
+            <a href="/admin/formats" class="btn btn-outline-primary">Formats</a>
+            <a href="/admin/types" class="btn btn-outline-primary">Types</a>
+            <a href="/admin/images" class="btn btn-outline-primary">Images</a>
+        </div>
+    </div>
 
     <h2 style="border-bottom:2px solid #000; font-size: 40px">Orders List:</h2>
 
-    <ul class="order-list">
+    <ul class="order-list ">
         @foreach (var order in Model)
         {
             <li class="order-item">
@@ -24,7 +37,7 @@
                 <div class="order-details" style="border-bottom: 1px solid rgb(131, 115, 123);">
                     <p><strong>ID:</strong> @order.Id</p>
                     <p><strong>User ID:</strong> @order.UserId</p>
-                    <p><strong>Total Amount:</strong> @order.TotalAmount</p>
+                    <p><strong>Total Amount:</strong> @order.TotalAmount.ToString("C2")</p>
                     <p><strong>Status:</strong> @order.Status</p>
                     <p><strong>Products:</strong>
                         @if (order.OrderDetails != null && order.OrderDetails.Count > 0)
