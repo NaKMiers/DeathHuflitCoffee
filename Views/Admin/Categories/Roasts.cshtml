@@ -1,0 +1,74 @@
+<div class="K__dmsp__divK" style="background-color: black; color: white; width:100%">
+    <header class="K__dmsp__Header">
+        <h1 style="margin: 0; padding: 20px;font-size:50px;padding-top:50px">Quản lí danh mục sản phẩm</h1>
+    </header>
+
+    <div class="K__dmsp__divK" style="padding-bottom:30px">
+        <div class="Ksearch__container"
+            style="display: flex; margin: 20px;width:50%;padding-left:50px;width:50%;padding-bottom:30px">
+            <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm từ khóa..."
+                style="flex: 1; padding: 8px;; width:50%">
+            <button class="search-button" onclick="searchTable()"
+                style="padding: 8px; background-color: green; color: white; border: none; cursor: pointer">Tìm
+                Kiếm</button>
+        </div>
+
+        <div class="K__dmsp__divK" style="width: 100%; background-color: black;">
+            <table id="productTable" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                <thead>
+                    <tr class="K__dmsp__divK__table__tr">
+                        <th style="border: 1px solid white; padding: 8px; text-align: left;background-color: gray;">ID
+                        </th>
+                        <th style="border: 1px solid white; padding: 8px; text-align: left;background-color: gray;">
+                            ProductName</th>
+                        <th style="border: 1px solid white; padding: 8px; text-align: left;background-color: gray;">
+                            Light Roast</th>
+                        <th style="border: 1px solid white; padding: 8px; text-align: left;background-color: gray;">
+                            Medium Roast</th>
+                        <th style="border: 1px solid white; padding: 8px; text-align: left;background-color: gray;">
+                            Dark Roast </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Thêm dữ liệu ở đây nếu cần -->
+                    <tr>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Id</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Label</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Value</td>
+                    </tr>
+                    <tr>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Id</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">ProductId</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Label</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Value</td>
+                    </tr>
+                    <tr>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Id</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">ProductId</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Label</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Value</td>
+                    </tr>
+                    <tr>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Id</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">ProductId</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Label</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Value</td>
+                    </tr>
+                    <tr>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Id</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">ProductId</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Label</td>
+                        <td class="K__dmsp__divK__table__tr__dulieu" style="">Value</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<style>
+    .K__dmsp__divK__table__tr__dulieu {
+        border: 1px solid white;
+        padding: 8px;
+        text-align: left;
+    }
+</style>

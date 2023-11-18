@@ -201,6 +201,56 @@ app.MapControllerRoute(
     defaults: new { controller = "Product", action = "EditProduct" }
 );
 
+// [/admin/attributes]
+app.MapControllerRoute(
+    name: "Attributes",
+    pattern: "admin/attributes",
+    defaults: new { controller = "Admin", action = "Attributes" }
+);
+
+// [/admin/details]
+app.MapControllerRoute(
+    name: "Details",
+    pattern: "admin/details",
+    defaults: new { controller = "Admin", action = "Details" }
+);
+
+// [/admin/flavors]
+app.MapControllerRoute(
+    name: "Flavors",
+    pattern: "admin/flavors",
+    defaults: new { controller = "Admin", action = "Flavors" }
+);
+
+// [/admin/attributes]
+app.MapControllerRoute(
+    name: "FlavorProfiles",
+    pattern: "admin/flavor-profiles",
+    defaults: new { controller = "Admin", action = "FlavorProfiles" }
+);
+
+
+// [/admin/images]
+app.MapControllerRoute(
+    name: "Images",
+    pattern: "admin/images",
+    defaults: new { controller = "Admin", action = "Images" }
+);
+
+// [/admin/formats]
+app.MapControllerRoute(
+    name: "Formats",
+    pattern: "admin/formats",
+    defaults: new { controller = "Admin", action = "Formats" }
+);
+
+// [/admin/types]
+app.MapControllerRoute(
+    name: "Types",
+    pattern: "admin/types",
+    defaults: new { controller = "Admin", action = "Types" }
+);
+
 // [/admin/reviews]
 app.MapControllerRoute(
     name: "AllReviews",
