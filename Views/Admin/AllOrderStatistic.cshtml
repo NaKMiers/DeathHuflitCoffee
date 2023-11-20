@@ -23,18 +23,45 @@
                 <th class="AllOderStatistic__type">Delete</th>
                 <th class="AllOderStatistic__type">Edit</th>
             </tr>
-            <tr class="AllOderStatistic__Content-type">
-                <td class="AllOderStatistic__type">DARK SPIRITS CHOCOLATE RUM BALL</td>
-                <td class="AllOderStatistic__type">1</td>
-                <td class="AllOderStatistic__type">10</td>
-                <td class="AllOderStatistic__type">5</td>
-                <td class="AllOderStatistic__type">Pending</td>
-                <td class="AllOderStatistic__type">2023-11-16</td>
-                <td class="AllOderStatistic__type">2023-11-16</td>
-                <td class="AllOderStatistic__type"><button class="AllOderStatistic__Delete">Delete</button></td>
-                <td class="AllOderStatistic__type"><button class="AllOderStatistic__Edit">Edit</button>
-                </td>
-            </tr>
         </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td class="AllOrderByUser__type">
+                        @if (order.OrderDetails != null && order.OrderDetails.Count > 0)
+                        {
+                            @foreach (var oD in order.OrderDetails)
+                            {
+                                <p>@oD.Product?.Title</p>
+                            }
+                        }
+                    </td>
+                    <td class="AllOrderByUser__type">@order.Id</td>
+                    <td class="AllOrderByUser__type">
+                    </td>
+
+                    <td class="AllOrderByUser__type">
+                        @if (order.OrderDetails != null && order.OrderDetails.Count > 0)
+                        {
+                            @foreach (var oD in order.OrderDetails)
+                            {
+                                <p>@oD.Product?.Remain</p>
+                            }
+                        }
+                    </td>
+                    <td class="AllOrderByUser__type">@order.Status</td>
+
+                    <td class="AllOrderByUser__type">@order.CreatedAt</td>
+                    <td class="AllOrderByUser__type">@order.LastModifiedAt</td>
+                    <td class="AllOrderByUser__type">
+                        <a href="/admin/orders/delete/@order.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                    <td class="AllOrderByUser__type">
+                        <a href="/admin/orders/edit/@order.Id" class="btn btn-info">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
     </table>
 </div>
