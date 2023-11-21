@@ -26,36 +26,20 @@
                 <th class="AllOrderByUser__type">Delete</th>
                 <th class="AllOrderByUser__type">Edit</th>
             </tr>
-            <tr class="AllOrderByUser__Content-type">
-                <td class="AllOrderByUser__type">John Doe</td>
-                <td class="AllOrderByUser__type">123-456-7890</td>
-                <td class="AllOrderByUser__type">john.doe@example.com</td>
-                <td class="AllOrderByUser__type">5</td>
-                <td class="AllOrderByUser__type">1</td>
-                <td class="AllOrderByUser__type">$50.00</td>
-                <td class="AllOrderByUser__type">Shipped</td>
-                <td class="AllOrderByUser__type">DARK SPIRITS CHOCOLATE RUM BALL</td>
-                <td class="AllOrderByUser__type">2023-11-16</td>
-                <td class="AllOrderByUser__type">2023-11-16</td>
-                <td class="AllOderStatistic__type"><button class="AllOrderByUser__Delete">Delete</button></td>
-                <td class="AllOderStatistic__type"><button class="AllOrderByUser__Edit">Edit</button>
-            </tr>
         </thead>
         <tbody>
             @foreach (var order in Model)
             {
                 <tr>
-                    <td>
-                        <a href="/admin/orders/delete/@order.Id" class="btn btn-danger">Delete</a>
+                    <td class="AllOrderByUser__type">@order.Firstname @order.Lastname</td>
+                    <td class="AllOrderByUser__type">@order.Phone</td>
+                    <td class="AllOrderByUser__type">@order.Email</td>
+                    <td class="AllOrderByUser__type">
                     </td>
-                    <td>
-                        <a href="/admin/orders/edit/@order.Id" class="btn btn-info">Edit</a>
-                    </td>
-
-                    <td>@order.Id</td>
-                    <td>@order.TotalAmount</td>
-                    <td>@order.Status</td>
-                    <td>
+                    <td class="AllOrderByUser__type">@order.Id</td>
+                    <td class="AllOrderByUser__type">@order.TotalAmount</td>
+                    <td class="AllOrderByUser__type">@order.Status</td>
+                    <td class="AllOrderByUser__type">
                         @if (order.OrderDetails != null && order.OrderDetails.Count > 0)
                         {
                             @foreach (var oD in order.OrderDetails)
@@ -64,8 +48,14 @@
                             }
                         }
                     </td>
-                    <td>@order.CreatedAt</td>
-                    <td>@order.LastModifiedAt</td>
+                    <td class="AllOrderByUser__type">@order.CreatedAt</td>
+                    <td class="AllOrderByUser__type">@order.LastModifiedAt</td>
+                    <td class="AllOrderByUser__type">
+                        <a href="/admin/orders/delete/@order.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                    <td class="AllOrderByUser__type">
+                        <a href="/admin/orders/edit/@order.Id" class="btn btn-info">Edit</a>
+                    </td>
                 </tr>
             }
         </tbody>
