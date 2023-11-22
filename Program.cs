@@ -120,7 +120,7 @@ app.MapControllerRoute(
 // [/account/forget-password]
 app.MapControllerRoute(
     name: "ForgetPassword",
-    pattern: "account/foget-password",
+    pattern: "account/forgot-password",
     defaults: new { controller = "Account", action = "ForgetPassword" }
 );
 
